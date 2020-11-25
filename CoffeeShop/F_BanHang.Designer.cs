@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBanHang));
-            this.xuiGradientPanel1 = new XanderUI.XUIGradientPanel();
             this.pnThanhChon = new System.Windows.Forms.Panel();
             this.btTaiKhoan = new ns1.BunifuThinButton2();
             this.btThongKe = new ns1.BunifuThinButton2();
@@ -37,39 +36,55 @@
             this.btThongBao = new ns1.BunifuThinButton2();
             this.btKhachHang = new ns1.BunifuThinButton2();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btTK_DangXuat = new ns1.BunifuThinButton2();
-            this.btTK_ThongTin = new ns1.BunifuThinButton2();
-            this.btTK_QuanLy = new ns1.BunifuThinButton2();
             this.pnThongBao = new System.Windows.Forms.Panel();
             this.btTB_HangNgay = new ns1.BunifuThinButton2();
             this.btTB_TaiChinh = new ns1.BunifuThinButton2();
-            this.btHienThi = new XanderUI.XUISuperButton();
             this.pn1 = new System.Windows.Forms.Panel();
             this.pnTaiKhoan = new System.Windows.Forms.Panel();
+            this.btTK_QuanLy = new ns1.BunifuThinButton2();
+            this.btTK_ThongTin = new ns1.BunifuThinButton2();
+            this.btTK_DangXuat = new ns1.BunifuThinButton2();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnLot_TaiKhoan = new System.Windows.Forms.Panel();
             this.pnLot_ThongBao = new System.Windows.Forms.Panel();
             this.mnLot_ThongBao = new System.Windows.Forms.Panel();
-            this.pnLot_TaiKhoan = new System.Windows.Forms.Panel();
+            this.btHienThi = new XanderUI.XUISuperButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.flpDanhSachMon = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnLot_Order = new System.Windows.Forms.Panel();
+            this.flpOrder = new System.Windows.Forms.FlowLayoutPanel();
+            this.listOrder1 = new CoffeeShop.ListOrder();
+            this.pnOrder = new System.Windows.Forms.TableLayoutPanel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btThongTinKhachHang = new System.Windows.Forms.Button();
+            this.btOrder = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btMonAn = new ns1.BunifuThinButton2();
+            this.btThucUong = new ns1.BunifuThinButton2();
+            this.btMonPhoBien = new ns1.BunifuThinButton2();
+            this.pnLot_ThanhTieuDe = new System.Windows.Forms.Panel();
+            this.btDanhSachBan = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pnLotTimKiemOrder = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btHuyNoiDungTimKiem = new System.Windows.Forms.Button();
+            this.lbID_HoaDon = new System.Windows.Forms.Label();
             this.pnThanhChon.SuspendLayout();
             this.pnThongBao.SuspendLayout();
             this.pnTaiKhoan.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.mnLot_ThongBao.SuspendLayout();
             this.pnLot_TaiKhoan.SuspendLayout();
+            this.mnLot_ThongBao.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.pnLot_Order.SuspendLayout();
+            this.flpOrder.SuspendLayout();
+            this.pnOrder.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.pnLot_ThanhTieuDe.SuspendLayout();
+            this.pnLotTimKiemOrder.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // xuiGradientPanel1
-            // 
-            this.xuiGradientPanel1.BottomLeft = System.Drawing.Color.Black;
-            this.xuiGradientPanel1.BottomRight = System.Drawing.Color.Fuchsia;
-            this.xuiGradientPanel1.Location = new System.Drawing.Point(195, 354);
-            this.xuiGradientPanel1.Name = "xuiGradientPanel1";
-            this.xuiGradientPanel1.PrimerColor = System.Drawing.Color.White;
-            this.xuiGradientPanel1.Size = new System.Drawing.Size(200, 200);
-            this.xuiGradientPanel1.Style = XanderUI.XUIGradientPanel.GradientStyle.Corners;
-            this.xuiGradientPanel1.TabIndex = 3;
-            this.xuiGradientPanel1.TopLeft = System.Drawing.Color.DeepSkyBlue;
-            this.xuiGradientPanel1.TopRight = System.Drawing.Color.Fuchsia;
             // 
             // pnThanhChon
             // 
@@ -99,11 +114,11 @@
             this.btTaiKhoan.ButtonText = "Tài khoản";
             this.btTaiKhoan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btTaiKhoan.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btTaiKhoan.ForeColor = System.Drawing.Color.SeaGreen;
             this.btTaiKhoan.IdleBorderThickness = 1;
             this.btTaiKhoan.IdleCornerRadius = 15;
-            this.btTaiKhoan.IdleFillColor = System.Drawing.Color.White;
+            this.btTaiKhoan.IdleFillColor = System.Drawing.Color.MistyRose;
             this.btTaiKhoan.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btTaiKhoan.IdleLineColor = System.Drawing.Color.SeaGreen;
             this.btTaiKhoan.Location = new System.Drawing.Point(914, 0);
@@ -126,11 +141,11 @@
             this.btThongKe.ButtonText = "Thông kê";
             this.btThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btThongKe.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btThongKe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThongKe.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThongKe.ForeColor = System.Drawing.Color.SeaGreen;
             this.btThongKe.IdleBorderThickness = 1;
             this.btThongKe.IdleCornerRadius = 15;
-            this.btThongKe.IdleFillColor = System.Drawing.Color.White;
+            this.btThongKe.IdleFillColor = System.Drawing.Color.MistyRose;
             this.btThongKe.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btThongKe.IdleLineColor = System.Drawing.Color.SeaGreen;
             this.btThongKe.Location = new System.Drawing.Point(719, 0);
@@ -152,11 +167,11 @@
             this.btThucDon.ButtonText = "Thực đơn";
             this.btThucDon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btThucDon.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btThucDon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThucDon.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThucDon.ForeColor = System.Drawing.Color.SeaGreen;
             this.btThucDon.IdleBorderThickness = 1;
             this.btThucDon.IdleCornerRadius = 15;
-            this.btThucDon.IdleFillColor = System.Drawing.Color.White;
+            this.btThucDon.IdleFillColor = System.Drawing.Color.MistyRose;
             this.btThucDon.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btThucDon.IdleLineColor = System.Drawing.Color.SeaGreen;
             this.btThucDon.Location = new System.Drawing.Point(524, 0);
@@ -178,11 +193,11 @@
             this.btThongBao.ButtonText = "Thông báo";
             this.btThongBao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btThongBao.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btThongBao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThongBao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThongBao.ForeColor = System.Drawing.Color.SeaGreen;
             this.btThongBao.IdleBorderThickness = 1;
             this.btThongBao.IdleCornerRadius = 15;
-            this.btThongBao.IdleFillColor = System.Drawing.Color.White;
+            this.btThongBao.IdleFillColor = System.Drawing.Color.MistyRose;
             this.btThongBao.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btThongBao.IdleLineColor = System.Drawing.Color.SeaGreen;
             this.btThongBao.Location = new System.Drawing.Point(329, 0);
@@ -205,11 +220,11 @@
             this.btKhachHang.ButtonText = "Khách hàng";
             this.btKhachHang.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btKhachHang.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btKhachHang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btKhachHang.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btKhachHang.ForeColor = System.Drawing.Color.SeaGreen;
             this.btKhachHang.IdleBorderThickness = 1;
             this.btKhachHang.IdleCornerRadius = 15;
-            this.btKhachHang.IdleFillColor = System.Drawing.Color.White;
+            this.btKhachHang.IdleFillColor = System.Drawing.Color.MistyRose;
             this.btKhachHang.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btKhachHang.IdleLineColor = System.Drawing.Color.SeaGreen;
             this.btKhachHang.Location = new System.Drawing.Point(134, 0);
@@ -226,84 +241,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(134, 48);
             this.panel3.TabIndex = 0;
-            // 
-            // btTK_DangXuat
-            // 
-            this.btTK_DangXuat.ActiveBorderThickness = 1;
-            this.btTK_DangXuat.ActiveCornerRadius = 20;
-            this.btTK_DangXuat.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.btTK_DangXuat.ActiveForecolor = System.Drawing.Color.White;
-            this.btTK_DangXuat.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btTK_DangXuat.BackColor = System.Drawing.SystemColors.Control;
-            this.btTK_DangXuat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btTK_DangXuat.BackgroundImage")));
-            this.btTK_DangXuat.ButtonText = "Đăng xuất";
-            this.btTK_DangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btTK_DangXuat.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btTK_DangXuat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTK_DangXuat.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btTK_DangXuat.IdleBorderThickness = 1;
-            this.btTK_DangXuat.IdleCornerRadius = 20;
-            this.btTK_DangXuat.IdleFillColor = System.Drawing.Color.White;
-            this.btTK_DangXuat.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.btTK_DangXuat.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btTK_DangXuat.Location = new System.Drawing.Point(297, 0);
-            this.btTK_DangXuat.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btTK_DangXuat.Name = "btTK_DangXuat";
-            this.btTK_DangXuat.Size = new System.Drawing.Size(145, 47);
-            this.btTK_DangXuat.TabIndex = 9;
-            this.btTK_DangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btTK_ThongTin
-            // 
-            this.btTK_ThongTin.ActiveBorderThickness = 1;
-            this.btTK_ThongTin.ActiveCornerRadius = 20;
-            this.btTK_ThongTin.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.btTK_ThongTin.ActiveForecolor = System.Drawing.Color.White;
-            this.btTK_ThongTin.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btTK_ThongTin.BackColor = System.Drawing.SystemColors.Control;
-            this.btTK_ThongTin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btTK_ThongTin.BackgroundImage")));
-            this.btTK_ThongTin.ButtonText = "Thông tin";
-            this.btTK_ThongTin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btTK_ThongTin.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btTK_ThongTin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTK_ThongTin.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btTK_ThongTin.IdleBorderThickness = 1;
-            this.btTK_ThongTin.IdleCornerRadius = 20;
-            this.btTK_ThongTin.IdleFillColor = System.Drawing.Color.White;
-            this.btTK_ThongTin.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.btTK_ThongTin.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btTK_ThongTin.Location = new System.Drawing.Point(152, 0);
-            this.btTK_ThongTin.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btTK_ThongTin.Name = "btTK_ThongTin";
-            this.btTK_ThongTin.Size = new System.Drawing.Size(145, 47);
-            this.btTK_ThongTin.TabIndex = 8;
-            this.btTK_ThongTin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btTK_QuanLy
-            // 
-            this.btTK_QuanLy.ActiveBorderThickness = 1;
-            this.btTK_QuanLy.ActiveCornerRadius = 20;
-            this.btTK_QuanLy.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.btTK_QuanLy.ActiveForecolor = System.Drawing.Color.White;
-            this.btTK_QuanLy.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btTK_QuanLy.BackColor = System.Drawing.SystemColors.Control;
-            this.btTK_QuanLy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btTK_QuanLy.BackgroundImage")));
-            this.btTK_QuanLy.ButtonText = "Quản lý";
-            this.btTK_QuanLy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btTK_QuanLy.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btTK_QuanLy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTK_QuanLy.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btTK_QuanLy.IdleBorderThickness = 1;
-            this.btTK_QuanLy.IdleCornerRadius = 20;
-            this.btTK_QuanLy.IdleFillColor = System.Drawing.Color.White;
-            this.btTK_QuanLy.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.btTK_QuanLy.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btTK_QuanLy.Location = new System.Drawing.Point(7, 0);
-            this.btTK_QuanLy.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btTK_QuanLy.Name = "btTK_QuanLy";
-            this.btTK_QuanLy.Size = new System.Drawing.Size(145, 47);
-            this.btTK_QuanLy.TabIndex = 7;
-            this.btTK_QuanLy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnThongBao
             // 
@@ -322,7 +259,7 @@
             this.btTB_HangNgay.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btTB_HangNgay.ActiveForecolor = System.Drawing.Color.White;
             this.btTB_HangNgay.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btTB_HangNgay.BackColor = System.Drawing.SystemColors.Control;
+            this.btTB_HangNgay.BackColor = System.Drawing.Color.Azure;
             this.btTB_HangNgay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btTB_HangNgay.BackgroundImage")));
             this.btTB_HangNgay.ButtonText = "Hàng ngày";
             this.btTB_HangNgay.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -331,7 +268,7 @@
             this.btTB_HangNgay.ForeColor = System.Drawing.Color.SeaGreen;
             this.btTB_HangNgay.IdleBorderThickness = 1;
             this.btTB_HangNgay.IdleCornerRadius = 20;
-            this.btTB_HangNgay.IdleFillColor = System.Drawing.Color.White;
+            this.btTB_HangNgay.IdleFillColor = System.Drawing.Color.SeaShell;
             this.btTB_HangNgay.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btTB_HangNgay.IdleLineColor = System.Drawing.Color.SeaGreen;
             this.btTB_HangNgay.Location = new System.Drawing.Point(145, 0);
@@ -348,7 +285,7 @@
             this.btTB_TaiChinh.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btTB_TaiChinh.ActiveForecolor = System.Drawing.Color.White;
             this.btTB_TaiChinh.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btTB_TaiChinh.BackColor = System.Drawing.SystemColors.Control;
+            this.btTB_TaiChinh.BackColor = System.Drawing.Color.Azure;
             this.btTB_TaiChinh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btTB_TaiChinh.BackgroundImage")));
             this.btTB_TaiChinh.ButtonText = "Tài chính";
             this.btTB_TaiChinh.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -357,7 +294,7 @@
             this.btTB_TaiChinh.ForeColor = System.Drawing.Color.SeaGreen;
             this.btTB_TaiChinh.IdleBorderThickness = 1;
             this.btTB_TaiChinh.IdleCornerRadius = 20;
-            this.btTB_TaiChinh.IdleFillColor = System.Drawing.Color.White;
+            this.btTB_TaiChinh.IdleFillColor = System.Drawing.Color.SeaShell;
             this.btTB_TaiChinh.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btTB_TaiChinh.IdleLineColor = System.Drawing.Color.SeaGreen;
             this.btTB_TaiChinh.Location = new System.Drawing.Point(0, 0);
@@ -366,30 +303,6 @@
             this.btTB_TaiChinh.Size = new System.Drawing.Size(145, 47);
             this.btTB_TaiChinh.TabIndex = 6;
             this.btTB_TaiChinh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btHienThi
-            // 
-            this.btHienThi.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
-            this.btHienThi.ButtonImage = global::CoffeeShop.Properties.Resources.Collapse;
-            this.btHienThi.ButtonSmoothing = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
-            this.btHienThi.ButtonStyle = XanderUI.XUISuperButton.Style.RoundedEdges;
-            this.btHienThi.ButtonText = " Hiển thị menu";
-            this.btHienThi.CornerRadius = 5;
-            this.btHienThi.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btHienThi.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.btHienThi.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(217)))), ((int)(((byte)(174)))));
-            this.btHienThi.HoverTextColor = System.Drawing.Color.White;
-            this.btHienThi.ImagePosition = XanderUI.XUISuperButton.imgPosition.Left;
-            this.btHienThi.Location = new System.Drawing.Point(0, 0);
-            this.btHienThi.Name = "btHienThi";
-            this.btHienThi.SelectedBackColor = System.Drawing.Color.LimeGreen;
-            this.btHienThi.SelectedTextColor = System.Drawing.Color.White;
-            this.btHienThi.Size = new System.Drawing.Size(138, 45);
-            this.btHienThi.SuperSelected = false;
-            this.btHienThi.TabIndex = 2;
-            this.btHienThi.TextColor = System.Drawing.Color.White;
-            this.btHienThi.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.btHienThi.Click += new System.EventHandler(this.btHienThi_Click);
             // 
             // pn1
             // 
@@ -410,8 +323,87 @@
             this.pnTaiKhoan.Size = new System.Drawing.Size(442, 47);
             this.pnTaiKhoan.TabIndex = 11;
             // 
+            // btTK_QuanLy
+            // 
+            this.btTK_QuanLy.ActiveBorderThickness = 1;
+            this.btTK_QuanLy.ActiveCornerRadius = 20;
+            this.btTK_QuanLy.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btTK_QuanLy.ActiveForecolor = System.Drawing.Color.White;
+            this.btTK_QuanLy.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btTK_QuanLy.BackColor = System.Drawing.Color.Azure;
+            this.btTK_QuanLy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btTK_QuanLy.BackgroundImage")));
+            this.btTK_QuanLy.ButtonText = "Quản lý";
+            this.btTK_QuanLy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btTK_QuanLy.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btTK_QuanLy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTK_QuanLy.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btTK_QuanLy.IdleBorderThickness = 1;
+            this.btTK_QuanLy.IdleCornerRadius = 20;
+            this.btTK_QuanLy.IdleFillColor = System.Drawing.Color.SeaShell;
+            this.btTK_QuanLy.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btTK_QuanLy.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btTK_QuanLy.Location = new System.Drawing.Point(7, 0);
+            this.btTK_QuanLy.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btTK_QuanLy.Name = "btTK_QuanLy";
+            this.btTK_QuanLy.Size = new System.Drawing.Size(145, 47);
+            this.btTK_QuanLy.TabIndex = 7;
+            this.btTK_QuanLy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btTK_ThongTin
+            // 
+            this.btTK_ThongTin.ActiveBorderThickness = 1;
+            this.btTK_ThongTin.ActiveCornerRadius = 20;
+            this.btTK_ThongTin.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btTK_ThongTin.ActiveForecolor = System.Drawing.Color.White;
+            this.btTK_ThongTin.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btTK_ThongTin.BackColor = System.Drawing.Color.Azure;
+            this.btTK_ThongTin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btTK_ThongTin.BackgroundImage")));
+            this.btTK_ThongTin.ButtonText = "Thông tin";
+            this.btTK_ThongTin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btTK_ThongTin.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btTK_ThongTin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTK_ThongTin.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btTK_ThongTin.IdleBorderThickness = 1;
+            this.btTK_ThongTin.IdleCornerRadius = 20;
+            this.btTK_ThongTin.IdleFillColor = System.Drawing.Color.SeaShell;
+            this.btTK_ThongTin.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btTK_ThongTin.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btTK_ThongTin.Location = new System.Drawing.Point(152, 0);
+            this.btTK_ThongTin.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btTK_ThongTin.Name = "btTK_ThongTin";
+            this.btTK_ThongTin.Size = new System.Drawing.Size(145, 47);
+            this.btTK_ThongTin.TabIndex = 8;
+            this.btTK_ThongTin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btTK_DangXuat
+            // 
+            this.btTK_DangXuat.ActiveBorderThickness = 1;
+            this.btTK_DangXuat.ActiveCornerRadius = 20;
+            this.btTK_DangXuat.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btTK_DangXuat.ActiveForecolor = System.Drawing.Color.White;
+            this.btTK_DangXuat.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btTK_DangXuat.BackColor = System.Drawing.Color.Azure;
+            this.btTK_DangXuat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btTK_DangXuat.BackgroundImage")));
+            this.btTK_DangXuat.ButtonText = "Đăng xuất";
+            this.btTK_DangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btTK_DangXuat.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btTK_DangXuat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTK_DangXuat.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btTK_DangXuat.IdleBorderThickness = 1;
+            this.btTK_DangXuat.IdleCornerRadius = 20;
+            this.btTK_DangXuat.IdleFillColor = System.Drawing.Color.SeaShell;
+            this.btTK_DangXuat.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btTK_DangXuat.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btTK_DangXuat.Location = new System.Drawing.Point(297, 0);
+            this.btTK_DangXuat.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btTK_DangXuat.Name = "btTK_DangXuat";
+            this.btTK_DangXuat.Size = new System.Drawing.Size(145, 47);
+            this.btTK_DangXuat.TabIndex = 9;
+            this.btTK_DangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Azure;
             this.panel1.Controls.Add(this.pnLot_TaiKhoan);
             this.panel1.Controls.Add(this.pnLot_ThongBao);
             this.panel1.Controls.Add(this.mnLot_ThongBao);
@@ -422,6 +414,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1682, 45);
             this.panel1.TabIndex = 10;
+            // 
+            // pnLot_TaiKhoan
+            // 
+            this.pnLot_TaiKhoan.Controls.Add(this.pnTaiKhoan);
+            this.pnLot_TaiKhoan.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnLot_TaiKhoan.Location = new System.Drawing.Point(915, 0);
+            this.pnLot_TaiKhoan.Name = "pnLot_TaiKhoan";
+            this.pnLot_TaiKhoan.Size = new System.Drawing.Size(442, 45);
+            this.pnLot_TaiKhoan.TabIndex = 5;
             // 
             // pnLot_ThongBao
             // 
@@ -440,33 +441,393 @@
             this.mnLot_ThongBao.Size = new System.Drawing.Size(294, 45);
             this.mnLot_ThongBao.TabIndex = 11;
             // 
-            // pnLot_TaiKhoan
+            // btHienThi
             // 
-            this.pnLot_TaiKhoan.Controls.Add(this.pnTaiKhoan);
-            this.pnLot_TaiKhoan.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnLot_TaiKhoan.Location = new System.Drawing.Point(915, 0);
-            this.pnLot_TaiKhoan.Name = "pnLot_TaiKhoan";
-            this.pnLot_TaiKhoan.Size = new System.Drawing.Size(442, 45);
-            this.pnLot_TaiKhoan.TabIndex = 5;
+            this.btHienThi.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(77)))));
+            this.btHienThi.ButtonImage = global::CoffeeShop.Properties.Resources.Collapse;
+            this.btHienThi.ButtonSmoothing = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
+            this.btHienThi.ButtonStyle = XanderUI.XUISuperButton.Style.RoundedEdges;
+            this.btHienThi.ButtonText = " Hiển thị menu";
+            this.btHienThi.CornerRadius = 5;
+            this.btHienThi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btHienThi.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btHienThi.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btHienThi.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btHienThi.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(77)))));
+            this.btHienThi.HoverTextColor = System.Drawing.Color.DarkRed;
+            this.btHienThi.ImagePosition = XanderUI.XUISuperButton.imgPosition.Left;
+            this.btHienThi.Location = new System.Drawing.Point(0, 0);
+            this.btHienThi.Name = "btHienThi";
+            this.btHienThi.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(77)))));
+            this.btHienThi.SelectedTextColor = System.Drawing.Color.DarkRed;
+            this.btHienThi.Size = new System.Drawing.Size(138, 45);
+            this.btHienThi.SuperSelected = false;
+            this.btHienThi.TabIndex = 2;
+            this.btHienThi.TextColor = System.Drawing.Color.DarkRed;
+            this.btHienThi.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btHienThi.Click += new System.EventHandler(this.btHienThi_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Azure;
+            this.panel2.Controls.Add(this.flpDanhSachMon);
+            this.panel2.Controls.Add(this.pnLot_Order);
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Controls.Add(this.pnLot_ThanhTieuDe);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1682, 684);
+            this.panel2.TabIndex = 11;
+            // 
+            // flpDanhSachMon
+            // 
+            this.flpDanhSachMon.AutoScroll = true;
+            this.flpDanhSachMon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpDanhSachMon.Location = new System.Drawing.Point(528, 79);
+            this.flpDanhSachMon.Name = "flpDanhSachMon";
+            this.flpDanhSachMon.Size = new System.Drawing.Size(886, 605);
+            this.flpDanhSachMon.TabIndex = 4;
+            // 
+            // pnLot_Order
+            // 
+            this.pnLot_Order.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnLot_Order.Controls.Add(this.flpOrder);
+            this.pnLot_Order.Controls.Add(this.pnOrder);
+            this.pnLot_Order.Controls.Add(this.btThongTinKhachHang);
+            this.pnLot_Order.Controls.Add(this.btOrder);
+            this.pnLot_Order.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnLot_Order.Location = new System.Drawing.Point(0, 79);
+            this.pnLot_Order.Name = "pnLot_Order";
+            this.pnLot_Order.Size = new System.Drawing.Size(528, 605);
+            this.pnLot_Order.TabIndex = 3;
+            // 
+            // flpOrder
+            // 
+            this.flpOrder.Controls.Add(this.listOrder1);
+            this.flpOrder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpOrder.Location = new System.Drawing.Point(0, 146);
+            this.flpOrder.Name = "flpOrder";
+            this.flpOrder.Size = new System.Drawing.Size(526, 372);
+            this.flpOrder.TabIndex = 7;
+            // 
+            // listOrder1
+            // 
+            this.listOrder1.BackColor = System.Drawing.Color.Transparent;
+            this.listOrder1.Location = new System.Drawing.Point(3, 3);
+            this.listOrder1.Name = "listOrder1";
+            this.listOrder1.Size = new System.Drawing.Size(518, 59);
+            this.listOrder1.SoLuong = 1;
+            this.listOrder1.TabIndex = 0;
+            this.listOrder1.TenMon = "Cà phê đen";
+            this.listOrder1.TongTien = 25000D;
+            // 
+            // pnOrder
+            // 
+            this.pnOrder.ColumnCount = 2;
+            this.pnOrder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.pnOrder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.pnOrder.Controls.Add(this.button4, 1, 0);
+            this.pnOrder.Controls.Add(this.button3, 0, 0);
+            this.pnOrder.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnOrder.Location = new System.Drawing.Point(0, 80);
+            this.pnOrder.Name = "pnOrder";
+            this.pnOrder.RowCount = 1;
+            this.pnOrder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.pnOrder.Size = new System.Drawing.Size(526, 66);
+            this.pnOrder.TabIndex = 6;
+            // 
+            // button4
+            // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(266, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(257, 60);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "ĐÃ ORDER";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button3.Location = new System.Drawing.Point(3, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(257, 60);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "ĐANG ORDER";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // btThongTinKhachHang
+            // 
+            this.btThongTinKhachHang.BackColor = System.Drawing.Color.Maroon;
+            this.btThongTinKhachHang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btThongTinKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btThongTinKhachHang.FlatAppearance.BorderSize = 0;
+            this.btThongTinKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btThongTinKhachHang.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThongTinKhachHang.ForeColor = System.Drawing.Color.White;
+            this.btThongTinKhachHang.Location = new System.Drawing.Point(0, 0);
+            this.btThongTinKhachHang.Name = "btThongTinKhachHang";
+            this.btThongTinKhachHang.Size = new System.Drawing.Size(526, 80);
+            this.btThongTinKhachHang.TabIndex = 5;
+            this.btThongTinKhachHang.Text = "THÔNG TIN KHÁCH HÀNG";
+            this.btThongTinKhachHang.UseVisualStyleBackColor = false;
+            this.btThongTinKhachHang.Click += new System.EventHandler(this.btThongTinKhachHang_Click);
+            // 
+            // btOrder
+            // 
+            this.btOrder.BackColor = System.Drawing.Color.Red;
+            this.btOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btOrder.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btOrder.FlatAppearance.BorderSize = 0;
+            this.btOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btOrder.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btOrder.ForeColor = System.Drawing.Color.White;
+            this.btOrder.Location = new System.Drawing.Point(0, 518);
+            this.btOrder.Name = "btOrder";
+            this.btOrder.Size = new System.Drawing.Size(526, 85);
+            this.btOrder.TabIndex = 4;
+            this.btOrder.Text = "750.000";
+            this.btOrder.UseVisualStyleBackColor = false;
+            this.btOrder.Click += new System.EventHandler(this.btOrder_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.btMonAn);
+            this.panel5.Controls.Add(this.btThucUong);
+            this.panel5.Controls.Add(this.btMonPhoBien);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(1414, 79);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(268, 605);
+            this.panel5.TabIndex = 1;
+            // 
+            // btMonAn
+            // 
+            this.btMonAn.ActiveBorderThickness = 2;
+            this.btMonAn.ActiveCornerRadius = 10;
+            this.btMonAn.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btMonAn.ActiveForecolor = System.Drawing.Color.White;
+            this.btMonAn.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btMonAn.BackColor = System.Drawing.Color.Azure;
+            this.btMonAn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btMonAn.BackgroundImage")));
+            this.btMonAn.ButtonText = "MÓN ĂN";
+            this.btMonAn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btMonAn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btMonAn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btMonAn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btMonAn.IdleBorderThickness = 2;
+            this.btMonAn.IdleCornerRadius = 10;
+            this.btMonAn.IdleFillColor = System.Drawing.Color.White;
+            this.btMonAn.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btMonAn.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btMonAn.Location = new System.Drawing.Point(0, 162);
+            this.btMonAn.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
+            this.btMonAn.Name = "btMonAn";
+            this.btMonAn.Size = new System.Drawing.Size(268, 81);
+            this.btMonAn.TabIndex = 2;
+            this.btMonAn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btThucUong
+            // 
+            this.btThucUong.ActiveBorderThickness = 2;
+            this.btThucUong.ActiveCornerRadius = 10;
+            this.btThucUong.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btThucUong.ActiveForecolor = System.Drawing.Color.White;
+            this.btThucUong.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btThucUong.BackColor = System.Drawing.Color.Azure;
+            this.btThucUong.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btThucUong.BackgroundImage")));
+            this.btThucUong.ButtonText = "THỨC UỐNG";
+            this.btThucUong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btThucUong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btThucUong.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThucUong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btThucUong.IdleBorderThickness = 2;
+            this.btThucUong.IdleCornerRadius = 10;
+            this.btThucUong.IdleFillColor = System.Drawing.Color.White;
+            this.btThucUong.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btThucUong.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btThucUong.Location = new System.Drawing.Point(0, 81);
+            this.btThucUong.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
+            this.btThucUong.Name = "btThucUong";
+            this.btThucUong.Size = new System.Drawing.Size(268, 81);
+            this.btThucUong.TabIndex = 1;
+            this.btThucUong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btMonPhoBien
+            // 
+            this.btMonPhoBien.ActiveBorderThickness = 2;
+            this.btMonPhoBien.ActiveCornerRadius = 10;
+            this.btMonPhoBien.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btMonPhoBien.ActiveForecolor = System.Drawing.Color.White;
+            this.btMonPhoBien.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btMonPhoBien.BackColor = System.Drawing.Color.Azure;
+            this.btMonPhoBien.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btMonPhoBien.BackgroundImage")));
+            this.btMonPhoBien.ButtonText = "PHỔ BIẾN";
+            this.btMonPhoBien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btMonPhoBien.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btMonPhoBien.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btMonPhoBien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btMonPhoBien.IdleBorderThickness = 2;
+            this.btMonPhoBien.IdleCornerRadius = 10;
+            this.btMonPhoBien.IdleFillColor = System.Drawing.Color.White;
+            this.btMonPhoBien.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btMonPhoBien.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btMonPhoBien.Location = new System.Drawing.Point(0, 0);
+            this.btMonPhoBien.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
+            this.btMonPhoBien.Name = "btMonPhoBien";
+            this.btMonPhoBien.Size = new System.Drawing.Size(268, 81);
+            this.btMonPhoBien.TabIndex = 0;
+            this.btMonPhoBien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnLot_ThanhTieuDe
+            // 
+            this.pnLot_ThanhTieuDe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnLot_ThanhTieuDe.Controls.Add(this.btDanhSachBan);
+            this.pnLot_ThanhTieuDe.Controls.Add(this.panel6);
+            this.pnLot_ThanhTieuDe.Controls.Add(this.pnLotTimKiemOrder);
+            this.pnLot_ThanhTieuDe.Controls.Add(this.lbID_HoaDon);
+            this.pnLot_ThanhTieuDe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnLot_ThanhTieuDe.Location = new System.Drawing.Point(0, 0);
+            this.pnLot_ThanhTieuDe.Name = "pnLot_ThanhTieuDe";
+            this.pnLot_ThanhTieuDe.Size = new System.Drawing.Size(1682, 79);
+            this.pnLot_ThanhTieuDe.TabIndex = 0;
+            // 
+            // btDanhSachBan
+            // 
+            this.btDanhSachBan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btDanhSachBan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btDanhSachBan.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btDanhSachBan.FlatAppearance.BorderSize = 0;
+            this.btDanhSachBan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btDanhSachBan.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDanhSachBan.ForeColor = System.Drawing.Color.White;
+            this.btDanhSachBan.Location = new System.Drawing.Point(914, 0);
+            this.btDanhSachBan.Name = "btDanhSachBan";
+            this.btDanhSachBan.Size = new System.Drawing.Size(387, 77);
+            this.btDanhSachBan.TabIndex = 5;
+            this.btDanhSachBan.Text = "BÀN";
+            this.btDanhSachBan.UseVisualStyleBackColor = false;
+            this.btDanhSachBan.Click += new System.EventHandler(this.btDanhSachBan_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(914, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(766, 77);
+            this.panel6.TabIndex = 4;
+            // 
+            // pnLotTimKiemOrder
+            // 
+            this.pnLotTimKiemOrder.Controls.Add(this.button6);
+            this.pnLotTimKiemOrder.Controls.Add(this.comboBox1);
+            this.pnLotTimKiemOrder.Controls.Add(this.btHuyNoiDungTimKiem);
+            this.pnLotTimKiemOrder.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnLotTimKiemOrder.Location = new System.Drawing.Point(224, 0);
+            this.pnLotTimKiemOrder.Name = "pnLotTimKiemOrder";
+            this.pnLotTimKiemOrder.Size = new System.Drawing.Size(690, 77);
+            this.pnLotTimKiemOrder.TabIndex = 2;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button6.Location = new System.Drawing.Point(430, 0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(260, 77);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "TÌM KIẾM";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(163)))), ((int)(((byte)(26)))));
+            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.ForeColor = System.Drawing.Color.White;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(73, 0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(357, 75);
+            this.comboBox1.TabIndex = 3;
+            // 
+            // btHuyNoiDungTimKiem
+            // 
+            this.btHuyNoiDungTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(163)))), ((int)(((byte)(26)))));
+            this.btHuyNoiDungTimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btHuyNoiDungTimKiem.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btHuyNoiDungTimKiem.FlatAppearance.BorderSize = 0;
+            this.btHuyNoiDungTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btHuyNoiDungTimKiem.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btHuyNoiDungTimKiem.ForeColor = System.Drawing.Color.White;
+            this.btHuyNoiDungTimKiem.Location = new System.Drawing.Point(0, 0);
+            this.btHuyNoiDungTimKiem.Name = "btHuyNoiDungTimKiem";
+            this.btHuyNoiDungTimKiem.Size = new System.Drawing.Size(73, 77);
+            this.btHuyNoiDungTimKiem.TabIndex = 0;
+            this.btHuyNoiDungTimKiem.Text = "X";
+            this.btHuyNoiDungTimKiem.UseVisualStyleBackColor = false;
+            // 
+            // lbID_HoaDon
+            // 
+            this.lbID_HoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(77)))));
+            this.lbID_HoaDon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbID_HoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbID_HoaDon.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID_HoaDon.ForeColor = System.Drawing.Color.White;
+            this.lbID_HoaDon.Image = global::CoffeeShop.Properties.Resources.Info;
+            this.lbID_HoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbID_HoaDon.Location = new System.Drawing.Point(0, 0);
+            this.lbID_HoaDon.Name = "lbID_HoaDon";
+            this.lbID_HoaDon.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.lbID_HoaDon.Size = new System.Drawing.Size(224, 77);
+            this.lbID_HoaDon.TabIndex = 0;
+            this.lbID_HoaDon.Text = "HD-0001";
+            this.lbID_HoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // fBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1682, 779);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.xuiGradientPanel1);
             this.Controls.Add(this.pnThanhChon);
+            this.DoubleBuffered = true;
             this.Name = "fBanHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form3";
+            this.Text = "S";
             this.Load += new System.EventHandler(this.fBanHang_Load);
             this.pnThanhChon.ResumeLayout(false);
             this.pnThongBao.ResumeLayout(false);
             this.pnTaiKhoan.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.mnLot_ThongBao.ResumeLayout(false);
             this.pnLot_TaiKhoan.ResumeLayout(false);
+            this.mnLot_ThongBao.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.pnLot_Order.ResumeLayout(false);
+            this.flpOrder.ResumeLayout(false);
+            this.pnOrder.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.pnLot_ThanhTieuDe.ResumeLayout(false);
+            this.pnLotTimKiemOrder.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -474,7 +835,6 @@
         #endregion
         private XanderUI.XUISuperButton btHienThi;
         private ns1.BunifuThinButton2 btKhachHang;
-        private XanderUI.XUIGradientPanel xuiGradientPanel1;
         private System.Windows.Forms.Panel pnThanhChon;
         private System.Windows.Forms.Panel panel3;
         private ns1.BunifuThinButton2 btThongBao;
@@ -493,5 +853,27 @@
         private System.Windows.Forms.Panel mnLot_ThongBao;
         private System.Windows.Forms.Panel pnLot_TaiKhoan;
         private System.Windows.Forms.Panel pnTaiKhoan;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnLot_ThanhTieuDe;
+        private System.Windows.Forms.Panel pnLot_Order;
+        private System.Windows.Forms.Button btOrder;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TableLayoutPanel pnOrder;
+        private System.Windows.Forms.Button btThongTinKhachHang;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.FlowLayoutPanel flpOrder;
+        private System.Windows.Forms.FlowLayoutPanel flpDanhSachMon;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label lbID_HoaDon;
+        private System.Windows.Forms.Panel pnLotTimKiemOrder;
+        private System.Windows.Forms.Button btHuyNoiDungTimKiem;
+        private System.Windows.Forms.Panel panel6;
+        private ns1.BunifuThinButton2 btMonPhoBien;
+        private ns1.BunifuThinButton2 btMonAn;
+        private ns1.BunifuThinButton2 btThucUong;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btDanhSachBan;
+        private ListOrder listOrder1;
     }
 }

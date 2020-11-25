@@ -117,29 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Info" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="bunifuDragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bunifuThinButton21.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAIwAAAAsCAYAAAC33FDQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAG0SURBVHhe7dw7S0JxGMfxM9j9ZgURDb2DaG3pDbQFbUHN
+        LS2tQdCFIqKh9xBNUVurRSVEUZNCkUKoLZXdSMPsyed40EzFntnvB34gHje/HM7yP07AcYSx/45gmGkE
+        w0wjGGYawTDTCIaZVhbMxbAjkdkuia20S2LdYXU6/f+jc365HCntoxDMUYvj/uBhe0xS13vy9RwV1C/9
+        /9ORA0nuT8ndvF9Ouv8Eo7F8hHa8nwNFn/GgxBZ75NDnBXM12iBPu5PeZaDcS2BBwhNt+WD07qK3H6Ca
+        zGM4d5fpzAeTWGuSbDrpXQIq04fhfDC5D0AtBAMTgoEJwcCEYGBCMDAhGJgQDEwIBiYEAxOCgQnBwIRg
+        YEIwMCEYmBAMTAgGJgQDE4KBCcHAhGBg8isYn3xnUt7XQGWFYPQopJ5uA6rJvt9LfLU1H0xovFlej5e8
+        S0A5PUZ9O+MdZNMzs7FlPwfwUZE+riQ2+t0D+W4wuuCAk7vl9Mrb2RanIOHSUPRNHonNQTkfaix9e4NO
+        X/lxM93hHp3VBxxW7/O57wo67Ss2UhIMY7VGMMw0gmGmEQwzjWCYYY78AOKG5cGxLeUQAAAAAElFTkSu
+        QmCC
+</value>
   </data>
-  <data name="OpenEye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\OpenEye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Collapse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Collapse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Close" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="KhoiDong" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KhoiDong.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Minimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Minimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CloseEye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CloseEye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bunifuThinButton22.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAALUAAABBCAYAAACXUOWmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALWSURBVHhe7d2/axNhHMfxjo6Ojo6Ojo6Oji5CF8HF/8LB
+        WURRcBAcHASHgmKhgouLiKCIOCp0KFL7M71ckuZyuUu/Pp+rDQl5qlua58v7A6+heI3LO+HJDb2ltpkB
+        nhA13CFquEPUcIeo4Q5Rw53/Rn0YlGVu1SCzUdkNPzE2/6k9NTgctK0ffs6DWK9yatS9YDTIrVhfs2x1
+        2fZfXrWdpxft970lYO7Unho8eH3d+j9WrA6BH46G0XZnotY7oAzvhnLzk20/uRD9D4Cztv3ovPV/vgqf
+        3NnMp/ZU1PrHqmhZ+93t6AsBi6a1cs2q7qZ1Jjqeilqf0ASN1OhYovP2TNQ6Q+vIEfslYNH1vj62oiqm
+        o9aXQs7QSNXWg3NW5RvNMaSJWrdI9I0ydjGQis6HO1bUxXHUuvenWyWxC4FU7D2/bHVouYm6LnPbfXYp
+        eiGQCh1BjkbVcdRH9aC57xe7EEiJ1kStxS4AUqMRNVzRiBquaEQNVzSihisaUcMVjajhikbUcEUjarii
+        ETVc0YgarmhEDVc0ooYrGlHDFY2o4YpG1HBFI2q4ohE1XNGIGq5oRA1XNKKGKxpRwxWNqOGKRtRwRSNq
+        uKIRNVzRiBquaEQNVzSihisaUcMVjajhikbUcEVrotZfX9dfYY9dBKRkHLWe+8wjmuHBOGo9CldPDo1d
+        BKRCzy3S84uaqItw/Oh9eRi9EEhF9vaWleHU0UStByrWvS3O1UjaYOO9HZ4cP5pP62HXup/vRy8GFl22
+        dtPK4mD6Mc4y7O/Z3osr0V8CFpUeP1739y3/2/FU1DqGVJ1fPCgUyVDQ5e536010PBW1dIOqaFnn493o
+        iwCLIntzo/mEngxaZqI+UQx7Vu58a75R6t0Qe1Fg3vRk5mx12Yr1tXCGbo2PHJNOjVr0DtAtktFQ3ykZ
+        O/vpkeNlmTd3OWLNyj+jBlJE1HCHqOEOUcMdooYzZn8AaA0NgY375CQAAAAASUVORK5CYII=
+</value>
   </data>
 </root>

@@ -117,29 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Info" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btThoat.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAATQAAABgCAYAAACT6Y7KAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAANpSURBVHhe7dsxb1NXGMfhjBkzMmbM6JExY0aPHvMxvDH6
+        Y2TM6DFjEKgKhSJTIuS2Q1wQyEAU3KpCFkLocN57VTdRXEbwffU80l8CBxh/Oudes/VXKcXMLMMEzczS
+        TNDMLM0EzczSTNDMLM0EzczS7JtB+7BcltnxcXk+GJSn+/vlbHe33N/aMjP7bovuRH+e9fvl4uioXC0W
+        a3sV+9+gvTo5af6hFzVm72rUFqenZTmb1Z8AfD/RnejP5XhcpoeHTZcibOu6dStoUb/z+pd+PTgon+bz
+        +gnA5vhcGxVhm9RGXdZGXe/XjaBFzB73emVe6wewya7qLfKXu3fL+3qCWxu0OJmJGdAVcRWN52u3ghbP
+        zOKaCdAlF8Nh+WM0+i9o8TYzHrR5ZgZ0zZfarye9Xnk7nbZBizcG8ZANoIte1hPatJ7UmqDF9zvilShA
+        F/0zmTQvNJugPdrbKx/rcQ2gi+La+WB7uw3aw52d5rsdAF0V/6ugCVr8AqDLBA1IQ9CANAQNSEPQgDQE
+        DUhD0IA0BA1IQ9CANAQNSEPQgDQEDUhD0IA0BA1IQ9CANAQNSEPQgDQEDUhD0IA0BA1IQ9CANAQNSEPQ
+        gDQEDUhD0IA0BA1IQ9CANAQNSEPQgDQEDUhD0IA0BA1IQ9CANAQNSEPQgDQEDUhD0IA0BA1IQ9CANAQN
+        SEPQgDQEDUhD0IA0BA1IQ9CANAQNSEPQgDQEDUhD0IA0BA1IQ9CANAQNSEPQgDQEDUhD0IA0BA1IQ9CA
+        NAQNSEPQgDQEDUhD0IA0BA1IQ9CANFZBe7C9Xb4sl+2nAB20CtrZ7m5ZzmbtpwAdtAra5OCgXJ2ctJ8C
+        dMzH6bQ82ttrg/b7aFQuhsP2JwAdMz86KueHh23Q3tfr5s+1bp6jAV103u+Xl+NxG7TYb/fulVkdQJe8
+        Oz4uzweDpmOroH2op7On+/vl77Oz+DMAG+/TfN7cLq8Wi5tBi72dTsuTXq95wAawySJmk3oIe316umrY
+        jaDF3tQT2uMatT9Ho/o7gM1zOR43J7PrMYvdClosrp/T4bCpX7w9iBIC/Eif67Uynpe9GAzKs35/dc28
+        vrVB+3dRv3gV+tOdO82X1szMftQe7uw0D/9nNWrrehX7ZtDMzLo0QTOzNBM0M0szQTOzNBM0M0uyUr4C
+        XXHeAEHg2DcAAAAASUVORK5CYII=
+</value>
   </data>
-  <data name="OpenEye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\OpenEye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bunifuThinButton22.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAS8AAABgCAYAAABMp/TVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAANoSURBVHhe7dq/b1NXGMfhjBkzMmbM6JExY0aPHvNneGP0
+        n5Exo8eMqUBVKBSZEqHbdohL1cpAFNyqQhZC6HDee1WTKIYNuK/0PNJXSpwf40f3HHvrn1KKmVm2iZeZ
+        pZx4mVnKiZeZpZx4mVnKiZeZpdwX4/VmtSrz4+PybDQqT/b3y9nubvlha8vM7KssGhOteTocloujo3K1
+        XG5sU+yz8frz5KT9R89ruF7VgC1PT8tqPq8/Afg6ojHRmsvptDSHh22DImKbGnUrXlG68/pHvxwclHeL
+        RX0F4Pt4X3sUEZvVHl3WHl1v1Y14RbgeDQZlUUsH0BdX9ST489275XV9MtsYr3jiEi6gj+I4Gfdht+IV
+        d1xxVAToq4vxuPw+mXyKV7yrGBdj7riAPvtQW/V4MCgvm6aLV9zmx6UYQN+9qE9eTX0Ca+MVn6mItyYB
+        +u6/2ax9Y7GN18O9vfK2PoYB9F0cHe9vb3fxerCz036eAiCD+DR+G6/4AiAL8QJSEi8gJfECUhIvICXx
+        AlISLyAl8QJSEi8gJfECUhIvICXxAlISLyAl8QJSEi8gJfECUhIvICXxAlISLyAl8QJSEi8gJfECUhIv
+        ICXxAlISLyAl8QJSEi8gJfECUhIvICXxAlISLyAl8QJSEi8gJfECUhIvICXxAlISLyAl8QJSEi8gJfEC
+        UhIvICXxAlISLyAl8QJSEi8gJfECUhIvICXxAlISLyAl8QJSEi8gJfECUhIvICXxAlISLyAl8QJSEi8g
+        JfECUhIvICXxAlISLyAl8QJSEi8gpXW87m9vlw+rVfcqQM+t43W2u1tW83n3KkDPreM1OzgoVycn3asA
+        Pfa2acrDvb0uXr9NJuViPO5+AtBji6Ojcn542MXrdT0y/lRL5t4L6Lvz4bC8mE67eMV+vXevzOsA+urV
+        8XF5Nhq1zVrH60196nqyv1/+PTuL3wHolXeLRXtCvFoub8Yr9rJpyuPBoL0QA+iLCNesPlz9dXq67tWN
+        eMX+rk9ej2rA/phM6ncA39fldNo+cV0PV+xWvGJxhGzG47Z0cbMf1QP4Vt7Xo2Hcbz0fjcrT4XB9VLy+
+        jfH6f1G6eEvyxzt32g+FmZl9iz3Y2Wkv5uc1YJvaFPtivMzM+jrxMrOUEy8zSznxMrOUEy8zS7hSPgIc
+        wX6yCpnx5AAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="Collapse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Collapse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Close" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="KhoiDong" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KhoiDong.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Minimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Minimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CloseEye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CloseEye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="bunifuDragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

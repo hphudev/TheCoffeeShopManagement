@@ -166,7 +166,7 @@
             this.btThoat.ForeColor = System.Drawing.Color.SeaGreen;
             this.btThoat.IdleBorderThickness = 2;
             this.btThoat.IdleCornerRadius = 30;
-            this.btThoat.IdleFillColor = System.Drawing.Color.White;
+            this.btThoat.IdleFillColor = System.Drawing.Color.MistyRose;
             this.btThoat.IdleForecolor = System.Drawing.SystemColors.Highlight;
             this.btThoat.IdleLineColor = System.Drawing.SystemColors.Highlight;
             this.btThoat.Location = new System.Drawing.Point(292, 465);
@@ -191,7 +191,7 @@
             this.btDangNhap.ForeColor = System.Drawing.Color.SeaGreen;
             this.btDangNhap.IdleBorderThickness = 2;
             this.btDangNhap.IdleCornerRadius = 30;
-            this.btDangNhap.IdleFillColor = System.Drawing.Color.White;
+            this.btDangNhap.IdleFillColor = System.Drawing.Color.MistyRose;
             this.btDangNhap.IdleForecolor = System.Drawing.SystemColors.Highlight;
             this.btDangNhap.IdleLineColor = System.Drawing.SystemColors.Highlight;
             this.btDangNhap.Location = new System.Drawing.Point(28, 465);

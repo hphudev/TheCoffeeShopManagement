@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoffeeShop.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,15 @@ namespace CoffeeShop
         public fBanHang()
         {
             InitializeComponent();
+            DoubleBuffered = true;
+            this.WindowState = FormWindowState.Maximized;
+            for (int i = 0; i < 10; i++)
+            {
+                ListItem item1 = new ListItem();
+                item1.Image = Resources.KhoiDong;
+                item1.Title = "CÀ PHÊ";
+                flpDanhSachMon.Controls.Add(item1);
+            }
         }
 
         private void btHienThi_Click(object sender, EventArgs e)
@@ -114,6 +124,32 @@ namespace CoffeeShop
                 }
                 bTaiKhoan = true;
             }
+        }
+
+        private void jMaterialTextbox1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void jMaterialTextbox1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("0k");
+        }
+
+
+        private void btOrder_Click(object sender, EventArgs e)
+        {
+            new F_Order(this);
+        }
+
+        private void btDanhSachBan_Click(object sender, EventArgs e)
+        {
+            new F_DanhSachBan();
+        }
+
+        private void btThongTinKhachHang_Click(object sender, EventArgs e)
+        {
+            new fThongTinKhachHang();
         }
     }
 }

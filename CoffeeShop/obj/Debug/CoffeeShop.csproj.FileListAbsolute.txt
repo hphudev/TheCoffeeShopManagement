@@ -1,7 +1,6 @@
 F:\CoffeeShop\CoffeeShop\bin\Debug\CoffeeShop.exe.config
 F:\CoffeeShop\CoffeeShop\bin\Debug\CoffeeShop.exe
 F:\CoffeeShop\CoffeeShop\bin\Debug\CoffeeShop.pdb
-F:\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.csprojAssemblyReference.cache
 F:\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.Form1.resources
 F:\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.Properties.Resources.resources
 F:\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.csproj.GenerateResource.cache
@@ -19,3 +18,15 @@ F:\CoffeeShop\CoffeeShop\bin\Debug\JThinButton.dll
 F:\CoffeeShop\CoffeeShop\bin\Debug\JMaterialTextbox.dll
 F:\CoffeeShop\CoffeeShop\bin\Debug\XanderUI.dll
 F:\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.fBanHang.resources
+F:\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.ListItem.resources
+F:\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.F_Order.resources
+F:\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.F_BangKhoa.resources
+F:\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.F_DanhSachBan.resources
+F:\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.fThongTinKhachHang.resources
+F:\CoffeeShop\CoffeeShop\bin\Debug\JMetroTextBox.dll
+F:\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.ListOrder.resources
+F:\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.F_QuanLyTaiKhoan.resources
+F:\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.F_ThemTaiKhoan.resources
+F:\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.F_ChinhSuaTaiKhoan.resources
+F:\CoffeeShop\CoffeeShop\bin\Debug\JDragControl.dll
+F:\CoffeeShop\CoffeeShop\obj\Debug\CoffeeShop.csprojAssemblyReference.cache
