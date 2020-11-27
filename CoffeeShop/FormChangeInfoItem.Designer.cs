@@ -45,9 +45,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.cbSex = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cbSex = new System.Windows.Forms.ComboBox();
+            this.lbID_HoaDon = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImageItem)).BeginInit();
             this.panel5.SuspendLayout();
@@ -167,7 +168,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.label3.Padding = new System.Windows.Forms.Padding(200, 0, 0, 0);
             this.label3.Size = new System.Drawing.Size(729, 93);
             this.label3.TabIndex = 1;
             this.label3.Text = "CHỈNH SỬA MÓN";
@@ -175,6 +176,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.lbID_HoaDon);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
@@ -284,6 +286,21 @@
             this.panel7.Size = new System.Drawing.Size(723, 71);
             this.panel7.TabIndex = 7;
             // 
+            // cbSex
+            // 
+            this.cbSex.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbSex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.cbSex.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbSex.DropDownHeight = 5;
+            this.cbSex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbSex.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSex.FormattingEnabled = true;
+            this.cbSex.IntegralHeight = false;
+            this.cbSex.Location = new System.Drawing.Point(218, 0);
+            this.cbSex.Name = "cbSex";
+            this.cbSex.Size = new System.Drawing.Size(505, 70);
+            this.cbSex.TabIndex = 8;
+            // 
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.Maroon;
@@ -308,20 +325,22 @@
             this.panel2.Size = new System.Drawing.Size(729, 508);
             this.panel2.TabIndex = 0;
             // 
-            // cbSex
+            // lbID_HoaDon
             // 
-            this.cbSex.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbSex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.cbSex.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbSex.DropDownHeight = 5;
-            this.cbSex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbSex.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSex.FormattingEnabled = true;
-            this.cbSex.IntegralHeight = false;
-            this.cbSex.Location = new System.Drawing.Point(218, 0);
-            this.cbSex.Name = "cbSex";
-            this.cbSex.Size = new System.Drawing.Size(505, 70);
-            this.cbSex.TabIndex = 8;
+            this.lbID_HoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbID_HoaDon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbID_HoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbID_HoaDon.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID_HoaDon.ForeColor = System.Drawing.Color.White;
+            this.lbID_HoaDon.Image = global::CoffeeShopManagement.Properties.Resources.Info;
+            this.lbID_HoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbID_HoaDon.Location = new System.Drawing.Point(0, 0);
+            this.lbID_HoaDon.Name = "lbID_HoaDon";
+            this.lbID_HoaDon.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.lbID_HoaDon.Size = new System.Drawing.Size(277, 93);
+            this.lbID_HoaDon.TabIndex = 3;
+            this.lbID_HoaDon.Text = "MON-0001";
+            this.lbID_HoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormChangeInfoItem
             // 
@@ -371,5 +390,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox cbSex;
+        private System.Windows.Forms.Label lbID_HoaDon;
     }
 }

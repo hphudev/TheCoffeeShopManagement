@@ -40,6 +40,7 @@
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.cbPosition = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.tbSalary = new System.Windows.Forms.TextBox();
@@ -59,6 +60,7 @@
             this.lCMND = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.cbSex = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbName = new System.Windows.Forms.TextBox();
@@ -66,8 +68,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbID_HoaDon = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbSex = new System.Windows.Forms.ComboBox();
-            this.cbPosition = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -216,6 +216,21 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(1109, 70);
             this.panel10.TabIndex = 13;
+            // 
+            // cbPosition
+            // 
+            this.cbPosition.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.cbPosition.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbPosition.DropDownHeight = 5;
+            this.cbPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbPosition.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPosition.FormattingEnabled = true;
+            this.cbPosition.IntegralHeight = false;
+            this.cbPosition.Location = new System.Drawing.Point(340, 0);
+            this.cbPosition.Name = "cbPosition";
+            this.cbPosition.Size = new System.Drawing.Size(769, 70);
+            this.cbPosition.TabIndex = 8;
             // 
             // label8
             // 
@@ -475,6 +490,21 @@
             this.panel14.Size = new System.Drawing.Size(450, 70);
             this.panel14.TabIndex = 8;
             // 
+            // cbSex
+            // 
+            this.cbSex.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbSex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.cbSex.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbSex.DropDownHeight = 5;
+            this.cbSex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbSex.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSex.FormattingEnabled = true;
+            this.cbSex.IntegralHeight = false;
+            this.cbSex.Location = new System.Drawing.Point(340, 0);
+            this.cbSex.Name = "cbSex";
+            this.cbSex.Size = new System.Drawing.Size(319, 70);
+            this.cbSex.TabIndex = 7;
+            // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Maroon;
@@ -539,6 +569,7 @@
             this.lbID_HoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbID_HoaDon.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbID_HoaDon.ForeColor = System.Drawing.Color.White;
+            this.lbID_HoaDon.Image = global::CoffeeShopManagement.Properties.Resources.Info;
             this.lbID_HoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lbID_HoaDon.Location = new System.Drawing.Point(0, 0);
             this.lbID_HoaDon.Name = "lbID_HoaDon";
@@ -561,36 +592,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "THÊM TÀI KHOẢN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbSex
-            // 
-            this.cbSex.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbSex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.cbSex.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbSex.DropDownHeight = 5;
-            this.cbSex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbSex.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSex.FormattingEnabled = true;
-            this.cbSex.IntegralHeight = false;
-            this.cbSex.Location = new System.Drawing.Point(340, 0);
-            this.cbSex.Name = "cbSex";
-            this.cbSex.Size = new System.Drawing.Size(319, 70);
-            this.cbSex.TabIndex = 7;
-            // 
-            // cbPosition
-            // 
-            this.cbPosition.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.cbPosition.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbPosition.DropDownHeight = 5;
-            this.cbPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbPosition.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPosition.FormattingEnabled = true;
-            this.cbPosition.IntegralHeight = false;
-            this.cbPosition.Location = new System.Drawing.Point(340, 0);
-            this.cbPosition.Name = "cbPosition";
-            this.cbPosition.Size = new System.Drawing.Size(769, 70);
-            this.cbPosition.TabIndex = 8;
             // 
             // FormAddStaff
             // 
