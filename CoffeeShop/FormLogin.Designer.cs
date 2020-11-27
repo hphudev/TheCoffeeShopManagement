@@ -174,7 +174,7 @@
             this.buttonThoat.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.buttonThoat.Name = "buttonThoat";
             this.buttonThoat.Size = new System.Drawing.Size(206, 66);
-            this.buttonThoat.TabIndex = 8;
+            this.buttonThoat.TabIndex = 3;
             this.buttonThoat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonThoat.Click += new System.EventHandler(this.ButtonThoat_Click_1);
             // 
@@ -200,7 +200,7 @@
             this.btDangNhap.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btDangNhap.Name = "btDangNhap";
             this.btDangNhap.Size = new System.Drawing.Size(206, 66);
-            this.btDangNhap.TabIndex = 7;
+            this.btDangNhap.TabIndex = 2;
             this.btDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tbMatKhau
@@ -221,7 +221,7 @@
             this.tbMatKhau.OnFocusedTextColor = System.Drawing.Color.DarkBlue;
             this.tbMatKhau.ReadOnly = false;
             this.tbMatKhau.Size = new System.Drawing.Size(440, 42);
-            this.tbMatKhau.TabIndex = 6;
+            this.tbMatKhau.TabIndex = 1;
             this.tbMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbMatKhau.TextName = "";
             // 
@@ -243,7 +243,7 @@
             this.tbTenDangNhap.OnFocusedTextColor = System.Drawing.Color.DarkBlue;
             this.tbTenDangNhap.ReadOnly = false;
             this.tbTenDangNhap.Size = new System.Drawing.Size(440, 42);
-            this.tbTenDangNhap.TabIndex = 5;
+            this.tbTenDangNhap.TabIndex = 0;
             this.tbTenDangNhap.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbTenDangNhap.TextName = "";
             // 

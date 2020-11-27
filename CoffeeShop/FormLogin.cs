@@ -12,9 +12,10 @@ using System.Security.Cryptography;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormLogin : Form
+    public partial class FormLogin : System.Windows.Forms.Form
     {
         FormInit parent;
+
         public FormLogin(FormInit parent)
         {
             InitializeComponent();
@@ -86,6 +87,7 @@ namespace CoffeeShopManagement
                 {
                     new FormBanHang(this).Show();
                     this.Hide();
+                    this.tbTenDangNhap.TextName = this.tbMatKhau.TextName = "";
                 }
                 else
                 {

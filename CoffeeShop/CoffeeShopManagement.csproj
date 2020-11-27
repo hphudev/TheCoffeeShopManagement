@@ -86,6 +86,18 @@
     <Compile Include="Data.cs" />
     <Compile Include="Encrypt.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="FormChangeInfoItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChangeInfoItem.Designer.cs">
+      <DependentUpon>FormChangeInfoItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddItem.Designer.cs">
+      <DependentUpon>FormAddItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormChinhSuaKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,11 +122,11 @@
     <Compile Include="FormThongTinNhanVien.Designer.cs">
       <DependentUpon>FormThongTinNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormThucDon.cs">
+    <Compile Include="FormMenuItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormThucDon.Designer.cs">
-      <DependentUpon>FormThucDon.cs</DependentUpon>
+    <Compile Include="FormMenuItem.Designer.cs">
+      <DependentUpon>FormMenuItem.cs</DependentUpon>
     </Compile>
     <Compile Include="FThongTinKhachHang.cs">
       <SubType>Form</SubType>
@@ -134,11 +146,11 @@
     <Compile Include="FormBanHang.Designer.cs">
       <DependentUpon>FormBanHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormChinhSuaTaiKhoan.cs">
+    <Compile Include="FormChangeInfoStaff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormChinhSuaTaiKhoan.Designer.cs">
-      <DependentUpon>FormChinhSuaTaiKhoan.cs</DependentUpon>
+    <Compile Include="FormChangeInfoStaff.Designer.cs">
+      <DependentUpon>FormChangeInfoStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDanhSachBan.cs">
       <SubType>Form</SubType>
@@ -152,17 +164,17 @@
     <Compile Include="FormOrder.Designer.cs">
       <DependentUpon>FormOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormQuanLyTaiKhoan.cs">
+    <Compile Include="FormMenuStaff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormQuanLyTaiKhoan.Designer.cs">
-      <DependentUpon>FormQuanLyTaiKhoan.cs</DependentUpon>
+    <Compile Include="FormMenuStaff.Designer.cs">
+      <DependentUpon>FormMenuStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormThemTaiKhoan.cs">
+    <Compile Include="FormAddStaff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormThemTaiKhoan.Designer.cs">
-      <DependentUpon>FormThemTaiKhoan.cs</DependentUpon>
+    <Compile Include="FormAddStaff.Designer.cs">
+      <DependentUpon>FormAddStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="HoaDon.cs" />
     <Compile Include="ID.cs" />
@@ -184,6 +196,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Staff.cs" />
+    <EmbeddedResource Include="FormChangeInfoItem.resx">
+      <DependentUpon>FormChangeInfoItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddItem.resx">
+      <DependentUpon>FormAddItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormChinhSuaKhachHang.resx">
       <DependentUpon>FormChinhSuaKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,8 +214,8 @@
     <EmbeddedResource Include="FormThongTinNhanVien.resx">
       <DependentUpon>FormThongTinNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormThucDon.resx">
-      <DependentUpon>FormThucDon.cs</DependentUpon>
+    <EmbeddedResource Include="FormMenuItem.resx">
+      <DependentUpon>FormMenuItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FThongTinKhachHang.resx">
       <DependentUpon>FThongTinKhachHang.cs</DependentUpon>
@@ -208,8 +226,8 @@
     <EmbeddedResource Include="FormBanHang.resx">
       <DependentUpon>FormBanHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormChinhSuaTaiKhoan.resx">
-      <DependentUpon>FormChinhSuaTaiKhoan.cs</DependentUpon>
+    <EmbeddedResource Include="FormChangeInfoStaff.resx">
+      <DependentUpon>FormChangeInfoStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDanhSachBan.resx">
       <DependentUpon>FormDanhSachBan.cs</DependentUpon>
@@ -217,11 +235,11 @@
     <EmbeddedResource Include="FormOrder.resx">
       <DependentUpon>FormOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormQuanLyTaiKhoan.resx">
-      <DependentUpon>FormQuanLyTaiKhoan.cs</DependentUpon>
+    <EmbeddedResource Include="FormMenuStaff.resx">
+      <DependentUpon>FormMenuStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormThemTaiKhoan.resx">
-      <DependentUpon>FormThemTaiKhoan.cs</DependentUpon>
+    <EmbeddedResource Include="FormAddStaff.resx">
+      <DependentUpon>FormAddStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListItem.resx">
       <DependentUpon>ListItem.cs</DependentUpon>

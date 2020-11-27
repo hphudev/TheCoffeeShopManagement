@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormThongTinNhanVien : Form
+    public partial class FormThongTinNhanVien : System.Windows.Forms.Form
     {
         FormBangKhoa khoa;
         public FormThongTinNhanVien()

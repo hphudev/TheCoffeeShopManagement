@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormInit : Form
+    public partial class FormInit : System.Windows.Forms.Form
     {
         Timer t = new Timer();
         public FormInit()

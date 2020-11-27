@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormBanHang : Form
+    public partial class FormBanHang : System.Windows.Forms.Form
     {
         bool bHienThi = true;
         bool bThongBao = true;
@@ -63,7 +63,7 @@ namespace CoffeeShopManagement
                 while (pnThanhChon.Height < 40)
                 {
                     Thread.Sleep(1);
-                    this.pnThanhChon.Height += 5;
+                    this.pnThanhChon.Height += 10;
                 }
                 bHienThi = true;
                 btHienThi.ButtonImage = Image.FromFile("./Resources/Collapse.png");
@@ -183,7 +183,7 @@ namespace CoffeeShopManagement
 
         private void BtTK_QuanLy_Click(object sender, EventArgs e)
         {
-            new FormQuanLyTaiKhoan().Show();
+            new FormMenuStaff(this) ;
         }
 
         private void BtTK_ThongTin_Click(object sender, EventArgs e)
@@ -217,6 +217,7 @@ namespace CoffeeShopManagement
         private void BtThucDon_Click(object sender, EventArgs e)
         {
             AnHetCacButtonMenu();
+            new FormMenuItem(this);
         }
 
         private void BtThongKe_Click(object sender, EventArgs e)

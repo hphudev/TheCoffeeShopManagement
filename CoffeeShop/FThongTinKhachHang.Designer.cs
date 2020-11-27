@@ -76,7 +76,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(848, 522);
+            this.panel1.Size = new System.Drawing.Size(848, 614);
             this.panel1.TabIndex = 0;
             // 
             // panel7
@@ -265,7 +265,7 @@
             this.panel2.Controls.Add(this.btThoat);
             this.panel2.Controls.Add(this.bunifuThinButton22);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 426);
+            this.panel2.Location = new System.Drawing.Point(0, 518);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(848, 96);
             this.panel2.TabIndex = 1;
@@ -357,7 +357,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(848, 522);
+            this.ClientSize = new System.Drawing.Size(848, 614);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormThongTinKhachHang";

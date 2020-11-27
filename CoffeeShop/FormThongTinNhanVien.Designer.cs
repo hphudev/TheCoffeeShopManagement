@@ -63,6 +63,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbHoTen = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -147,6 +148,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.panel14);
             this.panel4.Controls.Add(this.cbGioiTinh);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -241,7 +243,7 @@
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1186, 817);
+            this.panel1.Size = new System.Drawing.Size(1186, 813);
             this.panel1.TabIndex = 2;
             // 
             // panel12
@@ -385,7 +387,7 @@
             this.panel8.Controls.Add(this.btThoat);
             this.panel8.Controls.Add(this.bunifuThinButton22);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 721);
+            this.panel8.Location = new System.Drawing.Point(0, 717);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1186, 96);
             this.panel8.TabIndex = 11;
@@ -510,12 +512,22 @@
             this.label2.Text = "HỌ VÀ TÊN";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.White;
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel14.Location = new System.Drawing.Point(659, 0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(527, 70);
+            this.panel14.TabIndex = 9;
+            // 
             // FormThongTinNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1186, 817);
+            this.ClientSize = new System.Drawing.Size(1186, 813);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormThongTinNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormThongTin";
@@ -581,5 +593,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox tbHoTen;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel14;
     }
 }

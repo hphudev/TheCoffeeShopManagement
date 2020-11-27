@@ -9,7 +9,7 @@ namespace CoffeeShopManagement
 {
     public static class Event
     {
-        public static void PressEnter(object sender, KeyPressEventArgs e, Form f)
+        public static void PressEnter(object sender, KeyPressEventArgs e, System.Windows.Forms.Form f)
         {
             if (e.KeyChar == '\r')
             {

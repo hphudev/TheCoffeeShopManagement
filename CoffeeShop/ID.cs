@@ -19,7 +19,7 @@ namespace CoffeeShopManagement
         {
             char[] cCode = code.ToCharArray();
             string[] result = id.Split(cCode);
-            return int.Parse(result[1]);
+            return int.Parse(result[result.Length - 1]);
         }
 
         public void SetID(int id, string code, int iAmountNumber)

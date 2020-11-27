@@ -8,8 +8,15 @@ namespace CoffeeShopManagement
 {
     public class Person
     {
-        protected ID id;
-        protected string name, address, sdt, sex;
+        public ID id { get; }
+
+        public string name { get; }
+
+        public string address { get; }
+
+        public string sdt { get; }
+
+        public string sex { get; }
 
         public Person(string id, string name, string address, string sdt, string sex)
         {

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 namespace CoffeeShopManagement
 {
-    public partial class FormBangKhoa : Form
+    public partial class FormBangKhoa : System.Windows.Forms.Form
     {
         dynamic parent;
         public FormBangKhoa(dynamic parent)
