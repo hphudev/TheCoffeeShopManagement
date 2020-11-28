@@ -14,7 +14,9 @@ namespace CoffeeShopManagement
 {
     public partial class FormLogin : System.Windows.Forms.Form
     {
-        FormInit parent;
+        private FormInit parent;
+
+        public Account account { get; private set; }
 
         public FormLogin(FormInit parent)
         {
@@ -24,7 +26,13 @@ namespace CoffeeShopManagement
             this.buttonThoat.Click += CancelClicked;
             this.tbTenDangNhap.KeyPress += PressEnter;
             this.tbMatKhau.KeyPress += PressEnter;
+            this.bMinimize.Click += MinimizeClicked;
             this.parent = parent;
+        }
+
+        private void MinimizeClicked(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void pbEye_Click(object sender, EventArgs e)
@@ -69,30 +77,43 @@ namespace CoffeeShopManagement
 
         private void LoginClicked(object sender, EventArgs e)
         {
-            Account account = new Account("", tbTenDangNhap.TextName, Encrypt.ComputeHash(
-                tbMatKhau.TextName, new SHA256CryptoServiceProvider()));
-            Account adminAccount = new Account("", "1", Encrypt.ComputeHash("1", new SHA256CryptoServiceProvider()));
-            SqlConnection connection = Data.OpenConnection();
-            SqlDataReader reader = Data.ReadData("TAIKHOAN", connection, "", "*");
-            Account validAccount = GetValidAccount(account, reader);
-
-            if (validAccount == null && account.username != adminAccount.username)
+            try
             {
-                IO.ExportError("Tên đăng nhập không tồn tại");
-            }
-            else
-            {
-                if ((validAccount != null && validAccount.password == account.password) ||
-                    account.password == adminAccount.password)
+                if (this.tbTenDangNhap.TextName == "" || this.tbMatKhau.TextName == "")
                 {
-                    new FormBanHang(this).Show();
-                    this.Hide();
-                    this.tbTenDangNhap.TextName = this.tbMatKhau.TextName = "";
+                    throw new Exception();
+                }
+
+                this.account = new Account("", tbTenDangNhap.TextName, Encrypt.ComputeHash(
+                    tbMatKhau.TextName, new SHA256CryptoServiceProvider()));
+                Account adminAccount = new Account("", "1", Encrypt.ComputeHash("1",
+                    new SHA256CryptoServiceProvider()));
+                SqlConnection connection = Data.OpenConnection();
+                SqlDataReader reader = Data.ReadData("TAIKHOAN", connection, "", "*");
+                Account validAccount = GetValidAccount(this.account, reader);
+
+                if (validAccount == null && this.account.username != adminAccount.username)
+                {
+                    IO.ExportError("Tên đăng nhập không tồn tại");
                 }
                 else
                 {
-                    IO.ExportError("Mật khẩu không đúng");
+                    if ((validAccount != null && validAccount.password == this.account.password) ||
+                        this.account.password == adminAccount.password)
+                    {
+                        new FormSell(this).Show();
+                        this.Hide();
+                        this.tbTenDangNhap.TextName = this.tbMatKhau.TextName = "";
+                    }
+                    else
+                    {
+                        IO.ExportError("Mật khẩu không đúng");
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Nội dung nhập không hợp lệ");
             }
         }
 

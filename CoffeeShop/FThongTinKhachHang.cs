@@ -12,12 +12,12 @@ namespace CoffeeShopManagement
 {
     public partial class FormThongTinKhachHang : System.Windows.Forms.Form
     {
-        FormBangKhoa BangKhoa;
+        FormLock BangKhoa;
         public FormThongTinKhachHang()
         {
             InitializeComponent();
             DoubleBuffered = true;
-            this.BangKhoa = new FormBangKhoa(this);
+            this.BangKhoa = new FormLock(this);
             this.BangKhoa.Show();
             this.Show();
         }

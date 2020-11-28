@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.pThanhDieuKhien = new System.Windows.Forms.Panel();
-            this.jImageButton2 = new JImageButton.JImageButton();
+            this.bMinimize = new JImageButton.JImageButton();
             this.buttonThoatForm = new JImageButton.JImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbTenPhanMem = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@
             // pThanhDieuKhien
             // 
             this.pThanhDieuKhien.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pThanhDieuKhien.Controls.Add(this.jImageButton2);
+            this.pThanhDieuKhien.Controls.Add(this.bMinimize);
             this.pThanhDieuKhien.Controls.Add(this.buttonThoatForm);
             this.pThanhDieuKhien.Dock = System.Windows.Forms.DockStyle.Top;
             this.pThanhDieuKhien.Location = new System.Drawing.Point(0, 0);
@@ -63,23 +63,23 @@
             this.pThanhDieuKhien.Size = new System.Drawing.Size(957, 51);
             this.pThanhDieuKhien.TabIndex = 3;
             // 
-            // jImageButton2
+            // bMinimize
             // 
-            this.jImageButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.jImageButton2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.jImageButton2.CausesValidation = false;
-            this.jImageButton2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.jImageButton2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("jImageButton2.ErrorImage")));
-            this.jImageButton2.Image = global::CoffeeShopManagement.Properties.Resources.Minimize;
-            this.jImageButton2.ImageHover = null;
-            this.jImageButton2.InitialImage = null;
-            this.jImageButton2.Location = new System.Drawing.Point(860, 0);
-            this.jImageButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.jImageButton2.Name = "jImageButton2";
-            this.jImageButton2.Size = new System.Drawing.Size(51, 51);
-            this.jImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.jImageButton2.TabIndex = 5;
-            this.jImageButton2.Zoom = 4;
+            this.bMinimize.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.bMinimize.BackColor = System.Drawing.SystemColors.Highlight;
+            this.bMinimize.CausesValidation = false;
+            this.bMinimize.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bMinimize.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bMinimize.ErrorImage")));
+            this.bMinimize.Image = global::CoffeeShopManagement.Properties.Resources.Minimize;
+            this.bMinimize.ImageHover = null;
+            this.bMinimize.InitialImage = null;
+            this.bMinimize.Location = new System.Drawing.Point(860, 0);
+            this.bMinimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bMinimize.Name = "bMinimize";
+            this.bMinimize.Size = new System.Drawing.Size(51, 51);
+            this.bMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.bMinimize.TabIndex = 5;
+            this.bMinimize.Zoom = 4;
             // 
             // buttonThoatForm
             // 
@@ -312,7 +312,7 @@
 
         private System.Windows.Forms.Panel pThanhDieuKhien;
         private JImageButton.JImageButton buttonThoatForm;
-        private JImageButton.JImageButton jImageButton2;
+        private JImageButton.JImageButton bMinimize;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;

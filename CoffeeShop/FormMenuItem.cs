@@ -11,10 +11,11 @@ using System.Data.SqlClient;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormMenuItem : System.Windows.Forms.Form
+    public partial class FormMenuItem : Form
     {
-        public FormBanHang parent { get; }
-        private FormBangKhoa Lock;
+        public FormSell parent { get; }
+        private FormLock lockForm;
+
         public void GetSelectedInfo(out Item selectedItem)
         {
             DataGridViewRow[] selectedRows = new DataGridViewRow[1];
@@ -50,7 +51,7 @@ namespace CoffeeShopManagement
             Data.CloseConnection(ref connection);
         }
 
-        public FormMenuItem(FormBanHang parent)
+        public FormMenuItem(FormSell parent)
         {
             this.parent = parent;
             InitializeComponent();
@@ -61,8 +62,8 @@ namespace CoffeeShopManagement
             this.bFind.Click += FindItemClicked;
             this.bCancel.Click += CancelClicked;
             this.FormClosed += CloseForm;
-            this.Lock = new FormBangKhoa(this);
-            this.Lock.Show();
+            this.lockForm = new FormLock(this);
+            this.lockForm.Show();
             this.Show();
         }
 
@@ -74,7 +75,7 @@ namespace CoffeeShopManagement
         private void AddItemClicked(object sender, EventArgs e)
         {
             this.Hide();
-            new FormAddItem(this);
+            (new FormAddItem(this)).Show();
         }
 
         private void ChangeInfoItemClicked(object sender, EventArgs e)
@@ -82,7 +83,7 @@ namespace CoffeeShopManagement
             if (this.dgvMenu.Rows.Count != 0)
             {
                 this.Hide();
-                //(new FormChangeInfoItem(this)).Show();
+                (new FormChangeInfoItem(this)).Show();
             }
             else
             {
@@ -142,28 +143,7 @@ namespace CoffeeShopManagement
 
         private void CloseForm(object sender, FormClosedEventArgs e)
         {
-            FormMenuItem menu = (FormMenuItem)sender;
-            menu.parent.Show();
-        }
-
-        private void BCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void FormMenuItem_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.Lock.Close();
-        }
-
-        private void BAddItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("ok");
-        }
-
-        private void BChangeInfoItem_Click(object sender, EventArgs e)
-        {
-
+            this.lockForm.Close();
         }
     }
 }

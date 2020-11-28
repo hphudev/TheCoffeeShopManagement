@@ -18,20 +18,7 @@ namespace CoffeeShopManagement
             }
         }
 
-        public static void ShowError(Control c, ErrorProvider ep)
-        {
-            if (c.Text != "S" && c.Text != "M" && c.Text != "L")
-            {
-                ep.SetError(c, "Nội dung nhập không hợp lệ");
-                ep.BlinkRate = 0;
-            }
-            else
-            {
-                ep.Clear();
-            }
-        }
-
-        public static void ShowErrorValue(Control c, ErrorProvider ep, KeyPressEventArgs e)
+        public static void ShowErrorWord(Control c, ErrorProvider ep, KeyPressEventArgs e)
         {
             if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
             {

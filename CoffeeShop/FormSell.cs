@@ -6,33 +6,95 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
+using System.IO;
 namespace CoffeeShopManagement
 {
-    public partial class FormBanHang : System.Windows.Forms.Form
+    public partial class FormSell : System.Windows.Forms.Form
     {
         bool bHienThi = true;
         bool bThongBao = true;
         bool bTaiKhoan = true;
+        public ListItem Choice = null;
         private FormLogin parent;
-
-        public FormBanHang(FormLogin parent)
+        private Timer CheckOrder;
+        public FormSell(FormLogin parent)
         {
             InitializeComponent();
             DoubleBuffered = true;
             this.parent = parent;
             this.WindowState = FormWindowState.Maximized;
-            for (int i = 0; i < 10; i++)
+            CheckOrder = new Timer();
+            CheckOrder.Interval = 5;
+            CheckOrder.Tick += (s, e) =>
             {
-                ListItem item1 = new ListItem();
-                item1.Image = Resources.KhoiDong;
-                item1.Title = "CÀ PHÊ";
-                flpDanhSachMon.Controls.Add(item1);
+                ActionChacOrder();
+            };
+            LoadDanhSachMonPhoBien();
+            CheckOrder.Start();
+        }
+
+        private void LoadDanhSachMonPhoBien()
+        {
+            SqlConnection connection = Data.OpenConnection();
+            SqlDataReader Reader = Data.ReadData("MON", connection, " ORDER BY SOLANPHUCVU DESC", " TOP 20 * ");
+            while (Reader.HasRows)
+            {
+                if (Reader.Read() == false)
+                    break;
+                ListItem item = new ListItem(this);
+                item.ID = Reader.GetString(0);
+                if (System.IO.File.Exists($"./ImageItem/{ item.ID}.jpg"))
+                {
+                    item.Image = Image.FromFile($"./ImageItem/{item.ID}.jpg");
+                }
+                item.Title = Reader.GetString(1);
+                item.Cost = Reader.GetInt32(4);
+                this.flpDanhSachMon.Controls.Add(item);
+            }
+            Data.CloseConnection(ref connection);
+        }
+
+        private void LoadDanhSachMon()
+        {
+            SqlConnection connection = Data.OpenConnection();
+            SqlDataReader Reader = Data.ReadData("MON", connection, "", " * ");
+            while (Reader.HasRows)
+            {
+                if (Reader.Read() == false)
+                    break;
+                ListItem item = new ListItem(this);
+                item.ID = Reader.GetString(0);
+                if (System.IO.File.Exists($"./ImageItem/{ item.ID}.jpg"))
+                {
+                    item.Image = Image.FromFile($"./ImageItem/{item.ID}.jpg");
+                }
+                item.Title = Reader.GetString(1);
+                item.Cost = Reader.GetInt32(4);
+                this.flpDanhSachMon.Controls.Add(item);
+            }
+            Data.CloseConnection(ref connection);
+        }
+
+        private void ActionChacOrder()
+        {
+            if (Choice != null)
+            {
+                ListOrder order = new ListOrder();
+                order.Gia = Choice.Cost;
+                order.ID = Choice.ID;
+                order.TenMon = Choice.Title;
+                Choice = null;
+                this.flpOrder.Controls.Add(order);
             }
         }
+
+
+
+
+
 
         private void btHienThi_Click(object sender, EventArgs e)
         {
@@ -49,7 +111,7 @@ namespace CoffeeShopManagement
                 this.pnThanhChon.Height = 40;
                 while (pnThanhChon.Height > 5)
                 {
-                    Thread.Sleep(1);
+                    //Thread.Sleep(1);
                     this.pnThanhChon.Height -= 5;
                 }
                 this.pnThanhChon.Visible = false;
@@ -62,7 +124,7 @@ namespace CoffeeShopManagement
                 this.pnThanhChon.Visible = true;
                 while (pnThanhChon.Height < 40)
                 {
-                    Thread.Sleep(1);
+                    //Thread.Sleep(1);
                     this.pnThanhChon.Height += 10;
                 }
                 bHienThi = true;
@@ -87,7 +149,7 @@ namespace CoffeeShopManagement
             {
                 while (pnThongBao.Height > 5)
                 {
-                    Thread.Sleep(1);
+                    //Thread.Sleep(1);
                     pnThongBao.Height -= 5;
                 }
                 pnThongBao.Visible = false;
@@ -99,7 +161,7 @@ namespace CoffeeShopManagement
                 pnThongBao.Visible = true;
                 while (pnThongBao.Height < 38)
                 {
-                    Thread.Sleep(1);
+                    //Thread.Sleep(1);
                     pnThongBao.Height += 5;
                 }
                 bThongBao = true;
@@ -112,7 +174,7 @@ namespace CoffeeShopManagement
             {
                 while (pnTaiKhoan.Height > 5)
                 {
-                    Thread.Sleep(1);
+                    //Thread.Sleep(1);
                     pnTaiKhoan.Height -= 5;
                 }
                 pnTaiKhoan.Visible = false;
@@ -124,7 +186,7 @@ namespace CoffeeShopManagement
                 pnTaiKhoan.Visible = true;
                 while (pnTaiKhoan.Height < 38)
                 {
-                    Thread.Sleep(1);
+                    //Thread.Sleep(1);
                     pnTaiKhoan.Height += 5;
                 }
                 bTaiKhoan = true;
@@ -137,7 +199,7 @@ namespace CoffeeShopManagement
             //
             while (pnThongBao.Height > 5)
             {
-                Thread.Sleep(1);
+                //Thread.Sleep(1);
                 pnThongBao.Height -= 5;
             }
             pnThongBao.Visible = false;
@@ -146,7 +208,7 @@ namespace CoffeeShopManagement
             //Button Tài khoản
             while (pnTaiKhoan.Height > 5)
             {
-                Thread.Sleep(1);
+                //Thread.Sleep(1);
                 pnTaiKhoan.Height -= 5;
             }
             pnTaiKhoan.Visible = false;
@@ -188,7 +250,7 @@ namespace CoffeeShopManagement
 
         private void BtTK_ThongTin_Click(object sender, EventArgs e)
         {
-            new FormThongTinNhanVien().Show();
+            new FormInfoStaff(this.parent.account).Show();
         }
 
         private void BtTK_DangXuat_Click(object sender, EventArgs e)

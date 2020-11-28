@@ -15,24 +15,38 @@ namespace CoffeeShopManagement
     {
         private int soluong = 1;
         private string tenMon = "";
-        private double Tien = 25000;
-        private double tongTien = 25000;
-
+        private double Tien;
+        private double tongTien;
+        private string id;
         public ListOrder()
         {
             InitializeComponent();
             DoubleBuffered = true;
-            TenMon = "Cà phê đen";
-            lbSoTien.Text = (Tien * soluong).ToString() + "đ";
+            //TenMon = "Cà phê đen";
+            //lbSoTien.Text = (Tien * soluong).ToString() + "đ";
             lbSoLuongMon.Text = soluong.ToString();
 
         }
-        
+
+        [Category("Custom Pro")]
+        public string ID
+        {
+            set { this.id = value;}
+            get { return this.id; }
+        }
+
         [Category("Custom Pro")]
         public int SoLuong
         {
             set { this.soluong = value; lbSoLuongMon.Text = value.ToString(); }
             get { return this.soluong; }
+        }
+
+        [Category("Custom Pro")]
+        public double Gia
+        {
+            set { this.Tien = value; TongTien = value * soluong; }
+            get { return this.Tien; }
         }
 
         [Category("Custom Pro")]

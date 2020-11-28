@@ -14,8 +14,8 @@ namespace CoffeeShopManagement
 {
     public partial class FormMenuStaff : System.Windows.Forms.Form
     {
-        private FormBanHang parent;
-        private FormBangKhoa Lock;
+        private FormSell parent;
+        private FormLock Lock;
 
 
         public string GetDate(DateTime dateTime)
@@ -50,10 +50,10 @@ namespace CoffeeShopManagement
             Data.CloseConnection(ref connection);
         }
 
-        public FormMenuStaff(FormBanHang parent)
+        public FormMenuStaff(FormSell parent)
         {
             InitializeComponent();
-            this.Lock = new FormBangKhoa(this);
+            this.Lock = new FormLock(this);
             this.parent = parent;
             LoadForm();
             this.bAddStaff.Click += AddStaffClicked;

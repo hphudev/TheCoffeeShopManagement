@@ -12,14 +12,14 @@ namespace CoffeeShopManagement
 {
     public partial class F_Order : System.Windows.Forms.Form
     {
-        FormBanHang parent;
-        FormBangKhoa BangKhoa;
-        public F_Order(FormBanHang parent)
+        FormSell parent;
+        FormLock BangKhoa;
+        public F_Order(FormSell parent)
         {
             InitializeComponent();
             DoubleBuffered = true;
             this.parent = parent;
-            this.BangKhoa = new FormBangKhoa(this);
+            this.BangKhoa = new FormLock(this);
             this.Location = this.Location;
             BangKhoa.Show();
             this.Show();

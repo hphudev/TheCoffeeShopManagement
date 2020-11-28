@@ -12,13 +12,13 @@ namespace CoffeeShopManagement
 {
     public partial class F_DanhSachBan : System.Windows.Forms.Form
     {
-        FormBangKhoa BangKhoa;
+        FormLock BangKhoa;
         public F_DanhSachBan()
         {
             InitializeComponent();
             DoubleBuffered = true;
             //this.WindowState = FormWindowState.Maximized;
-            this.BangKhoa = new FormBangKhoa(this);
+            this.BangKhoa = new FormLock(this);
             this.BangKhoa.Show();
             this.Show();
             

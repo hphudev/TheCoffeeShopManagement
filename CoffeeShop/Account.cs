@@ -9,11 +9,21 @@ namespace CoffeeShopManagement
 {
     public class Account
     {
-        public ID id { get; }
+        public ID id { get; set; }
 
         public string username { get; }
 
         public string password { get; }
+
+        public bool IsAdmin()
+        {
+            if (this.username == "1")
+            {
+                return true;
+            }
+
+            return false;
+        }
 
         public Account(string id, string username, string password)
         {

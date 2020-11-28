@@ -1,6 +1,6 @@
 ﻿namespace CoffeeShopManagement
 {
-    partial class FormBangKhoa
+    partial class FormLock
     {
         /// <summary>
         /// Required designer variable.

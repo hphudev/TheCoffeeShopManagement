@@ -13,14 +13,26 @@ namespace CoffeeShopManagement
 {
     public partial class ListItem : UserControl
     {
-        public ListItem()
+        FormSell parent;
+        public ListItem(FormSell parent)
         {
             InitializeComponent();
             DoubleBuffered = true;
+            this.parent = parent;
         }
         #region Properties
         private string sTitle;
         private Image image;
+        private int gia;
+        private string idItem;
+
+        [Category("Custom Pro")]
+        public string ID
+        {
+            get { return idItem; }
+            set { idItem = value;}
+        }
+
         [Category("Custom Pro")]
         public string Title
         {
@@ -34,11 +46,25 @@ namespace CoffeeShopManagement
             get { return image; }
             set { image = value; pbAnhMon.Image = value; pbAnhMon.SizeMode = PictureBoxSizeMode.Zoom; }
         }
+
+        [Category("Custom Pro")]
+        public int Cost
+        {
+            get { return gia; }
+            set
+            {
+                gia = value;
+                if (value >= 1000)
+                    lbCost.Text = (value / 1000).ToString() + "K";
+                else
+                    lbCost.Text = value.ToString();
+            }
+        }
         #endregion
 
         private void pbAnhMon_MouseClick(object sender, MouseEventArgs e)
         {
-            MessageBox.Show("a");
+            this.parent.Choice = this;
         }
 
         private void pbAnhMon_MouseHover(object sender, EventArgs e)
@@ -64,6 +90,11 @@ namespace CoffeeShopManagement
         private void lbTenMon_MouseLeave(object sender, EventArgs e)
         {
             pbAnhMon_MouseLeave(sender, e);
+        }
+
+        private void LbTenMon_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.parent.Choice = this;
         }
     }
 }

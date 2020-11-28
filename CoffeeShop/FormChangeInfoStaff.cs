@@ -11,9 +11,9 @@ using System.Security.Cryptography;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormChangeInfoStaff : System.Windows.Forms.Form
+    public partial class FormChangeInfoStaff : Form
     {
-        FormBangKhoa khoa;
+        FormLock lockForm;
         FormMenuStaff parent;
 
         public void Autofill()
@@ -29,15 +29,16 @@ namespace CoffeeShopManagement
             this.tbSDT.Text = selectedStaff.sdt;
             this.cbPosition.Text = selectedStaff.chucVu;
             this.cbSex.Text = selectedStaff.sex;
+            this.lID.Text = selectedStaff.id.ToString();
             this.tbUsername.Text = selectedAccount.username;
         }
 
         public FormChangeInfoStaff(FormMenuStaff parent)
         {
             InitializeComponent();
-            khoa = new FormBangKhoa(this);
+            lockForm = new FormLock(this);
             this.parent = parent;
-            khoa.Show();
+            lockForm.Show();
             this.bCancel.Click += CancelClicked;
             this.FormClosed += CloseForm;
             this.bReset.Click += ResetClicked;
@@ -53,7 +54,7 @@ namespace CoffeeShopManagement
         private void CancelClicked(object sender, EventArgs e)
         {
             this.Close();
-            this.khoa.Close();
+            this.lockForm.Close();
         }
 
         private void CloseForm(object sender, FormClosedEventArgs e)
@@ -71,13 +72,37 @@ namespace CoffeeShopManagement
             Autofill();
         }
 
+        public bool IsError()
+        {
+            if (this.tbAddress.Text == "" || this.tbSDT.Text == "" || this.cbSex.Text == "" || 
+                this.tbSalary.Text == "" || this.cbPosition.Text == "" || this.tbPassword.Text == "")
+            {
+                IO.ExportError("Nhập không đầy đủ nội dung tất cả các trường");
+                return true;
+            }
+
+            if ((int.Parse(this.tbSalary.Text)) < 0 || int.Parse(this.tbSDT.Text) < 0)
+            {
+                IO.ExportError("Nhập số có giá trị nhỏ hơn 0");
+                return true;
+            }
+
+            if (IO.IsContainNumber(this.cbPosition.Text))
+            {
+                IO.ExportError("Nhập số vào trường họ tên, chức vụ hoặc giới tính");
+                return true;
+            }
+
+            return false;
+        }
+
         private void OKClicked(object sender, EventArgs e)
         {
             try
             {
-                if (int.Parse(tbSalary.Text) <= 0 || tbAddress.Text == "" || cbPosition.Text == "")
+                if (IsError())
                 {
-                    throw new Exception();
+                    return;
                 }
 
                 Staff selectedStaff;
@@ -91,7 +116,7 @@ namespace CoffeeShopManagement
 
                 Account updatedAccount = new Account(selectedStaff.id.ToString(), this.tbUsername.Text,
                     Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()));
-                Data.UpdateData("TAIKHOAN", "MATKHAU = '" + updatedAccount.password + "'",
+                Data.UpdateData("TAIlockFormN", "MATKHAU = '" + updatedAccount.password + "'",
                     " WHERE ID = '" + updatedAccount.id.ToString() + "'");
 
                 IO.ExportSuccess("Sửa thông tin nhân viên thành công");

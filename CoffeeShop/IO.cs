@@ -10,22 +10,37 @@ namespace CoffeeShopManagement
 {
     public static class IO
     {
-        public static void ExportError(string sContent)
+        public static void ExportError(string content)
         {
-            System.Windows.Forms.MessageBox.Show(sContent, "Lỗi", MessageBoxButtons.OK, 
+            System.Windows.Forms.MessageBox.Show(content, "Lỗi", MessageBoxButtons.OK, 
                 MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
         }
 
-        public static void ExportSuccess(string sContent)
+        public static void ExportSuccess(string content)
         {
-            System.Windows.Forms.MessageBox.Show(sContent, "Thông tin", MessageBoxButtons.OK,
+            System.Windows.Forms.MessageBox.Show(content, "Thông tin", MessageBoxButtons.OK,
                 MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
 
-        public static void ExportWarning(string sContent)
+        public static void ExportWarning(string content)
         {
-            System.Windows.Forms.MessageBox.Show(sContent, "Cảnh báo", MessageBoxButtons.OK,
+            System.Windows.Forms.MessageBox.Show(content, "Cảnh báo", MessageBoxButtons.OK,
                 MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+        }
+
+        public static bool IsContainNumber(string content)
+        {
+            char[] characters = content.ToCharArray();
+
+            foreach (char charecter in characters)
+            {
+                if (char.IsNumber(charecter))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

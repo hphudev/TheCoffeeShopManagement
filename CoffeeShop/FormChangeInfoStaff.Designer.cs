@@ -31,7 +31,7 @@ namespace CoffeeShopManagement
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChangeInfoStaff));
-            this.label1 = new System.Windows.Forms.Label();
+            this.lHeader = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.tbPassword = new System.Windows.Forms.TextBox();
@@ -54,7 +54,7 @@ namespace CoffeeShopManagement
             this.tbSDT = new System.Windows.Forms.TextBox();
             this.tbAddress = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.lbID_HoaDon = new System.Windows.Forms.Label();
+            this.lID = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.bReset = new ns1.BunifuThinButton2();
             this.bCancel = new ns1.BunifuThinButton2();
@@ -81,19 +81,19 @@ namespace CoffeeShopManagement
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lHeader
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(1084, 82);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CHỈNH SỬA NHÂN VIÊN";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lHeader.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lHeader.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lHeader.Location = new System.Drawing.Point(0, 0);
+            this.lHeader.Name = "lHeader";
+            this.lHeader.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.lHeader.Size = new System.Drawing.Size(1084, 82);
+            this.lHeader.TabIndex = 0;
+            this.lHeader.Text = "CHỈNH SỬA NHÂN VIÊN";
+            this.lHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -248,7 +248,6 @@ namespace CoffeeShopManagement
             this.cbPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.cbPosition.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbPosition.DropDownHeight = 5;
-            this.cbPosition.Enabled = false;
             this.cbPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbPosition.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPosition.FormattingEnabled = true;
@@ -365,22 +364,22 @@ namespace CoffeeShopManagement
             this.label6.Text = "ĐỊA CHỈ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbID_HoaDon
+            // lID
             // 
-            this.lbID_HoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbID_HoaDon.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lbID_HoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbID_HoaDon.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID_HoaDon.ForeColor = System.Drawing.Color.White;
-            this.lbID_HoaDon.Image = global::CoffeeShopManagement.Properties.Resources.Info;
-            this.lbID_HoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbID_HoaDon.Location = new System.Drawing.Point(0, 0);
-            this.lbID_HoaDon.Name = "lbID_HoaDon";
-            this.lbID_HoaDon.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.lbID_HoaDon.Size = new System.Drawing.Size(340, 82);
-            this.lbID_HoaDon.TabIndex = 1;
-            this.lbID_HoaDon.Text = "NV-0001";
-            this.lbID_HoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lID.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lID.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lID.ForeColor = System.Drawing.Color.White;
+            this.lID.Image = global::CoffeeShopManagement.Properties.Resources.Info;
+            this.lID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lID.Location = new System.Drawing.Point(0, 0);
+            this.lID.Name = "lID";
+            this.lID.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.lID.Size = new System.Drawing.Size(340, 82);
+            this.lID.TabIndex = 1;
+            this.lID.Text = "NV-0001";
+            this.lID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel8
             // 
@@ -554,8 +553,8 @@ namespace CoffeeShopManagement
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lbID_HoaDon);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lID);
+            this.panel2.Controls.Add(this.lHeader);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -596,7 +595,7 @@ namespace CoffeeShopManagement
 
         }
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lHeader;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.TextBox tbPassword;
@@ -618,7 +617,7 @@ namespace CoffeeShopManagement
         private System.Windows.Forms.TextBox tbSDT;
         private System.Windows.Forms.TextBox tbAddress;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lbID_HoaDon;
+        private System.Windows.Forms.Label lID;
         private System.Windows.Forms.Panel panel8;
         private ns1.BunifuThinButton2 bCancel;
         private ns1.BunifuThinButton2 bOK;

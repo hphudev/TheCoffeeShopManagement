@@ -12,12 +12,12 @@ namespace CoffeeShopManagement
 {
     public partial class FormChinhSuaKhachHang : System.Windows.Forms.Form
     {
-        private FormBangKhoa khoa;
+        private FormLock khoa;
         public FormChinhSuaKhachHang()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
-            khoa = new FormBangKhoa(this);
+            khoa = new FormLock(this);
             khoa.Show();
             this.Show();
         }

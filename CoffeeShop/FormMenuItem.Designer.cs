@@ -212,7 +212,6 @@
             this.bCancel.Size = new System.Drawing.Size(253, 72);
             this.bCancel.TabIndex = 3;
             this.bCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bCancel.Click += new System.EventHandler(this.BCancel_Click);
             // 
             // bDeleteItem
             // 
@@ -265,7 +264,6 @@
             this.bChangeInfoItem.Size = new System.Drawing.Size(253, 72);
             this.bChangeInfoItem.TabIndex = 1;
             this.bChangeInfoItem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bChangeInfoItem.Click += new System.EventHandler(this.BChangeInfoItem_Click);
             // 
             // bAddItem
             // 
@@ -317,7 +315,6 @@
             this.Name = "FormMenuItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý thực đơn";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMenuItem_FormClosed);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();
             this.panel4.ResumeLayout(false);

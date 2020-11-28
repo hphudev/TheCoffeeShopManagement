@@ -10,10 +10,10 @@ using System.Windows.Forms;
 using System.Threading;
 namespace CoffeeShopManagement
 {
-    public partial class FormBangKhoa : System.Windows.Forms.Form
+    public partial class FormLock : System.Windows.Forms.Form
     {
         dynamic parent;
-        public FormBangKhoa(dynamic parent)
+        public FormLock(dynamic parent)
         {
             InitializeComponent();
             DoubleBuffered = true;

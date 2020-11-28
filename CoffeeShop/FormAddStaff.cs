@@ -12,40 +12,63 @@ using System.Security.Cryptography;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormAddStaff : System.Windows.Forms.Form
+    public partial class FormAddStaff : Form
     {
-        FormBangKhoa BangKhoa;
+        private FormLock lockForm;
         private FormMenuStaff parent;
+
+        public void AutofillLabelID()
+        {
+            ID lastID = ID.GetLastIDStaff();
+            ID newID = new ID("");
+
+            if (lastID != null)
+            {
+                newID.SetID((lastID.FindID("NV") + 1), "NV", 2);
+            }
+            else
+            {
+                newID.SetID(1, "NV", 2);
+            }
+
+            this.lID.Text = newID.id;
+        }
 
         public FormAddStaff(FormMenuStaff parent)
         {
             InitializeComponent();
-            this.BangKhoa = new FormBangKhoa(this);
-            this.BangKhoa.Show();
+            this.lockForm = new FormLock(this);
+            this.lockForm.Show();
             this.parent = parent;
             this.FormClosed += CloseForm;
             this.bCancel.Click += CancelClicked;
             this.bOK.Click += OKClicked;
             this.bReset.Click += ResetClicked;
+            AutofillLabelID();
 
-            this.tbSalary.KeyPress += HienThiLoiNhapChu;
-            this.tbCMND.KeyPress += HienThiLoiNhapChu;
-            this.tbSDT.KeyPress += HienThiLoiNhapChu;
+            this.tbSalary.KeyPress += ShowErrorWord;
+            this.tbCMND.KeyPress += ShowErrorWord;
+            this.tbSDT.KeyPress += ShowErrorWord;
 
             this.tbName.KeyPress += PressEnter;
             this.tbAddress.KeyPress += PressEnter;
             this.tbCMND.KeyPress += PressEnter;
             this.cbSex.KeyPress += PressEnter;
             this.cbPosition.KeyPress += PressEnter;
-            this.tbConfirm.KeyPress += PressEnter;
+            this.tbPassword.KeyPress += PressEnter;
             this.tbSalary.KeyPress += PressEnter;
             this.tbSDT.KeyPress += PressEnter;
-            this.tbPassword.KeyPress += PressEnter;
+            this.tbUsername.KeyPress += PressEnter;
+
+            this.cbSex.AutoCompleteCustomSource.AddRange(new string[] { "Nam", "Nữ" });
+            this.cbSex.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbSex.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbSex.Items.AddRange(new object[] { "Nam", "Nữ" });
         }
 
         private void CloseForm(object sender, FormClosedEventArgs e)
         {
-            this.BangKhoa.Close();
+            this.lockForm.Close();
             this.parent.Show();
         }
 
@@ -131,25 +154,51 @@ namespace CoffeeShopManagement
             return !reader.HasRows;
         }
 
-        private void HienThiLoiNhapChu(object sender, KeyPressEventArgs e)
+        private void ShowErrorWord(object sender, KeyPressEventArgs e)
         {
             //Event.NhapChu((TextBox)sender, new ErrorProvider(), e);
         }
 
-        private void HienThiLoiNhapSo(object sender, KeyPressEventArgs e)
+        private void ShowErrorNumber(object sender, KeyPressEventArgs e)
         {
             //Event.NhapSo()
         }
 
+        public bool IsError()
+        {
+            if (this.tbName.Text == "" || this.tbAddress.Text == "" || this.tbSDT.Text == "" ||
+                    this.tbCMND.Text == "" || this.cbSex.Text == "" || this.tbSalary.Text == "" ||
+                    this.cbPosition.Text == "" || this.tbUsername.Text == "" ||
+                    this.tbPassword.Text == "" || this.tbConfirm.Text == "")
+            {
+                IO.ExportError("Nhập không đầy đủ nội dung tất cả các trường");
+                return true;
+            }
+
+            if ((int.Parse(this.tbSalary.Text)) < 0 || int.Parse(this.tbSDT.Text) < 0 || 
+                int.Parse(this.tbCMND.Text) < 0)
+            {
+                IO.ExportError("Nhập số có giá trị nhỏ hơn 0");
+                return true;
+            }
+
+            if (IO.IsContainNumber(this.tbName.Text) || IO.IsContainNumber(this.cbPosition.Text) ||
+                IO.IsContainNumber(this.cbSex.Text))
+            {
+                IO.ExportError("Nhập số vào trường họ tên, chức vụ hoặc giới tính");
+                return true;
+            }
+
+            return false;
+        }
+        
         private void OKClicked(object sender, EventArgs e)
         {
             try
             {
-                if (this.tbName.Text == "" || this.tbAddress.Text == "" || this.tbSDT.Text == "" ||
-                    this.lCMND.Text == "" || this.cbSex.Text == "" || this.lSalary.Text == "" ||
-                    this.cbPosition.Text == "")
+                if (IsError())
                 {
-                    throw new Exception();
+                    return;
                 }
 
                 Staff newStaff = new Staff("", this.tbName.Text, this.tbAddress.Text, this.tbSDT.Text,
@@ -163,14 +212,14 @@ namespace CoffeeShopManagement
                 }
                 else
                 {
-                    if (this.tbUsername.Text != this.tbConfirm.Text)
+                    if (this.tbConfirm.Text != this.tbPassword.Text)
                     {
                         IO.ExportError("Mật khẩu nhập lại không đúng");
                         return;
                     }
 
-                    Account account = new Account(newStaff.id.ToString(), this.tbPassword.Text,
-                        Encrypt.ComputeHash(this.tbConfirm.Text, new SHA256CryptoServiceProvider()));
+                    Account account = new Account(newStaff.id.ToString(), this.tbUsername.Text,
+                        Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()));
 
                     if (IsUsername(account.username))
                     {
@@ -191,6 +240,7 @@ namespace CoffeeShopManagement
             {
                 IO.ExportError("Nội dung nhập không hợp lệ");
             }
+
         }
     }
 }

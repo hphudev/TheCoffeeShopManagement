@@ -116,11 +116,11 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormThongTinNhanVien.cs">
+    <Compile Include="FormInfoStaff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormThongTinNhanVien.Designer.cs">
-      <DependentUpon>FormThongTinNhanVien.cs</DependentUpon>
+    <Compile Include="FormInfoStaff.Designer.cs">
+      <DependentUpon>FormInfoStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMenuItem.cs">
       <SubType>Form</SubType>
@@ -134,17 +134,17 @@
     <Compile Include="FThongTinKhachHang.Designer.cs">
       <DependentUpon>FThongTinKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBangKhoa.cs">
+    <Compile Include="FormLock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBangKhoa.Designer.cs">
-      <DependentUpon>FormBangKhoa.cs</DependentUpon>
+    <Compile Include="FormLock.Designer.cs">
+      <DependentUpon>FormLock.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBanHang.cs">
+    <Compile Include="FormSell.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBanHang.Designer.cs">
-      <DependentUpon>FormBanHang.cs</DependentUpon>
+    <Compile Include="FormSell.Designer.cs">
+      <DependentUpon>FormSell.cs</DependentUpon>
     </Compile>
     <Compile Include="FormChangeInfoStaff.cs">
       <SubType>Form</SubType>
@@ -211,8 +211,8 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormThongTinNhanVien.resx">
-      <DependentUpon>FormThongTinNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="FormInfoStaff.resx">
+      <DependentUpon>FormInfoStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenuItem.resx">
       <DependentUpon>FormMenuItem.cs</DependentUpon>
@@ -220,11 +220,11 @@
     <EmbeddedResource Include="FThongTinKhachHang.resx">
       <DependentUpon>FThongTinKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBangKhoa.resx">
-      <DependentUpon>FormBangKhoa.cs</DependentUpon>
+    <EmbeddedResource Include="FormLock.resx">
+      <DependentUpon>FormLock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBanHang.resx">
-      <DependentUpon>FormBanHang.cs</DependentUpon>
+    <EmbeddedResource Include="FormSell.resx">
+      <DependentUpon>FormSell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormChangeInfoStaff.resx">
       <DependentUpon>FormChangeInfoStaff.cs</DependentUpon>

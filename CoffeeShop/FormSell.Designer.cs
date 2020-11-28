@@ -1,6 +1,6 @@
 ﻿namespace CoffeeShopManagement
 {
-    partial class FormBanHang
+    partial class FormSell
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBanHang));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSell));
             this.pnThanhChon = new System.Windows.Forms.Panel();
             this.btTaiKhoan = new ns1.BunifuThinButton2();
             this.btThongKe = new ns1.BunifuThinButton2();
@@ -52,14 +52,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.flpDanhSachMon = new System.Windows.Forms.FlowLayoutPanel();
             this.pnLot_Order = new System.Windows.Forms.Panel();
-            this.flgOrder = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpOrder = new System.Windows.Forms.FlowLayoutPanel();
             this.pnOrder = new System.Windows.Forms.TableLayoutPanel();
             this.btDaOrder = new System.Windows.Forms.Button();
             this.btDangOrder = new System.Windows.Forms.Button();
             this.btThongTinKhachHang = new System.Windows.Forms.Button();
             this.btOrder = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btMonAn = new ns1.BunifuThinButton2();
             this.btThucUong = new ns1.BunifuThinButton2();
             this.btMonPhoBien = new ns1.BunifuThinButton2();
             this.pnLot_ThanhTieuDe = new System.Windows.Forms.Panel();
@@ -136,7 +135,7 @@
             this.btThongKe.ActiveLineColor = System.Drawing.Color.SeaGreen;
             this.btThongKe.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btThongKe.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btThongKe.BackgroundImage")));
-            this.btThongKe.ButtonText = "Thông kê";
+            this.btThongKe.ButtonText = "Thống kê";
             this.btThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btThongKe.Dock = System.Windows.Forms.DockStyle.Left;
             this.btThongKe.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -496,7 +495,7 @@
             // pnLot_Order
             // 
             this.pnLot_Order.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnLot_Order.Controls.Add(this.flgOrder);
+            this.pnLot_Order.Controls.Add(this.flpOrder);
             this.pnLot_Order.Controls.Add(this.pnOrder);
             this.pnLot_Order.Controls.Add(this.btThongTinKhachHang);
             this.pnLot_Order.Controls.Add(this.btOrder);
@@ -506,13 +505,13 @@
             this.pnLot_Order.Size = new System.Drawing.Size(528, 605);
             this.pnLot_Order.TabIndex = 3;
             // 
-            // flgOrder
+            // flpOrder
             // 
-            this.flgOrder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flgOrder.Location = new System.Drawing.Point(0, 146);
-            this.flgOrder.Name = "flgOrder";
-            this.flgOrder.Size = new System.Drawing.Size(526, 372);
-            this.flgOrder.TabIndex = 7;
+            this.flpOrder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpOrder.Location = new System.Drawing.Point(0, 146);
+            this.flpOrder.Name = "flpOrder";
+            this.flpOrder.Size = new System.Drawing.Size(526, 372);
+            this.flpOrder.TabIndex = 7;
             // 
             // pnOrder
             // 
@@ -597,7 +596,6 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.btMonAn);
             this.panel5.Controls.Add(this.btThucUong);
             this.panel5.Controls.Add(this.btMonPhoBien);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
@@ -605,32 +603,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(268, 605);
             this.panel5.TabIndex = 1;
-            // 
-            // btMonAn
-            // 
-            this.btMonAn.ActiveBorderThickness = 2;
-            this.btMonAn.ActiveCornerRadius = 10;
-            this.btMonAn.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btMonAn.ActiveForecolor = System.Drawing.Color.White;
-            this.btMonAn.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btMonAn.BackColor = System.Drawing.Color.Azure;
-            this.btMonAn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btMonAn.BackgroundImage")));
-            this.btMonAn.ButtonText = "MÓN ĂN";
-            this.btMonAn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btMonAn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btMonAn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btMonAn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btMonAn.IdleBorderThickness = 2;
-            this.btMonAn.IdleCornerRadius = 10;
-            this.btMonAn.IdleFillColor = System.Drawing.Color.White;
-            this.btMonAn.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btMonAn.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btMonAn.Location = new System.Drawing.Point(0, 162);
-            this.btMonAn.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
-            this.btMonAn.Name = "btMonAn";
-            this.btMonAn.Size = new System.Drawing.Size(268, 81);
-            this.btMonAn.TabIndex = 2;
-            this.btMonAn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btThucUong
             // 
@@ -641,7 +613,7 @@
             this.btThucUong.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btThucUong.BackColor = System.Drawing.Color.Azure;
             this.btThucUong.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btThucUong.BackgroundImage")));
-            this.btThucUong.ButtonText = "THỨC UỐNG";
+            this.btThucUong.ButtonText = "THỰC ĐƠN";
             this.btThucUong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btThucUong.Dock = System.Windows.Forms.DockStyle.Top;
             this.btThucUong.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -796,7 +768,7 @@
             this.lbID_HoaDon.Text = "HD-0001";
             this.lbID_HoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // FormBanHang
+            // FormSell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -806,7 +778,7 @@
             this.Controls.Add(this.pnThanhChon);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "FormBanHang";
+            this.Name = "FormSell";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "S";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormBanHang_FormClosed);
@@ -863,11 +835,10 @@
         private System.Windows.Forms.Button btHuyNoiDungTimKiem;
         private System.Windows.Forms.Panel panel6;
         private ns1.BunifuThinButton2 btMonPhoBien;
-        private ns1.BunifuThinButton2 btMonAn;
         private ns1.BunifuThinButton2 btThucUong;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btDanhSachBan;
-        private System.Windows.Forms.FlowLayoutPanel flgOrder;
+        private System.Windows.Forms.FlowLayoutPanel flpOrder;
     }
 }

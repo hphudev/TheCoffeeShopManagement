@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace CoffeeShopManagement
 {
@@ -17,6 +18,8 @@ namespace CoffeeShopManagement
         public string name { get; }
 
         public int price { get; }
+        
+        public Image image { get; }
 
         public Item(string id, string name, string unit, int soLanPhucVu, int price)
         {
@@ -25,6 +28,11 @@ namespace CoffeeShopManagement
             this.unit = unit;
             this.price = price;
             this.soLanPhucVu = soLanPhucVu;
+
+            if (this.id.ToString() != "")
+            {
+                this.image = Image.FromFile("./ImageItem/" + this.id.ToString() + ".jpg");
+            }
         }
 
         public string GetInfo()

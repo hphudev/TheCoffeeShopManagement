@@ -7,42 +7,164 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.IO;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormAddItem : System.Windows.Forms.Form
+    public partial class FormAddItem : Form
     {
-        private FormBangKhoa Lock;
+        private FormLock lockForm;
         private FormMenuItem parent;
+
+        public ID FindID()
+        {
+            ID lastID = ID.GetLastIDItem();
+            ID newID = new ID("");
+
+            if (lastID != null)
+            {
+                newID.SetID((lastID.FindID("M") + 1), "M", 3);
+            }
+            else
+            {
+                newID.SetID(1, "M", 3);
+            }
+
+            return newID;
+        }
+
         public FormAddItem(FormMenuItem parent)
         {
             InitializeComponent();
             this.parent = parent;
-            Lock = new FormBangKhoa(this);
-            Lock.Show();
-            this.Show();
+            lockForm = new FormLock(this);
+            lockForm.Show();
+            this.lID.Text = FindID().id.ToString();
+
+            this.tbName.KeyPress += PressEnter;
+            this.tbPrice.KeyPress += PressEnter;
+            this.tbUnit.KeyPress += PressEnter;
+            this.FormClosed += CloseForm;
+            this.bCancel.Click += CancelClicked;
+            this.tbPrice.KeyPress += ShowErrorWord;
+            this.bOK.Click += OKClicked;
+            this.bAddImage.Click += AddImageClicked;
         }
 
-        private void BAddImage_Click(object sender, EventArgs e)
+        private void CloseForm(object sender, FormClosedEventArgs e)
         {
-            OpenFileDialog openFileImage = new OpenFileDialog();
-            DialogResult dialog = openFileImage.ShowDialog();
-            if (dialog != DialogResult.Cancel)
+            this.parent.Show();
+            this.lockForm.Close();
+        }
+
+        private void CancelClicked(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void PressEnter(object sender, KeyPressEventArgs e)
+        {
+            Event.PressEnter(sender, e, this);
+        }
+
+        public bool IsItem(ref Item newItem)
+        {
+            SqlConnection connection = Data.OpenConnection();
+            SqlDataReader reader = Data.ReadData("MON", connection, "", "*");
+            string lastID = "";
+
+            while (reader.HasRows)
             {
-                pbImageItem.Image = Image.FromFile(openFileImage.FileName);
-                // Khúc này là duy copy ảnh vào thư mục có địa chỉ là "./ImageItem" và tên của ảnh mới là <ID món>.jpg
+                if (reader.Read() == false)
+                {
+                    break;
+                }
+
+                Item item = new Item(reader.GetString(0), reader.GetString(1),
+                    reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4));
+
+                if (newItem.name == item.name)
+                {
+                    Data.CloseConnection(ref connection);
+                    return false;
+                }
+
+                lastID = item.id.FindID("M").ToString();
+            }
+
+            reader.Close();
+
+            if (lastID == "")
+            {
+                newItem.id.SetID(1, "M", 3);
+            }
+            else
+            {
+                newItem.id.SetID(int.Parse(lastID) + 1, "M", 3);
+            }
+
+            Data.CloseConnection(ref connection);
+            return true;
+        }
+
+        private void ShowErrorWord(object sender, KeyPressEventArgs e)
+        {
+            Event.ShowErrorWord(this.tbPrice, this.epShowError, e);
+        }
+
+        private void OKClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                if (int.Parse(tbPrice.Text) <= 0 || this.tbName.Text == "" || this.tbUnit.Text == ""
+                    || this.pbImageItem.Image == null)
+                {
+                    throw new Exception();
+                }
+
+                Item newItem = new Item("", tbName.Text, tbUnit.Text, 0, int.Parse(tbPrice.Text));
+
+                if (IsItem(ref newItem) == false)
+                {
+                    IO.ExportError("Món này đã có trong danh sách");
+                    return;
+                }
+                else
+                {
+                    Data.AddData("MON", newItem.GetInfo());
+                }
+
+                IO.ExportSuccess("Thêm món thành công");
+                this.parent.LoadForm();
+                this.parent.Show();
+                this.Close();
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Nội dung nhập không hợp lệ");
             }
         }
 
-        private void FormAddItem_FormClosed(object sender, FormClosedEventArgs e)
+        private void AddImageClicked(object sender, EventArgs e)
         {
-            this.parent.Show();
-            this.Lock.Close();
-        }
+            OpenFileDialog openFileImage = new OpenFileDialog();
+            DialogResult dialog = openFileImage.ShowDialog();
 
-        private void BExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            if (dialog != DialogResult.Cancel)
+            {
+                FileInfo file = new FileInfo(openFileImage.FileName);
+                if (file.Extension == ".jpg" || file.Extension == ".png")
+                {
+                    pbImageItem.Image = Image.FromFile(openFileImage.FileName);
+                    File.Copy(openFileImage.FileName, "./ImageItem/" + FindID().id.ToString() + 
+                        ".jpg", true);
+                }
+                else
+                {
+                    IO.ExportError("Chỉ hỗ trợ file .jpg và .png");
+                }
+            }
         }
     }
 }

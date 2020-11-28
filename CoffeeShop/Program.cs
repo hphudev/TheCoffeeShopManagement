@@ -16,7 +16,7 @@ namespace CoffeeShopManagement
         {
             //Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormInit());
+            Application.Run(new FormSell(null));
         }
     }
 }
