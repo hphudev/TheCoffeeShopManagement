@@ -108,7 +108,7 @@ namespace CoffeeShopManagement
         {
             if (!Permiss)
             {
-                MessageBox.Show("Hãy tìm kiếm khách hàng trường khi cập nhật!");
+                MessageBox.Show("Hãy tìm kiếm khách hàng trước khi cập nhật!");
                 return;
             }
             if (!CheckSDT(tbSDT.Text))
@@ -140,14 +140,24 @@ namespace CoffeeShopManagement
 
         private void TbTimKiemSDT_MouseEnter(object sender, EventArgs e)
         {
+
+        }
+
+        private void TbTimKiemSDT_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbTimKiemSDT_Enter(object sender, EventArgs e)
+        {
             if (tbTimKiemSDT.Text == "Số điện thoại")
             {
                 tbTimKiemSDT.Text = "";
                 tbTimKiemSDT.ForeColor = Color.Black;
-            }    
+            }
         }
 
-        private void TbTimKiemSDT_MouseLeave(object sender, EventArgs e)
+        private void TbTimKiemSDT_Leave(object sender, EventArgs e)
         {
             if (tbTimKiemSDT.Text == "")
             {

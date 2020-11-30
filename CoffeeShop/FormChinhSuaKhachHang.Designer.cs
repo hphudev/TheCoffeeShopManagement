@@ -556,9 +556,9 @@
             this.tbTimKiemSDT.Text = "Số điện thoại";
             this.tbTimKiemSDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbTimKiemSDT.TextChanged += new System.EventHandler(this.TbTimKiemSDT_TextChanged);
+            this.tbTimKiemSDT.Enter += new System.EventHandler(this.TbTimKiemSDT_Enter);
             this.tbTimKiemSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbTimKiemSDT_KeyPress);
-            this.tbTimKiemSDT.MouseEnter += new System.EventHandler(this.TbTimKiemSDT_MouseEnter);
-            this.tbTimKiemSDT.MouseLeave += new System.EventHandler(this.TbTimKiemSDT_MouseLeave);
+            this.tbTimKiemSDT.Leave += new System.EventHandler(this.TbTimKiemSDT_Leave);
             // 
             // label2
             // 

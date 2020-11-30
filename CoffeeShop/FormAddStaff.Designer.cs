@@ -314,7 +314,6 @@
             this.bReset.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bReset.BackgroundImage")));
             this.bReset.ButtonText = "ĐẶT LẠI";
             this.bReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bReset.Dock = System.Windows.Forms.DockStyle.Left;
             this.bReset.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bReset.IdleBorderThickness = 1;
@@ -322,7 +321,7 @@
             this.bReset.IdleFillColor = System.Drawing.Color.White;
             this.bReset.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bReset.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bReset.Location = new System.Drawing.Point(303, 0);
+            this.bReset.Location = new System.Drawing.Point(395, 0);
             this.bReset.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.bReset.Name = "bReset";
             this.bReset.Size = new System.Drawing.Size(303, 96);

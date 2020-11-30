@@ -354,6 +354,8 @@ namespace CoffeeShopManagement
         private void BtThongKe_Click(object sender, EventArgs e)
         {
             AnHetCacButtonMenu();
+            (new FormStatistic(this)).Show();
+            this.Hide();
         }
 
         private void BtMonPhoBien_Click(object sender, EventArgs e)

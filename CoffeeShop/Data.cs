@@ -13,6 +13,8 @@ namespace CoffeeShopManagement
         {
             string connectionString = @"Server=DESKTOP-AE2J3P4\LEHOANGPHU; Database=QLQCP; User Id=sa;
                 Password=13012001;";
+            //string connectionString = @"Server=DESKTOP-VKA9AUS; Database=QLQCP; User Id=sa;
+            //    Password=1;";
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             return connection;
@@ -67,9 +69,20 @@ namespace CoffeeShopManagement
         public static int Calculate(string type, string column, string tables, string condition)
         {
             SqlConnection connection = Data.OpenConnection();
+            Data.ExeQuery("SET DATEFORMAT DMY", connection);
             string sqlQuery = "SELECT " + type + "(" + column + ") FROM " + tables + " " + condition;
             SqlCommand command = new SqlCommand(sqlQuery, connection);
-            int result = (int)command.ExecuteScalar();
+            int result;
+
+            try
+            {
+                result = (int)command.ExecuteScalar();
+            }
+            catch (InvalidCastException)
+            {
+                result = 0;
+            }
+
             Data.CloseConnection(ref connection);
             return result;
         }

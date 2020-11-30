@@ -47,7 +47,7 @@
             this.tbUnit = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.tbName = new System.Windows.Forms.ComboBox();
+            this.tbName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.epShowError = new System.Windows.Forms.ErrorProvider(this.components);
@@ -249,6 +249,7 @@
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(505, 70);
             this.tbPrice.TabIndex = 9;
+            this.tbPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbPrice_KeyPress);
             // 
             // label2
             // 
@@ -308,18 +309,13 @@
             // 
             // tbName
             // 
-            this.tbName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.tbName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.tbName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbName.DropDownHeight = 5;
-            this.tbName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tbName.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbName.FormattingEnabled = true;
-            this.tbName.IntegralHeight = false;
+            this.tbName.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbName.Location = new System.Drawing.Point(218, 0);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(505, 70);
-            this.tbName.TabIndex = 8;
+            this.tbName.TabIndex = 10;
             // 
             // label6
             // 
@@ -371,6 +367,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.epShowError)).EndInit();
             this.ResumeLayout(false);
@@ -398,7 +395,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lID;
-        private System.Windows.Forms.ComboBox tbName;
         private System.Windows.Forms.ErrorProvider epShowError;
+        private System.Windows.Forms.TextBox tbName;
     }
 }

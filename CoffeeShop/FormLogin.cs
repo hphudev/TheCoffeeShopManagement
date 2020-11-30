@@ -35,6 +35,15 @@ namespace CoffeeShopManagement
             this.WindowState = FormWindowState.Minimized;
         }
 
+        public void LoadFormLogin()
+        {
+            tbTenDangNhap.TextName = "";
+            tbMatKhau.TextName = "";
+            tbMatKhau.IsPassword = true;
+            pbEye.Image = Image.FromFile("./Resources/OpenEye.png");
+            tbTenDangNhap.Select();
+        }
+
         private void pbEye_Click(object sender, EventArgs e)
         {
             if (tbMatKhau.IsPassword)
