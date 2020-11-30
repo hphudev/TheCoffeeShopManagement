@@ -193,18 +193,18 @@ namespace CoffeeShopManagement
             if (tbSoDienThoai.Text == null || tbHoTen.Text == null || tbHoTen.Text == null || cbGioiTinh.Text == null
                || tbNgaySinh.Text == null || tbThanhVien.Text == null)
             {
-                MessageBox.Show("Bạn đã chưa nhập đủ thông tin!");
+                IO.ExportWarning("Bạn đã chưa nhập đủ thông tin!");
                 return false;
             }
             if (tbSoDienThoai.Text == "" || tbHoTen.Text == "" || tbHoTen.Text == "" || cbGioiTinh.Text == ""
                || tbNgaySinh.Text == "" || tbThanhVien.Text == "")
             {
-                MessageBox.Show("Bạn đã chưa nhập đủ thông tin!");
+                IO.ExportWarning("Bạn đã chưa nhập đủ thông tin!");
                 return false;
             }
             if (cbGioiTinh.Text != "Nam" && cbGioiTinh.Text != "Nữ")
             {
-                MessageBox.Show("Trường Giới tính đã nhập sai!");
+                IO.ExportError("Trường giới tính đã nhập sai!");
                 return false;
             }
             return true;

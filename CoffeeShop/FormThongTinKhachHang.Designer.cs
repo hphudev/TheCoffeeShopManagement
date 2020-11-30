@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormThongTinKhachHang));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.tbDiaChi = new System.Windows.Forms.TextBox();
+            this.LBDiaChi = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.tbNgayDangKy = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,10 +57,8 @@
             this.btCapNhat = new ns1.BunifuThinButton2();
             this.pnLot_NhanKhachHang = new System.Windows.Forms.Panel();
             this.lbNhanKhachHang = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.tbDiaChi = new System.Windows.Forms.TextBox();
-            this.LBDiaChi = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -66,7 +67,6 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnLot_NhanKhachHang.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,6 +86,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(848, 663);
             this.panel1.TabIndex = 0;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.tbDiaChi);
+            this.panel9.Controls.Add(this.LBDiaChi);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(0, 495);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(848, 71);
+            this.panel9.TabIndex = 8;
+            // 
+            // tbDiaChi
+            // 
+            this.tbDiaChi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.tbDiaChi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbDiaChi.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDiaChi.Location = new System.Drawing.Point(340, 0);
+            this.tbDiaChi.Name = "tbDiaChi";
+            this.tbDiaChi.Size = new System.Drawing.Size(508, 70);
+            this.tbDiaChi.TabIndex = 5;
+            // 
+            // LBDiaChi
+            // 
+            this.LBDiaChi.BackColor = System.Drawing.Color.Maroon;
+            this.LBDiaChi.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LBDiaChi.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBDiaChi.ForeColor = System.Drawing.Color.White;
+            this.LBDiaChi.Location = new System.Drawing.Point(0, 0);
+            this.LBDiaChi.Name = "LBDiaChi";
+            this.LBDiaChi.Size = new System.Drawing.Size(340, 71);
+            this.LBDiaChi.TabIndex = 6;
+            this.LBDiaChi.Text = "ĐỊA CHỈ";
+            this.LBDiaChi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel8
             // 
@@ -398,39 +431,6 @@
             this.lbNhanKhachHang.Text = "THÔNG TIN KHÁCH HÀNG";
             this.lbNhanKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.tbDiaChi);
-            this.panel9.Controls.Add(this.LBDiaChi);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 495);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(848, 71);
-            this.panel9.TabIndex = 8;
-            // 
-            // tbDiaChi
-            // 
-            this.tbDiaChi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.tbDiaChi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbDiaChi.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDiaChi.Location = new System.Drawing.Point(340, 0);
-            this.tbDiaChi.Name = "tbDiaChi";
-            this.tbDiaChi.Size = new System.Drawing.Size(508, 70);
-            this.tbDiaChi.TabIndex = 5;
-            // 
-            // LBDiaChi
-            // 
-            this.LBDiaChi.BackColor = System.Drawing.Color.Maroon;
-            this.LBDiaChi.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LBDiaChi.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBDiaChi.ForeColor = System.Drawing.Color.White;
-            this.LBDiaChi.Location = new System.Drawing.Point(0, 0);
-            this.LBDiaChi.Name = "LBDiaChi";
-            this.LBDiaChi.Size = new System.Drawing.Size(340, 71);
-            this.LBDiaChi.TabIndex = 6;
-            this.LBDiaChi.Text = "ĐỊA CHỈ";
-            this.LBDiaChi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FormThongTinKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -445,6 +445,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fThongTinKhachHang_FormClosed);
             this.Load += new System.EventHandler(this.FormThongTinKhachHang_Load);
             this.panel1.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -458,8 +460,6 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.pnLot_NhanKhachHang.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }

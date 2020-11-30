@@ -384,16 +384,16 @@ namespace CoffeeShopManagement
                     {
                         Choice = Items[i];
                         ItemsChoice.Add(Items[i]);
-                        MessageBox.Show("Đã thêm món thành công!");
+                        IO.ExportSuccess("Đã thêm món thành công!");
                         return;
                     }
                     else
                     {
-                        MessageBox.Show("Món này đã được thêm!");
+                        IO.ExportSuccess("Món này đã được thêm!");
                         return;
                     }
                 }
-            MessageBox.Show("Không tìm thấy món!");
+            IO.ExportError("Không tìm thấy món!");
         }
     }
 }

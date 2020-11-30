@@ -122,7 +122,7 @@ namespace CoffeeShopManagement
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception E)
             {
                 IO.ExportError("Nội dung nhập không hợp lệ");
             }

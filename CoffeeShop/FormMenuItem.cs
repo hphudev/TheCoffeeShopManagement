@@ -143,6 +143,7 @@ namespace CoffeeShopManagement
 
         private void CloseForm(object sender, FormClosedEventArgs e)
         {
+            this.parent.LoadSomeThingPublic();
             this.lockForm.Close();
         }
     }

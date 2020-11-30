@@ -108,22 +108,24 @@ namespace CoffeeShopManagement
         {
             if (!Permiss)
             {
-                MessageBox.Show("Hãy tìm kiếm khách hàng trước khi cập nhật!");
+                IO.ExportWarning("Hãy tìm kiếm khách hàng trước khi cập nhật!");
                 return;
             }
             if (!CheckSDT(tbSDT.Text))
             {
-                MessageBox.Show("Trùng số điện thoại");
+                IO.ExportError("Trùng số điện thoại");
                 return;
             }
             if (!CheckGioiTinh(cbGioiTinh.Text))
             {
-                MessageBox.Show("Sai trường giới tính");
+                IO.ExportError("Sai trường giới tính");
                 return;
             }
+            string[] dates = tbNgaySinh.Text.Split('/');
+            string date = dates[2] + '/' + dates[1] + '/' + dates[0]; 
             Data.UpdateData("khachhang", $"hoten = N'{tbHoTen.Text}', dchi = N'{tbDiaChi.Text}', sdt = N'{tbSDT.Text}'" +
-                $", ngaysinh = '{tbNgaySinh.Text}', gioitinh = N'{cbGioiTinh.Text}', loaikh = N'{tbThanhVien.Text}'", $" where makh = '{lbMaKH.Text}' ");
-
+                $", ngaysinh = '{date}', gioitinh = N'{cbGioiTinh.Text}', loaikh = N'{tbThanhVien.Text}'", $" where makh = '{lbMaKH.Text}' ");
+            IO.ExportSuccess("Cập nhật thành công!");
         }
 
         private void TbTimKiemSDT_KeyPress(object sender, KeyPressEventArgs e)

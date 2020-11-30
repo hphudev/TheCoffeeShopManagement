@@ -50,9 +50,7 @@
             this.pnLot_ThongBao = new System.Windows.Forms.Panel();
             this.btHienThi = new XanderUI.XUISuperButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.flpDanhSachMon = new CoffeeShopManagement.FlowLayoutPanelBuffered();
             this.pnLot_Order = new System.Windows.Forms.Panel();
-            this.flpOrder = new CoffeeShopManagement.FlowLayoutPanelBuffered();
             this.pnOrder = new System.Windows.Forms.TableLayoutPanel();
             this.btDaOrder = new System.Windows.Forms.Button();
             this.btDangOrder = new System.Windows.Forms.Button();
@@ -66,6 +64,8 @@
             this.cbTimKiem = new System.Windows.Forms.ComboBox();
             this.btHuyNoiDungTimKiem = new System.Windows.Forms.Button();
             this.lbID_HoaDon = new System.Windows.Forms.Label();
+            this.flpDanhSachMon = new CoffeeShopManagement.FlowLayoutPanelBuffered();
+            this.flpOrder = new CoffeeShopManagement.FlowLayoutPanelBuffered();
             this.pnThanhChon.SuspendLayout();
             this.pnThongBao.SuspendLayout();
             this.pnTaiKhoan.SuspendLayout();
@@ -477,15 +477,6 @@
             this.panel2.Size = new System.Drawing.Size(1682, 684);
             this.panel2.TabIndex = 11;
             // 
-            // flpDanhSachMon
-            // 
-            this.flpDanhSachMon.AutoScroll = true;
-            this.flpDanhSachMon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpDanhSachMon.Location = new System.Drawing.Point(528, 79);
-            this.flpDanhSachMon.Name = "flpDanhSachMon";
-            this.flpDanhSachMon.Size = new System.Drawing.Size(1154, 605);
-            this.flpDanhSachMon.TabIndex = 4;
-            // 
             // pnLot_Order
             // 
             this.pnLot_Order.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -498,15 +489,6 @@
             this.pnLot_Order.Name = "pnLot_Order";
             this.pnLot_Order.Size = new System.Drawing.Size(528, 605);
             this.pnLot_Order.TabIndex = 3;
-            // 
-            // flpOrder
-            // 
-            this.flpOrder.AutoScroll = true;
-            this.flpOrder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpOrder.Location = new System.Drawing.Point(0, 146);
-            this.flpOrder.Name = "flpOrder";
-            this.flpOrder.Size = new System.Drawing.Size(526, 372);
-            this.flpOrder.TabIndex = 7;
             // 
             // pnOrder
             // 
@@ -706,6 +688,24 @@
             this.lbID_HoaDon.Text = "HD-0001";
             this.lbID_HoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // flpDanhSachMon
+            // 
+            this.flpDanhSachMon.AutoScroll = true;
+            this.flpDanhSachMon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpDanhSachMon.Location = new System.Drawing.Point(528, 79);
+            this.flpDanhSachMon.Name = "flpDanhSachMon";
+            this.flpDanhSachMon.Size = new System.Drawing.Size(1154, 605);
+            this.flpDanhSachMon.TabIndex = 4;
+            // 
+            // flpOrder
+            // 
+            this.flpOrder.AutoScroll = true;
+            this.flpOrder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpOrder.Location = new System.Drawing.Point(0, 146);
+            this.flpOrder.Name = "flpOrder";
+            this.flpOrder.Size = new System.Drawing.Size(526, 372);
+            this.flpOrder.TabIndex = 7;
+            // 
             // FormSell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -718,7 +718,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormSell";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "S";
+            this.Text = "Bán hàng";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormBanHang_FormClosed);
             this.Load += new System.EventHandler(this.FormBanHang_Load);
             this.pnThanhChon.ResumeLayout(false);
