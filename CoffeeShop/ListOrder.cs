@@ -15,17 +15,27 @@ namespace CoffeeShopManagement
     {
         private int soluong = 1;
         private string tenMon = "";
-        private double Tien;
-        private double tongTien;
+        private int Tien;
+        private int tongTien;
         private string id;
-        public ListOrder()
+        private int index;
+        private FormSell parent;
+        public ListOrder(FormSell parent)
         {
             InitializeComponent();
+            this.parent = parent;
             DoubleBuffered = true;
             //TenMon = "Cà phê đen";
             //lbSoTien.Text = (Tien * soluong).ToString() + "đ";
             lbSoLuongMon.Text = soluong.ToString();
 
+        }
+
+        [Category("Custom Pro")]
+        public int Index
+        {
+            set { this.index = value; }
+            get { return this.index; }
         }
 
         [Category("Custom Pro")]
@@ -38,19 +48,19 @@ namespace CoffeeShopManagement
         [Category("Custom Pro")]
         public int SoLuong
         {
-            set { this.soluong = value; lbSoLuongMon.Text = value.ToString(); }
+            set { this.soluong = value; lbSoLuongMon.Text = value.ToString(); TongTien = value * soluong; }
             get { return this.soluong; }
         }
 
         [Category("Custom Pro")]
-        public double Gia
+        public int Gia
         {
             set { this.Tien = value; TongTien = value * soluong; }
             get { return this.Tien; }
         }
 
         [Category("Custom Pro")]
-        public double TongTien
+        public int TongTien
         {
             set { this.tongTien = value; lbSoTien.Text = value.ToString() + "đ"; }
             get { return this.tongTien; }
@@ -63,18 +73,26 @@ namespace CoffeeShopManagement
             get { return this.tenMon; }
         }
 
-        private void btTru_Click(object sender, EventArgs e)
+        private void BtTru_MouseDown(object sender, MouseEventArgs e)
         {
             if (soluong > 1)
+            {
                 SoLuong = soluong - 1;
+                //this.parent.Orders[index].SoLuong--;
+            }
             else
+            {
+                this.parent.Orders.RemoveAt(index);
+                this.parent.ItemsChoice.RemoveAt(this.index);
                 this.Dispose();
+            }
             TongTien = soluong * Tien;
         }
 
-        private void btCong_Click(object sender, EventArgs e)
+        private void BtCong_MouseDown(object sender, MouseEventArgs e)
         {
             SoLuong = soluong + 1;
+            //this.parent.Orders[index].SoLuong++;
             TongTien = soluong * Tien;
         }
     }

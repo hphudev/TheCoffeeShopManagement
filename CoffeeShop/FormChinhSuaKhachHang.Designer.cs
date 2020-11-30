@@ -34,43 +34,43 @@
             this.lbNhanKhachHang = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btThoat = new ns1.BunifuThinButton2();
-            this.bunifuThinButton22 = new ns1.BunifuThinButton2();
+            this.btCapNhat = new ns1.BunifuThinButton2();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.tbDoanhSo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.tbSoLanToiQuan = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.tbNgayDangKy = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tbDiaChi = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tbThanhVien = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbNgaySinh = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbGioiTinh = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbHoTen = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbSDT = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbTimKiemSDT = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pnLot_NhanKhachHang = new System.Windows.Forms.Panel();
-            this.lbIDHoaDon = new System.Windows.Forms.Label();
+            this.lbMaKH = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -111,7 +111,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.btThoat);
-            this.panel2.Controls.Add(this.bunifuThinButton22);
+            this.panel2.Controls.Add(this.btCapNhat);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 779);
             this.panel2.Name = "panel2";
@@ -145,31 +145,32 @@
             this.btThoat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btThoat.Click += new System.EventHandler(this.BtThoat_Click);
             // 
-            // bunifuThinButton22
+            // btCapNhat
             // 
-            this.bunifuThinButton22.ActiveBorderThickness = 1;
-            this.bunifuThinButton22.ActiveCornerRadius = 20;
-            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton22.BackColor = System.Drawing.Color.Azure;
-            this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
-            this.bunifuThinButton22.ButtonText = "CẬP NHẬT";
-            this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton22.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bunifuThinButton22.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton22.IdleBorderThickness = 1;
-            this.bunifuThinButton22.IdleCornerRadius = 20;
-            this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton22.Location = new System.Drawing.Point(0, 0);
-            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
-            this.bunifuThinButton22.Name = "bunifuThinButton22";
-            this.bunifuThinButton22.Size = new System.Drawing.Size(303, 96);
-            this.bunifuThinButton22.TabIndex = 1;
-            this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btCapNhat.ActiveBorderThickness = 1;
+            this.btCapNhat.ActiveCornerRadius = 20;
+            this.btCapNhat.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btCapNhat.ActiveForecolor = System.Drawing.Color.White;
+            this.btCapNhat.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btCapNhat.BackColor = System.Drawing.Color.Azure;
+            this.btCapNhat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btCapNhat.BackgroundImage")));
+            this.btCapNhat.ButtonText = "CẬP NHẬT";
+            this.btCapNhat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btCapNhat.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btCapNhat.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCapNhat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btCapNhat.IdleBorderThickness = 1;
+            this.btCapNhat.IdleCornerRadius = 20;
+            this.btCapNhat.IdleFillColor = System.Drawing.Color.White;
+            this.btCapNhat.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btCapNhat.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btCapNhat.Location = new System.Drawing.Point(0, 0);
+            this.btCapNhat.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
+            this.btCapNhat.Name = "btCapNhat";
+            this.btCapNhat.Size = new System.Drawing.Size(303, 96);
+            this.btCapNhat.TabIndex = 1;
+            this.btCapNhat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btCapNhat.Click += new System.EventHandler(this.BtCapNhat_Click);
             // 
             // panel1
             // 
@@ -205,7 +206,7 @@
             // 
             // panel13
             // 
-            this.panel13.Controls.Add(this.textBox11);
+            this.panel13.Controls.Add(this.tbDoanhSo);
             this.panel13.Controls.Add(this.label10);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 639);
@@ -213,15 +214,15 @@
             this.panel13.Size = new System.Drawing.Size(1036, 71);
             this.panel13.TabIndex = 18;
             // 
-            // textBox11
+            // tbDoanhSo
             // 
-            this.textBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.textBox11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox11.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(340, 0);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(696, 70);
-            this.textBox11.TabIndex = 9;
+            this.tbDoanhSo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.tbDoanhSo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbDoanhSo.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDoanhSo.Location = new System.Drawing.Point(340, 0);
+            this.tbDoanhSo.Name = "tbDoanhSo";
+            this.tbDoanhSo.Size = new System.Drawing.Size(696, 70);
+            this.tbDoanhSo.TabIndex = 9;
             // 
             // label10
             // 
@@ -238,7 +239,7 @@
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.textBox10);
+            this.panel12.Controls.Add(this.tbSoLanToiQuan);
             this.panel12.Controls.Add(this.label9);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel12.Location = new System.Drawing.Point(0, 568);
@@ -246,15 +247,15 @@
             this.panel12.Size = new System.Drawing.Size(1036, 71);
             this.panel12.TabIndex = 17;
             // 
-            // textBox10
+            // tbSoLanToiQuan
             // 
-            this.textBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.textBox10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox10.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(340, 0);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(696, 70);
-            this.textBox10.TabIndex = 9;
+            this.tbSoLanToiQuan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.tbSoLanToiQuan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbSoLanToiQuan.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSoLanToiQuan.Location = new System.Drawing.Point(340, 0);
+            this.tbSoLanToiQuan.Name = "tbSoLanToiQuan";
+            this.tbSoLanToiQuan.Size = new System.Drawing.Size(696, 70);
+            this.tbSoLanToiQuan.TabIndex = 9;
             // 
             // label9
             // 
@@ -271,7 +272,7 @@
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.textBox9);
+            this.panel11.Controls.Add(this.tbNgayDangKy);
             this.panel11.Controls.Add(this.label8);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 497);
@@ -279,15 +280,15 @@
             this.panel11.Size = new System.Drawing.Size(1036, 71);
             this.panel11.TabIndex = 16;
             // 
-            // textBox9
+            // tbNgayDangKy
             // 
-            this.textBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.textBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox9.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(340, 0);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(696, 70);
-            this.textBox9.TabIndex = 9;
+            this.tbNgayDangKy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.tbNgayDangKy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbNgayDangKy.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNgayDangKy.Location = new System.Drawing.Point(340, 0);
+            this.tbNgayDangKy.Name = "tbNgayDangKy";
+            this.tbNgayDangKy.Size = new System.Drawing.Size(696, 70);
+            this.tbNgayDangKy.TabIndex = 9;
             // 
             // label8
             // 
@@ -304,7 +305,7 @@
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.textBox8);
+            this.panel10.Controls.Add(this.tbDiaChi);
             this.panel10.Controls.Add(this.label7);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 426);
@@ -312,15 +313,15 @@
             this.panel10.Size = new System.Drawing.Size(1036, 71);
             this.panel10.TabIndex = 15;
             // 
-            // textBox8
+            // tbDiaChi
             // 
-            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.textBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(340, 0);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(696, 70);
-            this.textBox8.TabIndex = 9;
+            this.tbDiaChi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.tbDiaChi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbDiaChi.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDiaChi.Location = new System.Drawing.Point(340, 0);
+            this.tbDiaChi.Name = "tbDiaChi";
+            this.tbDiaChi.Size = new System.Drawing.Size(696, 70);
+            this.tbDiaChi.TabIndex = 9;
             // 
             // label7
             // 
@@ -337,7 +338,7 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.textBox7);
+            this.panel8.Controls.Add(this.tbThanhVien);
             this.panel8.Controls.Add(this.label5);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 355);
@@ -345,15 +346,15 @@
             this.panel8.Size = new System.Drawing.Size(1036, 71);
             this.panel8.TabIndex = 14;
             // 
-            // textBox7
+            // tbThanhVien
             // 
-            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.textBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(340, 0);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(696, 70);
-            this.textBox7.TabIndex = 9;
+            this.tbThanhVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.tbThanhVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbThanhVien.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbThanhVien.Location = new System.Drawing.Point(340, 0);
+            this.tbThanhVien.Name = "tbThanhVien";
+            this.tbThanhVien.Size = new System.Drawing.Size(696, 70);
+            this.tbThanhVien.TabIndex = 9;
             // 
             // label5
             // 
@@ -370,7 +371,7 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.textBox6);
+            this.panel7.Controls.Add(this.tbNgaySinh);
             this.panel7.Controls.Add(this.label6);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 284);
@@ -378,15 +379,15 @@
             this.panel7.Size = new System.Drawing.Size(1036, 71);
             this.panel7.TabIndex = 13;
             // 
-            // textBox6
+            // tbNgaySinh
             // 
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.textBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(340, 0);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(696, 70);
-            this.textBox6.TabIndex = 9;
+            this.tbNgaySinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.tbNgaySinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbNgaySinh.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNgaySinh.Location = new System.Drawing.Point(340, 0);
+            this.tbNgaySinh.Name = "tbNgaySinh";
+            this.tbNgaySinh.Size = new System.Drawing.Size(696, 70);
+            this.tbNgaySinh.TabIndex = 9;
             // 
             // label6
             // 
@@ -403,7 +404,7 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.comboBox1);
+            this.panel6.Controls.Add(this.cbGioiTinh);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 213);
@@ -411,20 +412,23 @@
             this.panel6.Size = new System.Drawing.Size(1036, 71);
             this.panel6.TabIndex = 12;
             // 
-            // comboBox1
+            // cbGioiTinh
             // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.DropDownHeight = 5;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.IntegralHeight = false;
-            this.comboBox1.Location = new System.Drawing.Point(340, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(696, 70);
-            this.comboBox1.TabIndex = 7;
+            this.cbGioiTinh.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbGioiTinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.cbGioiTinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbGioiTinh.DropDownHeight = 5;
+            this.cbGioiTinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbGioiTinh.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbGioiTinh.FormattingEnabled = true;
+            this.cbGioiTinh.IntegralHeight = false;
+            this.cbGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cbGioiTinh.Location = new System.Drawing.Point(340, 0);
+            this.cbGioiTinh.Name = "cbGioiTinh";
+            this.cbGioiTinh.Size = new System.Drawing.Size(696, 70);
+            this.cbGioiTinh.TabIndex = 7;
             // 
             // label4
             // 
@@ -441,7 +445,7 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.textBox4);
+            this.panel5.Controls.Add(this.tbHoTen);
             this.panel5.Controls.Add(this.textBox5);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -450,15 +454,15 @@
             this.panel5.Size = new System.Drawing.Size(1036, 71);
             this.panel5.TabIndex = 11;
             // 
-            // textBox4
+            // tbHoTen
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(340, 0);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(696, 70);
-            this.textBox4.TabIndex = 7;
+            this.tbHoTen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.tbHoTen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbHoTen.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbHoTen.Location = new System.Drawing.Point(340, 0);
+            this.tbHoTen.Name = "tbHoTen";
+            this.tbHoTen.Size = new System.Drawing.Size(696, 70);
+            this.tbHoTen.TabIndex = 7;
             // 
             // textBox5
             // 
@@ -485,7 +489,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.textBox3);
+            this.panel4.Controls.Add(this.tbSDT);
             this.panel4.Controls.Add(this.textBox2);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -494,15 +498,16 @@
             this.panel4.Size = new System.Drawing.Size(1036, 71);
             this.panel4.TabIndex = 10;
             // 
-            // textBox3
+            // tbSDT
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(340, 0);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(696, 70);
-            this.textBox3.TabIndex = 7;
+            this.tbSDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.tbSDT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbSDT.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSDT.Location = new System.Drawing.Point(340, 0);
+            this.tbSDT.Name = "tbSDT";
+            this.tbSDT.Size = new System.Drawing.Size(696, 70);
+            this.tbSDT.TabIndex = 7;
+            this.tbSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbSDT_KeyPress);
             // 
             // textBox2
             // 
@@ -529,7 +534,7 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.textBox1);
+            this.panel9.Controls.Add(this.tbTimKiemSDT);
             this.panel9.Controls.Add(this.label2);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 0);
@@ -537,19 +542,23 @@
             this.panel9.Size = new System.Drawing.Size(1036, 71);
             this.panel9.TabIndex = 9;
             // 
-            // textBox1
+            // tbTimKiemSDT
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.textBox1.Location = new System.Drawing.Point(340, 0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(696, 70);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "Số điện thoại";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbTimKiemSDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.tbTimKiemSDT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbTimKiemSDT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbTimKiemSDT.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTimKiemSDT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tbTimKiemSDT.Location = new System.Drawing.Point(340, 0);
+            this.tbTimKiemSDT.Name = "tbTimKiemSDT";
+            this.tbTimKiemSDT.Size = new System.Drawing.Size(696, 70);
+            this.tbTimKiemSDT.TabIndex = 5;
+            this.tbTimKiemSDT.Text = "Số điện thoại";
+            this.tbTimKiemSDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbTimKiemSDT.TextChanged += new System.EventHandler(this.TbTimKiemSDT_TextChanged);
+            this.tbTimKiemSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbTimKiemSDT_KeyPress);
+            this.tbTimKiemSDT.MouseEnter += new System.EventHandler(this.TbTimKiemSDT_MouseEnter);
+            this.tbTimKiemSDT.MouseLeave += new System.EventHandler(this.TbTimKiemSDT_MouseLeave);
             // 
             // label2
             // 
@@ -568,7 +577,7 @@
             // pnLot_NhanKhachHang
             // 
             this.pnLot_NhanKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.pnLot_NhanKhachHang.Controls.Add(this.lbIDHoaDon);
+            this.pnLot_NhanKhachHang.Controls.Add(this.lbMaKH);
             this.pnLot_NhanKhachHang.Controls.Add(this.lbNhanKhachHang);
             this.pnLot_NhanKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnLot_NhanKhachHang.Location = new System.Drawing.Point(0, 0);
@@ -576,22 +585,22 @@
             this.pnLot_NhanKhachHang.Size = new System.Drawing.Size(1036, 69);
             this.pnLot_NhanKhachHang.TabIndex = 0;
             // 
-            // lbIDHoaDon
+            // lbMaKH
             // 
-            this.lbIDHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbIDHoaDon.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lbIDHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbIDHoaDon.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIDHoaDon.ForeColor = System.Drawing.Color.White;
-            this.lbIDHoaDon.Image = global::CoffeeShopManagement.Properties.Resources.Info;
-            this.lbIDHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbIDHoaDon.Location = new System.Drawing.Point(0, 0);
-            this.lbIDHoaDon.Name = "lbIDHoaDon";
-            this.lbIDHoaDon.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.lbIDHoaDon.Size = new System.Drawing.Size(340, 69);
-            this.lbIDHoaDon.TabIndex = 2;
-            this.lbIDHoaDon.Text = "KH-0001";
-            this.lbIDHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbMaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbMaKH.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbMaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbMaKH.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMaKH.ForeColor = System.Drawing.Color.White;
+            this.lbMaKH.Image = global::CoffeeShopManagement.Properties.Resources.Info;
+            this.lbMaKH.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbMaKH.Location = new System.Drawing.Point(0, 0);
+            this.lbMaKH.Name = "lbMaKH";
+            this.lbMaKH.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.lbMaKH.Size = new System.Drawing.Size(340, 69);
+            this.lbMaKH.TabIndex = 2;
+            this.lbMaKH.Text = "KH-0001";
+            this.lbMaKH.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormChinhSuaKhachHang
             // 
@@ -635,44 +644,44 @@
 
         private ns1.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Label lbNhanKhachHang;
-        private ns1.BunifuThinButton2 bunifuThinButton22;
+        private ns1.BunifuThinButton2 btCapNhat;
         private ns1.BunifuThinButton2 btThoat;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnLot_NhanKhachHang;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tbThanhVien;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbNgaySinh;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbGioiTinh;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbHoTen;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbSDT;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbTimKiemSDT;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox tbDiaChi;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox tbDoanhSo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox tbSoLanToiQuan;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox tbNgayDangKy;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lbIDHoaDon;
+        private System.Windows.Forms.Label lbMaKH;
     }
 }

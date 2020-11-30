@@ -24,6 +24,7 @@ namespace CoffeeShopManagement
         private string sTitle;
         private Image image;
         private int gia;
+        private int times;
         private string idItem;
 
         [Category("Custom Pro")]
@@ -60,16 +61,30 @@ namespace CoffeeShopManagement
                     lbCost.Text = value.ToString();
             }
         }
+
+        [Category("Custom Pro")]
+        public int TimesChoice
+        {
+            get { return TimesChoice; }
+            set
+            {
+                 times = value;
+            }
+        }
         #endregion
 
         private void pbAnhMon_MouseClick(object sender, MouseEventArgs e)
         {
-            this.parent.Choice = this;
+            if (!this.parent.ItemsChoice.Contains(this))
+            {
+                this.parent.Choice = this;
+                this.parent.ItemsChoice.Add(this);
+            }
         }
 
         private void pbAnhMon_MouseHover(object sender, EventArgs e)
         {
-            this.lbTenMon.BackColor = Color.Silver;
+            this.lbTenMon.BackColor = Color.DarkSalmon;
         }
 
         private void pbAnhMon_MouseEnter(object sender, EventArgs e)
@@ -79,7 +94,7 @@ namespace CoffeeShopManagement
 
         private void pbAnhMon_MouseLeave(object sender, EventArgs e)
         {
-            this.lbTenMon.BackColor = Color.Gainsboro;
+            this.lbTenMon.BackColor = Color.DarkSalmon;
         }
 
         private void lbTenMon_MouseEnter(object sender, EventArgs e)
@@ -94,7 +109,11 @@ namespace CoffeeShopManagement
 
         private void LbTenMon_MouseClick(object sender, MouseEventArgs e)
         {
-            this.parent.Choice = this;
+            if (!this.parent.ItemsChoice.Contains(this))
+            {
+                this.parent.Choice = this;
+                this.parent.ItemsChoice.Add(this);
+            }
         }
     }
 }

@@ -42,7 +42,7 @@
             this.pn1 = new System.Windows.Forms.Panel();
             this.pnTaiKhoan = new System.Windows.Forms.Panel();
             this.btTK_QuanLy = new ns1.BunifuThinButton2();
-            this.btTK_ThongTin = new ns1.BunifuThinButton2();
+            this.bInfoAccount = new ns1.BunifuThinButton2();
             this.btTK_DangXuat = new ns1.BunifuThinButton2();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnLot_TaiKhoan = new System.Windows.Forms.Panel();
@@ -50,23 +50,20 @@
             this.pnLot_ThongBao = new System.Windows.Forms.Panel();
             this.btHienThi = new XanderUI.XUISuperButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.flpDanhSachMon = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpDanhSachMon = new CoffeeShopManagement.FlowLayoutPanelBuffered();
             this.pnLot_Order = new System.Windows.Forms.Panel();
-            this.flpOrder = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpOrder = new CoffeeShopManagement.FlowLayoutPanelBuffered();
             this.pnOrder = new System.Windows.Forms.TableLayoutPanel();
             this.btDaOrder = new System.Windows.Forms.Button();
             this.btDangOrder = new System.Windows.Forms.Button();
             this.btThongTinKhachHang = new System.Windows.Forms.Button();
             this.btOrder = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btThucUong = new ns1.BunifuThinButton2();
-            this.btMonPhoBien = new ns1.BunifuThinButton2();
             this.pnLot_ThanhTieuDe = new System.Windows.Forms.Panel();
             this.btDanhSachBan = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pnLotTimKiemOrder = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btTimKiem = new System.Windows.Forms.Button();
+            this.cbTimKiem = new System.Windows.Forms.ComboBox();
             this.btHuyNoiDungTimKiem = new System.Windows.Forms.Button();
             this.lbID_HoaDon = new System.Windows.Forms.Label();
             this.pnThanhChon.SuspendLayout();
@@ -78,7 +75,6 @@
             this.panel2.SuspendLayout();
             this.pnLot_Order.SuspendLayout();
             this.pnOrder.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.pnLot_ThanhTieuDe.SuspendLayout();
             this.pnLotTimKiemOrder.SuspendLayout();
             this.SuspendLayout();
@@ -315,7 +311,7 @@
             // pnTaiKhoan
             // 
             this.pnTaiKhoan.Controls.Add(this.btTK_QuanLy);
-            this.pnTaiKhoan.Controls.Add(this.btTK_ThongTin);
+            this.pnTaiKhoan.Controls.Add(this.bInfoAccount);
             this.pnTaiKhoan.Controls.Add(this.btTK_DangXuat);
             this.pnTaiKhoan.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnTaiKhoan.Location = new System.Drawing.Point(0, -2);
@@ -350,32 +346,31 @@
             this.btTK_QuanLy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btTK_QuanLy.Click += new System.EventHandler(this.BtTK_QuanLy_Click);
             // 
-            // btTK_ThongTin
+            // bInfoAccount
             // 
-            this.btTK_ThongTin.ActiveBorderThickness = 1;
-            this.btTK_ThongTin.ActiveCornerRadius = 20;
-            this.btTK_ThongTin.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.btTK_ThongTin.ActiveForecolor = System.Drawing.Color.White;
-            this.btTK_ThongTin.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btTK_ThongTin.BackColor = System.Drawing.Color.Azure;
-            this.btTK_ThongTin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btTK_ThongTin.BackgroundImage")));
-            this.btTK_ThongTin.ButtonText = "Thông tin";
-            this.btTK_ThongTin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btTK_ThongTin.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btTK_ThongTin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTK_ThongTin.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btTK_ThongTin.IdleBorderThickness = 1;
-            this.btTK_ThongTin.IdleCornerRadius = 20;
-            this.btTK_ThongTin.IdleFillColor = System.Drawing.Color.SeaShell;
-            this.btTK_ThongTin.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.btTK_ThongTin.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btTK_ThongTin.Location = new System.Drawing.Point(152, 0);
-            this.btTK_ThongTin.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btTK_ThongTin.Name = "btTK_ThongTin";
-            this.btTK_ThongTin.Size = new System.Drawing.Size(145, 47);
-            this.btTK_ThongTin.TabIndex = 8;
-            this.btTK_ThongTin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btTK_ThongTin.Click += new System.EventHandler(this.BtTK_ThongTin_Click);
+            this.bInfoAccount.ActiveBorderThickness = 1;
+            this.bInfoAccount.ActiveCornerRadius = 20;
+            this.bInfoAccount.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.bInfoAccount.ActiveForecolor = System.Drawing.Color.White;
+            this.bInfoAccount.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.bInfoAccount.BackColor = System.Drawing.Color.Azure;
+            this.bInfoAccount.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bInfoAccount.BackgroundImage")));
+            this.bInfoAccount.ButtonText = "Thông tin";
+            this.bInfoAccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bInfoAccount.Dock = System.Windows.Forms.DockStyle.Right;
+            this.bInfoAccount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bInfoAccount.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bInfoAccount.IdleBorderThickness = 1;
+            this.bInfoAccount.IdleCornerRadius = 20;
+            this.bInfoAccount.IdleFillColor = System.Drawing.Color.SeaShell;
+            this.bInfoAccount.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.bInfoAccount.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.bInfoAccount.Location = new System.Drawing.Point(152, 0);
+            this.bInfoAccount.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.bInfoAccount.Name = "bInfoAccount";
+            this.bInfoAccount.Size = new System.Drawing.Size(145, 47);
+            this.bInfoAccount.TabIndex = 8;
+            this.bInfoAccount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btTK_DangXuat
             // 
@@ -475,7 +470,6 @@
             this.panel2.BackColor = System.Drawing.Color.Azure;
             this.panel2.Controls.Add(this.flpDanhSachMon);
             this.panel2.Controls.Add(this.pnLot_Order);
-            this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.pnLot_ThanhTieuDe);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -489,7 +483,7 @@
             this.flpDanhSachMon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpDanhSachMon.Location = new System.Drawing.Point(528, 79);
             this.flpDanhSachMon.Name = "flpDanhSachMon";
-            this.flpDanhSachMon.Size = new System.Drawing.Size(886, 605);
+            this.flpDanhSachMon.Size = new System.Drawing.Size(1154, 605);
             this.flpDanhSachMon.TabIndex = 4;
             // 
             // pnLot_Order
@@ -507,6 +501,7 @@
             // 
             // flpOrder
             // 
+            this.flpOrder.AutoScroll = true;
             this.flpOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpOrder.Location = new System.Drawing.Point(0, 146);
             this.flpOrder.Name = "flpOrder";
@@ -594,68 +589,6 @@
             this.btOrder.UseVisualStyleBackColor = false;
             this.btOrder.Click += new System.EventHandler(this.btOrder_Click);
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.btThucUong);
-            this.panel5.Controls.Add(this.btMonPhoBien);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(1414, 79);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(268, 605);
-            this.panel5.TabIndex = 1;
-            // 
-            // btThucUong
-            // 
-            this.btThucUong.ActiveBorderThickness = 2;
-            this.btThucUong.ActiveCornerRadius = 10;
-            this.btThucUong.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btThucUong.ActiveForecolor = System.Drawing.Color.White;
-            this.btThucUong.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btThucUong.BackColor = System.Drawing.Color.Azure;
-            this.btThucUong.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btThucUong.BackgroundImage")));
-            this.btThucUong.ButtonText = "THỰC ĐƠN";
-            this.btThucUong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btThucUong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btThucUong.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThucUong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btThucUong.IdleBorderThickness = 2;
-            this.btThucUong.IdleCornerRadius = 10;
-            this.btThucUong.IdleFillColor = System.Drawing.Color.White;
-            this.btThucUong.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btThucUong.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btThucUong.Location = new System.Drawing.Point(0, 81);
-            this.btThucUong.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
-            this.btThucUong.Name = "btThucUong";
-            this.btThucUong.Size = new System.Drawing.Size(268, 81);
-            this.btThucUong.TabIndex = 1;
-            this.btThucUong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btMonPhoBien
-            // 
-            this.btMonPhoBien.ActiveBorderThickness = 2;
-            this.btMonPhoBien.ActiveCornerRadius = 10;
-            this.btMonPhoBien.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btMonPhoBien.ActiveForecolor = System.Drawing.Color.White;
-            this.btMonPhoBien.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btMonPhoBien.BackColor = System.Drawing.Color.Azure;
-            this.btMonPhoBien.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btMonPhoBien.BackgroundImage")));
-            this.btMonPhoBien.ButtonText = "PHỔ BIẾN";
-            this.btMonPhoBien.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btMonPhoBien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btMonPhoBien.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btMonPhoBien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btMonPhoBien.IdleBorderThickness = 2;
-            this.btMonPhoBien.IdleCornerRadius = 10;
-            this.btMonPhoBien.IdleFillColor = System.Drawing.Color.White;
-            this.btMonPhoBien.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btMonPhoBien.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btMonPhoBien.Location = new System.Drawing.Point(0, 0);
-            this.btMonPhoBien.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
-            this.btMonPhoBien.Name = "btMonPhoBien";
-            this.btMonPhoBien.Size = new System.Drawing.Size(268, 81);
-            this.btMonPhoBien.TabIndex = 0;
-            this.btMonPhoBien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pnLot_ThanhTieuDe
             // 
             this.pnLot_ThanhTieuDe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -678,9 +611,9 @@
             this.btDanhSachBan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btDanhSachBan.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDanhSachBan.ForeColor = System.Drawing.Color.White;
-            this.btDanhSachBan.Location = new System.Drawing.Point(914, 0);
+            this.btDanhSachBan.Location = new System.Drawing.Point(1234, 0);
             this.btDanhSachBan.Name = "btDanhSachBan";
-            this.btDanhSachBan.Size = new System.Drawing.Size(387, 77);
+            this.btDanhSachBan.Size = new System.Drawing.Size(316, 77);
             this.btDanhSachBan.TabIndex = 5;
             this.btDanhSachBan.Text = "BÀN";
             this.btDanhSachBan.UseVisualStyleBackColor = false;
@@ -690,50 +623,54 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(914, 0);
+            this.panel6.Location = new System.Drawing.Point(1234, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(766, 77);
+            this.panel6.Size = new System.Drawing.Size(446, 77);
             this.panel6.TabIndex = 4;
             // 
             // pnLotTimKiemOrder
             // 
-            this.pnLotTimKiemOrder.Controls.Add(this.button6);
-            this.pnLotTimKiemOrder.Controls.Add(this.comboBox1);
+            this.pnLotTimKiemOrder.Controls.Add(this.btTimKiem);
+            this.pnLotTimKiemOrder.Controls.Add(this.cbTimKiem);
             this.pnLotTimKiemOrder.Controls.Add(this.btHuyNoiDungTimKiem);
             this.pnLotTimKiemOrder.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnLotTimKiemOrder.Location = new System.Drawing.Point(224, 0);
+            this.pnLotTimKiemOrder.Location = new System.Drawing.Point(242, 0);
             this.pnLotTimKiemOrder.Name = "pnLotTimKiemOrder";
-            this.pnLotTimKiemOrder.Size = new System.Drawing.Size(690, 77);
+            this.pnLotTimKiemOrder.Size = new System.Drawing.Size(992, 77);
             this.pnLotTimKiemOrder.TabIndex = 2;
             // 
-            // button6
+            // btTimKiem
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button6.Location = new System.Drawing.Point(430, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(260, 77);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "TÌM KIẾM";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
+            this.btTimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btTimKiem.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btTimKiem.FlatAppearance.BorderSize = 0;
+            this.btTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btTimKiem.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTimKiem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btTimKiem.Location = new System.Drawing.Point(672, 0);
+            this.btTimKiem.Name = "btTimKiem";
+            this.btTimKiem.Size = new System.Drawing.Size(320, 77);
+            this.btTimKiem.TabIndex = 4;
+            this.btTimKiem.Text = "TÌM KIẾM";
+            this.btTimKiem.UseVisualStyleBackColor = false;
+            this.btTimKiem.Click += new System.EventHandler(this.BtTimKiem_Click);
             // 
-            // comboBox1
+            // cbTimKiem
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(163)))), ((int)(((byte)(26)))));
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.Color.White;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(73, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(357, 75);
-            this.comboBox1.TabIndex = 3;
+            this.cbTimKiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbTimKiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(163)))), ((int)(((byte)(26)))));
+            this.cbTimKiem.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbTimKiem.DropDownWidth = 500;
+            this.cbTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTimKiem.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTimKiem.ForeColor = System.Drawing.Color.White;
+            this.cbTimKiem.FormattingEnabled = true;
+            this.cbTimKiem.Location = new System.Drawing.Point(73, 0);
+            this.cbTimKiem.Name = "cbTimKiem";
+            this.cbTimKiem.Size = new System.Drawing.Size(599, 75);
+            this.cbTimKiem.TabIndex = 3;
             // 
             // btHuyNoiDungTimKiem
             // 
@@ -750,6 +687,7 @@
             this.btHuyNoiDungTimKiem.TabIndex = 0;
             this.btHuyNoiDungTimKiem.Text = "X";
             this.btHuyNoiDungTimKiem.UseVisualStyleBackColor = false;
+            this.btHuyNoiDungTimKiem.Click += new System.EventHandler(this.BtHuyNoiDungTimKiem_Click);
             // 
             // lbID_HoaDon
             // 
@@ -763,7 +701,7 @@
             this.lbID_HoaDon.Location = new System.Drawing.Point(0, 0);
             this.lbID_HoaDon.Name = "lbID_HoaDon";
             this.lbID_HoaDon.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.lbID_HoaDon.Size = new System.Drawing.Size(224, 77);
+            this.lbID_HoaDon.Size = new System.Drawing.Size(242, 77);
             this.lbID_HoaDon.TabIndex = 0;
             this.lbID_HoaDon.Text = "HD-0001";
             this.lbID_HoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -792,7 +730,6 @@
             this.panel2.ResumeLayout(false);
             this.pnLot_Order.ResumeLayout(false);
             this.pnOrder.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.pnLot_ThanhTieuDe.ResumeLayout(false);
             this.pnLotTimKiemOrder.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -812,7 +749,7 @@
         private ns1.BunifuThinButton2 btTaiKhoan;
         private ns1.BunifuThinButton2 btThongKe;
         private ns1.BunifuThinButton2 btTK_DangXuat;
-        private ns1.BunifuThinButton2 btTK_ThongTin;
+        private ns1.BunifuThinButton2 bInfoAccount;
         private ns1.BunifuThinButton2 btTK_QuanLy;
         private System.Windows.Forms.Panel pn1;
         private System.Windows.Forms.Panel panel1;
@@ -824,21 +761,18 @@
         private System.Windows.Forms.Panel pnLot_ThanhTieuDe;
         private System.Windows.Forms.Panel pnLot_Order;
         private System.Windows.Forms.Button btOrder;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TableLayoutPanel pnOrder;
         private System.Windows.Forms.Button btThongTinKhachHang;
         private System.Windows.Forms.Button btDangOrder;
-        private System.Windows.Forms.FlowLayoutPanel flpDanhSachMon;
         private System.Windows.Forms.Button btDaOrder;
         private System.Windows.Forms.Label lbID_HoaDon;
         private System.Windows.Forms.Panel pnLotTimKiemOrder;
         private System.Windows.Forms.Button btHuyNoiDungTimKiem;
         private System.Windows.Forms.Panel panel6;
-        private ns1.BunifuThinButton2 btMonPhoBien;
-        private ns1.BunifuThinButton2 btThucUong;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btTimKiem;
+        private System.Windows.Forms.ComboBox cbTimKiem;
         private System.Windows.Forms.Button btDanhSachBan;
-        private System.Windows.Forms.FlowLayoutPanel flpOrder;
+        private FlowLayoutPanelBuffered flpOrder;
+        private FlowLayoutPanelBuffered flpDanhSachMon;
     }
 }

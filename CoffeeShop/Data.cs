@@ -26,7 +26,7 @@ namespace CoffeeShopManagement
         public static SqlDataReader ReadData(string table, SqlConnection connection, 
             string condition, string columns)
         {
-            string sqlQuery = "SELECT " + columns + " FROM " + table + condition;
+            string sqlQuery = "SELECT " + columns + " FROM " + table + " " + condition;
             SqlCommand command = new SqlCommand(sqlQuery, connection);
             return command.ExecuteReader();
         }
@@ -56,6 +56,22 @@ namespace CoffeeShopManagement
             SqlCommand command = new SqlCommand(sqlQuery, connection);
             command.ExecuteNonQuery();
             Data.CloseConnection(ref connection);
+        }
+
+        public static void ExeQuery(string query, SqlConnection connection)
+        {
+            SqlCommand command = new SqlCommand(query, connection);
+            command.ExecuteNonQuery();
+        }
+
+        public static int Calculate(string type, string column, string tables, string condition)
+        {
+            SqlConnection connection = Data.OpenConnection();
+            string sqlQuery = "SELECT " + type + "(" + column + ") FROM " + tables + " " + condition;
+            SqlCommand command = new SqlCommand(sqlQuery, connection);
+            int result = (int)command.ExecuteScalar();
+            Data.CloseConnection(ref connection);
+            return result;
         }
     }
 }

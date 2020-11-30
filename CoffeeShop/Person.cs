@@ -26,5 +26,9 @@ namespace CoffeeShopManagement
             this.sdt = sdt;
             this.sex = sex;
         }
+
+        public Person()
+        {
+        }
     }
 }

@@ -137,6 +137,7 @@ namespace CoffeeShopManagement
 
                 IO.ExportSuccess("Thêm món thành công");
                 this.parent.LoadForm();
+                this.parent.parent.LoadSomeThingPublic();
                 this.parent.Show();
                 this.Close();
             }

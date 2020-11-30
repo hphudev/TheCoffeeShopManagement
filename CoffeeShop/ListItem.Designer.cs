@@ -36,12 +36,12 @@
             // 
             // lbTenMon
             // 
-            this.lbTenMon.BackColor = System.Drawing.Color.Silver;
+            this.lbTenMon.BackColor = System.Drawing.Color.DarkSalmon;
             this.lbTenMon.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lbTenMon.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenMon.Location = new System.Drawing.Point(0, 165);
+            this.lbTenMon.Location = new System.Drawing.Point(0, 185);
             this.lbTenMon.Name = "lbTenMon";
-            this.lbTenMon.Size = new System.Drawing.Size(230, 71);
+            this.lbTenMon.Size = new System.Drawing.Size(268, 108);
             this.lbTenMon.TabIndex = 0;
             this.lbTenMon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbTenMon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LbTenMon_MouseClick);
@@ -54,7 +54,7 @@
             this.pbAnhMon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbAnhMon.Location = new System.Drawing.Point(0, 0);
             this.pbAnhMon.Name = "pbAnhMon";
-            this.pbAnhMon.Size = new System.Drawing.Size(230, 165);
+            this.pbAnhMon.Size = new System.Drawing.Size(268, 185);
             this.pbAnhMon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbAnhMon.TabIndex = 1;
             this.pbAnhMon.TabStop = false;
@@ -68,7 +68,7 @@
             this.lbCost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lbCost.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbCost.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCost.Location = new System.Drawing.Point(171, 0);
+            this.lbCost.Location = new System.Drawing.Point(209, 0);
             this.lbCost.Name = "lbCost";
             this.lbCost.Size = new System.Drawing.Size(59, 32);
             this.lbCost.TabIndex = 2;
@@ -85,7 +85,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DoubleBuffered = true;
             this.Name = "ListItem";
-            this.Size = new System.Drawing.Size(230, 236);
+            this.Size = new System.Drawing.Size(268, 293);
             ((System.ComponentModel.ISupportInitialize)(this.pbAnhMon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

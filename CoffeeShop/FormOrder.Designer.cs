@@ -1,6 +1,6 @@
 ﻿namespace CoffeeShopManagement
 {
-    partial class F_Order
+    partial class FormOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Order));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOrder));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btThoat = new ns1.BunifuThinButton2();
-            this.bunifuThinButton23 = new ns1.BunifuThinButton2();
-            this.bunifuThinButton22 = new ns1.BunifuThinButton2();
-            this.bunifuThinButton21 = new ns1.BunifuThinButton2();
+            this.btLuuOrder = new ns1.BunifuThinButton2();
+            this.btThemBan = new ns1.BunifuThinButton2();
+            this.btThanhToan = new ns1.BunifuThinButton2();
+            this.printBill = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewBill = new System.Windows.Forms.PrintPreviewDialog();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,9 +43,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.Controls.Add(this.btThoat);
-            this.panel1.Controls.Add(this.bunifuThinButton23);
-            this.panel1.Controls.Add(this.bunifuThinButton22);
-            this.panel1.Controls.Add(this.bunifuThinButton21);
+            this.panel1.Controls.Add(this.btLuuOrder);
+            this.panel1.Controls.Add(this.btThemBan);
+            this.panel1.Controls.Add(this.btThanhToan);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -77,85 +79,101 @@
             this.btThoat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
-            // bunifuThinButton23
+            // btLuuOrder
             // 
-            this.bunifuThinButton23.ActiveBorderThickness = 1;
-            this.bunifuThinButton23.ActiveCornerRadius = 20;
-            this.bunifuThinButton23.ActiveFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton23.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton23.ActiveLineColor = System.Drawing.Color.White;
-            this.bunifuThinButton23.BackColor = System.Drawing.Color.Gray;
-            this.bunifuThinButton23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton23.BackgroundImage")));
-            this.bunifuThinButton23.ButtonText = "LƯU ORDER";
-            this.bunifuThinButton23.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton23.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bunifuThinButton23.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton23.ForeColor = System.Drawing.Color.White;
-            this.bunifuThinButton23.IdleBorderThickness = 1;
-            this.bunifuThinButton23.IdleCornerRadius = 20;
-            this.bunifuThinButton23.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton23.IdleForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton23.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton23.Location = new System.Drawing.Point(534, 0);
-            this.bunifuThinButton23.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton23.Name = "bunifuThinButton23";
-            this.bunifuThinButton23.Size = new System.Drawing.Size(267, 248);
-            this.bunifuThinButton23.TabIndex = 5;
-            this.bunifuThinButton23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btLuuOrder.ActiveBorderThickness = 1;
+            this.btLuuOrder.ActiveCornerRadius = 20;
+            this.btLuuOrder.ActiveFillColor = System.Drawing.Color.White;
+            this.btLuuOrder.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btLuuOrder.ActiveLineColor = System.Drawing.Color.White;
+            this.btLuuOrder.BackColor = System.Drawing.Color.Gray;
+            this.btLuuOrder.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btLuuOrder.BackgroundImage")));
+            this.btLuuOrder.ButtonText = "LƯU ORDER";
+            this.btLuuOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btLuuOrder.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btLuuOrder.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLuuOrder.ForeColor = System.Drawing.Color.White;
+            this.btLuuOrder.IdleBorderThickness = 1;
+            this.btLuuOrder.IdleCornerRadius = 20;
+            this.btLuuOrder.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btLuuOrder.IdleForecolor = System.Drawing.Color.White;
+            this.btLuuOrder.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btLuuOrder.Location = new System.Drawing.Point(534, 0);
+            this.btLuuOrder.Margin = new System.Windows.Forms.Padding(5);
+            this.btLuuOrder.Name = "btLuuOrder";
+            this.btLuuOrder.Size = new System.Drawing.Size(267, 248);
+            this.btLuuOrder.TabIndex = 5;
+            this.btLuuOrder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bunifuThinButton22
+            // btThemBan
             // 
-            this.bunifuThinButton22.ActiveBorderThickness = 1;
-            this.bunifuThinButton22.ActiveCornerRadius = 20;
-            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.White;
-            this.bunifuThinButton22.BackColor = System.Drawing.Color.Gray;
-            this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
-            this.bunifuThinButton22.ButtonText = "THÊM BÀN";
-            this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton22.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bunifuThinButton22.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton22.ForeColor = System.Drawing.Color.White;
-            this.bunifuThinButton22.IdleBorderThickness = 1;
-            this.bunifuThinButton22.IdleCornerRadius = 20;
-            this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton22.Location = new System.Drawing.Point(267, 0);
-            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton22.Name = "bunifuThinButton22";
-            this.bunifuThinButton22.Size = new System.Drawing.Size(267, 248);
-            this.bunifuThinButton22.TabIndex = 4;
-            this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btThemBan.ActiveBorderThickness = 1;
+            this.btThemBan.ActiveCornerRadius = 20;
+            this.btThemBan.ActiveFillColor = System.Drawing.Color.White;
+            this.btThemBan.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btThemBan.ActiveLineColor = System.Drawing.Color.White;
+            this.btThemBan.BackColor = System.Drawing.Color.Gray;
+            this.btThemBan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btThemBan.BackgroundImage")));
+            this.btThemBan.ButtonText = "THÊM BÀN";
+            this.btThemBan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btThemBan.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btThemBan.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThemBan.ForeColor = System.Drawing.Color.White;
+            this.btThemBan.IdleBorderThickness = 1;
+            this.btThemBan.IdleCornerRadius = 20;
+            this.btThemBan.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btThemBan.IdleForecolor = System.Drawing.Color.White;
+            this.btThemBan.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btThemBan.Location = new System.Drawing.Point(267, 0);
+            this.btThemBan.Margin = new System.Windows.Forms.Padding(5);
+            this.btThemBan.Name = "btThemBan";
+            this.btThemBan.Size = new System.Drawing.Size(267, 248);
+            this.btThemBan.TabIndex = 4;
+            this.btThemBan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btThemBan.Click += new System.EventHandler(this.BtThemBan_Click);
             // 
-            // bunifuThinButton21
+            // btThanhToan
             // 
-            this.bunifuThinButton21.ActiveBorderThickness = 1;
-            this.bunifuThinButton21.ActiveCornerRadius = 20;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.BackColor = System.Drawing.Color.Gray;
-            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
-            this.bunifuThinButton21.ButtonText = "THANH TOÁN";
-            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton21.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bunifuThinButton21.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.IdleBorderThickness = 1;
-            this.bunifuThinButton21.IdleCornerRadius = 20;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton21.Location = new System.Drawing.Point(0, 0);
-            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(267, 248);
-            this.bunifuThinButton21.TabIndex = 3;
-            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btThanhToan.ActiveBorderThickness = 1;
+            this.btThanhToan.ActiveCornerRadius = 20;
+            this.btThanhToan.ActiveFillColor = System.Drawing.Color.White;
+            this.btThanhToan.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btThanhToan.ActiveLineColor = System.Drawing.Color.White;
+            this.btThanhToan.BackColor = System.Drawing.Color.Gray;
+            this.btThanhToan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btThanhToan.BackgroundImage")));
+            this.btThanhToan.ButtonText = "THANH TOÁN";
+            this.btThanhToan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btThanhToan.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btThanhToan.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThanhToan.ForeColor = System.Drawing.Color.White;
+            this.btThanhToan.IdleBorderThickness = 1;
+            this.btThanhToan.IdleCornerRadius = 20;
+            this.btThanhToan.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btThanhToan.IdleForecolor = System.Drawing.Color.White;
+            this.btThanhToan.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btThanhToan.Location = new System.Drawing.Point(0, 0);
+            this.btThanhToan.Margin = new System.Windows.Forms.Padding(5);
+            this.btThanhToan.Name = "btThanhToan";
+            this.btThanhToan.Size = new System.Drawing.Size(267, 248);
+            this.btThanhToan.TabIndex = 3;
+            this.btThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btThanhToan.Click += new System.EventHandler(this.BtThanhToan_Click);
             // 
-            // F_Order
+            // printBill
+            // 
+            this.printBill.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintBill_PrintPage);
+            // 
+            // printPreviewBill
+            // 
+            this.printPreviewBill.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewBill.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewBill.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewBill.Enabled = true;
+            this.printPreviewBill.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewBill.Icon")));
+            this.printPreviewBill.Name = "printPreviewBill";
+            this.printPreviewBill.Visible = false;
+            // 
+            // FormOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -164,7 +182,7 @@
             this.ClientSize = new System.Drawing.Size(1076, 248);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "F_Order";
+            this.Name = "FormOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F_Order";
             this.TransparencyKey = System.Drawing.Color.Gray;
@@ -178,8 +196,10 @@
 
         private System.Windows.Forms.Panel panel1;
         private ns1.BunifuThinButton2 btThoat;
-        private ns1.BunifuThinButton2 bunifuThinButton23;
-        private ns1.BunifuThinButton2 bunifuThinButton22;
-        private ns1.BunifuThinButton2 bunifuThinButton21;
+        private ns1.BunifuThinButton2 btLuuOrder;
+        private ns1.BunifuThinButton2 btThemBan;
+        private ns1.BunifuThinButton2 btThanhToan;
+        private System.Drawing.Printing.PrintDocument printBill;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewBill;
     }
 }

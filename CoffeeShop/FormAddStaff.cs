@@ -151,7 +151,22 @@ namespace CoffeeShopManagement
             SqlConnection connection = Data.OpenConnection();
             SqlDataReader reader = Data.ReadData("TAIKHOAN", connection, " WHERE TENDN = '" + username +
                 "'", "*");
-            return !reader.HasRows;
+
+            if (!reader.HasRows)
+            {
+                if (username == "1")
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void ShowErrorWord(object sender, KeyPressEventArgs e)

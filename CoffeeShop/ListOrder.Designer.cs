@@ -64,7 +64,7 @@
             this.btCong.TabIndex = 13;
             this.btCong.Text = "Tăng";
             this.btCong.UseVisualStyleBackColor = true;
-            this.btCong.Click += new System.EventHandler(this.btCong_Click);
+            this.btCong.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtCong_MouseDown);
             // 
             // lbSoTien
             // 
@@ -84,7 +84,7 @@
             this.lbTenMon.BackColor = System.Drawing.Color.White;
             this.lbTenMon.Dock = System.Windows.Forms.DockStyle.Left;
             this.lbTenMon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbTenMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenMon.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenMon.ForeColor = System.Drawing.Color.Black;
             this.lbTenMon.Location = new System.Drawing.Point(150, 0);
             this.lbTenMon.Name = "lbTenMon";
@@ -124,7 +124,7 @@
             this.btTru.TabIndex = 8;
             this.btTru.Text = "Giảm";
             this.btTru.UseVisualStyleBackColor = true;
-            this.btTru.Click += new System.EventHandler(this.btTru_Click);
+            this.btTru.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtTru_MouseDown);
             // 
             // ListOrder
             // 

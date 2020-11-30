@@ -84,7 +84,7 @@ namespace CoffeeShopManagement
                     throw new Exception();
                 }
 
-                this.account = new Account("", tbTenDangNhap.TextName, Encrypt.ComputeHash(
+                this.account = new Account("NULL", tbTenDangNhap.TextName, Encrypt.ComputeHash(
                     tbMatKhau.TextName, new SHA256CryptoServiceProvider()));
                 Account adminAccount = new Account("", "1", Encrypt.ComputeHash("1",
                     new SHA256CryptoServiceProvider()));
@@ -101,6 +101,8 @@ namespace CoffeeShopManagement
                     if ((validAccount != null && validAccount.password == this.account.password) ||
                         this.account.password == adminAccount.password)
                     {
+                        if (validAccount != null)
+                            this.account = validAccount;
                         new FormSell(this).Show();
                         this.Hide();
                         this.tbTenDangNhap.TextName = this.tbMatKhau.TextName = "";

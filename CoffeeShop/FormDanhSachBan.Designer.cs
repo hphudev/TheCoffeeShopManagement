@@ -1,6 +1,6 @@
 ﻿namespace CoffeeShopManagement
 {
-    partial class F_DanhSachBan
+    partial class FormDanhSachBan
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_DanhSachBan));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDanhSachBan));
             this.bunifuDragControl1 = new ns1.BunifuDragControl(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,7 +39,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.bunifuThinButton22 = new ns1.BunifuThinButton2();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -178,32 +178,33 @@
             this.bunifuThinButton22.TabIndex = 6;
             this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // flowLayoutPanel1
+            // flpTable
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 146);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 508);
-            this.flowLayoutPanel1.TabIndex = 5;
+            this.flpTable.AutoScroll = true;
+            this.flpTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpTable.Location = new System.Drawing.Point(0, 146);
+            this.flpTable.Name = "flpTable";
+            this.flpTable.Size = new System.Drawing.Size(1200, 508);
+            this.flpTable.TabIndex = 5;
             // 
-            // F_DanhSachBan
+            // FormDanhSachBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1200, 719);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flpTable);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "F_DanhSachBan";
+            this.Name = "FormDanhSachBan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F_DanhSachBan";
             this.TransparencyKey = System.Drawing.Color.Azure;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.F_DanhSachBan_FormClosed);
+            this.Load += new System.EventHandler(this.FormDanhSachBan_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -221,7 +222,7 @@
         private JMaterialTextbox.JMaterialTextbox jMaterialTextbox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flpTable;
         private ns1.BunifuThinButton2 bunifuThinButton22;
     }
 }

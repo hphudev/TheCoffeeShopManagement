@@ -17,12 +17,6 @@ namespace CoffeeShopManagement
         private FormSell parent;
         private FormLock Lock;
 
-
-        public string GetDate(DateTime dateTime)
-        {
-            return dateTime.Day + "/" + dateTime.Month + "/" + dateTime.Year;
-        }
-
         public void LoadForm()
         {
             AutoCompleteStringCollection sourceData = new AutoCompleteStringCollection();
@@ -30,6 +24,7 @@ namespace CoffeeShopManagement
             SqlConnection connection = Data.OpenConnection();
             SqlDataReader reader = Data.ReadData("NHANVIEN, TAIKHOAN", connection, " WHERE " +
                 "NHANVIEN.MANV = TAIKHOAN.ID AND TINHTRANG = 1", "*");
+            DateTime tmp = new DateTime();
 
             while (reader.HasRows)
             {
@@ -39,7 +34,7 @@ namespace CoffeeShopManagement
                 }
 
                 Staff staff = new Staff(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                    reader.GetString(4), reader.GetString(6), GetDate(reader.GetDateTime(3)),
+                    reader.GetString(4), reader.GetString(6), tmp.GetDate(reader.GetDateTime(3)),
                     reader.GetString(5), reader.GetString(8), reader.GetInt32(7));
                 this.dgvMenu.Rows.Add(staff.id.ToString(), staff.name, staff.address, staff.date,
                     staff.sdt, staff.cmnd, staff.sex, staff.luong, staff.chucVu);

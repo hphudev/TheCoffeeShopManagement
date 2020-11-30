@@ -144,6 +144,7 @@
             // pbEye
             // 
             this.pbEye.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbEye.Image = global::CoffeeShopManagement.Properties.Resources.CloseEye;
             this.pbEye.Location = new System.Drawing.Point(478, 362);
             this.pbEye.Name = "pbEye";
             this.pbEye.Size = new System.Drawing.Size(40, 40);
