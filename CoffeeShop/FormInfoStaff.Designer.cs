@@ -173,7 +173,7 @@
             this.cbGioiTinh.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbGioiTinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.cbGioiTinh.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbGioiTinh.DropDownHeight = 5;
+            this.cbGioiTinh.DropDownHeight = 40;
             this.cbGioiTinh.Enabled = false;
             this.cbGioiTinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbGioiTinh.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -365,6 +365,7 @@
             // 
             // panel9
             // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel9.Controls.Add(this.tbLuong);
             this.panel9.Controls.Add(this.label7);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
@@ -400,6 +401,7 @@
             // 
             // panel8
             // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel8.Controls.Add(this.bCancel);
             this.panel8.Controls.Add(this.bOK);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -415,7 +417,7 @@
             this.bCancel.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bCancel.ActiveForecolor = System.Drawing.Color.White;
             this.bCancel.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bCancel.BackColor = System.Drawing.Color.Azure;
+            this.bCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.bCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bCancel.BackgroundImage")));
             this.bCancel.ButtonText = "THOÁT";
             this.bCancel.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -441,7 +443,7 @@
             this.bOK.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bOK.ActiveForecolor = System.Drawing.Color.White;
             this.bOK.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bOK.BackColor = System.Drawing.Color.Azure;
+            this.bOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.bOK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bOK.BackgroundImage")));
             this.bOK.ButtonText = "CẬP NHẬT";
             this.bOK.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -534,6 +536,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1186, 813);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

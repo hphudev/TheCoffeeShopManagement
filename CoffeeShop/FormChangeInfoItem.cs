@@ -78,7 +78,7 @@ namespace CoffeeShopManagement
                 Item selectedItem;
                 this.parent.GetSelectedInfo(out selectedItem);
                 Item updatedItem = new Item(selectedItem.id.ToString(), selectedItem.name,
-                    tbUnit.Text, selectedItem.soLanPhucVu, int.Parse(tbPrice.Text));
+                    tbUnit.Text, selectedItem.numberOfServings, int.Parse(tbPrice.Text), true);
 
                 Data.UpdateData("MON", "DVT = '" + updatedItem.unit + "', GIA = '" +
                     updatedItem.price + "'", " WHERE MAMON = '" + selectedItem.id.ToString() + "'");
@@ -102,6 +102,7 @@ namespace CoffeeShopManagement
             if (dialog != DialogResult.Cancel)
             {
                 FileInfo file = new FileInfo(openFileImage.FileName);
+
                 if (file.Extension == ".jpg" || file.Extension == ".png")
                 {
                     pbImageItem.Image = Image.FromFile(openFileImage.FileName);

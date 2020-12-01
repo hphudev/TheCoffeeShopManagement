@@ -48,7 +48,7 @@ namespace CoffeeShopManagement
         [Category("Custom Pro")]
         public int SoLuong
         {
-            set { this.soluong = value; lbSoLuongMon.Text = value.ToString(); TongTien = value * soluong; }
+            set { this.soluong = value; lbSoLuongMon.Text = value.ToString(); TongTien = Gia * soluong; }
             get { return this.soluong; }
         }
 

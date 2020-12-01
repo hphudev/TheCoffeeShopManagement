@@ -17,6 +17,7 @@ namespace CoffeeShopManagement
         public int tienKhachDua { set; get; }
         public int sumOrders { set; get; }
         public string idTable = null;
+        public Table tableChoice = null;
         Timer checkFormTienKhachDua = new Timer();
         Timer checkIdTable = new Timer();
         public FormOrder(FormSell parent)
@@ -53,6 +54,12 @@ namespace CoffeeShopManagement
             if (tienKhachDua > 0)
             {
                 checkFormTienKhachDua.Stop();
+                if (this.tableChoice != null)
+                {
+                    this.parent.Tables.RemoveAt(this.tableChoice.index);
+                    this.tableChoice.Dispose();
+                    this.tableChoice = null;
+                }
                 string count = (Data.Calculate("COUNT", " * ", "HOADON", "") + 1).ToString();
                 count = "HD" + count.PadLeft(4, '0');
                 
@@ -197,7 +204,31 @@ namespace CoffeeShopManagement
                 checkIdTable.Stop();
                 Table tmp = new Table(this.parent);
                 tmp.ID = this.idTable;
-                this.parent.Tables.Add(tmp);
+                tmp.index = this.parent.Tables.Count();
+                //
+                bool checkExists = false;
+                foreach (var table in this.parent.Tables)
+                    if (table.ID == tmp.ID)
+                    {
+                        checkExists = true;
+                        for (int i = 0; i < tmp.Orders.Count; i++)
+                        {
+                            bool checkExist = false;
+                            foreach (var item in table.Orders)
+                                if (item.ID == tmp.Orders[i].ID)
+                                {
+                                    checkExist = true;
+                                    item.SoLuong += tmp.Orders[i].SoLuong;
+                                    break;
+                                }
+                            if (!checkExist)
+                                this.parent.Tables[i].Orders.Add(tmp.Orders[i]);
+                        }
+                        break;
+                    }
+                if (!checkExists)
+                    this.parent.Tables.Add(tmp);
+                //
                 this.parent.LoadSomeThingPublic();
                 this.Close();
             }

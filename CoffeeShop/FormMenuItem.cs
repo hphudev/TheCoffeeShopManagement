@@ -23,15 +23,25 @@ namespace CoffeeShopManagement
 
             selectedItem = new Item((string)selectedRows[0].Cells[0].Value,
                 (string)selectedRows[0].Cells[1].Value, (string)selectedRows[0].Cells[2].Value,
-                (int)selectedRows[0].Cells[3].Value, (int)selectedRows[0].Cells[4].Value);
+                (int)selectedRows[0].Cells[3].Value, (int)selectedRows[0].Cells[4].Value, true);
         }
 
         public void LoadForm()
         {
+            #region Giao diện DataGridView
+            this.dgvMenu.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Raised;
+            this.dgvMenu.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(192, 0, 0);
+            this.dgvMenu.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            this.dgvMenu.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgvMenu.Font = new Font("Segoe UI", 13, FontStyle.Bold);
+            this.dgvMenu.RowsDefaultCellStyle.Font = new Font("Time New Roman", 9, FontStyle.Regular);
+            this.dgvMenu.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 192, 128);
+            #endregion
+            //
             AutoCompleteStringCollection sourceData = new AutoCompleteStringCollection();
             this.dgvMenu.Rows.Clear();
             SqlConnection connection = Data.OpenConnection();
-            SqlDataReader reader = Data.ReadData("MON", connection, "", "*");
+            SqlDataReader reader = Data.ReadData("MON", connection, " WHERE TINHTRANG = 1", "*");
 
             while (reader.HasRows)
             {
@@ -41,9 +51,9 @@ namespace CoffeeShopManagement
                 }
 
                 Item item = new Item(reader.GetString(0), reader.GetString(1),
-                    reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4));
+                    reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetBoolean(5));
                 this.dgvMenu.Rows.Add(item.id.ToString(), item.name, item.unit,
-                    item.soLanPhucVu, item.price);
+                    item.numberOfServings, item.price);
                 sourceData.Add(item.name);
             }
 
@@ -97,7 +107,8 @@ namespace CoffeeShopManagement
             {
                 Item selectedItem;
                 GetSelectedInfo(out selectedItem);
-                Data.DeleteData("MON", " WHERE MAMON = '" + selectedItem.id.ToString() + "'");
+                Data.UpdateData("MON", "TINHTRANG = 0", " WHERE MAMON = '" +
+                    selectedItem.id.ToString() + "'");
                 IO.ExportSuccess("Xóa món thành công");
                 LoadForm();
             }
@@ -110,7 +121,7 @@ namespace CoffeeShopManagement
         private void FindItemClicked(object sender, EventArgs e)
         {
             SqlConnection connection = Data.OpenConnection();
-            SqlDataReader reader = Data.ReadData("MON", connection, "", "*");
+            SqlDataReader reader = Data.ReadData("MON", connection, " WHERE TINHTRANG = 1", "*");
 
             while (reader.HasRows)
             {
@@ -121,7 +132,7 @@ namespace CoffeeShopManagement
                 }
 
                 Item item = new Item(reader.GetString(0), reader.GetString(1),
-                    reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4));
+                    reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetBoolean(5));
 
                 if (item.name == this.cbFind.Text)
                 {

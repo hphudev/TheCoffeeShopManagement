@@ -82,12 +82,20 @@ namespace CoffeeShopManagement
                 }
 
                 Item item = new Item(reader.GetString(0), reader.GetString(1),
-                    reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4));
+                    reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetBoolean(5));
 
-                if (newItem.name == item.name)
+                if (newItem.name == item.name && item.status)
                 {
                     Data.CloseConnection(ref connection);
                     return false;
+                }
+
+                if (newItem.name == item.name && !item.status)
+                {
+                    Data.DeleteData("MON", " WHERE MAMON = '" + item.id.ToString() + "'");
+                    newItem.id.SetID(item.id.FindID("M"), "M", 3);
+                    Data.CloseConnection(ref connection);
+                    return true;
                 }
 
                 lastID = item.id.FindID("M").ToString();
@@ -123,7 +131,8 @@ namespace CoffeeShopManagement
                     throw new Exception();
                 }
 
-                Item newItem = new Item("", tbName.Text, tbUnit.Text, 0, int.Parse(tbPrice.Text));
+                Item newItem = new Item("", tbName.Text, tbUnit.Text, 0, int.Parse(tbPrice.Text), 
+                    true);
 
                 if (IsItem(ref newItem) == false)
                 {
@@ -155,6 +164,7 @@ namespace CoffeeShopManagement
             if (dialog != DialogResult.Cancel)
             {
                 FileInfo file = new FileInfo(openFileImage.FileName);
+
                 if (file.Extension == ".jpg" || file.Extension == ".png")
                 {
                     pbImageItem.Image = Image.FromFile(openFileImage.FileName);

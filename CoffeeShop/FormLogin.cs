@@ -9,11 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using System.Runtime.InteropServices;
+
 
 namespace CoffeeShopManagement
 {
     public partial class FormLogin : System.Windows.Forms.Form
     {
+        #region Thư viện giao diện
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        #endregion 
+
         private FormInit parent;
 
         public Account account { get; private set; }
@@ -26,7 +35,8 @@ namespace CoffeeShopManagement
             this.buttonThoat.Click += CancelClicked;
             this.tbTenDangNhap.KeyPress += PressEnter;
             this.tbMatKhau.KeyPress += PressEnter;
-            this.bMinimize.Click += MinimizeClicked;
+            this.tbMatKhau.IsPassword = true;
+            //this.bMinimize.Click += MinimizeClicked;
             this.parent = parent;
         }
 
@@ -146,6 +156,17 @@ namespace CoffeeShopManagement
         private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.parent.Close();
+        }
+
+        private void PThanhDieuKhien_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void BMinimize_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

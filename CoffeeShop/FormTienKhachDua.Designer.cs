@@ -60,7 +60,7 @@
             this.lbNhanKhachHang.ForeColor = System.Drawing.Color.White;
             this.lbNhanKhachHang.Location = new System.Drawing.Point(0, 0);
             this.lbNhanKhachHang.Name = "lbNhanKhachHang";
-            this.lbNhanKhachHang.Size = new System.Drawing.Size(677, 69);
+            this.lbNhanKhachHang.Size = new System.Drawing.Size(673, 69);
             this.lbNhanKhachHang.TabIndex = 1;
             this.lbNhanKhachHang.Text = "TIỀN KHÁCH ĐƯA";
             this.lbNhanKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -72,7 +72,7 @@
             this.tbManHinh.Font = new System.Drawing.Font("Segoe UI", 44F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbManHinh.Location = new System.Drawing.Point(0, 0);
             this.tbManHinh.Name = "tbManHinh";
-            this.tbManHinh.Size = new System.Drawing.Size(677, 105);
+            this.tbManHinh.Size = new System.Drawing.Size(673, 105);
             this.tbManHinh.TabIndex = 2;
             this.tbManHinh.Text = "123";
             this.tbManHinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -84,7 +84,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 69);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(677, 108);
+            this.panel1.Size = new System.Drawing.Size(673, 108);
             this.panel1.TabIndex = 4;
             // 
             // panel2
@@ -108,7 +108,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 177);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(677, 524);
+            this.panel2.Size = new System.Drawing.Size(673, 507);
             this.panel2.TabIndex = 5;
             // 
             // btThoat
@@ -141,20 +141,20 @@
             // 
             this.btXacNhan.ActiveBorderThickness = 1;
             this.btXacNhan.ActiveCornerRadius = 20;
-            this.btXacNhan.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btXacNhan.ActiveFillColor = System.Drawing.Color.ForestGreen;
             this.btXacNhan.ActiveForecolor = System.Drawing.Color.White;
-            this.btXacNhan.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btXacNhan.ActiveLineColor = System.Drawing.Color.ForestGreen;
             this.btXacNhan.BackColor = System.Drawing.Color.White;
             this.btXacNhan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btXacNhan.BackgroundImage")));
             this.btXacNhan.ButtonText = "XÁC NHẬN";
             this.btXacNhan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btXacNhan.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btXacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btXacNhan.ForeColor = System.Drawing.Color.ForestGreen;
             this.btXacNhan.IdleBorderThickness = 1;
             this.btXacNhan.IdleCornerRadius = 20;
             this.btXacNhan.IdleFillColor = System.Drawing.Color.MistyRose;
-            this.btXacNhan.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btXacNhan.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btXacNhan.IdleForecolor = System.Drawing.Color.ForestGreen;
+            this.btXacNhan.IdleLineColor = System.Drawing.Color.ForestGreen;
             this.btXacNhan.Location = new System.Drawing.Point(340, 96);
             this.btXacNhan.Margin = new System.Windows.Forms.Padding(11, 13, 11, 13);
             this.btXacNhan.Name = "btXacNhan";
@@ -187,7 +187,7 @@
             this.bt0.Size = new System.Drawing.Size(108, 100);
             this.bt0.TabIndex = 23;
             this.bt0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bt0.Click += new System.EventHandler(this.Bt0_Click);
+            this.bt0.MouseDown += new System.EventHandler(this.Bt0_MouseDown);
             // 
             // bt00
             // 
@@ -213,7 +213,7 @@
             this.bt00.Size = new System.Drawing.Size(219, 100);
             this.bt00.TabIndex = 22;
             this.bt00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bt00.Click += new System.EventHandler(this.Bt00_Click);
+            this.bt00.MouseDown += new System.EventHandler(this.Bt00_MouseDown);
             // 
             // bt3
             // 
@@ -239,7 +239,7 @@
             this.bt3.Size = new System.Drawing.Size(108, 100);
             this.bt3.TabIndex = 21;
             this.bt3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bt3.Click += new System.EventHandler(this.Bt3_Click);
+            this.bt3.MouseDown += new System.EventHandler(this.Bt3_MouseDown);
             // 
             // bt6
             // 
@@ -265,7 +265,7 @@
             this.bt6.Size = new System.Drawing.Size(108, 100);
             this.bt6.TabIndex = 20;
             this.bt6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bt6.Click += new System.EventHandler(this.Bt6_Click);
+            this.bt6.MouseDown += new System.EventHandler(this.Bt6_MouseDown);
             // 
             // bt9
             // 
@@ -291,7 +291,7 @@
             this.bt9.Size = new System.Drawing.Size(108, 100);
             this.bt9.TabIndex = 19;
             this.bt9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bt9.Click += new System.EventHandler(this.Bt9_Click);
+            this.bt9.MouseDown += new System.EventHandler(this.Bt9_MouseDown);
             // 
             // bt2
             // 
@@ -317,7 +317,7 @@
             this.bt2.Size = new System.Drawing.Size(108, 100);
             this.bt2.TabIndex = 18;
             this.bt2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bt2.Click += new System.EventHandler(this.Bt2_Click);
+            this.bt2.MouseDown += new System.EventHandler(this.Bt2_MouseDown);
             // 
             // bt5
             // 
@@ -343,7 +343,7 @@
             this.bt5.Size = new System.Drawing.Size(108, 100);
             this.bt5.TabIndex = 17;
             this.bt5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bt5.Click += new System.EventHandler(this.Bt5_Click);
+            this.bt5.MouseDown += new System.EventHandler(this.Bt5_MouseDown);
             // 
             // bt8
             // 
@@ -369,7 +369,7 @@
             this.bt8.Size = new System.Drawing.Size(108, 100);
             this.bt8.TabIndex = 16;
             this.bt8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bt8.Click += new System.EventHandler(this.Bt8_Click);
+            this.bt8.MouseDown += new System.EventHandler(this.Bt8_MouseDown);
             // 
             // bt1
             // 
@@ -395,7 +395,7 @@
             this.bt1.Size = new System.Drawing.Size(108, 100);
             this.bt1.TabIndex = 15;
             this.bt1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bt1.Click += new System.EventHandler(this.Bt1_Click);
+            this.bt1.MouseDown += new System.EventHandler(this.Bt1_MouseDown);
             // 
             // bt4
             // 
@@ -421,7 +421,7 @@
             this.bt4.Size = new System.Drawing.Size(108, 100);
             this.bt4.TabIndex = 14;
             this.bt4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bt4.Click += new System.EventHandler(this.Bt4_Click);
+            this.bt4.MouseDown += new System.EventHandler(this.Bt4_MouseDown);
             // 
             // bt7
             // 
@@ -447,7 +447,7 @@
             this.bt7.Size = new System.Drawing.Size(108, 100);
             this.bt7.TabIndex = 13;
             this.bt7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bt7.Click += new System.EventHandler(this.Bt7_Click);
+            this.bt7.MouseDown += new System.EventHandler(this.Bt7_MouseDown);
             // 
             // btCE
             // 
@@ -473,7 +473,7 @@
             this.btCE.Size = new System.Drawing.Size(108, 100);
             this.btCE.TabIndex = 8;
             this.btCE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btCE.Click += new System.EventHandler(this.BtCE_Click);
+            this.btCE.MouseDown += new System.EventHandler(this.BtCE_MouseDown);
             // 
             // btAC
             // 
@@ -499,13 +499,13 @@
             this.btAC.Size = new System.Drawing.Size(108, 100);
             this.btAC.TabIndex = 7;
             this.btAC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btAC.Click += new System.EventHandler(this.BtAC_Click);
+            this.btAC.MouseDown += new System.EventHandler(this.BtAC_MouseDown);
             // 
             // FormTienKhachDua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 701);
+            this.ClientSize = new System.Drawing.Size(673, 684);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbNhanKhachHang);

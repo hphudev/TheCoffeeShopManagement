@@ -24,106 +24,16 @@ namespace CoffeeShopManagement
             this.Show();
         }
 
-        private void Bt00_Click(object sender, EventArgs e)
-        {
-            tbManHinh.Text += "00";
-            tbManHinh.SelectionStart = tbManHinh.Text.Length;
-            tbManHinh.SelectionLength = 0;
-        }
-
-        private void Bt0_Click(object sender, EventArgs e)
-        {
-            tbManHinh.Text += "0";
-            tbManHinh.SelectionStart = tbManHinh.Text.Length;
-            tbManHinh.SelectionLength = 0;
-        }
-
-        private void Bt1_Click(object sender, EventArgs e)
-        {
-            tbManHinh.Text += "1";
-            tbManHinh.SelectionStart = tbManHinh.Text.Length;
-            tbManHinh.SelectionLength = 0;
-        }
-
-        private void Bt2_Click(object sender, EventArgs e)
-        {
-            tbManHinh.Text += "2";
-            tbManHinh.SelectionStart = tbManHinh.Text.Length;
-            tbManHinh.SelectionLength = 0;
-        }
-
-        private void Bt3_Click(object sender, EventArgs e)
-        {
-            tbManHinh.Text += "3";
-            tbManHinh.SelectionStart = tbManHinh.Text.Length;
-            tbManHinh.SelectionLength = 0;
-        }
-
-        private void Bt4_Click(object sender, EventArgs e)
-        {
-            tbManHinh.Text += "4";
-            tbManHinh.SelectionStart = tbManHinh.Text.Length;
-            tbManHinh.SelectionLength = 0;
-        }
-
-        private void Bt5_Click(object sender, EventArgs e)
-        {
-            tbManHinh.Text += "5";
-            tbManHinh.SelectionStart = tbManHinh.Text.Length;
-            tbManHinh.SelectionLength = 0;
-        }
-
-        private void Bt6_Click(object sender, EventArgs e)
-        {
-            tbManHinh.Text += "6";
-            tbManHinh.SelectionStart = tbManHinh.Text.Length;
-            tbManHinh.SelectionLength = 0;
-        }
-
-        private void Bt7_Click(object sender, EventArgs e)
-        {
-            tbManHinh.Text += "7";
-            tbManHinh.SelectionStart = tbManHinh.Text.Length;
-            tbManHinh.SelectionLength = 0;
-        }
-
-        private void Bt8_Click(object sender, EventArgs e)
-        {
-            tbManHinh.Text += "8";
-            tbManHinh.SelectionStart = tbManHinh.Text.Length;
-            tbManHinh.SelectionLength = 0;
-        }
-
-        private void Bt9_Click(object sender, EventArgs e)
-        {
-            tbManHinh.Text += "9";
-            tbManHinh.SelectionStart = tbManHinh.Text.Length;
-            tbManHinh.SelectionLength = 0;
-        }
-
-        private void BtAC_Click(object sender, EventArgs e)
-        {
-            tbManHinh.Text = "";
-            tbManHinh.SelectionStart = tbManHinh.Text.Length;
-            tbManHinh.SelectionLength = 0;
-        }
-
-        private void BtCE_Click(object sender, EventArgs e)
-        {
-            if (tbManHinh.Text.Length == 0)
-                return;
-            tbManHinh.Text = tbManHinh.Text.Remove(tbManHinh.Text.Length - 1, 1);
-            tbManHinh.SelectionStart = tbManHinh.Text.Length;
-            tbManHinh.SelectionLength = 0;
-        }
-
         private void BtXacNhan_Click(object sender, EventArgs e)
         {
             if (tbManHinh.Text == "")
+            {
+                IO.ExportWarning("Bạn chưa nhập số tiền khách đưa!");
                 return;
+            }
             if (int.Parse(tbManHinh.Text) < this.parent.sumOrders)
             {
-                MessageBox.Show("Khách đưa tiền còn thiếu " + (this.parent.sumOrders - int.Parse(tbManHinh.Text)));
+                IO.ExportWarning("Khách đưa tiền còn thiếu " + (this.parent.sumOrders - int.Parse(tbManHinh.Text)) + " VNĐ");
                 return;
             }
             this.parent.tienKhachDua = int.Parse(tbManHinh.Text);
@@ -144,6 +54,99 @@ namespace CoffeeShopManagement
         private void TbManHinh_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void Bt00_MouseDown(object sender, EventArgs e)
+        {
+            tbManHinh.Text += "00";
+            tbManHinh.SelectionStart = tbManHinh.Text.Length;
+            tbManHinh.SelectionLength = 0;
+        }
+
+        private void Bt0_MouseDown(object sender, EventArgs e)
+        {
+            tbManHinh.Text += "0";
+            tbManHinh.SelectionStart = tbManHinh.Text.Length;
+            tbManHinh.SelectionLength = 0;
+        }
+
+        private void Bt1_MouseDown(object sender, EventArgs e)
+        {
+            tbManHinh.Text += "1";
+            tbManHinh.SelectionStart = tbManHinh.Text.Length;
+            tbManHinh.SelectionLength = 0;
+        }
+
+        private void Bt2_MouseDown(object sender, EventArgs e)
+        {
+            tbManHinh.Text += "2";
+            tbManHinh.SelectionStart = tbManHinh.Text.Length;
+            tbManHinh.SelectionLength = 0;
+        }
+
+        private void Bt3_MouseDown(object sender, EventArgs e)
+        {
+            tbManHinh.Text += "3";
+            tbManHinh.SelectionStart = tbManHinh.Text.Length;
+            tbManHinh.SelectionLength = 0;
+        }
+
+        private void Bt4_MouseDown(object sender, EventArgs e)
+        {
+            tbManHinh.Text += "4";
+            tbManHinh.SelectionStart = tbManHinh.Text.Length;
+            tbManHinh.SelectionLength = 0;
+        }
+
+        private void Bt5_MouseDown(object sender, EventArgs e)
+        {
+            tbManHinh.Text += "5";
+            tbManHinh.SelectionStart = tbManHinh.Text.Length;
+            tbManHinh.SelectionLength = 0;
+        }
+
+        private void Bt6_MouseDown(object sender, EventArgs e)
+        {
+            tbManHinh.Text += "6";
+            tbManHinh.SelectionStart = tbManHinh.Text.Length;
+            tbManHinh.SelectionLength = 0;
+        }
+
+        private void Bt7_MouseDown(object sender, EventArgs e)
+        {
+            tbManHinh.Text += "7";
+            tbManHinh.SelectionStart = tbManHinh.Text.Length;
+            tbManHinh.SelectionLength = 0;
+        }
+
+        private void Bt8_MouseDown(object sender, EventArgs e)
+        {
+            tbManHinh.Text += "8";
+            tbManHinh.SelectionStart = tbManHinh.Text.Length;
+            tbManHinh.SelectionLength = 0;
+        }
+
+        private void Bt9_MouseDown(object sender, EventArgs e)
+        {
+            tbManHinh.Text += "9";
+            tbManHinh.SelectionStart = tbManHinh.Text.Length;
+            tbManHinh.SelectionLength = 0;
+        }
+
+        private void BtAC_MouseDown(object sender, EventArgs e)
+        {
+            tbManHinh.Text = "";
+            tbManHinh.SelectionStart = tbManHinh.Text.Length;
+            tbManHinh.SelectionLength = 0;
+        }
+
+        private void BtCE_MouseDown(object sender, EventArgs e)
+        {
+            if (tbManHinh.Text.Length == 0)
+                return;
+            tbManHinh.Text = tbManHinh.Text.Remove(tbManHinh.Text.Length - 1, 1);
+            tbManHinh.SelectionStart = tbManHinh.Text.Length;
+            tbManHinh.SelectionLength = 0;
         }
     }
 }

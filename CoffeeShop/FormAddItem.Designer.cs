@@ -72,7 +72,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(729, 508);
-            this.panel2.TabIndex = 0;
+            this.panel2.TabIndex = 111;
             // 
             // bAddImage
             // 
@@ -97,7 +97,7 @@
             this.bAddImage.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.bAddImage.Name = "bAddImage";
             this.bAddImage.Size = new System.Drawing.Size(230, 61);
-            this.bAddImage.TabIndex = 11;
+            this.bAddImage.TabIndex = 0;
             this.bAddImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbImageItem
@@ -134,7 +134,7 @@
             this.lID.Name = "lID";
             this.lID.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.lID.Size = new System.Drawing.Size(277, 93);
-            this.lID.TabIndex = 2;
+            this.lID.TabIndex = 111;
             this.lID.Text = "MON-0001";
             this.lID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -148,7 +148,7 @@
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(200, 0, 0, 0);
             this.label3.Size = new System.Drawing.Size(729, 93);
-            this.label3.TabIndex = 1;
+            this.label3.TabIndex = 111;
             this.label3.Text = "THÊM MÓN";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -164,7 +164,7 @@
             this.gbInformationItem.Location = new System.Drawing.Point(0, 508);
             this.gbInformationItem.Name = "gbInformationItem";
             this.gbInformationItem.Size = new System.Drawing.Size(729, 306);
-            this.gbInformationItem.TabIndex = 1;
+            this.gbInformationItem.TabIndex = 111;
             this.gbInformationItem.TabStop = false;
             this.gbInformationItem.Text = "THÔNG TIN MÓN";
             // 
@@ -202,7 +202,7 @@
             this.bCancel.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.bCancel.Name = "bCancel";
             this.bCancel.Size = new System.Drawing.Size(230, 72);
-            this.bCancel.TabIndex = 13;
+            this.bCancel.TabIndex = 5;
             this.bCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bOK
@@ -228,7 +228,7 @@
             this.bOK.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.bOK.Name = "bOK";
             this.bOK.Size = new System.Drawing.Size(230, 72);
-            this.bOK.TabIndex = 12;
+            this.bOK.TabIndex = 4;
             this.bOK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
@@ -249,7 +249,7 @@
             this.tbPrice.Location = new System.Drawing.Point(218, 0);
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(505, 70);
-            this.tbPrice.TabIndex = 9;
+            this.tbPrice.TabIndex = 3;
             // 
             // label2
             // 
@@ -260,7 +260,7 @@
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(218, 71);
-            this.label2.TabIndex = 6;
+            this.label2.TabIndex = 111;
             this.label2.Text = "GIÁ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -282,7 +282,7 @@
             this.tbUnit.Location = new System.Drawing.Point(218, 0);
             this.tbUnit.Name = "tbUnit";
             this.tbUnit.Size = new System.Drawing.Size(505, 70);
-            this.tbUnit.TabIndex = 9;
+            this.tbUnit.TabIndex = 2;
             // 
             // label1
             // 
@@ -293,7 +293,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(218, 71);
-            this.label1.TabIndex = 6;
+            this.label1.TabIndex = 111;
             this.label1.Text = "ĐƠN VỊ TÍNH";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -315,7 +315,7 @@
             this.tbName.Location = new System.Drawing.Point(218, 0);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(505, 70);
-            this.tbName.TabIndex = 9;
+            this.tbName.TabIndex = 1;
             // 
             // label6
             // 
@@ -326,7 +326,7 @@
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(218, 71);
-            this.label6.TabIndex = 6;
+            this.label6.TabIndex = 111;
             this.label6.Text = "TÊN MÓN";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -338,7 +338,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(729, 814);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 111;
             // 
             // epShowError
             // 

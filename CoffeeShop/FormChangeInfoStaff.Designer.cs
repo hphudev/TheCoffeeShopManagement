@@ -126,7 +126,7 @@ namespace CoffeeShopManagement
             this.tbPassword.Location = new System.Drawing.Point(340, 0);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(744, 70);
-            this.tbPassword.TabIndex = 6;
+            this.tbPassword.TabIndex = 8;
             this.tbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbPassword.UseSystemPasswordChar = true;
             // 
@@ -152,7 +152,7 @@ namespace CoffeeShopManagement
             this.tbName.Location = new System.Drawing.Point(340, 0);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(744, 70);
-            this.tbName.TabIndex = 6;
+            this.tbName.TabIndex = 0;
             this.tbName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
@@ -187,7 +187,7 @@ namespace CoffeeShopManagement
             this.tbUsername.Location = new System.Drawing.Point(340, 0);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(744, 70);
-            this.tbUsername.TabIndex = 6;
+            this.tbUsername.TabIndex = 7;
             this.tbUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
@@ -208,7 +208,7 @@ namespace CoffeeShopManagement
             this.cbSex.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbSex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.cbSex.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbSex.DropDownHeight = 5;
+            this.cbSex.DropDownHeight = 40;
             this.cbSex.Enabled = false;
             this.cbSex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbSex.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -217,7 +217,7 @@ namespace CoffeeShopManagement
             this.cbSex.Location = new System.Drawing.Point(340, 0);
             this.cbSex.Name = "cbSex";
             this.cbSex.Size = new System.Drawing.Size(319, 70);
-            this.cbSex.TabIndex = 7;
+            this.cbSex.TabIndex = 1;
             // 
             // label4
             // 
@@ -255,7 +255,7 @@ namespace CoffeeShopManagement
             this.cbPosition.Location = new System.Drawing.Point(340, 0);
             this.cbPosition.Name = "cbPosition";
             this.cbPosition.Size = new System.Drawing.Size(744, 70);
-            this.cbPosition.TabIndex = 8;
+            this.cbPosition.TabIndex = 6;
             // 
             // label8
             // 
@@ -279,7 +279,7 @@ namespace CoffeeShopManagement
             this.tbCMND.Location = new System.Drawing.Point(340, 0);
             this.tbCMND.Name = "tbCMND";
             this.tbCMND.Size = new System.Drawing.Size(744, 70);
-            this.tbCMND.TabIndex = 6;
+            this.tbCMND.TabIndex = 2;
             this.tbCMND.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
@@ -313,7 +313,7 @@ namespace CoffeeShopManagement
             this.tbSalary.Location = new System.Drawing.Point(340, 0);
             this.tbSalary.Name = "tbSalary";
             this.tbSalary.Size = new System.Drawing.Size(744, 70);
-            this.tbSalary.TabIndex = 6;
+            this.tbSalary.TabIndex = 5;
             this.tbSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
@@ -337,7 +337,7 @@ namespace CoffeeShopManagement
             this.tbSDT.Location = new System.Drawing.Point(340, 0);
             this.tbSDT.Name = "tbSDT";
             this.tbSDT.Size = new System.Drawing.Size(744, 70);
-            this.tbSDT.TabIndex = 6;
+            this.tbSDT.TabIndex = 3;
             this.tbSDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbAddress
@@ -348,7 +348,7 @@ namespace CoffeeShopManagement
             this.tbAddress.Location = new System.Drawing.Point(340, 0);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(744, 70);
-            this.tbAddress.TabIndex = 6;
+            this.tbAddress.TabIndex = 4;
             this.tbAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
@@ -383,6 +383,7 @@ namespace CoffeeShopManagement
             // 
             // panel8
             // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel8.Controls.Add(this.bReset);
             this.panel8.Controls.Add(this.bCancel);
             this.panel8.Controls.Add(this.bOK);
@@ -399,11 +400,10 @@ namespace CoffeeShopManagement
             this.bReset.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bReset.ActiveForecolor = System.Drawing.Color.White;
             this.bReset.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bReset.BackColor = System.Drawing.Color.Azure;
+            this.bReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.bReset.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bReset.BackgroundImage")));
             this.bReset.ButtonText = "ĐẶT LẠI";
             this.bReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bReset.Dock = System.Windows.Forms.DockStyle.Left;
             this.bReset.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bReset.IdleBorderThickness = 1;
@@ -411,11 +411,11 @@ namespace CoffeeShopManagement
             this.bReset.IdleFillColor = System.Drawing.Color.White;
             this.bReset.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bReset.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bReset.Location = new System.Drawing.Point(303, 0);
+            this.bReset.Location = new System.Drawing.Point(383, 0);
             this.bReset.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.bReset.Name = "bReset";
             this.bReset.Size = new System.Drawing.Size(303, 96);
-            this.bReset.TabIndex = 3;
+            this.bReset.TabIndex = 10;
             this.bReset.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bCancel
@@ -425,7 +425,7 @@ namespace CoffeeShopManagement
             this.bCancel.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bCancel.ActiveForecolor = System.Drawing.Color.White;
             this.bCancel.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bCancel.BackColor = System.Drawing.Color.Azure;
+            this.bCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.bCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bCancel.BackgroundImage")));
             this.bCancel.ButtonText = "THOÁT";
             this.bCancel.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -441,7 +441,7 @@ namespace CoffeeShopManagement
             this.bCancel.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.bCancel.Name = "bCancel";
             this.bCancel.Size = new System.Drawing.Size(308, 96);
-            this.bCancel.TabIndex = 2;
+            this.bCancel.TabIndex = 11;
             this.bCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bOK
@@ -451,7 +451,7 @@ namespace CoffeeShopManagement
             this.bOK.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bOK.ActiveForecolor = System.Drawing.Color.White;
             this.bOK.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bOK.BackColor = System.Drawing.Color.Azure;
+            this.bOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.bOK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bOK.BackgroundImage")));
             this.bOK.ButtonText = "CẬP NHẬT";
             this.bOK.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -467,7 +467,7 @@ namespace CoffeeShopManagement
             this.bOK.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.bOK.Name = "bOK";
             this.bOK.Size = new System.Drawing.Size(303, 96);
-            this.bOK.TabIndex = 1;
+            this.bOK.TabIndex = 9;
             this.bOK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel7
@@ -571,7 +571,7 @@ namespace CoffeeShopManagement
             this.Name = "FormChangeInfoStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F_ChinhSuaTaiKhoan";
-            this.TransparencyKey = System.Drawing.Color.Azure;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.panel11.ResumeLayout(false);

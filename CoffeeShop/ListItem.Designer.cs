@@ -36,12 +36,13 @@
             // 
             // lbTenMon
             // 
-            this.lbTenMon.BackColor = System.Drawing.Color.DarkSalmon;
+            this.lbTenMon.BackColor = System.Drawing.Color.Salmon;
             this.lbTenMon.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lbTenMon.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenMon.Location = new System.Drawing.Point(0, 185);
+            this.lbTenMon.ForeColor = System.Drawing.Color.Honeydew;
+            this.lbTenMon.Location = new System.Drawing.Point(0, 205);
             this.lbTenMon.Name = "lbTenMon";
-            this.lbTenMon.Size = new System.Drawing.Size(268, 108);
+            this.lbTenMon.Size = new System.Drawing.Size(302, 108);
             this.lbTenMon.TabIndex = 0;
             this.lbTenMon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbTenMon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LbTenMon_MouseClick);
@@ -50,11 +51,11 @@
             // 
             // pbAnhMon
             // 
-            this.pbAnhMon.BackColor = System.Drawing.Color.Azure;
+            this.pbAnhMon.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.pbAnhMon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbAnhMon.Location = new System.Drawing.Point(0, 0);
             this.pbAnhMon.Name = "pbAnhMon";
-            this.pbAnhMon.Size = new System.Drawing.Size(268, 185);
+            this.pbAnhMon.Size = new System.Drawing.Size(302, 205);
             this.pbAnhMon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbAnhMon.TabIndex = 1;
             this.pbAnhMon.TabStop = false;
@@ -65,12 +66,13 @@
             // lbCost
             // 
             this.lbCost.AutoSize = true;
-            this.lbCost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lbCost.BackColor = System.Drawing.Color.SaddleBrown;
             this.lbCost.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbCost.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCost.Location = new System.Drawing.Point(209, 0);
+            this.lbCost.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCost.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbCost.Location = new System.Drawing.Point(231, 0);
             this.lbCost.Name = "lbCost";
-            this.lbCost.Size = new System.Drawing.Size(59, 32);
+            this.lbCost.Size = new System.Drawing.Size(71, 41);
             this.lbCost.TabIndex = 2;
             this.lbCost.Text = "30K";
             // 
@@ -85,7 +87,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DoubleBuffered = true;
             this.Name = "ListItem";
-            this.Size = new System.Drawing.Size(268, 293);
+            this.Size = new System.Drawing.Size(302, 313);
             ((System.ComponentModel.ISupportInitialize)(this.pbAnhMon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

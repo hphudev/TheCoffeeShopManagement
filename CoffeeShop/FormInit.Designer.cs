@@ -39,20 +39,20 @@
             this.pictureBox1.Image = global::CoffeeShopManagement.Properties.Resources.KhoiDong;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1060, 489);
+            this.pictureBox1.Size = new System.Drawing.Size(1415, 729);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBox1_MouseDown);
             // 
             // lbTenPhanMem
             // 
-            this.lbTenPhanMem.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbTenPhanMem.AutoSize = true;
-            this.lbTenPhanMem.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenPhanMem.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenPhanMem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbTenPhanMem.Location = new System.Drawing.Point(12, 24);
+            this.lbTenPhanMem.Location = new System.Drawing.Point(12, 34);
             this.lbTenPhanMem.Name = "lbTenPhanMem";
-            this.lbTenPhanMem.Size = new System.Drawing.Size(760, 46);
+            this.lbTenPhanMem.Size = new System.Drawing.Size(941, 57);
             this.lbTenPhanMem.TabIndex = 2;
             this.lbTenPhanMem.Text = "THE COFFEE SHOP MANAGEMENT SOFTWARE";
             // 
@@ -60,7 +60,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1060, 489);
+            this.ClientSize = new System.Drawing.Size(1415, 729);
             this.Controls.Add(this.lbTenPhanMem);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

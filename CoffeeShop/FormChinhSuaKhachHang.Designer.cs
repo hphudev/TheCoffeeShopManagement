@@ -187,7 +187,6 @@
             // 
             // panel3
             // 
-            this.panel3.AutoScroll = true;
             this.panel3.Controls.Add(this.panel13);
             this.panel3.Controls.Add(this.panel12);
             this.panel3.Controls.Add(this.panel11);
@@ -404,6 +403,7 @@
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Controls.Add(this.cbGioiTinh);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
@@ -416,7 +416,7 @@
             // 
             this.cbGioiTinh.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbGioiTinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.cbGioiTinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbGioiTinh.Dock = System.Windows.Forms.DockStyle.Left;
             this.cbGioiTinh.DropDownHeight = 5;
             this.cbGioiTinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbGioiTinh.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -427,7 +427,7 @@
             "Nữ"});
             this.cbGioiTinh.Location = new System.Drawing.Point(340, 0);
             this.cbGioiTinh.Name = "cbGioiTinh";
-            this.cbGioiTinh.Size = new System.Drawing.Size(696, 70);
+            this.cbGioiTinh.Size = new System.Drawing.Size(332, 70);
             this.cbGioiTinh.TabIndex = 7;
             // 
             // label4
@@ -612,6 +612,7 @@
             this.Name = "FormChinhSuaKhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.TransparencyKey = System.Drawing.Color.Azure;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormChinhSuaKhachHang_FormClosed);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

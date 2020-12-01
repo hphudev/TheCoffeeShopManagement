@@ -223,6 +223,7 @@ namespace CoffeeShopManagement
                 HoTen = tbHoTen.Text;
                 GioiTinh = cbGioiTinh.Text;
                 NgaySinh = tbNgaySinh.Text;
+                DiaChi = tbDiaChi.Text;
                 this.parent.cus = new Customer(IDKH, this.tbHoTen.Text, this.tbDiaChi.Text, this.tbSoDienThoai.Text, this.cbGioiTinh.Text, this.tbNgaySinh.Text, this.tbNgayDangKy.Text, this.tbThanhVien.Text);
                 Data.AddData("KHACHHANG", $"N'{IDKH}', N'{HoTen}', '{DiaChi}', N'{SoDienThoai}', '{Utility.GetDateUS(NgaySinh)}', 0, '{Utility.GetDateUS(NgayDangKy)}', N'{GioiTinh}', 0, N'Bạc'");
             }

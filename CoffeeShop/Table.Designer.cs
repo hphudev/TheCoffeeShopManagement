@@ -33,6 +33,8 @@
             // 
             // lbTable
             // 
+            this.lbTable.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.lbTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbTable.Font = new System.Drawing.Font("Segoe UI", 34.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTable.Location = new System.Drawing.Point(0, 0);
@@ -41,7 +43,9 @@
             this.lbTable.TabIndex = 0;
             this.lbTable.Text = "10";
             this.lbTable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbTable.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LbTable_MouseClick);
+            this.lbTable.Click += new System.EventHandler(this.LbTable_Click);
+            this.lbTable.MouseEnter += new System.EventHandler(this.LbTable_MouseEnter);
+            this.lbTable.MouseLeave += new System.EventHandler(this.LbTable_MouseLeave);
             // 
             // Table
             // 
@@ -51,6 +55,8 @@
             this.Controls.Add(this.lbTable);
             this.Name = "Table";
             this.Size = new System.Drawing.Size(217, 217);
+            this.MouseEnter += new System.EventHandler(this.Table_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.Table_MouseLeave);
             this.ResumeLayout(false);
 
         }

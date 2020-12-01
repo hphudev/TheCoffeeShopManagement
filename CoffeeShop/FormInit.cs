@@ -13,6 +13,7 @@ namespace CoffeeShopManagement
     public partial class FormInit : System.Windows.Forms.Form
     {
         Timer t = new Timer();
+        FormLogin child;
         public FormInit()
         {
             InitializeComponent();
@@ -25,12 +26,18 @@ namespace CoffeeShopManagement
                 else
                 {
                     t.Stop();
-                    new FormLogin(this).Show();
-                    this.Hide();
+                    this.WindowState = FormWindowState.Maximized;
+                    child = new FormLogin(this);
+                    child.Show();
+                    //this.Hide();
                 }
             };
             t.Start();
         }
 
+        private void PictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            child.BringToFront();
+        }
     }
 }

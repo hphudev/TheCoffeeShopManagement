@@ -103,7 +103,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1109, 878);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 111;
             // 
             // panel13
             // 
@@ -123,7 +123,7 @@
             this.tbConfirm.Location = new System.Drawing.Point(340, 0);
             this.tbConfirm.Name = "tbConfirm";
             this.tbConfirm.Size = new System.Drawing.Size(769, 70);
-            this.tbConfirm.TabIndex = 6;
+            this.tbConfirm.TabIndex = 9;
             this.tbConfirm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbConfirm.UseSystemPasswordChar = true;
             // 
@@ -136,7 +136,7 @@
             this.label11.Location = new System.Drawing.Point(0, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(340, 70);
-            this.label11.TabIndex = 5;
+            this.label11.TabIndex = 111;
             this.label11.Text = "NHẬP LẠI MẬT KHẨU";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -158,7 +158,7 @@
             this.tbPassword.Location = new System.Drawing.Point(340, 0);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(769, 70);
-            this.tbPassword.TabIndex = 6;
+            this.tbPassword.TabIndex = 8;
             this.tbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbPassword.UseSystemPasswordChar = true;
             // 
@@ -171,7 +171,7 @@
             this.label10.Location = new System.Drawing.Point(0, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(340, 70);
-            this.label10.TabIndex = 5;
+            this.label10.TabIndex = 111;
             this.label10.Text = "MẬT KHẨU";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -193,7 +193,7 @@
             this.tbUsername.Location = new System.Drawing.Point(340, 0);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(769, 70);
-            this.tbUsername.TabIndex = 6;
+            this.tbUsername.TabIndex = 7;
             this.tbUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
@@ -205,7 +205,7 @@
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(340, 70);
-            this.label9.TabIndex = 5;
+            this.label9.TabIndex = 111;
             this.label9.Text = "TÊN ĐĂNG NHẬP";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -230,7 +230,7 @@
             this.cbPosition.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.cbPosition.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbPosition.DropDownHeight = 5;
+            this.cbPosition.DropDownHeight = 100;
             this.cbPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbPosition.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPosition.FormattingEnabled = true;
@@ -243,7 +243,7 @@
             this.cbPosition.Location = new System.Drawing.Point(340, 0);
             this.cbPosition.Name = "cbPosition";
             this.cbPosition.Size = new System.Drawing.Size(769, 70);
-            this.cbPosition.TabIndex = 8;
+            this.cbPosition.TabIndex = 6;
             // 
             // label8
             // 
@@ -254,7 +254,7 @@
             this.label8.Location = new System.Drawing.Point(0, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(340, 70);
-            this.label8.TabIndex = 5;
+            this.label8.TabIndex = 111;
             this.label8.Text = "CHỨC VỤ";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -276,7 +276,7 @@
             this.tbSalary.Location = new System.Drawing.Point(340, 0);
             this.tbSalary.Name = "tbSalary";
             this.tbSalary.Size = new System.Drawing.Size(769, 70);
-            this.tbSalary.TabIndex = 6;
+            this.tbSalary.TabIndex = 5;
             this.tbSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lSalary
@@ -288,12 +288,13 @@
             this.lSalary.Location = new System.Drawing.Point(0, 0);
             this.lSalary.Name = "lSalary";
             this.lSalary.Size = new System.Drawing.Size(340, 70);
-            this.lSalary.TabIndex = 5;
+            this.lSalary.TabIndex = 111;
             this.lSalary.Text = "LƯƠNG";
             this.lSalary.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel8
             // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel8.Controls.Add(this.bReset);
             this.panel8.Controls.Add(this.bCancel);
             this.panel8.Controls.Add(this.bOK);
@@ -310,7 +311,7 @@
             this.bReset.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bReset.ActiveForecolor = System.Drawing.Color.White;
             this.bReset.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bReset.BackColor = System.Drawing.Color.Azure;
+            this.bReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.bReset.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bReset.BackgroundImage")));
             this.bReset.ButtonText = "ĐẶT LẠI";
             this.bReset.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -325,7 +326,7 @@
             this.bReset.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.bReset.Name = "bReset";
             this.bReset.Size = new System.Drawing.Size(303, 96);
-            this.bReset.TabIndex = 3;
+            this.bReset.TabIndex = 11;
             this.bReset.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bCancel
@@ -335,7 +336,7 @@
             this.bCancel.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bCancel.ActiveForecolor = System.Drawing.Color.White;
             this.bCancel.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bCancel.BackColor = System.Drawing.Color.Azure;
+            this.bCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.bCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bCancel.BackgroundImage")));
             this.bCancel.ButtonText = "THOÁT";
             this.bCancel.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -351,7 +352,7 @@
             this.bCancel.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.bCancel.Name = "bCancel";
             this.bCancel.Size = new System.Drawing.Size(308, 96);
-            this.bCancel.TabIndex = 2;
+            this.bCancel.TabIndex = 12;
             this.bCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bOK
@@ -361,7 +362,7 @@
             this.bOK.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bOK.ActiveForecolor = System.Drawing.Color.White;
             this.bOK.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bOK.BackColor = System.Drawing.Color.Azure;
+            this.bOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.bOK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bOK.BackgroundImage")));
             this.bOK.ButtonText = "ĐỒNG Ý";
             this.bOK.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -377,7 +378,7 @@
             this.bOK.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.bOK.Name = "bOK";
             this.bOK.Size = new System.Drawing.Size(303, 96);
-            this.bOK.TabIndex = 1;
+            this.bOK.TabIndex = 10;
             this.bOK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel7
@@ -398,7 +399,7 @@
             this.tbAddress.Location = new System.Drawing.Point(340, 0);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(769, 70);
-            this.tbAddress.TabIndex = 6;
+            this.tbAddress.TabIndex = 4;
             this.tbAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
@@ -410,7 +411,7 @@
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(340, 70);
-            this.label6.TabIndex = 5;
+            this.label6.TabIndex = 111;
             this.label6.Text = "ĐỊA CHỈ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -432,7 +433,7 @@
             this.tbSDT.Location = new System.Drawing.Point(340, 0);
             this.tbSDT.Name = "tbSDT";
             this.tbSDT.Size = new System.Drawing.Size(769, 70);
-            this.tbSDT.TabIndex = 6;
+            this.tbSDT.TabIndex = 3;
             this.tbSDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
@@ -444,7 +445,7 @@
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(340, 70);
-            this.label5.TabIndex = 5;
+            this.label5.TabIndex = 111;
             this.label5.Text = "SỐ ĐIỆN THOẠI";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -466,7 +467,7 @@
             this.tbCMND.Location = new System.Drawing.Point(340, 0);
             this.tbCMND.Name = "tbCMND";
             this.tbCMND.Size = new System.Drawing.Size(769, 70);
-            this.tbCMND.TabIndex = 6;
+            this.tbCMND.TabIndex = 2;
             this.tbCMND.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lCMND
@@ -478,7 +479,7 @@
             this.lCMND.Location = new System.Drawing.Point(0, 0);
             this.lCMND.Name = "lCMND";
             this.lCMND.Size = new System.Drawing.Size(340, 70);
-            this.lCMND.TabIndex = 5;
+            this.lCMND.TabIndex = 111;
             this.lCMND.Text = "CMND";
             this.lCMND.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -507,7 +508,7 @@
             this.cbSex.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbSex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.cbSex.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbSex.DropDownHeight = 5;
+            this.cbSex.DropDownHeight = 100;
             this.cbSex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbSex.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSex.FormattingEnabled = true;
@@ -515,7 +516,7 @@
             this.cbSex.Location = new System.Drawing.Point(340, 0);
             this.cbSex.Name = "cbSex";
             this.cbSex.Size = new System.Drawing.Size(319, 70);
-            this.cbSex.TabIndex = 7;
+            this.cbSex.TabIndex = 1;
             // 
             // label3
             // 
@@ -526,7 +527,7 @@
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(340, 70);
-            this.label3.TabIndex = 5;
+            this.label3.TabIndex = 111;
             this.label3.Text = "GIỚI TÍNH";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -548,7 +549,7 @@
             this.tbName.Location = new System.Drawing.Point(340, 0);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(769, 70);
-            this.tbName.TabIndex = 6;
+            this.tbName.TabIndex = 0;
             this.tbName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
@@ -560,7 +561,7 @@
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(340, 70);
-            this.label2.TabIndex = 5;
+            this.label2.TabIndex = 111;
             this.label2.Text = "HỌ VÀ TÊN";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -587,7 +588,7 @@
             this.lID.Name = "lID";
             this.lID.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.lID.Size = new System.Drawing.Size(340, 82);
-            this.lID.TabIndex = 1;
+            this.lID.TabIndex = 111;
             this.lID.Text = "NV-0001";
             this.lID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -601,7 +602,7 @@
             this.lHeader.Name = "lHeader";
             this.lHeader.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
             this.lHeader.Size = new System.Drawing.Size(1109, 82);
-            this.lHeader.TabIndex = 0;
+            this.lHeader.TabIndex = 111;
             this.lHeader.Text = "THÊM NHÂN VIÊN";
             this.lHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -615,7 +616,7 @@
             this.Name = "FormAddStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F_ThemTaiKhoan";
-            this.TransparencyKey = System.Drawing.Color.Azure;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel1.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();

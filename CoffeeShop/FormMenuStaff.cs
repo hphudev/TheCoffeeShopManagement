@@ -19,6 +19,16 @@ namespace CoffeeShopManagement
 
         public void LoadForm()
         {
+            #region Giao diện DataGridView
+            this.dgvMenu.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Raised;
+            this.dgvMenu.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(192, 0, 0);
+            this.dgvMenu.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            this.dgvMenu.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgvMenu.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            this.dgvMenu.RowsDefaultCellStyle.Font = new Font("Time New Roman", 9, FontStyle.Regular);
+            this.dgvMenu.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 192, 128);
+            #endregion
+
             AutoCompleteStringCollection sourceData = new AutoCompleteStringCollection();
             this.dgvMenu.Rows.Clear();
             SqlConnection connection = Data.OpenConnection();

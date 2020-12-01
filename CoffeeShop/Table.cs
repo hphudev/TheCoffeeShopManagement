@@ -15,6 +15,7 @@ namespace CoffeeShopManagement
     {
         public List<ListOrder> Orders;
         public Customer cus;
+        public int index;
         FormSell parent;
         private string id;
         public string ID
@@ -28,6 +29,7 @@ namespace CoffeeShopManagement
         public Table(FormSell parent)
         {
             InitializeComponent();
+            DoubleBuffered = true;
             this.parent = parent;
             this.cus = this.parent.cus;
             this.Orders = new List<ListOrder>(this.parent.Orders);
@@ -41,7 +43,27 @@ namespace CoffeeShopManagement
             this.Orders = new List<ListOrder>(t.parent.Orders);
         }
 
-        private void LbTable_MouseClick(object sender, MouseEventArgs e)
+        private void Table_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = Color.PaleGreen;
+        }
+
+        private void Table_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = Color.MediumSeaGreen;
+        }
+
+        private void LbTable_MouseEnter(object sender, EventArgs e)
+        {
+            this.lbTable.BackColor = Color.PaleGreen;
+        }
+
+        private void LbTable_MouseLeave(object sender, EventArgs e)
+        {
+            this.lbTable.BackColor = Color.MediumSeaGreen;
+        }
+
+        public void LbTable_Click(object sender, EventArgs e)
         {
             this.parent.LoadSomeThingPublic();
             this.parent.TableChoice = new Table(this.parent, this);

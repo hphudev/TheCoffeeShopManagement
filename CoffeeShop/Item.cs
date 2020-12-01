@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace CoffeeShopManagement
 {
@@ -11,7 +12,7 @@ namespace CoffeeShopManagement
     {
         public string unit { get; }
 
-        public int soLanPhucVu { get; }
+        public int numberOfServings { get; }
 
         public ID id { get; set; }
 
@@ -21,24 +22,30 @@ namespace CoffeeShopManagement
         
         public Image image { get; }
 
-        public Item(string id, string name, string unit, int soLanPhucVu, int price)
+        public bool status { get; }
+
+        public Item(string id, string name, string unit, int numberOfServings, int price, bool status)
         {
             this.id = new ID(id);
             this.name = name;
             this.unit = unit;
             this.price = price;
-            this.soLanPhucVu = soLanPhucVu;
+            this.numberOfServings = numberOfServings;
+            this.status = status;
 
             if (this.id.ToString() != "")
             {
-                this.image = Image.FromFile("./ImageItem/" + this.id.ToString() + ".jpg");
+                using(var bitmap = new Bitmap("./ImageItem/" + this.id.ToString() + ".jpg"))
+                {
+                    this.image = new Bitmap(bitmap);
+                }
             }
         }
 
         public string GetInfo()
         {
             return "'" + this.id + "', N'" + this.name + "', N'" + this.unit + "', N'" + 
-                this.soLanPhucVu.ToString() + "', '" + this.price + "'";
+                this.numberOfServings.ToString() + "', '" + this.price + "', '" + this.status + "'";
         }
     }
 }

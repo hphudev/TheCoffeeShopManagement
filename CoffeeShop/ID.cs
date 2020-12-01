@@ -68,7 +68,7 @@ namespace CoffeeShopManagement
             if (reader.Read())
             {
                 Item item = new Item(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                    reader.GetInt32(3), reader.GetInt32(4));
+                    reader.GetInt32(3), reader.GetInt32(4), reader.GetBoolean(5));
                 Data.CloseConnection(ref connection);
                 return item.id;
             }

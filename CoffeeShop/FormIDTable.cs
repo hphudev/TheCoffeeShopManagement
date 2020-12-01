@@ -31,6 +31,7 @@ namespace CoffeeShopManagement
         private void BOK_Click(object sender, EventArgs e)
         {
             this.parent.idTable = tbIDTable.Text;
+            this.Close();
         }
 
         private void FormIDTable_FormClosed(object sender, FormClosedEventArgs e)

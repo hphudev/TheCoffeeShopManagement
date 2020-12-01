@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.pThanhDieuKhien = new System.Windows.Forms.Panel();
-            this.bMinimize = new JImageButton.JImageButton();
             this.buttonThoatForm = new JImageButton.JImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbTenPhanMem = new System.Windows.Forms.Label();
@@ -54,37 +53,19 @@
             // 
             // pThanhDieuKhien
             // 
-            this.pThanhDieuKhien.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pThanhDieuKhien.Controls.Add(this.bMinimize);
+            this.pThanhDieuKhien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.pThanhDieuKhien.Controls.Add(this.buttonThoatForm);
             this.pThanhDieuKhien.Dock = System.Windows.Forms.DockStyle.Top;
             this.pThanhDieuKhien.Location = new System.Drawing.Point(0, 0);
             this.pThanhDieuKhien.Name = "pThanhDieuKhien";
             this.pThanhDieuKhien.Size = new System.Drawing.Size(957, 51);
             this.pThanhDieuKhien.TabIndex = 3;
-            // 
-            // bMinimize
-            // 
-            this.bMinimize.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.bMinimize.BackColor = System.Drawing.SystemColors.Highlight;
-            this.bMinimize.CausesValidation = false;
-            this.bMinimize.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bMinimize.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bMinimize.ErrorImage")));
-            this.bMinimize.Image = global::CoffeeShopManagement.Properties.Resources.Minimize;
-            this.bMinimize.ImageHover = null;
-            this.bMinimize.InitialImage = null;
-            this.bMinimize.Location = new System.Drawing.Point(860, 0);
-            this.bMinimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bMinimize.Name = "bMinimize";
-            this.bMinimize.Size = new System.Drawing.Size(51, 51);
-            this.bMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.bMinimize.TabIndex = 5;
-            this.bMinimize.Zoom = 4;
+            this.pThanhDieuKhien.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PThanhDieuKhien_MouseDown);
             // 
             // buttonThoatForm
             // 
             this.buttonThoatForm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonThoatForm.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonThoatForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonThoatForm.CausesValidation = false;
             this.buttonThoatForm.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonThoatForm.Dock = System.Windows.Forms.DockStyle.Right;
@@ -127,7 +108,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel2.Controls.Add(this.pbEye);
             this.panel2.Controls.Add(this.buttonThoat);
             this.panel2.Controls.Add(this.btDangNhap);
@@ -144,7 +125,7 @@
             // pbEye
             // 
             this.pbEye.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbEye.Image = global::CoffeeShopManagement.Properties.Resources.CloseEye;
+            this.pbEye.Image = global::CoffeeShopManagement.Properties.Resources.OpenEye;
             this.pbEye.Location = new System.Drawing.Point(478, 362);
             this.pbEye.Name = "pbEye";
             this.pbEye.Size = new System.Drawing.Size(40, 40);
@@ -160,7 +141,7 @@
             this.buttonThoat.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
             this.buttonThoat.ActiveForecolor = System.Drawing.Color.White;
             this.buttonThoat.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
-            this.buttonThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
+            this.buttonThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonThoat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonThoat.BackgroundImage")));
             this.buttonThoat.ButtonText = "Thoát";
             this.buttonThoat.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -186,7 +167,7 @@
             this.btDangNhap.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
             this.btDangNhap.ActiveForecolor = System.Drawing.Color.White;
             this.btDangNhap.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
-            this.btDangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
+            this.btDangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btDangNhap.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btDangNhap.BackgroundImage")));
             this.btDangNhap.ButtonText = "Đăng nhập";
             this.btDangNhap.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -313,7 +294,6 @@
 
         private System.Windows.Forms.Panel pThanhDieuKhien;
         private JImageButton.JImageButton buttonThoatForm;
-        private JImageButton.JImageButton bMinimize;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;

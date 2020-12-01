@@ -31,6 +31,7 @@ namespace CoffeeShopManagement
         public FormLogin parent;
         private Timer CheckOrder;
         private Timer CheckTable;
+        private Timer CheckFind;
         public FormSell(FormLogin parent)
         {
             InitializeComponent();
@@ -50,6 +51,12 @@ namespace CoffeeShopManagement
                 ActionCheckTableChoice();
             };
             CheckTable.Start();
+            CheckFind = new Timer();
+            CheckFind.Interval = 2;
+            CheckFind.Tick += (s, e) =>
+            {
+                ActionCheackFind();
+            };
             LoadDanhSachMonPhoBien();
             LoadSomeThingPublic();
             CheckOrder.Start();
@@ -57,6 +64,30 @@ namespace CoffeeShopManagement
             this.bInfoAccount.Click += InfoAccountClicked;
         }
         
+        private void ActionCheackFind()
+        {
+            CheckFind.Stop();
+            if (cbTimKiem.Text == "")
+            {
+                flpDanhSachMon.Controls.Clear();
+                foreach (var item in Items)
+                {
+                    flpDanhSachMon.Controls.Add(item);
+                }
+                return;
+            }
+            flpDanhSachMon.Controls.Clear();
+            foreach (var item in Items)
+            {
+                string tmpParent = item.Title.ToLower();
+                string tmpChild = cbTimKiem.Text.ToLower();
+                if (tmpParent.IndexOf(tmpChild) >= 0)
+                {
+                    flpDanhSachMon.Controls.Add(item);
+                }
+            }
+        }
+
         private void ActionCheckTableChoice()
         {
             if (TableChoice != null)
@@ -65,8 +96,9 @@ namespace CoffeeShopManagement
                 FormOrder OrderTable = new FormOrder(this);
                 OrderTable.BangKhoa.Hide();
                 OrderTable.Hide();
+                OrderTable.tableChoice = this.TableChoice;
                 OrderTable.BtThanhToan_Click(OrderTable, new EventArgs());
-                TableChoice = null;
+                this.TableChoice = null;
                 OrderTable.Close();
                 CheckTable.Start();
             }
@@ -77,7 +109,9 @@ namespace CoffeeShopManagement
             Items.Clear();
             cbTimKiem.Items.Clear();
             SqlConnection connection = Data.OpenConnection();
-            SqlDataReader Reader = Data.ReadData("MON", connection, " ORDER BY SOLANPHUCVU DESC", " TOP 20 * ");
+            SqlDataReader Reader = Data.ReadData("MON", connection, "" +
+                "WHERE TINHTRANG = 1" +
+                " ORDER BY SOLANPHUCVU DESC", " * ");
             while (Reader.HasRows)
             {
                 if (Reader.Read() == false)
@@ -86,7 +120,10 @@ namespace CoffeeShopManagement
                 item.ID = Reader.GetString(0);
                 if (System.IO.File.Exists($"./ImageItem/{ item.ID}.jpg"))
                 {
-                    item.Image = Image.FromFile($"./ImageItem/{item.ID}.jpg");
+                    using (var bitmap = new Bitmap($"./ImageItem/{item.ID}.jpg"))
+                    {
+                        item.Image = new Bitmap(bitmap);
+                    }
                 }
                 item.Title = Reader.GetString(1);
                 item.Cost = Reader.GetInt32(4);
@@ -280,6 +317,11 @@ namespace CoffeeShopManagement
 
         private void btOrder_Click(object sender, EventArgs e)
         {
+            if (btOrder.Text == "0" )
+            {
+                IO.ExportWarning("Danh sách món trống!");
+                return;
+            }
             new FormOrder(this);
         }
 
@@ -300,6 +342,11 @@ namespace CoffeeShopManagement
 
         private void BtTK_QuanLy_Click(object sender, EventArgs e)
         {
+            if (!this.parent.account.IsAdmin())
+            {
+                IO.ExportWarning("Bạn không được cấp quyền tính năng này!");
+                return;
+            }
             new FormMenuStaff(this) ;
         }
 
@@ -325,7 +372,7 @@ namespace CoffeeShopManagement
         private void BtDaOrder_Click(object sender, EventArgs e)
         {
             this.btDangOrder.ForeColor = Color.Black;
-            this.btDaOrder.ForeColor = Color.FromArgb(192, 192, 0);
+            this.btDaOrder.ForeColor = Color.Aqua;
             statusOrder = false;
             this.flpOrder.Controls.Clear();
         }
@@ -333,7 +380,7 @@ namespace CoffeeShopManagement
         private void BtDangOrder_Click(object sender, EventArgs e)
         {
             this.btDaOrder.ForeColor = Color.Black;
-            this.btDangOrder.ForeColor = Color.FromArgb(192, 192, 0);
+            this.btDangOrder.ForeColor = Color.Aqua;
             statusOrder = true;
             this.flpOrder.Controls.Clear();
             SumOrders = 0;
@@ -347,12 +394,23 @@ namespace CoffeeShopManagement
 
         private void BtThucDon_Click(object sender, EventArgs e)
         {
+            if(!this.parent.account.IsAdmin())
+            {
+                IO.ExportWarning("Bạn không được cấp quyền tính năng này!");
+                return;
+            }
             AnHetCacButtonMenu();
             new FormMenuItem(this);
         }
 
         private void BtThongKe_Click(object sender, EventArgs e)
         {
+            if (!this.parent.account.IsAdmin())
+            {
+                IO.ExportWarning("Bạn không được cấp quyền tính năng này!");
+                return;
+            }
+
             AnHetCacButtonMenu();
             (new FormStatistic(this)).Show();
             this.Hide();
@@ -385,6 +443,7 @@ namespace CoffeeShopManagement
                         Choice = Items[i];
                         ItemsChoice.Add(Items[i]);
                         IO.ExportSuccess("Đã thêm món thành công!");
+                        cbTimKiem.Text = "";
                         return;
                     }
                     else
@@ -394,6 +453,26 @@ namespace CoffeeShopManagement
                     }
                 }
             IO.ExportError("Không tìm thấy món!");
+        }
+
+        private void BtThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void CbTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            CheckFind.Start();
+        }
+
+        private void CbTimKiem_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CbTimKiem_MouseLeave(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -60,7 +60,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1339, 803);
+            this.panel1.Size = new System.Drawing.Size(1442, 803);
             this.panel1.TabIndex = 0;
             // 
             // dgvMenu
@@ -68,7 +68,7 @@
             this.dgvMenu.AllowUserToAddRows = false;
             this.dgvMenu.AllowUserToDeleteRows = false;
             this.dgvMenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMenu.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.dgvMenu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMenu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvtbcID,
@@ -84,7 +84,7 @@
             this.dgvMenu.RowHeadersWidth = 51;
             this.dgvMenu.RowTemplate.Height = 24;
             this.dgvMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMenu.Size = new System.Drawing.Size(1084, 672);
+            this.dgvMenu.Size = new System.Drawing.Size(1226, 672);
             this.dgvMenu.TabIndex = 7;
             // 
             // dgvtbcID
@@ -131,7 +131,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 71);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1084, 60);
+            this.panel4.Size = new System.Drawing.Size(1226, 60);
             this.panel4.TabIndex = 6;
             // 
             // bFind
@@ -145,7 +145,6 @@
             this.bFind.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bFind.BackgroundImage")));
             this.bFind.ButtonText = "TÌM KIẾM";
             this.bFind.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bFind.Dock = System.Windows.Forms.DockStyle.Right;
             this.bFind.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bFind.ForeColor = System.Drawing.Color.SeaGreen;
             this.bFind.IdleBorderThickness = 1;
@@ -153,24 +152,24 @@
             this.bFind.IdleFillColor = System.Drawing.Color.White;
             this.bFind.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
             this.bFind.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bFind.Location = new System.Drawing.Point(539, 0);
+            this.bFind.Location = new System.Drawing.Point(611, 0);
             this.bFind.Margin = new System.Windows.Forms.Padding(6);
             this.bFind.Name = "bFind";
-            this.bFind.Size = new System.Drawing.Size(186, 58);
+            this.bFind.Size = new System.Drawing.Size(171, 58);
             this.bFind.TabIndex = 18;
             this.bFind.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbFind
             // 
-            this.cbFind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(163)))), ((int)(((byte)(26)))));
+            this.cbFind.BackColor = System.Drawing.Color.Maroon;
             this.cbFind.Dock = System.Windows.Forms.DockStyle.Right;
             this.cbFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbFind.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFind.ForeColor = System.Drawing.Color.White;
             this.cbFind.FormattingEnabled = true;
-            this.cbFind.Location = new System.Drawing.Point(725, 0);
+            this.cbFind.Location = new System.Drawing.Point(800, 0);
             this.cbFind.Name = "cbFind";
-            this.cbFind.Size = new System.Drawing.Size(357, 58);
+            this.cbFind.Size = new System.Drawing.Size(424, 58);
             this.cbFind.TabIndex = 17;
             // 
             // panel6
@@ -182,9 +181,9 @@
             this.panel6.Controls.Add(this.bChangeInfoItem);
             this.panel6.Controls.Add(this.bAddItem);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(1084, 71);
+            this.panel6.Location = new System.Drawing.Point(1226, 71);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(255, 732);
+            this.panel6.Size = new System.Drawing.Size(216, 732);
             this.panel6.TabIndex = 5;
             // 
             // bCancel
@@ -209,7 +208,7 @@
             this.bCancel.Location = new System.Drawing.Point(0, 216);
             this.bCancel.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.bCancel.Name = "bCancel";
-            this.bCancel.Size = new System.Drawing.Size(253, 72);
+            this.bCancel.Size = new System.Drawing.Size(214, 72);
             this.bCancel.TabIndex = 3;
             this.bCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -235,7 +234,7 @@
             this.bDeleteItem.Location = new System.Drawing.Point(0, 144);
             this.bDeleteItem.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.bDeleteItem.Name = "bDeleteItem";
-            this.bDeleteItem.Size = new System.Drawing.Size(253, 72);
+            this.bDeleteItem.Size = new System.Drawing.Size(214, 72);
             this.bDeleteItem.TabIndex = 2;
             this.bDeleteItem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -261,7 +260,7 @@
             this.bChangeInfoItem.Location = new System.Drawing.Point(0, 72);
             this.bChangeInfoItem.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.bChangeInfoItem.Name = "bChangeInfoItem";
-            this.bChangeInfoItem.Size = new System.Drawing.Size(253, 72);
+            this.bChangeInfoItem.Size = new System.Drawing.Size(214, 72);
             this.bChangeInfoItem.TabIndex = 1;
             this.bChangeInfoItem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -287,7 +286,7 @@
             this.bAddItem.Location = new System.Drawing.Point(0, 0);
             this.bAddItem.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.bAddItem.Name = "bAddItem";
-            this.bAddItem.Size = new System.Drawing.Size(253, 72);
+            this.bAddItem.Size = new System.Drawing.Size(214, 72);
             this.bAddItem.TabIndex = 0;
             this.bAddItem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -299,7 +298,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1339, 71);
+            this.label1.Size = new System.Drawing.Size(1442, 71);
             this.label1.TabIndex = 1;
             this.label1.Text = "QUẢN LÝ THỰC ĐƠN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -309,7 +308,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(1339, 803);
+            this.ClientSize = new System.Drawing.Size(1442, 803);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMenuItem";
