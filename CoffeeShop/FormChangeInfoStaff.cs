@@ -110,13 +110,14 @@ namespace CoffeeShopManagement
                 Staff updatedStaff = new Staff(selectedStaff.id.ToString(), selectedStaff.name,
                     tbAddress.Text, selectedStaff.sdt, selectedStaff.sex, selectedStaff.date,
                     selectedStaff.cmnd, this.cbPosition.Text, int.Parse(this.tbSalary.Text));
-                Data.UpdateData("NHANVIEN", "CHUCVU = N'" + updatedStaff.chucVu + "', LUONG = '" +
+                Data.UpdateData("NHANVIEN", "CHUCVU = N'" + updatedStaff.chucVu + "', salary = '" +
                     updatedStaff.luong + "', DCHI = N'" + updatedStaff.address + "'", " WHERE MANV = '"
                     + selectedStaff.id.ToString() + "'");
 
                 Account updatedAccount = new Account(selectedStaff.id.ToString(), this.tbUsername.Text,
-                    Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()));
-                Data.UpdateData("TAIlockFormN", "MATKHAU = '" + updatedAccount.password + "'",
+                    Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()),
+                    true);
+                Data.UpdateData("TAIKHOAN", "MATKHAU = '" + updatedAccount.password + "'",
                     " WHERE ID = '" + updatedAccount.id.ToString() + "'");
 
                 IO.ExportSuccess("Sửa thông tin nhân viên thành công");
@@ -128,5 +129,6 @@ namespace CoffeeShopManagement
                 IO.ExportError("Nội dung nhập không hợp lệ");
             }
         }
+
     }
 }

@@ -32,6 +32,7 @@ namespace CoffeeShopManagement
         private Timer CheckOrder;
         private Timer CheckTable;
         private Timer CheckFind;
+
         public FormSell(FormLogin parent)
         {
             InitializeComponent();
@@ -62,8 +63,9 @@ namespace CoffeeShopManagement
             CheckOrder.Start();
             //MessageBox.Show(this.parent.account.id.id);
             this.bInfoAccount.Click += InfoAccountClicked;
+            this.bMenuStaff.Click += MenuStaffClicked;
         }
-        
+
         private void ActionCheackFind()
         {
             CheckFind.Stop();
@@ -190,7 +192,7 @@ namespace CoffeeShopManagement
                 Orders[i].Index = i;
                 SumOrders += Orders[i].TongTien;
             }
-            btOrder.Text = SumOrders.ToString();
+            btOrder.Text = Utility.StringToMoney(SumOrders.ToString());
         }
 
         private void btHienThi_Click(object sender, EventArgs e)
@@ -340,13 +342,14 @@ namespace CoffeeShopManagement
             this.parent.Show();
         }
 
-        private void BtTK_QuanLy_Click(object sender, EventArgs e)
+        private void MenuStaffClicked(object sender, EventArgs e)
         {
             if (!this.parent.account.IsAdmin())
             {
                 IO.ExportWarning("Bạn không được cấp quyền tính năng này!");
                 return;
             }
+
             new FormMenuStaff(this) ;
         }
 
@@ -389,7 +392,7 @@ namespace CoffeeShopManagement
                 this.flpOrder.Controls.Add(Orders[i]);
                 SumOrders += Orders[i].TongTien;
             }
-            btOrder.Text = SumOrders.ToString();
+            btOrder.Text = Utility.StringToMoney(SumOrders.ToString());
         }
 
         private void BtThucDon_Click(object sender, EventArgs e)
@@ -413,7 +416,7 @@ namespace CoffeeShopManagement
 
             AnHetCacButtonMenu();
             (new FormStatistic(this)).Show();
-            this.Hide();
+            //this.Hide();
         }
 
         private void BtMonPhoBien_Click(object sender, EventArgs e)

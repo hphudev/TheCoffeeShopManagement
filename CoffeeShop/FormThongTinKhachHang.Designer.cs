@@ -40,6 +40,11 @@
             this.tbThanhVien = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.tbNamSinh = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tbThangSinh = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.tbNgaySinh = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -62,6 +67,7 @@
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -189,7 +195,7 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.tbNgaySinh);
+            this.panel6.Controls.Add(this.panel14);
             this.panel6.Controls.Add(this.label5);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 282);
@@ -197,17 +203,83 @@
             this.panel6.Size = new System.Drawing.Size(848, 71);
             this.panel6.TabIndex = 5;
             // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel14.Controls.Add(this.tbNamSinh);
+            this.panel14.Controls.Add(this.label12);
+            this.panel14.Controls.Add(this.tbThangSinh);
+            this.panel14.Controls.Add(this.label11);
+            this.panel14.Controls.Add(this.tbNgaySinh);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel14.Location = new System.Drawing.Point(340, 0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(508, 71);
+            this.panel14.TabIndex = 8;
+            // 
+            // tbNamSinh
+            // 
+            this.tbNamSinh.BackColor = System.Drawing.Color.SandyBrown;
+            this.tbNamSinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbNamSinh.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tbNamSinh.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNamSinh.Location = new System.Drawing.Point(240, 0);
+            this.tbNamSinh.Name = "tbNamSinh";
+            this.tbNamSinh.Size = new System.Drawing.Size(141, 70);
+            this.tbNamSinh.TabIndex = 18;
+            this.tbNamSinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbNamSinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbNamSinh_KeyPress);
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(194, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(46, 69);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "/";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbThangSinh
+            // 
+            this.tbThangSinh.BackColor = System.Drawing.Color.SandyBrown;
+            this.tbThangSinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbThangSinh.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tbThangSinh.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbThangSinh.Location = new System.Drawing.Point(120, 0);
+            this.tbThangSinh.Name = "tbThangSinh";
+            this.tbThangSinh.Size = new System.Drawing.Size(74, 70);
+            this.tbThangSinh.TabIndex = 16;
+            this.tbThangSinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbThangSinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbThangSinh_KeyPress);
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(74, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(46, 69);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "/";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tbNgaySinh
             // 
-            this.tbNgaySinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.tbNgaySinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbNgaySinh.BackColor = System.Drawing.Color.SandyBrown;
+            this.tbNgaySinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbNgaySinh.Dock = System.Windows.Forms.DockStyle.Left;
             this.tbNgaySinh.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNgaySinh.Location = new System.Drawing.Point(340, 0);
+            this.tbNgaySinh.Location = new System.Drawing.Point(0, 0);
             this.tbNgaySinh.Name = "tbNgaySinh";
-            this.tbNgaySinh.Size = new System.Drawing.Size(508, 70);
-            this.tbNgaySinh.TabIndex = 3;
-            this.tbNgaySinh.TextChanged += new System.EventHandler(this.TbNgaySinh_TextChanged);
-            this.tbNgaySinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbNgaySinh_KeyPress);
+            this.tbNgaySinh.Size = new System.Drawing.Size(74, 70);
+            this.tbNgaySinh.TabIndex = 14;
+            this.tbNgaySinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbNgaySinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbNgaySinh_KeyPress_1);
             // 
             // label5
             // 
@@ -452,7 +524,8 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -487,12 +560,17 @@
         private System.Windows.Forms.TextBox tbThanhVien;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbGioiTinh;
-        private System.Windows.Forms.TextBox tbNgaySinh;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.TextBox tbNgayDangKy;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.TextBox tbDiaChi;
         private System.Windows.Forms.Label LBDiaChi;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.TextBox tbNamSinh;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox tbThangSinh;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox tbNgaySinh;
     }
 }

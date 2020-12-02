@@ -83,12 +83,12 @@
     <Compile Include="Button_WOC.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CheckDate.cs" />
     <Compile Include="DetailBill.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="Encrypt.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="Expense.cs" />
     <Compile Include="FlowLayoutPanelBuffered.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -216,6 +216,12 @@
     <Compile Include="ListOrder.Designer.cs">
       <DependentUpon>ListOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListOrdering.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListOrdering.Designer.cs">
+      <DependentUpon>ListOrdering.cs</DependentUpon>
+    </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListOrder.resx">
       <DependentUpon>ListOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOrdering.resx">
+      <DependentUpon>ListOrdering.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

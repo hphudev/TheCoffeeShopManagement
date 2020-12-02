@@ -141,6 +141,7 @@ namespace CoffeeShopManagement
                         if (this.dgvMenu.Rows[i].Cells[1].Value.ToString() == this.cbFind.Text)
                         {
                             this.dgvMenu.Rows[i].Selected = true;
+                            this.cbFind.Text = "";
                             break;
                         }
                     }

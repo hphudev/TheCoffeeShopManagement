@@ -27,5 +27,27 @@ namespace CoffeeShopManagement
                 return null;
             return date[2] + "/" + date[1] + "/" + date[0];
         }
+
+        public static string StringToMoney(string a)
+        {
+            string tmp = "";
+            int dem = 0;
+            for (int i = a.Length - 1; i >= 0; i--)
+            {
+                dem++;
+                if (i > 0 && dem % 3 == 0)
+                    tmp = "." + a[i].ToString() + tmp;
+                else
+                    tmp = a[i] + tmp;
+            }
+            return tmp;
+        }
+
+        public static string MoneyToString(string a)
+        {
+            while (a.IndexOf('.') > -1)
+                a.Remove(a.IndexOf('.'), 1);
+            return a;
+        }
     }
 }

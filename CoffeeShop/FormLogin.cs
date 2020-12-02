@@ -83,7 +83,7 @@ namespace CoffeeShopManagement
                 }
 
                 Account validAccount = new Account(reader.GetString(0), reader.GetString(1),
-                    reader.GetString(2));
+                    reader.GetString(2), reader.GetBoolean(3));
 
                 if (account.username == validAccount.username)
                 {
@@ -104,16 +104,17 @@ namespace CoffeeShopManagement
                 }
 
                 this.account = new Account("NULL", tbTenDangNhap.TextName, Encrypt.ComputeHash(
-                    tbMatKhau.TextName, new SHA256CryptoServiceProvider()));
+                    tbMatKhau.TextName, new SHA256CryptoServiceProvider()), true);
                 Account adminAccount = new Account("", "1", Encrypt.ComputeHash("1",
-                    new SHA256CryptoServiceProvider()));
+                    new SHA256CryptoServiceProvider()), true);
                 SqlConnection connection = Data.OpenConnection();
-                SqlDataReader reader = Data.ReadData("TAIKHOAN", connection, "", "*");
+                SqlDataReader reader = Data.ReadData("TAIKHOAN", connection, " WHERE TINHTRANG = 1",
+                    "*");
                 Account validAccount = GetValidAccount(this.account, reader);
 
                 if (validAccount == null && this.account.username != adminAccount.username)
                 {
-                    IO.ExportError("Tên đăng nhập không tồn tại");
+                    IO.ExportError("Tên đăng nhập này không tồn tại");
                 }
                 else
                 {
@@ -121,8 +122,11 @@ namespace CoffeeShopManagement
                         this.account.password == adminAccount.password)
                     {
                         if (validAccount != null)
+                        {
                             this.account = validAccount;
-                        new FormSell(this).Show();
+                        }
+
+                        (new FormSell(this)).Show();
                         this.Hide();
                         this.tbTenDangNhap.TextName = this.tbMatKhau.TextName = "";
                     }
@@ -132,9 +136,9 @@ namespace CoffeeShopManagement
                     }
                 }
             }
-            catch (Exception E)
+            catch (Exception)
             {
-                IO.ExportError("Nội dung nhập không hợp lệ");
+                IO.ExportError("Tên đăng nhập và mật khẩu không được để trống");
             }
         }
 

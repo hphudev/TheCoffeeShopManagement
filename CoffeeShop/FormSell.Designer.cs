@@ -41,7 +41,7 @@
             this.btTB_TaiChinh = new ns1.BunifuThinButton2();
             this.pn1 = new System.Windows.Forms.Panel();
             this.pnTaiKhoan = new System.Windows.Forms.Panel();
-            this.btTK_QuanLy = new ns1.BunifuThinButton2();
+            this.bMenuStaff = new ns1.BunifuThinButton2();
             this.bInfoAccount = new ns1.BunifuThinButton2();
             this.btTK_DangXuat = new ns1.BunifuThinButton2();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -314,7 +314,7 @@
             // 
             // pnTaiKhoan
             // 
-            this.pnTaiKhoan.Controls.Add(this.btTK_QuanLy);
+            this.pnTaiKhoan.Controls.Add(this.bMenuStaff);
             this.pnTaiKhoan.Controls.Add(this.bInfoAccount);
             this.pnTaiKhoan.Controls.Add(this.btTK_DangXuat);
             this.pnTaiKhoan.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -323,32 +323,31 @@
             this.pnTaiKhoan.Size = new System.Drawing.Size(442, 47);
             this.pnTaiKhoan.TabIndex = 11;
             // 
-            // btTK_QuanLy
+            // bMenuStaff
             // 
-            this.btTK_QuanLy.ActiveBorderThickness = 1;
-            this.btTK_QuanLy.ActiveCornerRadius = 20;
-            this.btTK_QuanLy.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.btTK_QuanLy.ActiveForecolor = System.Drawing.Color.White;
-            this.btTK_QuanLy.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btTK_QuanLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btTK_QuanLy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btTK_QuanLy.BackgroundImage")));
-            this.btTK_QuanLy.ButtonText = "Quản lý";
-            this.btTK_QuanLy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btTK_QuanLy.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btTK_QuanLy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTK_QuanLy.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btTK_QuanLy.IdleBorderThickness = 1;
-            this.btTK_QuanLy.IdleCornerRadius = 20;
-            this.btTK_QuanLy.IdleFillColor = System.Drawing.Color.SeaShell;
-            this.btTK_QuanLy.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.btTK_QuanLy.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btTK_QuanLy.Location = new System.Drawing.Point(7, 0);
-            this.btTK_QuanLy.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btTK_QuanLy.Name = "btTK_QuanLy";
-            this.btTK_QuanLy.Size = new System.Drawing.Size(145, 47);
-            this.btTK_QuanLy.TabIndex = 7;
-            this.btTK_QuanLy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btTK_QuanLy.Click += new System.EventHandler(this.BtTK_QuanLy_Click);
+            this.bMenuStaff.ActiveBorderThickness = 1;
+            this.bMenuStaff.ActiveCornerRadius = 20;
+            this.bMenuStaff.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.bMenuStaff.ActiveForecolor = System.Drawing.Color.White;
+            this.bMenuStaff.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.bMenuStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.bMenuStaff.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bMenuStaff.BackgroundImage")));
+            this.bMenuStaff.ButtonText = "Quản lý";
+            this.bMenuStaff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bMenuStaff.Dock = System.Windows.Forms.DockStyle.Right;
+            this.bMenuStaff.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bMenuStaff.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bMenuStaff.IdleBorderThickness = 1;
+            this.bMenuStaff.IdleCornerRadius = 20;
+            this.bMenuStaff.IdleFillColor = System.Drawing.Color.SeaShell;
+            this.bMenuStaff.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.bMenuStaff.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.bMenuStaff.Location = new System.Drawing.Point(7, 0);
+            this.bMenuStaff.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.bMenuStaff.Name = "bMenuStaff";
+            this.bMenuStaff.Size = new System.Drawing.Size(145, 47);
+            this.bMenuStaff.TabIndex = 7;
+            this.bMenuStaff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bInfoAccount
             // 
@@ -784,7 +783,7 @@
         private ns1.BunifuThinButton2 btThongKe;
         private ns1.BunifuThinButton2 btTK_DangXuat;
         private ns1.BunifuThinButton2 bInfoAccount;
-        private ns1.BunifuThinButton2 btTK_QuanLy;
+        private ns1.BunifuThinButton2 bMenuStaff;
         private System.Windows.Forms.Panel pn1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pn;

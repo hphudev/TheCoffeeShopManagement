@@ -47,6 +47,8 @@ namespace CoffeeShopManagement
                 tbHoTen.Text = "";
                 cbGioiTinh.Text = "";
                 tbNgaySinh.Text = "";
+                tbThangSinh.Text = "";
+                tbNamSinh.Text = "";
                 tbThanhVien.Text = "";
                 tbNgayDangKy.Text = "";
                 tbDiaChi.Text = "";
@@ -57,6 +59,8 @@ namespace CoffeeShopManagement
             tbHoTen.ReadOnly = !status;
             cbGioiTinh.Enabled = status;
             tbNgaySinh.ReadOnly = !status;
+            tbThangSinh.ReadOnly = !status;
+            tbNamSinh.ReadOnly = !status;
             tbThanhVien.ReadOnly = !status;
             tbDiaChi.ReadOnly = !status;
         }
@@ -76,7 +80,9 @@ namespace CoffeeShopManagement
                     tbSDT.Text = Reader.GetString(3);
                     tbHoTen.Text = Reader.GetString(1);
                     cbGioiTinh.Text = Reader.GetString(7);
-                    tbNgaySinh.Text = new DateTime().GetDate(Reader.GetDateTime(4));
+                    tbNgaySinh.Text = Reader.GetDateTime(4).Day.ToString();
+                    tbThangSinh.Text = Reader.GetDateTime(4).Month.ToString();
+                    tbNamSinh.Text = Reader.GetDateTime(4).Year.ToString();
                     tbThanhVien.Text = Reader.GetString(9);
                     tbNgayDangKy.Text = new DateTime().GetDate(Reader.GetDateTime(6));
                     tbDiaChi.Text = Reader.GetString(2);
@@ -104,6 +110,26 @@ namespace CoffeeShopManagement
             return (gioitinh == "Nam" || gioitinh == "Nữ");
         }
 
+        public bool CheckYear(int year)
+        {
+            // true là năm nhuận, false là năm không nhuận
+            return (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0));
+        }
+
+        private bool CheckNgayThangNam (string day, string month, string year)
+        {
+            int iDay = int.Parse(day);
+            int iMonth = int.Parse(month);
+            int iYear = int.Parse(year);
+            if (iMonth >= 8)
+                return (iMonth % 2 == 0 && iDay <= 31) || (iMonth % 2 != 0 && iDay <= 30);
+            else
+                return  (iMonth == 2 && CheckYear(iYear) && iDay <= 29) 
+                    || (iMonth == 2 && !CheckYear(iYear) && iDay <= 28)
+                    || (iMonth != 2 && iMonth % 2 == 0 && iDay <= 30) 
+                    || (iMonth != 2 && iMonth % 2 != 0 && iDay <= 31);
+        }
+
         private void BtCapNhat_Click(object sender, EventArgs e)
         {
             if (!Permiss)
@@ -121,8 +147,12 @@ namespace CoffeeShopManagement
                 IO.ExportError("Sai trường giới tính");
                 return;
             }
-            string[] dates = tbNgaySinh.Text.Split('/');
-            string date = dates[2] + '/' + dates[1] + '/' + dates[0]; 
+            if (!CheckNgayThangNam(tbNgaySinh.Text, tbThangSinh.Text, tbNamSinh.Text))
+            {
+                IO.ExportError("Sai trường ngày sinh");
+                return;
+            }
+            string date = tbNamSinh.Text + '/' + tbThangSinh.Text + '/' + tbNgaySinh.Text; 
             Data.UpdateData("khachhang", $"hoten = N'{tbHoTen.Text}', dchi = N'{tbDiaChi.Text}', sdt = N'{tbSDT.Text}'" +
                 $", ngaysinh = '{date}', gioitinh = N'{cbGioiTinh.Text}', loaikh = N'{tbThanhVien.Text}'", $" where makh = '{lbMaKH.Text}' ");
             IO.ExportSuccess("Cập nhật thành công!");
@@ -166,6 +196,21 @@ namespace CoffeeShopManagement
                 tbTimKiemSDT.Text = "Số điện thoại";
                 tbTimKiemSDT.ForeColor = Color.FromArgb(255, 224, 192);
             }
+        }
+
+        private void TbNgaySinh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsControl(e.KeyChar) & !char.IsDigit(e.KeyChar);
+        }
+
+        private void TbThangSinh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsControl(e.KeyChar) & !char.IsDigit(e.KeyChar);
+        }
+
+        private void TbNamSinh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsControl(e.KeyChar) & !char.IsDigit(e.KeyChar);
         }
     }
 }

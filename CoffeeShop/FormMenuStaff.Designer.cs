@@ -212,7 +212,7 @@
             this.bFind.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
             this.bFind.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
             this.bFind.Location = new System.Drawing.Point(665, 0);
-            this.bFind.Margin = new System.Windows.Forms.Padding(6);
+            this.bFind.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.bFind.Name = "bFind";
             this.bFind.Size = new System.Drawing.Size(169, 54);
             this.bFind.TabIndex = 16;

@@ -112,7 +112,7 @@ namespace CoffeeShopManagement
                 selectedStaff.id.ToString() + "'", "*");
             reader.Read();
             selectedAccount = new Account(reader.GetString(0), reader.GetString(1), 
-                reader.GetString(2));
+                reader.GetString(2), reader.GetBoolean(3));
             Data.CloseConnection(ref connection);
         }
 

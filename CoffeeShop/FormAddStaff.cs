@@ -111,14 +111,26 @@ namespace CoffeeShopManagement
                 }
 
                 Staff staff = new Staff(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                    reader.GetString(4), reader.GetString(6), (reader.GetDateTime(3).ToString().Split(' '))[0],
-                    reader.GetString(5), reader.GetString(8), reader.GetInt32(7));
+                    reader.GetString(4), reader.GetString(6),
+                    (reader.GetDateTime(3).ToString().Split(' '))[0], reader.GetString(5),
+                    reader.GetString(8), reader.GetInt32(7));
+                Account account = new Account(reader.GetString(9), reader.GetString(10),
+                    reader.GetString(11), reader.GetBoolean(12));
 
-                if (newStaff.cmnd == staff.cmnd)
+                if (newStaff.cmnd == staff.cmnd && account.status)
                 {
                     Data.CloseConnection(ref connection);
                     IO.ExportError("Tồn tại nhân viên có số cmnd này trong danh sách");
                     return false;
+                }
+
+                if (newStaff.cmnd == staff.cmnd && !account.status)
+                {
+                    Data.DeleteData("TAIKHOAN", " WHERE ID = '" + staff.id.ToString() + "'");
+                    Data.DeleteData("NHANVIEN", " WHERE MANV = '" + staff.id.ToString() + "'");
+                    Data.CloseConnection(ref connection);
+                    newStaff.id.SetID(staff.id.FindID("NV"), "NV", 2);
+                    return true;
                 }
 
                 if (newStaff.sdt == staff.sdt)
@@ -206,7 +218,7 @@ namespace CoffeeShopManagement
 
             return false;
         }
-        
+
         private void OKClicked(object sender, EventArgs e)
         {
             try
@@ -234,7 +246,8 @@ namespace CoffeeShopManagement
                     }
 
                     Account account = new Account(newStaff.id.ToString(), this.tbUsername.Text,
-                        Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()));
+                        Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()),
+                        true);
 
                     if (IsUsername(account.username))
                     {

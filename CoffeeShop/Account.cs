@@ -15,6 +15,8 @@ namespace CoffeeShopManagement
 
         public string password { get; }
 
+        public bool status { get; }
+
         public bool IsAdmin()
         {
             if (this.username == "1")
@@ -25,37 +27,18 @@ namespace CoffeeShopManagement
             return false;
         }
 
-        public Account(string id, string username, string password)
+        public Account(string id, string username, string password, bool status)
         {
             this.id = new ID(id);
             this.username = username;
             this.password = password;
-        }
-
-        public static Account GetValidAccount(string username, SqlDataReader reader)
-        {
-            while (reader.HasRows)
-            {
-                if (!reader.Read())
-                {
-                    break;
-                }
-
-                Account validAccount = new Account(reader.GetString(0), reader.GetString(1),
-                    reader.GetString(2));
-
-                if (username == validAccount.username)
-                {
-                    return validAccount;
-                }
-            }
-
-            return null;
+            this.status = status;
         }
 
         public string GetInfo()
         {
-            return "'" + this.id.ToString() + "', '" + this.username + "', '" + this.password + "', '1'";
+            return "'" + this.id.ToString() + "', '" + this.username + "', '" + this.password +
+                "', '" + this.status + "'";
         }
     }
 }

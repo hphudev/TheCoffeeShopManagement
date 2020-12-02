@@ -17,6 +17,7 @@ namespace CoffeeShopManagement
         public FormInit()
         {
             InitializeComponent();
+            DoubleBuffered = true;
             this.Opacity = 0;
             t.Interval = 1;
             t.Tick += (s, e) =>

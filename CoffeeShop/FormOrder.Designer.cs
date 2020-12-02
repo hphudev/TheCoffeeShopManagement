@@ -104,6 +104,7 @@
             this.btLuuOrder.Size = new System.Drawing.Size(267, 248);
             this.btLuuOrder.TabIndex = 5;
             this.btLuuOrder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btLuuOrder.Click += new System.EventHandler(this.BtLuuOrder_Click);
             // 
             // btThemBan
             // 

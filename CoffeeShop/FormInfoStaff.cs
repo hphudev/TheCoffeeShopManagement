@@ -76,7 +76,8 @@ namespace CoffeeShopManagement
                 }
 
                 Account updatedAccount = new Account(this.account.id.ToString(), this.tbUsername.Text,
-                    Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()));
+                    Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()),
+                    true);
                 Data.UpdateData("TAIKHOAN", "MATKHAU = '" + updatedAccount.password + "'",
                     " WHERE ID = '" + updatedAccount.id.ToString() + "'");
                 IO.ExportSuccess("Đổi mật khẩu thành công");

@@ -14,6 +14,7 @@ namespace CoffeeShopManagement
     public partial class FormStatistic : Form
     {
         private FormSell parent;
+        private FormLock Lock;
         private string[] imageKeys = { "receipt", "expense" };
 
         private void InitTreeView()
@@ -25,6 +26,8 @@ namespace CoffeeShopManagement
             this.tvHistory.ImageList = this.ilImageList;
             receipt.ImageKey = receipt.SelectedImageKey = this.imageKeys[0];
             expense.ImageKey = expense.SelectedImageKey = this.imageKeys[1];
+            this.Lock = new FormLock(this);
+            Lock.Show();
         }
 
         public FormStatistic(FormSell parent)
@@ -45,7 +48,7 @@ namespace CoffeeShopManagement
 
         private void CloseForm(object sender, FormClosedEventArgs e)
         {
-            this.parent.Show();
+            this.Lock.Close();
         }
 
         private void CancelClicked(object sender, EventArgs e)
@@ -79,8 +82,7 @@ namespace CoffeeShopManagement
                 Data.CloseConnection(ref connection);
             }
 
-            if (e.Node != null && e.Node != this.tvHistory.Nodes[0] &&
-                e.Node != this.tvHistory.Nodes[1])
+            if (e.Node != null && e.Node.Parent == this.tvHistory.Nodes[0])
             {
                 e.Node.Nodes.Clear();
 
@@ -119,6 +121,67 @@ namespace CoffeeShopManagement
                 e.Node.Expand();
                 Data.CloseConnection(ref connection);
             }
+
+            if (e.Node != null && e.Node == this.tvHistory.Nodes[1])
+            {
+                e.Node.Nodes.Clear();
+
+                SqlConnection connection = Data.OpenConnection();
+                SqlDataReader reader = Data.ReadData("CHITIEU", connection, " GROUP BY THOIGIAN " +
+                    "ORDER BY THOIGIAN DESC", "THOIGIAN");
+                DateTime tmp = new DateTime();
+
+                while (reader.HasRows)
+                {
+                    if (!reader.Read())
+                    {
+                        break;
+                    }
+
+                    e.Node.Nodes.Add(tmp.GetDate(reader.GetDateTime(0)),
+                        tmp.GetDate(reader.GetDateTime(0)), this.imageKeys[1], this.imageKeys[1]);
+                }
+
+                e.Node.Expand();
+                Data.CloseConnection(ref connection);
+            }
+
+            if (e.Node != null && e.Node.Parent == this.tvHistory.Nodes[1])
+            {
+                e.Node.Nodes.Clear();
+
+                SqlConnection connection = Data.OpenConnection();
+                Data.ExeQuery("SET DATEFORMAT DMY", connection);
+                SqlDataReader reader = Data.ReadData("CHITIEU", connection, " WHERE THOIGIAN = '" +
+                    e.Node.Text + "' ORDER BY ID", "*");
+                DateTime tmp = new DateTime();
+                Expense expense = null;
+
+                while (reader.HasRows)
+                {
+                    if (!reader.Read())
+                    {
+                        break;
+                    }
+
+                    try
+                    {
+                        expense = new Expense(reader.GetString(0), tmp.GetDate(reader.GetDateTime(1)),
+                            reader.GetString(2), reader.GetString(3), reader.GetInt32(4));
+                    }
+                    catch (System.Data.SqlTypes.SqlNullValueException)
+                    {
+                        expense = new Expense(reader.GetString(0), tmp.GetDate(reader.GetDateTime(1)),
+                            reader.GetString(2), "", reader.GetInt32(4));
+                    }
+
+                    e.Node.Nodes.Add(expense.id.ToString(), expense.id.ToString() + " - " +
+                        expense.value.ToString(), this.imageKeys[1], this.imageKeys[1]);
+                }
+
+                e.Node.Expand();
+                Data.CloseConnection(ref connection);
+            }
         }
 
         private void OKClicked(object sender, EventArgs e)
@@ -133,27 +196,53 @@ namespace CoffeeShopManagement
             else
             {
                 DateTime tmp = new DateTime();
-                int receipt = Data.Calculate("SUM", "TRIGIA", "HOADON", " WHERE NGHD >= '" +
-                    tmp.GetDate(start) + "' AND NGHD <= '" + tmp.GetDate(end) + "'") - Data.Calculate(
-                    "SUM", "GIAMGIA", "HOADON", " WHERE NGHD >= '" + tmp.GetDate(start) + "' AND " +
-                    "NGHD <= '" + tmp.GetDate(end) + "'");
-                this.cChart.Series["Receipt - Expense"].Points.Clear();
-                this.cChart.Series["Receipt - Expense"].Points.AddXY("Thu", receipt);
-                this.cChart.Series["Receipt - Expense"].Points.AddXY("Chi", 100000);
-                this.lReceipt.Text = receipt.ToString();
-                this.lExpense.Text = "100000";
+                int receipt, expense;
+
+                try
+                {
+                    receipt = (int)Data.Calculate("SUM", "TRIGIA", "HOADON", " WHERE NGHD >= '" +
+                    tmp.GetDate(start) + "' AND NGHD <= '" + tmp.GetDate(end) + "'") -
+                    (int)Data.Calculate("SUM", "GIAMGIA", "HOADON", " WHERE NGHD >= '" +
+                    tmp.GetDate(start) + "' AND " + "NGHD <= '" + tmp.GetDate(end) + "'");
+                }
+                catch (Exception)
+                {
+                    receipt = 0;
+                }
+
+                try
+                {
+                    expense = (int)Data.Calculate("SUM", "SOTIEN", "CHITIEU", " WHERE THOIGIAN >= '" +
+                    tmp.GetDate(start) + "' AND THOIGIAN <= '" + tmp.GetDate(end) + "'");
+                }
+                catch (Exception)
+                {
+                    expense = 0;
+                }
+
+                if (!(receipt == 0 && expense == 0))
+                {
+                    this.cChart.Series["Receipt - Expense"].Points.Clear();
+                    this.cChart.Series["Receipt - Expense"].Points.AddXY("Thu", receipt);
+                    this.cChart.Series["Receipt - Expense"].Points.AddXY("Chi", expense);
+                    this.lReceipt.Text = receipt.ToString();
+                    this.lExpense.Text = expense.ToString();
+                    this.cChart.Visible = true;
+                }
+                else
+                {
+                    this.lReceipt.Text = this.lExpense.Text = "0";
+                    this.cChart.Visible = false;
+                }
             }
         }
 
         private void LoadChart(object sender, EventArgs e)
         {
-            int receipt = Data.Calculate("SUM", "TRIGIA", "HOADON", "") - Data.Calculate("SUM",
-                "GIAMGIA", "HOADON", "");
-            this.cChart.Series["Receipt - Expense"].Points.AddXY("Thu", receipt);
-            this.cChart.Series["Receipt - Expense"].Points.AddXY("Chi", 100000);
             this.cChart.Series[0].ChartType = SeriesChartType.Pie;
-            this.lReceipt.Text = receipt.ToString();
-            this.lExpense.Text = "100000";
+            this.cChart.Visible = false;
+            this.lReceipt.Text = "0";
+            this.lExpense.Text = "0";
         }
     }
 }

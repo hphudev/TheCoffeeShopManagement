@@ -41,6 +41,17 @@ namespace CoffeeShopManagement
             this.parent = t.parent;
             this.cus = this.parent.cus;
             this.Orders = new List<ListOrder>(t.parent.Orders);
+            this.index = t.index;
+        }
+
+        public void LoadSomeThingPublic()
+        {
+            int sum = 0;
+            foreach (var item in this.Orders)
+            {
+                sum += item.TongTien;
+            }
+            lbTongTien.Text = Utility.StringToMoney(sum.ToString());
         }
 
         private void Table_MouseEnter(object sender, EventArgs e)
@@ -65,6 +76,9 @@ namespace CoffeeShopManagement
 
         public void LbTable_Click(object sender, EventArgs e)
         {
+            DialogResult dialog = MessageBox.Show($"Bạn có muốn thanh toán bàn {this.ID} không ?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialog == DialogResult.No)
+                return;
             this.parent.LoadSomeThingPublic();
             this.parent.TableChoice = new Table(this.parent, this);
             this.parent.cus = cus;

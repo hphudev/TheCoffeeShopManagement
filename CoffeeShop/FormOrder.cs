@@ -224,10 +224,14 @@ namespace CoffeeShopManagement
                             if (!checkExist)
                                 this.parent.Tables[i].Orders.Add(tmp.Orders[i]);
                         }
+                        table.LoadSomeThingPublic();
                         break;
                     }
                 if (!checkExists)
+                {
+                    tmp.LoadSomeThingPublic();
                     this.parent.Tables.Add(tmp);
+                }
                 //
                 this.parent.LoadSomeThingPublic();
                 this.Close();
@@ -238,6 +242,11 @@ namespace CoffeeShopManagement
         {
             new FormIDTable(this);
             checkIdTable.Start();   
+        }
+
+        private void BtLuuOrder_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
