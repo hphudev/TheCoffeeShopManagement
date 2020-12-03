@@ -173,7 +173,7 @@ namespace CoffeeShopManagement
 
         private void ActionCheckOrder()
         {
-            if (statusOrder && Choice != null)
+            if (Choice != null)
             {
                 ListOrder order = new ListOrder(this);
                 order.Gia = Choice.Cost;
@@ -182,7 +182,8 @@ namespace CoffeeShopManagement
                 order.Index = ItemsChoice.Count;
                 Choice = null;
                 Orders.Add(order);
-                this.flpOrder.Controls.Add(order);
+                if (statusOrder)
+                    this.flpOrder.Controls.Add(order);
             }
             else
                 Choice = null;
