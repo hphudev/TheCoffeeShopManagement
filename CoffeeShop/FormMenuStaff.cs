@@ -25,7 +25,7 @@ namespace CoffeeShopManagement
             this.dgvMenu.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             this.dgvMenu.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgvMenu.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            this.dgvMenu.RowsDefaultCellStyle.Font = new Font("Time New Roman", 9, FontStyle.Regular);
+            this.dgvMenu.RowsDefaultCellStyle.Font = new Font("Time New Roman", 9, FontStyle.Bold);
             this.dgvMenu.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 192, 128);
             #endregion
 
@@ -72,7 +72,7 @@ namespace CoffeeShopManagement
 
         private void AddStaffClicked(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             (new FormAddStaff(this)).Show();
         }
 
@@ -80,7 +80,7 @@ namespace CoffeeShopManagement
         {
             if (this.dgvMenu.Rows.Count != 0)
             {
-                this.Hide();
+                //this.Hide();
                 (new FormChangeInfoStaff(this)).Show();
             }
             else
@@ -135,40 +135,7 @@ namespace CoffeeShopManagement
 
         private void FindStaffClicked(object sender, EventArgs e)
         {
-            SqlConnection connection = Data.OpenConnection();
-            SqlDataReader reader = Data.ReadData("NHANVIEN, TAIKHOAN", connection, " WHERE " +
-                "NHANVIEN.MANV = TAIKHOAN.ID AND TINHTRANG = 1", "*");
 
-            while (reader.HasRows)
-            {
-                if (!reader.Read())
-                {
-                    IO.ExportError("Nhân viên này không có trong danh sách");
-                    break;
-                }
-
-                Staff staff = new Staff(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                    reader.GetString(4), reader.GetString(6),
-                    (reader.GetDateTime(3).ToString().Split(' '))[0], reader.GetString(5),
-                    reader.GetString(8), reader.GetInt32(7));
-
-                if (staff.name == this.cbFind.Text)
-                {
-                    for (int i = 0; i < this.dgvMenu.Rows.Count; i++)
-                    {
-                        if (this.dgvMenu.Rows[i].Cells[1].Value.ToString() == this.cbFind.Text)
-                        {
-                            this.dgvMenu.Rows[i].Selected = true;
-                            this.cbFind.Text = "";
-                            break;
-                        }
-                    }
-
-                    break;
-                }
-            }
-
-            Data.CloseConnection(ref connection);
         }
 
         private void CloseForm(object sender, FormClosedEventArgs e)

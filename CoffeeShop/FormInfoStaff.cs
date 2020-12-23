@@ -32,16 +32,16 @@ namespace CoffeeShopManagement
                     reader.GetString(4), reader.GetString(6), GetDate(reader.GetDateTime(3)),
                     reader.GetString(5), reader.GetString(8), reader.GetInt32(7));
             this.account.id = staff.id;
-            this.tbChucVu.Text = staff.chucVu;
+            this.cbPosition.Text = staff.chucVu;
             this.tbCMND.Text = staff.cmnd;
-            this.tbDiaChi.Text = staff.address;
-            this.tbLuong.Text = staff.luong.ToString();
+            this.tbAddress.Text = staff.address;
+            this.tbSalary.Text = staff.luong.ToString();
             this.tbName.Text = staff.name;
-            this.tbSoDienThoai.Text = staff.sdt;
+            this.tbSDT.Text = staff.sdt;
             this.tbUsername.Text = this.account.username;
             this.tbPassword.Text = "";
             this.lID.Text = staff.id.ToString();
-            this.cbGioiTinh.Text = staff.sex;
+            this.cbSex.Text = staff.sex;
         }
 
         public FormInfoStaff(Account account)

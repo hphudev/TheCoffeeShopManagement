@@ -19,19 +19,21 @@ namespace CoffeeShopManagement
         public FormDanhSachBan(FormSell parent)
         {
             InitializeComponent();
+            //this.Opacity = 0;
             DoubleBuffered = true;
             this.parent = parent;
             //this.WindowState = FormWindowState.Maximized;
             //this.Tables = new List<Table>(this.parent.Tables);
             this.BangKhoa = new FormLock(this);
             this.BangKhoa.Show();
+            this.BangKhoa.Hide();
+            this.BangKhoa.Show();
             for (int i = 0; i < this.parent.Tables.Count; i++)
                 this.flpTable.Controls.Add(this.parent.Tables[i]);
             LoadDanhSachBan.Interval = 2;
             LoadDanhSachBan.Tick += LoadSomethingPublic;
             LoadDanhSachBan.Start();
-            this.Show();
-
+            //this.Opacity = 1;
         }
 
         private void F_DanhSachBan_FormClosed(object sender, FormClosedEventArgs e)
@@ -94,6 +96,11 @@ namespace CoffeeShopManagement
                 }
             }
             IO.ExportWarning($"Không tìm thấy bàn có ID {tbTimKiem.Text}");
+        }
+
+        private void TbTimKiem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar);
         }
     }
 }

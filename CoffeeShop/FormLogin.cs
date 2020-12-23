@@ -32,10 +32,10 @@ namespace CoffeeShopManagement
             InitializeComponent();
             this.DoubleBuffered = true;
             this.btDangNhap.Click += LoginClicked;
-            this.buttonThoat.Click += CancelClicked;
+            //this.buttonThoat.Click += CancelClicked;
             this.tbTenDangNhap.KeyPress += PressEnter;
             this.tbMatKhau.KeyPress += PressEnter;
-            this.tbMatKhau.IsPassword = true;
+            //this.tbMatKhau.PasswordChar = '*';
             //this.bMinimize.Click += MinimizeClicked;
             this.parent = parent;
         }
@@ -47,23 +47,23 @@ namespace CoffeeShopManagement
 
         public void LoadFormLogin()
         {
-            tbTenDangNhap.TextName = "";
-            tbMatKhau.TextName = "";
-            tbMatKhau.IsPassword = true;
+            tbTenDangNhap.Text = "Tên đăng nhập";
+            tbMatKhau.Text = "Mật khẩu";
+            tbMatKhau.PasswordChar = '\0';
             pbEye.Image = Image.FromFile("./Resources/OpenEye.png");
             tbTenDangNhap.Select();
         }
 
         private void pbEye_Click(object sender, EventArgs e)
         {
-            if (tbMatKhau.IsPassword)
+            if (tbMatKhau.PasswordChar == '*')
             {
-                tbMatKhau.IsPassword = false;
+                tbMatKhau.PasswordChar = '\0';
                 pbEye.Image = Image.FromFile("./Resources/CloseEye.png");
             }
             else
             {
-                tbMatKhau.IsPassword = true;
+                tbMatKhau.PasswordChar = '*';
                 pbEye.Image = Image.FromFile("./Resources/OpenEye.png");
             }
         }
@@ -98,13 +98,13 @@ namespace CoffeeShopManagement
         {
             try
             {
-                if (this.tbTenDangNhap.TextName == "" || this.tbMatKhau.TextName == "")
+                if (this.tbTenDangNhap.Text == "" || this.tbMatKhau.Text == "")
                 {
                     throw new Exception();
                 }
 
-                this.account = new Account("NULL", tbTenDangNhap.TextName, Encrypt.ComputeHash(
-                    tbMatKhau.TextName, new SHA256CryptoServiceProvider()), true);
+                this.account = new Account("NULL", tbTenDangNhap.Text, Encrypt.ComputeHash(
+                    tbMatKhau.Text, new SHA256CryptoServiceProvider()), true);
                 Account adminAccount = new Account("", "1", Encrypt.ComputeHash("1",
                     new SHA256CryptoServiceProvider()), true);
                 SqlConnection connection = Data.OpenConnection();
@@ -128,7 +128,7 @@ namespace CoffeeShopManagement
 
                         (new FormSell(this)).Show();
                         this.Hide();
-                        this.tbTenDangNhap.TextName = this.tbMatKhau.TextName = "";
+                        this.tbTenDangNhap.Text = this.tbMatKhau.Text = "";
                     }
                     else
                     {
@@ -171,6 +171,66 @@ namespace CoffeeShopManagement
         private void BMinimize_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            //panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
+        }
+
+        private void PnLot_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void TbTenDangNhap_Enter(object sender, EventArgs e)
+        {
+            if (tbTenDangNhap.Text == "Tên đăng nhập")
+            {
+                tbTenDangNhap.Text = "";
+            }
+        }
+
+        private void TbTenDangNhap_Leave(object sender, EventArgs e)
+        {
+            if (tbTenDangNhap.Text == "")
+            {
+                tbTenDangNhap.Text = "Tên đăng nhập";
+            }
+        }
+
+        private void TbMatKhau_Enter(object sender, EventArgs e)
+        {
+            if (tbMatKhau.Text == "Mật khẩu")
+            {
+                tbMatKhau.PasswordChar = '*';
+                tbMatKhau.Text = "";
+            }
+        }
+
+        private void TbMatKhau_Leave(object sender, EventArgs e)
+        {
+            if (tbMatKhau.Text == "")
+            {
+                tbMatKhau.PasswordChar = '\0';
+                tbMatKhau.Text = "Mật khẩu";
+            }
         }
     }
 }

@@ -40,12 +40,12 @@ namespace CoffeeShopManagement
             InitializeComponent();
             this.parent = parent;
             Ordering = new List<ListOrder>(this.parent.Orders);
-            this.parent.LoadSomeThingPublic();
+            //this.parent.LoadSomeThingPublic();
         }
 
         private void LbThongTin_Click(object sender, EventArgs e)
         {
-            this.parent.LoadSomeThingPublic();
+            //this.parent.LoadSomeThingPublic();
             this.parent.Orders = new List<ListOrder>(this.Ordering);
         }
     }

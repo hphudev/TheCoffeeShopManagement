@@ -28,582 +28,741 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInfoStaff));
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.tbSoDienThoai = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.tbCMND = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.cbGioiTinh = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lID = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.tbPassword = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.tbUsername = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.tbChucVu = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.tbLuong = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            this.tbUsername = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.cbPosition = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tbSalary = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tbAddress = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tbSDT = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tbCMND = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbSex = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.bCancel = new ns1.BunifuThinButton2();
-            this.bOK = new ns1.BunifuThinButton2();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.tbDiaChi = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.tbName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.lID = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.tbConfirm = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.bCancel = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.bOK = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pbStaff = new System.Windows.Forms.PictureBox();
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2GroupBox1.SuspendLayout();
+            this.guna2GradientPanel1.SuspendLayout();
+            this.guna2GroupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStaff)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel6
+            // tbUsername
             // 
-            this.panel6.Controls.Add(this.tbSoDienThoai);
-            this.panel6.Controls.Add(this.label5);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 292);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1186, 70);
-            this.panel6.TabIndex = 9;
+            this.tbUsername.Animated = true;
+            this.tbUsername.BackColor = System.Drawing.Color.Transparent;
+            this.tbUsername.BorderColor = System.Drawing.Color.Bisque;
+            this.tbUsername.BorderRadius = 5;
+            this.tbUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbUsername.DefaultText = "";
+            this.tbUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbUsername.DisabledState.Parent = this.tbUsername;
+            this.tbUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbUsername.FillColor = System.Drawing.Color.Ivory;
+            this.tbUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.tbUsername.FocusedState.Parent = this.tbUsername;
+            this.tbUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbUsername.ForeColor = System.Drawing.Color.Black;
+            this.tbUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbUsername.HoverState.Parent = this.tbUsername;
+            this.tbUsername.IconLeft = global::CoffeeShopManagement.Properties.Resources.Username;
+            this.tbUsername.Location = new System.Drawing.Point(14, 106);
+            this.tbUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.PasswordChar = '\0';
+            this.tbUsername.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbUsername.PlaceholderText = "";
+            this.tbUsername.SelectedText = "";
+            this.tbUsername.ShadowDecoration.Parent = this.tbUsername;
+            this.tbUsername.Size = new System.Drawing.Size(350, 47);
+            this.tbUsername.TabIndex = 2;
+            this.tbUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbSoDienThoai
+            // guna2GroupBox1
             // 
-            this.tbSoDienThoai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.tbSoDienThoai.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbSoDienThoai.Enabled = false;
-            this.tbSoDienThoai.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSoDienThoai.Location = new System.Drawing.Point(340, 0);
-            this.tbSoDienThoai.Name = "tbSoDienThoai";
-            this.tbSoDienThoai.Size = new System.Drawing.Size(846, 70);
-            this.tbSoDienThoai.TabIndex = 6;
-            this.tbSoDienThoai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.guna2GroupBox1.AutoScroll = true;
+            this.guna2GroupBox1.BorderRadius = 10;
+            this.guna2GroupBox1.Controls.Add(this.cbPosition);
+            this.guna2GroupBox1.Controls.Add(this.label16);
+            this.guna2GroupBox1.Controls.Add(this.label15);
+            this.guna2GroupBox1.Controls.Add(this.tbSalary);
+            this.guna2GroupBox1.Controls.Add(this.label14);
+            this.guna2GroupBox1.Controls.Add(this.tbAddress);
+            this.guna2GroupBox1.Controls.Add(this.label13);
+            this.guna2GroupBox1.Controls.Add(this.tbSDT);
+            this.guna2GroupBox1.Controls.Add(this.label12);
+            this.guna2GroupBox1.Controls.Add(this.tbCMND);
+            this.guna2GroupBox1.Controls.Add(this.cbSex);
+            this.guna2GroupBox1.Controls.Add(this.label7);
+            this.guna2GroupBox1.Controls.Add(this.label4);
+            this.guna2GroupBox1.Controls.Add(this.tbName);
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2GroupBox1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.guna2GroupBox1.Location = new System.Drawing.Point(427, 119);
+            this.guna2GroupBox1.Name = "guna2GroupBox1";
+            this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
+            this.guna2GroupBox1.Size = new System.Drawing.Size(581, 742);
+            this.guna2GroupBox1.TabIndex = 14;
+            this.guna2GroupBox1.Text = "Thông tin thành viên";
             // 
-            // label5
+            // cbPosition
             // 
-            this.label5.BackColor = System.Drawing.Color.Maroon;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(340, 70);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "SỐ ĐIỆN THOẠI";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cbPosition.Animated = true;
+            this.cbPosition.BackColor = System.Drawing.Color.Transparent;
+            this.cbPosition.BorderRadius = 5;
+            this.cbPosition.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPosition.FillColor = System.Drawing.Color.Ivory;
+            this.cbPosition.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.cbPosition.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.cbPosition.FocusedState.Parent = this.cbPosition;
+            this.cbPosition.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.cbPosition.ForeColor = System.Drawing.Color.Black;
+            this.cbPosition.FormattingEnabled = true;
+            this.cbPosition.HoverState.Parent = this.cbPosition;
+            this.cbPosition.ItemHeight = 30;
+            this.cbPosition.ItemsAppearance.Parent = this.cbPosition;
+            this.cbPosition.Location = new System.Drawing.Point(14, 687);
+            this.cbPosition.Name = "cbPosition";
+            this.cbPosition.ShadowDecoration.Parent = this.cbPosition;
+            this.cbPosition.Size = new System.Drawing.Size(262, 36);
+            this.cbPosition.TabIndex = 23;
             // 
-            // panel5
+            // label16
             // 
-            this.panel5.Controls.Add(this.tbCMND);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 222);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1186, 70);
-            this.panel5.TabIndex = 8;
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label16.Location = new System.Drawing.Point(10, 651);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(74, 23);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Chức vụ";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label15.Location = new System.Drawing.Point(10, 552);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(62, 23);
+            this.label15.TabIndex = 20;
+            this.label15.Text = "Lương";
+            // 
+            // tbSalary
+            // 
+            this.tbSalary.Animated = true;
+            this.tbSalary.BackColor = System.Drawing.Color.Transparent;
+            this.tbSalary.BorderColor = System.Drawing.Color.Bisque;
+            this.tbSalary.BorderRadius = 5;
+            this.tbSalary.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbSalary.DefaultText = "";
+            this.tbSalary.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbSalary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbSalary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSalary.DisabledState.Parent = this.tbSalary;
+            this.tbSalary.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSalary.FillColor = System.Drawing.Color.Ivory;
+            this.tbSalary.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.tbSalary.FocusedState.Parent = this.tbSalary;
+            this.tbSalary.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbSalary.ForeColor = System.Drawing.Color.Black;
+            this.tbSalary.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbSalary.HoverState.Parent = this.tbSalary;
+            this.tbSalary.IconLeft = global::CoffeeShopManagement.Properties.Resources.Money;
+            this.tbSalary.Location = new System.Drawing.Point(14, 588);
+            this.tbSalary.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSalary.Name = "tbSalary";
+            this.tbSalary.PasswordChar = '\0';
+            this.tbSalary.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbSalary.PlaceholderText = "";
+            this.tbSalary.SelectedText = "";
+            this.tbSalary.ShadowDecoration.Parent = this.tbSalary;
+            this.tbSalary.Size = new System.Drawing.Size(537, 47);
+            this.tbSalary.TabIndex = 19;
+            this.tbSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label14.Location = new System.Drawing.Point(10, 452);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(65, 23);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "Địa chỉ";
+            // 
+            // tbAddress
+            // 
+            this.tbAddress.Animated = true;
+            this.tbAddress.BackColor = System.Drawing.Color.Transparent;
+            this.tbAddress.BorderColor = System.Drawing.Color.Bisque;
+            this.tbAddress.BorderRadius = 5;
+            this.tbAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbAddress.DefaultText = "";
+            this.tbAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbAddress.DisabledState.Parent = this.tbAddress;
+            this.tbAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbAddress.FillColor = System.Drawing.Color.Ivory;
+            this.tbAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.tbAddress.FocusedState.Parent = this.tbAddress;
+            this.tbAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbAddress.ForeColor = System.Drawing.Color.Black;
+            this.tbAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbAddress.HoverState.Parent = this.tbAddress;
+            this.tbAddress.IconLeft = global::CoffeeShopManagement.Properties.Resources.Address;
+            this.tbAddress.Location = new System.Drawing.Point(14, 488);
+            this.tbAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.tbAddress.Name = "tbAddress";
+            this.tbAddress.PasswordChar = '\0';
+            this.tbAddress.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbAddress.PlaceholderText = "";
+            this.tbAddress.SelectedText = "";
+            this.tbAddress.ShadowDecoration.Parent = this.tbAddress;
+            this.tbAddress.Size = new System.Drawing.Size(537, 47);
+            this.tbAddress.TabIndex = 17;
+            this.tbAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label13.Location = new System.Drawing.Point(10, 351);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(116, 23);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Số điện thoại";
+            // 
+            // tbSDT
+            // 
+            this.tbSDT.Animated = true;
+            this.tbSDT.BackColor = System.Drawing.Color.Transparent;
+            this.tbSDT.BorderColor = System.Drawing.Color.Bisque;
+            this.tbSDT.BorderRadius = 5;
+            this.tbSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbSDT.DefaultText = "";
+            this.tbSDT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbSDT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbSDT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSDT.DisabledState.Parent = this.tbSDT;
+            this.tbSDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSDT.FillColor = System.Drawing.Color.Ivory;
+            this.tbSDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.tbSDT.FocusedState.Parent = this.tbSDT;
+            this.tbSDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbSDT.ForeColor = System.Drawing.Color.Black;
+            this.tbSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbSDT.HoverState.Parent = this.tbSDT;
+            this.tbSDT.IconLeft = global::CoffeeShopManagement.Properties.Resources.Phone;
+            this.tbSDT.Location = new System.Drawing.Point(14, 387);
+            this.tbSDT.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSDT.Name = "tbSDT";
+            this.tbSDT.PasswordChar = '\0';
+            this.tbSDT.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbSDT.PlaceholderText = "";
+            this.tbSDT.SelectedText = "";
+            this.tbSDT.ShadowDecoration.Parent = this.tbSDT;
+            this.tbSDT.Size = new System.Drawing.Size(537, 47);
+            this.tbSDT.TabIndex = 15;
+            this.tbSDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label12.Location = new System.Drawing.Point(10, 249);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(63, 23);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "CMND";
             // 
             // tbCMND
             // 
-            this.tbCMND.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.tbCMND.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbCMND.Enabled = false;
-            this.tbCMND.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCMND.Location = new System.Drawing.Point(340, 0);
+            this.tbCMND.Animated = true;
+            this.tbCMND.BackColor = System.Drawing.Color.Transparent;
+            this.tbCMND.BorderColor = System.Drawing.Color.Bisque;
+            this.tbCMND.BorderRadius = 5;
+            this.tbCMND.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbCMND.DefaultText = "";
+            this.tbCMND.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbCMND.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbCMND.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCMND.DisabledState.Parent = this.tbCMND;
+            this.tbCMND.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCMND.FillColor = System.Drawing.Color.Ivory;
+            this.tbCMND.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.tbCMND.FocusedState.Parent = this.tbCMND;
+            this.tbCMND.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbCMND.ForeColor = System.Drawing.Color.Black;
+            this.tbCMND.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCMND.HoverState.Parent = this.tbCMND;
+            this.tbCMND.IconLeft = global::CoffeeShopManagement.Properties.Resources.CMND;
+            this.tbCMND.Location = new System.Drawing.Point(14, 285);
+            this.tbCMND.Margin = new System.Windows.Forms.Padding(2);
             this.tbCMND.Name = "tbCMND";
-            this.tbCMND.Size = new System.Drawing.Size(846, 70);
-            this.tbCMND.TabIndex = 6;
+            this.tbCMND.PasswordChar = '\0';
+            this.tbCMND.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbCMND.PlaceholderText = "";
+            this.tbCMND.SelectedText = "";
+            this.tbCMND.ShadowDecoration.Parent = this.tbCMND;
+            this.tbCMND.Size = new System.Drawing.Size(537, 47);
+            this.tbCMND.TabIndex = 13;
             this.tbCMND.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cbSex
+            // 
+            this.cbSex.Animated = true;
+            this.cbSex.BackColor = System.Drawing.Color.Transparent;
+            this.cbSex.BorderRadius = 5;
+            this.cbSex.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSex.FillColor = System.Drawing.Color.Ivory;
+            this.cbSex.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.cbSex.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.cbSex.FocusedState.Parent = this.cbSex;
+            this.cbSex.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.cbSex.ForeColor = System.Drawing.Color.Black;
+            this.cbSex.FormattingEnabled = true;
+            this.cbSex.HoverState.Parent = this.cbSex;
+            this.cbSex.ItemHeight = 30;
+            this.cbSex.ItemsAppearance.Parent = this.cbSex;
+            this.cbSex.Location = new System.Drawing.Point(14, 199);
+            this.cbSex.Name = "cbSex";
+            this.cbSex.ShadowDecoration.Parent = this.cbSex;
+            this.cbSex.Size = new System.Drawing.Size(158, 36);
+            this.cbSex.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label7.Location = new System.Drawing.Point(10, 170);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 23);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Giới tính";
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.Color.Maroon;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(10, 70);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(340, 70);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "CMND";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Size = new System.Drawing.Size(87, 23);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Họ và tên";
             // 
-            // panel4
+            // tbName
             // 
-            this.panel4.Controls.Add(this.panel14);
-            this.panel4.Controls.Add(this.cbGioiTinh);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 152);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1186, 70);
-            this.panel4.TabIndex = 7;
+            this.tbName.Animated = true;
+            this.tbName.BackColor = System.Drawing.Color.Transparent;
+            this.tbName.BorderColor = System.Drawing.Color.Bisque;
+            this.tbName.BorderRadius = 5;
+            this.tbName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbName.DefaultText = "";
+            this.tbName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbName.DisabledState.Parent = this.tbName;
+            this.tbName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbName.FillColor = System.Drawing.Color.Ivory;
+            this.tbName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.tbName.FocusedState.Parent = this.tbName;
+            this.tbName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbName.ForeColor = System.Drawing.Color.Black;
+            this.tbName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbName.HoverState.Parent = this.tbName;
+            this.tbName.IconLeft = global::CoffeeShopManagement.Properties.Resources.user;
+            this.tbName.Location = new System.Drawing.Point(14, 106);
+            this.tbName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbName.Name = "tbName";
+            this.tbName.PasswordChar = '\0';
+            this.tbName.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbName.PlaceholderText = "";
+            this.tbName.SelectedText = "";
+            this.tbName.ShadowDecoration.Parent = this.tbName;
+            this.tbName.Size = new System.Drawing.Size(537, 47);
+            this.tbName.TabIndex = 2;
+            this.tbName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // panel14
+            // guna2Elipse1
             // 
-            this.panel14.BackColor = System.Drawing.Color.White;
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel14.Location = new System.Drawing.Point(659, 0);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(527, 70);
-            this.panel14.TabIndex = 9;
+            this.guna2Elipse1.BorderRadius = 20;
             // 
-            // cbGioiTinh
+            // label1
             // 
-            this.cbGioiTinh.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbGioiTinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.cbGioiTinh.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbGioiTinh.DropDownHeight = 40;
-            this.cbGioiTinh.Enabled = false;
-            this.cbGioiTinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbGioiTinh.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbGioiTinh.FormattingEnabled = true;
-            this.cbGioiTinh.IntegralHeight = false;
-            this.cbGioiTinh.Location = new System.Drawing.Point(340, 0);
-            this.cbGioiTinh.Name = "cbGioiTinh";
-            this.cbGioiTinh.Size = new System.Drawing.Size(319, 70);
-            this.cbGioiTinh.TabIndex = 7;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Snow;
+            this.label1.Location = new System.Drawing.Point(503, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(361, 41);
+            this.label1.TabIndex = 112;
+            this.label1.Text = "TÀI KHOẢN NHÂN VIÊN";
             // 
-            // label3
+            // guna2GradientPanel1
             // 
-            this.label3.BackColor = System.Drawing.Color.Maroon;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(340, 70);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "GIỚI TÍNH";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.lID);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1186, 82);
-            this.panel2.TabIndex = 0;
+            this.guna2GradientPanel1.Controls.Add(this.label1);
+            this.guna2GradientPanel1.Controls.Add(this.lID);
+            this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.Teal;
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.Goldenrod;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1023, 84);
+            this.guna2GradientPanel1.TabIndex = 112;
             // 
             // lID
             // 
-            this.lID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lID.BackColor = System.Drawing.Color.Transparent;
             this.lID.Dock = System.Windows.Forms.DockStyle.Left;
             this.lID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lID.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lID.ForeColor = System.Drawing.Color.White;
+            this.lID.Image = global::CoffeeShopManagement.Properties.Resources.Info;
             this.lID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lID.Location = new System.Drawing.Point(0, 0);
             this.lID.Name = "lID";
             this.lID.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.lID.Size = new System.Drawing.Size(340, 82);
-            this.lID.TabIndex = 1;
+            this.lID.Size = new System.Drawing.Size(262, 84);
+            this.lID.TabIndex = 111;
             this.lID.Text = "NV-0001";
             this.lID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // label21
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(1186, 82);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "THÔNG TIN TÀI KHOẢN";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label21.Location = new System.Drawing.Point(10, 168);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(86, 23);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "Mật khẩu";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label23.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label23.Location = new System.Drawing.Point(10, 70);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(128, 23);
+            this.label23.TabIndex = 9;
+            this.label23.Text = "Tên đăng nhập";
+            // 
+            // guna2GroupBox2
+            // 
+            this.guna2GroupBox2.AutoScroll = true;
+            this.guna2GroupBox2.BorderRadius = 10;
+            this.guna2GroupBox2.Controls.Add(this.label20);
+            this.guna2GroupBox2.Controls.Add(this.tbConfirm);
+            this.guna2GroupBox2.Controls.Add(this.label21);
+            this.guna2GroupBox2.Controls.Add(this.tbPassword);
+            this.guna2GroupBox2.Controls.Add(this.label23);
+            this.guna2GroupBox2.Controls.Add(this.tbUsername);
+            this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2GroupBox2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.guna2GroupBox2.Location = new System.Drawing.Point(12, 404);
+            this.guna2GroupBox2.Name = "guna2GroupBox2";
+            this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
+            this.guna2GroupBox2.Size = new System.Drawing.Size(398, 389);
+            this.guna2GroupBox2.TabIndex = 113;
+            this.guna2GroupBox2.Text = "Thông tin đăng nhập";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label20.Location = new System.Drawing.Point(10, 270);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(158, 23);
+            this.label20.TabIndex = 16;
+            this.label20.Text = "Nhập lại mật khẩu";
+            // 
+            // tbConfirm
+            // 
+            this.tbConfirm.Animated = true;
+            this.tbConfirm.BackColor = System.Drawing.Color.Transparent;
+            this.tbConfirm.BorderColor = System.Drawing.Color.Bisque;
+            this.tbConfirm.BorderRadius = 5;
+            this.tbConfirm.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbConfirm.DefaultText = "";
+            this.tbConfirm.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbConfirm.DisabledState.Parent = this.tbConfirm;
+            this.tbConfirm.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbConfirm.FillColor = System.Drawing.Color.Ivory;
+            this.tbConfirm.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.tbConfirm.FocusedState.Parent = this.tbConfirm;
+            this.tbConfirm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbConfirm.ForeColor = System.Drawing.Color.Black;
+            this.tbConfirm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbConfirm.HoverState.Parent = this.tbConfirm;
+            this.tbConfirm.IconLeft = global::CoffeeShopManagement.Properties.Resources.password;
+            this.tbConfirm.Location = new System.Drawing.Point(14, 303);
+            this.tbConfirm.Margin = new System.Windows.Forms.Padding(2);
+            this.tbConfirm.Name = "tbConfirm";
+            this.tbConfirm.PasswordChar = '\0';
+            this.tbConfirm.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbConfirm.PlaceholderText = "";
+            this.tbConfirm.SelectedText = "";
+            this.tbConfirm.ShadowDecoration.Parent = this.tbConfirm;
+            this.tbConfirm.Size = new System.Drawing.Size(350, 47);
+            this.tbConfirm.TabIndex = 15;
+            this.tbConfirm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbPassword
+            // 
+            this.tbPassword.Animated = true;
+            this.tbPassword.BackColor = System.Drawing.Color.Transparent;
+            this.tbPassword.BorderColor = System.Drawing.Color.Bisque;
+            this.tbPassword.BorderRadius = 5;
+            this.tbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPassword.DefaultText = "";
+            this.tbPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPassword.DisabledState.Parent = this.tbPassword;
+            this.tbPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPassword.FillColor = System.Drawing.Color.Ivory;
+            this.tbPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.tbPassword.FocusedState.Parent = this.tbPassword;
+            this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbPassword.ForeColor = System.Drawing.Color.Black;
+            this.tbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPassword.HoverState.Parent = this.tbPassword;
+            this.tbPassword.IconLeft = global::CoffeeShopManagement.Properties.Resources.password1;
+            this.tbPassword.Location = new System.Drawing.Point(14, 204);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '\0';
+            this.tbPassword.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbPassword.PlaceholderText = "";
+            this.tbPassword.SelectedText = "";
+            this.tbPassword.ShadowDecoration.Parent = this.tbPassword;
+            this.tbPassword.Size = new System.Drawing.Size(350, 47);
+            this.tbPassword.TabIndex = 13;
+            this.tbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Azure;
-            this.panel1.Controls.Add(this.panel12);
-            this.panel1.Controls.Add(this.panel11);
-            this.panel1.Controls.Add(this.panel10);
-            this.panel1.Controls.Add(this.panel9);
-            this.panel1.Controls.Add(this.panel8);
-            this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
+            this.panel1.BackColor = System.Drawing.Color.SeaShell;
+            this.panel1.Controls.Add(this.guna2GradientButton1);
+            this.panel1.Controls.Add(this.bCancel);
+            this.panel1.Controls.Add(this.bOK);
+            this.panel1.Controls.Add(this.guna2GroupBox2);
+            this.panel1.Controls.Add(this.guna2GradientPanel1);
+            this.panel1.Controls.Add(this.guna2GroupBox1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1186, 813);
-            this.panel1.TabIndex = 2;
+            this.panel1.Size = new System.Drawing.Size(1023, 901);
+            this.panel1.TabIndex = 113;
             // 
-            // panel12
+            // guna2GradientButton1
             // 
-            this.panel12.Controls.Add(this.tbPassword);
-            this.panel12.Controls.Add(this.label10);
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(0, 642);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(1186, 70);
-            this.panel12.TabIndex = 15;
-            // 
-            // tbPassword
-            // 
-            this.tbPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.tbPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPassword.Location = new System.Drawing.Point(340, 0);
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(846, 70);
-            this.tbPassword.TabIndex = 6;
-            this.tbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbPassword.UseSystemPasswordChar = true;
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.Maroon;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(0, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(340, 70);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "MẬT KHẨU";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.tbUsername);
-            this.panel11.Controls.Add(this.label9);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(0, 572);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1186, 70);
-            this.panel11.TabIndex = 14;
-            // 
-            // tbUsername
-            // 
-            this.tbUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.tbUsername.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbUsername.Enabled = false;
-            this.tbUsername.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsername.Location = new System.Drawing.Point(340, 0);
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(846, 70);
-            this.tbUsername.TabIndex = 6;
-            this.tbUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.Maroon;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(0, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(340, 70);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "TÊN ĐĂNG NHẬP";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.tbChucVu);
-            this.panel10.Controls.Add(this.label8);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 502);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1186, 70);
-            this.panel10.TabIndex = 13;
-            // 
-            // tbChucVu
-            // 
-            this.tbChucVu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.tbChucVu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbChucVu.Enabled = false;
-            this.tbChucVu.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbChucVu.Location = new System.Drawing.Point(340, 0);
-            this.tbChucVu.Name = "tbChucVu";
-            this.tbChucVu.Size = new System.Drawing.Size(846, 70);
-            this.tbChucVu.TabIndex = 6;
-            this.tbChucVu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.Maroon;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(0, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(340, 70);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "CHỨC VỤ";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.panel9.Controls.Add(this.tbLuong);
-            this.panel9.Controls.Add(this.label7);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 432);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1186, 70);
-            this.panel9.TabIndex = 12;
-            // 
-            // tbLuong
-            // 
-            this.tbLuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.tbLuong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbLuong.Enabled = false;
-            this.tbLuong.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLuong.Location = new System.Drawing.Point(340, 0);
-            this.tbLuong.Name = "tbLuong";
-            this.tbLuong.Size = new System.Drawing.Size(846, 70);
-            this.tbLuong.TabIndex = 6;
-            this.tbLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.Maroon;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(0, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(340, 70);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "LƯƠNG";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.panel8.Controls.Add(this.bCancel);
-            this.panel8.Controls.Add(this.bOK);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 717);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1186, 96);
-            this.panel8.TabIndex = 11;
+            this.guna2GradientButton1.Animated = true;
+            this.guna2GradientButton1.BackColor = System.Drawing.Color.SeaShell;
+            this.guna2GradientButton1.BorderRadius = 13;
+            this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.DimGray;
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.Location = new System.Drawing.Point(274, 334);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.Size = new System.Drawing.Size(102, 42);
+            this.guna2GradientButton1.TabIndex = 118;
+            this.guna2GradientButton1.Text = "Sửa ảnh";
             // 
             // bCancel
             // 
-            this.bCancel.ActiveBorderThickness = 1;
-            this.bCancel.ActiveCornerRadius = 20;
-            this.bCancel.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bCancel.ActiveForecolor = System.Drawing.Color.White;
-            this.bCancel.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.bCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bCancel.BackgroundImage")));
-            this.bCancel.ButtonText = "THOÁT";
+            this.bCancel.Animated = true;
+            this.bCancel.BackColor = System.Drawing.Color.SeaShell;
+            this.bCancel.BorderRadius = 18;
+            this.bCancel.CheckedState.Parent = this.bCancel;
             this.bCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bCancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bCancel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bCancel.IdleBorderThickness = 1;
-            this.bCancel.IdleCornerRadius = 20;
-            this.bCancel.IdleFillColor = System.Drawing.Color.White;
-            this.bCancel.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bCancel.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bCancel.Location = new System.Drawing.Point(878, 0);
-            this.bCancel.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
+            this.bCancel.CustomImages.Parent = this.bCancel;
+            this.bCancel.FillColor = System.Drawing.Color.DarkSlateBlue;
+            this.bCancel.FillColor2 = System.Drawing.Color.Teal;
+            this.bCancel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.bCancel.ForeColor = System.Drawing.Color.White;
+            this.bCancel.HoverState.Parent = this.bCancel;
+            this.bCancel.Location = new System.Drawing.Point(292, 806);
             this.bCancel.Name = "bCancel";
-            this.bCancel.Size = new System.Drawing.Size(308, 96);
-            this.bCancel.TabIndex = 2;
-            this.bCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bCancel.ShadowDecoration.Parent = this.bCancel;
+            this.bCancel.Size = new System.Drawing.Size(118, 47);
+            this.bCancel.TabIndex = 116;
+            this.bCancel.Text = "Thoát";
             // 
             // bOK
             // 
-            this.bOK.ActiveBorderThickness = 1;
-            this.bOK.ActiveCornerRadius = 20;
-            this.bOK.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bOK.ActiveForecolor = System.Drawing.Color.White;
-            this.bOK.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.bOK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bOK.BackgroundImage")));
-            this.bOK.ButtonText = "CẬP NHẬT";
+            this.bOK.Animated = true;
+            this.bOK.BackColor = System.Drawing.Color.SeaShell;
+            this.bOK.BorderRadius = 18;
+            this.bOK.CheckedState.Parent = this.bOK;
             this.bOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bOK.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bOK.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bOK.IdleBorderThickness = 1;
-            this.bOK.IdleCornerRadius = 20;
-            this.bOK.IdleFillColor = System.Drawing.Color.White;
-            this.bOK.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bOK.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bOK.Location = new System.Drawing.Point(0, 0);
-            this.bOK.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
+            this.bOK.CustomImages.Parent = this.bOK;
+            this.bOK.FillColor = System.Drawing.Color.DarkSlateBlue;
+            this.bOK.FillColor2 = System.Drawing.Color.Teal;
+            this.bOK.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.bOK.ForeColor = System.Drawing.Color.White;
+            this.bOK.HoverState.Parent = this.bOK;
+            this.bOK.Location = new System.Drawing.Point(26, 806);
             this.bOK.Name = "bOK";
-            this.bOK.Size = new System.Drawing.Size(303, 96);
-            this.bOK.TabIndex = 1;
-            this.bOK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bOK.ShadowDecoration.Parent = this.bOK;
+            this.bOK.Size = new System.Drawing.Size(124, 47);
+            this.bOK.TabIndex = 114;
+            this.bOK.Text = "Đồng ý";
             // 
-            // panel7
+            // panel2
             // 
-            this.panel7.Controls.Add(this.tbDiaChi);
-            this.panel7.Controls.Add(this.label6);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 362);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1186, 70);
-            this.panel7.TabIndex = 10;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.pbStaff);
+            this.panel2.Location = new System.Drawing.Point(12, 119);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(250, 257);
+            this.panel2.TabIndex = 117;
             // 
-            // tbDiaChi
+            // pbStaff
             // 
-            this.tbDiaChi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.tbDiaChi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbDiaChi.Enabled = false;
-            this.tbDiaChi.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDiaChi.Location = new System.Drawing.Point(340, 0);
-            this.tbDiaChi.Name = "tbDiaChi";
-            this.tbDiaChi.Size = new System.Drawing.Size(846, 70);
-            this.tbDiaChi.TabIndex = 6;
-            this.tbDiaChi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pbStaff.BackColor = System.Drawing.Color.Bisque;
+            this.pbStaff.Image = global::CoffeeShopManagement.Properties.Resources.LogoLogin;
+            this.pbStaff.Location = new System.Drawing.Point(13, 12);
+            this.pbStaff.Name = "pbStaff";
+            this.pbStaff.Size = new System.Drawing.Size(222, 222);
+            this.pbStaff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbStaff.TabIndex = 12;
+            this.pbStaff.TabStop = false;
             // 
-            // label6
+            // guna2Elipse2
             // 
-            this.label6.BackColor = System.Drawing.Color.Maroon;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(0, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(340, 70);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "ĐỊA CHỈ";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.tbName);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 82);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1186, 70);
-            this.panel3.TabIndex = 6;
-            // 
-            // tbName
-            // 
-            this.tbName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.tbName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbName.Enabled = false;
-            this.tbName.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbName.Location = new System.Drawing.Point(340, 0);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(846, 70);
-            this.tbName.TabIndex = 6;
-            this.tbName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Maroon;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(340, 70);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "HỌ VÀ TÊN";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.guna2Elipse2.BorderRadius = 100;
+            this.guna2Elipse2.TargetControl = this.pbStaff;
             // 
             // FormInfoStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1186, 813);
+            this.ClientSize = new System.Drawing.Size(1023, 901);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormInfoStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormThongTin";
             this.TransparencyKey = System.Drawing.Color.Azure;
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.guna2GroupBox1.ResumeLayout(false);
+            this.guna2GroupBox1.PerformLayout();
+            this.guna2GradientPanel1.ResumeLayout(false);
+            this.guna2GradientPanel1.PerformLayout();
+            this.guna2GroupBox2.ResumeLayout(false);
+            this.guna2GroupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbStaff)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox tbSoDienThoai;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox tbCMND;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ComboBox cbGioiTinh;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lID;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.TextBox tbPassword;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.TextBox tbUsername;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox tbChucVu;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox tbLuong;
+        private Guna.UI2.WinForms.Guna2TextBox tbUsername;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbPosition;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private Guna.UI2.WinForms.Guna2TextBox tbSalary;
+        private System.Windows.Forms.Label label14;
+        private Guna.UI2.WinForms.Guna2TextBox tbAddress;
+        private System.Windows.Forms.Label label13;
+        private Guna.UI2.WinForms.Guna2TextBox tbSDT;
+        private System.Windows.Forms.Label label12;
+        private Guna.UI2.WinForms.Guna2TextBox tbCMND;
+        private Guna.UI2.WinForms.Guna2ComboBox cbSex;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel8;
-        private ns1.BunifuThinButton2 bCancel;
-        private ns1.BunifuThinButton2 bOK;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox tbDiaChi;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox tbName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2TextBox tbName;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private System.Windows.Forms.Label lID;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label23;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
+        private System.Windows.Forms.Label label20;
+        private Guna.UI2.WinForms.Guna2TextBox tbConfirm;
+        private Guna.UI2.WinForms.Guna2TextBox tbPassword;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2GradientButton bCancel;
+        private Guna.UI2.WinForms.Guna2GradientButton bOK;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pbStaff;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
     }
 }

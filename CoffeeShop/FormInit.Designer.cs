@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbTenPhanMem = new System.Windows.Forms.Label();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,13 +50,18 @@
             // lbTenPhanMem
             // 
             this.lbTenPhanMem.AutoSize = true;
-            this.lbTenPhanMem.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenPhanMem.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenPhanMem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbTenPhanMem.Location = new System.Drawing.Point(12, 34);
+            this.lbTenPhanMem.Location = new System.Drawing.Point(12, 29);
             this.lbTenPhanMem.Name = "lbTenPhanMem";
-            this.lbTenPhanMem.Size = new System.Drawing.Size(941, 57);
+            this.lbTenPhanMem.Size = new System.Drawing.Size(1048, 62);
             this.lbTenPhanMem.TabIndex = 2;
             this.lbTenPhanMem.Text = "THE COFFEE SHOP MANAGEMENT SOFTWARE";
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 10;
+            this.guna2Elipse1.TargetControl = this.lbTenPhanMem;
             // 
             // FormInit
             // 
@@ -77,6 +84,7 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbTenPhanMem;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }
 

@@ -27,7 +27,9 @@ namespace CoffeeShopManagement
                 else
                 {
                     t.Stop();
+                    this.Hide();
                     this.WindowState = FormWindowState.Maximized;
+                    this.Show();
                     child = new FormLogin(this);
                     child.Show();
                     //this.Hide();

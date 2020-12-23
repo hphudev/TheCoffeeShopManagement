@@ -46,9 +46,8 @@ namespace CoffeeShopManagement
                 tbSDT.Text = "";
                 tbHoTen.Text = "";
                 cbGioiTinh.Text = "";
-                tbNgaySinh.Text = "";
-                tbThangSinh.Text = "";
-                tbNamSinh.Text = "";
+                dtpNgaySinh.Text = "";
+                dtpNgaySinh.Value = DateTime.Today;
                 tbThanhVien.Text = "";
                 tbNgayDangKy.Text = "";
                 tbDiaChi.Text = "";
@@ -58,9 +57,7 @@ namespace CoffeeShopManagement
             tbSDT.ReadOnly = !status;
             tbHoTen.ReadOnly = !status;
             cbGioiTinh.Enabled = status;
-            tbNgaySinh.ReadOnly = !status;
-            tbThangSinh.ReadOnly = !status;
-            tbNamSinh.ReadOnly = !status;
+            dtpNgaySinh.Enabled = status;
             tbThanhVien.ReadOnly = !status;
             tbDiaChi.ReadOnly = !status;
         }
@@ -80,9 +77,7 @@ namespace CoffeeShopManagement
                     tbSDT.Text = Reader.GetString(3);
                     tbHoTen.Text = Reader.GetString(1);
                     cbGioiTinh.Text = Reader.GetString(7);
-                    tbNgaySinh.Text = Reader.GetDateTime(4).Day.ToString();
-                    tbThangSinh.Text = Reader.GetDateTime(4).Month.ToString();
-                    tbNamSinh.Text = Reader.GetDateTime(4).Year.ToString();
+                    dtpNgaySinh.Value = Reader.GetDateTime(4);
                     tbThanhVien.Text = Reader.GetString(9);
                     tbNgayDangKy.Text = new DateTime().GetDate(Reader.GetDateTime(6));
                     tbDiaChi.Text = Reader.GetString(2);
@@ -147,12 +142,12 @@ namespace CoffeeShopManagement
                 IO.ExportError("Sai trường giới tính");
                 return;
             }
-            if (!CheckNgayThangNam(tbNgaySinh.Text, tbThangSinh.Text, tbNamSinh.Text))
+            if (!CheckNgayThangNam(dtpNgaySinh.Value.Day.ToString(), dtpNgaySinh.Value.Month.ToString(), dtpNgaySinh.Value.Year.ToString()))
             {
                 IO.ExportError("Sai trường ngày sinh");
                 return;
             }
-            string date = tbNamSinh.Text + '/' + tbThangSinh.Text + '/' + tbNgaySinh.Text; 
+            string date = dtpNgaySinh.Value.Year.ToString() + '/' + dtpNgaySinh.Value.Month.ToString() + '/' + dtpNgaySinh.Value.Day.ToString(); 
             Data.UpdateData("khachhang", $"hoten = N'{tbHoTen.Text}', dchi = N'{tbDiaChi.Text}', sdt = N'{tbSDT.Text}'" +
                 $", ngaysinh = '{date}', gioitinh = N'{cbGioiTinh.Text}', loaikh = N'{tbThanhVien.Text}'", $" where makh = '{lbMaKH.Text}' ");
             IO.ExportSuccess("Cập nhật thành công!");

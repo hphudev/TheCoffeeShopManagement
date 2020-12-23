@@ -64,18 +64,10 @@ namespace CoffeeShopManagement
             set
             {
                 ngaySinh = value;
-                string[] date = value.Split('/');
-                if (date.Length > 2)
+                if (ngaySinh.Length > 3)
                 {
-                    tbNgaySinh.Text = date[0];
-                    tbThangSinh.Text = date[1];
-                    tbNamSinh.Text = date[2];
-                }
-                else
-                {
-                    tbNgaySinh.Text = "";
-                    tbThangSinh.Text = "";
-                    tbNamSinh.Text = "";
+                    string[] date = ngaySinh.Split('/');
+                    dtpNgaySinh.Value = new DateTime(int.Parse(date[2]), int.Parse(date[1]), int.Parse(date[0]));
                 }
                 
             }
@@ -151,8 +143,7 @@ namespace CoffeeShopManagement
 
         private void StatusTexbox(bool status)
         {
-            tbHoTen.ReadOnly = tbNgaySinh.ReadOnly
-                = tbThanhVien.ReadOnly = tbDiaChi.ReadOnly = !status;
+            tbHoTen.ReadOnly = tbThanhVien.ReadOnly = tbDiaChi.ReadOnly = !status;
             cbGioiTinh.Enabled = status;
         }
 
@@ -201,36 +192,18 @@ namespace CoffeeShopManagement
             this.Close();
         }
 
-        public bool CheckYear(int year)
-        {
-            // true là năm nhuận, false là năm không nhuận
-            return (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0));
-        }
 
-        private bool CheckNgayThangNam(string day, string month, string year)
-        {
-            int iDay = int.Parse(day);
-            int iMonth = int.Parse(month);
-            int iYear = int.Parse(year);
-            if (iMonth >= 8)
-                return (iMonth % 2 == 0 && iDay <= 31) || (iMonth % 2 != 0 && iDay <= 30);
-            else
-                return (iMonth == 2 && CheckYear(iYear) && iDay <= 29)
-                    || (iMonth == 2 && !CheckYear(iYear) && iDay <= 28)
-                    || (iMonth != 2 && iMonth % 2 == 0 && iDay <= 30)
-                    || (iMonth != 2 && iMonth % 2 != 0 && iDay <= 31);
-        }
 
         private bool DieuKienCapNhat()
         {
             if (tbSoDienThoai.Text == null || tbHoTen.Text == null || tbHoTen.Text == null || cbGioiTinh.Text == null
-               || tbNgaySinh.Text == null || tbThanhVien.Text == null)
+              || tbThanhVien.Text == null)
             {
                 IO.ExportWarning("Bạn đã chưa nhập đủ thông tin!");
                 return false;
             }
             if (tbSoDienThoai.Text == "" || tbHoTen.Text == "" || tbHoTen.Text == "" || cbGioiTinh.Text == ""
-               || tbNgaySinh.Text == "" || tbThanhVien.Text == "")
+               || tbThanhVien.Text == "")
             {
                 IO.ExportWarning("Bạn đã chưa nhập đủ thông tin!");
                 return false;
@@ -240,11 +213,6 @@ namespace CoffeeShopManagement
                 IO.ExportError("Trường giới tính đã nhập sai!");
                 return false;
             }
-            if (!CheckNgayThangNam(tbNgaySinh.Text, tbThangSinh.Text, tbNamSinh.Text))
-            {
-                IO.ExportError("Sai trường ngày sinh");
-                return false;
-            }
             return true;
         }
 
@@ -252,7 +220,7 @@ namespace CoffeeShopManagement
         {
             if (!DieuKienCapNhat())
                 return;
-            this.parent.cus = new Customer(IDKH, this.tbHoTen.Text, "", this.tbSoDienThoai.Text, this.cbGioiTinh.Text, this.tbNgaySinh.Text, this.tbNgayDangKy.Text, this.tbThanhVien.Text);
+            this.parent.cus = new Customer(IDKH, this.tbHoTen.Text, "", this.tbSoDienThoai.Text,this.cbGioiTinh.Text, new DateTime().GetDate(this.dtpNgaySinh.Value), this.tbNgayDangKy.Text, this.tbThanhVien.Text);
             if (statusAdd)
             {
                 string count = (Data.Calculate("COUNT", "*", "KHACHHANG", "") + 1).ToString();
@@ -260,8 +228,8 @@ namespace CoffeeShopManagement
                 SoDienThoai = tbSoDienThoai.Text;
                 HoTen = tbHoTen.Text;
                 GioiTinh = cbGioiTinh.Text;
-                NgaySinh = tbNgaySinh.Text + '/' + tbThangSinh.Text + '/' + tbNamSinh.Text;
-                string date = tbNamSinh.Text + '/' + tbThangSinh.Text + '/' + tbNgaySinh.Text;
+                NgaySinh = dtpNgaySinh.Value.Day.ToString() + '/' + dtpNgaySinh.Value.Month.ToString() + '/' + dtpNgaySinh.Value.Year.ToString();
+                string date = dtpNgaySinh.Value.Year.ToString() + '/' + dtpNgaySinh.Value.Month.ToString() + '/' + dtpNgaySinh.Value.Day.ToString();
                 DiaChi = tbDiaChi.Text;
                 this.parent.cus = new Customer(IDKH, this.tbHoTen.Text, this.tbDiaChi.Text, this.tbSoDienThoai.Text, this.cbGioiTinh.Text, this.NgaySinh, this.tbNgayDangKy.Text, this.tbThanhVien.Text);
                 Data.AddData("KHACHHANG", $"N'{IDKH}', N'{HoTen}', '{DiaChi}', N'{SoDienThoai}', '{date}', 0, '{Utility.GetDateUS(NgayDangKy)}', N'{GioiTinh}', 0, N'Bạc'");

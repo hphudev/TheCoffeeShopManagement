@@ -29,282 +29,272 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
-            this.pThanhDieuKhien = new System.Windows.Forms.Panel();
-            this.buttonThoatForm = new JImageButton.JImageButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbTenPhanMem = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pbEye = new System.Windows.Forms.PictureBox();
-            this.buttonThoat = new ns1.BunifuThinButton2();
-            this.btDangNhap = new ns1.BunifuThinButton2();
-            this.tbMatKhau = new JMaterialTextbox.JMaterialTextbox();
-            this.tbTenDangNhap = new JMaterialTextbox.JMaterialTextbox();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.pnLot = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.bunifuDragControl1 = new ns1.BunifuDragControl(this.components);
-            this.pThanhDieuKhien.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEye)).BeginInit();
+            this.controlboxClose = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.pUser = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.pbEye = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btDangNhap = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.tbMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbTenDangNhap = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.pnLot.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEye)).BeginInit();
             this.SuspendLayout();
             // 
-            // pThanhDieuKhien
+            // guna2Elipse1
             // 
-            this.pThanhDieuKhien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pThanhDieuKhien.Controls.Add(this.buttonThoatForm);
-            this.pThanhDieuKhien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pThanhDieuKhien.Location = new System.Drawing.Point(0, 0);
-            this.pThanhDieuKhien.Name = "pThanhDieuKhien";
-            this.pThanhDieuKhien.Size = new System.Drawing.Size(957, 51);
-            this.pThanhDieuKhien.TabIndex = 3;
-            this.pThanhDieuKhien.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PThanhDieuKhien_MouseDown);
+            this.guna2Elipse1.BorderRadius = 30;
+            this.guna2Elipse1.TargetControl = this.pnLot;
             // 
-            // buttonThoatForm
+            // pnLot
             // 
-            this.buttonThoatForm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonThoatForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonThoatForm.CausesValidation = false;
-            this.buttonThoatForm.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonThoatForm.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonThoatForm.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonThoatForm.ErrorImage")));
-            this.buttonThoatForm.Image = ((System.Drawing.Image)(resources.GetObject("buttonThoatForm.Image")));
-            this.buttonThoatForm.ImageHover = null;
-            this.buttonThoatForm.InitialImage = null;
-            this.buttonThoatForm.Location = new System.Drawing.Point(906, 0);
-            this.buttonThoatForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonThoatForm.Name = "buttonThoatForm";
-            this.buttonThoatForm.Size = new System.Drawing.Size(51, 51);
-            this.buttonThoatForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.buttonThoatForm.TabIndex = 4;
-            this.buttonThoatForm.Zoom = 4;
-            this.buttonThoatForm.Click += new System.EventHandler(this.ButtonThoatForm_Click);
+            this.pnLot.Controls.Add(this.pictureBox1);
+            this.pnLot.Controls.Add(this.label2);
+            this.pnLot.Controls.Add(this.label1);
+            this.pnLot.Controls.Add(this.controlboxClose);
+            this.pnLot.Controls.Add(this.pUser);
+            this.pnLot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnLot.FillColor = System.Drawing.Color.Bisque;
+            this.pnLot.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.pnLot.Location = new System.Drawing.Point(0, 0);
+            this.pnLot.Name = "pnLot";
+            this.pnLot.ShadowDecoration.Parent = this.pnLot;
+            this.pnLot.Size = new System.Drawing.Size(1059, 645);
+            this.pnLot.TabIndex = 0;
+            this.pnLot.Paint += new System.Windows.Forms.PaintEventHandler(this.PnLot_Paint);
             // 
-            // panel1
+            // pictureBox1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Controls.Add(this.lbTenPhanMem);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 51);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(957, 653);
-            this.panel1.TabIndex = 4;
-            // 
-            // lbTenPhanMem
-            // 
-            this.lbTenPhanMem.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.lbTenPhanMem.AutoSize = true;
-            this.lbTenPhanMem.Font = new System.Drawing.Font("Segoe UI", 13.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenPhanMem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbTenPhanMem.Location = new System.Drawing.Point(5, 533);
-            this.lbTenPhanMem.Name = "lbTenPhanMem";
-            this.lbTenPhanMem.Size = new System.Drawing.Size(381, 31);
-            this.lbTenPhanMem.TabIndex = 3;
-            this.lbTenPhanMem.Text = "THE COFFEE SHOP MANAGEMENT";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.panel2.Controls.Add(this.pbEye);
-            this.panel2.Controls.Add(this.buttonThoat);
-            this.panel2.Controls.Add(this.btDangNhap);
-            this.panel2.Controls.Add(this.tbMatKhau);
-            this.panel2.Controls.Add(this.tbTenDangNhap);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(422, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(535, 653);
-            this.panel2.TabIndex = 1;
-            // 
-            // pbEye
-            // 
-            this.pbEye.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbEye.Image = global::CoffeeShopManagement.Properties.Resources.OpenEye;
-            this.pbEye.Location = new System.Drawing.Point(478, 362);
-            this.pbEye.Name = "pbEye";
-            this.pbEye.Size = new System.Drawing.Size(40, 40);
-            this.pbEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbEye.TabIndex = 9;
-            this.pbEye.TabStop = false;
-            this.pbEye.Click += new System.EventHandler(this.pbEye_Click);
-            // 
-            // buttonThoat
-            // 
-            this.buttonThoat.ActiveBorderThickness = 5;
-            this.buttonThoat.ActiveCornerRadius = 30;
-            this.buttonThoat.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
-            this.buttonThoat.ActiveForecolor = System.Drawing.Color.White;
-            this.buttonThoat.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
-            this.buttonThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.buttonThoat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonThoat.BackgroundImage")));
-            this.buttonThoat.ButtonText = "Thoát";
-            this.buttonThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonThoat.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonThoat.ForeColor = System.Drawing.Color.SeaGreen;
-            this.buttonThoat.IdleBorderThickness = 2;
-            this.buttonThoat.IdleCornerRadius = 30;
-            this.buttonThoat.IdleFillColor = System.Drawing.Color.MistyRose;
-            this.buttonThoat.IdleForecolor = System.Drawing.SystemColors.Highlight;
-            this.buttonThoat.IdleLineColor = System.Drawing.SystemColors.Highlight;
-            this.buttonThoat.Location = new System.Drawing.Point(292, 465);
-            this.buttonThoat.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.buttonThoat.Name = "buttonThoat";
-            this.buttonThoat.Size = new System.Drawing.Size(206, 66);
-            this.buttonThoat.TabIndex = 3;
-            this.buttonThoat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.buttonThoat.Click += new System.EventHandler(this.ButtonThoat_Click_1);
-            // 
-            // btDangNhap
-            // 
-            this.btDangNhap.ActiveBorderThickness = 5;
-            this.btDangNhap.ActiveCornerRadius = 30;
-            this.btDangNhap.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
-            this.btDangNhap.ActiveForecolor = System.Drawing.Color.White;
-            this.btDangNhap.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
-            this.btDangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btDangNhap.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btDangNhap.BackgroundImage")));
-            this.btDangNhap.ButtonText = "Đăng nhập";
-            this.btDangNhap.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btDangNhap.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDangNhap.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btDangNhap.IdleBorderThickness = 2;
-            this.btDangNhap.IdleCornerRadius = 30;
-            this.btDangNhap.IdleFillColor = System.Drawing.Color.MistyRose;
-            this.btDangNhap.IdleForecolor = System.Drawing.SystemColors.Highlight;
-            this.btDangNhap.IdleLineColor = System.Drawing.SystemColors.Highlight;
-            this.btDangNhap.Location = new System.Drawing.Point(28, 465);
-            this.btDangNhap.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btDangNhap.Name = "btDangNhap";
-            this.btDangNhap.Size = new System.Drawing.Size(206, 66);
-            this.btDangNhap.TabIndex = 2;
-            this.btDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tbMatKhau
-            // 
-            this.tbMatKhau.BackColor = System.Drawing.Color.Transparent;
-            this.tbMatKhau.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMatKhau.Font_Size = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMatKhau.ForeColors = System.Drawing.Color.Black;
-            this.tbMatKhau.HintText = null;
-            this.tbMatKhau.IsPassword = true;
-            this.tbMatKhau.LineBackColor = System.Drawing.SystemColors.Highlight;
-            this.tbMatKhau.LineThickness = 5;
-            this.tbMatKhau.Location = new System.Drawing.Point(33, 366);
-            this.tbMatKhau.Margin = new System.Windows.Forms.Padding(8);
-            this.tbMatKhau.MaxLength = 32767;
-            this.tbMatKhau.Name = "tbMatKhau";
-            this.tbMatKhau.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
-            this.tbMatKhau.OnFocusedTextColor = System.Drawing.Color.DarkBlue;
-            this.tbMatKhau.ReadOnly = false;
-            this.tbMatKhau.Size = new System.Drawing.Size(440, 42);
-            this.tbMatKhau.TabIndex = 1;
-            this.tbMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tbMatKhau.TextName = "";
-            // 
-            // tbTenDangNhap
-            // 
-            this.tbTenDangNhap.BackColor = System.Drawing.Color.Transparent;
-            this.tbTenDangNhap.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTenDangNhap.Font_Size = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTenDangNhap.ForeColors = System.Drawing.Color.Black;
-            this.tbTenDangNhap.HintText = null;
-            this.tbTenDangNhap.IsPassword = false;
-            this.tbTenDangNhap.LineBackColor = System.Drawing.SystemColors.Highlight;
-            this.tbTenDangNhap.LineThickness = 5;
-            this.tbTenDangNhap.Location = new System.Drawing.Point(33, 196);
-            this.tbTenDangNhap.Margin = new System.Windows.Forms.Padding(8);
-            this.tbTenDangNhap.MaxLength = 32767;
-            this.tbTenDangNhap.Name = "tbTenDangNhap";
-            this.tbTenDangNhap.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(0)))), ((int)(((byte)(51)))));
-            this.tbTenDangNhap.OnFocusedTextColor = System.Drawing.Color.DarkBlue;
-            this.tbTenDangNhap.ReadOnly = false;
-            this.tbTenDangNhap.Size = new System.Drawing.Size(440, 42);
-            this.tbTenDangNhap.TabIndex = 0;
-            this.tbTenDangNhap.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tbTenDangNhap.TextName = "";
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::CoffeeShopManagement.Properties.Resources.LogoLogin;
+            this.pictureBox1.Location = new System.Drawing.Point(83, 344);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(336, 269);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 295);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(12, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(171, 46);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Mật khẩu";
+            this.label2.Size = new System.Drawing.Size(495, 279);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Cuộc sống là 10% những gì xảy ra với bạn và 90% là cách bạn phản ứng với nó – Cha" +
+    "rles R. Swindoll";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 125);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(670, 121);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(256, 46);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Tên đăng nhập";
+            this.label1.Size = new System.Drawing.Size(235, 57);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "User Login";
             // 
-            // pictureBox1
+            // controlboxClose
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::CoffeeShopManagement.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(422, 653);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.controlboxClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.controlboxClose.Animated = true;
+            this.controlboxClose.BackColor = System.Drawing.Color.Transparent;
+            this.controlboxClose.BorderRadius = 15;
+            this.controlboxClose.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.controlboxClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.controlboxClose.HoverState.Parent = this.controlboxClose;
+            this.controlboxClose.IconColor = System.Drawing.Color.White;
+            this.controlboxClose.Location = new System.Drawing.Point(1011, 15);
+            this.controlboxClose.Name = "controlboxClose";
+            this.controlboxClose.ShadowDecoration.Parent = this.controlboxClose;
+            this.controlboxClose.Size = new System.Drawing.Size(35, 35);
+            this.controlboxClose.TabIndex = 5;
             // 
-            // bunifuDragControl1
+            // pUser
             // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.pThanhDieuKhien;
-            this.bunifuDragControl1.Vertical = true;
+            this.pUser.Controls.Add(this.pbEye);
+            this.pUser.Controls.Add(this.label3);
+            this.pUser.Controls.Add(this.btDangNhap);
+            this.pUser.Controls.Add(this.tbMatKhau);
+            this.pUser.Controls.Add(this.tbTenDangNhap);
+            this.pUser.FillColor = System.Drawing.Color.Bisque;
+            this.pUser.FillColor2 = System.Drawing.Color.Bisque;
+            this.pUser.Location = new System.Drawing.Point(558, 198);
+            this.pUser.Name = "pUser";
+            this.pUser.ShadowDecoration.Parent = this.pUser;
+            this.pUser.Size = new System.Drawing.Size(479, 353);
+            this.pUser.TabIndex = 3;
+            // 
+            // pbEye
+            // 
+            this.pbEye.BackColor = System.Drawing.Color.Transparent;
+            this.pbEye.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbEye.Image = global::CoffeeShopManagement.Properties.Resources.OpenEye;
+            this.pbEye.Location = new System.Drawing.Point(456, 111);
+            this.pbEye.Name = "pbEye";
+            this.pbEye.Size = new System.Drawing.Size(20, 20);
+            this.pbEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbEye.TabIndex = 9;
+            this.pbEye.TabStop = false;
+            this.pbEye.Click += new System.EventHandler(this.pbEye_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(289, 280);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(151, 23);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Forgot Password?";
+            this.label3.Click += new System.EventHandler(this.Label3_Click);
+            // 
+            // btDangNhap
+            // 
+            this.btDangNhap.BackColor = System.Drawing.Color.Bisque;
+            this.btDangNhap.BorderRadius = 22;
+            this.btDangNhap.CheckedState.Parent = this.btDangNhap;
+            this.btDangNhap.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btDangNhap.CustomImages.Parent = this.btDangNhap;
+            this.btDangNhap.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.btDangNhap.ForeColor = System.Drawing.Color.White;
+            this.btDangNhap.HoverState.Parent = this.btDangNhap;
+            this.btDangNhap.Location = new System.Drawing.Point(13, 205);
+            this.btDangNhap.Name = "btDangNhap";
+            this.btDangNhap.ShadowDecoration.Parent = this.btDangNhap;
+            this.btDangNhap.Size = new System.Drawing.Size(443, 56);
+            this.btDangNhap.TabIndex = 3;
+            this.btDangNhap.Text = "Login";
+            // 
+            // tbMatKhau
+            // 
+            this.tbMatKhau.BackColor = System.Drawing.Color.Bisque;
+            this.tbMatKhau.BorderColor = System.Drawing.Color.Bisque;
+            this.tbMatKhau.BorderRadius = 15;
+            this.tbMatKhau.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbMatKhau.DefaultText = "Mật khẩu";
+            this.tbMatKhau.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbMatKhau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbMatKhau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbMatKhau.DisabledState.Parent = this.tbMatKhau;
+            this.tbMatKhau.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbMatKhau.FillColor = System.Drawing.Color.Ivory;
+            this.tbMatKhau.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.tbMatKhau.FocusedState.Parent = this.tbMatKhau;
+            this.tbMatKhau.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.tbMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbMatKhau.HoverState.Parent = this.tbMatKhau;
+            this.tbMatKhau.IconLeft = global::CoffeeShopManagement.Properties.Resources.password;
+            this.tbMatKhau.Location = new System.Drawing.Point(13, 114);
+            this.tbMatKhau.Margin = new System.Windows.Forms.Padding(4);
+            this.tbMatKhau.Name = "tbMatKhau";
+            this.tbMatKhau.PasswordChar = '\0';
+            this.tbMatKhau.PlaceholderText = "";
+            this.tbMatKhau.SelectedText = "";
+            this.tbMatKhau.ShadowDecoration.Parent = this.tbMatKhau;
+            this.tbMatKhau.Size = new System.Drawing.Size(443, 57);
+            this.tbMatKhau.TabIndex = 2;
+            this.tbMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbMatKhau.Enter += new System.EventHandler(this.TbMatKhau_Enter);
+            this.tbMatKhau.Leave += new System.EventHandler(this.TbMatKhau_Leave);
+            // 
+            // tbTenDangNhap
+            // 
+            this.tbTenDangNhap.BackColor = System.Drawing.Color.Bisque;
+            this.tbTenDangNhap.BorderColor = System.Drawing.Color.Bisque;
+            this.tbTenDangNhap.BorderRadius = 15;
+            this.tbTenDangNhap.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbTenDangNhap.DefaultText = "Tên đăng nhập";
+            this.tbTenDangNhap.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbTenDangNhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbTenDangNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbTenDangNhap.DisabledState.Parent = this.tbTenDangNhap;
+            this.tbTenDangNhap.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbTenDangNhap.FillColor = System.Drawing.Color.Ivory;
+            this.tbTenDangNhap.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.tbTenDangNhap.FocusedState.Parent = this.tbTenDangNhap;
+            this.tbTenDangNhap.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.tbTenDangNhap.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbTenDangNhap.HoverState.Parent = this.tbTenDangNhap;
+            this.tbTenDangNhap.IconLeft = global::CoffeeShopManagement.Properties.Resources.user;
+            this.tbTenDangNhap.Location = new System.Drawing.Point(13, 44);
+            this.tbTenDangNhap.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTenDangNhap.Name = "tbTenDangNhap";
+            this.tbTenDangNhap.PasswordChar = '\0';
+            this.tbTenDangNhap.PlaceholderText = "";
+            this.tbTenDangNhap.SelectedText = "";
+            this.tbTenDangNhap.ShadowDecoration.Parent = this.tbTenDangNhap;
+            this.tbTenDangNhap.Size = new System.Drawing.Size(443, 57);
+            this.tbTenDangNhap.TabIndex = 1;
+            this.tbTenDangNhap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbTenDangNhap.Enter += new System.EventHandler(this.TbTenDangNhap_Enter);
+            this.tbTenDangNhap.Leave += new System.EventHandler(this.TbTenDangNhap_Leave);
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.BorderRadius = 20;
+            this.guna2Elipse2.TargetControl = this.pUser;
+            // 
+            // guna2Elipse3
+            // 
+            this.guna2Elipse3.BorderRadius = 25;
+            this.guna2Elipse3.TargetControl = this.controlboxClose;
             // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(957, 704);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pThanhDieuKhien);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(1059, 645);
+            this.Controls.Add(this.pnLot);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            this.TransparencyKey = System.Drawing.SystemColors.ControlLight;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLogin_FormClosed);
-            this.pThanhDieuKhien.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEye)).EndInit();
+            this.Load += new System.EventHandler(this.FormLogin_Load);
+            this.pnLot.ResumeLayout(false);
+            this.pnLot.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pUser.ResumeLayout(false);
+            this.pUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEye)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pThanhDieuKhien;
-        private JImageButton.JImageButton buttonThoatForm;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lbTenPhanMem;
-        private JMaterialTextbox.JMaterialTextbox tbTenDangNhap;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2GradientPanel pnLot;
+        private Guna.UI2.WinForms.Guna2GradientPanel pUser;
+        private Guna.UI2.WinForms.Guna2TextBox tbTenDangNhap;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+        private Guna.UI2.WinForms.Guna2TextBox tbMatKhau;
+        private Guna.UI2.WinForms.Guna2GradientButton btDangNhap;
+        private Guna.UI2.WinForms.Guna2ControlBox controlboxClose;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private JMaterialTextbox.JMaterialTextbox tbMatKhau;
-        private ns1.BunifuThinButton2 buttonThoat;
-        private ns1.BunifuThinButton2 btDangNhap;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
         private System.Windows.Forms.PictureBox pbEye;
-        private ns1.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

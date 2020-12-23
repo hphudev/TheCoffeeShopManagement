@@ -30,11 +30,11 @@ namespace CoffeeShopManagement
         {
             #region Giao diện DataGridView
             this.dgvMenu.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Raised;
-            this.dgvMenu.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(192, 0, 0);
+            this.dgvMenu.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 139, 139);
             this.dgvMenu.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             this.dgvMenu.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgvMenu.Font = new Font("Segoe UI", 13, FontStyle.Bold);
-            this.dgvMenu.RowsDefaultCellStyle.Font = new Font("Time New Roman", 9, FontStyle.Regular);
+            this.dgvMenu.RowsDefaultCellStyle.Font = new Font("Time New Roman", 9, FontStyle.Bold);
             this.dgvMenu.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 192, 128);
             #endregion
             //
@@ -84,7 +84,7 @@ namespace CoffeeShopManagement
 
         private void AddItemClicked(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             (new FormAddItem(this)).Show();
         }
 
@@ -92,7 +92,7 @@ namespace CoffeeShopManagement
         {
             if (this.dgvMenu.Rows.Count != 0)
             {
-                this.Hide();
+                //this.Hide();
                 (new FormChangeInfoItem(this)).Show();
             }
             else
@@ -111,6 +111,7 @@ namespace CoffeeShopManagement
                     selectedItem.id.ToString() + "'");
                 IO.ExportSuccess("Xóa món thành công");
                 LoadForm();
+                this.parent.LoadSomeThingPublic();
             }
             else
             {
@@ -155,7 +156,7 @@ namespace CoffeeShopManagement
 
         private void CloseForm(object sender, FormClosedEventArgs e)
         {
-            this.parent.LoadSomeThingPublic();
+            //this.parent.LoadSomeThingPublic();
             this.lockForm.Close();
         }
     }

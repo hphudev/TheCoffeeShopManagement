@@ -84,6 +84,7 @@ namespace CoffeeShopManagement
                     updatedItem.price + "'", " WHERE MAMON = '" + selectedItem.id.ToString() + "'");
                 IO.ExportSuccess("Sửa món thành công");
                 this.parent.LoadForm();
+                this.parent.parent.LoadSomeThingPublic();
                 this.Close();
             }
             catch (Exception)

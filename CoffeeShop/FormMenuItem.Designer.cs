@@ -28,47 +28,229 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuItem));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.components = new System.ComponentModel.Container();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.bCancel = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pTieuDe = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.bAddItem = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.bFind = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.bChangeInfoItem = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.bDeleteItem = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.cbFind = new System.Windows.Forms.ComboBox();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.dgvMenu = new System.Windows.Forms.DataGridView();
             this.dgvtbcID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtbcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtbcUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtbcSoLanPhucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtbcPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.bFind = new ns1.BunifuThinButton2();
-            this.cbFind = new System.Windows.Forms.ComboBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.bCancel = new ns1.BunifuThinButton2();
-            this.bDeleteItem = new ns1.BunifuThinButton2();
-            this.bChangeInfoItem = new ns1.BunifuThinButton2();
-            this.bAddItem = new ns1.BunifuThinButton2();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.ani = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.pCheck = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.bPrint = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2GradientPanel1.SuspendLayout();
+            this.pTieuDe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.pCheck.SuspendLayout();
+            this.guna2ShadowPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // guna2GradientPanel1
             // 
-            this.panel1.Controls.Add(this.dgvMenu);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1442, 803);
-            this.panel1.TabIndex = 0;
+            this.guna2GradientPanel1.Controls.Add(this.guna2ShadowPanel1);
+            this.guna2GradientPanel1.Controls.Add(this.label2);
+            this.guna2GradientPanel1.Controls.Add(this.pCheck);
+            this.guna2GradientPanel1.Controls.Add(this.label1);
+            this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.LightSeaGreen;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1343, 104);
+            this.guna2GradientPanel1.TabIndex = 121;
+            // 
+            // bCancel
+            // 
+            this.bCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bCancel.Animated = true;
+            this.bCancel.BackColor = System.Drawing.Color.Transparent;
+            this.bCancel.BorderRadius = 20;
+            this.bCancel.CheckedState.Parent = this.bCancel;
+            this.bCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bCancel.CustomImages.Parent = this.bCancel;
+            this.bCancel.FillColor = System.Drawing.Color.Transparent;
+            this.bCancel.FillColor2 = System.Drawing.Color.Transparent;
+            this.bCancel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.bCancel.ForeColor = System.Drawing.Color.White;
+            this.bCancel.HoverState.Parent = this.bCancel;
+            this.bCancel.Location = new System.Drawing.Point(-4, 5);
+            this.bCancel.Name = "bCancel";
+            this.bCancel.ShadowDecoration.Parent = this.bCancel;
+            this.bCancel.Size = new System.Drawing.Size(88, 56);
+            this.bCancel.TabIndex = 4;
+            this.bCancel.Text = "THOÁT";
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1343, 104);
+            this.label1.TabIndex = 112;
+            this.label1.Text = "QUẢN LÍ MÓN";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pTieuDe
+            // 
+            this.pTieuDe.BackColor = System.Drawing.Color.Transparent;
+            this.pTieuDe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pTieuDe.Controls.Add(this.bAddItem);
+            this.pTieuDe.Controls.Add(this.bFind);
+            this.pTieuDe.Controls.Add(this.bChangeInfoItem);
+            this.pTieuDe.Controls.Add(this.guna2GradientButton2);
+            this.pTieuDe.Controls.Add(this.bDeleteItem);
+            this.pTieuDe.Controls.Add(this.cbFind);
+            this.pTieuDe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pTieuDe.FillColor = System.Drawing.Color.Black;
+            this.pTieuDe.FillColor2 = System.Drawing.Color.DimGray;
+            this.pTieuDe.Location = new System.Drawing.Point(0, 104);
+            this.pTieuDe.Name = "pTieuDe";
+            this.pTieuDe.ShadowDecoration.Parent = this.pTieuDe;
+            this.pTieuDe.Size = new System.Drawing.Size(1343, 70);
+            this.pTieuDe.TabIndex = 122;
+            // 
+            // bAddItem
+            // 
+            this.bAddItem.Animated = true;
+            this.bAddItem.BackColor = System.Drawing.Color.Transparent;
+            this.bAddItem.BorderRadius = 15;
+            this.bAddItem.CheckedState.Parent = this.bAddItem;
+            this.bAddItem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bAddItem.CustomImages.Parent = this.bAddItem;
+            this.bAddItem.FillColor = System.Drawing.Color.DarkSlateBlue;
+            this.bAddItem.FillColor2 = System.Drawing.Color.Teal;
+            this.bAddItem.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.bAddItem.ForeColor = System.Drawing.Color.White;
+            this.bAddItem.HoverState.Parent = this.bAddItem;
+            this.bAddItem.Location = new System.Drawing.Point(238, 13);
+            this.bAddItem.Name = "bAddItem";
+            this.bAddItem.ShadowDecoration.Parent = this.bAddItem;
+            this.bAddItem.Size = new System.Drawing.Size(107, 47);
+            this.bAddItem.TabIndex = 123;
+            this.bAddItem.Text = "Thêm";
+            // 
+            // bFind
+            // 
+            this.bFind.Animated = true;
+            this.bFind.BackColor = System.Drawing.Color.Transparent;
+            this.bFind.BorderColor = System.Drawing.Color.Gainsboro;
+            this.bFind.BorderRadius = 15;
+            this.bFind.BorderThickness = 1;
+            this.bFind.CheckedState.Parent = this.bFind;
+            this.bFind.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bFind.CustomImages.Parent = this.bFind;
+            this.bFind.FillColor = System.Drawing.Color.DarkSlateGray;
+            this.bFind.FillColor2 = System.Drawing.Color.SeaGreen;
+            this.bFind.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.bFind.ForeColor = System.Drawing.Color.White;
+            this.bFind.HoverState.Parent = this.bFind;
+            this.bFind.Location = new System.Drawing.Point(1201, 12);
+            this.bFind.Name = "bFind";
+            this.bFind.ShadowDecoration.Parent = this.bFind;
+            this.bFind.Size = new System.Drawing.Size(100, 50);
+            this.bFind.TabIndex = 9;
+            this.bFind.Text = "TÌM KIẾM";
+            // 
+            // bChangeInfoItem
+            // 
+            this.bChangeInfoItem.Animated = true;
+            this.bChangeInfoItem.BackColor = System.Drawing.Color.Transparent;
+            this.bChangeInfoItem.BorderRadius = 15;
+            this.bChangeInfoItem.CheckedState.Parent = this.bChangeInfoItem;
+            this.bChangeInfoItem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bChangeInfoItem.CustomImages.Parent = this.bChangeInfoItem;
+            this.bChangeInfoItem.FillColor = System.Drawing.Color.DarkSlateBlue;
+            this.bChangeInfoItem.FillColor2 = System.Drawing.Color.Teal;
+            this.bChangeInfoItem.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.bChangeInfoItem.ForeColor = System.Drawing.Color.White;
+            this.bChangeInfoItem.HoverState.Parent = this.bChangeInfoItem;
+            this.bChangeInfoItem.Location = new System.Drawing.Point(372, 13);
+            this.bChangeInfoItem.Name = "bChangeInfoItem";
+            this.bChangeInfoItem.ShadowDecoration.Parent = this.bChangeInfoItem;
+            this.bChangeInfoItem.Size = new System.Drawing.Size(107, 47);
+            this.bChangeInfoItem.TabIndex = 120;
+            this.bChangeInfoItem.Text = "Sửa";
+            // 
+            // guna2GradientButton2
+            // 
+            this.guna2GradientButton2.Animated = true;
+            this.guna2GradientButton2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientButton2.BorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton2.BorderThickness = 1;
+            this.guna2GradientButton2.CheckedState.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2GradientButton2.CustomImages.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.Transparent;
+            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton2.HoverState.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.Location = new System.Drawing.Point(1158, 14);
+            this.guna2GradientButton2.Name = "guna2GradientButton2";
+            this.guna2GradientButton2.ShadowDecoration.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.Size = new System.Drawing.Size(29, 46);
+            this.guna2GradientButton2.TabIndex = 8;
+            this.guna2GradientButton2.Text = "X";
+            // 
+            // bDeleteItem
+            // 
+            this.bDeleteItem.Animated = true;
+            this.bDeleteItem.BackColor = System.Drawing.Color.Transparent;
+            this.bDeleteItem.BorderRadius = 15;
+            this.bDeleteItem.CheckedState.Parent = this.bDeleteItem;
+            this.bDeleteItem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bDeleteItem.CustomImages.Parent = this.bDeleteItem;
+            this.bDeleteItem.FillColor = System.Drawing.Color.DarkSlateBlue;
+            this.bDeleteItem.FillColor2 = System.Drawing.Color.Teal;
+            this.bDeleteItem.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.bDeleteItem.ForeColor = System.Drawing.Color.White;
+            this.bDeleteItem.HoverState.Parent = this.bDeleteItem;
+            this.bDeleteItem.Location = new System.Drawing.Point(505, 13);
+            this.bDeleteItem.Name = "bDeleteItem";
+            this.bDeleteItem.ShadowDecoration.Parent = this.bDeleteItem;
+            this.bDeleteItem.Size = new System.Drawing.Size(107, 47);
+            this.bDeleteItem.TabIndex = 119;
+            this.bDeleteItem.Text = "Xóa";
+            // 
+            // cbFind
+            // 
+            this.cbFind.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbFind.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.cbFind.FormattingEnabled = true;
+            this.cbFind.Location = new System.Drawing.Point(745, 13);
+            this.cbFind.Name = "cbFind";
+            this.cbFind.Size = new System.Drawing.Size(410, 48);
+            this.cbFind.TabIndex = 8;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.TargetControl = this.cbFind;
             // 
             // dgvMenu
             // 
             this.dgvMenu.AllowUserToAddRows = false;
             this.dgvMenu.AllowUserToDeleteRows = false;
             this.dgvMenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMenu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dgvMenu.BackgroundColor = System.Drawing.Color.SeaShell;
             this.dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMenu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvtbcID,
@@ -77,15 +259,15 @@
             this.dgvtbcSoLanPhucVu,
             this.dgvtbcPrice});
             this.dgvMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMenu.Location = new System.Drawing.Point(0, 131);
+            this.dgvMenu.Location = new System.Drawing.Point(0, 174);
             this.dgvMenu.MultiSelect = false;
             this.dgvMenu.Name = "dgvMenu";
             this.dgvMenu.ReadOnly = true;
             this.dgvMenu.RowHeadersWidth = 51;
             this.dgvMenu.RowTemplate.Height = 24;
             this.dgvMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMenu.Size = new System.Drawing.Size(1226, 672);
-            this.dgvMenu.TabIndex = 7;
+            this.dgvMenu.Size = new System.Drawing.Size(1343, 629);
+            this.dgvMenu.TabIndex = 123;
             // 
             // dgvtbcID
             // 
@@ -122,223 +304,111 @@
             this.dgvtbcPrice.Name = "dgvtbcPrice";
             this.dgvtbcPrice.ReadOnly = true;
             // 
-            // panel4
+            // guna2Elipse2
             // 
-            this.panel4.BackColor = System.Drawing.Color.Maroon;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.bFind);
-            this.panel4.Controls.Add(this.cbFind);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 71);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1226, 60);
-            this.panel4.TabIndex = 6;
+            this.guna2Elipse2.BorderRadius = 20;
+            this.guna2Elipse2.TargetControl = this;
             // 
-            // bFind
+            // pCheck
             // 
-            this.bFind.ActiveBorderThickness = 1;
-            this.bFind.ActiveCornerRadius = 20;
-            this.bFind.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bFind.ActiveForecolor = System.Drawing.Color.White;
-            this.bFind.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bFind.BackColor = System.Drawing.Color.Maroon;
-            this.bFind.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bFind.BackgroundImage")));
-            this.bFind.ButtonText = "TÌM KIẾM";
-            this.bFind.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bFind.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bFind.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bFind.IdleBorderThickness = 1;
-            this.bFind.IdleCornerRadius = 20;
-            this.bFind.IdleFillColor = System.Drawing.Color.White;
-            this.bFind.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bFind.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bFind.Location = new System.Drawing.Point(611, 0);
-            this.bFind.Margin = new System.Windows.Forms.Padding(6);
-            this.bFind.Name = "bFind";
-            this.bFind.Size = new System.Drawing.Size(171, 58);
-            this.bFind.TabIndex = 18;
-            this.bFind.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pCheck.BackColor = System.Drawing.Color.Transparent;
+            this.pCheck.Controls.Add(this.bPrint);
+            this.pCheck.FillColor = System.Drawing.Color.Transparent;
+            this.pCheck.Location = new System.Drawing.Point(1121, 12);
+            this.pCheck.Name = "pCheck";
+            this.pCheck.Radius = 5;
+            this.pCheck.ShadowColor = System.Drawing.Color.Black;
+            this.pCheck.Size = new System.Drawing.Size(79, 64);
+            this.pCheck.TabIndex = 124;
             // 
-            // cbFind
+            // label2
             // 
-            this.cbFind.BackColor = System.Drawing.Color.Maroon;
-            this.cbFind.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cbFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbFind.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFind.ForeColor = System.Drawing.Color.White;
-            this.cbFind.FormattingEnabled = true;
-            this.cbFind.Location = new System.Drawing.Point(800, 0);
-            this.cbFind.Name = "cbFind";
-            this.cbFind.Size = new System.Drawing.Size(424, 58);
-            this.cbFind.TabIndex = 17;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(1093, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(135, 23);
+            this.label2.TabIndex = 125;
+            this.label2.Text = "IN DANH SÁCH";
             // 
-            // panel6
+            // guna2ShadowPanel1
             // 
-            this.panel6.BackColor = System.Drawing.Color.Maroon;
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.bCancel);
-            this.panel6.Controls.Add(this.bDeleteItem);
-            this.panel6.Controls.Add(this.bChangeInfoItem);
-            this.panel6.Controls.Add(this.bAddItem);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(1226, 71);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(216, 732);
-            this.panel6.TabIndex = 5;
+            this.guna2ShadowPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.bCancel);
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(1243, 12);
+            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            this.guna2ShadowPanel1.Radius = 5;
+            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(79, 64);
+            this.guna2ShadowPanel1.TabIndex = 126;
             // 
-            // bCancel
+            // bPrint
             // 
-            this.bCancel.ActiveBorderThickness = 1;
-            this.bCancel.ActiveCornerRadius = 20;
-            this.bCancel.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bCancel.ActiveForecolor = System.Drawing.Color.White;
-            this.bCancel.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bCancel.BackColor = System.Drawing.Color.Maroon;
-            this.bCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bCancel.BackgroundImage")));
-            this.bCancel.ButtonText = "THOÁT";
-            this.bCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bCancel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bCancel.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bCancel.IdleBorderThickness = 1;
-            this.bCancel.IdleCornerRadius = 20;
-            this.bCancel.IdleFillColor = System.Drawing.Color.White;
-            this.bCancel.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bCancel.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bCancel.Location = new System.Drawing.Point(0, 216);
-            this.bCancel.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
-            this.bCancel.Name = "bCancel";
-            this.bCancel.Size = new System.Drawing.Size(214, 72);
-            this.bCancel.TabIndex = 3;
-            this.bCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bDeleteItem
-            // 
-            this.bDeleteItem.ActiveBorderThickness = 1;
-            this.bDeleteItem.ActiveCornerRadius = 20;
-            this.bDeleteItem.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bDeleteItem.ActiveForecolor = System.Drawing.Color.White;
-            this.bDeleteItem.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bDeleteItem.BackColor = System.Drawing.Color.Maroon;
-            this.bDeleteItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bDeleteItem.BackgroundImage")));
-            this.bDeleteItem.ButtonText = "XÓA MÓN";
-            this.bDeleteItem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bDeleteItem.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bDeleteItem.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bDeleteItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bDeleteItem.IdleBorderThickness = 1;
-            this.bDeleteItem.IdleCornerRadius = 20;
-            this.bDeleteItem.IdleFillColor = System.Drawing.Color.White;
-            this.bDeleteItem.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bDeleteItem.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bDeleteItem.Location = new System.Drawing.Point(0, 144);
-            this.bDeleteItem.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
-            this.bDeleteItem.Name = "bDeleteItem";
-            this.bDeleteItem.Size = new System.Drawing.Size(214, 72);
-            this.bDeleteItem.TabIndex = 2;
-            this.bDeleteItem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bChangeInfoItem
-            // 
-            this.bChangeInfoItem.ActiveBorderThickness = 1;
-            this.bChangeInfoItem.ActiveCornerRadius = 20;
-            this.bChangeInfoItem.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bChangeInfoItem.ActiveForecolor = System.Drawing.Color.White;
-            this.bChangeInfoItem.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bChangeInfoItem.BackColor = System.Drawing.Color.Maroon;
-            this.bChangeInfoItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bChangeInfoItem.BackgroundImage")));
-            this.bChangeInfoItem.ButtonText = "SỬA MÓN";
-            this.bChangeInfoItem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bChangeInfoItem.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bChangeInfoItem.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bChangeInfoItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bChangeInfoItem.IdleBorderThickness = 1;
-            this.bChangeInfoItem.IdleCornerRadius = 20;
-            this.bChangeInfoItem.IdleFillColor = System.Drawing.Color.White;
-            this.bChangeInfoItem.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bChangeInfoItem.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bChangeInfoItem.Location = new System.Drawing.Point(0, 72);
-            this.bChangeInfoItem.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
-            this.bChangeInfoItem.Name = "bChangeInfoItem";
-            this.bChangeInfoItem.Size = new System.Drawing.Size(214, 72);
-            this.bChangeInfoItem.TabIndex = 1;
-            this.bChangeInfoItem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bAddItem
-            // 
-            this.bAddItem.ActiveBorderThickness = 1;
-            this.bAddItem.ActiveCornerRadius = 20;
-            this.bAddItem.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bAddItem.ActiveForecolor = System.Drawing.Color.White;
-            this.bAddItem.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bAddItem.BackColor = System.Drawing.Color.Maroon;
-            this.bAddItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bAddItem.BackgroundImage")));
-            this.bAddItem.ButtonText = "THÊM MÓN";
-            this.bAddItem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bAddItem.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bAddItem.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAddItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bAddItem.IdleBorderThickness = 1;
-            this.bAddItem.IdleCornerRadius = 20;
-            this.bAddItem.IdleFillColor = System.Drawing.Color.White;
-            this.bAddItem.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bAddItem.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.bAddItem.Location = new System.Drawing.Point(0, 0);
-            this.bAddItem.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
-            this.bAddItem.Name = "bAddItem";
-            this.bAddItem.Size = new System.Drawing.Size(214, 72);
-            this.bAddItem.TabIndex = 0;
-            this.bAddItem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1442, 71);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "QUẢN LÝ THỰC ĐƠN";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bPrint.CheckedState.ImageSize = new System.Drawing.Size(34, 34);
+            this.bPrint.CheckedState.Parent = this.bPrint;
+            this.bPrint.HoverState.ImageSize = new System.Drawing.Size(31, 31);
+            this.bPrint.HoverState.Parent = this.bPrint;
+            this.bPrint.Image = global::CoffeeShopManagement.Properties.Resources.Print;
+            this.bPrint.ImageSize = new System.Drawing.Size(32, 32);
+            this.bPrint.Location = new System.Drawing.Point(4, 6);
+            this.bPrint.Name = "bPrint";
+            this.bPrint.PressedState.ImageSize = new System.Drawing.Size(30, 30);
+            this.bPrint.PressedState.Parent = this.bPrint;
+            this.bPrint.Size = new System.Drawing.Size(70, 51);
+            this.bPrint.TabIndex = 124;
             // 
             // FormMenuItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(1442, 803);
-            this.Controls.Add(this.panel1);
+            this.BackColor = System.Drawing.Color.SeaShell;
+            this.ClientSize = new System.Drawing.Size(1343, 803);
+            this.Controls.Add(this.dgvMenu);
+            this.Controls.Add(this.pTieuDe);
+            this.Controls.Add(this.guna2GradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMenuItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý thực đơn";
-            this.panel1.ResumeLayout(false);
+            this.guna2GradientPanel1.ResumeLayout(false);
+            this.guna2GradientPanel1.PerformLayout();
+            this.pTieuDe.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
+            this.pCheck.ResumeLayout(false);
+            this.guna2ShadowPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel6;
-        private ns1.BunifuThinButton2 bAddItem;
-        private System.Windows.Forms.Panel panel4;
-        private ns1.BunifuThinButton2 bChangeInfoItem;
-        private ns1.BunifuThinButton2 bCancel;
-        private ns1.BunifuThinButton2 bDeleteItem;
-        private ns1.BunifuThinButton2 bFind;
+        private Guna.UI2.WinForms.Guna2GradientButton bCancel;
+        private Guna.UI2.WinForms.Guna2GradientPanel pTieuDe;
+        private Guna.UI2.WinForms.Guna2GradientButton bFind;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
         private System.Windows.Forms.ComboBox cbFind;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2GradientButton bAddItem;
+        private Guna.UI2.WinForms.Guna2GradientButton bChangeInfoItem;
+        private Guna.UI2.WinForms.Guna2GradientButton bDeleteItem;
         private System.Windows.Forms.DataGridView dgvMenu;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvtbcID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvtbcName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvtbcUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvtbcSoLanPhucVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvtbcPrice;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+        private Guna.UI2.WinForms.Guna2AnimateWindow ani;
+        private Guna.UI2.WinForms.Guna2ShadowPanel pCheck;
+        private Guna.UI2.WinForms.Guna2ImageButton bPrint;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
     }
 }

@@ -44,7 +44,7 @@ namespace CoffeeShopManagement
 
             this.tbName.KeyPress += PressEnter;
             this.tbPrice.KeyPress += PressEnter;
-            this.tbUnit.KeyPress += PressEnter;
+            this.cbUnit.KeyPress += PressEnter;
             this.FormClosed += CloseForm;
             this.bCancel.Click += CancelClicked;
             this.tbPrice.KeyPress += ShowErrorWord;
@@ -92,8 +92,9 @@ namespace CoffeeShopManagement
 
                 if (newItem.name == item.name && !item.status)
                 {
-                    Data.DeleteData("MON", " WHERE MAMON = '" + item.id.ToString() + "'");
                     newItem.id.SetID(item.id.FindID("M"), "M", 3);
+                    Data.UpdateData("MON", "DVT = '" + newItem.unit + "', GIA = " + newItem.price +
+                        ", TINHTRANG = 1, SOLANPHUCVU = 0", " WHERE MAMON = '" + newItem.id.ToString() + "'");
                     Data.CloseConnection(ref connection);
                     return true;
                 }
@@ -112,6 +113,7 @@ namespace CoffeeShopManagement
                 newItem.id.SetID(int.Parse(lastID) + 1, "M", 3);
             }
 
+            Data.AddData("MON", newItem.GetInfo());
             Data.CloseConnection(ref connection);
             return true;
         }
@@ -125,13 +127,13 @@ namespace CoffeeShopManagement
         {
             try
             {
-                if (int.Parse(tbPrice.Text) <= 0 || this.tbName.Text == "" || this.tbUnit.Text == ""
+                if (int.Parse(tbPrice.Text) <= 0 || this.tbName.Text == "" || this.cbUnit.Text == ""
                     || this.pbImageItem.Image == null)
                 {
                     throw new Exception();
                 }
 
-                Item newItem = new Item("", tbName.Text, tbUnit.Text, 0, int.Parse(tbPrice.Text), 
+                Item newItem = new Item("", tbName.Text, cbUnit.Text, 0, int.Parse(tbPrice.Text),
                     true);
 
                 if (IsItem(ref newItem) == false)
@@ -139,15 +141,12 @@ namespace CoffeeShopManagement
                     IO.ExportError("Món này đã có trong danh sách");
                     return;
                 }
-                else
-                {
-                    Data.AddData("MON", newItem.GetInfo());
-                }
 
                 IO.ExportSuccess("Thêm món thành công");
                 this.parent.LoadForm();
-                this.parent.parent.LoadSomeThingPublic();
+                //this.parent.parent.LoadSomeThingPublic();
                 this.parent.Show();
+                this.parent.parent.LoadSomeThingPublic();
                 this.Close();
             }
             catch (Exception)

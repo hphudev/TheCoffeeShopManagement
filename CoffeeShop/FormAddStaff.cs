@@ -61,7 +61,7 @@ namespace CoffeeShopManagement
             this.tbUsername.KeyPress += PressEnter;
 
             this.cbSex.AutoCompleteCustomSource.AddRange(new string[] { "Nam", "Nữ" });
-            this.cbSex.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            //this.cbSex.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbSex.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbSex.Items.AddRange(new object[] { "Nam", "Nữ" });
         }
@@ -80,15 +80,15 @@ namespace CoffeeShopManagement
         private void ResetClicked(object sender, EventArgs e)
         {
             this.tbName.Text = "";
-            this.lCMND.Text = "";
+            this.tbCMND.Text = "";
             this.cbSex.Text = "";
-            this.tbSDT.Text = "";
             this.cbPosition.Text = " ";
-            this.tbAddress.Text = "";
-            this.lSalary.Text = "";
+            this.tbSDT.Text = "";
+            this.tbSalary.Text = "";
             this.tbPassword.Text = "";
             this.tbConfirm.Text = "";
             this.tbUsername.Text = "";
+            this.tbAddress.Text = "";
         }
 
         private void PressEnter(object sender, KeyPressEventArgs e)
@@ -96,7 +96,7 @@ namespace CoffeeShopManagement
             Event.PressEnter(sender, e, this);
         }
 
-        public bool IsStaff(ref Staff newStaff)
+        public int IsStaff(ref Staff newStaff)
         {
             SqlConnection connection = Data.OpenConnection();
             SqlDataReader reader = Data.ReadData("NHANVIEN NV, TAIKHOAN TK", connection, " WHERE " +
@@ -121,23 +121,53 @@ namespace CoffeeShopManagement
                 {
                     Data.CloseConnection(ref connection);
                     IO.ExportError("Tồn tại nhân viên có số cmnd này trong danh sách");
-                    return false;
+                    return 0;
                 }
 
                 if (newStaff.cmnd == staff.cmnd && !account.status)
                 {
-                    Data.DeleteData("TAIKHOAN", " WHERE ID = '" + staff.id.ToString() + "'");
-                    Data.DeleteData("NHANVIEN", " WHERE MANV = '" + staff.id.ToString() + "'");
-                    Data.CloseConnection(ref connection);
+                    if (this.tbConfirm.Text != this.tbPassword.Text)
+                    {
+                        IO.ExportError("Mật khẩu nhập lại không đúng");
+                        return 0;
+                    }
+
                     newStaff.id.SetID(staff.id.FindID("NV"), "NV", 2);
-                    return true;
+
+                    Account updatedAccount = new Account(newStaff.id.ToString(), this.tbUsername.Text,
+                        Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()),
+                        true);
+
+                    if (IsUsername(updatedAccount.username))
+                    {
+                        Data.UpdateData("NHANVIEN", "DCHI = N'" + newStaff.address + "', NGVL = '" +
+                            DateTime.Today.Year.ToString() + "/" + DateTime.Today.Month.ToString() +
+                            "/" + DateTime.Today.Day.ToString() + "', SDT = '" + newStaff.sdt +
+                            "', LUONG = " + newStaff.luong.ToString() + ", CHUCVU = N'" +
+                            newStaff.chucVu + "'", " WHERE MANV = '" + newStaff.id.ToString() + "'");
+                        Data.UpdateData("TAIKHOAN", "TENDN = '" + updatedAccount.username +
+                            "', MATKHAU = '" + updatedAccount.password + "', TINHTRANG = 1",
+                            " WHERE ID = '" + updatedAccount.id.ToString() + "'");
+                        IO.ExportSuccess("Thêm nhân viên thành công");
+                        this.parent.LoadForm();
+                        this.parent.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        IO.ExportError("Tên đăng nhập đã tồn tại");
+                        return 0;
+                    }
+
+                    Data.CloseConnection(ref connection);
+                    return -1;
                 }
 
                 if (newStaff.sdt == staff.sdt)
                 {
                     Data.CloseConnection(ref connection);
                     IO.ExportError("Tồn tại nhân viên có số điện thoại này trong danh sách");
-                    return false;
+                    return 0;
                 }
 
                 lastID = staff.id.FindID("NV").ToString();
@@ -155,7 +185,7 @@ namespace CoffeeShopManagement
             }
 
             Data.CloseConnection(ref connection);
-            return true;
+            return 1;
         }
 
         public bool IsUsername(string username)
@@ -202,7 +232,7 @@ namespace CoffeeShopManagement
                 return true;
             }
 
-            if ((int.Parse(this.tbSalary.Text)) < 0 || int.Parse(this.tbSDT.Text) < 0 || 
+            if ((int.Parse(this.tbSalary.Text)) < 0 || int.Parse(this.tbSDT.Text) < 0 ||
                 int.Parse(this.tbCMND.Text) < 0)
             {
                 IO.ExportError("Nhập số có giá trị nhỏ hơn 0");
@@ -232,12 +262,13 @@ namespace CoffeeShopManagement
                     this.cbSex.Text, DateTime.Today.Year.ToString() + "/" + DateTime.Today.Month.ToString() +
                     "/" + DateTime.Today.Day.ToString(), this.tbCMND.Text, this.cbPosition.Text,
                     int.Parse(this.tbSalary.Text));
+                int flag = IsStaff(ref newStaff);
 
-                if (IsStaff(ref newStaff) == false)
+                if (flag == 0)
                 {
                     return;
                 }
-                else
+                else if (flag == 1)
                 {
                     if (this.tbConfirm.Text != this.tbPassword.Text)
                     {
@@ -268,7 +299,6 @@ namespace CoffeeShopManagement
             {
                 IO.ExportError("Nội dung nhập không hợp lệ");
             }
-
         }
     }
 }

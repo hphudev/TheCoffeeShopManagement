@@ -65,7 +65,7 @@ namespace CoffeeShopManagement
         [Category("Custom Pro")]
         public int TimesChoice
         {
-            get { return TimesChoice; }
+            get { return times; }
             set
             {
                  times = value;
@@ -79,6 +79,7 @@ namespace CoffeeShopManagement
             {
                 this.parent.Choice = this;
                 this.parent.ItemsChoice.Add(this);
+                this.parent.ActionCheckOrder();
             }
         }
 
@@ -113,6 +114,7 @@ namespace CoffeeShopManagement
             {
                 this.parent.Choice = this;
                 this.parent.ItemsChoice.Add(this);
+                this.parent.ActionCheckOrder();
             }
         }
     }

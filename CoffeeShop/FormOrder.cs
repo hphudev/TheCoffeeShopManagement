@@ -211,6 +211,8 @@ namespace CoffeeShopManagement
                     if (table.ID == tmp.ID)
                     {
                         checkExists = true;
+                        IO.ExportWarning("Bàn đã tồn tại");
+                        break;
                         for (int i = 0; i < tmp.Orders.Count; i++)
                         {
                             bool checkExist = false;

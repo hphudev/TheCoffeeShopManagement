@@ -15,22 +15,38 @@ namespace CoffeeShopManagement
 {
     public partial class FormSell : System.Windows.Forms.Form
     {
+
+        class ListSortTimes : IComparer<ListItem>
+        {
+            int IComparer<ListItem>.Compare(ListItem x, ListItem y)
+            {
+                return y.TimesChoice.CompareTo(x.TimesChoice);
+            }
+        }
+
+        class ListSortID : IComparer<ListItem>
+        {
+            int IComparer<ListItem>.Compare(ListItem x, ListItem y)
+            {
+                return x.ID.CompareTo(y.ID);
+            }
+        }
+
         public Customer cus = new Customer("NULL","","","","","","","");
         public List<ListOrder> Orders = new List<ListOrder>();
         public List<ListItem> ItemsChoice = new List<ListItem>();
         public List<ListItem> Items = new List<ListItem>();
         public List<Table> Tables = new List<Table>();
 
-        bool bHienThi = true;
-        bool bThongBao = true;
-        bool bTaiKhoan = true;
+        bool bHienThi = false;
+        bool bThongBao = false;
+        bool bTaiKhoan = false;
         bool statusOrder = true;
-        int SumOrders;
+        public int SumOrders;
         public Table TableChoice = null;
         public ListItem Choice = null;
         public FormLogin parent;
-        private Timer CheckOrder;
-        private Timer CheckTable;
+        public Timer CheckOrderSum;
         private Timer CheckFind;
 
         public FormSell(FormLogin parent)
@@ -39,36 +55,44 @@ namespace CoffeeShopManagement
             DoubleBuffered = true;
             this.parent = parent;
             this.WindowState = FormWindowState.Maximized;
-            CheckOrder = new Timer();
-            CheckOrder.Interval = 1;
-            CheckOrder.Tick += (s, e) =>
-            {
-                ActionCheckOrder();
-            };
-            CheckTable = new Timer();
-            CheckTable.Interval = 1;
-            CheckTable.Tick += (s, e) =>
-            {
-                ActionCheckTableChoice();
-            };
-            CheckTable.Start();
-            CheckFind = new Timer();
-            CheckFind.Interval = 2;
-            CheckFind.Tick += (s, e) =>
-            {
-                ActionCheackFind();
-            };
-            LoadDanhSachMonPhoBien();
+            this.InitMenu();
+            this.Init_btThongBao();
+            this.Init_btTaiKhoan();
+            this.InitDanhSachMon();
+            this.InitCheckOrderSum();
+            this.InitCheckFind();
             LoadSomeThingPublic();
-            CheckOrder.Start();
             //MessageBox.Show(this.parent.account.id.id);
             this.bInfoAccount.Click += InfoAccountClicked;
             this.bMenuStaff.Click += MenuStaffClicked;
         }
 
+        // Khai báo tính tổng Orders tự động
+        private void InitCheckOrderSum()
+        {
+            CheckOrderSum = new Timer();
+            CheckOrderSum.Interval = 100;
+            CheckOrderSum.Tick += (s, e) =>
+            {
+                ActionCheckOrderSum();
+            };
+
+        }
+        // Khai báo tìm kiếm món tự động
+        private void InitCheckFind()
+        {
+            CheckFind = new Timer();
+            CheckFind.Interval = 100;
+            CheckFind.Tick += (s, e) =>
+            {
+                ActionCheackFind();
+            };
+            CheckFind.Stop();
+        }
+
         private void ActionCheackFind()
         {
-            CheckFind.Stop();
+            //CheckFind.Stop();
             if (cbTimKiem.Text == "")
             {
                 flpDanhSachMon.Controls.Clear();
@@ -90,11 +114,87 @@ namespace CoffeeShopManagement
             }
         }
 
+        #region Giao diện
+        private void InitMenu()
+        {
+            this.bHienThi = false;
+            CLoseMenu(this, new EventArgs());
+            this.btMenu.MouseDown += (s, e) =>
+            {
+                if (!bHienThi)
+                    OpenMenu(s, e);
+                else
+                    CLoseMenu(s, e);
+            };
+        }
+
+        private void OpenMenu(object s, EventArgs e)
+        {
+            this.bHienThi = true;
+            this.pnLotMenu.Visible = true;
+        }
+
+        private void CLoseMenu(object s, EventArgs e)
+        {
+            this.bHienThi = false;
+            this.pnLotThongBao.Visible = false;
+            this.pnLotTaiKhoan.Visible = false;
+            this.pnLotMenu.Visible = false;
+        }
+
+        private void Init_btThongBao()
+        {
+            this.btThongBao.MouseDown += btThongBaoMouseDown;
+        }
+
+        private void btThongBaoMouseDown(object s, MouseEventArgs e)
+        {
+            HideMenuRemain();
+            if (bThongBao)
+            {
+                bThongBao = false;
+                this.pnLotThongBao.Visible = false;
+            }
+            else
+            {
+                bThongBao = true;
+                this.pnLotThongBao.Visible = true;
+            }
+        }
+
+        private void Init_btTaiKhoan()
+        {
+            this.btTaiKhoan.MouseDown += btTaiKhoanMouseDown;
+        }
+
+        private void btTaiKhoanMouseDown(object s, MouseEventArgs e)
+        {
+            HideMenuRemain();
+            if (bTaiKhoan)
+            {
+                bTaiKhoan = this.pnLotTaiKhoan.Visible = false;
+            }
+            else
+                bTaiKhoan = this.pnLotTaiKhoan.Visible = true;
+        }
+
+        private void HideMenuRemain()
+        {
+            if (bTaiKhoan)
+            {
+                bTaiKhoan = this.pnLotTaiKhoan.Visible = false;
+            }
+            if (bThongBao)
+            {
+                bThongBao = this.pnLotThongBao.Visible = false;
+            }
+        }
+        #endregion
+
         private void ActionCheckTableChoice()
         {
             if (TableChoice != null)
             {
-                CheckTable.Stop();
                 FormOrder OrderTable = new FormOrder(this);
                 OrderTable.BangKhoa.Hide();
                 OrderTable.Hide();
@@ -102,24 +202,23 @@ namespace CoffeeShopManagement
                 OrderTable.BtThanhToan_Click(OrderTable, new EventArgs());
                 this.TableChoice = null;
                 OrderTable.Close();
-                CheckTable.Start();
             }
         }
 
-        private void LoadDanhSachMonPhoBien()
+       
+        private void InitDanhSachMon()
         {
             Items.Clear();
             cbTimKiem.Items.Clear();
+            this.flpDanhSachMon.Controls.Clear();
             SqlConnection connection = Data.OpenConnection();
-            SqlDataReader Reader = Data.ReadData("MON", connection, "" +
-                "WHERE TINHTRANG = 1" +
-                " ORDER BY SOLANPHUCVU DESC", " * ");
-            while (Reader.HasRows)
+            SqlDataReader reader = Data.ReadData(" MON ", connection, " where TINHTRANG = 1 ", " * ");
+            while (reader.HasRows)
             {
-                if (Reader.Read() == false)
+                if (!reader.Read())
                     break;
                 ListItem item = new ListItem(this);
-                item.ID = Reader.GetString(0);
+                item.ID = reader.GetString(0);
                 if (System.IO.File.Exists($"./ImageItem/{ item.ID}.jpg"))
                 {
                     using (var bitmap = new Bitmap($"./ImageItem/{item.ID}.jpg"))
@@ -127,51 +226,50 @@ namespace CoffeeShopManagement
                         item.Image = new Bitmap(bitmap);
                     }
                 }
-                item.Title = Reader.GetString(1);
-                item.Cost = Reader.GetInt32(4);
+                item.Title = reader.GetString(1);
+                item.Cost = reader.GetInt32(4);
+                item.TimesChoice = reader.GetInt32(3);
                 this.flpDanhSachMon.Controls.Add(item);
                 Items.Add(item);
                 cbTimKiem.Items.Add(item.Title);
             }
-            Data.CloseConnection(ref connection);
+        }
+
+        private void SapXepDanhSachTheoID()
+        {
+            ListSortID sort = new ListSortID();
+            Items.Sort(sort);
+        }
+
+        private void SapXepDanhSachTheoTimes()
+        {
+            ListSortTimes sort = new ListSortTimes();
+            Items.Sort(sort);
         }
 
         public void LoadSomeThingPublic()
         {
             cus = new Customer("NULL", "", "", "", "", "", "", "");
             string count = (Data.Calculate("COUNT", " * ", "HOADON", "") + 1).ToString();
-            lbID_HoaDon.Text =  "HD" + count.PadLeft(6 - count.Length, '0');
-            Orders.Clear();
-            ItemsChoice.Clear();
-            flpOrder.Controls.Clear();
-            flpDanhSachMon.Controls.Clear();
-            LoadDanhSachMonPhoBien();
+            lbID_HoaDon.Text = "HD" + count.PadLeft(6 - count.Length, '0');
+            this.Orders.Clear();
+            this.InitDanhSachMon();
+            this.ItemsChoice.Clear();
+            this.flpOrder.Controls.Clear();
+            this.flpDanhSachMon.Controls.Clear();
+            LoadDanhSachMon();
         }
 
         private void LoadDanhSachMon()
         {
-            Items.Clear();
-            SqlConnection connection = Data.OpenConnection();
-            SqlDataReader Reader = Data.ReadData("MON", connection, "", " * ");
-            while (Reader.HasRows)
+            flpDanhSachMon.Controls.Clear();
+            foreach (var item in Items)
             {
-                if (Reader.Read() == false)
-                    break;
-                ListItem item = new ListItem(this);
-                item.ID = Reader.GetString(0);
-                if (System.IO.File.Exists($"./ImageItem/{ item.ID}.jpg"))
-                {
-                    item.Image = Image.FromFile($"./ImageItem/{item.ID}.jpg");
-                }
-                item.Title = Reader.GetString(1);
-                item.Cost = Reader.GetInt32(4);
-                this.flpDanhSachMon.Controls.Add(item);
-                Items.Add(item);
+                flpDanhSachMon.Controls.Add(item);
             }
-            Data.CloseConnection(ref connection);
         }
 
-        private void ActionCheckOrder()
+        public void ActionCheckOrder()
         {
             if (Choice != null)
             {
@@ -184,9 +282,14 @@ namespace CoffeeShopManagement
                 Orders.Add(order);
                 if (statusOrder)
                     this.flpOrder.Controls.Add(order);
+                CheckOrderSum.Start();
             }
             else
                 Choice = null;
+        }
+
+        public void ActionCheckOrderSum()
+        {
             SumOrders = 0;
             for (int i = 0; i < this.Orders.Count; i++)
             {
@@ -194,133 +297,16 @@ namespace CoffeeShopManagement
                 SumOrders += Orders[i].TongTien;
             }
             btOrder.Text = Utility.StringToMoney(SumOrders.ToString());
-        }
-
-        private void btHienThi_Click(object sender, EventArgs e)
-        {
-            if (bHienThi)
-            {
-                if (bThongBao)
-                {
-                    btThongBao_Click(sender, e);
-                }
-                if (bTaiKhoan)
-                {
-                    btTaiKhoan_Click(sender, e);
-                }
-                this.pnThanhChon.Height = 40;
-                while (pnThanhChon.Height > 5)
-                {
-                    //Thread.Sleep(1);
-                    this.pnThanhChon.Height -= 5;
-                }
-                this.pnThanhChon.Visible = false;
-                bHienThi = false;
-                btHienThi.ButtonImage = Image.FromFile("./Resources/Expand.png");
-                btHienThi.ButtonText = "Hiển thị menu";
-            }
+            if (SumOrders > 0)
+                btOrder.FillColor = Color.Red;
             else
-            {
-                this.pnThanhChon.Visible = true;
-                while (pnThanhChon.Height < 40)
-                {
-                    //Thread.Sleep(1);
-                    this.pnThanhChon.Height += 10;
-                }
-                bHienThi = true;
-                btHienThi.ButtonImage = Image.FromFile("./Resources/Collapse.png");
-                btHienThi.ButtonText = "Ẩn menu";
-            }
-        }
-
-        private void FormBanHang_Load(object sender, EventArgs e)
-        {
-            if (bHienThi)
-                btHienThi_Click(sender, e);
-            if (bThongBao)
-                btThongBao_Click(sender, e);
-            if (bTaiKhoan)
-                btTaiKhoan_Click(sender, e);
-        }
-
-        private void btThongBao_Click(object sender, EventArgs e)
-        {
-            if (bThongBao)
-            {
-                while (pnThongBao.Height > 5)
-                {
-                    //Thread.Sleep(1);
-                    pnThongBao.Height -= 5;
-                }
-                pnThongBao.Visible = false;
-                bThongBao = false;
-            }
-            else
-            {
-                AnHetCacButtonMenu();
-                pnThongBao.Visible = true;
-                while (pnThongBao.Height < 38)
-                {
-                    //Thread.Sleep(1);
-                    pnThongBao.Height += 5;
-                }
-                bThongBao = true;
-            }
-        }
-
-        private void btTaiKhoan_Click(object sender, EventArgs e)
-        {
-            if (bTaiKhoan)
-            {
-                while (pnTaiKhoan.Height > 5)
-                {
-                    //Thread.Sleep(1);
-                    pnTaiKhoan.Height -= 5;
-                }
-                pnTaiKhoan.Visible = false;
-                bTaiKhoan = false;
-            }
-            else
-            {
-                AnHetCacButtonMenu();
-                pnTaiKhoan.Visible = true;
-                while (pnTaiKhoan.Height < 38)
-                {
-                    //Thread.Sleep(1);
-                    pnTaiKhoan.Height += 5;
-                }
-                bTaiKhoan = true;
-            }
-        }
-
-        private void AnHetCacButtonMenu()
-        {
-            // Button Thông báo
-            //
-            while (pnThongBao.Height > 5)
-            {
-                //Thread.Sleep(1);
-                pnThongBao.Height -= 5;
-            }
-            pnThongBao.Visible = false;
-            bThongBao = false;
-            //
-            //Button Tài khoản
-            while (pnTaiKhoan.Height > 5)
-            {
-                //Thread.Sleep(1);
-                pnTaiKhoan.Height -= 5;
-            }
-            pnTaiKhoan.Visible = false;
-            bTaiKhoan = false;
-            //
-            //
+                btOrder.FillColor = Color.DimGray;
         }
 
 
         private void btOrder_Click(object sender, EventArgs e)
         {
-            if (btOrder.Text == "0" )
+            if (btOrder.Text == "0")
             {
                 IO.ExportWarning("Danh sách món trống!");
                 return;
@@ -330,7 +316,7 @@ namespace CoffeeShopManagement
 
         private void btDanhSachBan_Click(object sender, EventArgs e)
         {
-            new FormDanhSachBan(this);
+            new FormDanhSachBan(this).Show();
         }
 
         private void btThongTinKhachHang_Click(object sender, EventArgs e)
@@ -341,6 +327,7 @@ namespace CoffeeShopManagement
         private void FormBanHang_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.parent.Show();
+            this.parent.LoadFormLogin();
         }
 
         private void MenuStaffClicked(object sender, EventArgs e)
@@ -351,7 +338,7 @@ namespace CoffeeShopManagement
                 return;
             }
 
-            new FormMenuStaff(this) ;
+            new FormMenuStaff(this);
         }
 
         private void InfoAccountClicked(object sender, EventArgs e)
@@ -367,77 +354,13 @@ namespace CoffeeShopManagement
             this.Close();
         }
 
-        private void BtKhachHang_Click(object sender, EventArgs e)
-        {
-            AnHetCacButtonMenu();
-            new FormChinhSuaKhachHang().Show();
-        }
-
-        private void BtDaOrder_Click(object sender, EventArgs e)
-        {
-            this.btDangOrder.ForeColor = Color.Black;
-            this.btDaOrder.ForeColor = Color.Aqua;
-            statusOrder = false;
-            this.flpOrder.Controls.Clear();
-        }
-
-        private void BtDangOrder_Click(object sender, EventArgs e)
-        {
-            this.btDaOrder.ForeColor = Color.Black;
-            this.btDangOrder.ForeColor = Color.Aqua;
-            statusOrder = true;
-            this.flpOrder.Controls.Clear();
-            SumOrders = 0;
-            for (int i = 0; i < this.Orders.Count; i++)
-            {
-                this.flpOrder.Controls.Add(Orders[i]);
-                SumOrders += Orders[i].TongTien;
-            }
-            btOrder.Text = Utility.StringToMoney(SumOrders.ToString());
-        }
-
-        private void BtThucDon_Click(object sender, EventArgs e)
-        {
-            if(!this.parent.account.IsAdmin())
-            {
-                IO.ExportWarning("Bạn không được cấp quyền tính năng này!");
-                return;
-            }
-            AnHetCacButtonMenu();
-            new FormMenuItem(this);
-        }
-
-        private void BtThongKe_Click(object sender, EventArgs e)
-        {
-            if (!this.parent.account.IsAdmin())
-            {
-                IO.ExportWarning("Bạn không được cấp quyền tính năng này!");
-                return;
-            }
-
-            AnHetCacButtonMenu();
-            (new FormStatistic(this)).Show();
-            //this.Hide();
-        }
-
-        private void BtMonPhoBien_Click(object sender, EventArgs e)
-        {
-            this.flpDanhSachMon.Controls.Clear();
-            LoadDanhSachMonPhoBien();
-        }
-
-        private void BtThucUong_Click(object sender, EventArgs e)
-        {
-            this.flpDanhSachMon.Controls.Clear();
-            LoadDanhSachMon();
-        }
 
         private void BtHuyNoiDungTimKiem_Click(object sender, EventArgs e)
         {
             cbTimKiem.Text = "";
         }
 
-        private void BtTimKiem_Click(object sender, EventArgs e)
+        private void BtThemMon_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < Items.Count; i++)
                 if (cbTimKiem.Text == Items[i].Title)
@@ -446,6 +369,7 @@ namespace CoffeeShopManagement
                     {
                         Choice = Items[i];
                         ItemsChoice.Add(Items[i]);
+                        ActionCheckOrder();
                         IO.ExportSuccess("Đã thêm món thành công!");
                         cbTimKiem.Text = "";
                         return;
@@ -477,6 +401,55 @@ namespace CoffeeShopManagement
         private void CbTimKiem_MouseLeave(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtKhachHang_Click(object sender, EventArgs e)
+        {
+            HideMenuRemain();
+            new FormChinhSuaKhachHang().Show();
+        }
+
+        private void BtThucDon_Click(object sender, EventArgs e)
+        {
+            HideMenuRemain();
+            if (!this.parent.account.IsAdmin())
+            {
+                IO.ExportWarning("Bạn không được cấp quyền tính năng này!");
+                return;
+            }
+            new FormMenuItem(this);
+        }
+
+        private void BtThongTInKhachHang_Click(object sender, EventArgs e)
+        {
+            HideMenuRemain();
+        }
+
+        private void BtThongKe_Click(object sender, EventArgs e)
+        {
+            HideMenuRemain();
+            if (!this.parent.account.IsAdmin())
+            {
+                IO.ExportWarning("Bạn không được cấp quyền tính năng này!");
+                return;
+            }
+            (new FormStatistic(this)).Show();
+        }
+
+        private void BtMonPhoBien_CheckedChanged(object sender, EventArgs e)
+        {
+            if (btMonPhoBien.Checked == false)
+            {
+                SapXepDanhSachTheoID();
+                if (cbTimKiem.Text == "")
+                    LoadDanhSachMon();
+            }
+            else
+            {
+                SapXepDanhSachTheoTimes();
+                if (cbTimKiem.Text == "")
+                    LoadDanhSachMon();
+            }
         }
     }
 }

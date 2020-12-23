@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTienKhachDua));
             this.lbNhanKhachHang = new System.Windows.Forms.Label();
             this.tbManHinh = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btThoat = new ns1.BunifuThinButton2();
             this.btXacNhan = new ns1.BunifuThinButton2();
             this.bt0 = new ns1.BunifuThinButton2();
@@ -48,26 +50,28 @@
             this.bt7 = new ns1.BunifuThinButton2();
             this.btCE = new ns1.BunifuThinButton2();
             this.btAC = new ns1.BunifuThinButton2();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbNhanKhachHang
             // 
-            this.lbNhanKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbNhanKhachHang.BackColor = System.Drawing.Color.LightSeaGreen;
             this.lbNhanKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbNhanKhachHang.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNhanKhachHang.ForeColor = System.Drawing.Color.White;
             this.lbNhanKhachHang.Location = new System.Drawing.Point(0, 0);
             this.lbNhanKhachHang.Name = "lbNhanKhachHang";
-            this.lbNhanKhachHang.Size = new System.Drawing.Size(673, 69);
+            this.lbNhanKhachHang.Size = new System.Drawing.Size(673, 78);
             this.lbNhanKhachHang.TabIndex = 1;
             this.lbNhanKhachHang.Text = "TIỀN KHÁCH ĐƯA";
             this.lbNhanKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tbManHinh
             // 
-            this.tbManHinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.tbManHinh.BackColor = System.Drawing.Color.SeaShell;
             this.tbManHinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbManHinh.Font = new System.Drawing.Font("Segoe UI", 44F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbManHinh.Location = new System.Drawing.Point(0, 0);
@@ -82,14 +86,15 @@
             // 
             this.panel1.Controls.Add(this.tbManHinh);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 69);
+            this.panel1.Location = new System.Drawing.Point(0, 78);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(673, 108);
             this.panel1.TabIndex = 4;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btThoat);
             this.panel2.Controls.Add(this.btXacNhan);
             this.panel2.Controls.Add(this.bt0);
@@ -106,10 +111,21 @@
             this.panel2.Controls.Add(this.btCE);
             this.panel2.Controls.Add(this.btAC);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 177);
+            this.panel2.Location = new System.Drawing.Point(0, 186);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(673, 507);
+            this.panel2.Size = new System.Drawing.Size(673, 498);
             this.panel2.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::CoffeeShopManagement.Properties.Resources.Dolar;
+            this.pictureBox1.Location = new System.Drawing.Point(384, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(244, 91);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // btThoat
             // 
@@ -118,7 +134,7 @@
             this.btThoat.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btThoat.ActiveForecolor = System.Drawing.Color.White;
             this.btThoat.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btThoat.BackColor = System.Drawing.Color.White;
+            this.btThoat.BackColor = System.Drawing.Color.DarkGray;
             this.btThoat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btThoat.BackgroundImage")));
             this.btThoat.ButtonText = "THOÁT";
             this.btThoat.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -144,7 +160,7 @@
             this.btXacNhan.ActiveFillColor = System.Drawing.Color.ForestGreen;
             this.btXacNhan.ActiveForecolor = System.Drawing.Color.White;
             this.btXacNhan.ActiveLineColor = System.Drawing.Color.ForestGreen;
-            this.btXacNhan.BackColor = System.Drawing.Color.White;
+            this.btXacNhan.BackColor = System.Drawing.Color.DarkGray;
             this.btXacNhan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btXacNhan.BackgroundImage")));
             this.btXacNhan.ButtonText = "XÁC NHẬN";
             this.btXacNhan.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -170,7 +186,7 @@
             this.bt0.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bt0.ActiveForecolor = System.Drawing.Color.White;
             this.bt0.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt0.BackColor = System.Drawing.Color.White;
+            this.bt0.BackColor = System.Drawing.Color.DarkGray;
             this.bt0.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt0.BackgroundImage")));
             this.bt0.ButtonText = "0";
             this.bt0.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -196,7 +212,7 @@
             this.bt00.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bt00.ActiveForecolor = System.Drawing.Color.White;
             this.bt00.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt00.BackColor = System.Drawing.Color.White;
+            this.bt00.BackColor = System.Drawing.Color.DarkGray;
             this.bt00.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt00.BackgroundImage")));
             this.bt00.ButtonText = "00";
             this.bt00.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -222,7 +238,7 @@
             this.bt3.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bt3.ActiveForecolor = System.Drawing.Color.White;
             this.bt3.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt3.BackColor = System.Drawing.Color.White;
+            this.bt3.BackColor = System.Drawing.Color.DarkGray;
             this.bt3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt3.BackgroundImage")));
             this.bt3.ButtonText = "3";
             this.bt3.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -248,7 +264,7 @@
             this.bt6.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bt6.ActiveForecolor = System.Drawing.Color.White;
             this.bt6.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt6.BackColor = System.Drawing.Color.White;
+            this.bt6.BackColor = System.Drawing.Color.DarkGray;
             this.bt6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt6.BackgroundImage")));
             this.bt6.ButtonText = "6";
             this.bt6.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -274,7 +290,7 @@
             this.bt9.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bt9.ActiveForecolor = System.Drawing.Color.White;
             this.bt9.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt9.BackColor = System.Drawing.Color.White;
+            this.bt9.BackColor = System.Drawing.Color.DarkGray;
             this.bt9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt9.BackgroundImage")));
             this.bt9.ButtonText = "9";
             this.bt9.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -300,7 +316,7 @@
             this.bt2.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bt2.ActiveForecolor = System.Drawing.Color.White;
             this.bt2.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt2.BackColor = System.Drawing.Color.White;
+            this.bt2.BackColor = System.Drawing.Color.DarkGray;
             this.bt2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt2.BackgroundImage")));
             this.bt2.ButtonText = "2";
             this.bt2.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -326,7 +342,7 @@
             this.bt5.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bt5.ActiveForecolor = System.Drawing.Color.White;
             this.bt5.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt5.BackColor = System.Drawing.Color.White;
+            this.bt5.BackColor = System.Drawing.Color.DarkGray;
             this.bt5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt5.BackgroundImage")));
             this.bt5.ButtonText = "5";
             this.bt5.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -352,7 +368,7 @@
             this.bt8.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bt8.ActiveForecolor = System.Drawing.Color.White;
             this.bt8.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt8.BackColor = System.Drawing.Color.White;
+            this.bt8.BackColor = System.Drawing.Color.DarkGray;
             this.bt8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt8.BackgroundImage")));
             this.bt8.ButtonText = "8";
             this.bt8.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -378,7 +394,7 @@
             this.bt1.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bt1.ActiveForecolor = System.Drawing.Color.White;
             this.bt1.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt1.BackColor = System.Drawing.Color.White;
+            this.bt1.BackColor = System.Drawing.Color.DarkGray;
             this.bt1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt1.BackgroundImage")));
             this.bt1.ButtonText = "1";
             this.bt1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -404,7 +420,7 @@
             this.bt4.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bt4.ActiveForecolor = System.Drawing.Color.White;
             this.bt4.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt4.BackColor = System.Drawing.Color.White;
+            this.bt4.BackColor = System.Drawing.Color.DarkGray;
             this.bt4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt4.BackgroundImage")));
             this.bt4.ButtonText = "4";
             this.bt4.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -430,7 +446,7 @@
             this.bt7.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bt7.ActiveForecolor = System.Drawing.Color.White;
             this.bt7.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt7.BackColor = System.Drawing.Color.White;
+            this.bt7.BackColor = System.Drawing.Color.DarkGray;
             this.bt7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt7.BackgroundImage")));
             this.bt7.ButtonText = "7";
             this.bt7.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -456,7 +472,7 @@
             this.btCE.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btCE.ActiveForecolor = System.Drawing.Color.White;
             this.btCE.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btCE.BackColor = System.Drawing.Color.White;
+            this.btCE.BackColor = System.Drawing.Color.DarkGray;
             this.btCE.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btCE.BackgroundImage")));
             this.btCE.ButtonText = "CE";
             this.btCE.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -482,7 +498,7 @@
             this.btAC.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btAC.ActiveForecolor = System.Drawing.Color.White;
             this.btAC.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btAC.BackColor = System.Drawing.Color.White;
+            this.btAC.BackColor = System.Drawing.Color.DarkGray;
             this.btAC.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btAC.BackgroundImage")));
             this.btAC.ButtonText = "AC";
             this.btAC.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -501,6 +517,11 @@
             this.btAC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btAC.MouseDown += new System.EventHandler(this.BtAC_MouseDown);
             // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 25;
+            this.guna2Elipse1.TargetControl = this;
+            // 
             // FormTienKhachDua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -517,6 +538,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -542,5 +564,7 @@
         private ns1.BunifuThinButton2 bt0;
         private ns1.BunifuThinButton2 bt00;
         private ns1.BunifuThinButton2 btThoat;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
