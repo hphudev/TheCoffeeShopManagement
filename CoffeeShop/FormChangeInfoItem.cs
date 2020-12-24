@@ -18,42 +18,56 @@ namespace CoffeeShopManagement
 
         public void Autofill()
         {
-            Item selectedItem;
-            this.parent.GetSelectedInfo(out selectedItem);
-            this.tbName.Text = selectedItem.name;
-            this.tbPrice.Text = selectedItem.price.ToString();
-            this.tbUnit.Text = selectedItem.unit;
-            this.lID.Text = selectedItem.id.ToString();
-            this.pbImageItem.Image = selectedItem.image;
+            try
+            {
+                Item selectedItem;
+                this.parent.GetSelectedInfo(out selectedItem);
+                this.tbName.Text = selectedItem.name;
+                this.tbPrice.Text = selectedItem.price.ToString();
+                this.tbUnit.Text = selectedItem.unit;
+                this.lID.Text = selectedItem.id.ToString();
+                this.pbImageItem.Image = selectedItem.image;
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 33 Form Change Info Item)");
+            }
         }
 
         public FormChangeInfoItem(FormMenuItem parent)
         {
-            InitializeComponent();
-            this.parent = parent;
-            this.lockForm = new FormLock(this);
-            this.lockForm.Show();
-            Autofill();
-            this.tbName.Enabled = false;
+            try
+            {
+                InitializeComponent();
+                this.parent = parent;
+                this.lockForm = new FormLock(this);
+                Event.ShowForm(this.lockForm);
+                Autofill();
+                this.tbName.Enabled = false;
 
-            this.tbPrice.KeyPress += PressEnter;
-            this.tbUnit.KeyPress += PressEnter;
-            this.bCancel.Click += CancelClicked;
-            this.bOK.Click += OKClicked;
-            this.FormClosed += CloseForm;
-            this.tbPrice.KeyPress += ShowErrorWord;
-            this.bAddImage.Click += AddImageClicked;
+                this.tbPrice.KeyPress += PressEnter;
+                this.tbUnit.KeyPress += PressEnter;
+                this.bCancel.Click += CancelClicked;
+                this.bOK.Click += OKClicked;
+                this.FormClosed += CloseForm;
+                this.bAddImage.Click += AddImageClicked;
+                this.tbPrice.KeyPress += IO.LockWord;
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 58 Form Change Info Item)");
+            }
         }
 
         private void CancelClicked(object sender, EventArgs e)
         {
-            this.Close();
+            Event.CloseForm(this);
         }
 
         private void CloseForm(object sender, FormClosedEventArgs e)
         {
-            this.lockForm.Close();
-            this.parent.Show();
+            Event.ShowForm(this.parent);
+            Event.CloseForm(this.lockForm);
         }
 
         private void PressEnter(object sender, KeyPressEventArgs e)
@@ -61,18 +75,14 @@ namespace CoffeeShopManagement
             Event.PressEnter(sender, e, this);
         }
 
-        private void ShowErrorWord(object sender, KeyPressEventArgs e)
-        {
-            Event.ShowErrorWord(this.tbPrice, this.epShowError, e);
-        }
-
         private void OKClicked(object sender, EventArgs e)
         {
             try
             {
-                if (int.Parse(tbPrice.Text) <= 0 || tbUnit.Text == "")
+                if (tbPrice.Text == "" || tbUnit.Text == "")
                 {
-                    throw new Exception();
+                    IO.ExportError("Phải nhập đầy đủ thông tin tất cả các trường");
+                    return;
                 }
 
                 Item selectedItem;
@@ -83,43 +93,28 @@ namespace CoffeeShopManagement
                 Data.UpdateData("MON", "DVT = '" + updatedItem.unit + "', GIA = '" +
                     updatedItem.price + "'", " WHERE MAMON = '" + selectedItem.id.ToString() + "'");
                 IO.ExportSuccess("Sửa món thành công");
-                this.parent.LoadForm();
-                this.parent.parent.LoadSomeThingPublic();
-                this.Close();
+                this.parent.ClearMenu();
+                this.parent.LoadMenu();
+                Event.CloseForm(this);
             }
             catch (Exception)
             {
-                IO.ExportError("Nội dung nhập không hợp lệ");
+                IO.ExportError("Lỗi không xác định\n(Line 102 Form Change Info Item)");
             }
         }
 
         private void AddImageClicked(object sender, EventArgs e)
         {
-            OpenFileDialog openFileImage = new OpenFileDialog();
-            DialogResult dialog = openFileImage.ShowDialog();
-            Item selectedItem;
-            this.parent.GetSelectedInfo(out selectedItem);
-
-            if (dialog != DialogResult.Cancel)
+            try
             {
-                FileInfo file = new FileInfo(openFileImage.FileName);
-
-                if (file.Extension == ".jpg" || file.Extension == ".png")
-                {
-                    pbImageItem.Image = Image.FromFile(openFileImage.FileName);
-                    File.Copy(openFileImage.FileName, "./ImageItem/" + selectedItem.id.ToString() +
-                        ".jpg", true);
-                }
-                else
-                {
-                    IO.ExportError("Chỉ hỗ trợ file .jpg và .png");
-                }
+                Item selectedItem;
+                this.parent.GetSelectedInfo(out selectedItem);
+                Event.AddImage(ref this.pbImageItem, "./ImageItem/", selectedItem.id.ToString());
             }
-        }
-
-        private void TbPrice_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 116 Form Change Info Item)");
+            }
         }
     }
 }

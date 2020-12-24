@@ -16,64 +16,99 @@ namespace CoffeeShopManagement
             this.id = id;
         }
 
-        public int FindID(string code)
+        public static ID FindNewID(string table, string condition, string column, string code,
+            int lengthOfNumber)
         {
-            char[] cCode = code.ToCharArray();
-            string[] result = id.Split(cCode);
-            return int.Parse(result[result.Length - 1]);
-        }
-
-        public void SetID(int id, string code, int iAmountNumber)
-        {
-            this.id = code;
-
-            for (int i = 0; i < iAmountNumber - (id / 10 + 1); i++)
+            try
             {
-                this.id += "0";
+                ID lastID = ID.GetLastID(table, condition, column);
+
+                if (lastID != null)
+                {
+                    lastID.SetID((lastID.FindID(code) + 1), code, lengthOfNumber);
+                }
+                else
+                {
+                    lastID.SetID(1, code, lengthOfNumber);
+                }
+
+                return lastID;
             }
-
-            this.id += id.ToString();
-        }
-
-        public override string ToString()
-        {
-            return this.id;
-        }
-
-        public static ID GetLastIDStaff()
-        {
-            SqlConnection connection = Data.OpenConnection();
-            SqlDataReader reader = Data.ReadData("NHANVIEN", connection, " ORDER BY MANV DESC",
-                "TOP 1 *");
-            if (reader.Read())
+            catch (Exception)
             {
-                Staff lastStaff = new Staff(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                        reader.GetString(4), reader.GetString(6),
-                        (reader.GetDateTime(3).ToString().Split(' '))[0], reader.GetString(5),
-                        reader.GetString(8), reader.GetInt32(7));
-                Data.CloseConnection(ref connection);
-                return lastStaff.id;
-            }
-            else
-            {
+                IO.ExportError("Lỗi không xác định\n(Line 39 Class ID)");
                 return null;
             }
         }
 
-        public static ID GetLastIDItem()
+        public static ID GetLastID(string table, string condition, string column)
         {
-            SqlConnection connection = Data.OpenConnection();
-            SqlDataReader reader = Data.ReadData("MON", connection, " ORDER BY MAMON DESC",
-                "TOP 1 *");
-            if (reader.Read())
+            try
             {
-                Item item = new Item(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                    reader.GetInt32(3), reader.GetInt32(4), reader.GetBoolean(5));
-                Data.CloseConnection(ref connection);
-                return item.id;
+                SqlConnection connection = Data.OpenConnection();
+                SqlDataReader reader = Data.ReadData(table, connection, condition, "TOP 1 " + column);
+
+                if (reader.Read())
+                {
+                    ID id = new ID(reader.GetString(0));
+                    Data.CloseConnection(ref connection);
+                    return id;
+                }
+                else
+                {
+                    return null;
+                }
             }
-            else
+            catch (Exception)
             {
+                IO.ExportError("Lỗi không xác định\n(Line 64 Class ID)");
+                return null;
+            }
+        }
+
+        public int FindID(string code)
+        {
+            try
+            {
+                char[] cCode = code.ToCharArray();
+                string[] result = id.Split(cCode);
+                return int.Parse(result[result.Length - 1]);
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 79 Class ID)");
+                return -1;
+            }
+        }
+
+        public void SetID(int id, string code, int iAmountNumber)
+        {
+            try
+            {
+                this.id = code;
+
+                for (int i = 0; i < iAmountNumber - (id / 10 + 1); i++)
+                {
+                    this.id += "0";
+                }
+
+                this.id += id.ToString();
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 99 Class ID)");
+            }
+        }
+
+        public override string ToString()
+        {
+            try
+            {
+                return this.id;
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 111 Class ID)");
                 return null;
             }
         }

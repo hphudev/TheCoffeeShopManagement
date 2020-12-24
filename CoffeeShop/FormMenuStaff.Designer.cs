@@ -38,11 +38,13 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.cbFind = new System.Windows.Forms.ComboBox();
             this.pTieuDe = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.bCancel = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label2 = new System.Windows.Forms.Label();
             this.pCheck = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.bPrint = new Guna.UI2.WinForms.Guna2ImageButton();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvMenu = new System.Windows.Forms.DataGridView();
             this.dgvtbcID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,8 +56,7 @@
             this.dgvtbcSoLanPhucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drvtbcLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtbcChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.bPrint = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.pTieuDe.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
@@ -190,6 +191,7 @@
             // 
             this.pTieuDe.BackColor = System.Drawing.Color.Transparent;
             this.pTieuDe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pTieuDe.Controls.Add(this.progressBar);
             this.pTieuDe.Controls.Add(this.guna2GradientButton1);
             this.pTieuDe.Controls.Add(this.bAddStaff);
             this.pTieuDe.Controls.Add(this.bFind);
@@ -205,6 +207,26 @@
             this.pTieuDe.ShadowDecoration.Parent = this.pTieuDe;
             this.pTieuDe.Size = new System.Drawing.Size(1435, 70);
             this.pTieuDe.TabIndex = 125;
+            // 
+            // guna2GradientButton1
+            // 
+            this.guna2GradientButton1.Animated = true;
+            this.guna2GradientButton1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientButton1.BorderRadius = 15;
+            this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.DarkSlateBlue;
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.Teal;
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.Location = new System.Drawing.Point(605, 12);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
+            this.guna2GradientButton1.Size = new System.Drawing.Size(138, 47);
+            this.guna2GradientButton1.TabIndex = 124;
+            this.guna2GradientButton1.Text = "Xem ảnh";
             // 
             // guna2GradientPanel1
             // 
@@ -254,7 +276,6 @@
             this.bCancel.Size = new System.Drawing.Size(88, 56);
             this.bCancel.TabIndex = 4;
             this.bCancel.Text = "THOÁT";
-            this.bCancel.Click += new System.EventHandler(this.BtThoat_Click);
             // 
             // label2
             // 
@@ -280,6 +301,21 @@
             this.pCheck.ShadowColor = System.Drawing.Color.Black;
             this.pCheck.Size = new System.Drawing.Size(79, 64);
             this.pCheck.TabIndex = 127;
+            // 
+            // bPrint
+            // 
+            this.bPrint.CheckedState.ImageSize = new System.Drawing.Size(34, 34);
+            this.bPrint.CheckedState.Parent = this.bPrint;
+            this.bPrint.HoverState.ImageSize = new System.Drawing.Size(31, 31);
+            this.bPrint.HoverState.Parent = this.bPrint;
+            this.bPrint.Image = global::CoffeeShopManagement.Properties.Resources.Print;
+            this.bPrint.ImageSize = new System.Drawing.Size(32, 32);
+            this.bPrint.Location = new System.Drawing.Point(4, 6);
+            this.bPrint.Name = "bPrint";
+            this.bPrint.PressedState.ImageSize = new System.Drawing.Size(30, 30);
+            this.bPrint.PressedState.Parent = this.bPrint;
+            this.bPrint.Size = new System.Drawing.Size(70, 51);
+            this.bPrint.TabIndex = 124;
             // 
             // label1
             // 
@@ -385,40 +421,12 @@
             this.dgvtbcChucVu.Name = "dgvtbcChucVu";
             this.dgvtbcChucVu.ReadOnly = true;
             // 
-            // guna2GradientButton1
+            // progressBar
             // 
-            this.guna2GradientButton1.Animated = true;
-            this.guna2GradientButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton1.BorderRadius = 15;
-            this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.DarkSlateBlue;
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.Teal;
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(605, 12);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Size = new System.Drawing.Size(138, 47);
-            this.guna2GradientButton1.TabIndex = 124;
-            this.guna2GradientButton1.Text = "Xem ảnh";
-            // 
-            // bPrint
-            // 
-            this.bPrint.CheckedState.ImageSize = new System.Drawing.Size(34, 34);
-            this.bPrint.CheckedState.Parent = this.bPrint;
-            this.bPrint.HoverState.ImageSize = new System.Drawing.Size(31, 31);
-            this.bPrint.HoverState.Parent = this.bPrint;
-            this.bPrint.Image = global::CoffeeShopManagement.Properties.Resources.Print;
-            this.bPrint.ImageSize = new System.Drawing.Size(32, 32);
-            this.bPrint.Location = new System.Drawing.Point(4, 6);
-            this.bPrint.Name = "bPrint";
-            this.bPrint.PressedState.ImageSize = new System.Drawing.Size(30, 30);
-            this.bPrint.PressedState.Parent = this.bPrint;
-            this.bPrint.Size = new System.Drawing.Size(70, 51);
-            this.bPrint.TabIndex = 124;
+            this.progressBar.Location = new System.Drawing.Point(41, 23);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(100, 23);
+            this.progressBar.TabIndex = 127;
             // 
             // FormMenuStaff
             // 
@@ -473,5 +481,6 @@
         private Guna.UI2.WinForms.Guna2ShadowPanel pCheck;
         private Guna.UI2.WinForms.Guna2ImageButton bPrint;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }

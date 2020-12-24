@@ -11,9 +11,17 @@ namespace CoffeeShopManagement
     {
         public static string ComputeHash(string input, HashAlgorithm algorithm)
         {
-            Byte[] inputBytes = Encoding.UTF8.GetBytes(input);
-            Byte[] hashBytes = algorithm.ComputeHash(inputBytes);
-            return BitConverter.ToString(hashBytes);
+            try
+            {
+                Byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+                Byte[] hashBytes = algorithm.ComputeHash(inputBytes);
+                return BitConverter.ToString(hashBytes);
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 22 Class Encrypt)");
+                return null;
+            }
         }
     }
 }

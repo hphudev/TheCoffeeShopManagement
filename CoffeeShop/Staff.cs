@@ -18,20 +18,50 @@ namespace CoffeeShopManagement
 
         public int luong { get; }
 
+        public Image image { get; set; }
+
         public Staff(string id, string name, string address, string sdt, string sex, string date,
             string cmnd, string chucVu, int luong) : base(id, name, address, sdt, sex)
         {
-            this.date = date;
-            this.cmnd = cmnd;
-            this.chucVu = chucVu;
-            this.luong = luong;
+            try
+            {
+                this.date = date;
+                this.cmnd = cmnd;
+                this.chucVu = chucVu;
+                this.luong = luong;
+
+                if (this.id.ToString() != "")
+                {
+                    FileInfo file = new FileInfo("./ImageStaff/" + this.id.ToString() + ".jpg");
+
+                    if (file.Exists)
+                    {
+                        using (var bitmap = new Bitmap("./ImageStaff/" + this.id.ToString() + ".jpg"))
+                        {
+                            this.image = new Bitmap(bitmap);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 48 Class Staff)");
+            }
         }
 
         public string GetInfo()
         {
-            return "'" + this.id + "', N'" + this.name + "', N'" + this.address + "', '" +
-                this.date + "', '" + this.sdt + "', '" + this.cmnd + "', N'" + this.sex +
-                "', '" + this.luong + "', N'" + this.chucVu + "'";
+            try
+            {
+                return "'" + this.id + "', N'" + this.name + "', N'" + this.address + "', '" +
+                    this.date + "', '" + this.sdt + "', '" + this.cmnd + "', N'" + this.sex +
+                    "', '" + this.luong + "', N'" + this.chucVu + "'";
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 62 Class Staff)");
+                return null;
+            }
         }
     }
 }

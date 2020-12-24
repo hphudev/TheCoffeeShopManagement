@@ -20,15 +20,18 @@ namespace CoffeeShopManagement
 
         public Person(string id, string name, string address, string sdt, string sex)
         {
-            this.id = new ID(id);
-            this.name = name;
-            this.address = address;
-            this.sdt = sdt;
-            this.sex = sex;
-        }
-
-        public Person()
-        {
+            try
+            {
+                this.id = new ID(id);
+                this.name = name;
+                this.address = address;
+                this.sdt = sdt;
+                this.sex = sex;
+            }
+            catch(Exception)
+            {
+                IO.ExportError("Lỗi không xác định\nLine 33 Class Person");
+            }
         }
     }
 }

@@ -69,7 +69,6 @@
             this.pnLot.ShadowDecoration.Parent = this.pnLot;
             this.pnLot.Size = new System.Drawing.Size(1059, 645);
             this.pnLot.TabIndex = 0;
-            this.pnLot.Paint += new System.Windows.Forms.PaintEventHandler(this.PnLot_Paint);
             // 
             // pictureBox1
             // 
@@ -94,7 +93,6 @@
             this.label2.Text = "Cuộc sống là 10% những gì xảy ra với bạn và 90% là cách bạn phản ứng với nó – Cha" +
     "rles R. Swindoll";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // label1
             // 
@@ -164,7 +162,6 @@
             this.label3.Size = new System.Drawing.Size(151, 23);
             this.label3.TabIndex = 8;
             this.label3.Text = "Forgot Password?";
-            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // btDangNhap
             // 
@@ -269,8 +266,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.TransparencyKey = System.Drawing.SystemColors.ControlLight;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLogin_FormClosed);
-            this.Load += new System.EventHandler(this.FormLogin_Load);
             this.pnLot.ResumeLayout(false);
             this.pnLot.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

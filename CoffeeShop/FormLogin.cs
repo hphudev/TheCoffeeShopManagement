@@ -11,7 +11,6 @@ using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Runtime.InteropServices;
 
-
 namespace CoffeeShopManagement
 {
     public partial class FormLogin : System.Windows.Forms.Form
@@ -29,42 +28,70 @@ namespace CoffeeShopManagement
 
         public FormLogin(FormInit parent)
         {
-            InitializeComponent();
-            this.DoubleBuffered = true;
-            this.btDangNhap.Click += LoginClicked;
-            //this.buttonThoat.Click += CancelClicked;
-            this.tbTenDangNhap.KeyPress += PressEnter;
-            this.tbMatKhau.KeyPress += PressEnter;
-            //this.tbMatKhau.PasswordChar = '*';
-            //this.bMinimize.Click += MinimizeClicked;
-            this.parent = parent;
+            try
+            {
+                InitializeComponent();
+                this.DoubleBuffered = true;
+                this.btDangNhap.Click += LoginClicked;
+                this.controlboxClose.Click += CancelClicked;
+                this.tbTenDangNhap.KeyPress += PressEnter;
+                this.tbMatKhau.KeyPress += PressEnter;
+                //this.tbMatKhau.PasswordChar = '*';
+                //this.bMinimize.Click += MinimizeClicked;
+                this.parent = parent;
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 45 Form Login)");
+            }
         }
 
         private void MinimizeClicked(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            try
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định");
+            }
         }
 
         public void LoadFormLogin()
         {
-            tbTenDangNhap.Text = "Tên đăng nhập";
-            tbMatKhau.Text = "Mật khẩu";
-            tbMatKhau.PasswordChar = '\0';
-            pbEye.Image = Image.FromFile("./Resources/OpenEye.png");
-            tbTenDangNhap.Select();
+            try
+            {
+                tbTenDangNhap.Text = "Tên đăng nhập";
+                tbMatKhau.Text = "Mật khẩu";
+                tbMatKhau.PasswordChar = '\0';
+                pbEye.Image = Image.FromFile("./Resources/OpenEye.png");
+                tbTenDangNhap.Select();
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 73 Form Login)");
+            }
         }
 
         private void pbEye_Click(object sender, EventArgs e)
         {
-            if (tbMatKhau.PasswordChar == '*')
+            try
             {
-                tbMatKhau.PasswordChar = '\0';
-                pbEye.Image = Image.FromFile("./Resources/CloseEye.png");
+                if (tbMatKhau.PasswordChar == '*')
+                {
+                    tbMatKhau.PasswordChar = '\0';
+                    pbEye.Image = Image.FromFile("./Resources/CloseEye.png");
+                }
+                else
+                {
+                    tbMatKhau.PasswordChar = '*';
+                    pbEye.Image = Image.FromFile("./Resources/OpenEye.png");
+                }
             }
-            else
+            catch (Exception)
             {
-                tbMatKhau.PasswordChar = '*';
-                pbEye.Image = Image.FromFile("./Resources/OpenEye.png");
+                IO.ExportError("Lỗi không xác định\n(Line 94 Form Login)");
             }
         }
 
@@ -75,23 +102,31 @@ namespace CoffeeShopManagement
 
         public Account GetValidAccount(Account account, SqlDataReader reader)
         {
-            while (reader.HasRows)
+            try
             {
-                if (!reader.Read())
+                while (reader.HasRows)
                 {
-                    break;
+                    if (!reader.Read())
+                    {
+                        break;
+                    }
+
+                    Account validAccount = new Account(reader.GetString(0), reader.GetString(1),
+                        reader.GetString(2), reader.GetBoolean(3));
+
+                    if (account.username == validAccount.username)
+                    {
+                        return validAccount;
+                    }
                 }
 
-                Account validAccount = new Account(reader.GetString(0), reader.GetString(1),
-                    reader.GetString(2), reader.GetBoolean(3));
-
-                if (account.username == validAccount.username)
-                {
-                    return validAccount;
-                }
+                return null;
             }
-
-            return null;
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 127 Form Login)");
+                return null;
+            }
         }
 
         private void LoginClicked(object sender, EventArgs e)
@@ -100,7 +135,8 @@ namespace CoffeeShopManagement
             {
                 if (this.tbTenDangNhap.Text == "" || this.tbMatKhau.Text == "")
                 {
-                    throw new Exception();
+                    IO.ExportError("Tên đăng nhập và mật khẩu không được để trống");
+                    return;
                 }
 
                 this.account = new Account("NULL", tbTenDangNhap.Text, Encrypt.ComputeHash(
@@ -126,7 +162,7 @@ namespace CoffeeShopManagement
                             this.account = validAccount;
                         }
 
-                        (new FormSell(this)).Show();
+                        Event.ShowForm((new FormSell(this)));
                         this.Hide();
                         this.tbTenDangNhap.Text = this.tbMatKhau.Text = "";
                     }
@@ -138,28 +174,14 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Tên đăng nhập và mật khẩu không được để trống");
+                IO.ExportError("Lỗi không xác định\n(Line 177 Form Login)");
             }
         }
 
         private void CancelClicked(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void ButtonThoatForm_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void ButtonThoat_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.parent.Close();
+            Event.CloseForm(this);
+            Event.CloseForm(this.parent);
         }
 
         private void PThanhDieuKhien_MouseDown(object sender, MouseEventArgs e)
@@ -168,68 +190,65 @@ namespace CoffeeShopManagement
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void BMinimize_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormLogin_Load(object sender, EventArgs e)
-        {
-            //panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
-        }
-
-        private void PnLot_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Guna2TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void TbTenDangNhap_Enter(object sender, EventArgs e)
         {
-            if (tbTenDangNhap.Text == "Tên đăng nhập")
+            try
             {
-                tbTenDangNhap.Text = "";
+                if (tbTenDangNhap.Text == "Tên đăng nhập")
+                {
+                    tbTenDangNhap.Text = "";
+                }
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 204 Form Login)");
             }
         }
 
         private void TbTenDangNhap_Leave(object sender, EventArgs e)
         {
-            if (tbTenDangNhap.Text == "")
+            try
             {
-                tbTenDangNhap.Text = "Tên đăng nhập";
+                if (tbTenDangNhap.Text == "")
+                {
+                    tbTenDangNhap.Text = "Tên đăng nhập";
+                }
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 219 Form Login)");
             }
         }
 
         private void TbMatKhau_Enter(object sender, EventArgs e)
         {
-            if (tbMatKhau.Text == "Mật khẩu")
+            try
             {
-                tbMatKhau.PasswordChar = '*';
-                tbMatKhau.Text = "";
+                if (tbMatKhau.Text == "Mật khẩu")
+                {
+                    tbMatKhau.PasswordChar = '*';
+                    tbMatKhau.Text = "";
+                }
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 235 Form Login)");
             }
         }
 
         private void TbMatKhau_Leave(object sender, EventArgs e)
         {
-            if (tbMatKhau.Text == "")
+            try
             {
-                tbMatKhau.PasswordChar = '\0';
-                tbMatKhau.Text = "Mật khẩu";
+                if (tbMatKhau.Text == "")
+                {
+                    tbMatKhau.PasswordChar = '\0';
+                    tbMatKhau.Text = "Mật khẩu";
+                }
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 251 Form Login)");
             }
         }
     }

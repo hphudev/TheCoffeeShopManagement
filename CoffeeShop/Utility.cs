@@ -10,44 +10,84 @@ namespace CoffeeShopManagement
     {
         public static string GetDate(this DateTime tmp, DateTime dateTime)
         {
-            return dateTime.Day + "/" + dateTime.Month + "/" + dateTime.Year;
+            try
+            {
+                return dateTime.Day + "/" + dateTime.Month + "/" + dateTime.Year;
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 19 Class Utility)");
+                return null;
+            }
         }
 
         public static string GetDateUS(this DateTime tmp, DateTime dateTime)
         {
-            return dateTime.Year + "/" + dateTime.Month + "/" + dateTime.Day;
+            try
+            {
+                return dateTime.Year + "/" + dateTime.Month + "/" + dateTime.Day;
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 32 Class Utility)");
+                return null;
+            }
         }
 
         public static string GetDateUS(string dateTime)
         {
-            if (dateTime == null)
+            try
+            {
+                if (dateTime == null)
+                    return null;
+                string[] date = dateTime.Split('/');
+                if (date.Length < 3)
+                    return null;
+                return date[2] + "/" + date[1] + "/" + date[0];
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 50 Class Utility)");
                 return null;
-            string[] date = dateTime.Split('/');
-            if (date.Length < 3)
-                return null;
-            return date[2] + "/" + date[1] + "/" + date[0];
+            }
         }
 
         public static string StringToMoney(string a)
         {
-            string tmp = "";
-            int dem = 0;
-            for (int i = a.Length - 1; i >= 0; i--)
+            try
             {
-                dem++;
-                if (i > 0 && dem % 3 == 0)
-                    tmp = "." + a[i].ToString() + tmp;
-                else
-                    tmp = a[i] + tmp;
+                string tmp = "";
+                int dem = 0;
+                for (int i = a.Length - 1; i >= 0; i--)
+                {
+                    dem++;
+                    if (i > 0 && dem % 3 == 0)
+                        tmp = "." + a[i].ToString() + tmp;
+                    else
+                        tmp = a[i] + tmp;
+                }
+                return tmp;
             }
-            return tmp;
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 73 Class Utility)");
+                return null;
+            }
         }
 
         public static string MoneyToString(string a)
         {
-            while (a.IndexOf('.') > -1)
-                a.Remove(a.IndexOf('.'), 1);
-            return a;
+            try
+            {
+                while (a.IndexOf('.') > -1)
+                    a.Remove(a.IndexOf('.'), 1);
+                return a;
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 88 Class Utility)");
+                return null;
+            }
         }
     }
 }

@@ -30,7 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.bCancel = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pCheck = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.bPrint = new Guna.UI2.WinForms.Guna2ImageButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pTieuDe = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.bAddItem = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -48,15 +52,12 @@
             this.dgvtbcPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ani = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.pCheck = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.bPrint = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.guna2GradientPanel1.SuspendLayout();
+            this.guna2ShadowPanel1.SuspendLayout();
+            this.pCheck.SuspendLayout();
             this.pTieuDe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
-            this.pCheck.SuspendLayout();
-            this.guna2ShadowPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -73,6 +74,19 @@
             this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1343, 104);
             this.guna2GradientPanel1.TabIndex = 121;
+            // 
+            // guna2ShadowPanel1
+            // 
+            this.guna2ShadowPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.bCancel);
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(1243, 12);
+            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            this.guna2ShadowPanel1.Radius = 5;
+            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(79, 64);
+            this.guna2ShadowPanel1.TabIndex = 126;
             // 
             // bCancel
             // 
@@ -95,6 +109,46 @@
             this.bCancel.TabIndex = 4;
             this.bCancel.Text = "THOÁT";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(1093, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(135, 23);
+            this.label2.TabIndex = 125;
+            this.label2.Text = "IN DANH SÁCH";
+            // 
+            // pCheck
+            // 
+            this.pCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pCheck.BackColor = System.Drawing.Color.Transparent;
+            this.pCheck.Controls.Add(this.bPrint);
+            this.pCheck.FillColor = System.Drawing.Color.Transparent;
+            this.pCheck.Location = new System.Drawing.Point(1121, 12);
+            this.pCheck.Name = "pCheck";
+            this.pCheck.Radius = 5;
+            this.pCheck.ShadowColor = System.Drawing.Color.Black;
+            this.pCheck.Size = new System.Drawing.Size(79, 64);
+            this.pCheck.TabIndex = 124;
+            // 
+            // bPrint
+            // 
+            this.bPrint.CheckedState.ImageSize = new System.Drawing.Size(34, 34);
+            this.bPrint.CheckedState.Parent = this.bPrint;
+            this.bPrint.HoverState.ImageSize = new System.Drawing.Size(31, 31);
+            this.bPrint.HoverState.Parent = this.bPrint;
+            this.bPrint.Image = global::CoffeeShopManagement.Properties.Resources.Print;
+            this.bPrint.ImageSize = new System.Drawing.Size(32, 32);
+            this.bPrint.Location = new System.Drawing.Point(4, 6);
+            this.bPrint.Name = "bPrint";
+            this.bPrint.PressedState.ImageSize = new System.Drawing.Size(30, 30);
+            this.bPrint.PressedState.Parent = this.bPrint;
+            this.bPrint.Size = new System.Drawing.Size(70, 51);
+            this.bPrint.TabIndex = 124;
+            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
@@ -112,6 +166,7 @@
             // 
             this.pTieuDe.BackColor = System.Drawing.Color.Transparent;
             this.pTieuDe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pTieuDe.Controls.Add(this.progressBar);
             this.pTieuDe.Controls.Add(this.bAddItem);
             this.pTieuDe.Controls.Add(this.bFind);
             this.pTieuDe.Controls.Add(this.bChangeInfoItem);
@@ -309,58 +364,12 @@
             this.guna2Elipse2.BorderRadius = 20;
             this.guna2Elipse2.TargetControl = this;
             // 
-            // pCheck
+            // progressBar
             // 
-            this.pCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pCheck.BackColor = System.Drawing.Color.Transparent;
-            this.pCheck.Controls.Add(this.bPrint);
-            this.pCheck.FillColor = System.Drawing.Color.Transparent;
-            this.pCheck.Location = new System.Drawing.Point(1121, 12);
-            this.pCheck.Name = "pCheck";
-            this.pCheck.Radius = 5;
-            this.pCheck.ShadowColor = System.Drawing.Color.Black;
-            this.pCheck.Size = new System.Drawing.Size(79, 64);
-            this.pCheck.TabIndex = 124;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(1093, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 23);
-            this.label2.TabIndex = 125;
-            this.label2.Text = "IN DANH SÁCH";
-            // 
-            // guna2ShadowPanel1
-            // 
-            this.guna2ShadowPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.bCancel);
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(1243, 12);
-            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-            this.guna2ShadowPanel1.Radius = 5;
-            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(79, 64);
-            this.guna2ShadowPanel1.TabIndex = 126;
-            // 
-            // bPrint
-            // 
-            this.bPrint.CheckedState.ImageSize = new System.Drawing.Size(34, 34);
-            this.bPrint.CheckedState.Parent = this.bPrint;
-            this.bPrint.HoverState.ImageSize = new System.Drawing.Size(31, 31);
-            this.bPrint.HoverState.Parent = this.bPrint;
-            this.bPrint.Image = global::CoffeeShopManagement.Properties.Resources.Print;
-            this.bPrint.ImageSize = new System.Drawing.Size(32, 32);
-            this.bPrint.Location = new System.Drawing.Point(4, 6);
-            this.bPrint.Name = "bPrint";
-            this.bPrint.PressedState.ImageSize = new System.Drawing.Size(30, 30);
-            this.bPrint.PressedState.Parent = this.bPrint;
-            this.bPrint.Size = new System.Drawing.Size(70, 51);
-            this.bPrint.TabIndex = 124;
+            this.progressBar.Location = new System.Drawing.Point(51, 26);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(100, 23);
+            this.progressBar.TabIndex = 124;
             // 
             // FormMenuItem
             // 
@@ -377,10 +386,10 @@
             this.Text = "Quản lý thực đơn";
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
+            this.guna2ShadowPanel1.ResumeLayout(false);
+            this.pCheck.ResumeLayout(false);
             this.pTieuDe.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();
-            this.pCheck.ResumeLayout(false);
-            this.guna2ShadowPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -410,5 +419,6 @@
         private Guna.UI2.WinForms.Guna2ImageButton bPrint;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }

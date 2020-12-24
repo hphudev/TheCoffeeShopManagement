@@ -19,26 +19,49 @@ namespace CoffeeShopManagement
 
         public bool IsAdmin()
         {
-            if (this.username == "1")
+            try
             {
-                return true;
-            }
+                if (this.username == "1")
+                {
+                    return true;
+                }
 
-            return false;
+                return false;
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 33 Class Account)");
+                return false;
+            }
         }
 
         public Account(string id, string username, string password, bool status)
         {
-            this.id = new ID(id);
-            this.username = username;
-            this.password = password;
-            this.status = status;
+            try
+            {
+                this.id = new ID(id);
+                this.username = username;
+                this.password = password;
+                this.status = status;
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 49 Class Account)");
+            }
         }
 
         public string GetInfo()
         {
-            return "'" + this.id.ToString() + "', '" + this.username + "', '" + this.password +
-                "', '" + this.status + "'";
+            try
+            {
+                return "'" + this.id.ToString() + "', '" + this.username + "', '" + this.password +
+                    "', '" + this.status + "'";
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 62 Class Account)");
+                return null;
+            }
         }
     }
 }

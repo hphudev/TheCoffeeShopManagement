@@ -16,50 +16,83 @@ namespace CoffeeShopManagement
         FormLock lockForm;
         FormMenuStaff parent;
 
-        public void Autofill()
+        public void Autofill() 
         {
-            Staff selectedStaff;
-            this.parent.GetSelectedInfo(out selectedStaff);
-            Account selectedAccount;
-            this.parent.GetSelectedAccount(out selectedAccount);
-            this.tbName.Text = selectedStaff.name;
-            this.tbAddress.Text = selectedStaff.address;
-            this.tbCMND.Text = selectedStaff.cmnd;
-            this.tbSalary.Text = selectedStaff.luong.ToString();
-            this.tbSDT.Text = selectedStaff.sdt;
-            this.cbPosition.Text = selectedStaff.chucVu;
-            this.cbSex.Text = selectedStaff.sex;
-            this.lID.Text = selectedStaff.id.ToString();
-            this.tbUsername.Text = selectedAccount.username;
+            try
+            {
+                Staff selectedStaff;
+                this.parent.GetSelectedInfo(out selectedStaff);
+                Account selectedAccount;
+                this.parent.GetSelectedAccount(out selectedAccount);
+                this.tbName.Text = selectedStaff.name;
+                this.tbAddress.Text = selectedStaff.address;
+                this.tbCMND.Text = selectedStaff.cmnd;
+                this.tbSalary.Text = selectedStaff.luong.ToString();
+                this.tbSDT.Text = selectedStaff.sdt;
+                this.cbPosition.Text = selectedStaff.chucVu;
+                this.cbSex.Text = selectedStaff.sex;
+                this.lID.Text = selectedStaff.id.ToString();
+                this.tbUsername.Text = selectedAccount.username;
+                this.pbImage.Image = selectedStaff.image;
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 40 Form Change Info Staff)");
+            }
         }
 
         public FormChangeInfoStaff(FormMenuStaff parent)
         {
-            InitializeComponent();
-            lockForm = new FormLock(this);
-            this.parent = parent;
-            lockForm.Show();
-            this.bCancel.Click += CancelClicked;
-            this.FormClosed += CloseForm;
-            this.bReset.Click += ResetClicked;
-            Autofill();
-            this.bOK.Click += OKClicked;
+            try
+            {
+                InitializeComponent();
+                lockForm = new FormLock(this);
+                this.parent = parent;
+                Event.ShowForm(this.lockForm);
+                this.bCancel.Click += CancelClicked;
+                this.FormClosed += CloseForm;
+                this.bReset.Click += ResetClicked;
+                Autofill();
+                this.bOK.Click += OKClicked;
 
-            this.tbAddress.KeyPress += PressEnter;
-            this.cbPosition.KeyPress += PressEnter;
-            this.tbSalary.KeyPress += PressEnter;
-            this.tbSDT.KeyPress += PressEnter;
+                this.tbAddress.KeyPress += PressEnter;
+                this.cbPosition.KeyPress += PressEnter;
+                this.tbSalary.KeyPress += PressEnter;
+                this.tbSDT.KeyPress += PressEnter;
+                this.bAddImage.Click += AddImageClicked;
+                this.tbSalary.KeyPress += IO.LockWord;
+                this.tbSDT.KeyPress += IO.LockWord;
+                this.cbPosition.KeyPress += IO.LockNumber;
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 69 Form Change Info Staff)");
+            }
+        }
+
+        private void AddImageClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                Staff selectedStaff;
+                this.parent.GetSelectedInfo(out selectedStaff);
+                Event.AddImage(ref this.pbImage, "./ImageStaff/", selectedStaff.id.ToString());
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 83 Form Change Info Staff)");
+            }
         }
 
         private void CancelClicked(object sender, EventArgs e)
         {
-            this.Close();
-            this.lockForm.Close();
+            Event.CloseForm(this);
+            Event.CloseForm(this.lockForm);
         }
 
         private void CloseForm(object sender, FormClosedEventArgs e)
         {
-            this.parent.Show();
+            Event.ShowForm(this.parent);
         }
 
         private void PressEnter(object sender, KeyPressEventArgs e)
@@ -74,26 +107,22 @@ namespace CoffeeShopManagement
 
         public bool IsError()
         {
-            if (this.tbAddress.Text == "" || this.tbSDT.Text == "" || this.cbSex.Text == "" || 
-                this.tbSalary.Text == "" || this.cbPosition.Text == "" || this.tbPassword.Text == "")
+            try
             {
-                IO.ExportError("Nhập không đầy đủ nội dung tất cả các trường");
-                return true;
-            }
+                if (this.tbAddress.Text == "" || this.tbSDT.Text == "" || this.cbSex.Text == "" ||
+                    this.tbSalary.Text == "" || this.cbPosition.Text == "" || this.tbPassword.Text == "")
+                {
+                    IO.ExportError("Nhập không đầy đủ nội dung tất cả các trường");
+                    return true;
+                }
 
-            if ((int.Parse(this.tbSalary.Text)) < 0 || int.Parse(this.tbSDT.Text) < 0)
+                return false;
+            }
+            catch (Exception)
             {
-                IO.ExportError("Nhập số có giá trị nhỏ hơn 0");
-                return true;
+                IO.ExportError("Lỗi không xác định\n(Line 123 Form Change Info Staff)");
+                return false;
             }
-
-            if (IO.IsContainNumber(this.cbPosition.Text))
-            {
-                IO.ExportError("Nhập số vào trường họ tên, chức vụ hoặc giới tính");
-                return true;
-            }
-
-            return false;
         }
 
         private void OKClicked(object sender, EventArgs e)
@@ -121,14 +150,14 @@ namespace CoffeeShopManagement
                     " WHERE ID = '" + updatedAccount.id.ToString() + "'");
 
                 IO.ExportSuccess("Sửa thông tin nhân viên thành công");
-                this.parent.LoadForm();
-                this.Close();
+                this.parent.ClearMenu();
+                this.parent.LoadMenu();
+                Event.CloseForm(this);
             }
             catch (Exception)
             {
-                IO.ExportError("Nội dung nhập không hợp lệ");
+                IO.ExportError("Lỗi không xác định\n(Line 159 Form Change Info Staff)");
             }
         }
-
     }
 }

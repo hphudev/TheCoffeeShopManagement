@@ -147,7 +147,6 @@
             this.Name = "FormImageStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormImageStaff";
-            this.Load += new System.EventHandler(this.FormImageStaff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbImageItem)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();

@@ -17,78 +17,91 @@ namespace CoffeeShopManagement
         private FormLock lockForm;
         private FormMenuStaff parent;
 
-        public void AutofillLabelID()
-        {
-            ID lastID = ID.GetLastIDStaff();
-            ID newID = new ID("");
-
-            if (lastID != null)
-            {
-                newID.SetID((lastID.FindID("NV") + 1), "NV", 2);
-            }
-            else
-            {
-                newID.SetID(1, "NV", 2);
-            }
-
-            this.lID.Text = newID.id;
-        }
-
         public FormAddStaff(FormMenuStaff parent)
         {
-            InitializeComponent();
-            this.lockForm = new FormLock(this);
-            this.lockForm.Show();
-            this.parent = parent;
-            this.FormClosed += CloseForm;
-            this.bCancel.Click += CancelClicked;
-            this.bOK.Click += OKClicked;
-            this.bReset.Click += ResetClicked;
-            AutofillLabelID();
+            try
+            {
+                InitializeComponent();
+                this.lockForm = new FormLock(this);
+                Event.ShowForm(this.lockForm);
+                this.parent = parent;
+                this.FormClosed += CloseForm;
+                this.bCancel.Click += CancelClicked;
+                this.bOK.Click += OKClicked;
+                this.bReset.Click += ResetClicked;
 
-            this.tbSalary.KeyPress += ShowErrorWord;
-            this.tbCMND.KeyPress += ShowErrorWord;
-            this.tbSDT.KeyPress += ShowErrorWord;
+                this.tbName.KeyPress += PressEnter;
+                this.tbAddress.KeyPress += PressEnter;
+                this.tbCMND.KeyPress += PressEnter;
+                this.cbSex.KeyPress += PressEnter;
+                this.cbPosition.KeyPress += PressEnter;
+                this.tbPassword.KeyPress += PressEnter;
+                this.tbSalary.KeyPress += PressEnter;
+                this.tbSDT.KeyPress += PressEnter;
+                this.tbUsername.KeyPress += PressEnter;
 
-            this.tbName.KeyPress += PressEnter;
-            this.tbAddress.KeyPress += PressEnter;
-            this.tbCMND.KeyPress += PressEnter;
-            this.cbSex.KeyPress += PressEnter;
-            this.cbPosition.KeyPress += PressEnter;
-            this.tbPassword.KeyPress += PressEnter;
-            this.tbSalary.KeyPress += PressEnter;
-            this.tbSDT.KeyPress += PressEnter;
-            this.tbUsername.KeyPress += PressEnter;
+                this.cbSex.AutoCompleteCustomSource.AddRange(new string[] { "Nam", "Nữ" });
+                this.cbSex.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+                this.cbSex.Items.AddRange(new object[] { "Nam", "Nữ" });
+                this.bAddImage.Click += AddImageClicked;
+                this.tbCMND.KeyPress += IO.LockWord;
+                this.tbSDT.KeyPress += IO.LockWord;
+                this.tbSalary.KeyPress += IO.LockWord;
+                this.tbName.KeyPress += IO.LockNumber;
+                this.cbSex.KeyPress += IO.LockNumber;
+                this.cbPosition.KeyPress += IO.LockNumber;
+                this.lID.Text = ID.FindNewID("NHANVIEN", " ORDER BY MANV DESC", "MANV", "NV",
+                    2).ToString();
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 58 Form Add Staff)");
+            }
+        }
 
-            this.cbSex.AutoCompleteCustomSource.AddRange(new string[] { "Nam", "Nữ" });
-            //this.cbSex.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbSex.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbSex.Items.AddRange(new object[] { "Nam", "Nữ" });
+        private void AddImageClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                Event.AddImage(ref this.pbImage, "./ImageStaff/", ID.FindNewID("NHANVIEN",
+                    " ORDER BY MANV DESC", "MANV", "NV", 2).ToString());
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 71 Form Add Staff)");
+            }
         }
 
         private void CloseForm(object sender, FormClosedEventArgs e)
         {
-            this.lockForm.Close();
-            this.parent.Show();
+            Event.CloseForm(this.lockForm);
+            Event.ShowForm(this.parent);
         }
 
         private void CancelClicked(object sender, EventArgs e)
         {
-            this.Close();
+            Event.CloseForm(this);
         }
 
         private void ResetClicked(object sender, EventArgs e)
         {
-            this.tbName.Text = "";
-            this.tbCMND.Text = "";
-            this.cbSex.Text = "";
-            this.cbPosition.Text = " ";
-            this.tbSDT.Text = "";
-            this.tbSalary.Text = "";
-            this.tbPassword.Text = "";
-            this.tbConfirm.Text = "";
-            this.tbUsername.Text = "";
-            this.tbAddress.Text = "";
+            try
+            {
+                this.tbName.Text = "";
+                this.tbCMND.Text = "";
+                this.cbSex.Text = "";
+                this.cbPosition.Text = " ";
+                this.tbSDT.Text = "";
+                this.tbSalary.Text = "";
+                this.tbPassword.Text = "";
+                this.tbConfirm.Text = "";
+                this.tbUsername.Text = "";
+                this.tbAddress.Text = "";
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\nLine 103 Form Add Staff");
+            }
         }
 
         private void PressEnter(object sender, KeyPressEventArgs e)
@@ -98,155 +111,157 @@ namespace CoffeeShopManagement
 
         public int IsStaff(ref Staff newStaff)
         {
-            SqlConnection connection = Data.OpenConnection();
-            SqlDataReader reader = Data.ReadData("NHANVIEN NV, TAIKHOAN TK", connection, " WHERE " +
-                "NV.MANV = TK.ID", "*");
-            string lastID = "";
-
-            while (reader.HasRows)
+            try
             {
-                if (reader.Read() == false)
-                {
-                    break;
-                }
+                SqlConnection connection = Data.OpenConnection();
+                SqlDataReader reader = Data.ReadData("NHANVIEN NV, TAIKHOAN TK", connection, " WHERE " +
+                    "NV.MANV = TK.ID", "*");
+                string lastID = "";
 
-                Staff staff = new Staff(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                    reader.GetString(4), reader.GetString(6),
-                    (reader.GetDateTime(3).ToString().Split(' '))[0], reader.GetString(5),
-                    reader.GetString(8), reader.GetInt32(7));
-                Account account = new Account(reader.GetString(9), reader.GetString(10),
-                    reader.GetString(11), reader.GetBoolean(12));
-
-                if (newStaff.cmnd == staff.cmnd && account.status)
+                while (reader.HasRows)
                 {
-                    Data.CloseConnection(ref connection);
-                    IO.ExportError("Tồn tại nhân viên có số cmnd này trong danh sách");
-                    return 0;
-                }
-
-                if (newStaff.cmnd == staff.cmnd && !account.status)
-                {
-                    if (this.tbConfirm.Text != this.tbPassword.Text)
+                    if (reader.Read() == false)
                     {
-                        IO.ExportError("Mật khẩu nhập lại không đúng");
+                        break;
+                    }
+
+                    Staff staff = new Staff(reader.GetString(0), reader.GetString(1), reader.GetString(2),
+                        reader.GetString(4), reader.GetString(6),
+                        (reader.GetDateTime(3).ToString().Split(' '))[0], reader.GetString(5),
+                        reader.GetString(8), reader.GetInt32(7));
+                    Account account = new Account(reader.GetString(9), reader.GetString(10),
+                        reader.GetString(11), reader.GetBoolean(12));
+
+                    if (newStaff.cmnd == staff.cmnd && account.status)
+                    {
+                        Data.CloseConnection(ref connection);
+                        IO.ExportError("Tồn tại nhân viên có số cmnd này trong danh sách");
                         return 0;
                     }
 
-                    newStaff.id.SetID(staff.id.FindID("NV"), "NV", 2);
-
-                    Account updatedAccount = new Account(newStaff.id.ToString(), this.tbUsername.Text,
-                        Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()),
-                        true);
-
-                    if (IsUsername(updatedAccount.username))
+                    if (newStaff.cmnd == staff.cmnd && !account.status)
                     {
-                        Data.UpdateData("NHANVIEN", "DCHI = N'" + newStaff.address + "', NGVL = '" +
-                            DateTime.Today.Year.ToString() + "/" + DateTime.Today.Month.ToString() +
-                            "/" + DateTime.Today.Day.ToString() + "', SDT = '" + newStaff.sdt +
-                            "', LUONG = " + newStaff.luong.ToString() + ", CHUCVU = N'" +
-                            newStaff.chucVu + "'", " WHERE MANV = '" + newStaff.id.ToString() + "'");
-                        Data.UpdateData("TAIKHOAN", "TENDN = '" + updatedAccount.username +
-                            "', MATKHAU = '" + updatedAccount.password + "', TINHTRANG = 1",
-                            " WHERE ID = '" + updatedAccount.id.ToString() + "'");
-                        IO.ExportSuccess("Thêm nhân viên thành công");
-                        this.parent.LoadForm();
-                        this.parent.Show();
-                        this.Close();
+                        if (this.tbConfirm.Text != this.tbPassword.Text)
+                        {
+                            IO.ExportError("Mật khẩu nhập lại không đúng");
+                            return 0;
+                        }
+
+                        newStaff.id.SetID(staff.id.FindID("NV"), "NV", 2);
+
+                        Account updatedAccount = new Account(newStaff.id.ToString(), this.tbUsername.Text,
+                            Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()),
+                            true);
+
+                        if (IsUsername(updatedAccount.username))
+                        {
+                            Data.UpdateData("NHANVIEN", "DCHI = N'" + newStaff.address + "', NGVL = '" +
+                                DateTime.Today.Year.ToString() + "/" + DateTime.Today.Month.ToString() +
+                                "/" + DateTime.Today.Day.ToString() + "', SDT = '" + newStaff.sdt +
+                                "', LUONG = " + newStaff.luong.ToString() + ", CHUCVU = N'" +
+                                newStaff.chucVu + "'", " WHERE MANV = '" + newStaff.id.ToString() + "'");
+                            Data.UpdateData("TAIKHOAN", "TENDN = '" + updatedAccount.username +
+                                "', MATKHAU = '" + updatedAccount.password + "', TINHTRANG = 1",
+                                " WHERE ID = '" + updatedAccount.id.ToString() + "'");
+                            IO.ExportSuccess("Thêm nhân viên thành công");
+                            this.parent.ClearMenu();
+                            this.parent.LoadMenu();
+                            Event.ShowForm(this.parent);
+                            this.Close();
+                        }
+                        else
+                        {
+                            IO.ExportError("Tên đăng nhập đã tồn tại");
+                            return 0;
+                        }
+
+                        Data.CloseConnection(ref connection);
+                        return -1;
                     }
-                    else
+
+                    if (newStaff.sdt == staff.sdt)
                     {
-                        IO.ExportError("Tên đăng nhập đã tồn tại");
+                        Data.CloseConnection(ref connection);
+                        IO.ExportError("Tồn tại nhân viên có số điện thoại này trong danh sách");
                         return 0;
                     }
 
-                    Data.CloseConnection(ref connection);
-                    return -1;
+                    lastID = staff.id.FindID("NV").ToString();
                 }
 
-                if (newStaff.sdt == staff.sdt)
+                reader.Close();
+
+                if (lastID == "")
                 {
-                    Data.CloseConnection(ref connection);
-                    IO.ExportError("Tồn tại nhân viên có số điện thoại này trong danh sách");
-                    return 0;
+                    newStaff.id.SetID(1, "NV", 2);
+                }
+                else
+                {
+                    newStaff.id.SetID(int.Parse(lastID) + 1, "NV", 2);
                 }
 
-                lastID = staff.id.FindID("NV").ToString();
+                Data.CloseConnection(ref connection);
+                return 1;
             }
-
-            reader.Close();
-
-            if (lastID == "")
+            catch (Exception)
             {
-                newStaff.id.SetID(1, "NV", 2);
+                IO.ExportError("Lỗi không xác định\n(Line 208 Form Add Staff)");
+                return -1;
             }
-            else
-            {
-                newStaff.id.SetID(int.Parse(lastID) + 1, "NV", 2);
-            }
-
-            Data.CloseConnection(ref connection);
-            return 1;
         }
 
         public bool IsUsername(string username)
         {
-            SqlConnection connection = Data.OpenConnection();
-            SqlDataReader reader = Data.ReadData("TAIKHOAN", connection, " WHERE TENDN = '" + username +
-                "'", "*");
-
-            if (!reader.HasRows)
+            try
             {
-                if (username == "1")
+                SqlConnection connection = Data.OpenConnection();
+                SqlDataReader reader = Data.ReadData("TAIKHOAN", connection, " WHERE TENDN = '" + username
+                    + "'", "*");
+
+                if (!reader.HasRows)
                 {
-                    return false;
+                    if (username == this.parent.parent.parent.account.username &&
+                        this.parent.parent.parent.account.IsAdmin())
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
                 }
                 else
                 {
-                    return true;
+                    return false;
                 }
             }
-            else
+            catch (Exception)
             {
+                IO.ExportError("Lỗi không xác định\n(Line 240 Form Add Staff)");
                 return false;
             }
         }
 
-        private void ShowErrorWord(object sender, KeyPressEventArgs e)
-        {
-            //Event.NhapChu((TextBox)sender, new ErrorProvider(), e);
-        }
-
-        private void ShowErrorNumber(object sender, KeyPressEventArgs e)
-        {
-            //Event.NhapSo()
-        }
-
         public bool IsError()
         {
-            if (this.tbName.Text == "" || this.tbAddress.Text == "" || this.tbSDT.Text == "" ||
-                    this.tbCMND.Text == "" || this.cbSex.Text == "" || this.tbSalary.Text == "" ||
-                    this.cbPosition.Text == "" || this.tbUsername.Text == "" ||
-                    this.tbPassword.Text == "" || this.tbConfirm.Text == "")
+            try
             {
-                IO.ExportError("Nhập không đầy đủ nội dung tất cả các trường");
-                return true;
-            }
+                if (this.tbName.Text == "" || this.tbAddress.Text == "" || this.tbSDT.Text == "" ||
+                        this.tbCMND.Text == "" || this.cbSex.Text == "" || this.tbSalary.Text == "" ||
+                        this.cbPosition.Text == "" || this.tbUsername.Text == "" ||
+                        this.tbPassword.Text == "" || this.tbConfirm.Text == "")
+                {
+                    IO.ExportError("Nhập không đầy đủ nội dung tất cả các trường");
+                    return true;
+                }
 
-            if ((int.Parse(this.tbSalary.Text)) < 0 || int.Parse(this.tbSDT.Text) < 0 ||
-                int.Parse(this.tbCMND.Text) < 0)
+                return false;
+            }
+            catch (Exception)
             {
-                IO.ExportError("Nhập số có giá trị nhỏ hơn 0");
-                return true;
+                IO.ExportError("Lỗi không xác định\n(Line 262 Form Add Staff)");
+                return false;
             }
-
-            if (IO.IsContainNumber(this.tbName.Text) || IO.IsContainNumber(this.cbPosition.Text) ||
-                IO.IsContainNumber(this.cbSex.Text))
-            {
-                IO.ExportError("Nhập số vào trường họ tên, chức vụ hoặc giới tính");
-                return true;
-            }
-
-            return false;
         }
 
         private void OKClicked(object sender, EventArgs e)
@@ -285,8 +300,9 @@ namespace CoffeeShopManagement
                         Data.AddData("NHANVIEN", newStaff.GetInfo());
                         Data.AddData("TAIKHOAN", account.GetInfo());
                         IO.ExportSuccess("Thêm nhân viên thành công");
-                        this.parent.LoadForm();
-                        this.parent.Show();
+                        this.parent.ClearMenu();
+                        this.parent.LoadMenu();
+                        Event.ShowForm(this.parent);
                         this.Close();
                     }
                     else
@@ -297,7 +313,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Nội dung nhập không hợp lệ");
+                IO.ExportError("Lỗi không xác định\n(Line 316 Form Add Staff)");
             }
         }
     }

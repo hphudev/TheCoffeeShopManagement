@@ -31,11 +31,11 @@ namespace CoffeeShopManagement
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.bAddImage = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bCancel = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bOK = new Guna.UI2.WinForms.Guna2GradientButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pbStaff = new System.Windows.Forms.PictureBox();
+            this.pbImage = new System.Windows.Forms.PictureBox();
             this.cbPosition = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -59,40 +59,40 @@ namespace CoffeeShopManagement
             this.label21 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.tbConfirm = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bReset = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStaff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2GradientButton1
+            // bAddImage
             // 
-            this.guna2GradientButton1.Animated = true;
-            this.guna2GradientButton1.BackColor = System.Drawing.Color.SeaShell;
-            this.guna2GradientButton1.BorderRadius = 13;
-            this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.DimGray;
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(274, 334);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Size = new System.Drawing.Size(102, 42);
-            this.guna2GradientButton1.TabIndex = 118;
-            this.guna2GradientButton1.Text = "Sửa ảnh";
+            this.bAddImage.Animated = true;
+            this.bAddImage.BackColor = System.Drawing.Color.SeaShell;
+            this.bAddImage.BorderRadius = 13;
+            this.bAddImage.CheckedState.Parent = this.bAddImage;
+            this.bAddImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bAddImage.CustomImages.Parent = this.bAddImage;
+            this.bAddImage.FillColor = System.Drawing.Color.DimGray;
+            this.bAddImage.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.bAddImage.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.bAddImage.ForeColor = System.Drawing.Color.White;
+            this.bAddImage.HoverState.Parent = this.bAddImage;
+            this.bAddImage.Location = new System.Drawing.Point(274, 334);
+            this.bAddImage.Name = "bAddImage";
+            this.bAddImage.ShadowDecoration.Parent = this.bAddImage;
+            this.bAddImage.Size = new System.Drawing.Size(102, 42);
+            this.bAddImage.TabIndex = 118;
+            this.bAddImage.Text = "Sửa ảnh";
             // 
             // bCancel
             // 
@@ -137,22 +137,22 @@ namespace CoffeeShopManagement
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.pbStaff);
+            this.panel2.Controls.Add(this.pbImage);
             this.panel2.Location = new System.Drawing.Point(12, 119);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(250, 257);
             this.panel2.TabIndex = 117;
             // 
-            // pbStaff
+            // pbImage
             // 
-            this.pbStaff.BackColor = System.Drawing.Color.Bisque;
-            this.pbStaff.Image = global::CoffeeShopManagement.Properties.Resources.LogoLogin;
-            this.pbStaff.Location = new System.Drawing.Point(13, 12);
-            this.pbStaff.Name = "pbStaff";
-            this.pbStaff.Size = new System.Drawing.Size(222, 222);
-            this.pbStaff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbStaff.TabIndex = 12;
-            this.pbStaff.TabStop = false;
+            this.pbImage.BackColor = System.Drawing.Color.Bisque;
+            this.pbImage.Image = global::CoffeeShopManagement.Properties.Resources.LogoLogin;
+            this.pbImage.Location = new System.Drawing.Point(13, 12);
+            this.pbImage.Name = "pbImage";
+            this.pbImage.Size = new System.Drawing.Size(222, 222);
+            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbImage.TabIndex = 12;
+            this.pbImage.TabStop = false;
             // 
             // cbPosition
             // 
@@ -592,6 +592,26 @@ namespace CoffeeShopManagement
             this.guna2GroupBox2.TabIndex = 113;
             this.guna2GroupBox2.Text = "Thông tin đăng nhập";
             // 
+            // guna2GradientButton2
+            // 
+            this.guna2GradientButton2.Animated = true;
+            this.guna2GradientButton2.BackColor = System.Drawing.Color.SeaShell;
+            this.guna2GradientButton2.BorderRadius = 13;
+            this.guna2GradientButton2.CheckedState.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2GradientButton2.CustomImages.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.FillColor = System.Drawing.Color.DimGray;
+            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton2.HoverState.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.Location = new System.Drawing.Point(255, 47);
+            this.guna2GradientButton2.Name = "guna2GradientButton2";
+            this.guna2GradientButton2.ShadowDecoration.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.Size = new System.Drawing.Size(109, 42);
+            this.guna2GradientButton2.TabIndex = 119;
+            this.guna2GradientButton2.Text = "Chỉnh sửa";
+            // 
             // tbConfirm
             // 
             this.tbConfirm.Animated = true;
@@ -694,7 +714,7 @@ namespace CoffeeShopManagement
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SeaShell;
-            this.panel1.Controls.Add(this.guna2GradientButton1);
+            this.panel1.Controls.Add(this.bAddImage);
             this.panel1.Controls.Add(this.bCancel);
             this.panel1.Controls.Add(this.bReset);
             this.panel1.Controls.Add(this.bOK);
@@ -732,27 +752,7 @@ namespace CoffeeShopManagement
             // guna2Elipse2
             // 
             this.guna2Elipse2.BorderRadius = 100;
-            this.guna2Elipse2.TargetControl = this.pbStaff;
-            // 
-            // guna2GradientButton2
-            // 
-            this.guna2GradientButton2.Animated = true;
-            this.guna2GradientButton2.BackColor = System.Drawing.Color.SeaShell;
-            this.guna2GradientButton2.BorderRadius = 13;
-            this.guna2GradientButton2.CheckedState.Parent = this.guna2GradientButton2;
-            this.guna2GradientButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2GradientButton2.CustomImages.Parent = this.guna2GradientButton2;
-            this.guna2GradientButton2.FillColor = System.Drawing.Color.DimGray;
-            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.HoverState.Parent = this.guna2GradientButton2;
-            this.guna2GradientButton2.Location = new System.Drawing.Point(255, 47);
-            this.guna2GradientButton2.Name = "guna2GradientButton2";
-            this.guna2GradientButton2.ShadowDecoration.Parent = this.guna2GradientButton2;
-            this.guna2GradientButton2.Size = new System.Drawing.Size(109, 42);
-            this.guna2GradientButton2.TabIndex = 119;
-            this.guna2GradientButton2.Text = "Chỉnh sửa";
+            this.guna2Elipse2.TargetControl = this.pbImage;
             // 
             // FormChangeInfoStaff
             // 
@@ -766,7 +766,7 @@ namespace CoffeeShopManagement
             this.Text = "F_ChinhSuaTaiKhoan";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbStaff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
             this.guna2GradientPanel1.ResumeLayout(false);
@@ -778,11 +778,11 @@ namespace CoffeeShopManagement
 
         }
 
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2GradientButton bAddImage;
         private Guna.UI2.WinForms.Guna2GradientButton bCancel;
         private Guna.UI2.WinForms.Guna2GradientButton bOK;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pbStaff;
+        private System.Windows.Forms.PictureBox pbImage;
         private Guna.UI2.WinForms.Guna2TextBox tbConfirm;
         private Guna.UI2.WinForms.Guna2TextBox tbPassword;
         private Guna.UI2.WinForms.Guna2ComboBox cbPosition;

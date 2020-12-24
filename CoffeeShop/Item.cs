@@ -26,26 +26,42 @@ namespace CoffeeShopManagement
 
         public Item(string id, string name, string unit, int numberOfServings, int price, bool status)
         {
-            this.id = new ID(id);
-            this.name = name;
-            this.unit = unit;
-            this.price = price;
-            this.numberOfServings = numberOfServings;
-            this.status = status;
-
-            if (this.id.ToString() != "")
+            try
             {
-                using(var bitmap = new Bitmap("./ImageItem/" + this.id.ToString() + ".jpg"))
+                this.id = new ID(id);
+                this.name = name;
+                this.unit = unit;
+                this.price = price;
+                this.numberOfServings = numberOfServings;
+                this.status = status;
+
+                if (this.id.ToString() != "")
                 {
-                    this.image = new Bitmap(bitmap);
+                    using (var bitmap = new Bitmap("./ImageItem/" + this.id.ToString() + ".jpg"))
+                    {
+                        this.image = new Bitmap(bitmap);
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 48 Class Item)");
             }
         }
 
         public string GetInfo()
         {
-            return "'" + this.id + "', N'" + this.name + "', N'" + this.unit + "', N'" + 
-                this.numberOfServings.ToString() + "', '" + this.price + "', '" + this.status + "'";
+            try
+            {
+                return "'" + this.id + "', N'" + this.name + "', N'" + this.unit + "', N'" +
+                    this.numberOfServings.ToString() + "', '" + this.price + "', '" + this.status +
+                    "'";
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 62 Class Item)");
+                return null;
+            }
         }
     }
 }

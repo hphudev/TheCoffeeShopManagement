@@ -9,7 +9,9 @@ namespace CoffeeShopManagement
     public class Bill
     {
         public ID idCustomer { get; }
+
         public ID idStaff { get; }
+
         public string date { get; }
 
         public ID id { get; }
@@ -21,20 +23,34 @@ namespace CoffeeShopManagement
         public Bill(string id, string date, string idCustomer, string idStaff, int value,
             int discount)
         {
-            this.id = new ID(id);
-            this.idCustomer = new ID(idCustomer);
-            this.idStaff = new ID(idStaff);
-            this.date = date;
-            this.value = value;
-            this.discount = discount;
+            try
+            {
+                this.id = new ID(id);
+                this.idCustomer = new ID(idCustomer);
+                this.idStaff = new ID(idStaff);
+                this.date = date;
+                this.value = value;
+                this.discount = discount;
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 35 Class Bill)");
+            }
         }
 
         public void AddBill()
         {
-            string idStaffTmp = (idStaff.id == "NULL") ? idStaff.id : ("'" + idStaff.id + "'");
-            string idCustomerTmp = (idCustomer.id == "NULL") ? idCustomer.id : ("'" + idCustomer.id + "'");
-            Data.AddData("HOADON", $"N'{this.id.id}', '{Utility.GetDateUS(this.date)}', {idCustomerTmp}," +
-                $"{idStaffTmp}, '{this.value}', '{this.discount}'");
+            try
+            {
+                string idStaffTmp = (idStaff.id == "NULL") ? idStaff.id : ("'" + idStaff.id + "'");
+                string idCustomerTmp = (idCustomer.id == "NULL") ? idCustomer.id : ("'" + idCustomer.id + "'");
+                Data.AddData("HOADON", $"N'{this.id.id}', '{Utility.GetDateUS(this.date)}', {idCustomerTmp}," +
+                    $"{idStaffTmp}, '{this.value}', '{this.discount}'");
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 50 Class Bill)");
+            }
         }
     }
 }

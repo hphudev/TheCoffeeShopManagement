@@ -17,50 +17,42 @@ namespace CoffeeShopManagement
         private FormLock lockForm;
         private FormMenuItem parent;
 
-        public ID FindID()
-        {
-            ID lastID = ID.GetLastIDItem();
-            ID newID = new ID("");
-
-            if (lastID != null)
-            {
-                newID.SetID((lastID.FindID("M") + 1), "M", 3);
-            }
-            else
-            {
-                newID.SetID(1, "M", 3);
-            }
-
-            return newID;
-        }
-
         public FormAddItem(FormMenuItem parent)
         {
-            InitializeComponent();
-            this.parent = parent;
-            lockForm = new FormLock(this);
-            lockForm.Show();
-            this.lID.Text = FindID().id.ToString();
+            try
+            {
+                InitializeComponent();
+                this.parent = parent;
+                this.lockForm = new FormLock(this);
+                Event.ShowForm(this.lockForm);
 
-            this.tbName.KeyPress += PressEnter;
-            this.tbPrice.KeyPress += PressEnter;
-            this.cbUnit.KeyPress += PressEnter;
-            this.FormClosed += CloseForm;
-            this.bCancel.Click += CancelClicked;
-            this.tbPrice.KeyPress += ShowErrorWord;
-            this.bOK.Click += OKClicked;
-            this.bAddImage.Click += AddImageClicked;
+                this.tbName.KeyPress += PressEnter;
+                this.tbPrice.KeyPress += PressEnter;
+                this.cbUnit.KeyPress += PressEnter;
+                this.FormClosed += CloseForm;
+                this.bCancel.Click += CancelClicked;
+                this.bOK.Click += OKClicked;
+                this.bAddImage.Click += AddImageClicked;
+                this.tbPrice.KeyPress += IO.LockWord;
+                this.lID.Text = ID.FindNewID("MON", " ORDER BY MAMON DESC", "MAMON", "M", 
+                    3).ToString();
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 42 Form Add Item)");
+            }
+
         }
 
         private void CloseForm(object sender, FormClosedEventArgs e)
         {
-            this.parent.Show();
-            this.lockForm.Close();
+            Event.ShowForm(this.parent);
+            Event.CloseForm(this.lockForm);
         }
 
         private void CancelClicked(object sender, EventArgs e)
         {
-            this.Close();
+            Event.CloseForm(this);
         }
 
         private void PressEnter(object sender, KeyPressEventArgs e)
@@ -70,67 +62,71 @@ namespace CoffeeShopManagement
 
         public bool IsItem(ref Item newItem)
         {
-            SqlConnection connection = Data.OpenConnection();
-            SqlDataReader reader = Data.ReadData("MON", connection, "", "*");
-            string lastID = "";
-
-            while (reader.HasRows)
+            try
             {
-                if (reader.Read() == false)
+                SqlConnection connection = Data.OpenConnection();
+                SqlDataReader reader = Data.ReadData("MON", connection, "", "*");
+                string lastID = "";
+
+                while (reader.HasRows)
                 {
-                    break;
+                    if (reader.Read() == false)
+                    {
+                        break;
+                    }
+
+                    Item item = new Item(reader.GetString(0), reader.GetString(1),
+                        reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetBoolean(5));
+
+                    if (newItem.name == item.name && item.status)
+                    {
+                        Data.CloseConnection(ref connection);
+                        return false;
+                    }
+
+                    if (newItem.name == item.name && !item.status)
+                    {
+                        newItem.id.SetID(item.id.FindID("M"), "M", 3);
+                        Data.UpdateData("MON", "DVT = '" + newItem.unit + "', GIA = " + newItem.price +
+                            ", TINHTRANG = 1, SOLANPHUCVU = 0", " WHERE MAMON = '" + newItem.id.ToString() + "'");
+                        Data.CloseConnection(ref connection);
+                        return true;
+                    }
+
+                    lastID = item.id.FindID("M").ToString();
                 }
 
-                Item item = new Item(reader.GetString(0), reader.GetString(1),
-                    reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetBoolean(5));
+                reader.Close();
 
-                if (newItem.name == item.name && item.status)
+                if (lastID == "")
                 {
-                    Data.CloseConnection(ref connection);
-                    return false;
+                    newItem.id.SetID(1, "M", 3);
+                }
+                else
+                {
+                    newItem.id.SetID(int.Parse(lastID) + 1, "M", 3);
                 }
 
-                if (newItem.name == item.name && !item.status)
-                {
-                    newItem.id.SetID(item.id.FindID("M"), "M", 3);
-                    Data.UpdateData("MON", "DVT = '" + newItem.unit + "', GIA = " + newItem.price +
-                        ", TINHTRANG = 1, SOLANPHUCVU = 0", " WHERE MAMON = '" + newItem.id.ToString() + "'");
-                    Data.CloseConnection(ref connection);
-                    return true;
-                }
-
-                lastID = item.id.FindID("M").ToString();
+                Data.AddData("MON", newItem.GetInfo());
+                Data.CloseConnection(ref connection);
+                return true;
             }
-
-            reader.Close();
-
-            if (lastID == "")
+            catch (Exception)
             {
-                newItem.id.SetID(1, "M", 3);
+                IO.ExportError("Lỗi không xác định\n(Line 116 Form Add Item)");
+                return false;
             }
-            else
-            {
-                newItem.id.SetID(int.Parse(lastID) + 1, "M", 3);
-            }
-
-            Data.AddData("MON", newItem.GetInfo());
-            Data.CloseConnection(ref connection);
-            return true;
-        }
-
-        private void ShowErrorWord(object sender, KeyPressEventArgs e)
-        {
-            Event.ShowErrorWord(this.tbPrice, this.epShowError, e);
         }
 
         private void OKClicked(object sender, EventArgs e)
         {
             try
             {
-                if (int.Parse(tbPrice.Text) <= 0 || this.tbName.Text == "" || this.cbUnit.Text == ""
+                if (this.tbPrice.Text == "" || this.tbName.Text == "" || this.cbUnit.Text == ""
                     || this.pbImageItem.Image == null)
                 {
-                    throw new Exception();
+                    IO.ExportError("Phải nhập đầy đủ thông tin tất cả các trường");
+                    return;
                 }
 
                 Item newItem = new Item("", tbName.Text, cbUnit.Text, 0, int.Parse(tbPrice.Text),
@@ -143,37 +139,28 @@ namespace CoffeeShopManagement
                 }
 
                 IO.ExportSuccess("Thêm món thành công");
-                this.parent.LoadForm();
-                //this.parent.parent.LoadSomeThingPublic();
-                this.parent.Show();
+                this.parent.ClearMenu();
+                this.parent.LoadMenu();
                 this.parent.parent.LoadSomeThingPublic();
+                Event.ShowForm(this.parent);
                 this.Close();
             }
             catch (Exception)
             {
-                IO.ExportError("Nội dung nhập không hợp lệ");
+                IO.ExportError("Lỗi không xác định\n(Line 150 Form Add Item)");
             }
         }
 
         private void AddImageClicked(object sender, EventArgs e)
         {
-            OpenFileDialog openFileImage = new OpenFileDialog();
-            DialogResult dialog = openFileImage.ShowDialog();
-
-            if (dialog != DialogResult.Cancel)
+            try
             {
-                FileInfo file = new FileInfo(openFileImage.FileName);
-
-                if (file.Extension == ".jpg" || file.Extension == ".png")
-                {
-                    pbImageItem.Image = Image.FromFile(openFileImage.FileName);
-                    File.Copy(openFileImage.FileName, "./ImageItem/" + FindID().id.ToString() + 
-                        ".jpg", true);
-                }
-                else
-                {
-                    IO.ExportError("Chỉ hỗ trợ file .jpg và .png");
-                }
+                Event.AddImage(ref this.pbImageItem, "./ImageItem/", ID.FindNewID("MON",
+                    " ORDER BY MAMON DESC", "MAMON", "M", 3).ToString());
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 163 Form Add Item)");
             }
         }
     }

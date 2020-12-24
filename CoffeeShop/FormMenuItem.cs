@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Threading;
 
 namespace CoffeeShopManagement
 {
@@ -15,85 +16,133 @@ namespace CoffeeShopManagement
     {
         public FormSell parent { get; }
         private FormLock lockForm;
+        private BackgroundWorker loader;
+        private AutoCompleteStringCollection sourceData;
+        private object item;
+        private Semaphore[] semaphores;
 
         public void GetSelectedInfo(out Item selectedItem)
         {
-            DataGridViewRow[] selectedRows = new DataGridViewRow[1];
-            this.dgvMenu.SelectedRows.CopyTo(selectedRows, 0);
-
-            selectedItem = new Item((string)selectedRows[0].Cells[0].Value,
-                (string)selectedRows[0].Cells[1].Value, (string)selectedRows[0].Cells[2].Value,
-                (int)selectedRows[0].Cells[3].Value, (int)selectedRows[0].Cells[4].Value, true);
-        }
-
-        public void LoadForm()
-        {
-            #region Giao diện DataGridView
-            this.dgvMenu.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Raised;
-            this.dgvMenu.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 139, 139);
-            this.dgvMenu.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            this.dgvMenu.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.dgvMenu.Font = new Font("Segoe UI", 13, FontStyle.Bold);
-            this.dgvMenu.RowsDefaultCellStyle.Font = new Font("Time New Roman", 9, FontStyle.Bold);
-            this.dgvMenu.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 192, 128);
-            #endregion
-            //
-            AutoCompleteStringCollection sourceData = new AutoCompleteStringCollection();
-            this.dgvMenu.Rows.Clear();
-            SqlConnection connection = Data.OpenConnection();
-            SqlDataReader reader = Data.ReadData("MON", connection, " WHERE TINHTRANG = 1", "*");
-
-            while (reader.HasRows)
+            try
             {
-                if (reader.Read() == false)
-                {
-                    break;
-                }
+                DataGridViewRow[] selectedRows = new DataGridViewRow[1];
+                this.dgvMenu.SelectedRows.CopyTo(selectedRows, 0);
 
-                Item item = new Item(reader.GetString(0), reader.GetString(1),
-                    reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetBoolean(5));
-                this.dgvMenu.Rows.Add(item.id.ToString(), item.name, item.unit,
-                    item.numberOfServings, item.price);
-                sourceData.Add(item.name);
+                selectedItem = new Item((string)selectedRows[0].Cells[0].Value,
+                    (string)selectedRows[0].Cells[1].Value, (string)selectedRows[0].Cells[2].Value,
+                    (int)selectedRows[0].Cells[3].Value, (int)selectedRows[0].Cells[4].Value, true);
             }
-
-            this.cbFind.AutoCompleteCustomSource = sourceData;
-            Data.CloseConnection(ref connection);
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 37 Form Menu Item)");
+                selectedItem = null;
+            }
         }
 
         public FormMenuItem(FormSell parent)
         {
-            this.parent = parent;
-            InitializeComponent();
-            LoadForm();
-            this.bAddItem.Click += AddItemClicked;
-            this.bChangeInfoItem.Click += ChangeInfoItemClicked;
-            this.bDeleteItem.Click += DeleteItemClicked;
-            this.bFind.Click += FindItemClicked;
-            this.bCancel.Click += CancelClicked;
-            this.FormClosed += CloseForm;
-            this.lockForm = new FormLock(this);
-            this.lockForm.Show();
-            this.Show();
+            try
+            {
+                this.parent = parent;
+                InitializeComponent();
+                this.bAddItem.Click += AddItemClicked;
+                this.bChangeInfoItem.Click += ChangeInfoItemClicked;
+                this.bDeleteItem.Click += DeleteItemClicked;
+                this.bFind.Click += FindItemClicked;
+                this.bCancel.Click += CancelClicked;
+                this.FormClosed += CloseForm;
+                this.lockForm = new FormLock(this);
+                Event.ShowForm(this.lockForm);
+                Event.ShowForm(this);
+                this.cbFind.TextChanged += ReloadMenu;
+                this.loader = new BackgroundWorker();
+                this.loader.DoWork += LoadData;
+                this.loader.WorkerReportsProgress = true;
+                this.loader.RunWorkerCompleted += FinishWork;
+                this.loader.ProgressChanged += ShowProgress;
+                this.loader.RunWorkerAsync();
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 67 Form Menu Item)");
+            }
+        }
+
+        private void FinishWork(object sender, RunWorkerCompletedEventArgs e)
+        {
+            Event.FinishWork(this.cbFind, this.sourceData);
+        }
+
+        private void ShowProgress(object sender, ProgressChangedEventArgs e)
+        {
+            Event.ShowProgress(ref this.semaphores, this.dgvMenu, this.item, this.progressBar, e);
+        }
+
+        private void LoadData(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                if (e.Argument == null)
+                {
+                    Event.LoadData(ref this.sourceData, "MON", " WHERE TINHTRANG = 1", ref this.semaphores,
+                      ref this.item, "Item", this.loader);
+                }
+                else
+                {
+                    Event.LoadData(ref this.sourceData, "MON", " WHERE TINHTRANG = 1 AND TENMON LIKE N'" +
+                        (string)e.Argument + "%'", ref this.semaphores, ref this.item, "Item", this.loader);
+                }
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 98 Form Menu Item");
+            }
+        }
+
+        public void LoadMenu()
+        {
+            try
+            {
+                this.loader.RunWorkerAsync();
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 110 Form Menu Item");
+            }
+        }
+
+        public void ClearMenu()
+        {
+            try
+            {
+                this.dgvMenu.Rows.Clear();
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 122 Form Menu Item");
+            }
+        }
+
+        private void ReloadMenu(object sender, EventArgs e)
+        {
+            Event.ReloadMenu(this.cbFind, this.dgvMenu, this.loader);
         }
 
         private void CancelClicked(object sender, EventArgs e)
         {
-            this.Close();
+            Event.CloseForm(this);
         }
 
         private void AddItemClicked(object sender, EventArgs e)
         {
-            //this.Hide();
-            (new FormAddItem(this)).Show();
+            Event.ShowForm((new FormAddItem(this)));
         }
 
         private void ChangeInfoItemClicked(object sender, EventArgs e)
         {
             if (this.dgvMenu.Rows.Count != 0)
             {
-                //this.Hide();
-                (new FormChangeInfoItem(this)).Show();
+                Event.ShowForm((new FormChangeInfoItem(this)));
             }
             else
             {
@@ -103,61 +152,39 @@ namespace CoffeeShopManagement
 
         private void DeleteItemClicked(object sender, EventArgs e)
         {
-            if (this.dgvMenu.Rows.Count != 0)
+            try
             {
-                Item selectedItem;
-                GetSelectedInfo(out selectedItem);
-                Data.UpdateData("MON", "TINHTRANG = 0", " WHERE MAMON = '" +
-                    selectedItem.id.ToString() + "'");
-                IO.ExportSuccess("Xóa món thành công");
-                LoadForm();
-                this.parent.LoadSomeThingPublic();
+                if (this.dgvMenu.Rows.Count != 0)
+                {
+                    Item selectedItem;
+                    GetSelectedInfo(out selectedItem);
+                    Data.UpdateData("MON", "TINHTRANG = 0", " WHERE MAMON = '" +
+                        selectedItem.id.ToString() + "'");
+                    IO.ExportSuccess("Xóa món thành công");
+                    ClearMenu();
+                    LoadMenu();
+                    this.parent.LoadSomeThingPublic();
+                }
+                else
+                {
+                    IO.ExportError("Hành động không hợp lệ");
+                }
             }
-            else
+            catch (Exception)
             {
-                IO.ExportError("Hành động không hợp lệ");
+                IO.ExportError("Lỗi không xác định\n(Line 175 Form Menu Item");
             }
         }
 
         private void FindItemClicked(object sender, EventArgs e)
         {
-            SqlConnection connection = Data.OpenConnection();
-            SqlDataReader reader = Data.ReadData("MON", connection, " WHERE TINHTRANG = 1", "*");
-
-            while (reader.HasRows)
-            {
-                if (!reader.Read())
-                {
-                    IO.ExportError("Món này không có trong danh sách");
-                    break;
-                }
-
-                Item item = new Item(reader.GetString(0), reader.GetString(1),
-                    reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetBoolean(5));
-
-                if (item.name == this.cbFind.Text)
-                {
-                    for (int i = 0; i < this.dgvMenu.Rows.Count; i++)
-                    {
-                        if (this.dgvMenu.Rows[i].Cells[1].Value.ToString() == this.cbFind.Text)
-                        {
-                            this.dgvMenu.Rows[i].Selected = true;
-                            this.cbFind.Text = "";
-                            break;
-                        }
-                    }
-
-                    break;
-                }
-            }
-
-            Data.CloseConnection(ref connection);
+            Event.Find("MON", " WHERE TINHTRANG = 1 AND TENMON = N'" + this.cbFind.Text + "'", "*",
+                    "Món", ref this.dgvMenu, ref this.cbFind);
         }
 
         private void CloseForm(object sender, FormClosedEventArgs e)
         {
-            //this.parent.LoadSomeThingPublic();
-            this.lockForm.Close();
+            Event.CloseForm(this.lockForm);
         }
     }
 }

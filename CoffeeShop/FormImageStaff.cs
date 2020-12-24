@@ -12,14 +12,25 @@ namespace CoffeeShopManagement
 {
     public partial class FormImageStaff : Form
     {
-        public FormImageStaff()
+        public FormImageStaff(Image image, ID id)
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+                this.pbImageItem.Image = image;
+                this.StartPosition = FormStartPosition.CenterScreen;
+                this.bCancel.Click += CancelClicked;
+                this.lID.Text = id.ToString();
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 27 Form Image Staff)");
+            }
         }
 
-        private void FormImageStaff_Load(object sender, EventArgs e)
+        private void CancelClicked(object sender, EventArgs e)
         {
-
+            Event.CloseForm(this);
         }
     }
 }

@@ -34,29 +34,27 @@
             this.bCancel = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bOK = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bAddImage = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.epShowError = new System.Windows.Forms.ErrorProvider(this.components);
             this.tbUnit = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pbImageItem = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pbImageItem = new System.Windows.Forms.PictureBox();
             this.lID = new System.Windows.Forms.Label();
+            this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.tbPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbName = new Guna.UI2.WinForms.Guna2TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.epShowError)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImageItem)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImageItem)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -123,10 +121,6 @@
             this.bAddImage.Size = new System.Drawing.Size(102, 42);
             this.bAddImage.TabIndex = 130;
             this.bAddImage.Text = "Sửa ảnh";
-            // 
-            // epShowError
-            // 
-            this.epShowError.ContainerControl = this;
             // 
             // tbUnit
             // 
@@ -202,6 +196,17 @@
             this.panel2.Size = new System.Drawing.Size(302, 314);
             this.panel2.TabIndex = 128;
             // 
+            // pbImageItem
+            // 
+            this.pbImageItem.BackColor = System.Drawing.Color.Bisque;
+            this.pbImageItem.Image = global::CoffeeShopManagement.Properties.Resources.LogoLogin;
+            this.pbImageItem.Location = new System.Drawing.Point(15, 12);
+            this.pbImageItem.Name = "pbImageItem";
+            this.pbImageItem.Size = new System.Drawing.Size(272, 284);
+            this.pbImageItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbImageItem.TabIndex = 12;
+            this.pbImageItem.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -227,6 +232,23 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(728, 84);
             this.guna2GradientPanel1.TabIndex = 127;
             // 
+            // lID
+            // 
+            this.lID.BackColor = System.Drawing.Color.Transparent;
+            this.lID.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lID.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lID.ForeColor = System.Drawing.Color.White;
+            this.lID.Image = global::CoffeeShopManagement.Properties.Resources.Info;
+            this.lID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lID.Location = new System.Drawing.Point(0, 0);
+            this.lID.Name = "lID";
+            this.lID.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.lID.Size = new System.Drawing.Size(195, 84);
+            this.lID.TabIndex = 111;
+            this.lID.Text = "NV-0001";
+            this.lID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // guna2GroupBox2
             // 
             this.guna2GroupBox2.AutoScroll = true;
@@ -246,60 +268,6 @@
             this.guna2GroupBox2.Size = new System.Drawing.Size(396, 350);
             this.guna2GroupBox2.TabIndex = 129;
             this.guna2GroupBox2.Text = "Thông tin món";
-            // 
-            // guna2Elipse2
-            // 
-            this.guna2Elipse2.BorderRadius = 10;
-            this.guna2Elipse2.TargetControl = this.pbImageItem;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(8, 46);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(379, 293);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 134;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CoffeeShopManagement.Properties.Resources.LineMenu;
-            this.pictureBox1.Location = new System.Drawing.Point(36, 94);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(651, 46);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 133;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pbImageItem
-            // 
-            this.pbImageItem.BackColor = System.Drawing.Color.Bisque;
-            this.pbImageItem.Image = global::CoffeeShopManagement.Properties.Resources.LogoLogin;
-            this.pbImageItem.Location = new System.Drawing.Point(15, 12);
-            this.pbImageItem.Name = "pbImageItem";
-            this.pbImageItem.Size = new System.Drawing.Size(272, 284);
-            this.pbImageItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbImageItem.TabIndex = 12;
-            this.pbImageItem.TabStop = false;
-            // 
-            // lID
-            // 
-            this.lID.BackColor = System.Drawing.Color.Transparent;
-            this.lID.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lID.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lID.ForeColor = System.Drawing.Color.White;
-            this.lID.Image = global::CoffeeShopManagement.Properties.Resources.Info;
-            this.lID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lID.Location = new System.Drawing.Point(0, 0);
-            this.lID.Name = "lID";
-            this.lID.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.lID.Size = new System.Drawing.Size(195, 84);
-            this.lID.TabIndex = 111;
-            this.lID.Text = "NV-0001";
-            this.lID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbPrice
             // 
@@ -367,6 +335,32 @@
             this.tbName.TabIndex = 2;
             this.tbName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(8, 46);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(379, 293);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 134;
+            this.pictureBox2.TabStop = false;
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.BorderRadius = 10;
+            this.guna2Elipse2.TargetControl = this.pbImageItem;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CoffeeShopManagement.Properties.Resources.LineMenu;
+            this.pictureBox1.Location = new System.Drawing.Point(36, 94);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(651, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 133;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormChangeInfoItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -385,15 +379,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            ((System.ComponentModel.ISupportInitialize)(this.epShowError)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImageItem)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImageItem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -404,7 +397,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton bCancel;
         private Guna.UI2.WinForms.Guna2GradientButton bOK;
         private Guna.UI2.WinForms.Guna2GradientButton bAddImage;
-        private System.Windows.Forms.ErrorProvider epShowError;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pbImageItem;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;

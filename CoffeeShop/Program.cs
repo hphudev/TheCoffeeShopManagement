@@ -14,9 +14,16 @@ namespace CoffeeShopManagement
         [STAThread]
         static void Main()
         {
-            //Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormInit());
+            try
+            {
+                //Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new FormMenuItem(null));
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 25 Class Program)");
+            }
         }
     }
 }

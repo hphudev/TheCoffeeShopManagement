@@ -46,7 +46,6 @@
             this.bAddImage = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bCancel = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bOK = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.epShowError = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -55,7 +54,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbImageItem)).BeginInit();
             this.guna2GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epShowError)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -344,10 +342,6 @@
             this.bOK.TabIndex = 124;
             this.bOK.Text = "Đồng ý";
             // 
-            // epShowError
-            // 
-            this.epShowError.ContainerControl = this;
-            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 20;
@@ -393,7 +387,6 @@
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epShowError)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -415,7 +408,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton bAddImage;
         private Guna.UI2.WinForms.Guna2GradientButton bCancel;
         private Guna.UI2.WinForms.Guna2GradientButton bOK;
-        private System.Windows.Forms.ErrorProvider epShowError;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Guna.UI2.WinForms.Guna2ComboBox cbUnit;

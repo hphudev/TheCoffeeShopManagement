@@ -10,37 +10,67 @@ namespace CoffeeShopManagement
 {
     public static class IO
     {
+        public static void LockWord(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 21 Class IO)");
+            }
+        }
+
+        public static void LockNumber(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                e.Handled = char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 33 Class IO)");
+            }
+        }
+
         public static void ExportError(string content)
         {
-            System.Windows.Forms.MessageBox.Show(content, "Lỗi", MessageBoxButtons.OK, 
-                MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            try
+            {
+                System.Windows.Forms.MessageBox.Show(content, "Lỗi", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 46 Class IO)");
+            }
         }
 
         public static void ExportSuccess(string content)
         {
-            System.Windows.Forms.MessageBox.Show(content, "Thông tin", MessageBoxButtons.OK,
-                MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            try
+            {
+                System.Windows.Forms.MessageBox.Show(content, "Thông tin", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 59 Class IO)");
+            }
         }
 
         public static void ExportWarning(string content)
         {
-            System.Windows.Forms.MessageBox.Show(content, "Cảnh báo", MessageBoxButtons.OK,
-                MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
-        }
-
-        public static bool IsContainNumber(string content)
-        {
-            char[] characters = content.ToCharArray();
-
-            foreach (char charecter in characters)
+            try
             {
-                if (char.IsNumber(charecter))
-                {
-                    return true;
-                }
+                System.Windows.Forms.MessageBox.Show(content, "Cảnh báo", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
             }
-
-            return false;
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 72 Class IO)");
+            }
         }
     }
 }
