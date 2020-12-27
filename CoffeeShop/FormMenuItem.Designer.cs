@@ -1,4 +1,4 @@
-﻿namespace CoffeeShopManagement
+﻿namespace GUI
 {
     partial class FormMenuItem
     {
@@ -37,11 +37,10 @@
             this.bPrint = new Guna.UI2.WinForms.Guna2ImageButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pTieuDe = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.bAddItem = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bFind = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bChangeInfoItem = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.bClear = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bDeleteItem = new Guna.UI2.WinForms.Guna2GradientButton();
             this.cbFind = new System.Windows.Forms.ComboBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -171,7 +170,7 @@
             this.pTieuDe.Controls.Add(this.bAddItem);
             this.pTieuDe.Controls.Add(this.bFind);
             this.pTieuDe.Controls.Add(this.bChangeInfoItem);
-            this.pTieuDe.Controls.Add(this.guna2GradientButton2);
+            this.pTieuDe.Controls.Add(this.bClear);
             this.pTieuDe.Controls.Add(this.bDeleteItem);
             this.pTieuDe.Controls.Add(this.cbFind);
             this.pTieuDe.Dock = System.Windows.Forms.DockStyle.Top;
@@ -254,26 +253,26 @@
             this.bChangeInfoItem.TabIndex = 120;
             this.bChangeInfoItem.Text = "Sửa";
             // 
-            // guna2GradientButton2
+            // bClear
             // 
-            this.guna2GradientButton2.Animated = true;
-            this.guna2GradientButton2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton2.BorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.BorderThickness = 1;
-            this.guna2GradientButton2.CheckedState.Parent = this.guna2GradientButton2;
-            this.guna2GradientButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2GradientButton2.CustomImages.Parent = this.guna2GradientButton2;
-            this.guna2GradientButton2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.Transparent;
-            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.HoverState.Parent = this.guna2GradientButton2;
-            this.guna2GradientButton2.Location = new System.Drawing.Point(1158, 14);
-            this.guna2GradientButton2.Name = "guna2GradientButton2";
-            this.guna2GradientButton2.ShadowDecoration.Parent = this.guna2GradientButton2;
-            this.guna2GradientButton2.Size = new System.Drawing.Size(29, 46);
-            this.guna2GradientButton2.TabIndex = 8;
-            this.guna2GradientButton2.Text = "X";
+            this.bClear.Animated = true;
+            this.bClear.BackColor = System.Drawing.Color.Transparent;
+            this.bClear.BorderColor = System.Drawing.Color.White;
+            this.bClear.BorderThickness = 1;
+            this.bClear.CheckedState.Parent = this.bClear;
+            this.bClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bClear.CustomImages.Parent = this.bClear;
+            this.bClear.FillColor = System.Drawing.Color.Transparent;
+            this.bClear.FillColor2 = System.Drawing.Color.Transparent;
+            this.bClear.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.bClear.ForeColor = System.Drawing.Color.White;
+            this.bClear.HoverState.Parent = this.bClear;
+            this.bClear.Location = new System.Drawing.Point(1158, 14);
+            this.bClear.Name = "bClear";
+            this.bClear.ShadowDecoration.Parent = this.bClear;
+            this.bClear.Size = new System.Drawing.Size(29, 46);
+            this.bClear.TabIndex = 8;
+            this.bClear.Text = "X";
             // 
             // bDeleteItem
             // 
@@ -297,6 +296,8 @@
             // 
             // cbFind
             // 
+            this.cbFind.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbFind.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbFind.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbFind.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -405,7 +406,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton bCancel;
         private Guna.UI2.WinForms.Guna2GradientPanel pTieuDe;
         private Guna.UI2.WinForms.Guna2GradientButton bFind;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
+        private Guna.UI2.WinForms.Guna2GradientButton bClear;
         private System.Windows.Forms.ComboBox cbFind;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2GradientButton bAddItem;

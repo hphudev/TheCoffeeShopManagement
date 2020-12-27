@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Threading;
+using DAO;
+using DTO;
 
-namespace CoffeeShopManagement
+namespace GUI
 {
     public partial class FormMenuCustomer : Form
     {

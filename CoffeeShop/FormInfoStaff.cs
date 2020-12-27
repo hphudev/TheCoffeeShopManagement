@@ -9,23 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using DTO;
+using DAO;
+using BUS;
 
-namespace CoffeeShopManagement
+namespace GUI
 {
     public partial class FormInfoStaff : Form
     {
-        FormLock lockForm;
+        #region Atrributes
+        private FormLock lockForm;
         private Account account;
+        #endregion
 
+        #region Operations
         public void Autofill()
         {
             try
             {
-                SqlConnection connection = Data.OpenConnection();
-                SqlDataReader reader = Data.ReadData("NHANVIEN NV, TAIKHOAN TK", connection, " WHERE " +
-                    "NV.MANV = TK.ID AND TENDN = '" + this.account.username + "'", "*");
-                reader.Read();
-                Staff staff = Initialization.InitStaffFromReader(reader);
+                Staff staff = this.account.GetOwner();
                 this.account.id = staff.id;
                 this.cbPosition.Text = staff.chucVu;
                 this.tbCMND.Text = staff.cmnd;
@@ -40,7 +42,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 43 Form Image Staff)");
+                IO.ExportError("Lỗi không xác định\n(Line 45 Form Image Staff)");
             }
         }
 
@@ -59,7 +61,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 62 Form Image Staff)");
+                IO.ExportError("Lỗi không xác định\n(Line 64 Form Image Staff)");
             }
         }
 
@@ -86,9 +88,7 @@ namespace CoffeeShopManagement
                 Account updatedAccount = new Account(this.account.id.ToString(), this.tbUsername.Text,
                     Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()),
                     true);
-                Data.UpdateData("TAIKHOAN", "MATKHAU = '" + updatedAccount.password + "'",
-                    " WHERE ID = '" + updatedAccount.id.ToString() + "'");
-                IO.ExportSuccess("Đổi mật khẩu thành công");
+                Event.ChangePassword(updatedAccount);
                 Event.CloseForm(this);
             }
             catch (Exception)
@@ -101,5 +101,6 @@ namespace CoffeeShopManagement
         {
             this.lockForm = khoa;
         }
+        #endregion
     }
 }

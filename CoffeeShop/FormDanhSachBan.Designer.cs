@@ -1,4 +1,4 @@
-﻿namespace CoffeeShopManagement
+﻿namespace GUI
 {
     partial class FormDanhSachBan
     {
@@ -39,7 +39,7 @@
             this.bFind = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btDelete = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.flpTable = new CoffeeShopManagement.FlowLayoutPanelBuffered();
+            this.flpTable = new GUI.FlowLayoutPanelBuffered();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             this.pTieuDe.SuspendLayout();

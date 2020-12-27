@@ -10,8 +10,11 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Runtime.InteropServices;
+using DAO;
+using BUS;
+using DTO;
 
-namespace CoffeeShopManagement
+namespace GUI
 {
     public partial class FormLogin : System.Windows.Forms.Form
     {
@@ -20,11 +23,13 @@ namespace CoffeeShopManagement
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        #endregion 
+        #endregion
 
+        #region Attributes
         private FormInit parent;
 
         public Account account { get; private set; }
+        #endregion
 
         public FormLogin(FormInit parent)
         {
@@ -36,13 +41,11 @@ namespace CoffeeShopManagement
                 this.controlboxClose.Click += CancelClicked;
                 this.tbTenDangNhap.KeyPress += PressEnter;
                 this.tbMatKhau.KeyPress += PressEnter;
-                //this.tbMatKhau.PasswordChar = '*';
-                //this.bMinimize.Click += MinimizeClicked;
                 this.parent = parent;
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 45 Form Login)");
+                IO.ExportError("Lỗi không xác định\n(Line 48 Form Login)");
             }
         }
 
@@ -62,15 +65,15 @@ namespace CoffeeShopManagement
         {
             try
             {
-                tbTenDangNhap.Text = "Tên đăng nhập";
-                tbMatKhau.Text = "Mật khẩu";
-                tbMatKhau.PasswordChar = '\0';
-                pbEye.Image = Image.FromFile("./Resources/OpenEye.png");
-                tbTenDangNhap.Select();
+                this.tbTenDangNhap.Text = "Tên đăng nhập";
+                this.tbMatKhau.Text = "Mật khẩu";
+                this.tbMatKhau.PasswordChar = '\0';
+                this.pbEye.Image = Image.FromFile("./Resources/OpenEye.png");
+                this.tbTenDangNhap.Select();
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 73 Form Login)");
+                IO.ExportError("Lỗi không xác định\n(Line 76 Form Login)");
             }
         }
 
@@ -78,55 +81,26 @@ namespace CoffeeShopManagement
         {
             try
             {
-                if (tbMatKhau.PasswordChar == '*')
+                if (this.tbMatKhau.PasswordChar == '*')
                 {
-                    tbMatKhau.PasswordChar = '\0';
-                    pbEye.Image = Image.FromFile("./Resources/CloseEye.png");
+                    this.tbMatKhau.PasswordChar = '\0';
+                    this.pbEye.Image = Image.FromFile("./Resources/CloseEye.png");
                 }
                 else
                 {
-                    tbMatKhau.PasswordChar = '*';
-                    pbEye.Image = Image.FromFile("./Resources/OpenEye.png");
+                    this.tbMatKhau.PasswordChar = '*';
+                    this.pbEye.Image = Image.FromFile("./Resources/OpenEye.png");
                 }
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 94 Form Login)");
+                IO.ExportError("Lỗi không xác định\n(Line 97 Form Login)");
             }
         }
 
         private void PressEnter(object sender, KeyPressEventArgs e)
         {
             Event.PressEnter(sender, e, this);
-        }
-
-        public Account GetValidAccount(Account account, SqlDataReader reader)
-        {
-            try
-            {
-                while (reader.HasRows)
-                {
-                    if (!reader.Read())
-                    {
-                        break;
-                    }
-
-                    Account validAccount = new Account(reader.GetString(0), reader.GetString(1),
-                        reader.GetString(2), reader.GetBoolean(3));
-
-                    if (account.username == validAccount.username)
-                    {
-                        return validAccount;
-                    }
-                }
-
-                return null;
-            }
-            catch (Exception)
-            {
-                IO.ExportError("Lỗi không xác định\n(Line 127 Form Login)");
-                return null;
-            }
         }
 
         private void LoginClicked(object sender, EventArgs e)
@@ -139,42 +113,19 @@ namespace CoffeeShopManagement
                     return;
                 }
 
-                this.account = new Account("NULL", tbTenDangNhap.Text, Encrypt.ComputeHash(
-                    tbMatKhau.Text, new SHA256CryptoServiceProvider()), true);
-                Account adminAccount = new Account("", "1", Encrypt.ComputeHash("1",
-                    new SHA256CryptoServiceProvider()), true);
-                SqlConnection connection = Data.OpenConnection();
-                SqlDataReader reader = Data.ReadData("TAIKHOAN", connection, " WHERE TINHTRANG = 1",
-                    "*");
-                Account validAccount = GetValidAccount(this.account, reader);
+                this.account = new Account("NULL", this.tbTenDangNhap.Text, Encrypt.ComputeHash(
+                    this.tbMatKhau.Text, new SHA256CryptoServiceProvider()), true);
 
-                if (validAccount == null && this.account.username != adminAccount.username)
+                if (Event.Login(this.account))
                 {
-                    IO.ExportError("Tên đăng nhập này không tồn tại");
-                }
-                else
-                {
-                    if ((validAccount != null && validAccount.password == this.account.password) ||
-                        this.account.password == adminAccount.password)
-                    {
-                        if (validAccount != null)
-                        {
-                            this.account = validAccount;
-                        }
-
-                        Event.ShowForm((new FormSell(this)));
-                        this.Hide();
-                        this.tbTenDangNhap.Text = this.tbMatKhau.Text = "";
-                    }
-                    else
-                    {
-                        IO.ExportError("Mật khẩu không đúng");
-                    }
+                    Event.ShowForm((new FormSell(this)));
+                    this.Hide();
+                    this.tbTenDangNhap.Text = this.tbMatKhau.Text = "";
                 }
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 177 Form Login)");
+                IO.ExportError("Lỗi không xác định\n(Line 128 Form Login)");
             }
         }
 

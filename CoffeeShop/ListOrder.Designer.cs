@@ -1,4 +1,4 @@
-﻿namespace CoffeeShopManagement
+﻿namespace GUI
 {
     partial class ListOrder
     {

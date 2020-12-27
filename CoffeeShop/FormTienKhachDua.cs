@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using DAO;
 
-namespace CoffeeShopManagement
+namespace GUI
 {
     public partial class FormTienKhachDua : Form
     {

@@ -8,40 +8,44 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using DTO;
+using DAO;
+using BUS;
 
-namespace CoffeeShopManagement
+namespace GUI
 {
     public partial class FormChangeInfoStaff : Form
     {
-        FormLock lockForm;
-        FormMenuStaff parent;
+        #region Attributes
+        private FormLock lockForm;
+        private FormMenuStaff parent;
+        private Staff selectedStaff;
+        #endregion
 
-        public void Autofill() 
+        #region Operations
+        public void Autofill()
         {
             try
             {
-                Staff selectedStaff;
-                this.parent.GetSelectedInfo(out selectedStaff);
-                Account selectedAccount;
-                this.parent.GetSelectedAccount(out selectedAccount);
-                this.tbName.Text = selectedStaff.name;
-                this.tbAddress.Text = selectedStaff.address;
-                this.tbCMND.Text = selectedStaff.cmnd;
-                this.tbSalary.Text = selectedStaff.luong.ToString();
-                this.tbSDT.Text = selectedStaff.sdt;
-                this.cbPosition.Text = selectedStaff.chucVu;
-                this.cbSex.Text = selectedStaff.sex;
-                this.lID.Text = selectedStaff.id.ToString();
+                Account selectedAccount = this.selectedStaff.GetAccount();
+                this.tbName.Text = this.selectedStaff.name;
+                this.tbAddress.Text = this.selectedStaff.address;
+                this.tbCMND.Text = this.selectedStaff.cmnd;
+                this.tbSalary.Text = this.selectedStaff.luong.ToString();
+                this.tbSDT.Text = this.selectedStaff.sdt;
+                this.cbPosition.Text = this.selectedStaff.chucVu;
+                this.cbSex.Text = this.selectedStaff.sex;
+                this.lID.Text = this.selectedStaff.id.ToString();
                 this.tbUsername.Text = selectedAccount.username;
-                this.pbImage.Image = selectedStaff.image;
+                this.pbImage.Image = this.selectedStaff.image;
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 40 Form Change Info Staff)");
+                IO.ExportError("Lỗi không xác định\n(Line 44 Form Change Info Staff)");
             }
         }
 
-        public FormChangeInfoStaff(FormMenuStaff parent)
+        public FormChangeInfoStaff(FormMenuStaff parent, Staff selectedStaff)
         {
             try
             {
@@ -63,25 +67,17 @@ namespace CoffeeShopManagement
                 this.tbSalary.KeyPress += IO.LockWord;
                 this.tbSDT.KeyPress += IO.LockWord;
                 this.cbPosition.KeyPress += IO.LockNumber;
+                this.selectedStaff = selectedStaff;
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 69 Form Change Info Staff)");
+                IO.ExportError("Lỗi không xác định\n(Line 76 Form Change Info Staff)");
             }
         }
 
         private void AddImageClicked(object sender, EventArgs e)
         {
-            try
-            {
-                Staff selectedStaff;
-                this.parent.GetSelectedInfo(out selectedStaff);
-                Event.AddImage(ref this.pbImage, "./ImageStaff/", selectedStaff.id.ToString());
-            }
-            catch (Exception)
-            {
-                IO.ExportError("Lỗi không xác định\n(Line 83 Form Change Info Staff)");
-            }
+            Event.AddImage(ref this.pbImage, "./ImageStaff/", this.selectedStaff.id.ToString());
         }
 
         private void CancelClicked(object sender, EventArgs e)
@@ -107,22 +103,15 @@ namespace CoffeeShopManagement
 
         public bool IsError()
         {
-            try
+            if (this.tbAddress.Text == "" || this.tbSDT.Text == "" || this.cbSex.Text == "" ||
+                    this.tbSalary.Text == "" || this.cbPosition.Text == "" ||
+                    this.tbPassword.Text == "")
             {
-                if (this.tbAddress.Text == "" || this.tbSDT.Text == "" || this.cbSex.Text == "" ||
-                    this.tbSalary.Text == "" || this.cbPosition.Text == "" || this.tbPassword.Text == "")
-                {
-                    IO.ExportError("Nhập không đầy đủ nội dung tất cả các trường");
-                    return true;
-                }
+                IO.ExportError("Nhập không đầy đủ nội dung tất cả các trường");
+                return true;
+            }
 
-                return false;
-            }
-            catch (Exception)
-            {
-                IO.ExportError("Lỗi không xác định\n(Line 123 Form Change Info Staff)");
-                return false;
-            }
+            return false;
         }
 
         private void OKClicked(object sender, EventArgs e)
@@ -134,35 +123,27 @@ namespace CoffeeShopManagement
                     return;
                 }
 
-                Staff selectedStaff;
-                this.parent.GetSelectedInfo(out selectedStaff);
-                Staff updatedStaff = new Staff(selectedStaff.id.ToString(), selectedStaff.name,
-                    tbAddress.Text, selectedStaff.sdt, selectedStaff.sex, selectedStaff.date,
-                    selectedStaff.cmnd, this.cbPosition.Text, int.Parse(this.tbSalary.Text));
-                Data.UpdateData("NHANVIEN", "CHUCVU = N'" + updatedStaff.chucVu + "', salary = '" +
-                    updatedStaff.luong + "', DCHI = N'" + updatedStaff.address + "'", " WHERE MANV = '"
-                    + selectedStaff.id.ToString() + "'");
-
-                Account updatedAccount = new Account(selectedStaff.id.ToString(), this.tbUsername.Text,
-                    Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()),
-                    true);
-                Data.UpdateData("TAIKHOAN", "MATKHAU = '" + updatedAccount.password + "'",
-                    " WHERE ID = '" + updatedAccount.id.ToString() + "'");
-
-                IO.ExportSuccess("Sửa thông tin nhân viên thành công");
+                Staff updatedStaff = new Staff(this.selectedStaff.id.ToString(),
+                    this.selectedStaff.name, this.tbAddress.Text, this.selectedStaff.sdt,
+                    this.selectedStaff.sex, this.selectedStaff.date, this.selectedStaff.cmnd,
+                    this.cbPosition.Text, int.Parse(this.tbSalary.Text));
+                Account updatedAccount = new Account(this.selectedStaff.id.ToString(),
+                    this.tbUsername.Text, Encrypt.ComputeHash(this.tbPassword.Text,
+                    new SHA256CryptoServiceProvider()), true);
+                Event.ChangeInfo(updatedStaff, updatedAccount);
                 this.parent.ClearMenu();
                 this.parent.LoadMenu();
                 Event.CloseForm(this);
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 159 Form Change Info Staff)");
+                IO.ExportError("Lỗi không xác định\n(Line 140 Form Change Info Staff)");
             }
         }
-
         public void SetLockForm(ref FormLock khoa)
         {
             this.lockForm = khoa;
         }
+        #endregion
     }
 }

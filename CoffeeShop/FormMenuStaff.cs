@@ -10,19 +10,27 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Threading;
+using CoffeeShopManagement;
+using DAO;
+using BUS;
+using DTO;
 
-namespace CoffeeShopManagement
+namespace GUI
 {
     public partial class FormMenuStaff : System.Windows.Forms.Form
     {
+        #region Attributes
         private FormLock Lock;
         private BackgroundWorker loader;
         private AutoCompleteStringCollection sourceData;
         private object staff;
         private Semaphore[] semaphores;
+        private bool isClearButtonClicked;
 
         public FormSell parent { get; private set; }
+        #endregion
 
+        #region Operations
         public FormMenuStaff(FormSell parent)
         {
             try
@@ -48,18 +56,23 @@ namespace CoffeeShopManagement
                 this.dgvMenu.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 192, 128);
                 #endregion
                 this.dgvMenu.CellClick += ShowImageClicked;
-                this.cbFind.TextChanged += ReloadMenu;
                 this.loader = new BackgroundWorker();
                 this.loader.DoWork += LoadData;
                 this.loader.WorkerReportsProgress = true;
                 this.loader.RunWorkerCompleted += FinishWork;
                 this.loader.ProgressChanged += ShowProgress;
                 this.loader.RunWorkerAsync();
+                this.bClear.Click += Clear;
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 61 Form Menu Staff");
+                IO.ExportError("Lỗi không xác định\n(Line 69 Form Menu Staff");
             }
+        }
+
+        private void Clear(object sender, EventArgs e)
+        {
+            Event.Clear(this.cbFind, ref this.isClearButtonClicked);
         }
 
         private void FinishWork(object sender, RunWorkerCompletedEventArgs e)
@@ -90,7 +103,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 93 Form Menu Staff");
+                IO.ExportError("Lỗi không xác định\n(Line 106 Form Menu Staff");
             }
         }
 
@@ -102,7 +115,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 105 Form Menu Staff");
+                IO.ExportError("Lỗi không xác định\n(Line 118 Form Menu Staff");
             }
         }
 
@@ -114,13 +127,8 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 117 Form Menu Staff");
+                IO.ExportError("Lỗi không xác định\n(Line 130 Form Menu Staff");
             }
-        }
-
-        private void ReloadMenu(object sender, EventArgs e)
-        {
-            Event.ReloadMenu(ref this.cbFind, this.dgvMenu, this.loader);
         }
 
         private void ShowImageClicked(object sender, DataGridViewCellEventArgs e)
@@ -129,8 +137,9 @@ namespace CoffeeShopManagement
             {
                 if (e.ColumnIndex == this.dgvMenu.Columns[9].Index && e.RowIndex >= 0)
                 {
-                    Staff selectedStaff;
-                    GetSelectedInfo(out selectedStaff);
+                    object tmp = null;
+                    Event.GetSelectedInfo(ref tmp, this.dgvMenu.SelectedRows);
+                    Staff selectedStaff = (Staff)tmp;
                     FormImageStaff cus = new FormImageStaff(selectedStaff.image, selectedStaff.id);
                     FormLock ltmp = new FormLock();
                     ltmp.Show();
@@ -142,94 +151,35 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 145 Form Menu Staff");
+                IO.ExportError("Lỗi không xác định\n(Line 154 Form Menu Staff");
             }
         }
 
         private void AddStaffClicked(object sender, EventArgs e)
         {
-
             Event.ShowForm((new FormAddStaff(this)));
         }
 
         private void ChangeInfoStaffClicked(object sender, EventArgs e)
         {
             if (this.dgvMenu.Rows.Count != 0)
-                {
-                    Event.ShowForm((new FormChangeInfoStaff(this)));
-                }
+            {
+                object tmp = null;
+                Event.GetSelectedInfo(ref tmp, this.dgvMenu.SelectedRows);
+                Staff selectedStaff = (Staff)tmp;
+                Event.ShowForm((new FormChangeInfoStaff(this, selectedStaff)));
+            }
             else
             {
                 IO.ExportError("Hành động không hợp lệ");
             }
         }
 
-        public void GetSelectedInfo(out Staff selectedStaff)
-        {
-            try
-            {
-                DataGridViewRow[] selectedRows = new DataGridViewRow[1];
-                this.dgvMenu.SelectedRows.CopyTo(selectedRows, 0);
-
-                selectedStaff = new Staff((string)selectedRows[0].Cells[0].Value,
-                    (string)selectedRows[0].Cells[1].Value,
-                    (string)selectedRows[0].Cells[2].Value, (string)selectedRows[0].Cells[4].Value,
-                    (string)selectedRows[0].Cells[6].Value, (string)selectedRows[0].Cells[3].Value,
-                    (string)selectedRows[0].Cells[5].Value, (string)selectedRows[0].Cells[8].Value,
-                    (int)selectedRows[0].Cells[7].Value);
-            }
-            catch (Exception)
-            {
-                IO.ExportError("Lỗi không xác định\n(Line 183 Form Menu Staff");
-                selectedStaff = null;
-            }
-        }
-
-        public void GetSelectedAccount(out Account selectedAccount)
-        {
-            try
-            {
-                Staff selectedStaff;
-                GetSelectedInfo(out selectedStaff);
-
-                SqlConnection connection = Data.OpenConnection();
-                SqlDataReader reader = Data.ReadData("TAIKHOAN", connection, " WHERE ID = '" +
-                    selectedStaff.id.ToString() + "'", "*");
-                reader.Read();
-                selectedAccount = new Account(reader.GetString(0), reader.GetString(1),
-                    reader.GetString(2), reader.GetBoolean(3));
-                Data.CloseConnection(ref connection);
-            }
-            catch (Exception)
-            {
-                IO.ExportError("Lỗi không xác định\n(Line 205 Form Menu Staff");
-                selectedAccount = null;
-            }
-        }
-
         private void DeleteStaffClicked(object sender, EventArgs e)
         {
-            try
-            {
-                if (this.dgvMenu.Rows.Count != 0)
-                {
-                    Staff selectedStaff;
-                    GetSelectedInfo(out selectedStaff);
-                    Data.UpdateData("TAIKHOAN", "TINHTRANG = 0", " WHERE ID  = '" +
-                        selectedStaff.id.ToString() + "'");
-                    IO.ExportSuccess("Xóa nhân viên thành công");
-                    ClearMenu();
-                    LoadMenu();
-                }
-                else
-                {
-                    IO.ExportError("Hành động không hợp lệ");
-                }
-            }
-            catch (Exception)
-            {
-                IO.ExportError("Lỗi không xác định\n(Line 231 Form Menu Staff");
-            }
+            Event.Delete(this.dgvMenu.SelectedRows, "Staff");
+            ClearMenu();
+            LoadMenu();
         }
 
         private void FindStaffClicked(object sender, EventArgs e)
@@ -255,9 +205,14 @@ namespace CoffeeShopManagement
             Event.CloseForm(this);
         }
 
+        public DataGridViewSelectedRowCollection GetSelectedRows()
+        {
+            return this.dgvMenu.SelectedRows;
+        }
+
         private void BPrint_Click(object sender, EventArgs e)
         {
-            Report.FormReportDanhSachNhanVien cus = new Report.FormReportDanhSachNhanVien();
+            CoffeeShopManagement.Report.FormReportDanhSachNhanVien cus = new CoffeeShopManagement.Report.FormReportDanhSachNhanVien();
             FormLock ltmp = new FormLock();
             ltmp.Show();
             cus.Show();
@@ -269,5 +224,6 @@ namespace CoffeeShopManagement
         {
             this.Lock = khoa;
         }
+        #endregion
     }
 }

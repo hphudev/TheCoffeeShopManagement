@@ -11,8 +11,10 @@ using System.Drawing.Printing;
 using System.Data.SqlClient;
 using Microsoft.Reporting.WinForms;
 using System.Drawing.Imaging;
+using DAO;
+using DTO;
 
-namespace CoffeeShopManagement
+namespace GUI
 {
     public partial class FormOrder : System.Windows.Forms.Form
     {

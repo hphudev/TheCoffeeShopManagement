@@ -1,4 +1,4 @@
-﻿namespace CoffeeShopManagement
+﻿namespace GUI
 {
     partial class FormStatistic
     {
@@ -34,25 +34,25 @@
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tvHistory = new System.Windows.Forms.TreeView();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lHeader = new System.Windows.Forms.Label();
             this.ilImageList = new System.Windows.Forms.ImageList(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbChooseTimeSpan = new System.Windows.Forms.GroupBox();
             this.bCancel = new System.Windows.Forms.Button();
             this.bOK = new System.Windows.Forms.Button();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lEnd = new System.Windows.Forms.Label();
+            this.lStart = new System.Windows.Forms.Label();
+            this.gbResult = new System.Windows.Forms.GroupBox();
             this.lExpense = new System.Windows.Forms.Label();
             this.lReceipt = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lSumReceipt = new System.Windows.Forms.Label();
+            this.lSumExpense = new System.Windows.Forms.Label();
             this.cChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label5 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbChooseTimeSpan.SuspendLayout();
+            this.gbResult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cChart)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -75,15 +75,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Lịch sử";
             // 
-            // label2
+            // lHeader
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(684, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(323, 37);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Xem kết quả thống kê";
+            this.lHeader.AutoSize = true;
+            this.lHeader.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lHeader.Location = new System.Drawing.Point(684, 76);
+            this.lHeader.Name = "lHeader";
+            this.lHeader.Size = new System.Drawing.Size(323, 37);
+            this.lHeader.TabIndex = 2;
+            this.lHeader.Text = "Xem kết quả thống kê";
             // 
             // ilImageList
             // 
@@ -91,22 +91,22 @@
             this.ilImageList.ImageSize = new System.Drawing.Size(16, 16);
             this.ilImageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // groupBox1
+            // gbChooseTimeSpan
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.groupBox1.Controls.Add(this.bCancel);
-            this.groupBox1.Controls.Add(this.bOK);
-            this.groupBox1.Controls.Add(this.dtpEnd);
-            this.groupBox1.Controls.Add(this.dtpStart);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(531, 119);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(627, 246);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thời gian thống kê";
+            this.gbChooseTimeSpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.gbChooseTimeSpan.Controls.Add(this.bCancel);
+            this.gbChooseTimeSpan.Controls.Add(this.bOK);
+            this.gbChooseTimeSpan.Controls.Add(this.dtpEnd);
+            this.gbChooseTimeSpan.Controls.Add(this.dtpStart);
+            this.gbChooseTimeSpan.Controls.Add(this.lEnd);
+            this.gbChooseTimeSpan.Controls.Add(this.lStart);
+            this.gbChooseTimeSpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbChooseTimeSpan.Location = new System.Drawing.Point(531, 119);
+            this.gbChooseTimeSpan.Name = "gbChooseTimeSpan";
+            this.gbChooseTimeSpan.Size = new System.Drawing.Size(627, 246);
+            this.gbChooseTimeSpan.TabIndex = 17;
+            this.gbChooseTimeSpan.TabStop = false;
+            this.gbChooseTimeSpan.Text = "Thời gian thống kê";
             // 
             // bCancel
             // 
@@ -144,41 +144,41 @@
             this.dtpStart.Size = new System.Drawing.Size(367, 26);
             this.dtpStart.TabIndex = 11;
             // 
-            // label4
+            // lEnd
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(19, 114);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 27);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Ngày kết thúc";
+            this.lEnd.AutoSize = true;
+            this.lEnd.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lEnd.Location = new System.Drawing.Point(19, 114);
+            this.lEnd.Name = "lEnd";
+            this.lEnd.Size = new System.Drawing.Size(147, 27);
+            this.lEnd.TabIndex = 10;
+            this.lEnd.Text = "Ngày kết thúc";
             // 
-            // label3
+            // lStart
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(19, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 27);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Ngày bắt đầu";
+            this.lStart.AutoSize = true;
+            this.lStart.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lStart.Location = new System.Drawing.Point(19, 52);
+            this.lStart.Name = "lStart";
+            this.lStart.Size = new System.Drawing.Size(140, 27);
+            this.lStart.TabIndex = 9;
+            this.lStart.Text = "Ngày bắt đầu";
             // 
-            // groupBox2
+            // gbResult
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.groupBox2.Controls.Add(this.lExpense);
-            this.groupBox2.Controls.Add(this.lReceipt);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.cChart);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(531, 371);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(627, 388);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Tổng thu và chi";
+            this.gbResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.gbResult.Controls.Add(this.lExpense);
+            this.gbResult.Controls.Add(this.lReceipt);
+            this.gbResult.Controls.Add(this.lSumReceipt);
+            this.gbResult.Controls.Add(this.lSumExpense);
+            this.gbResult.Controls.Add(this.cChart);
+            this.gbResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbResult.Location = new System.Drawing.Point(531, 371);
+            this.gbResult.Name = "gbResult";
+            this.gbResult.Size = new System.Drawing.Size(627, 388);
+            this.gbResult.TabIndex = 18;
+            this.gbResult.TabStop = false;
+            this.gbResult.Text = "Tổng thu và chi";
             // 
             // lExpense
             // 
@@ -198,25 +198,25 @@
             this.lReceipt.Size = new System.Drawing.Size(0, 27);
             this.lReceipt.TabIndex = 19;
             // 
-            // label7
+            // lSumReceipt
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(34, 98);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 27);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Tổng thu";
+            this.lSumReceipt.AutoSize = true;
+            this.lSumReceipt.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lSumReceipt.Location = new System.Drawing.Point(34, 98);
+            this.lSumReceipt.Name = "lSumReceipt";
+            this.lSumReceipt.Size = new System.Drawing.Size(98, 27);
+            this.lSumReceipt.TabIndex = 18;
+            this.lSumReceipt.Text = "Tổng thu";
             // 
-            // label6
+            // lSumExpense
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(34, 166);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 27);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Tổng chi";
+            this.lSumExpense.AutoSize = true;
+            this.lSumExpense.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lSumExpense.Location = new System.Drawing.Point(34, 166);
+            this.lSumExpense.Name = "lSumExpense";
+            this.lSumExpense.Size = new System.Drawing.Size(96, 27);
+            this.lSumExpense.TabIndex = 17;
+            this.lSumExpense.Text = "Tổng chi";
             // 
             // cChart
             // 
@@ -267,10 +267,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(1355, 771);
+            this.Controls.Add(this.gbResult);
+            this.Controls.Add(this.gbChooseTimeSpan);
             this.Controls.Add(this.guna2GradientPanel1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lHeader);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tvHistory);
             this.MaximizeBox = false;
@@ -278,10 +278,10 @@
             this.Name = "FormStatistic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormStatistic_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbChooseTimeSpan.ResumeLayout(false);
+            this.gbChooseTimeSpan.PerformLayout();
+            this.gbResult.ResumeLayout(false);
+            this.gbResult.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cChart)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
@@ -294,22 +294,22 @@
 
         private System.Windows.Forms.TreeView tvHistory;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lHeader;
         private System.Windows.Forms.ImageList ilImageList;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox gbChooseTimeSpan;
         private System.Windows.Forms.Button bCancel;
         private System.Windows.Forms.Button bOK;
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.DateTimePicker dtpStart;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lEnd;
+        private System.Windows.Forms.Label lStart;
+        private System.Windows.Forms.GroupBox gbResult;
         private System.Windows.Forms.DataVisualization.Charting.Chart cChart;
         private System.Windows.Forms.Label lExpense;
         private System.Windows.Forms.Label lReceipt;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lSumReceipt;
+        private System.Windows.Forms.Label lSumExpense;
     }
 }

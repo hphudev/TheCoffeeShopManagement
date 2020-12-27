@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CoffeeShopManagement
+namespace GUI
 {
     public partial class FormInit : System.Windows.Forms.Form
     {

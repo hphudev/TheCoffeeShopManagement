@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
-namespace CoffeeShopManagement
+namespace GUI
 {
     public partial class FormLock : System.Windows.Forms.Form
     {

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Microsoft.Reporting.WinForms;
+using GUI;
+using DAO;
 
 namespace CoffeeShopManagement.Report
 {

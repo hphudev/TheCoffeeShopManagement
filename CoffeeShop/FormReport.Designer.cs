@@ -1,4 +1,6 @@
-﻿namespace CoffeeShopManagement
+﻿using CoffeeShopManagement.ReportDataset;
+
+namespace GUI
 {
     partial class FormReport
     {
@@ -106,7 +108,7 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
         private System.Windows.Forms.BindingSource dataTableCTHDBindingSource;
-        private ReportDataset.ReportDataset reportDataset;
+        private ReportDataset reportDataset;
         private System.Windows.Forms.BindingSource dataTableHoaDonBindingSource;
         private System.Windows.Forms.BindingSource dataTableQuanBindingSource;
     }

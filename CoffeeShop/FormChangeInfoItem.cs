@@ -8,20 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using DTO;
+using BUS;
+using DAO;
 
-namespace CoffeeShopManagement
+namespace GUI
 {
     public partial class FormChangeInfoItem : Form
     {
+        #region Attributes
         private FormMenuItem parent;
         private FormLock lockForm;
+        #endregion
 
+        #region Operations
         public void Autofill()
         {
             try
             {
+                object tmp = null;
                 Item selectedItem;
-                this.parent.GetSelectedInfo(out selectedItem);
+                Event.GetSelectedInfo(ref tmp, this.parent.GetSelectedRows());
+                selectedItem = (Item)tmp;
                 this.tbName.Text = selectedItem.name;
                 this.tbPrice.Text = selectedItem.price.ToString();
                 this.tbUnit.Text = selectedItem.unit;
@@ -30,7 +38,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 33 Form Change Info Item)");
+                IO.ExportError("Lỗi không xác định\n(Line 41 Form Change Info Item)");
             }
         }
 
@@ -55,7 +63,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 58 Form Change Info Item)");
+                IO.ExportError("Lỗi không xác định\n(Line 66 Form Change Info Item)");
             }
         }
 
@@ -85,41 +93,35 @@ namespace CoffeeShopManagement
                     return;
                 }
 
-                Item selectedItem;
-                this.parent.GetSelectedInfo(out selectedItem);
+                object tmp = null;
+                Event.GetSelectedInfo(ref tmp, this.parent.GetSelectedRows());
+                Item selectedItem = (Item)tmp;
                 Item updatedItem = new Item(selectedItem.id.ToString(), selectedItem.name,
-                    tbUnit.Text, selectedItem.numberOfServings, int.Parse(tbPrice.Text), true);
-
-                Data.UpdateData("MON", "DVT = '" + updatedItem.unit + "', GIA = '" +
-                    updatedItem.price + "'", " WHERE MAMON = '" + selectedItem.id.ToString() + "'");
-                IO.ExportSuccess("Sửa món thành công");
+                    this.tbUnit.Text, selectedItem.numberOfServings, int.Parse(this.tbPrice.Text),
+                    true);
+                Event.ChangeInfo(updatedItem, null);
                 this.parent.ClearMenu();
                 this.parent.LoadMenu();
                 Event.CloseForm(this);
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 102 Form Change Info Item)");
+                IO.ExportError("Lỗi không xác định\n(Line 109 Form Change Info Item)");
             }
         }
 
         private void AddImageClicked(object sender, EventArgs e)
         {
-            try
-            {
-                Item selectedItem;
-                this.parent.GetSelectedInfo(out selectedItem);
-                Event.AddImage(ref this.pbImageItem, "./ImageItem/", selectedItem.id.ToString());
-            }
-            catch (Exception)
-            {
-                IO.ExportError("Lỗi không xác định\n(Line 116 Form Change Info Item)");
-            }
+            object tmp = null;
+            Event.GetSelectedInfo(ref tmp, this.parent.GetSelectedRows());
+            Item selectedItem = (Item)tmp;
+            Event.AddImage(ref this.pbImageItem, "./ImageItem/", selectedItem.id.ToString());
         }
 
         public void SetLockForm(ref FormLock khoa)
         {
             this.lockForm = khoa;
         }
+        #endregion
     }
 }

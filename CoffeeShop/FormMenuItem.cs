@@ -9,36 +9,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Threading;
+using CoffeeShopManagement;
+using DTO;
+using BUS;
+using DAO;
 
-namespace CoffeeShopManagement
+namespace GUI
 {
     public partial class FormMenuItem : Form
     {
+        #region Attributes
         public FormSell parent { get; }
         private FormLock lockForm;
         private BackgroundWorker loader;
         private AutoCompleteStringCollection sourceData;
         private object item;
         private Semaphore[] semaphores;
+        private bool isClearButtonClicked;
+        #endregion
 
-        public void GetSelectedInfo(out Item selectedItem)
-        {
-            try
-            {
-                DataGridViewRow[] selectedRows = new DataGridViewRow[1];
-                this.dgvMenu.SelectedRows.CopyTo(selectedRows, 0);
-
-                selectedItem = new Item((string)selectedRows[0].Cells[0].Value,
-                    (string)selectedRows[0].Cells[1].Value, (string)selectedRows[0].Cells[2].Value,
-                    (int)selectedRows[0].Cells[3].Value, (int)selectedRows[0].Cells[4].Value, true);
-            }
-            catch (Exception)
-            {
-                IO.ExportError("Lỗi không xác định\n(Line 37 Form Menu Item)");
-                selectedItem = null;
-            }
-        }
-
+        #region Operations
         public FormMenuItem(FormSell parent)
         {
             try
@@ -54,18 +44,23 @@ namespace CoffeeShopManagement
                 //this.lockForm = new FormLock(this);
                 //Event.ShowForm(this.lockForm);
                 //Event.ShowForm(this);
-                this.cbFind.TextChanged += ReloadMenu;
                 this.loader = new BackgroundWorker();
                 this.loader.DoWork += LoadData;
                 this.loader.WorkerReportsProgress = true;
                 this.loader.RunWorkerCompleted += FinishWork;
                 this.loader.ProgressChanged += ShowProgress;
                 this.loader.RunWorkerAsync();
+                this.bClear.Click += Clear;
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 67 Form Menu Item)");
+                IO.ExportError("Lỗi không xác định\n(Line 57 Form Menu Item)");
             }
+        }
+
+        private void Clear(object sender, EventArgs e)
+        {
+            Event.Clear(this.cbFind, ref this.isClearButtonClicked);
         }
 
         private void FinishWork(object sender, RunWorkerCompletedEventArgs e)
@@ -85,7 +80,7 @@ namespace CoffeeShopManagement
                 if (e.Argument == null)
                 {
                     Event.LoadData(ref this.sourceData, "MON", " WHERE TINHTRANG = 1", ref this.semaphores,
-                      ref this.item, "Item", this.loader);
+                        ref this.item, "Item", this.loader);
                 }
                 else
                 {
@@ -95,7 +90,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 98 Form Menu Item");
+                IO.ExportError("Lỗi không xác định\n(Line 93 Form Menu Item");
             }
         }
 
@@ -107,7 +102,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 110 Form Menu Item");
+                IO.ExportError("Lỗi không xác định\n(Line 105 Form Menu Item");
             }
         }
 
@@ -119,13 +114,8 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 122 Form Menu Item");
+                IO.ExportError("Lỗi không xác định\n(Line 117Form Menu Item");
             }
-        }
-
-        private void ReloadMenu(object sender, EventArgs e)
-        {
-            Event.ReloadMenu(ref this.cbFind, this.dgvMenu, this.loader);
         }
 
         private void CancelClicked(object sender, EventArgs e)
@@ -162,28 +152,10 @@ namespace CoffeeShopManagement
 
         private void DeleteItemClicked(object sender, EventArgs e)
         {
-            try
-            {
-                if (this.dgvMenu.Rows.Count != 0)
-                {
-                    Item selectedItem;
-                    GetSelectedInfo(out selectedItem);
-                    Data.UpdateData("MON", "TINHTRANG = 0", " WHERE MAMON = '" +
-                        selectedItem.id.ToString() + "'");
-                    IO.ExportSuccess("Xóa món thành công");
-                    ClearMenu();
-                    LoadMenu();
-                    this.parent.LoadSomeThingPublic();
-                }
-                else
-                {
-                    IO.ExportError("Hành động không hợp lệ");
-                }
-            }
-            catch (Exception)
-            {
-                IO.ExportError("Lỗi không xác định\n(Line 185 Form Menu Item");
-            }
+            Event.Delete(this.dgvMenu.SelectedRows, "Item");
+            ClearMenu();
+            LoadMenu();
+            this.parent.LoadSomeThingPublic();
         }
 
         private void FindItemClicked(object sender, EventArgs e)
@@ -197,9 +169,14 @@ namespace CoffeeShopManagement
             Event.CloseForm(this.lockForm);
         }
 
+        public DataGridViewSelectedRowCollection GetSelectedRows()
+        {
+            return this.dgvMenu.SelectedRows;
+        }
+
         private void BPrint_Click(object sender, EventArgs e)
         {
-            Report.FormReportDanhSachMon cus = new Report.FormReportDanhSachMon();
+            CoffeeShopManagement.Report.FormReportDanhSachMon cus = new CoffeeShopManagement.Report.FormReportDanhSachMon();
             FormLock ltmp = new FormLock();
             ltmp.Show();
             cus.Show();
@@ -211,5 +188,6 @@ namespace CoffeeShopManagement
         {
             this.lockForm = khoa;
         }
+        #endregion
     }
 }

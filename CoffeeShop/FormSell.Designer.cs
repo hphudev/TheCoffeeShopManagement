@@ -1,4 +1,4 @@
-﻿namespace CoffeeShopManagement
+﻿namespace GUI
 {
     partial class FormSell
     {
@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnLotChinh = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.flpDanhSachMon = new CoffeeShopManagement.FlowLayoutPanelBuffered();
+            this.flpDanhSachMon = new GUI.FlowLayoutPanelBuffered();
             this.pnMenu = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.pCheck = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.btMonPhoBien = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.label2 = new System.Windows.Forms.Label();
             this.pnLotOrder = new System.Windows.Forms.Panel();
-            this.flpOrder = new CoffeeShopManagement.FlowLayoutPanelBuffered();
+            this.flpOrder = new GUI.FlowLayoutPanelBuffered();
             this.btOrder = new Guna.UI2.WinForms.Guna2TileButton();
             this.panel9 = new System.Windows.Forms.Panel();
             this.lbDangOrder = new System.Windows.Forms.Label();
@@ -63,7 +63,7 @@
             this.btThongBao = new Guna.UI2.WinForms.Guna2Button();
             this.btKhachHang = new Guna.UI2.WinForms.Guna2Button();
             this.pTieuDe = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.pbThongBao = new CoffeeShopManagement.PictureboxBuffered();
+            this.pbThongBao = new GUI.PictureboxBuffered();
             this.btThemMon = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btHuyNoiDungTimKiem = new Guna.UI2.WinForms.Guna2GradientButton();
             this.cbTimKiem = new System.Windows.Forms.ComboBox();

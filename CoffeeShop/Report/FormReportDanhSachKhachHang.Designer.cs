@@ -1,4 +1,4 @@
-﻿namespace CoffeeShopManagement.Report
+﻿namespace GUI.Report
 {
     partial class FormReportDanhSachKhachHang
     {

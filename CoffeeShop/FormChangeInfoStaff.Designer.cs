@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace CoffeeShopManagement
+namespace GUI
 {
     partial class FormChangeInfoStaff
     {

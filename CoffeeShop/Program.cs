@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CoffeeShopManagement
+namespace GUI
 {
     static class Program
     {
@@ -22,7 +22,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 25 Class Program)");
+                DAO.IO.ExportError("Lỗi không xác định\n(Line 25 Class Program)");
             }
         }
     }

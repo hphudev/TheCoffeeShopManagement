@@ -8,8 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoffeeShopManagement.Properties;
+using DAO;
+using DTO;
 
-namespace CoffeeShopManagement
+namespace GUI
 {
     public partial class Table : UserControl
     {

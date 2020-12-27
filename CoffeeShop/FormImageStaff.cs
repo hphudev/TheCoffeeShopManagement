@@ -7,8 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
+using DAO;
+using BUS;
 
-namespace CoffeeShopManagement
+namespace GUI
 {
     public partial class FormImageStaff : Form
     {
@@ -24,7 +27,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 27 Form Image Staff)");
+                IO.ExportError("Lỗi không xác định\n(Line 30 Form Image Staff)");
             }
         }
 
