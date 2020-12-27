@@ -83,6 +83,36 @@ namespace CoffeeShopManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap announTinh {
+            get {
+                object obj = ResourceManager.GetObject("announTinh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Anouncement {
+            get {
+                object obj = ResourceManager.GetObject("Anouncement", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Border {
+            get {
+                object obj = ResourceManager.GetObject("Border", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CASIO {
             get {
                 object obj = ResourceManager.GetObject("CASIO", resourceCulture);
@@ -156,6 +186,16 @@ namespace CoffeeShopManagement.Properties {
         internal static System.Drawing.Bitmap Food {
             get {
                 object obj = ResourceManager.GetObject("Food", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Greeting {
+            get {
+                object obj = ResourceManager.GetObject("Greeting", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

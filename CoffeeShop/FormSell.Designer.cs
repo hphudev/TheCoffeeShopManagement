@@ -48,7 +48,6 @@
             this.pnLotTaiKhoan = new System.Windows.Forms.Panel();
             this.btTK_DangXuat = new Guna.UI2.WinForms.Guna2Button();
             this.bInfoAccount = new Guna.UI2.WinForms.Guna2Button();
-            this.bMenuStaff = new Guna.UI2.WinForms.Guna2Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.pnLotThongBao = new System.Windows.Forms.Panel();
             this.btTaiChinh = new Guna.UI2.WinForms.Guna2Button();
@@ -56,13 +55,15 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.btMenu = new Guna.UI2.WinForms.Guna2GradientButton();
             this.pnLotMenu = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.btThongTinQuan = new Guna.UI2.WinForms.Guna2Button();
+            this.bMenuStaff = new Guna.UI2.WinForms.Guna2Button();
             this.btTaiKhoan = new Guna.UI2.WinForms.Guna2Button();
             this.btThongKe = new Guna.UI2.WinForms.Guna2Button();
             this.btThucDon = new Guna.UI2.WinForms.Guna2Button();
             this.btThongBao = new Guna.UI2.WinForms.Guna2Button();
             this.btKhachHang = new Guna.UI2.WinForms.Guna2Button();
             this.pTieuDe = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.pbThongBao = new System.Windows.Forms.PictureBox();
+            this.pbThongBao = new CoffeeShopManagement.PictureboxBuffered();
             this.btThemMon = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btHuyNoiDungTimKiem = new Guna.UI2.WinForms.Guna2GradientButton();
             this.cbTimKiem = new System.Windows.Forms.ComboBox();
@@ -77,6 +78,7 @@
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.btHangKhachHang = new Guna.UI2.WinForms.Guna2Button();
             this.pnLotChinh.SuspendLayout();
             this.pnMenu.SuspendLayout();
             this.pCheck.SuspendLayout();
@@ -111,7 +113,7 @@
             this.pnLotChinh.Location = new System.Drawing.Point(10, 10);
             this.pnLotChinh.Name = "pnLotChinh";
             this.pnLotChinh.ShadowDecoration.Parent = this.pnLotChinh;
-            this.pnLotChinh.Size = new System.Drawing.Size(1428, 679);
+            this.pnLotChinh.Size = new System.Drawing.Size(1920, 679);
             this.pnLotChinh.TabIndex = 4;
             // 
             // flpDanhSachMon
@@ -120,7 +122,7 @@
             this.flpDanhSachMon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpDanhSachMon.Location = new System.Drawing.Point(561, 139);
             this.flpDanhSachMon.Name = "flpDanhSachMon";
-            this.flpDanhSachMon.Size = new System.Drawing.Size(867, 441);
+            this.flpDanhSachMon.Size = new System.Drawing.Size(1359, 441);
             this.flpDanhSachMon.TabIndex = 5;
             // 
             // pnMenu
@@ -135,7 +137,7 @@
             this.pnMenu.Location = new System.Drawing.Point(561, 70);
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.ShadowDecoration.Parent = this.pnMenu;
-            this.pnMenu.Size = new System.Drawing.Size(867, 69);
+            this.pnMenu.Size = new System.Drawing.Size(1359, 69);
             this.pnMenu.TabIndex = 4;
             // 
             // pCheck
@@ -145,7 +147,7 @@
             this.pCheck.Controls.Add(this.label3);
             this.pCheck.Controls.Add(this.btMonPhoBien);
             this.pCheck.FillColor = System.Drawing.Color.Transparent;
-            this.pCheck.Location = new System.Drawing.Point(517, 6);
+            this.pCheck.Location = new System.Drawing.Point(1009, 6);
             this.pCheck.Name = "pCheck";
             this.pCheck.Radius = 5;
             this.pCheck.ShadowColor = System.Drawing.Color.Black;
@@ -200,7 +202,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(867, 69);
+            this.label2.Size = new System.Drawing.Size(1359, 69);
             this.label2.TabIndex = 0;
             this.label2.Text = "MENU";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -303,14 +305,14 @@
             this.pnLotMenu2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnLotMenu2.Location = new System.Drawing.Point(0, 580);
             this.pnLotMenu2.Name = "pnLotMenu2";
-            this.pnLotMenu2.Size = new System.Drawing.Size(1428, 48);
+            this.pnLotMenu2.Size = new System.Drawing.Size(1920, 48);
             this.pnLotMenu2.TabIndex = 2;
             // 
             // panel11
             // 
             this.panel11.Controls.Add(this.pnLotTaiKhoan);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel11.Location = new System.Drawing.Point(870, 0);
+            this.panel11.Location = new System.Drawing.Point(992, 0);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(539, 48);
             this.panel11.TabIndex = 4;
@@ -319,11 +321,10 @@
             // 
             this.pnLotTaiKhoan.Controls.Add(this.btTK_DangXuat);
             this.pnLotTaiKhoan.Controls.Add(this.bInfoAccount);
-            this.pnLotTaiKhoan.Controls.Add(this.bMenuStaff);
             this.pnLotTaiKhoan.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnLotTaiKhoan.Location = new System.Drawing.Point(0, 0);
             this.pnLotTaiKhoan.Name = "pnLotTaiKhoan";
-            this.pnLotTaiKhoan.Size = new System.Drawing.Size(497, 48);
+            this.pnLotTaiKhoan.Size = new System.Drawing.Size(383, 48);
             this.pnLotTaiKhoan.TabIndex = 7;
             // 
             // btTK_DangXuat
@@ -340,7 +341,7 @@
             this.btTK_DangXuat.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
             this.btTK_DangXuat.ForeColor = System.Drawing.Color.White;
             this.btTK_DangXuat.HoverState.Parent = this.btTK_DangXuat;
-            this.btTK_DangXuat.Location = new System.Drawing.Point(300, 0);
+            this.btTK_DangXuat.Location = new System.Drawing.Point(153, 0);
             this.btTK_DangXuat.Name = "btTK_DangXuat";
             this.btTK_DangXuat.ShadowDecoration.Parent = this.btTK_DangXuat;
             this.btTK_DangXuat.Size = new System.Drawing.Size(153, 48);
@@ -362,33 +363,12 @@
             this.bInfoAccount.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
             this.bInfoAccount.ForeColor = System.Drawing.Color.White;
             this.bInfoAccount.HoverState.Parent = this.bInfoAccount;
-            this.bInfoAccount.Location = new System.Drawing.Point(147, 0);
+            this.bInfoAccount.Location = new System.Drawing.Point(0, 0);
             this.bInfoAccount.Name = "bInfoAccount";
             this.bInfoAccount.ShadowDecoration.Parent = this.bInfoAccount;
             this.bInfoAccount.Size = new System.Drawing.Size(153, 48);
             this.bInfoAccount.TabIndex = 5;
             this.bInfoAccount.Text = "Thông tin";
-            // 
-            // bMenuStaff
-            // 
-            this.bMenuStaff.Animated = true;
-            this.bMenuStaff.BackColor = System.Drawing.Color.Transparent;
-            this.bMenuStaff.BorderRadius = 10;
-            this.bMenuStaff.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bMenuStaff.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bMenuStaff.CheckedState.Parent = this.bMenuStaff;
-            this.bMenuStaff.CustomImages.Parent = this.bMenuStaff;
-            this.bMenuStaff.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bMenuStaff.FillColor = System.Drawing.Color.SandyBrown;
-            this.bMenuStaff.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
-            this.bMenuStaff.ForeColor = System.Drawing.Color.White;
-            this.bMenuStaff.HoverState.Parent = this.bMenuStaff;
-            this.bMenuStaff.Location = new System.Drawing.Point(0, 0);
-            this.bMenuStaff.Name = "bMenuStaff";
-            this.bMenuStaff.ShadowDecoration.Parent = this.bMenuStaff;
-            this.bMenuStaff.Size = new System.Drawing.Size(147, 48);
-            this.bMenuStaff.TabIndex = 4;
-            this.bMenuStaff.Text = "Quản lí";
             // 
             // panel10
             // 
@@ -396,7 +376,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel10.Location = new System.Drawing.Point(326, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(544, 48);
+            this.panel10.Size = new System.Drawing.Size(666, 48);
             this.panel10.TabIndex = 3;
             // 
             // pnLotThongBao
@@ -429,6 +409,7 @@
             this.btTaiChinh.Size = new System.Drawing.Size(147, 48);
             this.btTaiChinh.TabIndex = 4;
             this.btTaiChinh.Text = "Tài chính";
+            this.btTaiChinh.Click += new System.EventHandler(this.BtTaiChinh_Click);
             // 
             // btHangNgay
             // 
@@ -450,6 +431,7 @@
             this.btHangNgay.Size = new System.Drawing.Size(153, 48);
             this.btHangNgay.TabIndex = 5;
             this.btHangNgay.Text = "Hàng ngày";
+            this.btHangNgay.Click += new System.EventHandler(this.BtHangNgay_Click);
             // 
             // panel6
             // 
@@ -482,6 +464,9 @@
             // pnLotMenu
             // 
             this.pnLotMenu.BorderRadius = 3;
+            this.pnLotMenu.Controls.Add(this.btHangKhachHang);
+            this.pnLotMenu.Controls.Add(this.btThongTinQuan);
+            this.pnLotMenu.Controls.Add(this.bMenuStaff);
             this.pnLotMenu.Controls.Add(this.btTaiKhoan);
             this.pnLotMenu.Controls.Add(this.btThongKe);
             this.pnLotMenu.Controls.Add(this.btThucDon);
@@ -493,8 +478,49 @@
             this.pnLotMenu.Location = new System.Drawing.Point(0, 628);
             this.pnLotMenu.Name = "pnLotMenu";
             this.pnLotMenu.ShadowDecoration.Parent = this.pnLotMenu;
-            this.pnLotMenu.Size = new System.Drawing.Size(1428, 51);
+            this.pnLotMenu.Size = new System.Drawing.Size(1920, 51);
             this.pnLotMenu.TabIndex = 1;
+            // 
+            // btThongTinQuan
+            // 
+            this.btThongTinQuan.Animated = true;
+            this.btThongTinQuan.BackColor = System.Drawing.Color.Transparent;
+            this.btThongTinQuan.BorderRadius = 10;
+            this.btThongTinQuan.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btThongTinQuan.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btThongTinQuan.CheckedState.Parent = this.btThongTinQuan;
+            this.btThongTinQuan.CustomImages.Parent = this.btThongTinQuan;
+            this.btThongTinQuan.FillColor = System.Drawing.Color.Sienna;
+            this.btThongTinQuan.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.btThongTinQuan.ForeColor = System.Drawing.Color.White;
+            this.btThongTinQuan.HoverState.Parent = this.btThongTinQuan;
+            this.btThongTinQuan.Location = new System.Drawing.Point(1423, 3);
+            this.btThongTinQuan.Name = "btThongTinQuan";
+            this.btThongTinQuan.ShadowDecoration.Parent = this.btThongTinQuan;
+            this.btThongTinQuan.Size = new System.Drawing.Size(195, 45);
+            this.btThongTinQuan.TabIndex = 7;
+            this.btThongTinQuan.Text = "Thông tin quán";
+            this.btThongTinQuan.Click += new System.EventHandler(this.BtThongTinQuan_Click);
+            // 
+            // bMenuStaff
+            // 
+            this.bMenuStaff.Animated = true;
+            this.bMenuStaff.BackColor = System.Drawing.Color.Transparent;
+            this.bMenuStaff.BorderRadius = 10;
+            this.bMenuStaff.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bMenuStaff.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bMenuStaff.CheckedState.Parent = this.bMenuStaff;
+            this.bMenuStaff.CustomImages.Parent = this.bMenuStaff;
+            this.bMenuStaff.FillColor = System.Drawing.Color.Sienna;
+            this.bMenuStaff.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.bMenuStaff.ForeColor = System.Drawing.Color.White;
+            this.bMenuStaff.HoverState.Parent = this.bMenuStaff;
+            this.bMenuStaff.Location = new System.Drawing.Point(1194, 3);
+            this.bMenuStaff.Name = "bMenuStaff";
+            this.bMenuStaff.ShadowDecoration.Parent = this.bMenuStaff;
+            this.bMenuStaff.Size = new System.Drawing.Size(210, 45);
+            this.bMenuStaff.TabIndex = 6;
+            this.bMenuStaff.Text = "Quản lí nhân viên";
             // 
             // btTaiKhoan
             // 
@@ -555,7 +581,7 @@
             this.btThucDon.ShadowDecoration.Parent = this.btThucDon;
             this.btThucDon.Size = new System.Drawing.Size(180, 45);
             this.btThucDon.TabIndex = 5;
-            this.btThucDon.Text = "Thục đơn";
+            this.btThucDon.Text = "Thực đơn";
             this.btThucDon.Click += new System.EventHandler(this.BtThucDon_Click);
             // 
             // btThongBao
@@ -617,7 +643,7 @@
             this.pTieuDe.Location = new System.Drawing.Point(0, 0);
             this.pTieuDe.Name = "pTieuDe";
             this.pTieuDe.ShadowDecoration.Parent = this.pTieuDe;
-            this.pTieuDe.Size = new System.Drawing.Size(1428, 70);
+            this.pTieuDe.Size = new System.Drawing.Size(1920, 70);
             this.pTieuDe.TabIndex = 0;
             // 
             // pbThongBao
@@ -625,12 +651,13 @@
             this.pbThongBao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbThongBao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbThongBao.Image = global::CoffeeShopManagement.Properties.Resources.announ;
-            this.pbThongBao.Location = new System.Drawing.Point(1173, 1);
+            this.pbThongBao.Location = new System.Drawing.Point(1675, 0);
             this.pbThongBao.Name = "pbThongBao";
-            this.pbThongBao.Size = new System.Drawing.Size(80, 66);
+            this.pbThongBao.Size = new System.Drawing.Size(93, 64);
             this.pbThongBao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbThongBao.TabIndex = 10;
+            this.pbThongBao.TabIndex = 0;
             this.pbThongBao.TabStop = false;
+            this.pbThongBao.Click += new System.EventHandler(this.PbThongBao_Click);
             // 
             // btThemMon
             // 
@@ -740,7 +767,7 @@
             this.btThoat.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btThoat.ForeColor = System.Drawing.Color.White;
             this.btThoat.HoverState.Parent = this.btThoat;
-            this.btThoat.Location = new System.Drawing.Point(1318, 9);
+            this.btThoat.Location = new System.Drawing.Point(1810, 9);
             this.btThoat.Name = "btThoat";
             this.btThoat.ShadowDecoration.Parent = this.btThoat;
             this.btThoat.Size = new System.Drawing.Size(90, 50);
@@ -754,7 +781,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1450, 10);
+            this.panel1.Size = new System.Drawing.Size(1942, 10);
             this.panel1.TabIndex = 0;
             // 
             // pn10
@@ -770,7 +797,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1438, 10);
+            this.panel3.Location = new System.Drawing.Point(1930, 10);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(12, 689);
             this.panel3.TabIndex = 2;
@@ -781,7 +808,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(10, 689);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1428, 10);
+            this.panel4.Size = new System.Drawing.Size(1920, 10);
             this.panel4.TabIndex = 3;
             // 
             // guna2Elipse2
@@ -803,12 +830,32 @@
             this.guna2Elipse5.BorderRadius = 10;
             this.guna2Elipse5.TargetControl = this.pCheck;
             // 
+            // btHangKhachHang
+            // 
+            this.btHangKhachHang.Animated = true;
+            this.btHangKhachHang.BackColor = System.Drawing.Color.Transparent;
+            this.btHangKhachHang.BorderRadius = 10;
+            this.btHangKhachHang.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btHangKhachHang.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btHangKhachHang.CheckedState.Parent = this.btHangKhachHang;
+            this.btHangKhachHang.CustomImages.Parent = this.btHangKhachHang;
+            this.btHangKhachHang.FillColor = System.Drawing.Color.Sienna;
+            this.btHangKhachHang.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.btHangKhachHang.ForeColor = System.Drawing.Color.White;
+            this.btHangKhachHang.HoverState.Parent = this.btHangKhachHang;
+            this.btHangKhachHang.Location = new System.Drawing.Point(1640, 3);
+            this.btHangKhachHang.Name = "btHangKhachHang";
+            this.btHangKhachHang.ShadowDecoration.Parent = this.btHangKhachHang;
+            this.btHangKhachHang.Size = new System.Drawing.Size(205, 45);
+            this.btHangKhachHang.TabIndex = 8;
+            this.btHangKhachHang.Text = "Hạng khách hàng";
+            // 
             // FormSell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1450, 699);
+            this.ClientSize = new System.Drawing.Size(1942, 699);
             this.Controls.Add(this.pnLotChinh);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -867,7 +914,6 @@
         private System.Windows.Forms.Panel panel11;
         private Guna.UI2.WinForms.Guna2Button btTK_DangXuat;
         private Guna.UI2.WinForms.Guna2Button bInfoAccount;
-        private Guna.UI2.WinForms.Guna2Button bMenuStaff;
         private System.Windows.Forms.Panel pnLotOrder;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
         private Guna.UI2.WinForms.Guna2GradientButton btThongTInKhachHang;
@@ -884,8 +930,11 @@
         private System.Windows.Forms.Panel pnLotThongBao;
         private Guna.UI2.WinForms.Guna2Button btTaiChinh;
         private Guna.UI2.WinForms.Guna2Button btHangNgay;
-        private System.Windows.Forms.PictureBox pbThongBao;
         private Guna.UI2.WinForms.Guna2ToggleSwitch btMonPhoBien;
         private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2Button bMenuStaff;
+        private PictureboxBuffered pbThongBao;
+        private Guna.UI2.WinForms.Guna2Button btThongTinQuan;
+        private Guna.UI2.WinForms.Guna2Button btHangKhachHang;
     }
 }

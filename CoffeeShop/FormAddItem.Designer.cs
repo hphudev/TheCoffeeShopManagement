@@ -158,7 +158,13 @@
             this.cbUnit.ItemHeight = 30;
             this.cbUnit.Items.AddRange(new object[] {
             "Ly",
-            "Lon"});
+            "Lon",
+            "Chai",
+            "Cái",
+            "Cốc",
+            "Dĩa",
+            "Tô",
+            "Chén"});
             this.cbUnit.ItemsAppearance.Parent = this.cbUnit;
             this.cbUnit.Location = new System.Drawing.Point(14, 192);
             this.cbUnit.Name = "cbUnit";

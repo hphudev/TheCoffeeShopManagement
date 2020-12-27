@@ -46,9 +46,9 @@ namespace CoffeeShopManagement
             try
             {
                 InitializeComponent();
-                lockForm = new FormLock(this);
+                //lockForm = new FormLock(this);
                 this.parent = parent;
-                Event.ShowForm(this.lockForm);
+                //Event.ShowForm(this.lockForm);
                 this.bCancel.Click += CancelClicked;
                 this.FormClosed += CloseForm;
                 this.bReset.Click += ResetClicked;
@@ -158,6 +158,11 @@ namespace CoffeeShopManagement
             {
                 IO.ExportError("Lỗi không xác định\n(Line 159 Form Change Info Staff)");
             }
+        }
+
+        public void SetLockForm(ref FormLock khoa)
+        {
+            this.lockForm = khoa;
         }
     }
 }

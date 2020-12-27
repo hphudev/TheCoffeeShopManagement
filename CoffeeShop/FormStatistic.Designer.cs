@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tvHistory = new System.Windows.Forms.TreeView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ilImageList = new System.Windows.Forms.ImageList(this.components);
-            this.lbNhanKhachHang = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bCancel = new System.Windows.Forms.Button();
             this.bOK = new System.Windows.Forms.Button();
@@ -50,9 +49,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cChart)).BeginInit();
+            this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tvHistory
@@ -67,7 +69,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(123, 76);
+            this.label1.Location = new System.Drawing.Point(122, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 37);
             this.label1.TabIndex = 1;
@@ -88,19 +90,6 @@
             this.ilImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.ilImageList.ImageSize = new System.Drawing.Size(16, 16);
             this.ilImageList.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // lbNhanKhachHang
-            // 
-            this.lbNhanKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbNhanKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbNhanKhachHang.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNhanKhachHang.ForeColor = System.Drawing.Color.White;
-            this.lbNhanKhachHang.Location = new System.Drawing.Point(0, 0);
-            this.lbNhanKhachHang.Name = "lbNhanKhachHang";
-            this.lbNhanKhachHang.Size = new System.Drawing.Size(1355, 69);
-            this.lbNhanKhachHang.TabIndex = 16;
-            this.lbNhanKhachHang.Text = "THỐNG KÊ TÀI CHÍNH";
-            this.lbNhanKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox1
             // 
@@ -233,41 +222,69 @@
             // 
             this.cChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.cChart.BorderlineColor = System.Drawing.Color.Black;
-            chartArea1.Name = "ChartArea1";
-            this.cChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.cChart.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.cChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.cChart.Legends.Add(legend3);
             this.cChart.Location = new System.Drawing.Point(249, 22);
             this.cChart.Name = "cChart";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Receipt - Expense";
-            this.cChart.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Receipt - Expense";
+            this.cChart.Series.Add(series3);
             this.cChart.Size = new System.Drawing.Size(371, 360);
             this.cChart.TabIndex = 16;
             this.cChart.Text = "chart1";
+            // 
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.Controls.Add(this.label5);
+            this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.Teal;
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.Goldenrod;
+            this.guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1355, 76);
+            this.guna2GradientPanel1.TabIndex = 113;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.Snow;
+            this.label5.Location = new System.Drawing.Point(503, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(397, 41);
+            this.label5.TabIndex = 112;
+            this.label5.Text = "THÔNG TIN KHÁCH HÀNG";
             // 
             // FormStatistic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(1355, 771);
+            this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lbNhanKhachHang);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tvHistory);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormStatistic";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.FormStatistic_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cChart)).EndInit();
+            this.guna2GradientPanel1.ResumeLayout(false);
+            this.guna2GradientPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,7 +296,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ImageList ilImageList;
-        private System.Windows.Forms.Label lbNhanKhachHang;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button bCancel;
         private System.Windows.Forms.Button bOK;
@@ -293,5 +309,7 @@
         private System.Windows.Forms.Label lReceipt;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private System.Windows.Forms.Label label5;
     }
 }

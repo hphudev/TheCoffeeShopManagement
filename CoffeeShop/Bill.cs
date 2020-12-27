@@ -20,8 +20,10 @@ namespace CoffeeShopManagement
 
         public int discount { get; }
 
+        public int moneyCus { get; }
+
         public Bill(string id, string date, string idCustomer, string idStaff, int value,
-            int discount)
+            int discount, int moneyCus)
         {
             try
             {
@@ -31,6 +33,7 @@ namespace CoffeeShopManagement
                 this.date = date;
                 this.value = value;
                 this.discount = discount;
+                this.moneyCus = moneyCus;
             }
             catch (Exception)
             {
@@ -45,7 +48,7 @@ namespace CoffeeShopManagement
                 string idStaffTmp = (idStaff.id == "NULL") ? idStaff.id : ("'" + idStaff.id + "'");
                 string idCustomerTmp = (idCustomer.id == "NULL") ? idCustomer.id : ("'" + idCustomer.id + "'");
                 Data.AddData("HOADON", $"N'{this.id.id}', '{Utility.GetDateUS(this.date)}', {idCustomerTmp}," +
-                    $"{idStaffTmp}, '{this.value}', '{this.discount}'");
+                    $"{idStaffTmp}, '{this.value}', '{this.discount}', '{this.moneyCus}'");
             }
             catch (Exception)
             {

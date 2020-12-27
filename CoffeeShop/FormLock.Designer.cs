@@ -41,6 +41,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F_BangKhoa";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Leave += new System.EventHandler(this.FormLock_Leave);
             this.ResumeLayout(false);
 
         }

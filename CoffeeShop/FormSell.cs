@@ -42,12 +42,14 @@ namespace CoffeeShopManagement
         bool bThongBao = false;
         bool bTaiKhoan = false;
         bool statusOrder = true;
+        public int discount = 0;
         public int SumOrders;
         public Table TableChoice = null;
         public ListItem Choice = null;
         public FormLogin parent;
         public Timer CheckOrderSum;
         private Timer CheckFind;
+        public Timer CheckThongBao;
 
         public FormSell(FormLogin parent)
         {
@@ -60,6 +62,7 @@ namespace CoffeeShopManagement
             this.Init_btTaiKhoan();
             this.InitDanhSachMon();
             this.InitCheckOrderSum();
+            this.InitCheckThongBao();
             this.InitCheckFind();
             LoadSomeThingPublic();
             //MessageBox.Show(this.parent.account.id.id);
@@ -76,7 +79,49 @@ namespace CoffeeShopManagement
             {
                 ActionCheckOrderSum();
             };
+        }
 
+        private void InitCheckThongBao()
+        {
+            CheckThongBao = new Timer();
+            CheckThongBao.Interval = 1500;
+            CheckThongBao.Tick += (s, e) =>
+            {
+                SqlConnection con = Data.OpenConnection();
+                SqlDataReader read = Data.ReadData("THONGBAO", con, "", "*");
+                bool check = true;
+                while (read.HasRows)
+                {
+                    if (!read.Read())
+                        break;
+                    check = read.GetBoolean(2);
+                }
+                if (!check)
+                {
+                    //if (System.IO.File.Exists($"./Resources/announ.gif"))
+                    //{
+                    //    using (var bitmap = new Bitmap($"./Resources/announ.gif"))
+                    //    {
+                    //        pbThongBao.Image = new Bitmap(bitmap);
+                    //    }
+                    //}
+                    pbThongBao.Image = Resources.announ;
+
+                }
+                else
+                {
+                    //if (System.IO.File.Exists($"./Resources/announTinh.png"))
+                    //{
+                    //    using (var bitmap = new Bitmap($"./Resources/announTinh.png"))
+                    //    {
+                    //        pbThongBao.Image = new Bitmap(bitmap);
+                    //    }
+                    //}
+                    pbThongBao.Image = Resources.announTinh;
+                }
+                Data.CloseConnection(ref con);
+            };
+            CheckThongBao.Start();
         }
         // Khai báo tìm kiếm món tự động
         private void InitCheckFind()
@@ -191,11 +236,14 @@ namespace CoffeeShopManagement
         }
         #endregion
 
-        private void ActionCheckTableChoice()
+        public void ActionCheckTableChoice()
         {
             if (TableChoice != null)
             {
                 FormOrder OrderTable = new FormOrder(this);
+                FormLock ltmp = new FormLock();
+                ltmp.SetLockParent(cus);
+                OrderTable.SetLockForm(ref ltmp);
                 OrderTable.BangKhoa.Hide();
                 OrderTable.Hide();
                 OrderTable.tableChoice = this.TableChoice;
@@ -311,17 +359,34 @@ namespace CoffeeShopManagement
                 IO.ExportWarning("Danh sách món trống!");
                 return;
             }
-            new FormOrder(this);
+            FormOrder cus = new FormOrder(this);
+            FormLock ltmp = new FormLock();
+            ltmp.Show();
+            cus.Show();
+            cus.SetLockForm(ref ltmp);
+            ltmp.SetLockParent(cus);
         }
 
         private void btDanhSachBan_Click(object sender, EventArgs e)
         {
-            new FormDanhSachBan(this).Show();
+            FormDanhSachBan cus = new FormDanhSachBan(this);
+            FormLock ltmp = new FormLock();
+            ltmp.Show();
+            cus.Show();
+            cus.SetLockForm(ref ltmp);
+            ltmp.SetLockParent(cus);
+            
         }
 
         private void btThongTinKhachHang_Click(object sender, EventArgs e)
         {
-            new FormThongTinKhachHang(this);
+            FormThongTinKhachHang cus = new FormThongTinKhachHang(this);
+            FormLock ltmp = new FormLock();
+            ltmp.Show();
+            cus.Show();
+            cus.SetLockForm(ref ltmp);
+            ltmp.SetLockParent(cus);
+           
         }
 
         private void FormBanHang_FormClosed(object sender, FormClosedEventArgs e)
@@ -337,15 +402,25 @@ namespace CoffeeShopManagement
                 IO.ExportWarning("Bạn không được cấp quyền tính năng này!");
                 return;
             }
-
-            new FormMenuStaff(this);
+            FormMenuStaff cus = new FormMenuStaff(this);
+            FormLock ltmp = new FormLock();
+            ltmp.Show();
+            cus.Show();
+            cus.SetLockForm(ref ltmp);
+            ltmp.SetLockParent(cus);
+            
         }
 
         private void InfoAccountClicked(object sender, EventArgs e)
         {
             if (!this.parent.account.IsAdmin())
             {
-                new FormInfoStaff(this.parent.account).Show();
+                FormInfoStaff cus = new FormInfoStaff(this.parent.account);
+                FormLock ltmp = new FormLock();
+                ltmp.Show();
+                cus.Show();
+                cus.SetLockForm(ref ltmp);
+                ltmp.SetLockParent(cus);
             }
         }
 
@@ -406,7 +481,12 @@ namespace CoffeeShopManagement
         private void BtKhachHang_Click(object sender, EventArgs e)
         {
             HideMenuRemain();
-            new FormChinhSuaKhachHang().Show();
+            FormChinhSuaKhachHang cus = new FormChinhSuaKhachHang();
+            FormLock ltmp = new FormLock();
+            ltmp.Show();
+            cus.Show();
+            cus.SetLockForm(ref ltmp);
+            ltmp.SetLockParent(cus);
         }
 
         private void BtThucDon_Click(object sender, EventArgs e)
@@ -417,7 +497,12 @@ namespace CoffeeShopManagement
                 IO.ExportWarning("Bạn không được cấp quyền tính năng này!");
                 return;
             }
-            new FormMenuItem(this);
+            FormMenuItem cus = new FormMenuItem(this);
+            FormLock ltmp = new FormLock();
+            ltmp.Show();
+            cus.Show();
+            cus.SetLockForm(ref ltmp);
+            ltmp.SetLockParent(cus);
         }
 
         private void BtThongTInKhachHang_Click(object sender, EventArgs e)
@@ -433,7 +518,13 @@ namespace CoffeeShopManagement
                 IO.ExportWarning("Bạn không được cấp quyền tính năng này!");
                 return;
             }
-            (new FormStatistic(this)).Show();
+            FormStatistic cus = new FormStatistic(this);
+            FormLock ltmp = new FormLock();
+            ltmp.Show();
+            cus.Show();
+            cus.SetLockForm(ref ltmp);
+            ltmp.SetLockParent(cus);
+            
         }
 
         private void BtMonPhoBien_CheckedChanged(object sender, EventArgs e)
@@ -450,6 +541,50 @@ namespace CoffeeShopManagement
                 if (cbTimKiem.Text == "")
                     LoadDanhSachMon();
             }
+        }
+
+        private void BtTaiChinh_Click(object sender, EventArgs e)
+        {
+            FormExpense cus = new FormExpense(this);
+            FormLock ltmp = new FormLock();
+            ltmp.Show();
+            cus.Show();
+            cus.SetLockForm(ref ltmp);
+            ltmp.SetLockParent(cus);
+            
+        }
+
+        private void BtHangNgay_Click(object sender, EventArgs e)
+        {
+            //CheckThongBao.Stop();
+            FormCaiDatThongBao cus = new FormCaiDatThongBao();
+            FormLock ltmp = new FormLock();
+            ltmp.Show();
+            cus.Show();
+            cus.SetLockForm(ref ltmp);
+            ltmp.SetLockParent(cus);
+            
+        }
+
+        private void PbThongBao_Click(object sender, EventArgs e)
+        {
+            FormNoiDungThongBao cus = new FormNoiDungThongBao(this);
+            FormLock ltmp = new FormLock();
+            ltmp.Show();
+            cus.Show();
+            cus.SetLockForm(ref ltmp);
+            ltmp.SetLockParent(cus);
+            
+        }
+
+        private void BtThongTinQuan_Click(object sender, EventArgs e)
+        {
+            FormThongTinQuan cus = new FormThongTinQuan();
+            FormLock ltmp = new FormLock();
+            ltmp.Show();
+            cus.Show();
+            cus.SetLockForm(ref ltmp);
+            ltmp.SetLockParent(cus);
         }
     }
 }

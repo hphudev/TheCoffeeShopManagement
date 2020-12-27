@@ -83,6 +83,7 @@ namespace CoffeeShopManagement
             this.parent.TableChoice = new Table(this.parent, this);
             this.parent.cus = cus;
             this.parent.Orders = new List<ListOrder>(this.Orders);
+            this.parent.ActionCheckTableChoice();
         }
     }
 }

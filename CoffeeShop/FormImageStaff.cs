@@ -32,5 +32,11 @@ namespace CoffeeShopManagement
         {
             Event.CloseForm(this);
         }
+
+        FormLock khoa;
+        public void SetLockForm(ref FormLock khoa)
+        {
+            this.khoa = khoa;
+        }
     }
 }

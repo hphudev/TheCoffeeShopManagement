@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIDTable));
             this.lbNhanKhachHang = new System.Windows.Forms.Label();
             this.tbIDTable = new System.Windows.Forms.TextBox();
             this.bOK = new ns1.BunifuThinButton2();
             this.btThoat = new ns1.BunifuThinButton2();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.SuspendLayout();
             // 
             // lbNhanKhachHang
@@ -43,7 +45,7 @@
             this.lbNhanKhachHang.ForeColor = System.Drawing.Color.White;
             this.lbNhanKhachHang.Location = new System.Drawing.Point(0, 0);
             this.lbNhanKhachHang.Name = "lbNhanKhachHang";
-            this.lbNhanKhachHang.Size = new System.Drawing.Size(389, 82);
+            this.lbNhanKhachHang.Size = new System.Drawing.Size(430, 82);
             this.lbNhanKhachHang.TabIndex = 2;
             this.lbNhanKhachHang.Text = "ID BÀN";
             this.lbNhanKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -55,7 +57,7 @@
             this.tbIDTable.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIDTable.Location = new System.Drawing.Point(0, 82);
             this.tbIDTable.Name = "tbIDTable";
-            this.tbIDTable.Size = new System.Drawing.Size(389, 70);
+            this.tbIDTable.Size = new System.Drawing.Size(430, 70);
             this.tbIDTable.TabIndex = 10;
             this.tbIDTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbIDTable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbIDTable_KeyPress);
@@ -78,7 +80,7 @@
             this.bOK.IdleFillColor = System.Drawing.Color.White;
             this.bOK.IdleForecolor = System.Drawing.Color.Green;
             this.bOK.IdleLineColor = System.Drawing.Color.Green;
-            this.bOK.Location = new System.Drawing.Point(4, 153);
+            this.bOK.Location = new System.Drawing.Point(9, 153);
             this.bOK.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.bOK.Name = "bOK";
             this.bOK.Size = new System.Drawing.Size(139, 73);
@@ -104,7 +106,7 @@
             this.btThoat.IdleFillColor = System.Drawing.Color.White;
             this.btThoat.IdleForecolor = System.Drawing.Color.Green;
             this.btThoat.IdleLineColor = System.Drawing.Color.Green;
-            this.btThoat.Location = new System.Drawing.Point(245, 153);
+            this.btThoat.Location = new System.Drawing.Point(282, 154);
             this.btThoat.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(139, 73);
@@ -112,12 +114,17 @@
             this.btThoat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btThoat.Click += new System.EventHandler(this.BtThoat_Click);
             // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.TargetControl = this;
+            // 
             // FormIDTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(389, 227);
+            this.ClientSize = new System.Drawing.Size(430, 250);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.bOK);
             this.Controls.Add(this.tbIDTable);
@@ -138,5 +145,6 @@
         private System.Windows.Forms.TextBox tbIDTable;
         private ns1.BunifuThinButton2 bOK;
         private ns1.BunifuThinButton2 btThoat;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

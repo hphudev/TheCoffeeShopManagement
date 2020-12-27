@@ -411,6 +411,10 @@
             this.cbPosition.FormattingEnabled = true;
             this.cbPosition.HoverState.Parent = this.cbPosition;
             this.cbPosition.ItemHeight = 30;
+            this.cbPosition.Items.AddRange(new object[] {
+            "Thu ngân",
+            "Quản lí",
+            "Bảo vệ"});
             this.cbPosition.ItemsAppearance.Parent = this.cbPosition;
             this.cbPosition.Location = new System.Drawing.Point(14, 687);
             this.cbPosition.Name = "cbPosition";
@@ -709,7 +713,6 @@
             // pbImage
             // 
             this.pbImage.BackColor = System.Drawing.Color.Bisque;
-            this.pbImage.Image = global::CoffeeShopManagement.Properties.Resources.LogoLogin;
             this.pbImage.Location = new System.Drawing.Point(13, 12);
             this.pbImage.Name = "pbImage";
             this.pbImage.Size = new System.Drawing.Size(222, 222);

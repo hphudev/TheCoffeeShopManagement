@@ -39,7 +39,7 @@
             // 
             // lbTenMon
             // 
-            this.lbTenMon.BackColor = System.Drawing.Color.LightGray;
+            this.lbTenMon.BackColor = System.Drawing.Color.DarkSalmon;
             this.lbTenMon.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lbTenMon.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenMon.ForeColor = System.Drawing.Color.Honeydew;

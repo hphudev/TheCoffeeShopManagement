@@ -227,6 +227,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F_DanhSachBan";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.F_DanhSachBan_FormClosed);
+            this.Load += new System.EventHandler(this.FormDanhSachBan_Load);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.pTieuDe.ResumeLayout(false);

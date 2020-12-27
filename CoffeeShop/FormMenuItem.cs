@@ -51,9 +51,9 @@ namespace CoffeeShopManagement
                 this.bFind.Click += FindItemClicked;
                 this.bCancel.Click += CancelClicked;
                 this.FormClosed += CloseForm;
-                this.lockForm = new FormLock(this);
-                Event.ShowForm(this.lockForm);
-                Event.ShowForm(this);
+                //this.lockForm = new FormLock(this);
+                //Event.ShowForm(this.lockForm);
+                //Event.ShowForm(this);
                 this.cbFind.TextChanged += ReloadMenu;
                 this.loader = new BackgroundWorker();
                 this.loader.DoWork += LoadData;
@@ -70,7 +70,7 @@ namespace CoffeeShopManagement
 
         private void FinishWork(object sender, RunWorkerCompletedEventArgs e)
         {
-            Event.FinishWork(this.cbFind, this.sourceData);
+            Event.FinishWork(ref this.cbFind, this.sourceData);
         }
 
         private void ShowProgress(object sender, ProgressChangedEventArgs e)
@@ -125,7 +125,7 @@ namespace CoffeeShopManagement
 
         private void ReloadMenu(object sender, EventArgs e)
         {
-            Event.ReloadMenu(this.cbFind, this.dgvMenu, this.loader);
+            Event.ReloadMenu(ref this.cbFind, this.dgvMenu, this.loader);
         }
 
         private void CancelClicked(object sender, EventArgs e)
@@ -135,14 +135,24 @@ namespace CoffeeShopManagement
 
         private void AddItemClicked(object sender, EventArgs e)
         {
-            Event.ShowForm((new FormAddItem(this)));
+            FormAddItem cus = new FormAddItem(this);
+            FormLock ltmp = new FormLock();
+            ltmp.Show();
+            cus.Show();
+            cus.SetLockForm(ref ltmp);
+            ltmp.SetLockParent(cus);
         }
 
         private void ChangeInfoItemClicked(object sender, EventArgs e)
         {
             if (this.dgvMenu.Rows.Count != 0)
             {
-                Event.ShowForm((new FormChangeInfoItem(this)));
+                FormChangeInfoItem cus = new FormChangeInfoItem(this);
+                FormLock ltmp = new FormLock();
+                ltmp.Show();
+                cus.Show();
+                cus.SetLockForm(ref ltmp);
+                ltmp.SetLockParent(cus);
             }
             else
             {
@@ -172,7 +182,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 175 Form Menu Item");
+                IO.ExportError("Lỗi không xác định\n(Line 185 Form Menu Item");
             }
         }
 
@@ -185,6 +195,21 @@ namespace CoffeeShopManagement
         private void CloseForm(object sender, FormClosedEventArgs e)
         {
             Event.CloseForm(this.lockForm);
+        }
+
+        private void BPrint_Click(object sender, EventArgs e)
+        {
+            Report.FormReportDanhSachMon cus = new Report.FormReportDanhSachMon();
+            FormLock ltmp = new FormLock();
+            ltmp.Show();
+            cus.Show();
+            cus.SetLockForm(ref ltmp);
+            ltmp.SetLockParent(cus);
+        }
+
+        public void SetLockForm(ref FormLock khoa)
+        {
+            this.lockForm = khoa;
         }
     }
 }

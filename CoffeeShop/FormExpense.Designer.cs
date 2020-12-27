@@ -135,7 +135,7 @@
             "Trả lương",
             "Khác"});
             this.cbType.ItemsAppearance.Parent = this.cbType;
-            this.cbType.Location = new System.Drawing.Point(14, 281);
+            this.cbType.Location = new System.Drawing.Point(14, 288);
             this.cbType.Name = "cbType";
             this.cbType.ShadowDecoration.Parent = this.cbType;
             this.cbType.Size = new System.Drawing.Size(245, 36);
@@ -148,7 +148,7 @@
             this.label20.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label20.Location = new System.Drawing.Point(10, 246);
+            this.label20.Location = new System.Drawing.Point(10, 253);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(107, 23);
             this.label20.TabIndex = 16;
@@ -250,9 +250,9 @@
             // 
             this.pbBackGround.BackColor = System.Drawing.Color.Transparent;
             this.pbBackGround.Image = ((System.Drawing.Image)(resources.GetObject("pbBackGround.Image")));
-            this.pbBackGround.Location = new System.Drawing.Point(28, 46);
+            this.pbBackGround.Location = new System.Drawing.Point(0, 44);
             this.pbBackGround.Name = "pbBackGround";
-            this.pbBackGround.Size = new System.Drawing.Size(505, 378);
+            this.pbBackGround.Size = new System.Drawing.Size(533, 396);
             this.pbBackGround.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbBackGround.TabIndex = 135;
             this.pbBackGround.TabStop = false;
@@ -286,7 +286,7 @@
             this.lID.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lID.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lID.Location = new System.Drawing.Point(10, 326);
+            this.lID.Location = new System.Drawing.Point(9, 341);
             this.lID.Name = "lID";
             this.lID.Size = new System.Drawing.Size(117, 23);
             this.lID.TabIndex = 137;
@@ -313,7 +313,7 @@
             this.tbID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbID.HoverState.Parent = this.tbID;
             this.tbID.IconLeft = global::CoffeeShopManagement.Properties.Resources.CMND;
-            this.tbID.Location = new System.Drawing.Point(14, 358);
+            this.tbID.Location = new System.Drawing.Point(14, 373);
             this.tbID.Margin = new System.Windows.Forms.Padding(2);
             this.tbID.Name = "tbID";
             this.tbID.PasswordChar = '\0';

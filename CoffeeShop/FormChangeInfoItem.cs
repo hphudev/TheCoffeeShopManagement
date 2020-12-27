@@ -40,8 +40,8 @@ namespace CoffeeShopManagement
             {
                 InitializeComponent();
                 this.parent = parent;
-                this.lockForm = new FormLock(this);
-                Event.ShowForm(this.lockForm);
+                //this.lockForm = new FormLock(this);
+                //Event.ShowForm(this.lockForm);
                 Autofill();
                 this.tbName.Enabled = false;
 
@@ -115,6 +115,11 @@ namespace CoffeeShopManagement
             {
                 IO.ExportError("Lỗi không xác định\n(Line 116 Form Change Info Item)");
             }
+        }
+
+        public void SetLockForm(ref FormLock khoa)
+        {
+            this.lockForm = khoa;
         }
     }
 }

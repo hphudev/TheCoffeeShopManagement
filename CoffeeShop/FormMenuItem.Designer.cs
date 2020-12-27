@@ -37,6 +37,7 @@
             this.bPrint = new Guna.UI2.WinForms.Guna2ImageButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pTieuDe = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.bAddItem = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bFind = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bChangeInfoItem = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -52,7 +53,6 @@
             this.dgvtbcPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ani = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             this.pCheck.SuspendLayout();
@@ -148,6 +148,7 @@
             this.bPrint.PressedState.Parent = this.bPrint;
             this.bPrint.Size = new System.Drawing.Size(70, 51);
             this.bPrint.TabIndex = 124;
+            this.bPrint.Click += new System.EventHandler(this.BPrint_Click);
             // 
             // label1
             // 
@@ -181,6 +182,15 @@
             this.pTieuDe.ShadowDecoration.Parent = this.pTieuDe;
             this.pTieuDe.Size = new System.Drawing.Size(1343, 70);
             this.pTieuDe.TabIndex = 122;
+            // 
+            // progressBar
+            // 
+            this.progressBar.ForeColor = System.Drawing.Color.LawnGreen;
+            this.progressBar.Location = new System.Drawing.Point(51, 26);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(119, 23);
+            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar.TabIndex = 124;
             // 
             // bAddItem
             // 
@@ -287,13 +297,14 @@
             // 
             // cbFind
             // 
-            this.cbFind.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbFind.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbFind.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbFind.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.cbFind.FormattingEnabled = true;
             this.cbFind.Location = new System.Drawing.Point(745, 13);
             this.cbFind.Name = "cbFind";
-            this.cbFind.Size = new System.Drawing.Size(410, 48);
+            this.cbFind.Size = new System.Drawing.Size(410, 49);
             this.cbFind.TabIndex = 8;
             // 
             // guna2Elipse1
@@ -363,13 +374,6 @@
             // 
             this.guna2Elipse2.BorderRadius = 20;
             this.guna2Elipse2.TargetControl = this;
-            // 
-            // progressBar
-            // 
-            this.progressBar.Location = new System.Drawing.Point(51, 26);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(100, 23);
-            this.progressBar.TabIndex = 124;
             // 
             // FormMenuItem
             // 

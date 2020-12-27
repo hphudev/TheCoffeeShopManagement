@@ -32,13 +32,13 @@
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.bFind = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.bAddStaff = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bChangeInfoStaff = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bDeleteStaff = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.cbFind = new System.Windows.Forms.ComboBox();
             this.pTieuDe = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.bAddStaff = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.bCancel = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -56,7 +56,7 @@
             this.dgvtbcSoLanPhucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drvtbcLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtbcChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.dgvtbcButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pTieuDe.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
@@ -112,26 +112,6 @@
             this.guna2GradientButton2.TabIndex = 8;
             this.guna2GradientButton2.Text = "X";
             // 
-            // bAddStaff
-            // 
-            this.bAddStaff.Animated = true;
-            this.bAddStaff.BackColor = System.Drawing.Color.Transparent;
-            this.bAddStaff.BorderRadius = 15;
-            this.bAddStaff.CheckedState.Parent = this.bAddStaff;
-            this.bAddStaff.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bAddStaff.CustomImages.Parent = this.bAddStaff;
-            this.bAddStaff.FillColor = System.Drawing.Color.DarkSlateBlue;
-            this.bAddStaff.FillColor2 = System.Drawing.Color.Teal;
-            this.bAddStaff.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.bAddStaff.ForeColor = System.Drawing.Color.White;
-            this.bAddStaff.HoverState.Parent = this.bAddStaff;
-            this.bAddStaff.Location = new System.Drawing.Point(189, 13);
-            this.bAddStaff.Name = "bAddStaff";
-            this.bAddStaff.ShadowDecoration.Parent = this.bAddStaff;
-            this.bAddStaff.Size = new System.Drawing.Size(107, 47);
-            this.bAddStaff.TabIndex = 123;
-            this.bAddStaff.Text = "Thêm";
-            // 
             // bChangeInfoStaff
             // 
             this.bChangeInfoStaff.Animated = true;
@@ -145,7 +125,7 @@
             this.bChangeInfoStaff.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.bChangeInfoStaff.ForeColor = System.Drawing.Color.White;
             this.bChangeInfoStaff.HoverState.Parent = this.bChangeInfoStaff;
-            this.bChangeInfoStaff.Location = new System.Drawing.Point(329, 13);
+            this.bChangeInfoStaff.Location = new System.Drawing.Point(513, 14);
             this.bChangeInfoStaff.Name = "bChangeInfoStaff";
             this.bChangeInfoStaff.ShadowDecoration.Parent = this.bChangeInfoStaff;
             this.bChangeInfoStaff.Size = new System.Drawing.Size(107, 47);
@@ -165,7 +145,7 @@
             this.bDeleteStaff.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.bDeleteStaff.ForeColor = System.Drawing.Color.White;
             this.bDeleteStaff.HoverState.Parent = this.bDeleteStaff;
-            this.bDeleteStaff.Location = new System.Drawing.Point(467, 13);
+            this.bDeleteStaff.Location = new System.Drawing.Point(651, 14);
             this.bDeleteStaff.Name = "bDeleteStaff";
             this.bDeleteStaff.ShadowDecoration.Parent = this.bDeleteStaff;
             this.bDeleteStaff.Size = new System.Drawing.Size(107, 47);
@@ -178,13 +158,16 @@
             // 
             // cbFind
             // 
-            this.cbFind.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbFind.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbFind.DropDownHeight = 200;
+            this.cbFind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbFind.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.cbFind.FormattingEnabled = true;
-            this.cbFind.Location = new System.Drawing.Point(837, 13);
+            this.cbFind.IntegralHeight = false;
+            this.cbFind.Location = new System.Drawing.Point(834, 13);
             this.cbFind.Name = "cbFind";
-            this.cbFind.Size = new System.Drawing.Size(410, 48);
+            this.cbFind.Size = new System.Drawing.Size(410, 49);
             this.cbFind.TabIndex = 8;
             // 
             // pTieuDe
@@ -192,7 +175,6 @@
             this.pTieuDe.BackColor = System.Drawing.Color.Transparent;
             this.pTieuDe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.pTieuDe.Controls.Add(this.progressBar);
-            this.pTieuDe.Controls.Add(this.guna2GradientButton1);
             this.pTieuDe.Controls.Add(this.bAddStaff);
             this.pTieuDe.Controls.Add(this.bFind);
             this.pTieuDe.Controls.Add(this.bChangeInfoStaff);
@@ -208,25 +190,35 @@
             this.pTieuDe.Size = new System.Drawing.Size(1435, 70);
             this.pTieuDe.TabIndex = 125;
             // 
-            // guna2GradientButton1
+            // progressBar
             // 
-            this.guna2GradientButton1.Animated = true;
-            this.guna2GradientButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton1.BorderRadius = 15;
-            this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.DarkSlateBlue;
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.Teal;
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(605, 12);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Size = new System.Drawing.Size(138, 47);
-            this.guna2GradientButton1.TabIndex = 124;
-            this.guna2GradientButton1.Text = "Xem ảnh";
+            this.progressBar.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.progressBar.ForeColor = System.Drawing.Color.SpringGreen;
+            this.progressBar.Location = new System.Drawing.Point(3, 43);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(266, 23);
+            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar.TabIndex = 127;
+            // 
+            // bAddStaff
+            // 
+            this.bAddStaff.Animated = true;
+            this.bAddStaff.BackColor = System.Drawing.Color.Transparent;
+            this.bAddStaff.BorderRadius = 15;
+            this.bAddStaff.CheckedState.Parent = this.bAddStaff;
+            this.bAddStaff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bAddStaff.CustomImages.Parent = this.bAddStaff;
+            this.bAddStaff.FillColor = System.Drawing.Color.DarkSlateBlue;
+            this.bAddStaff.FillColor2 = System.Drawing.Color.Teal;
+            this.bAddStaff.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.bAddStaff.ForeColor = System.Drawing.Color.White;
+            this.bAddStaff.HoverState.Parent = this.bAddStaff;
+            this.bAddStaff.Location = new System.Drawing.Point(373, 14);
+            this.bAddStaff.Name = "bAddStaff";
+            this.bAddStaff.ShadowDecoration.Parent = this.bAddStaff;
+            this.bAddStaff.Size = new System.Drawing.Size(107, 47);
+            this.bAddStaff.TabIndex = 123;
+            this.bAddStaff.Text = "Thêm";
             // 
             // guna2GradientPanel1
             // 
@@ -316,6 +308,7 @@
             this.bPrint.PressedState.Parent = this.bPrint;
             this.bPrint.Size = new System.Drawing.Size(70, 51);
             this.bPrint.TabIndex = 124;
+            this.bPrint.Click += new System.EventHandler(this.BPrint_Click);
             // 
             // label1
             // 
@@ -346,7 +339,8 @@
             this.dgvtbcNuocSX,
             this.dgvtbcSoLanPhucVu,
             this.drvtbcLuong,
-            this.dgvtbcChucVu});
+            this.dgvtbcChucVu,
+            this.dgvtbcButton});
             this.dgvMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMenu.Location = new System.Drawing.Point(0, 174);
             this.dgvMenu.MultiSelect = false;
@@ -421,12 +415,12 @@
             this.dgvtbcChucVu.Name = "dgvtbcChucVu";
             this.dgvtbcChucVu.ReadOnly = true;
             // 
-            // progressBar
+            // dgvtbcButton
             // 
-            this.progressBar.Location = new System.Drawing.Point(41, 23);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(100, 23);
-            this.progressBar.TabIndex = 127;
+            this.dgvtbcButton.HeaderText = "";
+            this.dgvtbcButton.MinimumWidth = 6;
+            this.dgvtbcButton.Name = "dgvtbcButton";
+            this.dgvtbcButton.ReadOnly = true;
             // 
             // FormMenuStaff
             // 
@@ -457,7 +451,6 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Guna.UI2.WinForms.Guna2GradientButton bFind;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
-        private Guna.UI2.WinForms.Guna2GradientButton bAddStaff;
         private Guna.UI2.WinForms.Guna2GradientButton bChangeInfoStaff;
         private Guna.UI2.WinForms.Guna2GradientButton bDeleteStaff;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
@@ -480,7 +473,8 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2ShadowPanel pCheck;
         private Guna.UI2.WinForms.Guna2ImageButton bPrint;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
         private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.DataGridViewButtonColumn dgvtbcButton;
+        private Guna.UI2.WinForms.Guna2GradientButton bAddStaff;
     }
 }

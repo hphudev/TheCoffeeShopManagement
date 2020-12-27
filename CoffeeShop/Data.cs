@@ -75,7 +75,7 @@ namespace CoffeeShopManagement
             try
             {
                 SqlConnection connection = Data.OpenConnection();
-                string sqlQuery = "DELETE FROM " + table + condition;
+                string sqlQuery = "DELETE FROM " + table + " " + condition;
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
                 command.ExecuteNonQuery();
                 Data.CloseConnection(ref connection);
@@ -91,7 +91,7 @@ namespace CoffeeShopManagement
             try
             {
                 SqlConnection connection = Data.OpenConnection();
-                string sqlQuery = "UPDATE " + table + " SET " + update + condition;
+                string sqlQuery = "UPDATE " + table + " SET " + update + " " + condition;
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
                 command.ExecuteNonQuery();
                 Data.CloseConnection(ref connection);

@@ -111,8 +111,8 @@ namespace CoffeeShopManagement
             NgayDangKy = new DateTime().GetDate(DateTime.Now);
             tbThanhVien.ReadOnly = true;
             ThanhVien = "Bạc";
-            this.BangKhoa = new FormLock(this);
-            this.BangKhoa.Show();
+            //this.BangKhoa = new FormLock(this);
+            //this.BangKhoa.Show();
             this.Show();
             CheckExists = new Timer();
             CheckExists.Interval = 5;
@@ -221,6 +221,8 @@ namespace CoffeeShopManagement
             if (!DieuKienCapNhat())
                 return;
             this.parent.cus = new Customer(IDKH, this.tbHoTen.Text, "", this.tbSoDienThoai.Text,this.cbGioiTinh.Text, new DateTime().GetDate(this.dtpNgaySinh.Value), this.tbNgayDangKy.Text, this.tbThanhVien.Text);
+            if (!statusAdd)
+                Data.UpdateData("KHACHHANG", " TINHTRANG = 1", $"WHERE MAKH = '{IDKH}'");
             if (statusAdd)
             {
                 string count = (Data.Calculate("COUNT", "*", "KHACHHANG", "") + 1).ToString();
@@ -232,7 +234,7 @@ namespace CoffeeShopManagement
                 string date = dtpNgaySinh.Value.Year.ToString() + '/' + dtpNgaySinh.Value.Month.ToString() + '/' + dtpNgaySinh.Value.Day.ToString();
                 DiaChi = tbDiaChi.Text;
                 this.parent.cus = new Customer(IDKH, this.tbHoTen.Text, this.tbDiaChi.Text, this.tbSoDienThoai.Text, this.cbGioiTinh.Text, this.NgaySinh, this.tbNgayDangKy.Text, this.tbThanhVien.Text);
-                Data.AddData("KHACHHANG", $"N'{IDKH}', N'{HoTen}', '{DiaChi}', N'{SoDienThoai}', '{date}', 0, '{Utility.GetDateUS(NgayDangKy)}', N'{GioiTinh}', 0, N'Bạc'");
+                Data.AddData("KHACHHANG", $"N'{IDKH}', N'{HoTen}', '{DiaChi}', N'{SoDienThoai}', '{date}', 0, '{Utility.GetDateUS(NgayDangKy)}', N'{GioiTinh}', 0, N'Bạc', 1");
             }
             this.Close();
         }
@@ -294,6 +296,11 @@ namespace CoffeeShopManagement
         private void TbNamSinh_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsControl(e.KeyChar) & !char.IsDigit(e.KeyChar);
+        }
+
+        public void SetLockForm(ref FormLock khoa)
+        {
+            this.BangKhoa = khoa;
         }
     }
 }

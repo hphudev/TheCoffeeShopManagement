@@ -14,7 +14,7 @@ namespace CoffeeShopManagement
     public partial class FormExpense : Form
     {
         private FormSell parent;
-
+        private FormLock khoa;
         public FormExpense(FormSell parent)
         {
             try
@@ -27,7 +27,7 @@ namespace CoffeeShopManagement
                 this.tbID.Text = "NV";
                 this.bOK.Location = new Point(this.bOK.Location.X, this.bOK.Location.Y - 50);
                 this.bCancel.Location = new Point(this.bCancel.Location.X, this.bCancel.Location.Y - 50);
-
+                this.InitLockForm();
                 this.bCancel.Click += CancelClicked;
                 this.FormClosed += CloseForm;
                 this.cbType.TextChanged += ChooseType;
@@ -221,7 +221,19 @@ namespace CoffeeShopManagement
 
         private void CancelClicked(object sender, EventArgs e)
         {
+            this.khoa.Close();
             Event.CloseForm(this);
+        }
+
+        private void InitLockForm()
+        {
+            //khoa = new FormLock(this);
+            //this.khoa.Show();
+        }
+
+        public void SetLockForm(ref FormLock khoa)
+        {
+            this.khoa = khoa;
         }
     }
 }

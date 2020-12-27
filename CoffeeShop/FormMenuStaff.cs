@@ -28,7 +28,7 @@ namespace CoffeeShopManagement
             try
             {
                 InitializeComponent();
-                this.Lock = new FormLock(this);
+                //this.Lock = new FormLock(this);
                 this.parent = parent;
                 this.bCancel.Click += CancelClicked;
                 this.bAddStaff.Click += AddStaffClicked;
@@ -36,8 +36,8 @@ namespace CoffeeShopManagement
                 this.bDeleteStaff.Click += DeleteStaffClicked;
                 this.FormClosed += CloseForm;
                 this.bFind.Click += FindStaffClicked;
-                Event.ShowForm(this.Lock);
-                Event.ShowForm(this);
+                //Event.ShowForm(this.Lock);
+                //Event.ShowForm(this);
                 #region Giao diện DataGridView
                 this.dgvMenu.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Raised;
                 this.dgvMenu.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(192, 0, 0);
@@ -64,7 +64,7 @@ namespace CoffeeShopManagement
 
         private void FinishWork(object sender, RunWorkerCompletedEventArgs e)
         {
-            Event.FinishWork(this.cbFind, this.sourceData);
+            Event.FinishWork(ref this.cbFind, this.sourceData);
         }
 
         private void ShowProgress(object sender, ProgressChangedEventArgs e)
@@ -120,7 +120,7 @@ namespace CoffeeShopManagement
 
         private void ReloadMenu(object sender, EventArgs e)
         {
-            Event.ReloadMenu(this.cbFind, this.dgvMenu, this.loader);
+            Event.ReloadMenu(ref this.cbFind, this.dgvMenu, this.loader);
         }
 
         private void ShowImageClicked(object sender, DataGridViewCellEventArgs e)
@@ -131,17 +131,24 @@ namespace CoffeeShopManagement
                 {
                     Staff selectedStaff;
                     GetSelectedInfo(out selectedStaff);
-                    Event.ShowForm((new FormImageStaff(selectedStaff.image, selectedStaff.id)));
+                    FormImageStaff cus = new FormImageStaff(selectedStaff.image, selectedStaff.id);
+                    FormLock ltmp = new FormLock();
+                    ltmp.Show();
+                    cus.Show();
+                    cus.SetLockForm(ref ltmp);
+                    ltmp.SetLockParent(cus);
+                    //Event.ShowForm((new FormImageStaff(selectedStaff.image, selectedStaff.id)));
                 }
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 139 Form Menu Staff");
+                IO.ExportError("Lỗi không xác định\n(Line 145 Form Menu Staff");
             }
         }
 
         private void AddStaffClicked(object sender, EventArgs e)
         {
+
             Event.ShowForm((new FormAddStaff(this)));
         }
 
@@ -173,7 +180,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 176 Form Menu Staff");
+                IO.ExportError("Lỗi không xác định\n(Line 183 Form Menu Staff");
                 selectedStaff = null;
             }
         }
@@ -195,7 +202,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 198 Form Menu Staff");
+                IO.ExportError("Lỗi không xác định\n(Line 205 Form Menu Staff");
                 selectedAccount = null;
             }
         }
@@ -221,7 +228,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 224 Form Menu Staff");
+                IO.ExportError("Lỗi không xác định\n(Line 231 Form Menu Staff");
             }
         }
 
@@ -246,6 +253,21 @@ namespace CoffeeShopManagement
         private void CancelClicked(object sender, EventArgs e)
         {
             Event.CloseForm(this);
+        }
+
+        private void BPrint_Click(object sender, EventArgs e)
+        {
+            Report.FormReportDanhSachNhanVien cus = new Report.FormReportDanhSachNhanVien();
+            FormLock ltmp = new FormLock();
+            ltmp.Show();
+            cus.Show();
+            cus.SetLockForm(ref ltmp);
+            ltmp.SetLockParent(cus);
+        }
+
+        public void SetLockForm(ref FormLock khoa)
+        {
+            this.Lock = khoa;
         }
     }
 }

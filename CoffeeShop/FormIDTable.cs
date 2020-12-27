@@ -18,9 +18,9 @@ namespace CoffeeShopManagement
         {
             InitializeComponent();
             this.parent = parent;
-            Lock = new FormLock(this);
-            Lock.Show();
-            this.Show();
+            //Lock = new FormLock(this);
+            //Lock.Show();
+            //this.Show();
         }
 
         private void TbIDTable_KeyPress(object sender, KeyPressEventArgs e)
@@ -42,6 +42,11 @@ namespace CoffeeShopManagement
         private void BtThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void SetLockForm(ref FormLock khoa)
+        {
+            this.Lock = khoa;
         }
     }
 }

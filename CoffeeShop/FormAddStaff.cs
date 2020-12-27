@@ -22,8 +22,8 @@ namespace CoffeeShopManagement
             try
             {
                 InitializeComponent();
-                this.lockForm = new FormLock(this);
-                Event.ShowForm(this.lockForm);
+                //this.lockForm = new FormLock(this);
+                //Event.ShowForm(this.lockForm);
                 this.parent = parent;
                 this.FormClosed += CloseForm;
                 this.bCancel.Click += CancelClicked;
@@ -315,6 +315,11 @@ namespace CoffeeShopManagement
             {
                 IO.ExportError("Lỗi không xác định\n(Line 316 Form Add Staff)");
             }
+
+        }
+        public void SetLockForm(ref FormLock khoa)
+        {
+            this.lockForm = khoa;
         }
     }
 }

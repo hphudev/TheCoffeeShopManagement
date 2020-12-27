@@ -16,6 +16,7 @@ namespace CoffeeShopManagement
         List<Table> Tables;
         FormSell parent;
         Timer LoadDanhSachBan = new Timer();
+        //Timer show = new Timer();
         public FormDanhSachBan(FormSell parent)
         {
             InitializeComponent();
@@ -24,16 +25,25 @@ namespace CoffeeShopManagement
             this.parent = parent;
             //this.WindowState = FormWindowState.Maximized;
             //this.Tables = new List<Table>(this.parent.Tables);
-            this.BangKhoa = new FormLock(this);
-            this.BangKhoa.Show();
-            this.BangKhoa.Hide();
-            this.BangKhoa.Show();
+            //this.BangKhoa = new FormLock(this);
+            //this.BangKhoa.Show();
+            //this.BangKhoa.Hide();
+            //this.BangKhoa.Show();
             for (int i = 0; i < this.parent.Tables.Count; i++)
                 this.flpTable.Controls.Add(this.parent.Tables[i]);
             LoadDanhSachBan.Interval = 2;
             LoadDanhSachBan.Tick += LoadSomethingPublic;
             LoadDanhSachBan.Start();
-            //this.Opacity = 1;
+            //this.Opacity = 0;
+            //show.Interval = 100;
+            //show.Tick += (s, e) =>
+            //{
+            //    if (this.Opacity < 1)
+            //        this.Opacity += 0.0025;
+            //    else
+            //        show.Stop();
+            //};
+            //show.Start();
         }
 
         private void F_DanhSachBan_FormClosed(object sender, FormClosedEventArgs e)
@@ -101,6 +111,16 @@ namespace CoffeeShopManagement
         private void TbTimKiem_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar);
+        }
+
+        public void SetLockForm(ref FormLock khoa)
+        {
+            this.BangKhoa = khoa;
+        }
+
+        private void FormDanhSachBan_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

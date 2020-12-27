@@ -23,8 +23,8 @@ namespace CoffeeShopManagement
             {
                 InitializeComponent();
                 this.parent = parent;
-                this.lockForm = new FormLock(this);
-                Event.ShowForm(this.lockForm);
+                //this.lockForm = new FormLock(this);
+                //Event.ShowForm(this.lockForm);
 
                 this.tbName.KeyPress += PressEnter;
                 this.tbPrice.KeyPress += PressEnter;
@@ -162,6 +162,11 @@ namespace CoffeeShopManagement
             {
                 IO.ExportError("Lỗi không xác định\n(Line 163 Form Add Item)");
             }
+        }
+
+        public void SetLockForm(ref FormLock khoa)
+        {
+            this.lockForm = khoa;
         }
     }
 }

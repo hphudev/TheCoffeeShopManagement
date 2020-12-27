@@ -22,9 +22,6 @@ namespace CoffeeShopManagement
             tbNgayDangKy.ReadOnly = true;
             StatusTextCombo(false);
             this.FormBorderStyle = FormBorderStyle.None;
-            khoa = new FormLock(this);
-            khoa.Show();
-            this.Show();
         }
 
         private void BtThoat_Click(object sender, EventArgs e)
@@ -57,7 +54,6 @@ namespace CoffeeShopManagement
             tbSDT.ReadOnly = !status;
             tbHoTen.ReadOnly = !status;
             cbGioiTinh.Enabled = status;
-            dtpNgaySinh.Enabled = status;
             tbThanhVien.ReadOnly = !status;
             tbDiaChi.ReadOnly = !status;
         }
@@ -96,7 +92,7 @@ namespace CoffeeShopManagement
 
         private bool CheckSDT(string SDT)
         {
-            int i = Data.Calculate(" count ", " * ", " khachhang ", $" where SDT = '{int.Parse(SDT)}' and makh <> '{lbMaKH.Text}'");
+            int i = Data.Calculate(" count ", " * ", " khachhang ", $" where SDT = '{tbSDT.Text}' and makh <> '{lbMaKH.Text}'");
             return (i == 0);
         }
 
@@ -132,6 +128,11 @@ namespace CoffeeShopManagement
                 IO.ExportWarning("Hãy tìm kiếm khách hàng trước khi cập nhật!");
                 return;
             }
+            if (tbSDT.Text.Length == 0)
+            {
+                IO.ExportError("Số điện thoại rỗng");
+                return;
+            }
             if (!CheckSDT(tbSDT.Text))
             {
                 IO.ExportError("Trùng số điện thoại");
@@ -151,6 +152,7 @@ namespace CoffeeShopManagement
             Data.UpdateData("khachhang", $"hoten = N'{tbHoTen.Text}', dchi = N'{tbDiaChi.Text}', sdt = N'{tbSDT.Text}'" +
                 $", ngaysinh = '{date}', gioitinh = N'{cbGioiTinh.Text}', loaikh = N'{tbThanhVien.Text}'", $" where makh = '{lbMaKH.Text}' ");
             IO.ExportSuccess("Cập nhật thành công!");
+            tbTimKiemSDT.Text = "";
         }
 
         private void TbTimKiemSDT_KeyPress(object sender, KeyPressEventArgs e)
@@ -162,11 +164,6 @@ namespace CoffeeShopManagement
         private void TbSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-
-        }
-
-        private void TbTimKiemSDT_MouseEnter(object sender, EventArgs e)
-        {
 
         }
 
@@ -206,6 +203,21 @@ namespace CoffeeShopManagement
         private void TbNamSinh_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsControl(e.KeyChar) & !char.IsDigit(e.KeyChar);
+        }
+
+        private void BtQuanLi_Click(object sender, EventArgs e)
+        {
+            FormMenuCustomer cus = new FormMenuCustomer();
+            FormLock ltmp = new FormLock();
+            ltmp.Show();
+            cus.Show();
+            cus.SetLockForm(ref ltmp);
+            ltmp.SetLockParent(cus);
+        }
+
+        public void SetLockForm(ref FormLock khoa)
+        {
+            this.khoa = khoa;
         }
     }
 }

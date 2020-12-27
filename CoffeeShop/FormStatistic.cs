@@ -28,8 +28,8 @@ namespace CoffeeShopManagement
                 this.tvHistory.ImageList = this.ilImageList;
                 receipt.ImageKey = receipt.SelectedImageKey = this.imageKeys[0];
                 expense.ImageKey = expense.SelectedImageKey = this.imageKeys[1];
-                this.Lock = new FormLock(this);
-                Event.ShowForm(this.Lock);
+                //this.Lock = new FormLock(this);
+                //Event.ShowForm(this.Lock);
             }
             catch (Exception)
             {
@@ -121,13 +121,13 @@ namespace CoffeeShopManagement
                         {
                             bill = new Bill(reader.GetString(0), tmp.GetDate(reader.GetDateTime(1)),
                                 reader.GetString(2), reader.GetString(3), reader.GetInt32(4),
-                                reader.GetInt32(5));
+                                reader.GetInt32(5), reader.GetInt32(6));
                         }
                         catch (System.Data.SqlTypes.SqlNullValueException)
                         {
                             bill = new Bill(reader.GetString(0), tmp.GetDate(reader.GetDateTime(1)),
                                 "", "", reader.GetInt32(4),
-                                reader.GetInt32(5));
+                                reader.GetInt32(5), reader.GetInt32(6));
                         }
 
                         e.Node.Nodes.Add(bill.id.ToString(), bill.id.ToString() + " - " +
@@ -280,6 +280,16 @@ namespace CoffeeShopManagement
             {
                 IO.ExportError("Lỗi không xác định\n(Line 281 Form Statistic");
             }
+        }
+
+        public void SetLockForm(ref FormLock khoa)
+        {
+            this.Lock = khoa;
+        }
+
+        private void FormStatistic_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

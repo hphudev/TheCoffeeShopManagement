@@ -10,12 +10,13 @@ using System.Data.SqlClient;
 using System.ComponentModel;
 using System.Threading;
 using System.Drawing.Printing;
+using Guna.UI2.WinForms;
 
 namespace CoffeeShopManagement
 {
     public static class Event
     {
-        public static void ReloadMenu(ComboBox cbFind, DataGridView dgvMenu, BackgroundWorker loader)
+        public static void ReloadMenu(ref ComboBox cbFind, DataGridView dgvMenu, BackgroundWorker loader)
         {
             try
             {
@@ -52,7 +53,7 @@ namespace CoffeeShopManagement
             }
         }
 
-        public static void FinishWork(ComboBox cbFind, AutoCompleteStringCollection sourceData)
+        public static void FinishWork(ref ComboBox cbFind, AutoCompleteStringCollection sourceData)
         {
             try
             {
