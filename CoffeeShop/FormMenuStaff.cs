@@ -155,7 +155,12 @@ namespace CoffeeShopManagement
         {
             if (this.dgvMenu.Rows.Count != 0)
                 {
-                    Event.ShowForm((new FormChangeInfoStaff(this)));
+                FormChangeInfoStaff staff = new FormChangeInfoStaff(this);
+                FormLock ltmp = new FormLock();
+                ltmp.Show();
+                Event.ShowForm(staff);
+                staff.SetLockForm(ref ltmp);
+                ltmp.SetLockParent(staff);
                 }
             else
             {

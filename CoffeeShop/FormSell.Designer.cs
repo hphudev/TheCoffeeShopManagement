@@ -31,14 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnLotChinh = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.flpDanhSachMon = new CoffeeShopManagement.FlowLayoutPanelBuffered();
             this.pnMenu = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.pCheck = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.btMonPhoBien = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.label2 = new System.Windows.Forms.Label();
             this.pnLotOrder = new System.Windows.Forms.Panel();
-            this.flpOrder = new CoffeeShopManagement.FlowLayoutPanelBuffered();
             this.btOrder = new Guna.UI2.WinForms.Guna2TileButton();
             this.panel9 = new System.Windows.Forms.Panel();
             this.lbDangOrder = new System.Windows.Forms.Label();
@@ -63,7 +61,6 @@
             this.btThongBao = new Guna.UI2.WinForms.Guna2Button();
             this.btKhachHang = new Guna.UI2.WinForms.Guna2Button();
             this.pTieuDe = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.pbThongBao = new CoffeeShopManagement.PictureboxBuffered();
             this.btThemMon = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btHuyNoiDungTimKiem = new Guna.UI2.WinForms.Guna2GradientButton();
             this.cbTimKiem = new System.Windows.Forms.ComboBox();
@@ -78,7 +75,9 @@
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.btHangKhachHang = new Guna.UI2.WinForms.Guna2Button();
+            this.flpDanhSachMon = new CoffeeShopManagement.FlowLayoutPanelBuffered();
+            this.flpOrder = new CoffeeShopManagement.FlowLayoutPanelBuffered();
+            this.pbThongBao = new CoffeeShopManagement.PictureboxBuffered();
             this.pnLotChinh.SuspendLayout();
             this.pnMenu.SuspendLayout();
             this.pCheck.SuspendLayout();
@@ -115,15 +114,6 @@
             this.pnLotChinh.ShadowDecoration.Parent = this.pnLotChinh;
             this.pnLotChinh.Size = new System.Drawing.Size(1920, 679);
             this.pnLotChinh.TabIndex = 4;
-            // 
-            // flpDanhSachMon
-            // 
-            this.flpDanhSachMon.BackColor = System.Drawing.Color.Bisque;
-            this.flpDanhSachMon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpDanhSachMon.Location = new System.Drawing.Point(561, 139);
-            this.flpDanhSachMon.Name = "flpDanhSachMon";
-            this.flpDanhSachMon.Size = new System.Drawing.Size(1359, 441);
-            this.flpDanhSachMon.TabIndex = 5;
             // 
             // pnMenu
             // 
@@ -221,17 +211,6 @@
             this.pnLotOrder.Name = "pnLotOrder";
             this.pnLotOrder.Size = new System.Drawing.Size(561, 510);
             this.pnLotOrder.TabIndex = 3;
-            // 
-            // flpOrder
-            // 
-            this.flpOrder.AutoScroll = true;
-            this.flpOrder.BackColor = System.Drawing.Color.PowderBlue;
-            this.flpOrder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpOrder.ForeColor = System.Drawing.Color.PowderBlue;
-            this.flpOrder.Location = new System.Drawing.Point(0, 117);
-            this.flpOrder.Name = "flpOrder";
-            this.flpOrder.Size = new System.Drawing.Size(557, 300);
-            this.flpOrder.TabIndex = 5;
             // 
             // btOrder
             // 
@@ -464,7 +443,6 @@
             // pnLotMenu
             // 
             this.pnLotMenu.BorderRadius = 3;
-            this.pnLotMenu.Controls.Add(this.btHangKhachHang);
             this.pnLotMenu.Controls.Add(this.btThongTinQuan);
             this.pnLotMenu.Controls.Add(this.bMenuStaff);
             this.pnLotMenu.Controls.Add(this.btTaiKhoan);
@@ -646,19 +624,6 @@
             this.pTieuDe.Size = new System.Drawing.Size(1920, 70);
             this.pTieuDe.TabIndex = 0;
             // 
-            // pbThongBao
-            // 
-            this.pbThongBao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbThongBao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbThongBao.Image = global::CoffeeShopManagement.Properties.Resources.announ;
-            this.pbThongBao.Location = new System.Drawing.Point(1675, 0);
-            this.pbThongBao.Name = "pbThongBao";
-            this.pbThongBao.Size = new System.Drawing.Size(93, 64);
-            this.pbThongBao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbThongBao.TabIndex = 0;
-            this.pbThongBao.TabStop = false;
-            this.pbThongBao.Click += new System.EventHandler(this.PbThongBao_Click);
-            // 
             // btThemMon
             // 
             this.btThemMon.Animated = true;
@@ -830,25 +795,38 @@
             this.guna2Elipse5.BorderRadius = 10;
             this.guna2Elipse5.TargetControl = this.pCheck;
             // 
-            // btHangKhachHang
+            // flpDanhSachMon
             // 
-            this.btHangKhachHang.Animated = true;
-            this.btHangKhachHang.BackColor = System.Drawing.Color.Transparent;
-            this.btHangKhachHang.BorderRadius = 10;
-            this.btHangKhachHang.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btHangKhachHang.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btHangKhachHang.CheckedState.Parent = this.btHangKhachHang;
-            this.btHangKhachHang.CustomImages.Parent = this.btHangKhachHang;
-            this.btHangKhachHang.FillColor = System.Drawing.Color.Sienna;
-            this.btHangKhachHang.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
-            this.btHangKhachHang.ForeColor = System.Drawing.Color.White;
-            this.btHangKhachHang.HoverState.Parent = this.btHangKhachHang;
-            this.btHangKhachHang.Location = new System.Drawing.Point(1640, 3);
-            this.btHangKhachHang.Name = "btHangKhachHang";
-            this.btHangKhachHang.ShadowDecoration.Parent = this.btHangKhachHang;
-            this.btHangKhachHang.Size = new System.Drawing.Size(205, 45);
-            this.btHangKhachHang.TabIndex = 8;
-            this.btHangKhachHang.Text = "Hạng khách hàng";
+            this.flpDanhSachMon.BackColor = System.Drawing.Color.Bisque;
+            this.flpDanhSachMon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpDanhSachMon.Location = new System.Drawing.Point(561, 139);
+            this.flpDanhSachMon.Name = "flpDanhSachMon";
+            this.flpDanhSachMon.Size = new System.Drawing.Size(1359, 441);
+            this.flpDanhSachMon.TabIndex = 5;
+            // 
+            // flpOrder
+            // 
+            this.flpOrder.AutoScroll = true;
+            this.flpOrder.BackColor = System.Drawing.Color.PowderBlue;
+            this.flpOrder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpOrder.ForeColor = System.Drawing.Color.PowderBlue;
+            this.flpOrder.Location = new System.Drawing.Point(0, 117);
+            this.flpOrder.Name = "flpOrder";
+            this.flpOrder.Size = new System.Drawing.Size(557, 300);
+            this.flpOrder.TabIndex = 5;
+            // 
+            // pbThongBao
+            // 
+            this.pbThongBao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbThongBao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbThongBao.Image = global::CoffeeShopManagement.Properties.Resources.announ;
+            this.pbThongBao.Location = new System.Drawing.Point(1675, 0);
+            this.pbThongBao.Name = "pbThongBao";
+            this.pbThongBao.Size = new System.Drawing.Size(93, 64);
+            this.pbThongBao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbThongBao.TabIndex = 0;
+            this.pbThongBao.TabStop = false;
+            this.pbThongBao.Click += new System.EventHandler(this.PbThongBao_Click);
             // 
             // FormSell
             // 
@@ -935,6 +913,5 @@
         private Guna.UI2.WinForms.Guna2Button bMenuStaff;
         private PictureboxBuffered pbThongBao;
         private Guna.UI2.WinForms.Guna2Button btThongTinQuan;
-        private Guna.UI2.WinForms.Guna2Button btHangKhachHang;
     }
 }

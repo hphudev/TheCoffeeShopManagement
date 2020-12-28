@@ -95,6 +95,7 @@ namespace CoffeeShopManagement
                 IO.ExportSuccess("Sửa món thành công");
                 this.parent.ClearMenu();
                 this.parent.LoadMenu();
+                this.parent.parent.LoadSomeThingPublic();
                 Event.CloseForm(this);
             }
             catch (Exception)

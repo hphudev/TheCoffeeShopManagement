@@ -92,6 +92,7 @@ namespace CoffeeShopManagement
 
         private void CloseForm(object sender, FormClosedEventArgs e)
         {
+            Event.CloseForm(this.lockForm);
             Event.ShowForm(this.parent);
         }
 
