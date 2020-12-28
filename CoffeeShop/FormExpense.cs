@@ -114,6 +114,8 @@ namespace CoffeeShopManagement
                     int.Parse(tbValue.Text));
                 Data.AddData("CHITIEU", expense.GetInfo());
                 IO.ExportSuccess("Thêm chi tiêu thành công");
+                Event.CloseForm(this);
+                Event.CloseForm(this.khoa);
             }
             catch (Exception)
             {

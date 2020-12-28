@@ -29,7 +29,9 @@ namespace CoffeeShopManagement
                 }
                 else
                 {
-                    lastID.SetID(1, code, lengthOfNumber);
+                    ID tmp = new ID("");
+                    tmp.SetID(1, code, lengthOfNumber);
+                    lastID = tmp;
                 }
 
                 return lastID;

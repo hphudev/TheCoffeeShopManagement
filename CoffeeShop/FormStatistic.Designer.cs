@@ -255,11 +255,11 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Snow;
-            this.label5.Location = new System.Drawing.Point(503, 21);
+            this.label5.Location = new System.Drawing.Point(599, 19);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(397, 41);
+            this.label5.Size = new System.Drawing.Size(170, 41);
             this.label5.TabIndex = 112;
-            this.label5.Text = "THÔNG TIN KHÁCH HÀNG";
+            this.label5.Text = "THỐNG KÊ";
             // 
             // FormStatistic
             // 

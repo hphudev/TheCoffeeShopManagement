@@ -48,13 +48,13 @@ namespace CoffeeShopManagement
                 this.dgvMenu.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 192, 128);
                 #endregion
                 this.dgvMenu.CellClick += ShowImageClicked;
-                this.cbFind.TextChanged += ReloadMenu;
                 this.loader = new BackgroundWorker();
                 this.loader.DoWork += LoadData;
                 this.loader.WorkerReportsProgress = true;
                 this.loader.RunWorkerCompleted += FinishWork;
                 this.loader.ProgressChanged += ShowProgress;
                 this.loader.RunWorkerAsync();
+                this.bClear.Click += ClearContent;
             }
             catch (Exception)
             {
@@ -118,11 +118,6 @@ namespace CoffeeShopManagement
             }
         }
 
-        private void ReloadMenu(object sender, EventArgs e)
-        {
-            Event.ReloadMenu(ref this.cbFind, this.dgvMenu, this.loader);
-        }
-
         private void ShowImageClicked(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -148,8 +143,12 @@ namespace CoffeeShopManagement
 
         private void AddStaffClicked(object sender, EventArgs e)
         {
-
-            Event.ShowForm((new FormAddStaff(this)));
+            FormAddStaff staff = new FormAddStaff(this);
+            FormLock ltmp = new FormLock();
+            ltmp.Show();
+            Event.ShowForm(staff);
+            staff.SetLockForm(ref ltmp);
+            ltmp.SetLockParent(staff);
         }
 
         private void ChangeInfoStaffClicked(object sender, EventArgs e)
@@ -268,6 +267,11 @@ namespace CoffeeShopManagement
         public void SetLockForm(ref FormLock khoa)
         {
             this.Lock = khoa;
+        }
+
+        private void ClearContent(object sender, EventArgs e)
+        {
+            this.cbFind.Text = "";
         }
     }
 }

@@ -233,6 +233,7 @@
             this.tbConfirm.Size = new System.Drawing.Size(350, 47);
             this.tbConfirm.TabIndex = 15;
             this.tbConfirm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbConfirm.UseSystemPasswordChar = true;
             // 
             // label21
             // 
@@ -279,6 +280,7 @@
             this.tbPassword.Size = new System.Drawing.Size(350, 47);
             this.tbPassword.TabIndex = 13;
             this.tbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbPassword.UseSystemPasswordChar = true;
             // 
             // label23
             // 

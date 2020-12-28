@@ -54,13 +54,13 @@ namespace CoffeeShopManagement
                 //this.lockForm = new FormLock(this);
                 //Event.ShowForm(this.lockForm);
                 //Event.ShowForm(this);
-                this.cbFind.TextChanged += ReloadMenu;
                 this.loader = new BackgroundWorker();
                 this.loader.DoWork += LoadData;
                 this.loader.WorkerReportsProgress = true;
                 this.loader.RunWorkerCompleted += FinishWork;
                 this.loader.ProgressChanged += ShowProgress;
                 this.loader.RunWorkerAsync();
+                this.bClear.Click += ClearContent;
             }
             catch (Exception)
             {
@@ -121,11 +121,6 @@ namespace CoffeeShopManagement
             {
                 IO.ExportError("Lỗi không xác định\n(Line 122 Form Menu Item");
             }
-        }
-
-        private void ReloadMenu(object sender, EventArgs e)
-        {
-            Event.ReloadMenu(ref this.cbFind, this.dgvMenu, this.loader);
         }
 
         private void CancelClicked(object sender, EventArgs e)
@@ -210,6 +205,11 @@ namespace CoffeeShopManagement
         public void SetLockForm(ref FormLock khoa)
         {
             this.lockForm = khoa;
+        }
+
+        private void ClearContent(object sender, EventArgs e)
+        {
+            this.cbFind.Text = "";
         }
     }
 }
