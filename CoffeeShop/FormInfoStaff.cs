@@ -37,6 +37,7 @@ namespace CoffeeShopManagement
                 this.tbPassword.Text = "";
                 this.lID.Text = staff.id.ToString();
                 this.cbSex.Text = staff.sex;
+                this.pbStaff.Image = staff.image;
             }
             catch (Exception)
             {

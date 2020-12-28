@@ -31,6 +31,7 @@ namespace CoffeeShopManagement
         private void CancelClicked(object sender, EventArgs e)
         {
             Event.CloseForm(this);
+            Event.CloseForm(this.khoa);
         }
 
         FormLock khoa;

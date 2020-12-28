@@ -122,7 +122,7 @@ namespace CoffeeShopManagement
 
                 return null;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 IO.ExportError("Lỗi không xác định\n(Line 127 Form Login)");
                 return null;

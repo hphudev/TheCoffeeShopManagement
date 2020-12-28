@@ -96,7 +96,7 @@ namespace CoffeeShopManagement
                 command.ExecuteNonQuery();
                 Data.CloseConnection(ref connection);
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 IO.ExportError("Lỗi không xác định\n(Line 101 Class Data)");
             }

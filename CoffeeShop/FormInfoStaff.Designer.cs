@@ -56,7 +56,6 @@
             this.tbConfirm = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bCancel = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bOK = new Guna.UI2.WinForms.Guna2GradientButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -83,6 +82,7 @@
             this.tbUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbUsername.DisabledState.Parent = this.tbUsername;
             this.tbUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbUsername.Enabled = false;
             this.tbUsername.FillColor = System.Drawing.Color.Ivory;
             this.tbUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.tbUsername.FocusedState.Parent = this.tbUsername;
@@ -137,6 +137,7 @@
             this.cbPosition.BorderRadius = 5;
             this.cbPosition.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPosition.Enabled = false;
             this.cbPosition.FillColor = System.Drawing.Color.Ivory;
             this.cbPosition.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.cbPosition.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -146,6 +147,10 @@
             this.cbPosition.FormattingEnabled = true;
             this.cbPosition.HoverState.Parent = this.cbPosition;
             this.cbPosition.ItemHeight = 30;
+            this.cbPosition.Items.AddRange(new object[] {
+            "Thu ngân",
+            "Quản lý",
+            "Bảo vệ"});
             this.cbPosition.ItemsAppearance.Parent = this.cbPosition;
             this.cbPosition.Location = new System.Drawing.Point(14, 687);
             this.cbPosition.Name = "cbPosition";
@@ -192,6 +197,7 @@
             this.tbSalary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbSalary.DisabledState.Parent = this.tbSalary;
             this.tbSalary.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSalary.Enabled = false;
             this.tbSalary.FillColor = System.Drawing.Color.Ivory;
             this.tbSalary.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.tbSalary.FocusedState.Parent = this.tbSalary;
@@ -238,6 +244,7 @@
             this.tbAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbAddress.DisabledState.Parent = this.tbAddress;
             this.tbAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbAddress.Enabled = false;
             this.tbAddress.FillColor = System.Drawing.Color.Ivory;
             this.tbAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.tbAddress.FocusedState.Parent = this.tbAddress;
@@ -284,6 +291,7 @@
             this.tbSDT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbSDT.DisabledState.Parent = this.tbSDT;
             this.tbSDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSDT.Enabled = false;
             this.tbSDT.FillColor = System.Drawing.Color.Ivory;
             this.tbSDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.tbSDT.FocusedState.Parent = this.tbSDT;
@@ -330,6 +338,7 @@
             this.tbCMND.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbCMND.DisabledState.Parent = this.tbCMND;
             this.tbCMND.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCMND.Enabled = false;
             this.tbCMND.FillColor = System.Drawing.Color.Ivory;
             this.tbCMND.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.tbCMND.FocusedState.Parent = this.tbCMND;
@@ -357,6 +366,7 @@
             this.cbSex.BorderRadius = 5;
             this.cbSex.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSex.Enabled = false;
             this.cbSex.FillColor = System.Drawing.Color.Ivory;
             this.cbSex.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.cbSex.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -366,6 +376,9 @@
             this.cbSex.FormattingEnabled = true;
             this.cbSex.HoverState.Parent = this.cbSex;
             this.cbSex.ItemHeight = 30;
+            this.cbSex.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
             this.cbSex.ItemsAppearance.Parent = this.cbSex;
             this.cbSex.Location = new System.Drawing.Point(14, 199);
             this.cbSex.Name = "cbSex";
@@ -412,6 +425,7 @@
             this.tbName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbName.DisabledState.Parent = this.tbName;
             this.tbName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbName.Enabled = false;
             this.tbName.FillColor = System.Drawing.Color.Ivory;
             this.tbName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.tbName.FocusedState.Parent = this.tbName;
@@ -605,7 +619,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SeaShell;
-            this.panel1.Controls.Add(this.guna2GradientButton1);
             this.panel1.Controls.Add(this.bCancel);
             this.panel1.Controls.Add(this.bOK);
             this.panel1.Controls.Add(this.guna2GroupBox2);
@@ -618,26 +631,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1023, 901);
             this.panel1.TabIndex = 113;
-            // 
-            // guna2GradientButton1
-            // 
-            this.guna2GradientButton1.Animated = true;
-            this.guna2GradientButton1.BackColor = System.Drawing.Color.SeaShell;
-            this.guna2GradientButton1.BorderRadius = 13;
-            this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.DimGray;
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.HoverState.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(274, 334);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.ShadowDecoration.Parent = this.guna2GradientButton1;
-            this.guna2GradientButton1.Size = new System.Drawing.Size(102, 42);
-            this.guna2GradientButton1.TabIndex = 118;
-            this.guna2GradientButton1.Text = "Sửa ảnh";
             // 
             // bCancel
             // 
@@ -715,7 +708,7 @@
             this.Name = "FormInfoStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormThongTin";
-            this.TransparencyKey = System.Drawing.Color.Azure;
+            this.TransparencyKey = System.Drawing.Color.MediumSpringGreen;
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
             this.guna2GradientPanel1.ResumeLayout(false);
@@ -758,7 +751,6 @@
         private Guna.UI2.WinForms.Guna2TextBox tbConfirm;
         private Guna.UI2.WinForms.Guna2TextBox tbPassword;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
         private Guna.UI2.WinForms.Guna2GradientButton bCancel;
         private Guna.UI2.WinForms.Guna2GradientButton bOK;
         private System.Windows.Forms.Panel panel2;

@@ -58,6 +58,12 @@ namespace CoffeeShopManagement
             try
             {
                 cbFind.AutoCompleteCustomSource = sourceData;
+                cbFind.Items.Clear();
+
+                foreach (string data in sourceData)
+                {
+                    cbFind.Items.Add(data);
+                }
             }
             catch (Exception)
             {

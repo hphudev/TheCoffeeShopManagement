@@ -37,7 +37,6 @@
             this.controlboxClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.pUser = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.pbEye = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.btDangNhap = new Guna.UI2.WinForms.Guna2GradientButton();
             this.tbMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbTenDangNhap = new Guna.UI2.WinForms.Guna2TextBox();
@@ -125,7 +124,6 @@
             // pUser
             // 
             this.pUser.Controls.Add(this.pbEye);
-            this.pUser.Controls.Add(this.label3);
             this.pUser.Controls.Add(this.btDangNhap);
             this.pUser.Controls.Add(this.tbMatKhau);
             this.pUser.Controls.Add(this.tbTenDangNhap);
@@ -149,19 +147,6 @@
             this.pbEye.TabIndex = 9;
             this.pbEye.TabStop = false;
             this.pbEye.Click += new System.EventHandler(this.pbEye_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(289, 280);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 23);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Forgot Password?";
             // 
             // btDangNhap
             // 
@@ -205,6 +190,7 @@
             this.tbMatKhau.PasswordChar = '\0';
             this.tbMatKhau.PlaceholderText = "";
             this.tbMatKhau.SelectedText = "";
+            this.tbMatKhau.SelectionStart = 8;
             this.tbMatKhau.ShadowDecoration.Parent = this.tbMatKhau;
             this.tbMatKhau.Size = new System.Drawing.Size(443, 57);
             this.tbMatKhau.TabIndex = 2;
@@ -237,6 +223,7 @@
             this.tbTenDangNhap.PasswordChar = '\0';
             this.tbTenDangNhap.PlaceholderText = "";
             this.tbTenDangNhap.SelectedText = "";
+            this.tbTenDangNhap.SelectionStart = 13;
             this.tbTenDangNhap.ShadowDecoration.Parent = this.tbTenDangNhap;
             this.tbTenDangNhap.Size = new System.Drawing.Size(443, 57);
             this.tbTenDangNhap.TabIndex = 1;
@@ -270,7 +257,6 @@
             this.pnLot.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pUser.ResumeLayout(false);
-            this.pUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbEye)).EndInit();
             this.ResumeLayout(false);
 
@@ -287,7 +273,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox controlboxClose;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
         private System.Windows.Forms.PictureBox pbEye;
         private System.Windows.Forms.PictureBox pictureBox1;

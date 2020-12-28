@@ -139,7 +139,7 @@ namespace CoffeeShopManagement
                 Staff updatedStaff = new Staff(selectedStaff.id.ToString(), selectedStaff.name,
                     tbAddress.Text, selectedStaff.sdt, selectedStaff.sex, selectedStaff.date,
                     selectedStaff.cmnd, this.cbPosition.Text, int.Parse(this.tbSalary.Text));
-                Data.UpdateData("NHANVIEN", "CHUCVU = N'" + updatedStaff.chucVu + "', salary = '" +
+                Data.UpdateData("NHANVIEN", "CHUCVU = N'" + updatedStaff.chucVu + "', luong = '" +
                     updatedStaff.luong + "', DCHI = N'" + updatedStaff.address + "'", " WHERE MANV = '"
                     + selectedStaff.id.ToString() + "'");
 
