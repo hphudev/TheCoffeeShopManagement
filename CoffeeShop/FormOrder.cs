@@ -510,7 +510,7 @@ namespace CoffeeShopManagement
 
         private void BtLuuOrder_Click(object sender, EventArgs e)
         {
-            
+            this.parent.LoadSomeThingPublic();
         }
 
         public void SetLockForm(ref FormLock khoa)

@@ -29,8 +29,8 @@ namespace CoffeeShopManagement.Report
         {
             string path = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
             reportViewer.ProcessingMode = ProcessingMode.Local;
-            this.reportViewer.LocalReport.ReportEmbeddedResource = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\Report\ReportDanhSachNhanVien.rdlc";
-            this.reportViewer.LocalReport.ReportPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\Report\ReportDanhSachNhanVien.rdlc";
+            this.reportViewer.LocalReport.ReportEmbeddedResource = System.IO.Path.GetDirectoryName(Application.ExecutablePath).Remove(path.Length - 10) + @"\Report\ReportDanhSachNhanVien.rdlc";
+            this.reportViewer.LocalReport.ReportPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath).Remove(path.Length - 10) + @"\Report\ReportDanhSachNhanVien.rdlc";
             this.reportViewer.LocalReport.DataSources.Clear();
             var dt = GetDataTableNHANVIEN();
             this.reportViewer.LocalReport.DataSources.Add(new ReportDataSource("NHANVIEN", dt));

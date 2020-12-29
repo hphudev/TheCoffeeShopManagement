@@ -88,7 +88,7 @@
             this.btLuuOrder.ActiveLineColor = System.Drawing.Color.White;
             this.btLuuOrder.BackColor = System.Drawing.Color.Gray;
             this.btLuuOrder.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btLuuOrder.BackgroundImage")));
-            this.btLuuOrder.ButtonText = "LƯU ORDER";
+            this.btLuuOrder.ButtonText = "HỦY ORDER";
             this.btLuuOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btLuuOrder.Dock = System.Windows.Forms.DockStyle.Left;
             this.btLuuOrder.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

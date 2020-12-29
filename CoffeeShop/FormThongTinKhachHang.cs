@@ -113,7 +113,6 @@ namespace CoffeeShopManagement
             ThanhVien = "Bạc";
             //this.BangKhoa = new FormLock(this);
             //this.BangKhoa.Show();
-            this.Show();
             CheckExists = new Timer();
             CheckExists.Interval = 5;
             CheckExists.Tick += CheckExist;
@@ -234,7 +233,7 @@ namespace CoffeeShopManagement
                 string date = dtpNgaySinh.Value.Year.ToString() + '/' + dtpNgaySinh.Value.Month.ToString() + '/' + dtpNgaySinh.Value.Day.ToString();
                 DiaChi = tbDiaChi.Text;
                 this.parent.cus = new Customer(IDKH, this.tbHoTen.Text, this.tbDiaChi.Text, this.tbSoDienThoai.Text, this.cbGioiTinh.Text, this.NgaySinh, this.tbNgayDangKy.Text, this.tbThanhVien.Text);
-                Data.AddData("KHACHHANG", $"N'{IDKH}', N'{HoTen}', '{DiaChi}', N'{SoDienThoai}', '{date}', 0, '{Utility.GetDateUS(NgayDangKy)}', N'{GioiTinh}', 0, N'Bạc', 1");
+                Data.AddData("KHACHHANG", $"N'{IDKH}', N'{HoTen}', N'{DiaChi}', N'{SoDienThoai}', '{date}', 0, '{Utility.GetDateUS(NgayDangKy)}', N'{GioiTinh}', 0, N'Bạc', 1");
             }
             this.Close();
         }

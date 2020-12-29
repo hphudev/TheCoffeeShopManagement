@@ -63,8 +63,8 @@ namespace CoffeeShopManagement.Report
         {
             string path = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
             reportViewer.ProcessingMode = ProcessingMode.Local;
-            this.reportViewer.LocalReport.ReportEmbeddedResource = System.IO.Path.GetDirectoryName(Application.ExecutablePath) +  @"\Report\ReportDanhSachMon.rdlc";
-            this.reportViewer.LocalReport.ReportPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\Report\ReportDanhSachMon.rdlc";
+            this.reportViewer.LocalReport.ReportEmbeddedResource = System.IO.Path.GetDirectoryName(Application.ExecutablePath).Remove(path.Length - 10) + @"\Report\ReportDanhSachMon.rdlc";
+            this.reportViewer.LocalReport.ReportPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath).Remove(path.Length - 10) + @"\Report\ReportDanhSachMon.rdlc";
             this.reportViewer.LocalReport.DataSources.Clear();
             var dt = GetDataTableMON();
             this.reportViewer.LocalReport.DataSources.Add(new ReportDataSource("MON", dt));

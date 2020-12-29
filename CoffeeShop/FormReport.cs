@@ -27,8 +27,8 @@ namespace CoffeeShopManagement
             var dt = GetDataTableCTHD();
             string path = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
             reportViewer.ProcessingMode = ProcessingMode.Local;
-            this.reportViewer.LocalReport.ReportEmbeddedResource = System.IO.Path.GetDirectoryName(Application.ExecutablePath).Remove(path.Length - 10) + @"\Report\ReportPhieuThanhToan.rdlc";
-            this.reportViewer.LocalReport.ReportPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath).Remove(path.Length - 10) + @"\Report\ReportPhieuThanhToan.rdlc";
+            this.reportViewer.LocalReport.ReportEmbeddedResource = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\Report\ReportPhieuThanhToan.rdlc";
+            this.reportViewer.LocalReport.ReportPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\Report\ReportPhieuThanhToan.rdlc";
             this.reportViewer.LocalReport.DataSources.Clear();
             this.reportViewer.LocalReport.DataSources.Add(new ReportDataSource("CTHD",dt));
             dt = GetDataTableQUAN();

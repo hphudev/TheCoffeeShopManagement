@@ -1,21 +1,21 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using Microsoft.Reporting.WinForms;
 
 namespace CoffeeShopManagement.Report
 {
-    public partial class FormReportDanhSachNhanVien : Form
+    public partial class FormReportDanhSachKhachHang : Form
     {
         FormLock khoa;
-        public FormReportDanhSachNhanVien()
+        public FormReportDanhSachKhachHang()
         {
             InitializeComponent();
         }
@@ -25,15 +25,15 @@ namespace CoffeeShopManagement.Report
             this.khoa = khoa;
         }
 
-        private void FormReportDanhSachNhanVien_Load(object sender, EventArgs e)
+        private void FormReportDanhSachKhachHang_Load(object sender, EventArgs e)
         {
             string path = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
             reportViewer.ProcessingMode = ProcessingMode.Local;
-            this.reportViewer.LocalReport.ReportEmbeddedResource = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\Report\ReportDanhSachNhanVien.rdlc";
-            this.reportViewer.LocalReport.ReportPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\Report\ReportDanhSachNhanVien.rdlc";
+            this.reportViewer.LocalReport.ReportEmbeddedResource = System.IO.Path.GetDirectoryName(Application.ExecutablePath).Remove(path.Length - 10) + @"\Report\ReportDanhSachKhachHang.rdlc";
+            this.reportViewer.LocalReport.ReportPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath).Remove(path.Length - 10) + @"\Report\ReportDanhSachKhachHang.rdlc";
             this.reportViewer.LocalReport.DataSources.Clear();
-            var dt = GetDataTableNHANVIEN();
-            this.reportViewer.LocalReport.DataSources.Add(new ReportDataSource("NHANVIEN", dt));
+            var dt = GetDataTableKHACHHANG();
+            this.reportViewer.LocalReport.DataSources.Add(new ReportDataSource("KHACHHANG", dt));
             dt = GetDataTableQUAN();
             this.reportViewer.LocalReport.DataSources.Add(new ReportDataSource("QUAN", dt));
             dt = GetDataTableDATENOW();
@@ -53,27 +53,17 @@ namespace CoffeeShopManagement.Report
             return dt;
         }
 
-        public DataTable GetDataTableMON()
+        public DataTable GetDataTableKHACHHANG()
         {
             SqlConnection con = Data.OpenConnection();
-            string sql = $"select MAMON, TENMON, DVT, GIA, SOLANPHUCVU from MON where TINHTRANG = 1";
+            string sql = $"select MAKH, HOTEN, DCHI, SDT, " +
+                $" CONVERT(NVARCHAR(10),DAY(NGAYSINH)) + '/' + CONVERT(NVARCHAR(10),MONTH(NGAYSINH)) + '/' + CONVERT(NVARCHAR(10),YEAR(NGAYSINH)) as NGAYSINH, " +
+                $"DOANHSO, " +
+                $"CONVERT(NVARCHAR(10),DAY(NGAYDK)) + '/' + CONVERT(NVARCHAR(10),MONTH(NGAYDK)) + '/' + CONVERT(NVARCHAR(10),YEAR(NGAYDK)) as NGAYDK, " +
+                $"GIOITINH, SOLANTOIQUAN, LOAIKH from KHACHHANG where TINHTRANG = 1";
             var dt = new DataTable();
             SqlDataAdapter adapt = new SqlDataAdapter(sql, con);
-            dt.TableName = "DataTableMON";
-            adapt.Fill(dt);
-            Data.CloseConnection(ref con);
-            return dt;
-        }
-
-        public DataTable GetDataTableNHANVIEN()
-        {
-            SqlConnection con = Data.OpenConnection();
-            string sql = $"select MANV, HOTEN, DCHI, CONVERT(NVARCHAR(10),DAY(NGVL)) + '/' " +
-                $"+ CONVERT(NVARCHAR(10),MONTH(NGVL)) + '/' + CONVERT(NVARCHAR(10),YEAR(NGVL)) AS NGVL, " +
-                $"SDT, CMND, GIOITINH, LUONG, CHUCVU from NHANVIEN, TAIKHOAN where TINHTRANG = 1 and MANV = ID";
-            var dt = new DataTable();
-            SqlDataAdapter adapt = new SqlDataAdapter(sql, con);
-            dt.TableName = "DataTableNHANVIEN";
+            dt.TableName = "DataTableKHACHHANG";
             adapt.Fill(dt);
             Data.CloseConnection(ref con);
             return dt;
@@ -88,9 +78,9 @@ namespace CoffeeShopManagement.Report
             return dt;
         }
 
-        private void FormReportDanhSachNhanVien_FormClosed(object sender, FormClosedEventArgs e)
+        private void FormReportDanhSachKhachHang_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.khoa.Close();
+            khoa.Close();
         }
     }
 }

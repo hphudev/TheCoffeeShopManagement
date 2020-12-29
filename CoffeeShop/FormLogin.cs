@@ -65,7 +65,7 @@ namespace CoffeeShopManagement
                 tbTenDangNhap.Text = "Tên đăng nhập";
                 tbMatKhau.Text = "Mật khẩu";
                 tbMatKhau.PasswordChar = '\0';
-                pbEye.Image = Image.FromFile("./Resources/OpenEye.png");
+                pbEye.Image = Properties.Resources.OpenEye;
                 tbTenDangNhap.Select();
             }
             catch (Exception)
