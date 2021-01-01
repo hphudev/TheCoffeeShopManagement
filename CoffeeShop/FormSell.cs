@@ -83,6 +83,7 @@ namespace CoffeeShopManagement
             };
         }
 
+        public bool checkTimesTB = false;
         private void InitCheckThongBao()
         {
             CheckThongBao = new Timer();
@@ -108,6 +109,11 @@ namespace CoffeeShopManagement
                     //    }
                     //}
                     pbThongBao.Image = Resources.announ;
+                    if (!checkTimesTB)
+                    {
+                        IO.ExportInfo("Có thông báo mới");
+                        checkTimesTB = true;
+                    }
 
                 }
                 else
@@ -559,7 +565,7 @@ namespace CoffeeShopManagement
         private void BtHangNgay_Click(object sender, EventArgs e)
         {
             //CheckThongBao.Stop();
-            FormCaiDatThongBao cus = new FormCaiDatThongBao();
+            FormCaiDatThongBao cus = new FormCaiDatThongBao(this);
             FormLock ltmp = new FormLock();
             ltmp.Show();
             cus.Show();

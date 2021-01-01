@@ -430,6 +430,7 @@
             this.Controls.Add(this.dgvMenu);
             this.Controls.Add(this.pTieuDe);
             this.Controls.Add(this.guna2GradientPanel1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMenuStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

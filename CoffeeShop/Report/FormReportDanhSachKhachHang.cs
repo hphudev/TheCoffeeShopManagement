@@ -40,6 +40,7 @@ namespace CoffeeShopManagement.Report
             dt = GetDataTableDATENOW();
             this.reportViewer.LocalReport.DataSources.Add(new ReportDataSource("DATENOW", dt));
             this.reportViewer.RefreshReport();
+            IO.ExportSuccess("Xuất dữ liệu thành công");
         }
 
         public DataTable GetDataTableQUAN()

@@ -238,6 +238,7 @@ namespace CoffeeShopManagement
         private void Restart_Click(object sender, EventArgs e)
         {
             IO.ExportSuccess("Đã sãn sàng khởi động");
+            Application.Restart();
         }
 
         #endregion
@@ -308,10 +309,10 @@ namespace CoffeeShopManagement
                 if (e.ProgressPercentage == 1)
             {
                 sleep = 1000;
+                IO.ExportSuccess("Đăng nhập thành công");
                 Event.ShowForm((new FormSell(this)));
                 this.Hide();
                 this.tbTenDangNhap.Text = this.tbMatKhau.Text = "";
-                this.Load.BackColor = Color.Green;
                 bgWorker.CancelAsync();
 
             }

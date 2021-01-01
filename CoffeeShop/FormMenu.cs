@@ -24,6 +24,7 @@ namespace CoffeeShopManagement
 
         public FormSell parent { get; }
 
+        public FormMenu() { }
         public FormMenu(FormSell parent)
         {
             try

@@ -16,7 +16,8 @@ namespace CoffeeShopManagement
     {
         FormLock khoa;
         Timer check = new Timer();
-        public FormCaiDatThongBao()
+        FormSell parent;
+        public FormCaiDatThongBao(FormSell parent)
         {
             InitializeComponent();
             check.Interval = 10;
@@ -28,6 +29,7 @@ namespace CoffeeShopManagement
                 else
                     tbNoiDung.ReadOnly = false;
             };
+            this.parent = parent;
             check.Start();
         }
 
@@ -41,6 +43,7 @@ namespace CoffeeShopManagement
             if (btGuiThongBao.Checked)
             {
                 Data.UpdateData("THONGBAO", $"NOIDUNG = N'{tbNoiDung.Text}', TINHTRANG = 1, TINHTRANGXEM = 0", "");
+                this.parent.checkTimesTB = false;
             }
             else
             {
@@ -126,6 +129,7 @@ namespace CoffeeShopManagement
             if (btGuiThongBao.Checked)
             {
                 Data.UpdateData("THONGBAO", $"NOIDUNG = N'{tbNoiDung.Text}', TINHTRANG = 1, TINHTRANGXEM = 0", "");
+                this.parent.checkTimesTB = false;
             }
             else
             {

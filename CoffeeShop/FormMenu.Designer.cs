@@ -138,6 +138,7 @@
             // 
             this.bPrint.CheckedState.ImageSize = new System.Drawing.Size(34, 34);
             this.bPrint.CheckedState.Parent = this.bPrint;
+            this.bPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bPrint.HoverState.ImageSize = new System.Drawing.Size(31, 31);
             this.bPrint.HoverState.Parent = this.bPrint;
             this.bPrint.Image = global::CoffeeShopManagement.Properties.Resources.Print;

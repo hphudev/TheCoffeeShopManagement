@@ -33,3 +33,16 @@ C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\G
 C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_3\TheCoffeeShopManagement\DAO\obj\Debug\DAO.csproj.CopyComplete
 C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_3\TheCoffeeShopManagement\DAO\obj\Debug\DAO.exe
 C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_3\TheCoffeeShopManagement\DAO\obj\Debug\DAO.pdb
+F:\MANAGEMENT_14\TheCoffeeShopManagement\DAO\bin\Debug\DAO.exe.config
+F:\MANAGEMENT_14\TheCoffeeShopManagement\DAO\bin\Debug\DAO.exe
+F:\MANAGEMENT_14\TheCoffeeShopManagement\DAO\bin\Debug\DAO.pdb
+F:\MANAGEMENT_14\TheCoffeeShopManagement\DAO\bin\Debug\IOC.exe
+F:\MANAGEMENT_14\TheCoffeeShopManagement\DAO\bin\Debug\IOC.pdb
+F:\MANAGEMENT_14\TheCoffeeShopManagement\DAO\bin\Debug\IOC.exe.config
+F:\MANAGEMENT_14\TheCoffeeShopManagement\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+F:\MANAGEMENT_14\TheCoffeeShopManagement\DAO\obj\Debug\DAO.Properties.Resources.resources
+F:\MANAGEMENT_14\TheCoffeeShopManagement\DAO\obj\Debug\DAO.csproj.GenerateResource.cache
+F:\MANAGEMENT_14\TheCoffeeShopManagement\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+F:\MANAGEMENT_14\TheCoffeeShopManagement\DAO\obj\Debug\DAO.csproj.CopyComplete
+F:\MANAGEMENT_14\TheCoffeeShopManagement\DAO\obj\Debug\DAO.exe
+F:\MANAGEMENT_14\TheCoffeeShopManagement\DAO\obj\Debug\DAO.pdb

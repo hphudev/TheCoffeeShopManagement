@@ -38,6 +38,7 @@ namespace CoffeeShopManagement
             dt = GetDataTableHOADON();
             this.reportViewer.LocalReport.DataSources.Add(new ReportDataSource("HOADON", dt));
             this.reportViewer.RefreshReport();
+            IO.ExportSuccess("Xuất dữ liệu thành công");
         }
 
         public DataTable GetDataTableCTHD()
