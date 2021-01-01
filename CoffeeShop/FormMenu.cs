@@ -131,7 +131,7 @@ namespace CoffeeShopManagement
             return null;
         }
 
-        public void ChangeInfoObjClicked(object sender, EventArgs e)
+        public virtual void ChangeInfoObjClicked(object sender, EventArgs e)
         {
             if (this.dgvMenu != null && this.dgvMenu.Rows.Count != 0)
             {
