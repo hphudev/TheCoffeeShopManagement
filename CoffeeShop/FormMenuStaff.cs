@@ -69,13 +69,25 @@ namespace CoffeeShopManagement
                     "HOTEN = N'" + this.cbFind.Text + "'", "*", "Nhân viên", ref this.dgvMenu,
                     ref this.cbFind);
         }
-        
+
+        public override void ChangeInfoObjClicked(object sender, EventArgs e)
+        {
+            if (this.dgvMenu != null && this.dgvMenu.Rows.Count != 0)
+            {
+                ShowForm(InitFormChangeInfoObj());
+            }
+            else
+            {
+                IO.ExportError("Hành động không hợp lệ");
+            }
+        }
+
         public override void DeleteObjClicked(object sender, EventArgs e)
         {
             //base.DeleteObjClicked(sender, e);
             if (this.dgvMenu.Rows.Count != 0)
             {
-                (new BUS.Menu()).DeleteObj(this.dgvMenu, this.loader);
+                (new BUS.MenuStaff()).DeleteObj(this.dgvMenu, this.loader);
             }
             else
             {
@@ -105,7 +117,7 @@ namespace CoffeeShopManagement
 
         public override object GetSelectedObj()
         {
-            return (new BUS.Menu()).GetSelectedObj(this.dgvMenu);
+            return (new BUS.MenuStaff()).GetSelectedObj(this.dgvMenu);
         }
 
     }

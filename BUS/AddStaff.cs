@@ -35,6 +35,7 @@ namespace BUS
                     if (flag == 1)
                     {
                         Data.AddData("NHANVIEN", newStaff.GetInfo());
+                        account.id = new ID(newStaff.id.ToString());
                         Data.AddData("TAIKHOAN", account.GetInfo());
                     }
 

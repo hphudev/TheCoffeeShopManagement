@@ -20,13 +20,12 @@ namespace CoffeeShopManagement
         #region Operations
         public FormMain()
         {
-            
+            this.FormClosed += CloseForm;
         }
 
         public virtual void CancelClicked(object sender, EventArgs e)
         {
             Event.CloseForm(this);
-            Event.CloseForm(this.lockForm);
         }
 
         public void SetLockForm(ref FormLock lockForm)
@@ -37,6 +36,11 @@ namespace CoffeeShopManagement
         public void PressEnter(object sender, KeyPressEventArgs e)
         {
             Event.PressEnter(sender, e, this);
+        }
+
+        public void CloseForm(object sender, FormClosedEventArgs e)
+        {
+            Event.CloseForm(this.lockForm);
         }
 
         #endregion

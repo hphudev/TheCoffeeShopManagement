@@ -61,12 +61,24 @@ namespace CoffeeShopManagement
             BUS.Menu.FinishWork(ref this.cbFind, this.sourceData);
         }
 
+        public override void ChangeInfoObjClicked(object sender, EventArgs e)
+        {
+            if (this.dgvMenu != null && this.dgvMenu.Rows.Count != 0)
+            {
+                ShowForm(InitFormChangeInfoObj());
+            }
+            else
+            {
+                IO.ExportError("Hành động không hợp lệ");
+            }
+        }
+
         public override void DeleteObjClicked(object sender, EventArgs e)
         {
             if (this.dgvMenu.Rows.Count != 0)
             {
                 //base.DeleteObjClicked(sender, e);
-                (new BUS.Menu()).DeleteObj(this.dgvMenu, this.loader);
+                (new BUS.MenuItem()).DeleteObj(this.dgvMenu, this.loader);
                 this.parent.LoadSomeThingPublic();
             }
             else
@@ -103,7 +115,7 @@ namespace CoffeeShopManagement
 
         public override object GetSelectedObj()
         {
-            return (new BUS.Menu()).GetSelectedObj(this.dgvMenu);
+            return (new BUS.MenuItem()).GetSelectedObj(this.dgvMenu);
         }
 
     }
