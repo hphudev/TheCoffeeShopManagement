@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using DAO;
+
 namespace CoffeeShopManagement
 {
     public partial class FormNoiDungThongBao : Form

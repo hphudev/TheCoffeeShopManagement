@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
+using DAO;
+using BUS;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormImageStaff : Form
+    public partial class FormImageStaff : FormMain
     {
+        #region Operations
         public FormImageStaff(Image image, ID id)
         {
             try
@@ -24,20 +28,9 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 27 Form Image Staff)");
+                IO.ExportError("Lỗi không xác định\n(Form Image Staff)");
             }
         }
-
-        private void CancelClicked(object sender, EventArgs e)
-        {
-            Event.CloseForm(this);
-            Event.CloseForm(this.khoa);
-        }
-
-        FormLock khoa;
-        public void SetLockForm(ref FormLock khoa)
-        {
-            this.khoa = khoa;
-        }
+        #endregion
     }
 }

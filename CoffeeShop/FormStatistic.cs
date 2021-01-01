@@ -8,14 +8,39 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using DTO;
+using DAO;
+using BUS;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormStatistic : Form
+    public partial class FormStatistic : FormMain, IButtonOK
     {
-        private FormSell parent;
-        private FormLock Lock;
+        #region Attributes
         private string[] imageKeys = { "receipt", "expense" };
+        #endregion
+
+        #region Operations
+        public FormStatistic()
+        {
+            try
+            {
+                InitializeComponent();
+                this.ilImageList.Images.Add(imageKeys[0], Image.FromFile("./ImageItem/receipt.jpg"));
+                this.ilImageList.Images.Add(imageKeys[1], Image.FromFile("./ImageItem/expense.jpg"));
+                InitTreeView();
+                this.StartPosition = FormStartPosition.CenterScreen;
+
+                this.bOK.Click += OKClicked;
+                this.tvHistory.AfterSelect += AfterSelectTreeView;
+                this.Load += LoadChart;
+                this.bCancel1.Click += CancelClicked;
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Form Statistic");
+            }
+        }
 
         private void InitTreeView()
         {
@@ -33,47 +58,15 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 36 Form Statistic");
+                IO.ExportError("Lỗi không xác định\n(Form Statistic");
             }
-        }
-
-        public FormStatistic(FormSell parent)
-        {
-            try
-            {
-                InitializeComponent();
-                this.parent = parent;
-                this.ilImageList.Images.Add(imageKeys[0], Image.FromFile("./ImageItem/receipt.jpg"));
-                this.ilImageList.Images.Add(imageKeys[1], Image.FromFile("./ImageItem/expense.jpg"));
-                InitTreeView();
-                this.StartPosition = FormStartPosition.CenterScreen;
-
-                this.FormClosed += CloseForm;
-                this.bOK.Click += OKClicked;
-                this.bCancel.Click += CancelClicked;
-                this.tvHistory.AfterSelect += AfterSelectTreeView;
-                this.Load += LoadChart;
-            }
-            catch (Exception)
-            {
-                IO.ExportError("Lỗi không xác định\n(Line 59 Form Statistic");
-            }
-        }
-
-        private void CloseForm(object sender, FormClosedEventArgs e)
-        {
-            Event.CloseForm(this.Lock);
-        }
-
-        private void CancelClicked(object sender, EventArgs e)
-        {
-            Event.CloseForm(this);
         }
 
         private void AfterSelectTreeView(object sender, TreeViewEventArgs e)
         {
             try
             {
+                #region Code
                 if (e.Node != null && e.Node == this.tvHistory.Nodes[0])
                 {
                     e.Node.Nodes.Clear();
@@ -200,17 +193,19 @@ namespace CoffeeShopManagement
                     e.Node.Expand();
                     Data.CloseConnection(ref connection);
                 }
+                #endregion
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 206 Form Statistic");
+                IO.ExportError("Lỗi không xác định\n(Form Statistic");
             }
         }
 
-        private void OKClicked(object sender, EventArgs e)
+        public void OKClicked(object sender, EventArgs e)
         {
             try
             {
+                #region Code
                 DateTime start = this.dtpStart.Value.AddSeconds(-1);
                 DateTime end = this.dtpEnd.Value;
 
@@ -260,6 +255,7 @@ namespace CoffeeShopManagement
                         this.cChart.Visible = false;
                     }
                 }
+                #endregion
             }
             catch (Exception)
             {
@@ -278,18 +274,14 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 281 Form Statistic");
+                IO.ExportError("Lỗi không xác định\n(Form Statistic");
             }
-        }
-
-        public void SetLockForm(ref FormLock khoa)
-        {
-            this.Lock = khoa;
         }
 
         private void FormStatistic_Load(object sender, EventArgs e)
         {
 
         }
+        #endregion
     }
 }

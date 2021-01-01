@@ -9,21 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAO;
 
 namespace CoffeeShopManagement.Report
 {
-    public partial class FormReportDanhSachMon : Form
+    public partial class FormReportDanhSachMon : FormMain
     {
-        FormLock khoa;
         public FormReportDanhSachMon()
         {
             InitializeComponent();
-        }
-
-
-        public void SetLockForm(ref FormLock khoa)
-        {
-            this.khoa = khoa;
         }
 
         public DataTable GetDataTableQUAN()
@@ -77,7 +71,7 @@ namespace CoffeeShopManagement.Report
 
         private void FormReportDanhSachMon_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.khoa.Close();
+            this.lockForm.Close();
         }
     }
 }

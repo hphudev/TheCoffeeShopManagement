@@ -9,20 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Microsoft.Reporting.WinForms;
+using DAO;
 
 namespace CoffeeShopManagement.Report
 {
-    public partial class FormReportDanhSachNhanVien : Form
+    public partial class FormReportDanhSachNhanVien : FormMain
     {
-        FormLock khoa;
         public FormReportDanhSachNhanVien()
         {
             InitializeComponent();
-        }
-
-        public void SetLockForm(ref FormLock khoa)
-        {
-            this.khoa = khoa;
         }
 
         private void FormReportDanhSachNhanVien_Load(object sender, EventArgs e)
@@ -90,7 +85,7 @@ namespace CoffeeShopManagement.Report
 
         private void FormReportDanhSachNhanVien_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.khoa.Close();
+            this.lockForm.Close();
         }
     }
 }

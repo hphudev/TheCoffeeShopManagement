@@ -9,18 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using DAO;
+using DTO;
+using BUS;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormInfoStaff : Form
+    public partial class FormInfoStaff : FormMain, IButtonOK, IFormMain
     {
-        FormLock lockForm;
+        #region Attributes
         private Account account;
+        #endregion
 
+        #region Operations
         public void Autofill()
         {
             try
             {
+                #region Code
                 SqlConnection connection = Data.OpenConnection();
                 SqlDataReader reader = Data.ReadData("NHANVIEN NV, TAIKHOAN TK", connection, " WHERE " +
                     "NV.MANV = TK.ID AND TENDN = '" + this.account.username + "'", "*");
@@ -38,10 +44,11 @@ namespace CoffeeShopManagement
                 this.lID.Text = staff.id.ToString();
                 this.cbSex.Text = staff.sex;
                 this.pbStaff.Image = staff.image;
+                #endregion
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 43 Form Image Staff)");
+                IO.ExportError("Lỗi không xác định\n(Form Image Staff)");
             }
         }
 
@@ -49,6 +56,7 @@ namespace CoffeeShopManagement
         {
             try
             {
+                #region Code
                 InitializeComponent();
                 //this.lockForm = new FormLock(this);
                 //Event.ShowForm(this.lockForm);
@@ -56,28 +64,19 @@ namespace CoffeeShopManagement
                 Autofill();
                 this.bCancel.Click += CancelClicked;
                 this.bOK.Click += OKClicked;
-                this.FormClosed += CloseForm;
+                #endregion
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 62 Form Image Staff)");
+                IO.ExportError("Lỗi không xác định\n(Form Image Staff)");
             }
         }
 
-        private void CancelClicked(object sender, EventArgs e)
-        {
-            Event.CloseForm(this);
-        }
-
-        private void CloseForm(object sender, FormClosedEventArgs e)
-        {
-            Event.CloseForm(this.lockForm);
-        }
-
-        private void OKClicked(object sender, EventArgs e)
+        public void OKClicked(object sender, EventArgs e)
         {
             try
             {
+                #region Code
                 if (this.tbPassword.Text == "")
                 {
                     IO.ExportError("Mật khẩu không được để trống");
@@ -91,16 +90,13 @@ namespace CoffeeShopManagement
                     " WHERE ID = '" + updatedAccount.id.ToString() + "'");
                 IO.ExportSuccess("Đổi mật khẩu thành công");
                 Event.CloseForm(this);
+                #endregion
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 96 Form Image Staff)");
+                IO.ExportError("Lỗi không xác định\n(Form Image Staff)");
             }
         }
-
-        public void SetLockForm(ref FormLock khoa)
-        {
-            this.lockForm = khoa;
-        }
+        #endregion
     }
 }

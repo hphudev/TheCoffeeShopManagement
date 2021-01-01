@@ -308,7 +308,6 @@
             this.bPrint.PressedState.Parent = this.bPrint;
             this.bPrint.Size = new System.Drawing.Size(70, 51);
             this.bPrint.TabIndex = 124;
-            this.bPrint.Click += new System.EventHandler(this.BPrint_Click);
             // 
             // label1
             // 
@@ -435,7 +434,6 @@
             this.Name = "FormMenuStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhân viên";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMenuStaff_FormClosed);
             this.pTieuDe.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();

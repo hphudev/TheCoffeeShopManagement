@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAO;
 
 namespace CoffeeShopManagement
 {
@@ -22,7 +23,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 25 Class Program)");
+                IO.ExportError("Lỗi không xác định\n(Class Program)");
             }
         }
     }
