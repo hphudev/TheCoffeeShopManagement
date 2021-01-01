@@ -31,20 +31,29 @@
             this.components = new System.ComponentModel.Container();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnLot = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.lb = new System.Windows.Forms.Label();
+            this.Restart = new CoffeeShopManagement.PictureboxBuffered();
+            this.btThoat = new CoffeeShopManagement.PictureboxBuffered();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.controlboxClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.pUser = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.Load = new CoffeeShopManagement.PictureboxBuffered();
+            this.label3 = new System.Windows.Forms.Label();
             this.pbEye = new System.Windows.Forms.PictureBox();
             this.btDangNhap = new Guna.UI2.WinForms.Guna2GradientButton();
             this.tbMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbTenDangNhap = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.bgWorker = new System.ComponentModel.BackgroundWorker();
+            this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnLot.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Restart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btThoat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Load)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEye)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,19 +64,55 @@
             // 
             // pnLot
             // 
+            this.pnLot.Controls.Add(this.lb);
+            this.pnLot.Controls.Add(this.Restart);
+            this.pnLot.Controls.Add(this.btThoat);
             this.pnLot.Controls.Add(this.pictureBox1);
             this.pnLot.Controls.Add(this.label2);
             this.pnLot.Controls.Add(this.label1);
-            this.pnLot.Controls.Add(this.controlboxClose);
             this.pnLot.Controls.Add(this.pUser);
             this.pnLot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnLot.FillColor = System.Drawing.Color.Bisque;
             this.pnLot.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.pnLot.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             this.pnLot.Location = new System.Drawing.Point(0, 0);
             this.pnLot.Name = "pnLot";
             this.pnLot.ShadowDecoration.Parent = this.pnLot;
             this.pnLot.Size = new System.Drawing.Size(1059, 645);
             this.pnLot.TabIndex = 0;
+            // 
+            // lb
+            // 
+            this.lb.BackColor = System.Drawing.Color.Red;
+            this.lb.Location = new System.Drawing.Point(973, 579);
+            this.lb.Name = "lb";
+            this.lb.Size = new System.Drawing.Size(57, 23);
+            this.lb.TabIndex = 14;
+            // 
+            // Restart
+            // 
+            this.Restart.BackColor = System.Drawing.Color.Transparent;
+            this.Restart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Restart.Image = global::CoffeeShopManagement.Properties.Resources.Restart;
+            this.Restart.Location = new System.Drawing.Point(915, 12);
+            this.Restart.Name = "Restart";
+            this.Restart.Size = new System.Drawing.Size(61, 37);
+            this.Restart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Restart.TabIndex = 13;
+            this.Restart.TabStop = false;
+            this.Restart.Click += new System.EventHandler(this.Restart_Click);
+            // 
+            // btThoat
+            // 
+            this.btThoat.BackColor = System.Drawing.Color.Transparent;
+            this.btThoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btThoat.Image = global::CoffeeShopManagement.Properties.Resources.Close_Login;
+            this.btThoat.Location = new System.Drawing.Point(976, 12);
+            this.btThoat.Name = "btThoat";
+            this.btThoat.Size = new System.Drawing.Size(61, 37);
+            this.btThoat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btThoat.TabIndex = 12;
+            this.btThoat.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -105,24 +150,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "User Login";
             // 
-            // controlboxClose
-            // 
-            this.controlboxClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.controlboxClose.Animated = true;
-            this.controlboxClose.BackColor = System.Drawing.Color.Transparent;
-            this.controlboxClose.BorderRadius = 15;
-            this.controlboxClose.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.controlboxClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.controlboxClose.HoverState.Parent = this.controlboxClose;
-            this.controlboxClose.IconColor = System.Drawing.Color.White;
-            this.controlboxClose.Location = new System.Drawing.Point(1011, 15);
-            this.controlboxClose.Name = "controlboxClose";
-            this.controlboxClose.ShadowDecoration.Parent = this.controlboxClose;
-            this.controlboxClose.Size = new System.Drawing.Size(35, 35);
-            this.controlboxClose.TabIndex = 5;
-            // 
             // pUser
             // 
+            this.pUser.Controls.Add(this.Load);
+            this.pUser.Controls.Add(this.label3);
             this.pUser.Controls.Add(this.pbEye);
             this.pUser.Controls.Add(this.btDangNhap);
             this.pUser.Controls.Add(this.tbMatKhau);
@@ -132,8 +163,33 @@
             this.pUser.Location = new System.Drawing.Point(558, 198);
             this.pUser.Name = "pUser";
             this.pUser.ShadowDecoration.Parent = this.pUser;
-            this.pUser.Size = new System.Drawing.Size(479, 353);
+            this.pUser.Size = new System.Drawing.Size(479, 332);
             this.pUser.TabIndex = 3;
+            // 
+            // Load
+            // 
+            this.Load.BackColor = System.Drawing.Color.Gainsboro;
+            this.Load.Image = global::CoffeeShopManagement.Properties.Resources._4RNk;
+            this.Load.Location = new System.Drawing.Point(0, 0);
+            this.Load.Name = "Load";
+            this.Load.Size = new System.Drawing.Size(488, 332);
+            this.Load.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Load.TabIndex = 11;
+            this.Load.TabStop = false;
+            this.Load.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Bisque;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(305, 281);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(151, 23);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Forgot Password?";
             // 
             // pbEye
             // 
@@ -155,6 +211,8 @@
             this.btDangNhap.CheckedState.Parent = this.btDangNhap;
             this.btDangNhap.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btDangNhap.CustomImages.Parent = this.btDangNhap;
+            this.btDangNhap.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btDangNhap.FillColor2 = System.Drawing.Color.Red;
             this.btDangNhap.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
             this.btDangNhap.ForeColor = System.Drawing.Color.White;
             this.btDangNhap.HoverState.Parent = this.btDangNhap;
@@ -239,7 +297,18 @@
             // guna2Elipse3
             // 
             this.guna2Elipse3.BorderRadius = 25;
-            this.guna2Elipse3.TargetControl = this.controlboxClose;
+            // 
+            // bgWorker
+            // 
+            this.bgWorker.WorkerReportsProgress = true;
+            this.bgWorker.WorkerSupportsCancellation = true;
+            this.bgWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgWorker_DoWork);
+            this.bgWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BgWorker_ProgressChanged);
+            // 
+            // guna2Elipse4
+            // 
+            this.guna2Elipse4.BorderRadius = 10;
+            this.guna2Elipse4.TargetControl = this.lb;
             // 
             // FormLogin
             // 
@@ -255,8 +324,12 @@
             this.TransparencyKey = System.Drawing.SystemColors.ControlLight;
             this.pnLot.ResumeLayout(false);
             this.pnLot.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Restart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btThoat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pUser.ResumeLayout(false);
+            this.pUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Load)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEye)).EndInit();
             this.ResumeLayout(false);
 
@@ -270,11 +343,17 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Guna.UI2.WinForms.Guna2TextBox tbMatKhau;
         private Guna.UI2.WinForms.Guna2GradientButton btDangNhap;
-        private Guna.UI2.WinForms.Guna2ControlBox controlboxClose;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
         private System.Windows.Forms.PictureBox pbEye;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private PictureboxBuffered Load;
+        private System.Windows.Forms.Label label3;
+        private PictureboxBuffered Restart;
+        private PictureboxBuffered btThoat;
+        private System.ComponentModel.BackgroundWorker bgWorker;
+        private System.Windows.Forms.Label lb;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
     }
 }

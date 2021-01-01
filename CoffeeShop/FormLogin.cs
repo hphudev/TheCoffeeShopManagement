@@ -13,6 +13,8 @@ using System.Runtime.InteropServices;
 using DTO;
 using DAO;
 using BUS;
+using System.Threading;
+using System.Configuration;
 
 namespace CoffeeShopManagement
 {
@@ -40,13 +42,15 @@ namespace CoffeeShopManagement
                 InitializeComponent();
                 this.DoubleBuffered = true;
                 this.btDangNhap.Click += OKClicked;
-                this.controlboxClose.Click += CancelClicked;
+                this.btThoat.Click += CancelClicked;
                 this.tbTenDangNhap.KeyPress += PressEnter;
                 this.tbMatKhau.KeyPress += PressEnter;
                 //this.tbMatKhau.PasswordChar = '*';
                 //this.bMinimize.Click += MinimizeClicked;
                 this.parent = parent;
+                IO.ExportSuccess("Đã khởi động xong");
                 #endregion
+
             }
             catch (Exception)
             {
@@ -136,50 +140,24 @@ namespace CoffeeShopManagement
         {
             try
             {
-                #region Code
-                if (this.tbTenDangNhap.Text == "" || this.tbMatKhau.Text == "")
+                if (this.tbTenDangNhap.Text == "Tên đăng nhập" || this.tbMatKhau.Text == "Mật khẩu")
                 {
                     IO.ExportError("Tên đăng nhập và mật khẩu không được để trống");
                     return;
                 }
-
-                this.account = new Account("NULL", tbTenDangNhap.Text, Encrypt.ComputeHash(
-                    tbMatKhau.Text, new SHA256CryptoServiceProvider()), true);
-                Account adminAccount = new Account("", "1", Encrypt.ComputeHash("1",
-                    new SHA256CryptoServiceProvider()), true);
-                SqlConnection connection = Data.OpenConnection();
-                SqlDataReader reader = Data.ReadData("TAIKHOAN", connection, " WHERE TINHTRANG = 1",
-                    "*");
-                Account validAccount = GetValidAccount(this.account, reader);
-
-                if (validAccount == null && this.account.username != adminAccount.username)
+                if (!bgWorker.IsBusy)
                 {
-                    IO.ExportError("Tên đăng nhập này không tồn tại");
+                    this.Load.Visible = true;
+                    IO.ExportInfo("Đang kết nối cơ sở dữ liệu");
+                    bgWorker.RunWorkerAsync();
                 }
                 else
-                {
-                    if ((validAccount != null && validAccount.password == this.account.password) ||
-                        this.account.password == adminAccount.password)
-                    {
-                        if (validAccount != null)
-                        {
-                            this.account = validAccount;
-                        }
-
-                        Event.ShowForm((new FormSell(this)));
-                        this.Hide();
-                        this.tbTenDangNhap.Text = this.tbMatKhau.Text = "";
-                    }
-                    else
-                    {
-                        IO.ExportError("Mật khẩu không đúng");
-                    }
-                }
-                #endregion
+                    MessageBox.Show("error");
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Form Login)");
+                this.Load.Visible = false;
+                //IO.ExportError("Lỗi không xác định\n(Line 177 Form Login)");
             }
         }
 
@@ -256,6 +234,109 @@ namespace CoffeeShopManagement
                 IO.ExportError("Lỗi không xác định\n(Form Login)");
             }
         }
+
+        private void Restart_Click(object sender, EventArgs e)
+        {
+            IO.ExportSuccess("Đã sãn sàng khởi động");
+        }
+
         #endregion
+
+        int sleep = 2000;
+        private void BgWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Thread.Sleep(sleep);
+            this.lb.BackColor = Color.Orange;
+            this.account = new Account("NULL", tbTenDangNhap.Text, Encrypt.ComputeHash(
+                tbMatKhau.Text, new SHA256CryptoServiceProvider()), true);
+            Account adminAccount = new Account("", "1", Encrypt.ComputeHash("1",
+                new SHA256CryptoServiceProvider()), true);
+
+            Account validAccount;
+            try
+            {
+                SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
+                connection.Open();
+                SqlDataReader reader = Data.ReadData("TAIKHOAN", connection, " WHERE TINHTRANG = 1",
+                 "*");
+                validAccount = GetValidAccount(this.account, reader);
+                connection.Close();
+                bgWorker.ReportProgress(4);
+                if (validAccount == null && this.account.username != adminAccount.username)
+                {
+
+                    //IO.ExportError("Tên đăng nhập này không tồn tại");
+                    bgWorker.ReportProgress(2);
+                }
+                else
+                {
+                    if ((validAccount != null && validAccount.password == this.account.password) ||
+                        this.account.password == adminAccount.password)
+                    {
+                        if (validAccount != null)
+                        {
+                            this.account = validAccount;
+                        }
+                        bgWorker.ReportProgress(1);
+
+                    }
+                    else
+                    {
+                        //IO.ExportError("Mật khẩu không đúng");
+                        bgWorker.ReportProgress(3);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                bgWorker.ReportProgress(0);
+            }
+        }
+
+        private void BgWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            this.Load.Visible = false;
+            if (e.ProgressPercentage == 0)
+            {
+                this.Load.BackColor = Color.Red;
+                sleep *= 2;
+                IO.ExportError($"Mất kết nối server");
+                bgWorker.CancelAsync();
+
+            }
+            else
+                if (e.ProgressPercentage == 1)
+            {
+                sleep = 1000;
+                Event.ShowForm((new FormSell(this)));
+                this.Hide();
+                this.tbTenDangNhap.Text = this.tbMatKhau.Text = "";
+                this.Load.BackColor = Color.Green;
+                bgWorker.CancelAsync();
+
+            }
+            else
+                if (e.ProgressPercentage == 2)
+            {
+                sleep = 1000;
+                IO.ExportError("Tên đăng nhập này không tồn tại");
+                this.Load.BackColor = Color.Red;
+                bgWorker.CancelAsync();
+
+            }
+            else
+                if (e.ProgressPercentage == 3)
+            {
+                sleep = 1000;
+                IO.ExportError("Mật khẩu không đúng");
+                this.Load.BackColor = Color.Red;
+                bgWorker.CancelAsync();
+
+            }
+            else if (e.ProgressPercentage == 4)
+            {
+                IO.ExportSuccess("Server đã được kết nối");
+            }
+        }
     }
 }

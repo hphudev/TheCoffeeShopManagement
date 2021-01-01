@@ -1,0 +1,12 @@
+F:\MANAGEMENT_13\TheCoffeeShopManagement\IOC\bin\Debug\IOC.exe.config
+F:\MANAGEMENT_13\TheCoffeeShopManagement\IOC\bin\Debug\IOC.exe
+F:\MANAGEMENT_13\TheCoffeeShopManagement\IOC\bin\Debug\IOC.pdb
+F:\MANAGEMENT_13\TheCoffeeShopManagement\IOC\obj\Debug\IOC.Form_Alert.resources
+F:\MANAGEMENT_13\TheCoffeeShopManagement\IOC\obj\Debug\IOC.Properties.Resources.resources
+F:\MANAGEMENT_13\TheCoffeeShopManagement\IOC\obj\Debug\IOC.csproj.GenerateResource.cache
+F:\MANAGEMENT_13\TheCoffeeShopManagement\IOC\obj\Debug\IOC.csproj.CoreCompileInputs.cache
+F:\MANAGEMENT_13\TheCoffeeShopManagement\IOC\obj\Debug\IOC.exe
+F:\MANAGEMENT_13\TheCoffeeShopManagement\IOC\obj\Debug\IOC.pdb
+F:\MANAGEMENT_13\TheCoffeeShopManagement\IOC\obj\Debug\IOC.csprojAssemblyReference.cache
+F:\MANAGEMENT_13\TheCoffeeShopManagement\IOC\bin\Debug\Guna.UI2.dll
+F:\MANAGEMENT_13\TheCoffeeShopManagement\IOC\obj\Debug\IOC.csproj.CopyComplete

@@ -13,7 +13,8 @@ namespace BUS
     {
         public override void AddImageClicked(ref PictureBox pbImageItem, object staff = null)
         {
-            AddImage(ref pbImageItem, "./ImageStaff/", ID.FindNewID("NHANVIEN", " ORDER BY MANV DESC",
+            //MessageBox.Show(Application.LocalUserAppDataPath);
+            AddImage(ref pbImageItem, $"./ImageStaff/", ID.FindNewID("NHANVIEN", " ORDER BY MANV DESC",
                 "MANV", "NV", 2).ToString());
         }
 

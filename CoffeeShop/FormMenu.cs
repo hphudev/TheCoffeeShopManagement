@@ -133,7 +133,7 @@ namespace CoffeeShopManagement
 
         public void ChangeInfoObjClicked(object sender, EventArgs e)
         {
-            if (this.dgvMenu.Rows.Count != 0)
+            if (this.dgvMenu != null && this.dgvMenu.Rows.Count != 0)
             {
                 ShowForm(InitFormChangeInfoObj());
             }

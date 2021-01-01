@@ -60,6 +60,9 @@ namespace CoffeeShopManagement
                 InitializeComponent();
                 //this.lockForm = new FormLock(this);
                 //Event.ShowForm(this.lockForm);
+                this.tbPassword.Enabled = false;
+                this.tbConfirm.Text = "*******";
+                this.tbConfirm.Enabled = false;
                 this.account = account;
                 Autofill();
                 this.bCancel.Click += CancelClicked;
@@ -98,5 +101,15 @@ namespace CoffeeShopManagement
             }
         }
         #endregion
+
+        private void BtThayDoi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (btThayDoi.Checked)
+            {
+                this.tbPassword.Text = "";
+                this.tbPassword.Enabled = true;
+                this.tbConfirm.Enabled = true;
+            }
+        }
     }
 }

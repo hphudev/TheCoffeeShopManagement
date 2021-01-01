@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IOC;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,16 +36,33 @@ namespace DAO
             }
         }
 
+        public static void Alert(string msg, Form_Alert.enmType type)
+        {
+            Form_Alert frm = new Form_Alert();
+            frm.showAlert(msg, type);
+        }
+
         public static void ExportError(string content)
         {
             try
             {
-                System.Windows.Forms.MessageBox.Show(content, "Lỗi", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                Alert(content, Form_Alert.enmType.Error);
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Class IO)");
+                IO.ExportError("Lỗi không xác định\n(Line 46 Class IO)");
+            }
+        }
+
+        public static void ExportInfo(string content)
+        {
+            try
+            {
+                Alert(content, Form_Alert.enmType.Info);
+            }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Line 59 Class IO)");
             }
         }
 
@@ -52,12 +70,11 @@ namespace DAO
         {
             try
             {
-                System.Windows.Forms.MessageBox.Show(content, "Thông tin", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                Alert(content, Form_Alert.enmType.Success);
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Class IO)");
+                IO.ExportError("Lỗi không xác định\n(Line 59 Class IO)");
             }
         }
 
@@ -65,12 +82,11 @@ namespace DAO
         {
             try
             {
-                System.Windows.Forms.MessageBox.Show(content, "Cảnh báo", MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                Alert(content, Form_Alert.enmType.Warning);
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Class IO)");
+                IO.ExportError("Lỗi không xác định\n(Line 72 Class IO)");
             }
         }
         #endregion

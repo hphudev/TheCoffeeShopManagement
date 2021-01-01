@@ -15,6 +15,10 @@ namespace CoffeeShopManagement
     {
         protected FormMenu parent;
 
+        public FormAddObj()
+        {
+
+        }
         public FormAddObj(FormMenu parent)
         {
             this.parent = parent;

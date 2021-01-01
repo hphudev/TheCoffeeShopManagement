@@ -13,6 +13,7 @@ namespace BUS
     {
         public override void AddImageClicked(ref PictureBox pbImageItem, object staff = null)
         {
+            //MessageBox.Show(Application.LocalUserAppDataPath);
             AddImage(ref pbImageItem, "./ImageStaff/", ((Staff)staff).id.ToString());
         }
 

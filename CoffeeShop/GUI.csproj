@@ -356,6 +356,9 @@
     <Compile Include="Table.Designer.cs">
       <DependentUpon>Table.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormChangeInfoObj.resx">
+      <DependentUpon>FormChangeInfoObj.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMenuItem.resx">
       <DependentUpon>FormMenuItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -601,6 +604,9 @@
     <None Include="bin\Debug\Resources\Anouncement.jfif" />
     <None Include="bin\Debug\Resources\announTinh.png" />
     <None Include="bin\Debug\Resources\Greeting.png" />
+    <None Include="Resources\4RNk.gif" />
+    <None Include="bin\Debug\Resources\Close_Login.png" />
+    <None Include="bin\Debug\Resources\Restart.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
