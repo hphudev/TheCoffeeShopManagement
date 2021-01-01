@@ -1,0 +1,16 @@
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_2\TheCoffeeShopManagement\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_2\TheCoffeeShopManagement\BUS\obj\Debug\BUS.Properties.Resources.resources
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_2\TheCoffeeShopManagement\BUS\obj\Debug\BUS.csproj.GenerateResource.cache
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_2\TheCoffeeShopManagement\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_2\TheCoffeeShopManagement\BUS\bin\Debug\BUS.exe.config
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_2\TheCoffeeShopManagement\BUS\bin\Debug\BUS.exe
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_2\TheCoffeeShopManagement\BUS\bin\Debug\BUS.pdb
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_2\TheCoffeeShopManagement\BUS\bin\Debug\DAO.exe
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_2\TheCoffeeShopManagement\BUS\bin\Debug\DTO.exe
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_2\TheCoffeeShopManagement\BUS\bin\Debug\DAO.pdb
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_2\TheCoffeeShopManagement\BUS\bin\Debug\DAO.exe.config
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_2\TheCoffeeShopManagement\BUS\bin\Debug\DTO.pdb
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_2\TheCoffeeShopManagement\BUS\bin\Debug\DTO.exe.config
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_2\TheCoffeeShopManagement\BUS\obj\Debug\BUS.csproj.CopyComplete
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_2\TheCoffeeShopManagement\BUS\obj\Debug\BUS.exe
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_2\TheCoffeeShopManagement\BUS\obj\Debug\BUS.pdb

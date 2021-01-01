@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tvHistory = new System.Windows.Forms.TreeView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ilImageList = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bCancel = new System.Windows.Forms.Button();
+            this.bCancel1 = new System.Windows.Forms.Button();
             this.bOK = new System.Windows.Forms.Button();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
@@ -94,7 +94,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.groupBox1.Controls.Add(this.bCancel);
+            this.groupBox1.Controls.Add(this.bCancel1);
             this.groupBox1.Controls.Add(this.bOK);
             this.groupBox1.Controls.Add(this.dtpEnd);
             this.groupBox1.Controls.Add(this.dtpStart);
@@ -108,15 +108,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thời gian thống kê";
             // 
-            // bCancel
+            // bCancel1
             // 
-            this.bCancel.BackColor = System.Drawing.Color.Red;
-            this.bCancel.Location = new System.Drawing.Point(492, 180);
-            this.bCancel.Name = "bCancel";
-            this.bCancel.Size = new System.Drawing.Size(87, 41);
-            this.bCancel.TabIndex = 14;
-            this.bCancel.Text = "Thoát";
-            this.bCancel.UseVisualStyleBackColor = false;
+            this.bCancel1.BackColor = System.Drawing.Color.Red;
+            this.bCancel1.Location = new System.Drawing.Point(492, 180);
+            this.bCancel1.Name = "bCancel1";
+            this.bCancel1.Size = new System.Drawing.Size(87, 41);
+            this.bCancel1.TabIndex = 14;
+            this.bCancel1.Text = "Thoát";
+            this.bCancel1.UseVisualStyleBackColor = false;
             // 
             // bOK
             // 
@@ -222,16 +222,16 @@
             // 
             this.cChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.cChart.BorderlineColor = System.Drawing.Color.Black;
-            chartArea3.Name = "ChartArea1";
-            this.cChart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.cChart.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.cChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.cChart.Legends.Add(legend1);
             this.cChart.Location = new System.Drawing.Point(249, 22);
             this.cChart.Name = "cChart";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Receipt - Expense";
-            this.cChart.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Receipt - Expense";
+            this.cChart.Series.Add(series1);
             this.cChart.Size = new System.Drawing.Size(371, 360);
             this.cChart.TabIndex = 16;
             this.cChart.Text = "chart1";
@@ -297,7 +297,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ImageList ilImageList;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button bCancel;
+        private System.Windows.Forms.Button bCancel1;
         private System.Windows.Forms.Button bOK;
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.DateTimePicker dtpStart;

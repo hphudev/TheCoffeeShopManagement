@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoffeeShopManagement.Properties;
+using DTO;
+using DAO;
 
 namespace CoffeeShopManagement
 {

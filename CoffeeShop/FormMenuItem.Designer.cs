@@ -35,14 +35,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pCheck = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.bPrint = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lHeader = new System.Windows.Forms.Label();
             this.pTieuDe = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.bAddItem = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.bAddObj = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bFind = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.bChangeInfoItem = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.bChangeInfoObj = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bClear = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.bDeleteItem = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.bDeleteObj = new Guna.UI2.WinForms.Guna2GradientButton();
             this.cbFind = new System.Windows.Forms.ComboBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.dgvMenu = new System.Windows.Forms.DataGridView();
@@ -65,7 +65,7 @@
             this.guna2GradientPanel1.Controls.Add(this.guna2ShadowPanel1);
             this.guna2GradientPanel1.Controls.Add(this.label2);
             this.guna2GradientPanel1.Controls.Add(this.pCheck);
-            this.guna2GradientPanel1.Controls.Add(this.label1);
+            this.guna2GradientPanel1.Controls.Add(this.lHeader);
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.LightSeaGreen;
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.LightSeaGreen;
@@ -148,31 +148,30 @@
             this.bPrint.PressedState.Parent = this.bPrint;
             this.bPrint.Size = new System.Drawing.Size(70, 51);
             this.bPrint.TabIndex = 124;
-            this.bPrint.Click += new System.EventHandler(this.BPrint_Click);
             // 
-            // label1
+            // lHeader
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1343, 104);
-            this.label1.TabIndex = 112;
-            this.label1.Text = "QUẢN LÍ MÓN";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lHeader.BackColor = System.Drawing.Color.Transparent;
+            this.lHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lHeader.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold);
+            this.lHeader.ForeColor = System.Drawing.Color.White;
+            this.lHeader.Location = new System.Drawing.Point(0, 0);
+            this.lHeader.Name = "lHeader";
+            this.lHeader.Size = new System.Drawing.Size(1343, 104);
+            this.lHeader.TabIndex = 112;
+            this.lHeader.Text = "QUẢN LÍ THỰC ĐƠN";
+            this.lHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pTieuDe
             // 
             this.pTieuDe.BackColor = System.Drawing.Color.Transparent;
             this.pTieuDe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.pTieuDe.Controls.Add(this.progressBar);
-            this.pTieuDe.Controls.Add(this.bAddItem);
+            this.pTieuDe.Controls.Add(this.bAddObj);
             this.pTieuDe.Controls.Add(this.bFind);
-            this.pTieuDe.Controls.Add(this.bChangeInfoItem);
+            this.pTieuDe.Controls.Add(this.bChangeInfoObj);
             this.pTieuDe.Controls.Add(this.bClear);
-            this.pTieuDe.Controls.Add(this.bDeleteItem);
+            this.pTieuDe.Controls.Add(this.bDeleteObj);
             this.pTieuDe.Controls.Add(this.cbFind);
             this.pTieuDe.Dock = System.Windows.Forms.DockStyle.Top;
             this.pTieuDe.FillColor = System.Drawing.Color.Black;
@@ -192,25 +191,25 @@
             this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar.TabIndex = 124;
             // 
-            // bAddItem
+            // bAddObj
             // 
-            this.bAddItem.Animated = true;
-            this.bAddItem.BackColor = System.Drawing.Color.Transparent;
-            this.bAddItem.BorderRadius = 15;
-            this.bAddItem.CheckedState.Parent = this.bAddItem;
-            this.bAddItem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bAddItem.CustomImages.Parent = this.bAddItem;
-            this.bAddItem.FillColor = System.Drawing.Color.DarkSlateBlue;
-            this.bAddItem.FillColor2 = System.Drawing.Color.Teal;
-            this.bAddItem.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.bAddItem.ForeColor = System.Drawing.Color.White;
-            this.bAddItem.HoverState.Parent = this.bAddItem;
-            this.bAddItem.Location = new System.Drawing.Point(238, 13);
-            this.bAddItem.Name = "bAddItem";
-            this.bAddItem.ShadowDecoration.Parent = this.bAddItem;
-            this.bAddItem.Size = new System.Drawing.Size(107, 47);
-            this.bAddItem.TabIndex = 123;
-            this.bAddItem.Text = "Thêm";
+            this.bAddObj.Animated = true;
+            this.bAddObj.BackColor = System.Drawing.Color.Transparent;
+            this.bAddObj.BorderRadius = 15;
+            this.bAddObj.CheckedState.Parent = this.bAddObj;
+            this.bAddObj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bAddObj.CustomImages.Parent = this.bAddObj;
+            this.bAddObj.FillColor = System.Drawing.Color.DarkSlateBlue;
+            this.bAddObj.FillColor2 = System.Drawing.Color.Teal;
+            this.bAddObj.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.bAddObj.ForeColor = System.Drawing.Color.White;
+            this.bAddObj.HoverState.Parent = this.bAddObj;
+            this.bAddObj.Location = new System.Drawing.Point(238, 13);
+            this.bAddObj.Name = "bAddObj";
+            this.bAddObj.ShadowDecoration.Parent = this.bAddObj;
+            this.bAddObj.Size = new System.Drawing.Size(107, 47);
+            this.bAddObj.TabIndex = 123;
+            this.bAddObj.Text = "Thêm";
             // 
             // bFind
             // 
@@ -234,25 +233,25 @@
             this.bFind.TabIndex = 9;
             this.bFind.Text = "TÌM KIẾM";
             // 
-            // bChangeInfoItem
+            // bChangeInfoObj
             // 
-            this.bChangeInfoItem.Animated = true;
-            this.bChangeInfoItem.BackColor = System.Drawing.Color.Transparent;
-            this.bChangeInfoItem.BorderRadius = 15;
-            this.bChangeInfoItem.CheckedState.Parent = this.bChangeInfoItem;
-            this.bChangeInfoItem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bChangeInfoItem.CustomImages.Parent = this.bChangeInfoItem;
-            this.bChangeInfoItem.FillColor = System.Drawing.Color.DarkSlateBlue;
-            this.bChangeInfoItem.FillColor2 = System.Drawing.Color.Teal;
-            this.bChangeInfoItem.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.bChangeInfoItem.ForeColor = System.Drawing.Color.White;
-            this.bChangeInfoItem.HoverState.Parent = this.bChangeInfoItem;
-            this.bChangeInfoItem.Location = new System.Drawing.Point(372, 13);
-            this.bChangeInfoItem.Name = "bChangeInfoItem";
-            this.bChangeInfoItem.ShadowDecoration.Parent = this.bChangeInfoItem;
-            this.bChangeInfoItem.Size = new System.Drawing.Size(107, 47);
-            this.bChangeInfoItem.TabIndex = 120;
-            this.bChangeInfoItem.Text = "Sửa";
+            this.bChangeInfoObj.Animated = true;
+            this.bChangeInfoObj.BackColor = System.Drawing.Color.Transparent;
+            this.bChangeInfoObj.BorderRadius = 15;
+            this.bChangeInfoObj.CheckedState.Parent = this.bChangeInfoObj;
+            this.bChangeInfoObj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bChangeInfoObj.CustomImages.Parent = this.bChangeInfoObj;
+            this.bChangeInfoObj.FillColor = System.Drawing.Color.DarkSlateBlue;
+            this.bChangeInfoObj.FillColor2 = System.Drawing.Color.Teal;
+            this.bChangeInfoObj.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.bChangeInfoObj.ForeColor = System.Drawing.Color.White;
+            this.bChangeInfoObj.HoverState.Parent = this.bChangeInfoObj;
+            this.bChangeInfoObj.Location = new System.Drawing.Point(372, 13);
+            this.bChangeInfoObj.Name = "bChangeInfoObj";
+            this.bChangeInfoObj.ShadowDecoration.Parent = this.bChangeInfoObj;
+            this.bChangeInfoObj.Size = new System.Drawing.Size(107, 47);
+            this.bChangeInfoObj.TabIndex = 120;
+            this.bChangeInfoObj.Text = "Sửa";
             // 
             // bClear
             // 
@@ -275,25 +274,25 @@
             this.bClear.TabIndex = 8;
             this.bClear.Text = "X";
             // 
-            // bDeleteItem
+            // bDeleteObj
             // 
-            this.bDeleteItem.Animated = true;
-            this.bDeleteItem.BackColor = System.Drawing.Color.Transparent;
-            this.bDeleteItem.BorderRadius = 15;
-            this.bDeleteItem.CheckedState.Parent = this.bDeleteItem;
-            this.bDeleteItem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bDeleteItem.CustomImages.Parent = this.bDeleteItem;
-            this.bDeleteItem.FillColor = System.Drawing.Color.DarkSlateBlue;
-            this.bDeleteItem.FillColor2 = System.Drawing.Color.Teal;
-            this.bDeleteItem.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.bDeleteItem.ForeColor = System.Drawing.Color.White;
-            this.bDeleteItem.HoverState.Parent = this.bDeleteItem;
-            this.bDeleteItem.Location = new System.Drawing.Point(505, 13);
-            this.bDeleteItem.Name = "bDeleteItem";
-            this.bDeleteItem.ShadowDecoration.Parent = this.bDeleteItem;
-            this.bDeleteItem.Size = new System.Drawing.Size(107, 47);
-            this.bDeleteItem.TabIndex = 119;
-            this.bDeleteItem.Text = "Xóa";
+            this.bDeleteObj.Animated = true;
+            this.bDeleteObj.BackColor = System.Drawing.Color.Transparent;
+            this.bDeleteObj.BorderRadius = 15;
+            this.bDeleteObj.CheckedState.Parent = this.bDeleteObj;
+            this.bDeleteObj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bDeleteObj.CustomImages.Parent = this.bDeleteObj;
+            this.bDeleteObj.FillColor = System.Drawing.Color.DarkSlateBlue;
+            this.bDeleteObj.FillColor2 = System.Drawing.Color.Teal;
+            this.bDeleteObj.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.bDeleteObj.ForeColor = System.Drawing.Color.White;
+            this.bDeleteObj.HoverState.Parent = this.bDeleteObj;
+            this.bDeleteObj.Location = new System.Drawing.Point(505, 13);
+            this.bDeleteObj.Name = "bDeleteObj";
+            this.bDeleteObj.ShadowDecoration.Parent = this.bDeleteObj;
+            this.bDeleteObj.Size = new System.Drawing.Size(107, 47);
+            this.bDeleteObj.TabIndex = 119;
+            this.bDeleteObj.Text = "Xóa";
             // 
             // cbFind
             // 
@@ -400,29 +399,29 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2GradientButton bCancel;
-        private Guna.UI2.WinForms.Guna2GradientPanel pTieuDe;
-        private Guna.UI2.WinForms.Guna2GradientButton bFind;
-        private Guna.UI2.WinForms.Guna2GradientButton bClear;
-        private System.Windows.Forms.ComboBox cbFind;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2GradientButton bAddItem;
-        private Guna.UI2.WinForms.Guna2GradientButton bChangeInfoItem;
-        private Guna.UI2.WinForms.Guna2GradientButton bDeleteItem;
-        private System.Windows.Forms.DataGridView dgvMenu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtbcID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtbcName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtbcUnit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtbcSoLanPhucVu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtbcPrice;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
-        private Guna.UI2.WinForms.Guna2AnimateWindow ani;
-        private Guna.UI2.WinForms.Guna2ShadowPanel pCheck;
-        private Guna.UI2.WinForms.Guna2ImageButton bPrint;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
-        private System.Windows.Forms.ProgressBar progressBar;
+        protected Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        protected System.Windows.Forms.Label lHeader;
+        protected Guna.UI2.WinForms.Guna2GradientButton bCancel;
+        protected Guna.UI2.WinForms.Guna2GradientPanel pTieuDe;
+        protected Guna.UI2.WinForms.Guna2GradientButton bFind;
+        protected Guna.UI2.WinForms.Guna2GradientButton bClear;
+        protected System.Windows.Forms.ComboBox cbFind;
+        protected Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        protected Guna.UI2.WinForms.Guna2GradientButton bAddObj;
+        protected Guna.UI2.WinForms.Guna2GradientButton bChangeInfoObj;
+        protected Guna.UI2.WinForms.Guna2GradientButton bDeleteObj;
+        protected System.Windows.Forms.DataGridView dgvMenu;
+        protected System.Windows.Forms.DataGridViewTextBoxColumn dgvtbcID;
+        protected System.Windows.Forms.DataGridViewTextBoxColumn dgvtbcName;
+        protected System.Windows.Forms.DataGridViewTextBoxColumn dgvtbcUnit;
+        protected System.Windows.Forms.DataGridViewTextBoxColumn dgvtbcSoLanPhucVu;
+        protected System.Windows.Forms.DataGridViewTextBoxColumn dgvtbcPrice;
+        protected Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+        protected Guna.UI2.WinForms.Guna2AnimateWindow ani;
+        protected Guna.UI2.WinForms.Guna2ShadowPanel pCheck;
+        protected Guna.UI2.WinForms.Guna2ImageButton bPrint;
+        protected System.Windows.Forms.Label label2;
+        protected Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
+        protected System.Windows.Forms.ProgressBar progressBar;
     }
 }

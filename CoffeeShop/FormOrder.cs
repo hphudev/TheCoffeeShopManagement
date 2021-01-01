@@ -11,6 +11,8 @@ using System.Drawing.Printing;
 using System.Data.SqlClient;
 using Microsoft.Reporting.WinForms;
 using System.Drawing.Imaging;
+using DTO;
+using DAO;
 
 namespace CoffeeShopManagement
 {

@@ -8,19 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using DAO;
+using DTO;
+using BUS;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormExpense : Form
+    public partial class FormExpense : FormMain, IButtonOK, IError
     {
-        private FormSell parent;
-        private FormLock khoa;
+        #region Operations
         public FormExpense(FormSell parent)
         {
             try
             {
                 InitializeComponent();
-                this.parent = parent;
                 this.StartPosition = FormStartPosition.CenterScreen;
                 this.lID.Visible = false;
                 this.tbID.Visible = false;
@@ -29,7 +30,6 @@ namespace CoffeeShopManagement
                 this.bCancel.Location = new Point(this.bCancel.Location.X, this.bCancel.Location.Y - 50);
                 this.InitLockForm();
                 this.bCancel.Click += CancelClicked;
-                this.FormClosed += CloseForm;
                 this.cbType.TextChanged += ChooseType;
                 this.bOK.Click += OKClicked;
                 this.tbID.TextChanged += ChooseStaff;
@@ -40,7 +40,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 43 Form Expense)");
+                IO.ExportError("Lỗi không xác định\n(Form Expense)");
             }
         }
 
@@ -94,11 +94,11 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 97 Form Expense)");
+                IO.ExportError("Lỗi không xác định\n(Form Expense)");
             }
         }
 
-        private void OKClicked(object sender, EventArgs e)
+        public void OKClicked(object sender, EventArgs e)
         {
             try
             {
@@ -115,11 +115,11 @@ namespace CoffeeShopManagement
                 Data.AddData("CHITIEU", expense.GetInfo());
                 IO.ExportSuccess("Thêm chi tiêu thành công");
                 Event.CloseForm(this);
-                Event.CloseForm(this.khoa);
+                Event.CloseForm(this.lockForm);
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 120 Form Expense)");
+                IO.ExportError("Lỗi không xác định\n(Form Expense)");
             }
         }
 
@@ -212,19 +212,8 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 213 Form Expense)");
+                IO.ExportError("Lỗi không xác định\n(Form Expense)");
             }
-        }
-
-        private void CloseForm(object sender, FormClosedEventArgs e)
-        {
-            Event.ShowForm(this.parent);
-        }
-
-        private void CancelClicked(object sender, EventArgs e)
-        {
-            this.khoa.Close();
-            Event.CloseForm(this);
         }
 
         private void InitLockForm()
@@ -232,10 +221,6 @@ namespace CoffeeShopManagement
             //khoa = new FormLock(this);
             //this.khoa.Show();
         }
-
-        public void SetLockForm(ref FormLock khoa)
-        {
-            this.khoa = khoa;
-        }
+        #endregion
     }
 }

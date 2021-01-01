@@ -10,39 +10,47 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Runtime.InteropServices;
+using DTO;
+using DAO;
+using BUS;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormLogin : System.Windows.Forms.Form
+    public partial class FormLogin : FormMain, IButtonOK
     {
         #region Thư viện giao diện
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        #endregion 
+        #endregion
 
+        #region Atrributes
         private FormInit parent;
 
         public Account account { get; private set; }
+        #endregion
 
+        #region Operations
         public FormLogin(FormInit parent)
         {
             try
             {
+                #region Code
                 InitializeComponent();
                 this.DoubleBuffered = true;
-                this.btDangNhap.Click += LoginClicked;
+                this.btDangNhap.Click += OKClicked;
                 this.controlboxClose.Click += CancelClicked;
                 this.tbTenDangNhap.KeyPress += PressEnter;
                 this.tbMatKhau.KeyPress += PressEnter;
                 //this.tbMatKhau.PasswordChar = '*';
                 //this.bMinimize.Click += MinimizeClicked;
                 this.parent = parent;
+                #endregion
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 45 Form Login)");
+                IO.ExportError("Lỗi không xác định\n(Form Login)");
             }
         }
 
@@ -70,7 +78,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 73 Form Login)");
+                IO.ExportError("Lỗi không xác định\n(Form Login)");
             }
         }
 
@@ -91,13 +99,8 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 94 Form Login)");
+                IO.ExportError("Lỗi không xác định\n(Form Login)");
             }
-        }
-
-        private void PressEnter(object sender, KeyPressEventArgs e)
-        {
-            Event.PressEnter(sender, e, this);
         }
 
         public Account GetValidAccount(Account account, SqlDataReader reader)
@@ -122,17 +125,18 @@ namespace CoffeeShopManagement
 
                 return null;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 127 Form Login)");
+                IO.ExportError("Lỗi không xác định\n(Form Login)");
                 return null;
             }
         }
 
-        private void LoginClicked(object sender, EventArgs e)
+        public void OKClicked(object sender, EventArgs e)
         {
             try
             {
+                #region Code
                 if (this.tbTenDangNhap.Text == "" || this.tbMatKhau.Text == "")
                 {
                     IO.ExportError("Tên đăng nhập và mật khẩu không được để trống");
@@ -171,14 +175,15 @@ namespace CoffeeShopManagement
                         IO.ExportError("Mật khẩu không đúng");
                     }
                 }
+                #endregion
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 177 Form Login)");
+                IO.ExportError("Lỗi không xác định\n(Form Login)");
             }
         }
 
-        private void CancelClicked(object sender, EventArgs e)
+        public override void CancelClicked(object sender, EventArgs e)
         {
             Event.CloseForm(this);
             Event.CloseForm(this.parent);
@@ -201,7 +206,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 204 Form Login)");
+                IO.ExportError("Lỗi không xác định\n(Form Login)");
             }
         }
 
@@ -216,7 +221,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 219 Form Login)");
+                IO.ExportError("Lỗi không xác định\n(Form Login)");
             }
         }
 
@@ -232,7 +237,7 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 235 Form Login)");
+                IO.ExportError("Lỗi không xác định\n(Form Login)");
             }
         }
 
@@ -248,8 +253,9 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                IO.ExportError("Lỗi không xác định\n(Line 251 Form Login)");
+                IO.ExportError("Lỗi không xác định\n(Form Login)");
             }
         }
+        #endregion
     }
 }

@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using DTO;
+using DAO;
 
 namespace CoffeeShopManagement
 {
@@ -518,7 +520,7 @@ namespace CoffeeShopManagement
                 IO.ExportWarning("Bạn không được cấp quyền tính năng này!");
                 return;
             }
-            FormStatistic cus = new FormStatistic(this);
+            FormStatistic cus = new FormStatistic();
             FormLock ltmp = new FormLock();
             ltmp.Show();
             cus.Show();
