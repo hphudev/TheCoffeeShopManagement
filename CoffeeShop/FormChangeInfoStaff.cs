@@ -14,7 +14,7 @@ using BUS;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormChangeInfoStaff : FormChangeInfoObj
+    public partial class FormChangeInfoStaff : FormStaff, IImage, IFormMain, IButtonReset
     {
         #region Operations
         public FormChangeInfoStaff(FormMenuStaff parent) : base(parent)
@@ -42,11 +42,11 @@ namespace CoffeeShopManagement
             }
         }
 
-        public override void Autofill() 
+        public void Autofill() 
         {
             try
             {
-                Staff selectedStaff = (Staff)this.parent.GetSelectedObj();
+                Staff selectedStaff = (Staff)((FormMenuStaff)this.parent).GetSelectedObj();
                 Account selectedAccount = selectedStaff.GetAccount();
                 this.tbName.Text = selectedStaff.name;
                 this.tbAddress.Text = selectedStaff.address;
@@ -65,13 +65,13 @@ namespace CoffeeShopManagement
             }
         }
 
-        public override void AddImageClicked(object sender, EventArgs e)
+        public void AddImageClicked(object sender, EventArgs e)
         {
-            Staff selectedStaff = (Staff)this.parent.GetSelectedObj();
+            Staff selectedStaff = (Staff)((FormMenuStaff)this.parent).GetSelectedObj();
             (new ChangeStaff()).AddImageClicked(ref this.pbImage, selectedStaff);
         }
 
-        private void ResetClicked(object sender, EventArgs e)
+        public void ResetClicked(object sender, EventArgs e)
         {
             Autofill();
         }
@@ -96,15 +96,16 @@ namespace CoffeeShopManagement
             }
         }
 
-        public override void ChangeInfoObj()
+        public override void ModifyObj()
         {
-            Staff selectedStaff = (Staff)this.parent.GetSelectedObj();
+            Staff selectedStaff = (Staff)((FormMenuStaff)this.parent).GetSelectedObj();
             Staff updatedStaff = new Staff(selectedStaff.id.ToString(), selectedStaff.name,
-                tbAddress.Text, selectedStaff.sdt, selectedStaff.sex, selectedStaff.date,
+                this.tbAddress.Text, selectedStaff.sdt, selectedStaff.sex, selectedStaff.date,
                 selectedStaff.cmnd, this.cbPosition.Text, int.Parse(this.tbSalary.Text));
             Account updatedAccount = new Account(selectedStaff.id.ToString(), this.tbUsername.Text,
                 Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()), true);
             (new ChangeStaff()).ChangeInfoObj(updatedStaff, updatedAccount);
+            Event.CloseForm(this);
         }
 
         #endregion

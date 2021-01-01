@@ -21,3 +21,14 @@ C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\G
 C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_3\TheCoffeeShopManagement\IOC\obj\Debug\IOC.csproj.CopyComplete
 C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_3\TheCoffeeShopManagement\IOC\obj\Debug\IOC.exe
 C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_3\TheCoffeeShopManagement\IOC\obj\Debug\IOC.pdb
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_4\TheCoffeeShopManagement\IOC\bin\Debug\IOC.exe.config
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_4\TheCoffeeShopManagement\IOC\bin\Debug\IOC.exe
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_4\TheCoffeeShopManagement\IOC\bin\Debug\IOC.pdb
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_4\TheCoffeeShopManagement\IOC\obj\Debug\IOC.csprojAssemblyReference.cache
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_4\TheCoffeeShopManagement\IOC\obj\Debug\IOC.Form_Alert.resources
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_4\TheCoffeeShopManagement\IOC\obj\Debug\IOC.Properties.Resources.resources
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_4\TheCoffeeShopManagement\IOC\obj\Debug\IOC.csproj.GenerateResource.cache
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_4\TheCoffeeShopManagement\IOC\obj\Debug\IOC.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_4\TheCoffeeShopManagement\IOC\obj\Debug\IOC.csproj.CopyComplete
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_4\TheCoffeeShopManagement\IOC\obj\Debug\IOC.exe
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_4\TheCoffeeShopManagement\IOC\obj\Debug\IOC.pdb

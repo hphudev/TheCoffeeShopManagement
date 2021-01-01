@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoffeeShopManagement
 {
-    public interface IButtonOK : IForm
+    public interface IButtonOK
     {
         void OKClicked(object sender, EventArgs e);
     }

@@ -38,7 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pUser = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.Load = new CoffeeShopManagement.PictureboxBuffered();
+            this.load = new CoffeeShopManagement.PictureboxBuffered();
             this.label3 = new System.Windows.Forms.Label();
             this.pbEye = new System.Windows.Forms.PictureBox();
             this.btDangNhap = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -53,7 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btThoat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Load)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.load)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEye)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,7 +152,7 @@
             // 
             // pUser
             // 
-            this.pUser.Controls.Add(this.Load);
+            this.pUser.Controls.Add(this.load);
             this.pUser.Controls.Add(this.label3);
             this.pUser.Controls.Add(this.pbEye);
             this.pUser.Controls.Add(this.btDangNhap);
@@ -166,17 +166,17 @@
             this.pUser.Size = new System.Drawing.Size(479, 332);
             this.pUser.TabIndex = 3;
             // 
-            // Load
+            // load
             // 
-            this.Load.BackColor = System.Drawing.Color.Gainsboro;
-            this.Load.Image = global::CoffeeShopManagement.Properties.Resources._4RNk;
-            this.Load.Location = new System.Drawing.Point(0, 0);
-            this.Load.Name = "Load";
-            this.Load.Size = new System.Drawing.Size(488, 332);
-            this.Load.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Load.TabIndex = 11;
-            this.Load.TabStop = false;
-            this.Load.Visible = false;
+            this.load.BackColor = System.Drawing.Color.Gainsboro;
+            this.load.Image = global::CoffeeShopManagement.Properties.Resources._4RNk;
+            this.load.Location = new System.Drawing.Point(0, 0);
+            this.load.Name = "Load";
+            this.load.Size = new System.Drawing.Size(488, 332);
+            this.load.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.load.TabIndex = 11;
+            this.load.TabStop = false;
+            this.load.Visible = false;
             // 
             // label3
             // 
@@ -329,7 +329,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pUser.ResumeLayout(false);
             this.pUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Load)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.load)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEye)).EndInit();
             this.ResumeLayout(false);
 
@@ -348,7 +348,7 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
         private System.Windows.Forms.PictureBox pbEye;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private PictureboxBuffered Load;
+        private PictureboxBuffered load;
         private System.Windows.Forms.Label label3;
         private PictureboxBuffered Restart;
         private PictureboxBuffered btThoat;

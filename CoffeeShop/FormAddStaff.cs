@@ -15,7 +15,7 @@ using BUS;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormAddStaff : FormAddObj
+    public partial class FormAddStaff : FormStaff, IImage, IButtonReset
     {
         public FormAddStaff(FormMenuStaff parent) : base(parent)
         {
@@ -55,12 +55,12 @@ namespace CoffeeShopManagement
             }
         }
 
-        public override void AddImageClicked(object sender, EventArgs e)
+        public void AddImageClicked(object sender, EventArgs e)
         {
             (new AddStaff()).AddImageClicked(ref this.pbImage);
         }
 
-        private void ResetClicked(object sender, EventArgs e)
+        public void ResetClicked(object sender, EventArgs e)
         {
             this.tbName.Text = "";
             this.tbCMND.Text = "";
@@ -94,7 +94,7 @@ namespace CoffeeShopManagement
             return false;
         }
 
-        public override void AddObj()
+        public override void ModifyObj()
         {
             Staff newStaff = new Staff("", this.tbName.Text, this.tbAddress.Text, this.tbSDT.Text,
                 this.cbSex.Text, DateTime.Today.Year.ToString() + "/" + DateTime.Today.Month.ToString() +
@@ -103,7 +103,11 @@ namespace CoffeeShopManagement
             Account account = new Account(newStaff.id.ToString(), this.tbUsername.Text,
                 Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()),
                 true);
-            (new AddStaff()).AddNewObj(newStaff, account);
+            
+            if ((new AddStaff()).AddNewObj(newStaff, account))
+            {
+                Event.CloseForm(this);
+            }
         }
 
     }

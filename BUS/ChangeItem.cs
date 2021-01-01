@@ -22,7 +22,6 @@ namespace BUS
             Data.UpdateData("MON", "DVT = '" + updatedItem.unit + "', GIA = '" + updatedItem.price +
                 "'", " WHERE MAMON = '" + updatedItem.id.ToString() + "'");
             IO.ExportSuccess("Sửa món thành công");
-            
         }
 
     }

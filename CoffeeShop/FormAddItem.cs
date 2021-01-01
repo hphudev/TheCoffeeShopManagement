@@ -15,7 +15,7 @@ using DAO;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormAddItem : FormAddObj
+    public partial class FormAddItem : FormItem, IImage
     {
         public FormAddItem(FormMenuItem parent) : base(parent)
         {
@@ -31,6 +31,9 @@ namespace CoffeeShopManagement
                 this.tbPrice.KeyPress += IO.LockWord;
                 this.lID.Text = ID.FindNewID("MON", " ORDER BY MAMON DESC", "MAMON", "M", 
                     3).ToString();
+                this.tbName.TabIndex = 0;
+                this.cbUnit.TabIndex = 1;
+                this.tbPrice.TabIndex = 2;
             }
             catch (Exception)
             {
@@ -39,7 +42,7 @@ namespace CoffeeShopManagement
 
         }
 
-        public override void AddImageClicked(object sender, EventArgs e)
+        public void AddImageClicked(object sender, EventArgs e)
         {
             (new AddItem()).AddImageClicked(ref this.pbImageItem);
         }
@@ -56,12 +59,16 @@ namespace CoffeeShopManagement
             return false;
         }
 
-        public override void AddObj()
+        public override void ModifyObj()
         {
             Item newItem = new Item("", this.tbName.Text, this.cbUnit.Text, 0, 
                 int.Parse(this.tbPrice.Text), true);
-            (new AddItem()).AddNewObj(newItem);
-            this.parent.parent.LoadSomeThingPublic();
+
+            if ((new AddItem()).AddNewObj(newItem))
+            {
+                this.parent.parent.LoadSomeThingPublic();
+                Event.CloseForm(this);
+            }
         }
 
     }

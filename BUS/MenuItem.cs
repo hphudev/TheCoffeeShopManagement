@@ -11,9 +11,9 @@ using DTO;
 
 namespace BUS
 {
-    public class MenuItem : Menu
+    public class MenuItem : Menu, IMenu
     {
-        public override object GetSelectedObj(DataGridView dgvMenu)
+        public object GetSelectedObj(DataGridView dgvMenu)
         {
             try
             {
@@ -30,19 +30,14 @@ namespace BUS
             }
         }
 
-        public override void AddData(ref AutoCompleteStringCollection sourceData,
-            ref object sharedVariable, SqlDataReader reader)
+        public void AddRow(SqlDataReader reader, DataGridView menu, ComboBox finder,
+            AutoCompleteStringCollection sourceData)
         {
             Item item = Initialization.InitItemFromReader(reader);
-            sourceData.Add(item.name);
-            sharedVariable = (object)item;
-        }
-
-        public override void AddRow(object data, DataGridView menu)
-        {
-            Item item = (Item)data;
             menu.Rows.Add(item.id.ToString(), item.name, item.unit, item.numberOfServings,
                 item.price);
+            finder.Items.Add(item.name);
+            sourceData.Add(item.name);
         }
 
         public override void DeleteObj(DataGridView dgvMenu)

@@ -109,17 +109,23 @@
     <Compile Include="FlowLayoutPanelBuffered.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FormAddObj.cs">
+    <Compile Include="Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddObj.Designer.cs">
-      <DependentUpon>FormAddObj.cs</DependentUpon>
+    <Compile Include="Form.Designer.cs">
+      <DependentUpon>Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormChangeInfoObj.cs">
+    <Compile Include="FormItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormChangeInfoObj.Designer.cs">
-      <DependentUpon>FormChangeInfoObj.cs</DependentUpon>
+    <Compile Include="FormItem.Designer.cs">
+      <DependentUpon>FormItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStaff.Designer.cs">
+      <DependentUpon>FormStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMenuItem.cs">
       <SubType>Form</SubType>
@@ -132,6 +138,12 @@
     </Compile>
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormObj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormObj.Designer.cs">
+      <DependentUpon>FormObj.cs</DependentUpon>
     </Compile>
     <Compile Include="FormReport.cs">
       <SubType>Form</SubType>
@@ -283,11 +295,12 @@
     <Compile Include="FormTienKhachDua.Designer.cs">
       <DependentUpon>FormTienKhachDua.cs</DependentUpon>
     </Compile>
+    <Compile Include="IButtonReset.cs" />
     <Compile Include="IError.cs" />
     <Compile Include="IFormMain.cs" />
-    <Compile Include="IForm.cs" />
     <Compile Include="IButtonOK.cs" />
     <Compile Include="IImage.cs" />
+    <Compile Include="IMenu.cs" />
     <Compile Include="ListItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -356,8 +369,8 @@
     <Compile Include="Table.Designer.cs">
       <DependentUpon>Table.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormChangeInfoObj.resx">
-      <DependentUpon>FormChangeInfoObj.cs</DependentUpon>
+    <EmbeddedResource Include="FormStaff.resx">
+      <DependentUpon>FormStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenuItem.resx">
       <DependentUpon>FormMenuItem.cs</DependentUpon>

@@ -18,7 +18,7 @@ namespace BUS
                 "MANV", "NV", 2).ToString());
         }
 
-        public override void AddNewObj(object staff, object updatedAccount)
+        public override bool AddNewObj(object staff, object updatedAccount)
         {
             Staff newStaff = (Staff)staff;
             Account account = (Account)updatedAccount;
@@ -26,16 +26,17 @@ namespace BUS
 
             if (flag == 0 || flag == -1)
             {
-                return;
+                return false;
             }
             else
             {
                 if (Account.IsUsername(account.username))
                 {
+                    account.id = new ID(newStaff.id.ToString());
+
                     if (flag == 1)
                     {
                         Data.AddData("NHANVIEN", newStaff.GetInfo());
-                        account.id = new ID(newStaff.id.ToString());
                         Data.AddData("TAIKHOAN", account.GetInfo());
                     }
 
@@ -53,10 +54,12 @@ namespace BUS
                     }
 
                     IO.ExportSuccess("Thêm nhân viên thành công");
+                    return true;
                 }
                 else
                 {
                     IO.ExportError("Tên đăng nhập đã tồn tại");
+                    return false;
                 }
             }
         }

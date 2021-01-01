@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoffeeShopManagement
 {
-    public interface IFormMain : IForm
+    public interface IFormMain
     {
         void Autofill();
     }

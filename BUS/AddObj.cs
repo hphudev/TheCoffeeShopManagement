@@ -12,7 +12,7 @@ namespace BUS
 {
     public abstract class AddObj : Obj
     {
-        public abstract void AddNewObj(object arg1, object arg2 = null);
+        public abstract bool AddNewObj(object arg1, object arg2 = null);
 
     }
 }

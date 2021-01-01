@@ -17,7 +17,7 @@ namespace BUS
                 "MAMON", "M", 3).ToString());
         }
 
-        public override void AddNewObj(object item, object tmp = null)
+        public override bool AddNewObj(object item, object tmp = null)
         {
             Item newItem = (Item)item;
 
@@ -26,7 +26,7 @@ namespace BUS
                 case 0:
                 {
                     IO.ExportError("Món này đã có trong danh sách");
-                    return;
+                    return false;
                 }
                 case 1:
                 {
@@ -42,11 +42,12 @@ namespace BUS
                 }
                 case -1:
                 {
-                    return;
+                    return false;
                 }
             }
 
             IO.ExportSuccess("Thêm món thành công");
+            return true;
         }
 
     }

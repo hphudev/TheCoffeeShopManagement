@@ -19,12 +19,14 @@ namespace CoffeeShopManagement
     {
         protected BackgroundWorker loader;
         protected AutoCompleteStringCollection sourceData;
-        protected Semaphore[] semaphores;
-        protected object obj;
 
         public FormSell parent { get; }
 
-        public FormMenu() { }
+        public FormMenu() 
+        {
+
+        }
+
         public FormMenu(FormSell parent)
         {
             try
@@ -37,11 +39,10 @@ namespace CoffeeShopManagement
                 //this.bFind.Click += FindObjClicked;
                 //this.bCancel.Click += CancelClicked;
                 this.loader = new BackgroundWorker();
-                this.loader.DoWork += LoadData;
                 this.loader.WorkerReportsProgress = true;
-                this.loader.RunWorkerCompleted += FinishWork;
-                this.loader.ProgressChanged += ShowProgress;
-                this.loader.RunWorkerAsync();
+                //this.loader.ProgressChanged += ShowProgress;
+                //this.Load += LoadForm;
+                this.sourceData = new AutoCompleteStringCollection();
                 //this.bClear.Click += ClearContent;
                 //this.bPrint.Click += PrintClicked;
             }
@@ -51,46 +52,67 @@ namespace CoffeeShopManagement
             }
         }
 
-        public virtual void ClearMenu()
-        {
-            //(new BUS.Menu()).ClearMenu(this.dgvMenu);
-        }
+        //public virtual void ClearMenu()
+        //{
+        //    (new BUS.Menu()).ClearMenu(this.dgvMenu);
+        //}
 
         public void LoadMenu()
         {
             (new BUS.Menu()).LoadMenu(this.loader);
         }
 
-        public virtual void LoadData(object sender, DoWorkEventArgs e)
+        public virtual void AddRow(SqlDataReader reader)
         {
 
         }
 
-        public virtual void ShowProgress(object sender, ProgressChangedEventArgs e)
+        public void LoadData(string table, string condition, string column)
         {
+            SqlConnection connection = Data.OpenConnection();
+            SqlDataReader reader = Data.ReadData(table, connection, condition, column);
+            int count = Data.Calculate("COUNT", column, table, condition);
+            int dem = 0;
 
+            while (reader.HasRows)
+            {
+                dem++;
+
+                if (!reader.Read())
+                {
+                    return;
+                }
+
+                Invoke((MethodInvoker)delegate
+                {
+                    AddRow(reader);
+                });
+
+                this.loader.ReportProgress((dem * 100) / count);
+            }
+
+            Data.CloseConnection(ref connection);
         }
 
-        public virtual void FinishWork(object sender, RunWorkerCompletedEventArgs e)
+        //public void ShowProgress(object sender, ProgressChangedEventArgs e)
+        //{
+        //    (new BUS.Menu()).ShowProgress(this.progressBar, e);
+        //}
+
+        //public void LoadForm(object sender, EventArgs e)
+        //{
+        //    this.dgvMenu.Rows.Clear();
+        //    LoadMenu();
+        //}
+
+        public virtual void DeleteObj()
         {
-            //BUS.Menu.FinishWork(ref this.cbFind, this.sourceData);
+
         }
 
         public virtual void DeleteObjClicked(object sender, EventArgs e)
         {
-            //if (this.dgvMenu.Rows.Count != 0)
-            //{
-            //    (new BUS.Menu()).DeleteObj(this.dgvMenu, this.loader);
-            //}
-            //else
-            //{
-            //    IO.ExportError("Hành động không hợp lệ");
-            //}
-        }
-
-        public virtual void FindObjClicked(object sender, EventArgs e)
-        {
-
+            DeleteObj();
         }
 
         public virtual FormMain InitFormReport()
@@ -112,12 +134,12 @@ namespace CoffeeShopManagement
             ShowForm(InitFormReport());
         }
 
-        public virtual void ClearContent(object sender, EventArgs e)
-        {
-            //BUS.Menu.ClearContent(this.cbFind);
-        }
+        //public virtual void ClearContent(object sender, EventArgs e)
+        //{
+        //    BUS.Menu.ClearContent(this.cbFind);
+        //}
 
-        public virtual FormAddObj InitFormAddObj()
+        public virtual FormObj InitFormAddObj()
         {
             return null;
         }
@@ -127,28 +149,22 @@ namespace CoffeeShopManagement
             ShowForm(InitFormAddObj());
         }
 
-        public virtual FormChangeInfoObj InitFormChangeInfoObj()
+        public virtual FormObj InitFormChangeInfoObj()
         {
             return null;
         }
 
-        public virtual void ChangeInfoObjClicked(object sender, EventArgs e)
-        {
-            if (this.dgvMenu != null && this.dgvMenu.Rows.Count != 0)
-            {
-                ShowForm(InitFormChangeInfoObj());
-            }
-            else
-            {
-                IO.ExportError("Hành động không hợp lệ");
-            }
-        }
-
-        public virtual object GetSelectedObj()
-        {
-            //return (new BUS.Menu()).GetSelectedObj(this.dgvMenu);
-            return null;
-        }
+        //public virtual void ChangeInfoObjClicked(object sender, EventArgs e)
+        //{
+        //    if (this.dgvMenu != null && this.dgvMenu.Rows.Count != 0)
+        //    {
+        //        ShowForm(InitFormChangeInfoObj());
+        //    }
+        //    else
+        //    {
+        //        IO.ExportError("Hành động không hợp lệ");
+        //    }
+        //}
 
     }
 }
