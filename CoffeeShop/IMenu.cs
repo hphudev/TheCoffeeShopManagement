@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CoffeeShopManagement
 {
-    public interface IMenu
+    public interface IMenu : IForm
     {
         void ClearMenu();
 

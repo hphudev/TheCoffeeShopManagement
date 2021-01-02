@@ -9,7 +9,7 @@ using DTO;
 
 namespace BUS
 {
-    public class AddItem : AddObj
+    public class AddItem : ObjItem, IAddObj
     {
         public override void AddImageClicked(ref PictureBox pbImageItem, object item = null)
         {
@@ -17,7 +17,7 @@ namespace BUS
                 "MAMON", "M", 3).ToString());
         }
 
-        public override bool AddNewObj(object item, object tmp = null)
+        public bool AddNewObj(object item, object tmp = null)
         {
             Item newItem = (Item)item;
 

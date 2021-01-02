@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace CoffeeShopManagement
 {
-    public interface IButtonReset
+    public interface IButtonReset : IButton
     {
         void ResetClicked(object sender, EventArgs e);
+
     }
 }

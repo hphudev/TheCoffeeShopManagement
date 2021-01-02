@@ -9,7 +9,7 @@ using DAO;
 
 namespace BUS
 {
-    public class ChangeStaff : ChangeObj
+    public class ChangeStaff : ObjStaff, IChangeObj
     {
         public override void AddImageClicked(ref PictureBox pbImageItem, object staff = null)
         {
@@ -17,7 +17,7 @@ namespace BUS
             AddImage(ref pbImageItem, "./ImageStaff/", ((Staff)staff).id.ToString());
         }
 
-        public override void ChangeInfoObj(object staff, object account = null)
+        public void ChangeInfoObj(object staff, object account = null)
         {
             Staff updatedStaff = (Staff)staff;
             Account updatedAccount = (Account)account;

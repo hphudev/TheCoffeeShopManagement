@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace CoffeeShopManagement
 {
-    public interface IError
+    public interface IError : IForm
     {
         bool IsError();
+
     }
 }

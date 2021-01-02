@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace CoffeeShopManagement
 {
-    public interface IImage
+    public interface IImage : IForm
     {
         void AddImageClicked(object sender, EventArgs e);
+
     }
 }

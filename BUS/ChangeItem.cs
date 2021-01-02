@@ -9,14 +9,14 @@ using DAO;
 
 namespace BUS
 {
-    public class ChangeItem : ChangeObj
+    public class ChangeItem : ObjItem, IChangeObj
     {
         public override void AddImageClicked(ref PictureBox pbImageItem, object item = null)
         {
             AddImage(ref pbImageItem, "./ImageItem/", ((Item)item).id.ToString());
         }
 
-        public override void ChangeInfoObj(object item, object arg = null)
+        public void ChangeInfoObj(object item, object arg = null)
         {
             Item updatedItem = (Item)item;
             Data.UpdateData("MON", "DVT = '" + updatedItem.unit + "', GIA = '" + updatedItem.price +

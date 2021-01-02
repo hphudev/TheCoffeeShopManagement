@@ -12,7 +12,7 @@ using DTO;
 
 namespace BUS
 {
-    public class Menu
+    public class Menu : Class
     {
         public static DataGridViewRow GetInfoOfSelectedObj(DataGridView dgvMenu)
         {

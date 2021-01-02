@@ -14,7 +14,7 @@ using BUS;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormChangeInfoItem : FormItem, IImage, IFormMain
+    public partial class FormChangeInfoItem : FormItem, IImage, IAutofillForm
     {
         #region Operations
         public FormChangeInfoItem(FormMenuItem parent) : base(parent)

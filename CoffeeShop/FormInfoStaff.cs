@@ -15,7 +15,7 @@ using BUS;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormInfoStaff : FormMain, IButtonOK, IFormMain
+    public partial class FormInfoStaff : FormMain, IButtonOK, IAutofillForm
     {
         #region Attributes
         private Account account;

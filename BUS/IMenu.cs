@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace BUS
 {
-    public interface IMenu
+    public interface IMenu : IClass
     {
         object GetSelectedObj(DataGridView dgvMenu);
 

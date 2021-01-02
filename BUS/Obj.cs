@@ -11,7 +11,7 @@ using DTO;
 
 namespace BUS
 {
-    public abstract class Obj
+    public abstract class Obj : Class
     {
         public void AddImage(ref PictureBox pbImageItem, string path, string name)
         {

@@ -295,9 +295,11 @@
     <Compile Include="FormTienKhachDua.Designer.cs">
       <DependentUpon>FormTienKhachDua.cs</DependentUpon>
     </Compile>
+    <Compile Include="IButton.cs" />
     <Compile Include="IButtonReset.cs" />
     <Compile Include="IError.cs" />
-    <Compile Include="IFormMain.cs" />
+    <Compile Include="IForm.cs" />
+    <Compile Include="IAutofillForm.cs" />
     <Compile Include="IButtonOK.cs" />
     <Compile Include="IImage.cs" />
     <Compile Include="IMenu.cs" />
@@ -491,6 +493,7 @@
     <EmbeddedResource Include="Table.resx">
       <DependentUpon>Table.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

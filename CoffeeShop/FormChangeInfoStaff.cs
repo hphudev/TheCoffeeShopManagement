@@ -14,7 +14,7 @@ using BUS;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormChangeInfoStaff : FormStaff, IImage, IFormMain, IButtonReset
+    public partial class FormChangeInfoStaff : FormStaff, IImage, IAutofillForm, IButtonReset
     {
         #region Operations
         public FormChangeInfoStaff(FormMenuStaff parent) : base(parent)
