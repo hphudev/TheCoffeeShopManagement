@@ -18,6 +18,10 @@ namespace DTO
         public string password { get; }
 
         public bool status { get; }
+
+        public string email { get; }
+
+        public string OTP { get; }
         #endregion
 
         #region Operations
@@ -39,7 +43,7 @@ namespace DTO
             }
         }
 
-        public Account(string id, string username, string password, bool status)
+        public Account(string id, string username, string password, bool status, string email, string OTP)
         {
             try
             {
@@ -47,6 +51,8 @@ namespace DTO
                 this.username = username;
                 this.password = password;
                 this.status = status;
+                this.email = email;
+                this.OTP = OTP;
             }
             catch (Exception)
             {
@@ -59,7 +65,7 @@ namespace DTO
             try
             {
                 return "'" + this.id.ToString() + "', '" + this.username + "', '" + this.password +
-                    "', '" + this.status + "'";
+                    "', '" + this.status + "'" + $", N'{this.email}'" + $",'{this.OTP}'";
             }
             catch (Exception)
             {

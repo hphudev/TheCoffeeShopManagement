@@ -24,7 +24,7 @@ namespace CoffeeShopManagement
             check.Tick += (s, e) =>
             {
                 lbKyTu.Text = tbNoiDung.Text.Length.ToString() + " ký tự";
-                if (tbNoiDung.Text.Length > 2000)
+                if (tbNoiDung.Text.Length >= 2000)
                     tbNoiDung.ReadOnly = true;
                 else
                     tbNoiDung.ReadOnly = false;
@@ -159,6 +159,13 @@ namespace CoffeeShopManagement
             }
             FormCaiDatThongBao_Load(this, new EventArgs());
             IO.ExportSuccess("TÒ TÒ TÒ TEEEEEE");
+        }
+
+        private void TbNoiDung_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar))
+                tbNoiDung.ReadOnly = false;
+            e.Handled = false;
         }
     }
 }

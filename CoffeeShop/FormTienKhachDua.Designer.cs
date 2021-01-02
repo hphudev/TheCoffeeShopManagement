@@ -34,6 +34,7 @@
             this.tbManHinh = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbTienCanDua = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btThoat = new ns1.BunifuThinButton2();
             this.btXacNhan = new ns1.BunifuThinButton2();
@@ -94,6 +95,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.Controls.Add(this.lbTienCanDua);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btThoat);
             this.panel2.Controls.Add(this.btXacNhan);
@@ -116,13 +118,24 @@
             this.panel2.Size = new System.Drawing.Size(673, 498);
             this.panel2.TabIndex = 5;
             // 
+            // lbTienCanDua
+            // 
+            this.lbTienCanDua.Font = new System.Drawing.Font("Segoe UI", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTienCanDua.ForeColor = System.Drawing.Color.DeepPink;
+            this.lbTienCanDua.Location = new System.Drawing.Point(334, 6);
+            this.lbTienCanDua.Name = "lbTienCanDua";
+            this.lbTienCanDua.Size = new System.Drawing.Size(327, 91);
+            this.lbTienCanDua.TabIndex = 26;
+            this.lbTienCanDua.Text = "100000000";
+            this.lbTienCanDua.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::CoffeeShopManagement.Properties.Resources.Dolar;
-            this.pictureBox1.Location = new System.Drawing.Point(384, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(237, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(244, 91);
+            this.pictureBox1.Size = new System.Drawing.Size(89, 91);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -566,5 +579,6 @@
         private ns1.BunifuThinButton2 btThoat;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbTienCanDua;
     }
 }

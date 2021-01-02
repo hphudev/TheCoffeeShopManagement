@@ -38,7 +38,7 @@ namespace CoffeeShopManagement
             this.parent = parent;
             //this.BangKhoa = new FormLock(this);
             this.Location = this.Location;
-            tienKhachDua = 0;
+            tienKhachDua = -1;
             checkFormTienKhachDua.Interval = 5;
             checkFormTienKhachDua.Tick += ThanhToan;
             checkIdTable.Interval = 5;
@@ -62,7 +62,7 @@ namespace CoffeeShopManagement
         string count;
         private void ThanhToan(object sender, EventArgs e)
         {
-            if (tienKhachDua > 0)
+            if (tienKhachDua >= 0)
             {
                 checkFormTienKhachDua.Stop();
                 if (this.tableChoice != null)
@@ -120,12 +120,12 @@ namespace CoffeeShopManagement
                 this.parent.LoadSomeThingPublic();
                 this.Close();
             }
-            else
-                if (tienKhachDua == -1)
-                {
-                    checkFormTienKhachDua.Stop();
-                    this.Close();
-                }
+            //else
+            //    if (tienKhachDua == -1)
+            //    {
+            //        checkFormTienKhachDua.Stop();
+            //        this.Close();
+            //    }
         }
 
         #region Vùng bí ẩn

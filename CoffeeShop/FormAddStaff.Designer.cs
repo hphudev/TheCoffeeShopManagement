@@ -63,6 +63,8 @@
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
@@ -122,7 +124,7 @@
             this.bCancel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.bCancel.ForeColor = System.Drawing.Color.White;
             this.bCancel.HoverState.Parent = this.bCancel;
-            this.bCancel.Location = new System.Drawing.Point(292, 806);
+            this.bCancel.Location = new System.Drawing.Point(292, 827);
             this.bCancel.Name = "bCancel";
             this.bCancel.ShadowDecoration.Parent = this.bCancel;
             this.bCancel.Size = new System.Drawing.Size(118, 47);
@@ -142,7 +144,7 @@
             this.bReset.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.bReset.ForeColor = System.Drawing.Color.White;
             this.bReset.HoverState.Parent = this.bReset;
-            this.bReset.Location = new System.Drawing.Point(163, 806);
+            this.bReset.Location = new System.Drawing.Point(163, 827);
             this.bReset.Name = "bReset";
             this.bReset.ShadowDecoration.Parent = this.bReset;
             this.bReset.Size = new System.Drawing.Size(118, 47);
@@ -162,7 +164,7 @@
             this.bOK.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.bOK.ForeColor = System.Drawing.Color.White;
             this.bOK.HoverState.Parent = this.bOK;
-            this.bOK.Location = new System.Drawing.Point(26, 806);
+            this.bOK.Location = new System.Drawing.Point(26, 827);
             this.bOK.Name = "bOK";
             this.bOK.ShadowDecoration.Parent = this.bOK;
             this.bOK.Size = new System.Drawing.Size(124, 47);
@@ -173,6 +175,8 @@
             // 
             this.guna2GroupBox2.AutoScroll = true;
             this.guna2GroupBox2.BorderRadius = 10;
+            this.guna2GroupBox2.Controls.Add(this.label2);
+            this.guna2GroupBox2.Controls.Add(this.tbEmail);
             this.guna2GroupBox2.Controls.Add(this.label20);
             this.guna2GroupBox2.Controls.Add(this.tbConfirm);
             this.guna2GroupBox2.Controls.Add(this.label21);
@@ -184,7 +188,7 @@
             this.guna2GroupBox2.Location = new System.Drawing.Point(12, 404);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
-            this.guna2GroupBox2.Size = new System.Drawing.Size(398, 389);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(398, 417);
             this.guna2GroupBox2.TabIndex = 113;
             this.guna2GroupBox2.Text = "Thông tin đăng nhập";
             // 
@@ -195,7 +199,7 @@
             this.label20.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label20.Location = new System.Drawing.Point(10, 270);
+            this.label20.Location = new System.Drawing.Point(10, 225);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(158, 23);
             this.label20.TabIndex = 16;
@@ -222,7 +226,7 @@
             this.tbConfirm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbConfirm.HoverState.Parent = this.tbConfirm;
             this.tbConfirm.IconLeft = global::CoffeeShopManagement.Properties.Resources.password;
-            this.tbConfirm.Location = new System.Drawing.Point(14, 303);
+            this.tbConfirm.Location = new System.Drawing.Point(14, 260);
             this.tbConfirm.Margin = new System.Windows.Forms.Padding(2);
             this.tbConfirm.Name = "tbConfirm";
             this.tbConfirm.PasswordChar = '\0';
@@ -242,7 +246,7 @@
             this.label21.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label21.Location = new System.Drawing.Point(10, 168);
+            this.label21.Location = new System.Drawing.Point(10, 135);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(86, 23);
             this.label21.TabIndex = 14;
@@ -269,7 +273,7 @@
             this.tbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbPassword.HoverState.Parent = this.tbPassword;
             this.tbPassword.IconLeft = global::CoffeeShopManagement.Properties.Resources.password1;
-            this.tbPassword.Location = new System.Drawing.Point(14, 204);
+            this.tbPassword.Location = new System.Drawing.Point(14, 165);
             this.tbPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '\0';
@@ -289,7 +293,7 @@
             this.label23.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label23.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label23.Location = new System.Drawing.Point(10, 70);
+            this.label23.Location = new System.Drawing.Point(10, 47);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(128, 23);
             this.label23.TabIndex = 9;
@@ -316,7 +320,7 @@
             this.tbUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbUsername.HoverState.Parent = this.tbUsername;
             this.tbUsername.IconLeft = global::CoffeeShopManagement.Properties.Resources.Username;
-            this.tbUsername.Location = new System.Drawing.Point(14, 106);
+            this.tbUsername.Location = new System.Drawing.Point(14, 76);
             this.tbUsername.Margin = new System.Windows.Forms.Padding(2);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.PasswordChar = '\0';
@@ -393,7 +397,7 @@
             this.guna2GroupBox1.Location = new System.Drawing.Point(427, 119);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(581, 742);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(581, 755);
             this.guna2GroupBox1.TabIndex = 14;
             this.guna2GroupBox1.Text = "Thông tin thành viên";
             // 
@@ -732,6 +736,53 @@
             this.guna2Elipse2.BorderRadius = 100;
             this.guna2Elipse2.TargetControl = this.pbImage;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(10, 318);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 23);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Email";
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Animated = true;
+            this.tbEmail.BackColor = System.Drawing.Color.Transparent;
+            this.tbEmail.BorderColor = System.Drawing.Color.Bisque;
+            this.tbEmail.BorderRadius = 5;
+            this.tbEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbEmail.DefaultText = "";
+            this.tbEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbEmail.DisabledState.Parent = this.tbEmail;
+            this.tbEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbEmail.FillColor = System.Drawing.Color.Ivory;
+            this.tbEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.tbEmail.FocusedState.Parent = this.tbEmail;
+            this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbEmail.ForeColor = System.Drawing.Color.Black;
+            this.tbEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbEmail.HoverState.Parent = this.tbEmail;
+            this.tbEmail.IconLeft = global::CoffeeShopManagement.Properties.Resources.email;
+            this.tbEmail.Location = new System.Drawing.Point(14, 348);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.PasswordChar = '\0';
+            this.tbEmail.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbEmail.PlaceholderText = "";
+            this.tbEmail.SelectedText = "";
+            this.tbEmail.ShadowDecoration.Parent = this.tbEmail;
+            this.tbEmail.Size = new System.Drawing.Size(350, 47);
+            this.tbEmail.TabIndex = 17;
+            this.tbEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbEmail.UseSystemPasswordChar = true;
+            // 
             // FormAddStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -791,5 +842,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton bOK;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2GradientButton bAddImage;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2TextBox tbEmail;
     }
 }

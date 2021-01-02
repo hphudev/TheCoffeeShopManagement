@@ -32,22 +32,22 @@
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbWifi = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbLoiChao = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.tbAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.tbWeb = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.tbName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bCancel = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bReset = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bOK = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.tbAddress = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbWeb = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbLoiChao = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbWifi = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -78,12 +78,69 @@
             this.guna2GroupBox1.Controls.Add(this.tbName);
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(21, 100);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(21, 101);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
             this.guna2GroupBox1.Size = new System.Drawing.Size(581, 600);
             this.guna2GroupBox1.TabIndex = 14;
             this.guna2GroupBox1.Text = "Thông tin quán";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(10, 364);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 23);
+            this.label2.TabIndex = 120;
+            this.label2.Text = "Wifi";
+            // 
+            // tbWifi
+            // 
+            this.tbWifi.Animated = true;
+            this.tbWifi.BackColor = System.Drawing.Color.Transparent;
+            this.tbWifi.BorderColor = System.Drawing.Color.Bisque;
+            this.tbWifi.BorderRadius = 5;
+            this.tbWifi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbWifi.DefaultText = "";
+            this.tbWifi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbWifi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbWifi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbWifi.DisabledState.Parent = this.tbWifi;
+            this.tbWifi.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbWifi.FillColor = System.Drawing.Color.Ivory;
+            this.tbWifi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.tbWifi.FocusedState.Parent = this.tbWifi;
+            this.tbWifi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbWifi.ForeColor = System.Drawing.Color.Black;
+            this.tbWifi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbWifi.HoverState.Parent = this.tbWifi;
+            this.tbWifi.IconLeft = global::CoffeeShopManagement.Properties.Resources.Info1;
+            this.tbWifi.Location = new System.Drawing.Point(14, 400);
+            this.tbWifi.Margin = new System.Windows.Forms.Padding(2);
+            this.tbWifi.Name = "tbWifi";
+            this.tbWifi.PasswordChar = '\0';
+            this.tbWifi.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbWifi.PlaceholderText = "";
+            this.tbWifi.SelectedText = "";
+            this.tbWifi.ShadowDecoration.Parent = this.tbWifi;
+            this.tbWifi.Size = new System.Drawing.Size(537, 47);
+            this.tbWifi.TabIndex = 119;
+            this.tbWifi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbLoiChao
+            // 
+            this.tbLoiChao.BackColor = System.Drawing.Color.Ivory;
+            this.tbLoiChao.Location = new System.Drawing.Point(14, 497);
+            this.tbLoiChao.Multiline = true;
+            this.tbLoiChao.Name = "tbLoiChao";
+            this.tbLoiChao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbLoiChao.Size = new System.Drawing.Size(537, 93);
+            this.tbLoiChao.TabIndex = 118;
+            this.tbLoiChao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label14
             // 
@@ -111,6 +168,39 @@
             this.label13.TabIndex = 16;
             this.label13.Text = "Địa chỉ";
             // 
+            // tbAddress
+            // 
+            this.tbAddress.Animated = true;
+            this.tbAddress.BackColor = System.Drawing.Color.Transparent;
+            this.tbAddress.BorderColor = System.Drawing.Color.Bisque;
+            this.tbAddress.BorderRadius = 5;
+            this.tbAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbAddress.DefaultText = "";
+            this.tbAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbAddress.DisabledState.Parent = this.tbAddress;
+            this.tbAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbAddress.FillColor = System.Drawing.Color.Ivory;
+            this.tbAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.tbAddress.FocusedState.Parent = this.tbAddress;
+            this.tbAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbAddress.ForeColor = System.Drawing.Color.Black;
+            this.tbAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbAddress.HoverState.Parent = this.tbAddress;
+            this.tbAddress.IconLeft = global::CoffeeShopManagement.Properties.Resources.Address;
+            this.tbAddress.Location = new System.Drawing.Point(14, 305);
+            this.tbAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.tbAddress.Name = "tbAddress";
+            this.tbAddress.PasswordChar = '\0';
+            this.tbAddress.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbAddress.PlaceholderText = "";
+            this.tbAddress.SelectedText = "";
+            this.tbAddress.ShadowDecoration.Parent = this.tbAddress;
+            this.tbAddress.Size = new System.Drawing.Size(537, 47);
+            this.tbAddress.TabIndex = 15;
+            this.tbAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -124,6 +214,39 @@
             this.label12.TabIndex = 14;
             this.label12.Text = "Trang web";
             // 
+            // tbWeb
+            // 
+            this.tbWeb.Animated = true;
+            this.tbWeb.BackColor = System.Drawing.Color.Transparent;
+            this.tbWeb.BorderColor = System.Drawing.Color.Bisque;
+            this.tbWeb.BorderRadius = 5;
+            this.tbWeb.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbWeb.DefaultText = "";
+            this.tbWeb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbWeb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbWeb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbWeb.DisabledState.Parent = this.tbWeb;
+            this.tbWeb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbWeb.FillColor = System.Drawing.Color.Ivory;
+            this.tbWeb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.tbWeb.FocusedState.Parent = this.tbWeb;
+            this.tbWeb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbWeb.ForeColor = System.Drawing.Color.Black;
+            this.tbWeb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbWeb.HoverState.Parent = this.tbWeb;
+            this.tbWeb.IconLeft = global::CoffeeShopManagement.Properties.Resources.CMND;
+            this.tbWeb.Location = new System.Drawing.Point(14, 203);
+            this.tbWeb.Margin = new System.Windows.Forms.Padding(2);
+            this.tbWeb.Name = "tbWeb";
+            this.tbWeb.PasswordChar = '\0';
+            this.tbWeb.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbWeb.PlaceholderText = "";
+            this.tbWeb.SelectedText = "";
+            this.tbWeb.ShadowDecoration.Parent = this.tbWeb;
+            this.tbWeb.Size = new System.Drawing.Size(537, 47);
+            this.tbWeb.TabIndex = 13;
+            this.tbWeb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -136,6 +259,39 @@
             this.label4.Size = new System.Drawing.Size(82, 23);
             this.label4.TabIndex = 9;
             this.label4.Text = "Tên quán";
+            // 
+            // tbName
+            // 
+            this.tbName.Animated = true;
+            this.tbName.BackColor = System.Drawing.Color.Transparent;
+            this.tbName.BorderColor = System.Drawing.Color.Bisque;
+            this.tbName.BorderRadius = 5;
+            this.tbName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbName.DefaultText = "";
+            this.tbName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbName.DisabledState.Parent = this.tbName;
+            this.tbName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbName.FillColor = System.Drawing.Color.Ivory;
+            this.tbName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.tbName.FocusedState.Parent = this.tbName;
+            this.tbName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbName.ForeColor = System.Drawing.Color.Black;
+            this.tbName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbName.HoverState.Parent = this.tbName;
+            this.tbName.IconLeft = global::CoffeeShopManagement.Properties.Resources.user;
+            this.tbName.Location = new System.Drawing.Point(14, 106);
+            this.tbName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbName.Name = "tbName";
+            this.tbName.PasswordChar = '\0';
+            this.tbName.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbName.PlaceholderText = "";
+            this.tbName.SelectedText = "";
+            this.tbName.ShadowDecoration.Parent = this.tbName;
+            this.tbName.Size = new System.Drawing.Size(537, 47);
+            this.tbName.TabIndex = 2;
+            this.tbName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -239,162 +395,6 @@
             this.bOK.TabIndex = 114;
             this.bOK.Text = "Đồng ý";
             this.bOK.Click += new System.EventHandler(this.BOK_Click);
-            // 
-            // tbAddress
-            // 
-            this.tbAddress.Animated = true;
-            this.tbAddress.BackColor = System.Drawing.Color.Transparent;
-            this.tbAddress.BorderColor = System.Drawing.Color.Bisque;
-            this.tbAddress.BorderRadius = 5;
-            this.tbAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbAddress.DefaultText = "";
-            this.tbAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbAddress.DisabledState.Parent = this.tbAddress;
-            this.tbAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbAddress.FillColor = System.Drawing.Color.Ivory;
-            this.tbAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.tbAddress.FocusedState.Parent = this.tbAddress;
-            this.tbAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.tbAddress.ForeColor = System.Drawing.Color.Black;
-            this.tbAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAddress.HoverState.Parent = this.tbAddress;
-            this.tbAddress.IconLeft = global::CoffeeShopManagement.Properties.Resources.Address;
-            this.tbAddress.Location = new System.Drawing.Point(14, 305);
-            this.tbAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.tbAddress.Name = "tbAddress";
-            this.tbAddress.PasswordChar = '\0';
-            this.tbAddress.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.tbAddress.PlaceholderText = "";
-            this.tbAddress.SelectedText = "";
-            this.tbAddress.ShadowDecoration.Parent = this.tbAddress;
-            this.tbAddress.Size = new System.Drawing.Size(537, 47);
-            this.tbAddress.TabIndex = 15;
-            this.tbAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbWeb
-            // 
-            this.tbWeb.Animated = true;
-            this.tbWeb.BackColor = System.Drawing.Color.Transparent;
-            this.tbWeb.BorderColor = System.Drawing.Color.Bisque;
-            this.tbWeb.BorderRadius = 5;
-            this.tbWeb.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbWeb.DefaultText = "";
-            this.tbWeb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbWeb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbWeb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbWeb.DisabledState.Parent = this.tbWeb;
-            this.tbWeb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbWeb.FillColor = System.Drawing.Color.Ivory;
-            this.tbWeb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.tbWeb.FocusedState.Parent = this.tbWeb;
-            this.tbWeb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.tbWeb.ForeColor = System.Drawing.Color.Black;
-            this.tbWeb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbWeb.HoverState.Parent = this.tbWeb;
-            this.tbWeb.IconLeft = global::CoffeeShopManagement.Properties.Resources.CMND;
-            this.tbWeb.Location = new System.Drawing.Point(14, 203);
-            this.tbWeb.Margin = new System.Windows.Forms.Padding(2);
-            this.tbWeb.Name = "tbWeb";
-            this.tbWeb.PasswordChar = '\0';
-            this.tbWeb.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.tbWeb.PlaceholderText = "";
-            this.tbWeb.SelectedText = "";
-            this.tbWeb.ShadowDecoration.Parent = this.tbWeb;
-            this.tbWeb.Size = new System.Drawing.Size(537, 47);
-            this.tbWeb.TabIndex = 13;
-            this.tbWeb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbName
-            // 
-            this.tbName.Animated = true;
-            this.tbName.BackColor = System.Drawing.Color.Transparent;
-            this.tbName.BorderColor = System.Drawing.Color.Bisque;
-            this.tbName.BorderRadius = 5;
-            this.tbName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbName.DefaultText = "";
-            this.tbName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbName.DisabledState.Parent = this.tbName;
-            this.tbName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbName.FillColor = System.Drawing.Color.Ivory;
-            this.tbName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.tbName.FocusedState.Parent = this.tbName;
-            this.tbName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.tbName.ForeColor = System.Drawing.Color.Black;
-            this.tbName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbName.HoverState.Parent = this.tbName;
-            this.tbName.IconLeft = global::CoffeeShopManagement.Properties.Resources.user;
-            this.tbName.Location = new System.Drawing.Point(14, 106);
-            this.tbName.Margin = new System.Windows.Forms.Padding(2);
-            this.tbName.Name = "tbName";
-            this.tbName.PasswordChar = '\0';
-            this.tbName.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.tbName.PlaceholderText = "";
-            this.tbName.SelectedText = "";
-            this.tbName.ShadowDecoration.Parent = this.tbName;
-            this.tbName.Size = new System.Drawing.Size(537, 47);
-            this.tbName.TabIndex = 2;
-            this.tbName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbLoiChao
-            // 
-            this.tbLoiChao.BackColor = System.Drawing.Color.Ivory;
-            this.tbLoiChao.Location = new System.Drawing.Point(14, 497);
-            this.tbLoiChao.Multiline = true;
-            this.tbLoiChao.Name = "tbLoiChao";
-            this.tbLoiChao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbLoiChao.Size = new System.Drawing.Size(537, 93);
-            this.tbLoiChao.TabIndex = 118;
-            this.tbLoiChao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(10, 364);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 23);
-            this.label2.TabIndex = 120;
-            this.label2.Text = "Wifi";
-            // 
-            // tbWifi
-            // 
-            this.tbWifi.Animated = true;
-            this.tbWifi.BackColor = System.Drawing.Color.Transparent;
-            this.tbWifi.BorderColor = System.Drawing.Color.Bisque;
-            this.tbWifi.BorderRadius = 5;
-            this.tbWifi.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbWifi.DefaultText = "";
-            this.tbWifi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbWifi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbWifi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbWifi.DisabledState.Parent = this.tbWifi;
-            this.tbWifi.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbWifi.FillColor = System.Drawing.Color.Ivory;
-            this.tbWifi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.tbWifi.FocusedState.Parent = this.tbWifi;
-            this.tbWifi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.tbWifi.ForeColor = System.Drawing.Color.Black;
-            this.tbWifi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbWifi.HoverState.Parent = this.tbWifi;
-            this.tbWifi.IconLeft = global::CoffeeShopManagement.Properties.Resources.Info1;
-            this.tbWifi.Location = new System.Drawing.Point(14, 400);
-            this.tbWifi.Margin = new System.Windows.Forms.Padding(2);
-            this.tbWifi.Name = "tbWifi";
-            this.tbWifi.PasswordChar = '\0';
-            this.tbWifi.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.tbWifi.PlaceholderText = "";
-            this.tbWifi.SelectedText = "";
-            this.tbWifi.ShadowDecoration.Parent = this.tbWifi;
-            this.tbWifi.Size = new System.Drawing.Size(537, 47);
-            this.tbWifi.TabIndex = 119;
-            this.tbWifi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FormThongTinQuan
             // 

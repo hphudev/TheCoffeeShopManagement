@@ -40,6 +40,7 @@ namespace CoffeeShopManagement
             if (!backgroundWorker.IsBusy)
                 backgroundWorker.RunWorkerAsync();
         }
+        string tmp;
         private void LoadData(string conditon)
         {
             SqlConnection con = Data.OpenConnection();
@@ -55,7 +56,7 @@ namespace CoffeeShopManagement
                {
                    dgvMenu.Rows.Add(read.GetString(0), read.GetString(1), read.GetString(7),
                     new DateTime().GetDate(read.GetDateTime(4)), read.GetString(3), read.GetString(2),
-                    read.GetString(9), new DateTime().GetDate(read.GetDateTime(6)), read.GetInt32(8), read.GetInt32(5));
+                    (read.IsDBNull(9) == false) ? read.GetString(9) : "", new DateTime().GetDate(read.GetDateTime(6)), read.GetInt32(8), read.GetInt32(5));
                });
                 backgroundWorker.ReportProgress((dem * 100) / count);
             }
@@ -104,6 +105,11 @@ namespace CoffeeShopManagement
 
         private void BChangeInfoCus_Click(object sender, EventArgs e)
         {
+            if (this.dgvMenu.SelectedRows == null || this.dgvMenu.SelectedRows.Count == 0)
+            {
+                IO.ExportWarning("Bạn hãy chọn khách hàng cần sửa");
+                return;
+            }
             FormChangeInfoCustomerFromManager cus = new FormChangeInfoCustomerFromManager(this, dgvMenu.SelectedRows[0]);
             FormLock ltmp = new FormLock();
             ltmp.Show();
@@ -149,6 +155,11 @@ namespace CoffeeShopManagement
         public void SetLockForm(ref FormLock khoa)
         {
             this.khoa = khoa;
+        }
+
+        private void TbTimKiemSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

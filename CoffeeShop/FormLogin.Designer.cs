@@ -39,7 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pUser = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.load = new CoffeeShopManagement.PictureboxBuffered();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btQuenMatKhau = new System.Windows.Forms.Label();
             this.pbEye = new System.Windows.Forms.PictureBox();
             this.btDangNhap = new Guna.UI2.WinForms.Guna2GradientButton();
             this.tbMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
@@ -153,7 +153,7 @@
             // pUser
             // 
             this.pUser.Controls.Add(this.load);
-            this.pUser.Controls.Add(this.label3);
+            this.pUser.Controls.Add(this.btQuenMatKhau);
             this.pUser.Controls.Add(this.pbEye);
             this.pUser.Controls.Add(this.btDangNhap);
             this.pUser.Controls.Add(this.tbMatKhau);
@@ -170,26 +170,27 @@
             // 
             this.load.BackColor = System.Drawing.Color.Gainsboro;
             this.load.Image = global::CoffeeShopManagement.Properties.Resources._4RNk;
-            this.load.Location = new System.Drawing.Point(0, 0);
-            this.load.Name = "Load";
+            this.load.Location = new System.Drawing.Point(-6, 0);
+            this.load.Name = "load";
             this.load.Size = new System.Drawing.Size(488, 332);
             this.load.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.load.TabIndex = 11;
             this.load.TabStop = false;
             this.load.Visible = false;
             // 
-            // label3
+            // btQuenMatKhau
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Bisque;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(305, 281);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 23);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Forgot Password?";
+            this.btQuenMatKhau.AutoSize = true;
+            this.btQuenMatKhau.BackColor = System.Drawing.Color.Bisque;
+            this.btQuenMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btQuenMatKhau.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.btQuenMatKhau.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btQuenMatKhau.Location = new System.Drawing.Point(305, 281);
+            this.btQuenMatKhau.Name = "btQuenMatKhau";
+            this.btQuenMatKhau.Size = new System.Drawing.Size(151, 23);
+            this.btQuenMatKhau.TabIndex = 11;
+            this.btQuenMatKhau.Text = "Forgot Password?";
+            this.btQuenMatKhau.Click += new System.EventHandler(this.BtQuenMatKhau_Click);
             // 
             // pbEye
             // 
@@ -349,7 +350,7 @@
         private System.Windows.Forms.PictureBox pbEye;
         private System.Windows.Forms.PictureBox pictureBox1;
         private PictureboxBuffered load;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label btQuenMatKhau;
         private PictureboxBuffered Restart;
         private PictureboxBuffered btThoat;
         private System.ComponentModel.BackgroundWorker bgWorker;

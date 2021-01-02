@@ -102,7 +102,7 @@ namespace CoffeeShopManagement
                 int.Parse(this.tbSalary.Text));
             Account account = new Account(newStaff.id.ToString(), this.tbUsername.Text,
                 Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()),
-                true);
+                true, this.tbEmail.Text, "");
             
             if ((new AddStaff()).AddNewObj(newStaff, account))
             {

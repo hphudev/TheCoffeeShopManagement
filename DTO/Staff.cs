@@ -91,7 +91,7 @@ namespace DTO
                         (reader.GetDateTime(3).ToString().Split(' '))[0], reader.GetString(5),
                         reader.GetString(8), reader.GetInt32(7));
                     Account account = new Account(reader.GetString(9), reader.GetString(10),
-                        reader.GetString(11), reader.GetBoolean(12));
+                        reader.GetString(11), reader.GetBoolean(12), reader.GetString(13), reader.GetString(14));
 
                     if (newStaff.cmnd == staff.cmnd && account.status)
                     {
@@ -147,7 +147,7 @@ namespace DTO
                     this.id.ToString() + "'", "*");
                 reader.Read();
                 Account account = new Account(reader.GetString(0), reader.GetString(1),
-                    reader.GetString(2), reader.GetBoolean(3));
+                    reader.GetString(2), reader.GetBoolean(3), reader.GetString(4), reader.GetString(5));
                 Data.CloseConnection(ref connection);
                 return account;
             }

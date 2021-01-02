@@ -115,6 +115,12 @@
     <Compile Include="Form.Designer.cs">
       <DependentUpon>Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormQuanLyLoaiKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuanLyLoaiKhachHang.Designer.cs">
+      <DependentUpon>FormQuanLyLoaiKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,24 @@
     </Compile>
     <Compile Include="FormNoiDungThongBao.Designer.cs">
       <DependentUpon>FormNoiDungThongBao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSuaLoaiKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuaLoaiKhachHang.Designer.cs">
+      <DependentUpon>FormSuaLoaiKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemLoaiKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemLoaiKhachHang.Designer.cs">
+      <DependentUpon>FormThemLoaiKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThongTinAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThongTinAdmin.Designer.cs">
+      <DependentUpon>FormThongTinAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="FormThongTinKhachHang.cs">
       <SubType>Form</SubType>
@@ -371,6 +395,9 @@
     <Compile Include="Table.Designer.cs">
       <DependentUpon>Table.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormQuanLyLoaiKhachHang.resx">
+      <DependentUpon>FormQuanLyLoaiKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormStaff.resx">
       <DependentUpon>FormStaff.cs</DependentUpon>
     </EmbeddedResource>
@@ -424,6 +451,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNoiDungThongBao.resx">
       <DependentUpon>FormNoiDungThongBao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuaLoaiKhachHang.resx">
+      <DependentUpon>FormSuaLoaiKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemLoaiKhachHang.resx">
+      <DependentUpon>FormThemLoaiKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThongTinAdmin.resx">
+      <DependentUpon>FormThongTinAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThongTinKhachHang.resx">
       <DependentUpon>FormThongTinKhachHang.cs</DependentUpon>
@@ -623,6 +659,7 @@
     <None Include="Resources\4RNk.gif" />
     <None Include="bin\Debug\Resources\Close_Login.png" />
     <None Include="bin\Debug\Resources\Restart.png" />
+    <None Include="bin\Debug\Resources\email.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

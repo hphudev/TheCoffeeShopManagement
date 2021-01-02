@@ -15,7 +15,6 @@ using DAO;
 using BUS;
 using System.Threading;
 using System.Configuration;
-
 namespace CoffeeShopManagement
 {
     public partial class FormLogin : Form, IButtonOK
@@ -29,7 +28,10 @@ namespace CoffeeShopManagement
 
         #region Atrributes
         private FormInit parent;
-
+        string passAdmin = Encrypt.ComputeHash("1",
+                new SHA256CryptoServiceProvider());
+        string emailAdmin = "";
+        string path = Application.LocalUserAppDataPath + "/admin.txt";
         public Account account { get; private set; }
         #endregion
 
@@ -48,6 +50,7 @@ namespace CoffeeShopManagement
                 //this.tbMatKhau.PasswordChar = '*';
                 //this.bMinimize.Click += MinimizeClicked;
                 this.parent = parent;
+                LoadAdmin();
                 IO.ExportSuccess("Đã khởi động xong");
                 #endregion
 
@@ -56,6 +59,21 @@ namespace CoffeeShopManagement
             {
                 IO.ExportError("Lỗi không xác định\n(Form Login)");
             }
+        }
+
+        public void LoadAdmin()
+        {
+            string emailAdmin = "";
+            passAdmin = Encrypt.ComputeHash("1",
+                new SHA256CryptoServiceProvider());
+            if (System.IO.File.Exists(path))
+                using (System.IO.StreamReader read = new System.IO.StreamReader(path))
+                {
+                    if (!read.EndOfStream)
+                        passAdmin = read.ReadLine();
+                    if (!read.EndOfStream)
+                        emailAdmin = read.ReadLine();
+                }
         }
 
         private void MinimizeClicked(object sender, EventArgs e)
@@ -119,7 +137,7 @@ namespace CoffeeShopManagement
                     }
 
                     Account validAccount = new Account(reader.GetString(0), reader.GetString(1),
-                        reader.GetString(2), reader.GetBoolean(3));
+                        reader.GetString(2), reader.GetBoolean(3), reader.GetString(4), reader.GetString(5));
 
                     if (account.username == validAccount.username)
                     {
@@ -249,9 +267,8 @@ namespace CoffeeShopManagement
             Thread.Sleep(sleep);
             this.lb.BackColor = Color.Orange;
             this.account = new Account("NULL", tbTenDangNhap.Text, Encrypt.ComputeHash(
-                tbMatKhau.Text, new SHA256CryptoServiceProvider()), true);
-            Account adminAccount = new Account("", "1", Encrypt.ComputeHash("1",
-                new SHA256CryptoServiceProvider()), true);
+                tbMatKhau.Text, new SHA256CryptoServiceProvider()), true, "NULL", "");
+            Account adminAccount = new Account("", "1", passAdmin, true, emailAdmin, "");
 
             Account validAccount;
             try
@@ -338,6 +355,11 @@ namespace CoffeeShopManagement
             {
                 IO.ExportSuccess("Server đã được kết nối");
             }
+        }
+
+        private void BtQuenMatKhau_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

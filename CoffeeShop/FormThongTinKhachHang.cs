@@ -112,7 +112,7 @@ namespace CoffeeShopManagement
             tbNgayDangKy.ReadOnly = true;
             NgayDangKy = new DateTime().GetDate(DateTime.Now);
             tbThanhVien.ReadOnly = true;
-            ThanhVien = "Bạc";
+            ThanhVien = "";
             //this.BangKhoa = new FormLock(this);
             //this.BangKhoa.Show();
             CheckExists = new Timer();
@@ -166,7 +166,7 @@ namespace CoffeeShopManagement
                     HoTen = Reader.GetString(1);
                     GioiTinh = Reader.GetString(7);
                     NgaySinh = new DateTime().GetDate(Reader.GetDateTime(4));
-                    ThanhVien = Reader.GetString(9);
+                    ThanhVien = (!Reader.IsDBNull(9)) ? Reader.GetString(9) : "";
                     NgayDangKy = new DateTime().GetDate(Reader.GetDateTime(6));
                     DiaChi = Reader.GetString(2);
                     StatusTexbox(false);
@@ -176,9 +176,17 @@ namespace CoffeeShopManagement
             {
                 if (!statusAddBefore)
                 {
-                    HoTen = GioiTinh = NgaySinh = ThanhVien = DiaChi = "";
+                    HoTen = GioiTinh = NgaySinh = DiaChi = ThanhVien = "";
+                    SqlConnection con = Data.OpenConnection();
+                    SqlDataReader reader = Data.ReadData("LOAIKHACHHANG", con, "where TINHTRANG = 1 and TIENTICHLUY = 0", " * ");
+                    while (reader.HasRows)
+                    {
+                        if (!reader.Read())
+                            return;
+                        ThanhVien = (!reader.IsDBNull(0)) ? reader.GetString(0) : "";
+                        break;
+                    }
                     NgayDangKy = new DateTime().GetDate(DateTime.Now);
-                    ThanhVien = "Bạc";
                     StatusTexbox(true);
                 }
                 statusAddBefore = statusAdd;
@@ -198,7 +206,7 @@ namespace CoffeeShopManagement
         private bool DieuKienCapNhat()
         {
             if (tbSoDienThoai.Text == null || tbHoTen.Text == null || tbHoTen.Text == null || cbGioiTinh.Text == null
-              || tbThanhVien.Text == null)
+              )
             {
                 IO.ExportWarning("Bạn đã chưa nhập đủ thông tin!");
                 return false;
@@ -221,7 +229,7 @@ namespace CoffeeShopManagement
         {
             if (!DieuKienCapNhat())
                 return;
-            this.parent.cus = new Customer(IDKH, this.tbHoTen.Text, "", this.tbSoDienThoai.Text,this.cbGioiTinh.Text, new DateTime().GetDate(this.dtpNgaySinh.Value), this.tbNgayDangKy.Text, this.tbThanhVien.Text);
+            this.parent.cus = new Customer(IDKH, this.tbHoTen.Text, tbDiaChi.Text, this.tbSoDienThoai.Text,this.cbGioiTinh.Text, new DateTime().GetDate(this.dtpNgaySinh.Value), this.tbNgayDangKy.Text, this.tbThanhVien.Text);
             if (!statusAdd)
                 Data.UpdateData("KHACHHANG", " TINHTRANG = 1", $"WHERE MAKH = '{IDKH}'");
             if (statusAdd)
@@ -235,7 +243,7 @@ namespace CoffeeShopManagement
                 string date = dtpNgaySinh.Value.Year.ToString() + '/' + dtpNgaySinh.Value.Month.ToString() + '/' + dtpNgaySinh.Value.Day.ToString();
                 DiaChi = tbDiaChi.Text;
                 this.parent.cus = new Customer(IDKH, this.tbHoTen.Text, this.tbDiaChi.Text, this.tbSoDienThoai.Text, this.cbGioiTinh.Text, this.NgaySinh, this.tbNgayDangKy.Text, this.tbThanhVien.Text);
-                Data.AddData("KHACHHANG", $"N'{IDKH}', N'{HoTen}', N'{DiaChi}', N'{SoDienThoai}', '{date}', 0, '{Utility.GetDateUS(NgayDangKy)}', N'{GioiTinh}', 0, N'Bạc', 1");
+                Data.AddData("KHACHHANG", $"N'{IDKH}', N'{HoTen}', N'{DiaChi}', N'{SoDienThoai}', '{date}', 0, '{Utility.GetDateUS(NgayDangKy)}', N'{GioiTinh}', 0, NULL, 1");
             }
             this.Close();
         }
@@ -302,6 +310,17 @@ namespace CoffeeShopManagement
         public void SetLockForm(ref FormLock khoa)
         {
             this.BangKhoa = khoa;
+        }
+
+        private void BReset_Click(object sender, EventArgs e)
+        {
+            this.SoDienThoai = this.parent.cus.sdt;
+            this.HoTen = this.parent.cus.name;
+            this.GioiTinh = this.parent.cus.sex;
+            this.NgaySinh = this.parent.cus.NgaySinh;
+            this.ThanhVien = this.parent.cus.ThanhVien;
+            this.NgayDangKy = this.parent.cus.NgayDangKy;
+            this.DiaChi = this.parent.cus.address;
         }
     }
 }

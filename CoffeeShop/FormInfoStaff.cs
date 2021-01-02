@@ -40,7 +40,7 @@ namespace CoffeeShopManagement
                 this.tbName.Text = staff.name;
                 this.tbSDT.Text = staff.sdt;
                 this.tbUsername.Text = this.account.username;
-                this.tbPassword.Text = "";
+                this.tbPassword.Text = "12345678";
                 this.lID.Text = staff.id.ToString();
                 this.cbSex.Text = staff.sex;
                 this.pbStaff.Image = staff.image;
@@ -88,10 +88,15 @@ namespace CoffeeShopManagement
 
                 Account updatedAccount = new Account(this.account.id.ToString(), this.tbUsername.Text,
                     Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()),
-                    true);
-                Data.UpdateData("TAIKHOAN", "MATKHAU = '" + updatedAccount.password + "'",
+                    true, this.tbEmail.Text, "");
+                if (btThayDoi.Checked)
+                {
+                    Data.UpdateData("TAIKHOAN", "MATKHAU = '" + updatedAccount.password + "'" + $", EMAIL = {tbEmail.Text}",
                     " WHERE ID = '" + updatedAccount.id.ToString() + "'");
-                IO.ExportSuccess("Đổi mật khẩu thành công");
+                    IO.ExportSuccess("Đổi mật khẩu thành công");
+                }
+                else
+                    IO.ExportInfo("Dữ liệu của bạn không thay đổi");
                 Event.CloseForm(this);
                 #endregion
             }
@@ -107,8 +112,16 @@ namespace CoffeeShopManagement
             if (btThayDoi.Checked)
             {
                 this.tbPassword.Text = "";
+                this.tbConfirm.Text = "";
                 this.tbPassword.Enabled = true;
                 this.tbConfirm.Enabled = true;
+            }
+            else
+            {
+                this.tbPassword.Text = "12345678";
+                this.tbConfirm.Text = "12345678";
+                this.tbPassword.Enabled = false;
+                this.tbConfirm.Enabled = false;
             }
         }
     }

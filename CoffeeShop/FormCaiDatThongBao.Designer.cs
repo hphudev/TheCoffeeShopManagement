@@ -37,30 +37,30 @@
             this.bCancel = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btGuiThongBao = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.pnKhuyenMai = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.btToiDa = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbGiaToiDa = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbGiamGia = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btKhuyenMai = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.tbNoiDung = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btKhuyenMai = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.btCapNhat = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbGiamGia = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tbGiaToiDa = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btToiDa = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.pnKhuyenMai = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.btCapNhat = new System.Windows.Forms.PictureBox();
             this.lbKyTu = new System.Windows.Forms.Label();
             this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
-            this.guna2GroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btCapNhat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnKhuyenMai.SuspendLayout();
+            this.guna2GroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btCapNhat)).BeginInit();
             this.guna2ShadowPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -178,46 +178,121 @@
             this.guna2ShadowPanel2.Size = new System.Drawing.Size(516, 282);
             this.guna2ShadowPanel2.TabIndex = 150;
             // 
-            // label3
+            // pnKhuyenMai
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label3.Location = new System.Drawing.Point(27, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(185, 35);
-            this.label3.TabIndex = 151;
-            this.label3.Text = "Gửi thông báo";
+            this.pnKhuyenMai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnKhuyenMai.BackColor = System.Drawing.Color.Transparent;
+            this.pnKhuyenMai.Controls.Add(this.btToiDa);
+            this.pnKhuyenMai.Controls.Add(this.label7);
+            this.pnKhuyenMai.Controls.Add(this.tbGiaToiDa);
+            this.pnKhuyenMai.Controls.Add(this.label6);
+            this.pnKhuyenMai.Controls.Add(this.label5);
+            this.pnKhuyenMai.Controls.Add(this.tbGiamGia);
+            this.pnKhuyenMai.Controls.Add(this.label4);
+            this.pnKhuyenMai.FillColor = System.Drawing.Color.Transparent;
+            this.pnKhuyenMai.Location = new System.Drawing.Point(33, 125);
+            this.pnKhuyenMai.Name = "pnKhuyenMai";
+            this.pnKhuyenMai.Radius = 5;
+            this.pnKhuyenMai.ShadowColor = System.Drawing.Color.SpringGreen;
+            this.pnKhuyenMai.Size = new System.Drawing.Size(467, 128);
+            this.pnKhuyenMai.TabIndex = 152;
             // 
-            // guna2GroupBox2
+            // btToiDa
             // 
-            this.guna2GroupBox2.AutoScroll = true;
-            this.guna2GroupBox2.BorderRadius = 10;
-            this.guna2GroupBox2.Controls.Add(this.tbNoiDung);
-            this.guna2GroupBox2.Controls.Add(this.pictureBox1);
-            this.guna2GroupBox2.FillColor = System.Drawing.Color.Ivory;
-            this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2GroupBox2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(12, 118);
-            this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
-            this.guna2GroupBox2.Size = new System.Drawing.Size(462, 488);
-            this.guna2GroupBox2.TabIndex = 151;
-            this.guna2GroupBox2.Text = "Nội dung thông báo (tối đa 2000 ký tự)";
+            this.btToiDa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btToiDa.Animated = true;
+            this.btToiDa.AutoRoundedCorners = true;
+            this.btToiDa.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btToiDa.CheckedState.BorderRadius = 10;
+            this.btToiDa.CheckedState.FillColor = System.Drawing.Color.Brown;
+            this.btToiDa.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.btToiDa.CheckedState.InnerBorderRadius = 6;
+            this.btToiDa.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.btToiDa.CheckedState.Parent = this.btToiDa;
+            this.btToiDa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btToiDa.Location = new System.Drawing.Point(404, 83);
+            this.btToiDa.Name = "btToiDa";
+            this.btToiDa.ShadowDecoration.Parent = this.btToiDa;
+            this.btToiDa.Size = new System.Drawing.Size(50, 22);
+            this.btToiDa.TabIndex = 158;
+            this.btToiDa.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.btToiDa.UncheckedState.BorderRadius = 10;
+            this.btToiDa.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.btToiDa.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.btToiDa.UncheckedState.InnerBorderRadius = 6;
+            this.btToiDa.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.btToiDa.UncheckedState.Parent = this.btToiDa;
+            this.btToiDa.CheckedChanged += new System.EventHandler(this.BtToiDa_CheckedChanged);
             // 
-            // tbNoiDung
+            // label7
             // 
-            this.tbNoiDung.BackColor = System.Drawing.Color.Ivory;
-            this.tbNoiDung.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbNoiDung.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNoiDung.Location = new System.Drawing.Point(68, 94);
-            this.tbNoiDung.Multiline = true;
-            this.tbNoiDung.Name = "tbNoiDung";
-            this.tbNoiDung.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbNoiDung.Size = new System.Drawing.Size(340, 338);
-            this.tbNoiDung.TabIndex = 149;
-            this.tbNoiDung.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.Coral;
+            this.label7.Location = new System.Drawing.Point(330, 72);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 35);
+            this.label7.TabIndex = 157;
+            this.label7.Text = "vnđ";
+            // 
+            // tbGiaToiDa
+            // 
+            this.tbGiaToiDa.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tbGiaToiDa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbGiaToiDa.Location = new System.Drawing.Point(137, 71);
+            this.tbGiaToiDa.Name = "tbGiaToiDa";
+            this.tbGiaToiDa.Size = new System.Drawing.Size(173, 36);
+            this.tbGiaToiDa.TabIndex = 156;
+            this.tbGiaToiDa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbGiaToiDa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbGiaToiDa_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.Coral;
+            this.label6.Location = new System.Drawing.Point(33, 70);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 35);
+            this.label6.TabIndex = 155;
+            this.label6.Text = "Tối đa";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.Coral;
+            this.label5.Location = new System.Drawing.Point(330, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 35);
+            this.label5.TabIndex = 154;
+            this.label5.Text = "%";
+            // 
+            // tbGiamGia
+            // 
+            this.tbGiamGia.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tbGiamGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbGiamGia.Location = new System.Drawing.Point(137, 18);
+            this.tbGiamGia.Name = "tbGiamGia";
+            this.tbGiamGia.Size = new System.Drawing.Size(173, 36);
+            this.tbGiamGia.TabIndex = 153;
+            this.tbGiamGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbGiamGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbGiamGia_KeyPress);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.Coral;
+            this.label4.Location = new System.Drawing.Point(33, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 35);
+            this.label4.TabIndex = 152;
+            this.label4.Text = "Giảm";
             // 
             // label2
             // 
@@ -258,18 +333,47 @@
             this.btKhuyenMai.UncheckedState.Parent = this.btKhuyenMai;
             this.btKhuyenMai.CheckedChanged += new System.EventHandler(this.BtKhuyenMai_CheckedChanged);
             // 
-            // btCapNhat
+            // label3
             // 
-            this.btCapNhat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btCapNhat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btCapNhat.Image = global::CoffeeShopManagement.Properties.Resources.Anouncement;
-            this.btCapNhat.Location = new System.Drawing.Point(19, 15);
-            this.btCapNhat.Name = "btCapNhat";
-            this.btCapNhat.Size = new System.Drawing.Size(277, 171);
-            this.btCapNhat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btCapNhat.TabIndex = 152;
-            this.btCapNhat.TabStop = false;
-            this.btCapNhat.Click += new System.EventHandler(this.BtCapNhat_Click);
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label3.Location = new System.Drawing.Point(27, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(185, 35);
+            this.label3.TabIndex = 151;
+            this.label3.Text = "Gửi thông báo";
+            // 
+            // guna2GroupBox2
+            // 
+            this.guna2GroupBox2.AutoScroll = true;
+            this.guna2GroupBox2.BorderRadius = 10;
+            this.guna2GroupBox2.Controls.Add(this.tbNoiDung);
+            this.guna2GroupBox2.Controls.Add(this.pictureBox1);
+            this.guna2GroupBox2.FillColor = System.Drawing.Color.Ivory;
+            this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2GroupBox2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.guna2GroupBox2.Location = new System.Drawing.Point(12, 118);
+            this.guna2GroupBox2.Name = "guna2GroupBox2";
+            this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
+            this.guna2GroupBox2.Size = new System.Drawing.Size(462, 488);
+            this.guna2GroupBox2.TabIndex = 151;
+            this.guna2GroupBox2.Text = "Nội dung thông báo (tối đa 2000 ký tự)";
+            // 
+            // tbNoiDung
+            // 
+            this.tbNoiDung.BackColor = System.Drawing.Color.Ivory;
+            this.tbNoiDung.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbNoiDung.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNoiDung.Location = new System.Drawing.Point(68, 94);
+            this.tbNoiDung.Multiline = true;
+            this.tbNoiDung.Name = "tbNoiDung";
+            this.tbNoiDung.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbNoiDung.Size = new System.Drawing.Size(340, 338);
+            this.tbNoiDung.TabIndex = 149;
+            this.tbNoiDung.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbNoiDung.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbNoiDung_KeyPress);
             // 
             // pictureBox1
             // 
@@ -282,121 +386,18 @@
             this.pictureBox1.TabIndex = 148;
             this.pictureBox1.TabStop = false;
             // 
-            // label4
+            // btCapNhat
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.Coral;
-            this.label4.Location = new System.Drawing.Point(33, 19);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 35);
-            this.label4.TabIndex = 152;
-            this.label4.Text = "Giảm";
-            // 
-            // tbGiamGia
-            // 
-            this.tbGiamGia.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.tbGiamGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbGiamGia.Location = new System.Drawing.Point(137, 18);
-            this.tbGiamGia.Name = "tbGiamGia";
-            this.tbGiamGia.Size = new System.Drawing.Size(173, 36);
-            this.tbGiamGia.TabIndex = 153;
-            this.tbGiamGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbGiamGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbGiamGia_KeyPress);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.Coral;
-            this.label5.Location = new System.Drawing.Point(330, 17);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 35);
-            this.label5.TabIndex = 154;
-            this.label5.Text = "%";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.Coral;
-            this.label6.Location = new System.Drawing.Point(33, 70);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 35);
-            this.label6.TabIndex = 155;
-            this.label6.Text = "Tối đa";
-            // 
-            // tbGiaToiDa
-            // 
-            this.tbGiaToiDa.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.tbGiaToiDa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbGiaToiDa.Location = new System.Drawing.Point(137, 71);
-            this.tbGiaToiDa.Name = "tbGiaToiDa";
-            this.tbGiaToiDa.Size = new System.Drawing.Size(173, 36);
-            this.tbGiaToiDa.TabIndex = 156;
-            this.tbGiaToiDa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbGiaToiDa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbGiaToiDa_KeyPress);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.Coral;
-            this.label7.Location = new System.Drawing.Point(330, 72);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 35);
-            this.label7.TabIndex = 157;
-            this.label7.Text = "vnđ";
-            // 
-            // btToiDa
-            // 
-            this.btToiDa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btToiDa.Animated = true;
-            this.btToiDa.AutoRoundedCorners = true;
-            this.btToiDa.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btToiDa.CheckedState.BorderRadius = 10;
-            this.btToiDa.CheckedState.FillColor = System.Drawing.Color.Brown;
-            this.btToiDa.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.btToiDa.CheckedState.InnerBorderRadius = 6;
-            this.btToiDa.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.btToiDa.CheckedState.Parent = this.btToiDa;
-            this.btToiDa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btToiDa.Location = new System.Drawing.Point(404, 83);
-            this.btToiDa.Name = "btToiDa";
-            this.btToiDa.ShadowDecoration.Parent = this.btToiDa;
-            this.btToiDa.Size = new System.Drawing.Size(50, 22);
-            this.btToiDa.TabIndex = 158;
-            this.btToiDa.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.btToiDa.UncheckedState.BorderRadius = 10;
-            this.btToiDa.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.btToiDa.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.btToiDa.UncheckedState.InnerBorderRadius = 6;
-            this.btToiDa.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.btToiDa.UncheckedState.Parent = this.btToiDa;
-            this.btToiDa.CheckedChanged += new System.EventHandler(this.BtToiDa_CheckedChanged);
-            // 
-            // pnKhuyenMai
-            // 
-            this.pnKhuyenMai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnKhuyenMai.BackColor = System.Drawing.Color.Transparent;
-            this.pnKhuyenMai.Controls.Add(this.btToiDa);
-            this.pnKhuyenMai.Controls.Add(this.label7);
-            this.pnKhuyenMai.Controls.Add(this.tbGiaToiDa);
-            this.pnKhuyenMai.Controls.Add(this.label6);
-            this.pnKhuyenMai.Controls.Add(this.label5);
-            this.pnKhuyenMai.Controls.Add(this.tbGiamGia);
-            this.pnKhuyenMai.Controls.Add(this.label4);
-            this.pnKhuyenMai.FillColor = System.Drawing.Color.Transparent;
-            this.pnKhuyenMai.Location = new System.Drawing.Point(33, 125);
-            this.pnKhuyenMai.Name = "pnKhuyenMai";
-            this.pnKhuyenMai.Radius = 5;
-            this.pnKhuyenMai.ShadowColor = System.Drawing.Color.SpringGreen;
-            this.pnKhuyenMai.Size = new System.Drawing.Size(467, 128);
-            this.pnKhuyenMai.TabIndex = 152;
+            this.btCapNhat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btCapNhat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btCapNhat.Image = global::CoffeeShopManagement.Properties.Resources.Anouncement;
+            this.btCapNhat.Location = new System.Drawing.Point(19, 15);
+            this.btCapNhat.Name = "btCapNhat";
+            this.btCapNhat.Size = new System.Drawing.Size(277, 171);
+            this.btCapNhat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btCapNhat.TabIndex = 152;
+            this.btCapNhat.TabStop = false;
+            this.btCapNhat.Click += new System.EventHandler(this.BtCapNhat_Click);
             // 
             // lbKyTu
             // 
@@ -444,12 +445,12 @@
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel2.ResumeLayout(false);
             this.guna2ShadowPanel2.PerformLayout();
-            this.guna2GroupBox2.ResumeLayout(false);
-            this.guna2GroupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btCapNhat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnKhuyenMai.ResumeLayout(false);
             this.pnKhuyenMai.PerformLayout();
+            this.guna2GroupBox2.ResumeLayout(false);
+            this.guna2GroupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btCapNhat)).EndInit();
             this.guna2ShadowPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

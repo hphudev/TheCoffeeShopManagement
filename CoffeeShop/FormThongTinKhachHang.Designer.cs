@@ -44,6 +44,8 @@
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dtpNgaySinh = new ns1.BunifuDatepicker();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tbSoDienThoai = new Guna.UI2.WinForms.Guna2TextBox();
@@ -52,8 +54,6 @@
             this.cbGioiTinh = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.dtpNgaySinh = new ns1.BunifuDatepicker();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
@@ -186,6 +186,7 @@
             this.bReset.Size = new System.Drawing.Size(118, 47);
             this.bReset.TabIndex = 115;
             this.bReset.Text = "Đặt lại";
+            this.bReset.Click += new System.EventHandler(this.BReset_Click);
             // 
             // bOK
             // 
@@ -381,6 +382,30 @@
             this.guna2GroupBox1.TabIndex = 14;
             this.guna2GroupBox1.Text = "Thông tin khách hàng";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.panel2.Controls.Add(this.dtpNgaySinh);
+            this.panel2.Location = new System.Drawing.Point(16, 372);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(433, 55);
+            this.panel2.TabIndex = 19;
+            // 
+            // dtpNgaySinh
+            // 
+            this.dtpNgaySinh.BackColor = System.Drawing.Color.Ivory;
+            this.dtpNgaySinh.BorderRadius = 5;
+            this.dtpNgaySinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.dtpNgaySinh.ForeColor = System.Drawing.Color.Black;
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgaySinh.FormatCustom = null;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(4, 4);
+            this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(8);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(425, 49);
+            this.dtpNgaySinh.TabIndex = 118;
+            this.dtpNgaySinh.Value = new System.DateTime(2020, 12, 20, 21, 14, 50, 255);
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -437,7 +462,7 @@
             this.tbSoDienThoai.SelectedText = "";
             this.tbSoDienThoai.ShadowDecoration.Parent = this.tbSoDienThoai;
             this.tbSoDienThoai.Size = new System.Drawing.Size(537, 47);
-            this.tbSoDienThoai.TabIndex = 15;
+            this.tbSoDienThoai.TabIndex = 1;
             this.tbSoDienThoai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbSoDienThoai.TextChanged += new System.EventHandler(this.TbSoDienThoai_TextChanged);
             this.tbSoDienThoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbSoDienThoai_KeyPress);
@@ -513,30 +538,6 @@
             // 
             this.guna2Elipse1.BorderRadius = 20;
             this.guna2Elipse1.TargetControl = this;
-            // 
-            // dtpNgaySinh
-            // 
-            this.dtpNgaySinh.BackColor = System.Drawing.Color.Ivory;
-            this.dtpNgaySinh.BorderRadius = 5;
-            this.dtpNgaySinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.dtpNgaySinh.ForeColor = System.Drawing.Color.Black;
-            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgaySinh.FormatCustom = null;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(4, 4);
-            this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
-            this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(425, 49);
-            this.dtpNgaySinh.TabIndex = 118;
-            this.dtpNgaySinh.Value = new System.DateTime(2020, 12, 20, 21, 14, 50, 255);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.panel2.Controls.Add(this.dtpNgaySinh);
-            this.panel2.Location = new System.Drawing.Point(16, 372);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(433, 55);
-            this.panel2.TabIndex = 19;
             // 
             // guna2Elipse2
             // 

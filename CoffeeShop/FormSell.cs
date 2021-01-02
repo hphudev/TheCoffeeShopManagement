@@ -400,11 +400,13 @@ namespace CoffeeShopManagement
         private void FormBanHang_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.parent.Show();
+            this.parent.LoadAdmin();
             this.parent.LoadFormLogin();
         }
 
         private void MenuStaffClicked(object sender, EventArgs e)
         {
+            HideMenuRemain();
             if (!this.parent.account.IsAdmin())
             {
                 IO.ExportWarning("Bạn không được cấp quyền tính năng này!");
@@ -423,12 +425,23 @@ namespace CoffeeShopManagement
         {
             if (!this.parent.account.IsAdmin())
             {
+                IO.ExportInfo("Thông tin thành viên");
                 FormInfoStaff cus = new FormInfoStaff(this.parent.account);
                 FormLock ltmp = new FormLock();
                 ltmp.Show();
                 cus.Show();
-                cus.SetLockForm(ref ltmp);
+                cus.SetLockForm(ref ltmp);  
                 ltmp.SetLockParent(cus);
+            }
+            else
+            {
+                IO.ExportInfo("Thông tin Admin");
+                FormLock khoa = new FormLock();
+                FormThongTinAdmin cus = new FormThongTinAdmin();
+                khoa.Show();
+                cus.Show();
+                cus.SetLockForm(ref khoa);
+                khoa.SetLockParent(cus);
             }
         }
 
@@ -445,6 +458,11 @@ namespace CoffeeShopManagement
 
         private void BtThemMon_Click(object sender, EventArgs e)
         {
+            if (cbTimKiem.Text == "")
+            {
+                IO.ExportWarning("Hãy nhập món cần tìm");
+                return;
+            }
             for (int i = 0; i < Items.Count; i++)
                 if (cbTimKiem.Text == Items[i].Title)
                 {
@@ -489,7 +507,7 @@ namespace CoffeeShopManagement
         private void BtKhachHang_Click(object sender, EventArgs e)
         {
             HideMenuRemain();
-            FormChinhSuaKhachHang cus = new FormChinhSuaKhachHang();
+            FormChinhSuaKhachHang cus = new FormChinhSuaKhachHang(this);
             FormLock ltmp = new FormLock();
             ltmp.Show();
             cus.Show();
@@ -587,12 +605,30 @@ namespace CoffeeShopManagement
 
         private void BtThongTinQuan_Click(object sender, EventArgs e)
         {
+            HideMenuRemain();
             FormThongTinQuan cus = new FormThongTinQuan();
             FormLock ltmp = new FormLock();
             ltmp.Show();
             cus.Show();
             cus.SetLockForm(ref ltmp);
             ltmp.SetLockParent(cus);
+        }
+
+        private void BtLoaiKhachHang_Click(object sender, EventArgs e)
+        {
+            HideMenuRemain();
+            FormQuanLyLoaiKhachHang cus = new FormQuanLyLoaiKhachHang();
+            FormLock khoa = new FormLock();
+            khoa.Show();
+            cus.Show();
+            cus.SetLockForm(ref khoa);
+            khoa.SetLockParent(cus);
+        }
+
+        private void Restart_Click(object sender, EventArgs e)
+        {
+            LoadSomeThingPublic();
+            IO.ExportSuccess("Đã làm mới thành công");
         }
     }
 }

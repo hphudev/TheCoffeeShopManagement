@@ -90,6 +90,11 @@ namespace DAO
                 return null;
             }
         }
+
+        public static string ChangeAnyToString(string parameter)
+        {
+            return (parameter != null) ? parameter : "";
+        }
         #endregion
     }
 }

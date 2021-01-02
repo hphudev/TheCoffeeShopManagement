@@ -58,6 +58,9 @@ namespace CoffeeShopManagement
                 this.lID.Text = selectedStaff.id.ToString();
                 this.tbUsername.Text = selectedAccount.username;
                 this.pbImage.Image = selectedStaff.image;
+                this.tbName.Enabled = false;
+                this.tbPassword.Text = this.tbConfirm.Text = "123456";
+                this.tbPassword.Enabled = this.tbConfirm.Enabled = false;
             }
             catch (Exception)
             {
@@ -103,11 +106,34 @@ namespace CoffeeShopManagement
                 this.tbAddress.Text, selectedStaff.sdt, selectedStaff.sex, selectedStaff.date,
                 selectedStaff.cmnd, this.cbPosition.Text, int.Parse(this.tbSalary.Text));
             Account updatedAccount = new Account(selectedStaff.id.ToString(), this.tbUsername.Text,
-                Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()), true);
-            (new ChangeStaff()).ChangeInfoObj(updatedStaff, updatedAccount);
+                Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()), true, this.tbEmail.Text, "");
+            if (btThayDoi.Checked)
+                (new ChangeStaff()).ChangeInfoObj(updatedStaff, updatedAccount);
+            else
+                (new ChangeStaff()).ChangeInfoObj(updatedStaff, null);
             Event.CloseForm(this);
         }
 
         #endregion
+
+        private void BtThayDoi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (btThayDoi.Checked)
+            {
+                this.tbName.Enabled = true;
+                this.tbPassword.Text = "";
+                this.tbConfirm.Text = "";
+                this.tbPassword.Enabled = true;
+                this.tbConfirm.Enabled = true;
+            }
+            else
+            {
+                this.tbName.Enabled = false;
+                this.tbPassword.Text = "12345678";
+                this.tbConfirm.Text = "12345678";
+                this.tbPassword.Enabled = false;
+                this.tbConfirm.Enabled = false;
+            }
+        }
     }
 }

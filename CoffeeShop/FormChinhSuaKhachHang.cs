@@ -16,7 +16,8 @@ namespace CoffeeShopManagement
     {
         private FormLock khoa;
         bool Permiss = false;
-        public FormChinhSuaKhachHang()
+        FormSell parent;
+        public FormChinhSuaKhachHang(FormSell parent)
         {
             InitializeComponent();
             tbDoanhSo.ReadOnly = true;
@@ -24,6 +25,7 @@ namespace CoffeeShopManagement
             tbNgayDangKy.ReadOnly = true;
             StatusTextCombo(false);
             this.FormBorderStyle = FormBorderStyle.None;
+            this.parent = parent;
         }
 
         private void BtThoat_Click(object sender, EventArgs e)
@@ -209,12 +211,33 @@ namespace CoffeeShopManagement
 
         private void BtQuanLi_Click(object sender, EventArgs e)
         {
+            if (!this.parent.parent.account.IsAdmin())
+            {
+                IO.ExportWarning("Bạn không có quyền truy xuất tính năng này");
+                return;
+            }
+            tbTimKiemSDT.Text = "";
             FormMenuCustomer cus = new FormMenuCustomer();
             FormLock ltmp = new FormLock();
             ltmp.Show();
             cus.Show();
             cus.SetLockForm(ref ltmp);
             ltmp.SetLockParent(cus);
+        }
+
+        private void LoadSomething()
+        {
+            lbMaKH.Text = "";
+            tbSDT.Text = "";
+            tbHoTen.Text = "";
+            cbGioiTinh.Text = "";
+            dtpNgaySinh.Text = "";
+            dtpNgaySinh.Value = DateTime.Today;
+            tbThanhVien.Text = "";
+            tbNgayDangKy.Text = "";
+            tbDiaChi.Text = "";
+            tbSoLanToiQuan.Text = "";
+            tbDoanhSo.Text = "";
         }
 
         public void SetLockForm(ref FormLock khoa)

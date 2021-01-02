@@ -24,8 +24,9 @@ namespace BUS
             Data.UpdateData("NHANVIEN", "CHUCVU = N'" + updatedStaff.chucVu + "', luong = '" +
                 updatedStaff.luong + "', DCHI = N'" + updatedStaff.address + "'", " WHERE MANV = '"
                 + updatedStaff.id.ToString() + "'");
-            Data.UpdateData("TAIKHOAN", "MATKHAU = '" + updatedAccount.password + "'",
-                " WHERE ID = '" + updatedAccount.id.ToString() + "'");
+            if (updatedAccount != null)
+                Data.UpdateData("TAIKHOAN", "MATKHAU = '" + updatedAccount.password + "'",
+                    " WHERE ID = '" + updatedAccount.id.ToString() + "'");
             IO.ExportSuccess("Sửa thông tin nhân viên thành công");
         }
 

@@ -154,7 +154,7 @@
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(1435, 104);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1435, 113);
             this.guna2GradientPanel1.TabIndex = 127;
             // 
             // label1
@@ -165,7 +165,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1435, 104);
+            this.label1.Size = new System.Drawing.Size(1435, 113);
             this.label1.TabIndex = 112;
             this.label1.Text = "QUẢN LÍ KHÁCH HÀNG";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -187,7 +187,7 @@
             this.pTieuDe.Dock = System.Windows.Forms.DockStyle.Top;
             this.pTieuDe.FillColor = System.Drawing.Color.Black;
             this.pTieuDe.FillColor2 = System.Drawing.Color.DimGray;
-            this.pTieuDe.Location = new System.Drawing.Point(0, 104);
+            this.pTieuDe.Location = new System.Drawing.Point(0, 113);
             this.pTieuDe.Name = "pTieuDe";
             this.pTieuDe.ShadowDecoration.Parent = this.pTieuDe;
             this.pTieuDe.Size = new System.Drawing.Size(1435, 70);
@@ -228,6 +228,7 @@
             this.tbTimKiemSDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbTimKiemSDT.TextChanged += new System.EventHandler(this.TbTimKiemSDT_TextChanged);
             this.tbTimKiemSDT.Enter += new System.EventHandler(this.TbTimKiemSDT_Enter);
+            this.tbTimKiemSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbTimKiemSDT_KeyPress);
             this.tbTimKiemSDT.Leave += new System.EventHandler(this.TbTimKiemSDT_Leave);
             // 
             // progressBar
@@ -330,7 +331,7 @@
             this.DOANHSO,
             this.XOA});
             this.dgvMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMenu.Location = new System.Drawing.Point(0, 174);
+            this.dgvMenu.Location = new System.Drawing.Point(0, 183);
             this.dgvMenu.MultiSelect = false;
             this.dgvMenu.Name = "dgvMenu";
             this.dgvMenu.ReadOnly = true;
@@ -345,7 +346,7 @@
             this.dgvMenu.RowHeadersWidth = 51;
             this.dgvMenu.RowTemplate.Height = 24;
             this.dgvMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMenu.Size = new System.Drawing.Size(1435, 573);
+            this.dgvMenu.Size = new System.Drawing.Size(1435, 564);
             this.dgvMenu.TabIndex = 131;
             this.dgvMenu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMenu_CellContentClick);
             // 

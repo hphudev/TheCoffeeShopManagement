@@ -24,17 +24,14 @@ namespace CoffeeShopManagement
             this.parent = parent;
             //Lock = new FormLock(this);
             tbManHinh.Text = "";
+            CalTIenCanDua();
+            lbTienCanDua.Text = Utility.StringToMoney((this.parent.sumOrders - discount).ToString());
             //this.Lock.Show();
             //this.Show();
         }
 
-        private void BtXacNhan_Click(object sender, EventArgs e)
+        void CalTIenCanDua()
         {
-            if (tbManHinh.Text == "")
-            {
-                IO.ExportWarning("Bạn chưa nhập số tiền khách đưa!");
-                return;
-            }
             SqlConnection con = Data.OpenConnection();
             SqlDataReader read = Data.ReadData("KHUYENMAI", con, "where TINHTRANGKM = 1", "*");
             while (read.HasRows)
@@ -56,6 +53,15 @@ namespace CoffeeShopManagement
             discount = discount * this.parent.sumOrders / 100;
             if (discountMax > 0 && discount > discountMax)
                 discount = discountMax;
+        }
+        private void BtXacNhan_Click(object sender, EventArgs e)
+        {
+            if (tbManHinh.Text == "")
+            {
+                IO.ExportWarning("Bạn chưa nhập số tiền khách đưa!");
+                return;
+            }
+            
             if (int.Parse(tbManHinh.Text) < this.parent.sumOrders - discount)
             {
                 IO.ExportWarning("Khách đưa tiền còn thiếu " + (this.parent.sumOrders - discount - int.Parse(tbManHinh.Text)) + " VNĐ");
