@@ -11,22 +11,18 @@ using BUS;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormAddObj : FormMain, IButtonOK, IImage, IError
+    public partial class FormObj : FormMain
     {
         protected FormMenu parent;
 
-        public FormAddObj()
+        public FormObj()
         {
 
         }
-        public FormAddObj(FormMenu parent)
+
+        public FormObj(FormMenu parent)
         {
             this.parent = parent;
-        }
-
-        public virtual void AddImageClicked(object sender, EventArgs e)
-        {
-
         }
 
         public virtual bool IsError()
@@ -34,7 +30,12 @@ namespace CoffeeShopManagement
             return false;
         }
 
-        public virtual void AddObj()
+        public virtual void ModifyObj()
+        {
+
+        }
+
+        public virtual void ClearMenu()
         {
 
         }
@@ -46,10 +47,9 @@ namespace CoffeeShopManagement
                 return;
             }
 
-            AddObj();
-            this.parent.ClearMenu();
+            ModifyObj();
+            ClearMenu();
             this.parent.LoadMenu();
-            Event.CloseForm(this);
         }
 
     }

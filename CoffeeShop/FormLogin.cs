@@ -18,7 +18,7 @@ using System.Configuration;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormLogin : FormMain, IButtonOK
+    public partial class FormLogin : Form, IButtonOK
     {
         #region Thư viện giao diện
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -147,7 +147,7 @@ namespace CoffeeShopManagement
                 }
                 if (!bgWorker.IsBusy)
                 {
-                    this.Load.Visible = true;
+                    this.load.Visible = true;
                     IO.ExportInfo("Đang kết nối cơ sở dữ liệu");
                     bgWorker.RunWorkerAsync();
                 }
@@ -156,14 +156,14 @@ namespace CoffeeShopManagement
             }
             catch (Exception)
             {
-                this.Load.Visible = false;
+                this.load.Visible = false;
                 //IO.ExportError("Lỗi không xác định\n(Line 177 Form Login)");
             }
         }
 
         public override void CancelClicked(object sender, EventArgs e)
         {
-            Event.CloseForm(this);
+            base.CancelClicked(sender, e);
             Event.CloseForm(this.parent);
         }
 
@@ -296,10 +296,10 @@ namespace CoffeeShopManagement
 
         private void BgWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            this.Load.Visible = false;
+            this.load.Visible = false;
             if (e.ProgressPercentage == 0)
             {
-                this.Load.BackColor = Color.Red;
+                this.load.BackColor = Color.Red;
                 sleep *= 2;
                 IO.ExportError($"Mất kết nối server");
                 bgWorker.CancelAsync();
@@ -321,7 +321,7 @@ namespace CoffeeShopManagement
             {
                 sleep = 1000;
                 IO.ExportError("Tên đăng nhập này không tồn tại");
-                this.Load.BackColor = Color.Red;
+                this.load.BackColor = Color.Red;
                 bgWorker.CancelAsync();
 
             }
@@ -330,7 +330,7 @@ namespace CoffeeShopManagement
             {
                 sleep = 1000;
                 IO.ExportError("Mật khẩu không đúng");
-                this.Load.BackColor = Color.Red;
+                this.load.BackColor = Color.Red;
                 bgWorker.CancelAsync();
 
             }

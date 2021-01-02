@@ -9,5 +9,6 @@ namespace CoffeeShopManagement
     public interface IImage : IForm
     {
         void AddImageClicked(object sender, EventArgs e);
+
     }
 }

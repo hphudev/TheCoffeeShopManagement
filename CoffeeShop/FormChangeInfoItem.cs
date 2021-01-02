@@ -14,7 +14,7 @@ using BUS;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormChangeInfoItem : FormChangeInfoObj
+    public partial class FormChangeInfoItem : FormItem, IImage, IAutofillForm
     {
         #region Operations
         public FormChangeInfoItem(FormMenuItem parent) : base(parent)
@@ -38,11 +38,11 @@ namespace CoffeeShopManagement
             }
         }
 
-        public override void Autofill()
+        public void Autofill()
         {
             try
             {
-                Item selectedItem = (Item)this.parent.GetSelectedObj();
+                Item selectedItem = (Item)((FormMenuItem)this.parent).GetSelectedObj();
                 this.tbName.Text = selectedItem.name;
                 this.tbPrice.Text = selectedItem.price.ToString();
                 this.tbUnit.Text = selectedItem.unit;
@@ -55,9 +55,9 @@ namespace CoffeeShopManagement
             }
         }
 
-        public override void AddImageClicked(object sender, EventArgs e)
+        public void AddImageClicked(object sender, EventArgs e)
         {
-            Item selectedItem = (Item)this.parent.GetSelectedObj();
+            Item selectedItem = (Item)((FormMenuItem)this.parent).GetSelectedObj();
             (new ChangeItem()).AddImageClicked(ref this.pbImageItem, selectedItem);
         }
 
@@ -72,14 +72,15 @@ namespace CoffeeShopManagement
             return false;
         }
 
-        public override void ChangeInfoObj()
+        public override void ModifyObj()
         {
-            Item selectedItem = (Item)this.parent.GetSelectedObj();
+            Item selectedItem = (Item)((FormMenuItem)this.parent).GetSelectedObj();
             Item updatedItem = new Item(selectedItem.id.ToString(), selectedItem.name, 
                 this.tbUnit.Text, selectedItem.numberOfServings, int.Parse(this.tbPrice.Text),
                 true);
             (new ChangeItem()).ChangeInfoObj(updatedItem);
             this.parent.parent.LoadSomeThingPublic();
+            Event.CloseForm(this);
         }
 
         #endregion

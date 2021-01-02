@@ -1,7 +1,7 @@
 ﻿
 namespace CoffeeShopManagement
 {
-    partial class FormChangeInfoObj
+    partial class FormObj
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,10 @@ namespace CoffeeShopManagement
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // FormChangeInfoObj
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "FormChangeInfoObj";
-            this.Text = "FormChangeInfoObj";
-            this.ResumeLayout(false);
-
+            this.Text = "FormObj";
         }
 
         #endregion

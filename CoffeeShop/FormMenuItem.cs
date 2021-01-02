@@ -15,7 +15,7 @@ using BUS;
 
 namespace CoffeeShopManagement
 {
-    public partial class FormMenuItem : FormMenu
+    public partial class FormMenuItem : FormMenu, IMenu
     {
         public FormMenuItem(FormSell parent) : base(parent)
         {
@@ -27,41 +27,78 @@ namespace CoffeeShopManagement
             this.bCancel.Click += CancelClicked;
             this.bClear.Click += ClearContent;
             this.bPrint.Click += PrintClicked;
+            this.loader.DoWork += LoadData;
+            this.loader.ProgressChanged += ShowProgress;
+            this.Load += LoadForm;
         }
 
-        public override void ClearMenu()
+        public void ClearMenu()
         {
             (new BUS.Menu()).ClearMenu(this.dgvMenu);
         }
 
-        public override void LoadData(object sender, DoWorkEventArgs e)
+        public override void AddRow(SqlDataReader reader)
         {
-            BUS.MenuItem menuItem = new BUS.MenuItem();
+            (new BUS.MenuItem()).AddRow(reader, this.dgvMenu, this.cbFind, this.sourceData);
+        }
 
-            if (e.Argument == null)
+        public void LoadData(object sender, DoWorkEventArgs e)
+        {
+            LoadData("MON", " WHERE TINHTRANG = 1", "*");
+        }
+
+        public void ShowProgress(object sender, ProgressChangedEventArgs e)
+        {
+            (new BUS.Menu()).ShowProgress(this.progressBar, e);
+            this.cbFind.AutoCompleteCustomSource = this.sourceData;
+        }
+
+        public void LoadForm(object sender, EventArgs e)
+        {
+            this.dgvMenu.Rows.Clear();
+            LoadMenu();
+        }
+
+        public override void DeleteObj()
+        {
+            if (this.dgvMenu.Rows.Count != 0)
             {
-                menuItem.LoadData(ref this.sourceData, "MON", " WHERE TINHTRANG = 1", ref this.semaphores,
-                    ref this.obj, this.loader);
+                (new BUS.MenuItem()).DeleteObj(this.dgvMenu, this.loader);
+                this.parent.LoadSomeThingPublic();
             }
             else
             {
-                menuItem.LoadData(ref this.sourceData, "MON", " WHERE TINHTRANG = 1 AND TENMON LIKE N'"
-                    + (string)e.Argument + "%'", ref this.semaphores, ref this.obj, this.loader);
+                IO.ExportError("Hành động không hợp lệ");
             }
         }
 
-        public override void ShowProgress(object sender, ProgressChangedEventArgs e)
+        public void FindObjClicked(object sender, EventArgs e)
         {
-            BUS.MenuItem menuItem = new BUS.MenuItem();
-            menuItem.ShowProgress(ref this.semaphores, this.dgvMenu, this.obj, this.progressBar, e);
+            Event.Find("MON", " WHERE TINHTRANG = 1 AND TENMON = N'" + this.cbFind.Text + "'", "*",
+               "Món", ref this.dgvMenu, ref this.cbFind);
         }
 
-        public override void FinishWork(object sender, RunWorkerCompletedEventArgs e)
+        public override FormMain InitFormReport()
         {
-            BUS.Menu.FinishWork(ref this.cbFind, this.sourceData);
+            return new Report.FormReportDanhSachMon();
         }
 
-        public override void ChangeInfoObjClicked(object sender, EventArgs e)
+        public void ClearContent(object sender, EventArgs e)
+        {
+            BUS.Menu.ClearContent(this.cbFind);
+        }
+
+        public override FormObj InitFormAddObj()
+        {
+            return new FormAddItem(this);
+        }
+
+        public override FormObj InitFormChangeInfoObj()
+        {
+            return new FormChangeInfoItem(this);
+        }
+
+        public void ChangeInfoObjClicked(object sender, EventArgs e)
         {
             if (this.dgvMenu != null && this.dgvMenu.Rows.Count != 0)
             {
@@ -73,47 +110,7 @@ namespace CoffeeShopManagement
             }
         }
 
-        public override void DeleteObjClicked(object sender, EventArgs e)
-        {
-            if (this.dgvMenu.Rows.Count != 0)
-            {
-                //base.DeleteObjClicked(sender, e);
-                (new BUS.MenuItem()).DeleteObj(this.dgvMenu, this.loader);
-                this.parent.LoadSomeThingPublic();
-            }
-            else
-            {
-                IO.ExportError("Hành động không hợp lệ");
-            }
-        }
-
-        public override void FindObjClicked(object sender, EventArgs e)
-        {
-            Event.Find("MON", " WHERE TINHTRANG = 1 AND TENMON = N'" + this.cbFind.Text + "'", "*",
-               "Món", ref this.dgvMenu, ref this.cbFind);
-        }
-
-        public override FormMain InitFormReport()
-        {
-            return new Report.FormReportDanhSachMon();
-        }
-       
-        public override void ClearContent(object sender, EventArgs e)
-        {
-            BUS.Menu.ClearContent(this.cbFind);
-        }
-
-        public override FormAddObj InitFormAddObj()
-        {
-            return new FormAddItem(this);
-        }
-
-        public override FormChangeInfoObj InitFormChangeInfoObj()
-        {
-            return new FormChangeInfoItem(this);
-        }
-
-        public override object GetSelectedObj()
+        public object GetSelectedObj()
         {
             return (new BUS.MenuItem()).GetSelectedObj(this.dgvMenu);
         }

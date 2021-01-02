@@ -47,14 +47,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddItem.cs" />
-    <Compile Include="AddObj.cs" />
+    <Compile Include="Class.cs" />
+    <Compile Include="IClass.cs" />
+    <Compile Include="ObjItem.cs" />
     <Compile Include="AddStaff.cs" />
     <Compile Include="ChangeItem.cs" />
-    <Compile Include="ChangeObj.cs" />
+    <Compile Include="ObjStaff.cs" />
     <Compile Include="ChangeStaff.cs" />
     <Compile Include="Encrypt.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="IAddObj.cs" />
+    <Compile Include="IChangeObj.cs" />
+    <Compile Include="IMenu.cs" />
     <Compile Include="Initialization.cs" />
+    <Compile Include="IObj.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MenuItem.cs" />
     <Compile Include="MenuStaff.cs" />
@@ -70,6 +76,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

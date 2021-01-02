@@ -10,9 +10,8 @@ using DAO;
 
 namespace BUS
 {
-    public abstract class AddObj : Obj
+    public abstract class ObjItem : Obj
     {
-        public abstract void AddNewObj(object arg1, object arg2 = null);
 
     }
 }

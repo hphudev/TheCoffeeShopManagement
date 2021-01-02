@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BUS
 {
-    public abstract class ChangeObj : Obj
+    public interface IAddObj : IObj
     {
-        public abstract void ChangeInfoObj(object arg1, object arg2 = null);
+        bool AddNewObj(object arg1, object arg2 = null);
 
     }
 }

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoffeeShopManagement
+namespace BUS
 {
-    public interface IFormMain : IForm
+    public interface IClass
     {
-        void Autofill();
+
     }
 }
