@@ -8,7 +8,7 @@ namespace BUS
 {
     public interface IChangeObj : IObj
     {
-        void ChangeInfoObj(object arg1, object arg2 = null);
+        bool ChangeInfoObj(object arg1, object arg2 = null);
 
     }
 }

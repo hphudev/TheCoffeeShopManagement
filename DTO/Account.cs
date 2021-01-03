@@ -105,36 +105,46 @@ namespace DTO
             }
         }
 
-            public static bool IsEmail(string username, string email)
+        public static bool IsEmail(string username, string email)
+        {
+            try
             {
-                try
-                {
-                    SqlConnection connection = Data.OpenConnection();
-                    SqlDataReader reader = Data.ReadData("TAIKHOAN", connection, " WHERE EMAIL = '" +
-                        email + "'", "*");
+                SqlConnection connection = Data.OpenConnection();
+                SqlDataReader reader = Data.ReadData("TAIKHOAN", connection, " WHERE EMAIL = '" +
+                    email + "'", "*");
 
-                    if (!reader.HasRows)
-                    {
-                        if (username == "1")
-                        {
-                            return false;
-                        }
-                        else
-                        {
-                            return true;
-                        }
-                    }
-                    else
+                if (!reader.HasRows)
+                {
+                    if (username == "1")
                     {
                         return false;
                     }
+                    else
+                    {
+                        return true;
+                    }
                 }
-                catch (Exception)
+                else
                 {
-                    IO.ExportError("Lỗi không xác định\n(Class Account)");
+                    reader.Read();
+                    Account account = new Account(reader.GetString(0), reader.GetString(1),
+                        reader.GetString(2), reader.GetBoolean(3), reader.GetString(4),
+                        reader.GetString(5));
+
+                    if (account.username == username)
+                    {
+                        return true;
+                    }
+
                     return false;
                 }
             }
+            catch (Exception)
+            {
+                IO.ExportError("Lỗi không xác định\n(Class Account)");
+                return false;
+            }
+        }
 
         #endregion
     }

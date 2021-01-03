@@ -89,8 +89,11 @@ namespace DTO
 
                     if (newItem.name == item.name && item.status)
                     {
-                        Data.CloseConnection(ref connection);
-                        return 0;
+                        if (newItem.id.ToString() != item.id.ToString())
+                        {
+                            Data.CloseConnection(ref connection);
+                            return 0;
+                        }
                     }
 
                     if (newItem.name == item.name && !item.status)
@@ -105,13 +108,16 @@ namespace DTO
 
                 reader.Close();
 
-                if (lastID == "")
+                if (newItem.id.ToString() == "")
                 {
-                    newItem.id.SetID(1, "M", 3);
-                }
-                else
-                {
-                    newItem.id.SetID(int.Parse(lastID) + 1, "M", 3);
+                    if (lastID == "")
+                    {
+                        newItem.id.SetID(1, "M", 3);
+                    }
+                    else
+                    {
+                        newItem.id.SetID(int.Parse(lastID) + 1, "M", 3);
+                    }
                 }
 
                 Data.CloseConnection(ref connection);
