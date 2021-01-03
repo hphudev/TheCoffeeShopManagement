@@ -266,7 +266,7 @@
             this.tbEmail.ForeColor = System.Drawing.Color.Black;
             this.tbEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbEmail.HoverState.Parent = this.tbEmail;
-            this.tbEmail.IconLeft = global::CoffeeShopManagement.Properties.Resources.Money;
+            this.tbEmail.IconLeft = global::CoffeeShopManagement.Properties.Resources.email;
             this.tbEmail.Location = new System.Drawing.Point(14, 203);
             this.tbEmail.Margin = new System.Windows.Forms.Padding(2);
             this.tbEmail.Name = "tbEmail";
@@ -312,7 +312,7 @@
             this.tbMatKhau.ForeColor = System.Drawing.Color.Black;
             this.tbMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbMatKhau.HoverState.Parent = this.tbMatKhau;
-            this.tbMatKhau.IconLeft = global::CoffeeShopManagement.Properties.Resources.user;
+            this.tbMatKhau.IconLeft = global::CoffeeShopManagement.Properties.Resources.password;
             this.tbMatKhau.Location = new System.Drawing.Point(14, 106);
             this.tbMatKhau.Margin = new System.Windows.Forms.Padding(2);
             this.tbMatKhau.Name = "tbMatKhau";

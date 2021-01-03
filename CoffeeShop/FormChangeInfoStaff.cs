@@ -59,8 +59,9 @@ namespace CoffeeShopManagement
                 this.tbUsername.Text = selectedAccount.username;
                 this.pbImage.Image = selectedStaff.image;
                 this.tbName.Enabled = false;
-                this.tbPassword.Text = this.tbConfirm.Text = "123456";
+                this.tbPassword.Text = this.tbConfirm.Text = selectedAccount.password;
                 this.tbPassword.Enabled = this.tbConfirm.Enabled = false;
+                this.tbEmail.Text = selectedAccount.email;
             }
             catch (Exception)
             {
@@ -84,7 +85,7 @@ namespace CoffeeShopManagement
             try
             {
                 if (this.tbAddress.Text == "" || this.tbSDT.Text == "" || this.cbSex.Text == "" ||
-                    this.tbSalary.Text == "" || this.cbPosition.Text == "" || this.tbPassword.Text == "")
+                    this.tbSalary.Text == "" || this.cbPosition.Text == "" || this.tbPassword.Text == "" || tbEmail.Text == "")
                 {
                     IO.ExportError("Nhập không đầy đủ nội dung tất cả các trường");
                     return true;
@@ -107,10 +108,7 @@ namespace CoffeeShopManagement
                 selectedStaff.cmnd, this.cbPosition.Text, int.Parse(this.tbSalary.Text));
             Account updatedAccount = new Account(selectedStaff.id.ToString(), this.tbUsername.Text,
                 Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()), true, this.tbEmail.Text, "");
-            if (btThayDoi.Checked)
-                (new ChangeStaff()).ChangeInfoObj(updatedStaff, updatedAccount);
-            else
-                (new ChangeStaff()).ChangeInfoObj(updatedStaff, null);
+            (new ChangeStaff()).ChangeInfoObj(updatedStaff, updatedAccount);
             Event.CloseForm(this);
         }
 
@@ -128,9 +126,11 @@ namespace CoffeeShopManagement
             }
             else
             {
+                Staff selectedStaff = (Staff)((FormMenuStaff)this.parent).GetSelectedObj();
+                Account selectedAccount = selectedStaff.GetAccount();
                 this.tbName.Enabled = false;
-                this.tbPassword.Text = "12345678";
-                this.tbConfirm.Text = "12345678";
+                this.tbPassword.Text = selectedAccount.password;
+                this.tbConfirm.Text = selectedAccount.password;
                 this.tbPassword.Enabled = false;
                 this.tbConfirm.Enabled = false;
             }

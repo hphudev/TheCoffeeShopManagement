@@ -30,7 +30,7 @@ namespace BUS
             }
             else
             {
-                if (Account.IsUsername(account.username))
+                if (Account.IsUsername(account.username) && Account.IsEmail(account.username, account.email))
                 {
                     account.id = new ID(newStaff.id.ToString());
 
@@ -49,7 +49,7 @@ namespace BUS
                             newStaff.luong.ToString() + ", CHUCVU = N'" + newStaff.chucVu + "'",
                             " WHERE MANV = '" + newStaff.id.ToString() + "'");
                         Data.UpdateData("TAIKHOAN", "TENDN = '" + account.username +
-                            "', MATKHAU = '" + account.password + "', TINHTRANG = 1",
+                            "', MATKHAU = '" + account.password + $"', TINHTRANG = 1, EMAIL = '{account.email}'",
                             " WHERE ID = '" + account.id.ToString() + "'");
                     }
 
@@ -58,7 +58,9 @@ namespace BUS
                 }
                 else
                 {
-                    IO.ExportError("Tên đăng nhập đã tồn tại");
+                    if (!Account.IsUsername(account.username))
+                        IO.ExportError("Tên đăng nhập đã tồn tại");
+                    IO.ExportError("Email đã tồn tại");
                     return false;
                 }
             }

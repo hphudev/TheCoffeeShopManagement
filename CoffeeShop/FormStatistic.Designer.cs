@@ -59,7 +59,7 @@
             // 
             // tvHistory
             // 
-            this.tvHistory.BackColor = System.Drawing.Color.White;
+            this.tvHistory.BackColor = System.Drawing.Color.Ivory;
             this.tvHistory.Location = new System.Drawing.Point(1, 119);
             this.tvHistory.Name = "tvHistory";
             this.tvHistory.Size = new System.Drawing.Size(383, 637);
@@ -93,7 +93,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.groupBox1.BackColor = System.Drawing.Color.Ivory;
             this.groupBox1.Controls.Add(this.bCancel1);
             this.groupBox1.Controls.Add(this.bOK);
             this.groupBox1.Controls.Add(this.dtpEnd);
@@ -166,7 +166,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.groupBox2.BackColor = System.Drawing.Color.Ivory;
             this.groupBox2.Controls.Add(this.lExpense);
             this.groupBox2.Controls.Add(this.lReceipt);
             this.groupBox2.Controls.Add(this.label7);
@@ -220,8 +220,9 @@
             // 
             // cChart
             // 
-            this.cChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.cChart.BackColor = System.Drawing.Color.Ivory;
             this.cChart.BorderlineColor = System.Drawing.Color.Black;
+            this.cChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             chartArea1.Name = "ChartArea1";
             this.cChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -265,7 +266,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Ivory;
+            this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(1355, 771);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.groupBox2);

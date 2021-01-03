@@ -23,6 +23,7 @@ namespace CoffeeShopManagement
             tbDoanhSo.ReadOnly = true;
             tbSoLanToiQuan.ReadOnly = true;
             tbNgayDangKy.ReadOnly = true;
+            tbThanhVien.ReadOnly = true;
             StatusTextCombo(false);
             this.FormBorderStyle = FormBorderStyle.None;
             this.parent = parent;
@@ -58,7 +59,6 @@ namespace CoffeeShopManagement
             tbSDT.ReadOnly = !status;
             tbHoTen.ReadOnly = !status;
             cbGioiTinh.Enabled = status;
-            tbThanhVien.ReadOnly = !status;
             tbDiaChi.ReadOnly = !status;
         }
 
@@ -78,7 +78,7 @@ namespace CoffeeShopManagement
                     tbHoTen.Text = Reader.GetString(1);
                     cbGioiTinh.Text = Reader.GetString(7);
                     dtpNgaySinh.Value = Reader.GetDateTime(4);
-                    tbThanhVien.Text = Reader.GetString(9);
+                    tbThanhVien.Text = (!Reader.IsDBNull(9)) ? Reader.GetString(9) : "";
                     tbNgayDangKy.Text = new DateTime().GetDate(Reader.GetDateTime(6));
                     tbDiaChi.Text = Reader.GetString(2);
                     tbSoLanToiQuan.Text = Reader.GetInt32(8).ToString();
@@ -97,7 +97,7 @@ namespace CoffeeShopManagement
         private bool CheckSDT(string SDT)
         {
             int i = Data.Calculate(" count ", " * ", " khachhang ", $" where SDT = '{tbSDT.Text}' and makh <> '{lbMaKH.Text}'");
-            return (i == 0);
+            return (i <= 0);
         }
 
         private bool CheckGioiTinh(string gioitinh)
@@ -243,6 +243,11 @@ namespace CoffeeShopManagement
         public void SetLockForm(ref FormLock khoa)
         {
             this.khoa = khoa;
+        }
+
+        private void BReset_Click(object sender, EventArgs e)
+        {
+            tbTimKiemSDT.Text = "";
         }
     }
 }

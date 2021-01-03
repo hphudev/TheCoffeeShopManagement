@@ -115,6 +115,12 @@
     <Compile Include="Form.Designer.cs">
       <DependentUpon>Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDoiMatKhau.Designer.cs">
+      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQuanLyLoaiKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,12 @@
     </Compile>
     <Compile Include="FormItem.Designer.cs">
       <DependentUpon>FormItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormQuenMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuenMatKhau.Designer.cs">
+      <DependentUpon>FormQuenMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="FormStaff.cs">
       <SubType>Form</SubType>
@@ -395,8 +407,14 @@
     <Compile Include="Table.Designer.cs">
       <DependentUpon>Table.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormDoiMatKhau.resx">
+      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLyLoaiKhachHang.resx">
       <DependentUpon>FormQuanLyLoaiKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQuenMatKhau.resx">
+      <DependentUpon>FormQuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStaff.resx">
       <DependentUpon>FormStaff.cs</DependentUpon>

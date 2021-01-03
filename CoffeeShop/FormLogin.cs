@@ -359,7 +359,12 @@ namespace CoffeeShopManagement
 
         private void BtQuenMatKhau_Click(object sender, EventArgs e)
         {
-
+            FormLock khoa = new FormLock();
+            FormQuenMatKhau cus = new FormQuenMatKhau(this);
+            khoa.Show();
+            cus.Show();
+            khoa.SetLockParent(cus);
+            cus.SetLockForm(ref khoa);
         }
     }
 }

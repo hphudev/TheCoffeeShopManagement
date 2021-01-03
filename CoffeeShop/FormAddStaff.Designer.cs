@@ -35,6 +35,8 @@
             this.bReset = new Guna.UI2.WinForms.Guna2GradientButton();
             this.bOK = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.tbConfirm = new Guna.UI2.WinForms.Guna2TextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -63,8 +65,6 @@
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
@@ -191,6 +191,52 @@
             this.guna2GroupBox2.Size = new System.Drawing.Size(398, 417);
             this.guna2GroupBox2.TabIndex = 113;
             this.guna2GroupBox2.Text = "Thông tin đăng nhập";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(10, 318);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 23);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Email";
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Animated = true;
+            this.tbEmail.BackColor = System.Drawing.Color.Transparent;
+            this.tbEmail.BorderColor = System.Drawing.Color.Bisque;
+            this.tbEmail.BorderRadius = 5;
+            this.tbEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbEmail.DefaultText = "";
+            this.tbEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbEmail.DisabledState.Parent = this.tbEmail;
+            this.tbEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbEmail.FillColor = System.Drawing.Color.Ivory;
+            this.tbEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.tbEmail.FocusedState.Parent = this.tbEmail;
+            this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tbEmail.ForeColor = System.Drawing.Color.Black;
+            this.tbEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbEmail.HoverState.Parent = this.tbEmail;
+            this.tbEmail.IconLeft = global::CoffeeShopManagement.Properties.Resources.email;
+            this.tbEmail.Location = new System.Drawing.Point(14, 348);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.PasswordChar = '\0';
+            this.tbEmail.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbEmail.PlaceholderText = "";
+            this.tbEmail.SelectedText = "";
+            this.tbEmail.ShadowDecoration.Parent = this.tbEmail;
+            this.tbEmail.Size = new System.Drawing.Size(350, 47);
+            this.tbEmail.TabIndex = 17;
+            this.tbEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label20
             // 
@@ -735,53 +781,6 @@
             // 
             this.guna2Elipse2.BorderRadius = 100;
             this.guna2Elipse2.TargetControl = this.pbImage;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(10, 318);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 23);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Email";
-            // 
-            // tbEmail
-            // 
-            this.tbEmail.Animated = true;
-            this.tbEmail.BackColor = System.Drawing.Color.Transparent;
-            this.tbEmail.BorderColor = System.Drawing.Color.Bisque;
-            this.tbEmail.BorderRadius = 5;
-            this.tbEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbEmail.DefaultText = "";
-            this.tbEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbEmail.DisabledState.Parent = this.tbEmail;
-            this.tbEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbEmail.FillColor = System.Drawing.Color.Ivory;
-            this.tbEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.tbEmail.FocusedState.Parent = this.tbEmail;
-            this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.tbEmail.ForeColor = System.Drawing.Color.Black;
-            this.tbEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbEmail.HoverState.Parent = this.tbEmail;
-            this.tbEmail.IconLeft = global::CoffeeShopManagement.Properties.Resources.email;
-            this.tbEmail.Location = new System.Drawing.Point(14, 348);
-            this.tbEmail.Margin = new System.Windows.Forms.Padding(2);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.PasswordChar = '\0';
-            this.tbEmail.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.tbEmail.PlaceholderText = "";
-            this.tbEmail.SelectedText = "";
-            this.tbEmail.ShadowDecoration.Parent = this.tbEmail;
-            this.tbEmail.Size = new System.Drawing.Size(350, 47);
-            this.tbEmail.TabIndex = 17;
-            this.tbEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbEmail.UseSystemPasswordChar = true;
             // 
             // FormAddStaff
             // 

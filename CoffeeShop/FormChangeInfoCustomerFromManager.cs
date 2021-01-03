@@ -21,6 +21,10 @@ namespace CoffeeShopManagement
             InitializeComponent();
             //khoa = new FormLock(this);
             //khoa.Show();
+            tbDoanhSo.ReadOnly = true;
+            tbSoLanToiQuan.ReadOnly = true;
+            tbNgayDangKy.ReadOnly = true;
+            tbThanhVien.ReadOnly = true;
             this.parent = fromParent;
             this.parentMenu = parent;
         }
@@ -33,7 +37,7 @@ namespace CoffeeShopManagement
         private bool CheckSDT(string SDT)
         {
             int i = Data.Calculate(" count ", " * ", " khachhang ", $" where SDT = '{SDT}' and makh <> '{lbMaKH.Text}'");
-            return (i == 0);
+            return (i <= 0);
         }
 
         private bool CheckGioiTinh(string gioitinh)
@@ -100,6 +104,11 @@ namespace CoffeeShopManagement
         {
             this.khoa.Close();
             this.Close();
+        }
+
+        private void BReset_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

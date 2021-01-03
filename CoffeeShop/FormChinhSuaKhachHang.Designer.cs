@@ -160,7 +160,7 @@
             this.tbTimKiemSDT.SelectedText = "";
             this.tbTimKiemSDT.ShadowDecoration.Parent = this.tbTimKiemSDT;
             this.tbTimKiemSDT.Size = new System.Drawing.Size(354, 47);
-            this.tbTimKiemSDT.TabIndex = 117;
+            this.tbTimKiemSDT.TabIndex = 1;
             this.tbTimKiemSDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbTimKiemSDT.TextChanged += new System.EventHandler(this.TbTimKiemSDT_TextChanged);
             this.tbTimKiemSDT.Enter += new System.EventHandler(this.TbTimKiemSDT_Enter);
@@ -230,6 +230,7 @@
             this.bReset.Size = new System.Drawing.Size(118, 47);
             this.bReset.TabIndex = 115;
             this.bReset.Text = "Đặt lại";
+            this.bReset.Click += new System.EventHandler(this.BReset_Click);
             // 
             // bOK
             // 
@@ -476,7 +477,7 @@
             this.lbMaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbMaKH.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMaKH.ForeColor = System.Drawing.Color.White;
-            this.lbMaKH.Image = global::CoffeeShopManagement.Properties.Resources.Info;
+            this.lbMaKH.Image = global::CoffeeShopManagement.Properties.Resources.Info1;
             this.lbMaKH.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lbMaKH.Location = new System.Drawing.Point(0, 0);
             this.lbMaKH.Name = "lbMaKH";

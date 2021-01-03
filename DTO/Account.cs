@@ -79,7 +79,7 @@ namespace DTO
             try
             {
                 SqlConnection connection = Data.OpenConnection();
-                SqlDataReader reader = Data.ReadData("TAIKHOAN", connection, " WHERE TENDN = '" + 
+                SqlDataReader reader = Data.ReadData("TAIKHOAN", connection, " WHERE TENDN = '" +
                     username + "'", "*");
 
                 if (!reader.HasRows)
@@ -104,6 +104,37 @@ namespace DTO
                 return false;
             }
         }
+
+            public static bool IsEmail(string username, string email)
+            {
+                try
+                {
+                    SqlConnection connection = Data.OpenConnection();
+                    SqlDataReader reader = Data.ReadData("TAIKHOAN", connection, " WHERE EMAIL = '" +
+                        email + "'", "*");
+
+                    if (!reader.HasRows)
+                    {
+                        if (username == "1")
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                catch (Exception)
+                {
+                    IO.ExportError("Lỗi không xác định\n(Class Account)");
+                    return false;
+                }
+            }
 
         #endregion
     }

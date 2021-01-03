@@ -650,7 +650,6 @@ namespace CoffeeShopManagement
             this.tbEmail.Size = new System.Drawing.Size(350, 47);
             this.tbEmail.TabIndex = 163;
             this.tbEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbEmail.UseSystemPasswordChar = true;
             // 
             // label6
             // 
