@@ -72,3 +72,16 @@ F:\MANAGEMENT_15\TheCoffeeShopManagement\DAO\obj\Debug\DAO.csproj.CoreCompileInp
 F:\MANAGEMENT_15\TheCoffeeShopManagement\DAO\obj\Debug\DAO.csproj.CopyComplete
 F:\MANAGEMENT_15\TheCoffeeShopManagement\DAO\obj\Debug\DAO.exe
 F:\MANAGEMENT_15\TheCoffeeShopManagement\DAO\obj\Debug\DAO.pdb
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_5\TheCoffeeShopManagement\DAO\bin\Debug\DAO.exe.config
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_5\TheCoffeeShopManagement\DAO\bin\Debug\DAO.exe
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_5\TheCoffeeShopManagement\DAO\bin\Debug\DAO.pdb
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_5\TheCoffeeShopManagement\DAO\bin\Debug\IOC.exe
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_5\TheCoffeeShopManagement\DAO\bin\Debug\IOC.pdb
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_5\TheCoffeeShopManagement\DAO\bin\Debug\IOC.exe.config
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_5\TheCoffeeShopManagement\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_5\TheCoffeeShopManagement\DAO\obj\Debug\DAO.Properties.Resources.resources
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_5\TheCoffeeShopManagement\DAO\obj\Debug\DAO.csproj.GenerateResource.cache
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_5\TheCoffeeShopManagement\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_5\TheCoffeeShopManagement\DAO\obj\Debug\DAO.csproj.CopyComplete
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_5\TheCoffeeShopManagement\DAO\obj\Debug\DAO.exe
+C:\Users\DELL\Documents\UIT\IT008.L11\Thuc_hanh\Coffee_shop_management\Project\Git_5\TheCoffeeShopManagement\DAO\obj\Debug\DAO.pdb

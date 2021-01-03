@@ -120,15 +120,6 @@ namespace CoffeeShopManagement
             return null;
         }
 
-        public void ShowForm(FormMain cus)
-        {
-            FormLock ltmp = new FormLock();
-            Event.ShowForm(ltmp);
-            Event.ShowForm(cus);
-            cus.SetLockForm(ref ltmp);
-            ltmp.SetLockParent(cus);
-        }
-
         public void PrintClicked(object sender, EventArgs e)
         {
             ShowForm(InitFormReport());

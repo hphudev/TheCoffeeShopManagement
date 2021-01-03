@@ -97,7 +97,7 @@ namespace DAO
                 command.ExecuteNonQuery();
                 Data.CloseConnection(ref connection);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 IO.ExportError("Lỗi không xác định\n(Class Data)");
             }

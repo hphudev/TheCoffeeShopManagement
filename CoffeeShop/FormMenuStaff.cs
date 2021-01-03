@@ -31,6 +31,7 @@ namespace CoffeeShopManagement
             this.loader.DoWork += LoadData;
             this.loader.ProgressChanged += ShowProgress;
             this.Load += LoadForm;
+            this.dgvMenu.CellClick += ShowImageClicked;
         }
 
         public void ClearMenu()
@@ -116,5 +117,15 @@ namespace CoffeeShopManagement
             return (new BUS.MenuStaff()).GetSelectedObj(this.dgvMenu);
         }
 
+        public void ShowImageClicked(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == this.dgvMenu.Columns[9].Index && e.RowIndex >= 0)
+            {
+                Staff selectedStaff = (Staff)GetSelectedObj();
+                FormImageStaff formImageStaff = new FormImageStaff(selectedStaff.image,
+                    selectedStaff.id);
+                ShowForm(formImageStaff);
+            }
+        }
     }
 }

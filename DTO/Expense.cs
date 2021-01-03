@@ -7,7 +7,7 @@ using DAO;
 
 namespace DTO
 {
-    public class Expense
+    public class Expense : IInfo
     {
         #region Attributes
         private string time, content;

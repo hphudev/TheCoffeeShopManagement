@@ -33,6 +33,15 @@ namespace CoffeeShopManagement
             Event.CloseForm(this.lockForm);
         }
 
+        public void ShowForm(FormMain cus)
+        {
+            FormLock ltmp = new FormLock();
+            Event.ShowForm(ltmp);
+            Event.ShowForm(cus);
+            cus.SetLockForm(ref ltmp);
+            ltmp.SetLockParent(cus);
+        }
+
         #endregion
     }
 }
