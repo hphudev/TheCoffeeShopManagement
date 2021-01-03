@@ -11,9 +11,11 @@ using System.Security.Cryptography;
 
 namespace DTO
 {
-    public class Staff : Person
+    public class Staff : Person, IInfo
     {
         #region Attributes
+        public ID id { get; }
+
         public string date { get; }
 
         public string cmnd { get; }
@@ -27,10 +29,11 @@ namespace DTO
 
         #region Operations
         public Staff(string id, string name, string address, string sdt, string sex, string date,
-            string cmnd, string chucVu, int luong) : base(id, name, address, sdt, sex)
+            string cmnd, string chucVu, int luong) : base(name, address, sdt, sex)
         {
             try
             {
+                this.id = new ID(id);
                 this.date = date;
                 this.cmnd = cmnd;
                 this.chucVu = chucVu;

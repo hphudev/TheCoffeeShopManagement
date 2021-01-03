@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace DTO
 {
-    public class Item
+    public class Item : IInfo
     {
         #region Atrributes
         public string unit { get; }

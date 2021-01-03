@@ -8,7 +8,7 @@ using DAO;
 
 namespace DTO
 {
-    public class Account
+    public class Account : IInfo
     {
         #region Attributes
         public ID id { get; set; }
