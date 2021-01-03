@@ -65,7 +65,7 @@ namespace CoffeeShopManagement
         private void TbTimKiemSDT_TextChanged(object sender, EventArgs e)
         {
             SqlConnection connection = Data.OpenConnection();
-            SqlDataReader Reader = Data.ReadData("KHACHHANG", connection, $" WHERE SDT = '{tbTimKiemSDT.Text}'", " * ");
+            SqlDataReader Reader = Data.ReadData("KHACHHANG", connection, $" WHERE SDT = '{tbTimKiemSDT.Text}' AND TINHTRANG = 1", " * ");
             if (Reader.HasRows)
             {
                 while (Reader.HasRows)

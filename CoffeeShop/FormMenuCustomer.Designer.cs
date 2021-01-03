@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.bCancel = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.bChangeInfoCus = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.bDeleteCus = new Guna.UI2.WinForms.Guna2GradientButton();
             this.dgvMenu = new System.Windows.Forms.DataGridView();
             this.MAKHACHHANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,6 +103,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -128,6 +129,7 @@
             // 
             // bPrint
             // 
+            this.bPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bPrint.CheckedState.ImageSize = new System.Drawing.Size(34, 34);
             this.bPrint.CheckedState.Parent = this.bPrint;
             this.bPrint.HoverState.ImageSize = new System.Drawing.Size(31, 31);
@@ -183,7 +185,6 @@
             this.pTieuDe.Controls.Add(this.progressBar);
             this.pTieuDe.Controls.Add(this.bChangeInfoCus);
             this.pTieuDe.Controls.Add(this.guna2GradientButton2);
-            this.pTieuDe.Controls.Add(this.bDeleteCus);
             this.pTieuDe.Dock = System.Windows.Forms.DockStyle.Top;
             this.pTieuDe.FillColor = System.Drawing.Color.Black;
             this.pTieuDe.FillColor2 = System.Drawing.Color.DimGray;
@@ -195,6 +196,7 @@
             // 
             // tbTimKiemSDT
             // 
+            this.tbTimKiemSDT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbTimKiemSDT.Animated = true;
             this.tbTimKiemSDT.BackColor = System.Drawing.Color.Transparent;
             this.tbTimKiemSDT.BorderColor = System.Drawing.Color.Bisque;
@@ -243,6 +245,7 @@
             // 
             // bChangeInfoCus
             // 
+            this.bChangeInfoCus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bChangeInfoCus.Animated = true;
             this.bChangeInfoCus.BackColor = System.Drawing.Color.Transparent;
             this.bChangeInfoCus.BorderRadius = 15;
@@ -254,7 +257,7 @@
             this.bChangeInfoCus.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.bChangeInfoCus.ForeColor = System.Drawing.Color.White;
             this.bChangeInfoCus.HoverState.Parent = this.bChangeInfoCus;
-            this.bChangeInfoCus.Location = new System.Drawing.Point(513, 14);
+            this.bChangeInfoCus.Location = new System.Drawing.Point(832, 13);
             this.bChangeInfoCus.Name = "bChangeInfoCus";
             this.bChangeInfoCus.ShadowDecoration.Parent = this.bChangeInfoCus;
             this.bChangeInfoCus.Size = new System.Drawing.Size(107, 47);
@@ -264,6 +267,7 @@
             // 
             // guna2GradientButton2
             // 
+            this.guna2GradientButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2GradientButton2.Animated = true;
             this.guna2GradientButton2.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientButton2.BorderColor = System.Drawing.Color.White;
@@ -283,37 +287,16 @@
             this.guna2GradientButton2.TabIndex = 8;
             this.guna2GradientButton2.Text = "X";
             // 
-            // bDeleteCus
-            // 
-            this.bDeleteCus.Animated = true;
-            this.bDeleteCus.BackColor = System.Drawing.Color.Transparent;
-            this.bDeleteCus.BorderRadius = 15;
-            this.bDeleteCus.CheckedState.Parent = this.bDeleteCus;
-            this.bDeleteCus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bDeleteCus.CustomImages.Parent = this.bDeleteCus;
-            this.bDeleteCus.FillColor = System.Drawing.Color.DarkSlateBlue;
-            this.bDeleteCus.FillColor2 = System.Drawing.Color.Teal;
-            this.bDeleteCus.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.bDeleteCus.ForeColor = System.Drawing.Color.White;
-            this.bDeleteCus.HoverState.Parent = this.bDeleteCus;
-            this.bDeleteCus.Location = new System.Drawing.Point(651, 14);
-            this.bDeleteCus.Name = "bDeleteCus";
-            this.bDeleteCus.ShadowDecoration.Parent = this.bDeleteCus;
-            this.bDeleteCus.Size = new System.Drawing.Size(107, 47);
-            this.bDeleteCus.TabIndex = 119;
-            this.bDeleteCus.Text = "Xóa";
-            // 
             // dgvMenu
             // 
             this.dgvMenu.AllowUserToAddRows = false;
             this.dgvMenu.AllowUserToDeleteRows = false;
             this.dgvMenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMenu.BackgroundColor = System.Drawing.Color.SeaShell;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkOrange;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -330,20 +313,28 @@
             this.SOLANDENQUAN,
             this.DOANHSO,
             this.XOA});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMenu.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMenu.Location = new System.Drawing.Point(0, 183);
             this.dgvMenu.MultiSelect = false;
             this.dgvMenu.Name = "dgvMenu";
             this.dgvMenu.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkOrange;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMenu.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMenu.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMenu.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvMenu.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvMenu.RowTemplate.Height = 24;
             this.dgvMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMenu.Size = new System.Drawing.Size(1435, 564);
@@ -380,7 +371,7 @@
             // 
             // SODIENTHOAI
             // 
-            this.SODIENTHOAI.HeaderText = "Số điện thoại";
+            this.SODIENTHOAI.HeaderText = "SĐT";
             this.SODIENTHOAI.MinimumWidth = 6;
             this.SODIENTHOAI.Name = "SODIENTHOAI";
             this.SODIENTHOAI.ReadOnly = true;
@@ -401,14 +392,14 @@
             // 
             // NGAYDANGKY
             // 
-            this.NGAYDANGKY.HeaderText = "Ngày đăng ký";
+            this.NGAYDANGKY.HeaderText = "Ngày ĐK";
             this.NGAYDANGKY.MinimumWidth = 6;
             this.NGAYDANGKY.Name = "NGAYDANGKY";
             this.NGAYDANGKY.ReadOnly = true;
             // 
             // SOLANDENQUAN
             // 
-            this.SOLANDENQUAN.HeaderText = "Số lần đến quán";
+            this.SOLANDENQUAN.HeaderText = "Số lần đến";
             this.SOLANDENQUAN.MinimumWidth = 6;
             this.SOLANDENQUAN.Name = "SOLANDENQUAN";
             this.SOLANDENQUAN.ReadOnly = true;
@@ -448,6 +439,7 @@
             this.Name = "FormMenuCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenuCustomer";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormMenuCustomer_Load);
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.pCheck.ResumeLayout(false);
@@ -475,7 +467,6 @@
         private System.Windows.Forms.ProgressBar progressBar;
         private Guna.UI2.WinForms.Guna2GradientButton bChangeInfoCus;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
-        private Guna.UI2.WinForms.Guna2GradientButton bDeleteCus;
         private System.ComponentModel.BackgroundWorker backgroundWorker;
         private Guna.UI2.WinForms.Guna2TextBox tbTimKiemSDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAKHACHHANG;

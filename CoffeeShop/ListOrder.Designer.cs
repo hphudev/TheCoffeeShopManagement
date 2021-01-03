@@ -87,10 +87,10 @@
             this.btCong.CheckedState.Parent = this.btCong;
             this.btCong.CustomImages.Parent = this.btCong;
             this.btCong.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btCong.FillColor = System.Drawing.Color.Sienna;
-            this.btCong.FillColor2 = System.Drawing.Color.Silver;
+            this.btCong.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btCong.FillColor2 = System.Drawing.Color.Tomato;
             this.btCong.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btCong.ForeColor = System.Drawing.Color.Lime;
+            this.btCong.ForeColor = System.Drawing.Color.White;
             this.btCong.HoverState.Parent = this.btCong;
             this.btCong.Location = new System.Drawing.Point(450, 0);
             this.btCong.Name = "btCong";
@@ -106,10 +106,10 @@
             this.btTru.CheckedState.Parent = this.btTru;
             this.btTru.CustomImages.Parent = this.btTru;
             this.btTru.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btTru.FillColor = System.Drawing.Color.YellowGreen;
-            this.btTru.FillColor2 = System.Drawing.Color.Silver;
+            this.btTru.FillColor = System.Drawing.Color.Tomato;
+            this.btTru.FillColor2 = System.Drawing.Color.CadetBlue;
             this.btTru.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btTru.ForeColor = System.Drawing.Color.Red;
+            this.btTru.ForeColor = System.Drawing.Color.White;
             this.btTru.HoverState.Parent = this.btTru;
             this.btTru.Location = new System.Drawing.Point(370, 0);
             this.btTru.Name = "btTru";

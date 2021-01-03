@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace DAO
 {
-    public static class IO
+    public class IO
     {
         #region Operations
         public static void LockWord(object sender, KeyPressEventArgs e)

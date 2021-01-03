@@ -114,6 +114,5 @@ namespace CoffeeShopManagement
         {
             return (new BUS.MenuItem()).GetSelectedObj(this.dgvMenu);
         }
-
     }
 }

@@ -8,6 +8,7 @@ using System.IO;
 using DAO;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using System.Windows.Forms;
 
 namespace DTO
 {
@@ -25,6 +26,8 @@ namespace DTO
 
         public Image image { get; set; }
 
+        string path = Application.LocalUserAppDataPath + "/ImageStaff/";
+
         public Staff(string id, string name, string address, string sdt, string sex, string date,
             string cmnd, string chucVu, int luong) : base(name, address, sdt, sex)
         {
@@ -38,11 +41,11 @@ namespace DTO
 
                 if (this.id.ToString() != "")
                 {
-                    FileInfo file = new FileInfo("./ImageStaff/" + this.id.ToString() + ".jpg");
+                    FileInfo file = new FileInfo(path + this.id.ToString() + ".jpg");
 
                     if (file.Exists)
                     {
-                        using (var bitmap = new Bitmap("./ImageStaff/" + this.id.ToString() + ".jpg"))
+                        using (var bitmap = new Bitmap(path + this.id.ToString() + ".jpg"))
                         {
                             this.image = new Bitmap(bitmap);
                         }

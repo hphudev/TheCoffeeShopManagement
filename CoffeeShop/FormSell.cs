@@ -203,6 +203,11 @@ namespace CoffeeShopManagement
         private void btThongBaoMouseDown(object s, MouseEventArgs e)
         {
             HideMenuRemain();
+            if (!this.parent.account.IsAdmin())
+            {
+                IO.ExportWarning("Bạn không được cấp quyền tính năng này!");
+                return;
+            }
             if (bThongBao)
             {
                 bThongBao = false;
@@ -261,7 +266,7 @@ namespace CoffeeShopManagement
             }
         }
 
-       
+        string path = Application.LocalUserAppDataPath + "/ImageItem/";
         private void InitDanhSachMon()
         {
             Items.Clear();
@@ -275,9 +280,9 @@ namespace CoffeeShopManagement
                     break;
                 ListItem item = new ListItem(this);
                 item.ID = reader.GetString(0);
-                if (System.IO.File.Exists($"./ImageItem/{ item.ID}.jpg"))
+                if (System.IO.File.Exists($"{path}/{ item.ID}.jpg"))
                 {
-                    using (var bitmap = new Bitmap($"./ImageItem/{item.ID}.jpg"))
+                    using (var bitmap = new Bitmap($"{path}/{item.ID}.jpg"))
                     {
                         item.Image = new Bitmap(bitmap);
                     }
@@ -571,6 +576,12 @@ namespace CoffeeShopManagement
 
         private void BtTaiChinh_Click(object sender, EventArgs e)
         {
+            HideMenuRemain();
+            if (!this.parent.account.IsAdmin())
+            {
+                IO.ExportWarning("Bạn không được cấp quyền tính năng này!");
+                return;
+            }
             FormExpense cus = new FormExpense(this);
             FormLock ltmp = new FormLock();
             ltmp.Show();
@@ -594,6 +605,7 @@ namespace CoffeeShopManagement
 
         private void PbThongBao_Click(object sender, EventArgs e)
         {
+            HideMenuRemain();
             FormNoiDungThongBao cus = new FormNoiDungThongBao(this);
             FormLock ltmp = new FormLock();
             ltmp.Show();
@@ -606,6 +618,11 @@ namespace CoffeeShopManagement
         private void BtThongTinQuan_Click(object sender, EventArgs e)
         {
             HideMenuRemain();
+            if (!this.parent.account.IsAdmin())
+            {
+                IO.ExportWarning("Bạn không được cấp quyền tính năng này!");
+                return;
+            }
             FormThongTinQuan cus = new FormThongTinQuan();
             FormLock ltmp = new FormLock();
             ltmp.Show();
@@ -617,6 +634,11 @@ namespace CoffeeShopManagement
         private void BtLoaiKhachHang_Click(object sender, EventArgs e)
         {
             HideMenuRemain();
+            if (!this.parent.account.IsAdmin())
+            {
+                IO.ExportWarning("Bạn không được cấp quyền tính năng này!");
+                return;
+            }
             FormQuanLyLoaiKhachHang cus = new FormQuanLyLoaiKhachHang();
             FormLock khoa = new FormLock();
             khoa.Show();

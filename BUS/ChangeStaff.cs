@@ -11,10 +11,12 @@ namespace BUS
 {
     public class ChangeStaff : ObjStaff, IChangeObj
     {
+        string path = Application.LocalUserAppDataPath + "/ImageStaff/";
+
         public override void AddImageClicked(ref PictureBox pbImageItem, object staff = null)
         {
             //MessageBox.Show(Application.LocalUserAppDataPath);
-            AddImage(ref pbImageItem, "./ImageStaff/", ((Staff)staff).id.ToString());
+            AddImage(ref pbImageItem, path, ((Staff)staff).id.ToString());
         }
 
         public bool ChangeInfoObj(object staff, object account = null)

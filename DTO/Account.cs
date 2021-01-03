@@ -15,11 +15,11 @@ namespace DTO
 
         public string username { get; }
 
-        public string password { get; }
+        public string password { get; set; }
 
         public bool status { get; }
 
-        public string email { get; }
+        public string email { get; set; }
 
         public string OTP { get; }
         #endregion

@@ -199,7 +199,6 @@
             // pbImageItem
             // 
             this.pbImageItem.BackColor = System.Drawing.Color.Bisque;
-            this.pbImageItem.Image = global::CoffeeShopManagement.Properties.Resources.LogoLogin;
             this.pbImageItem.Location = new System.Drawing.Point(15, 12);
             this.pbImageItem.Name = "pbImageItem";
             this.pbImageItem.Size = new System.Drawing.Size(272, 284);

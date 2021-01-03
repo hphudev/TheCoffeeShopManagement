@@ -321,7 +321,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
+            this.Text = "7";
             this.TransparencyKey = System.Drawing.SystemColors.ControlLight;
             this.pnLot.ResumeLayout(false);
             this.pnLot.PerformLayout();

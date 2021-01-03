@@ -11,10 +11,12 @@ namespace BUS
 {
     public class AddStaff : ObjStaff, IAddObj
     {
+        string path = Application.LocalUserAppDataPath + "/ImageStaff/";
+
         public override void AddImageClicked(ref PictureBox pbImageItem, object staff = null)
         {
             //MessageBox.Show(Application.LocalUserAppDataPath);
-            AddImage(ref pbImageItem, $"./ImageStaff/", ID.FindNewID("NHANVIEN", " ORDER BY MANV DESC",
+            AddImage(ref pbImageItem, path, ID.FindNewID("NHANVIEN", " ORDER BY MANV DESC",
                 "MANV", "NV", 2).ToString());
         }
 

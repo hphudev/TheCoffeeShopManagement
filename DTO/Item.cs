@@ -26,6 +26,9 @@ namespace DTO
         public Image image { get; }
 
         public bool status { get; }
+
+        string path = Application.LocalUserAppDataPath + "/ImageItem/";
+
         #endregion
 
         #region Operations
@@ -42,7 +45,7 @@ namespace DTO
 
                 if (this.id.ToString() != "")
                 {
-                    using (var bitmap = new Bitmap("./ImageItem/" + this.id.ToString() + ".jpg"))
+                    using (var bitmap = new Bitmap(path + this.id.ToString() + ".jpg"))
                     {
                         this.image = new Bitmap(bitmap);
                     }

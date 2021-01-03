@@ -40,7 +40,8 @@ namespace CoffeeShopManagement
                 this.tbName.Text = staff.name;
                 this.tbSDT.Text = staff.sdt;
                 this.tbUsername.Text = this.account.username;
-                this.tbPassword.Text = "12345678";
+                this.tbPassword.Text = this.tbConfirm.Text = this.account.password;
+                this.tbEmail.Text = this.account.email;
                 this.lID.Text = staff.id.ToString();
                 this.cbSex.Text = staff.sex;
                 this.pbStaff.Image = staff.image;
@@ -61,7 +62,6 @@ namespace CoffeeShopManagement
                 //this.lockForm = new FormLock(this);
                 //Event.ShowForm(this.lockForm);
                 this.tbPassword.Enabled = false;
-                this.tbConfirm.Text = "*******";
                 this.tbConfirm.Enabled = false;
                 this.account = account;
                 Autofill();
@@ -89,14 +89,16 @@ namespace CoffeeShopManagement
                 Account updatedAccount = new Account(this.account.id.ToString(), this.tbUsername.Text,
                     Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()),
                     true, this.tbEmail.Text, "");
-                if (btThayDoi.Checked)
+                if (!Account.IsEmail(updatedAccount.username, updatedAccount.email))
                 {
-                    Data.UpdateData("TAIKHOAN", "MATKHAU = '" + updatedAccount.password + "'" + $", EMAIL = {tbEmail.Text}",
-                    " WHERE ID = '" + updatedAccount.id.ToString() + "'");
-                    IO.ExportSuccess("Đổi mật khẩu thành công");
+                    IO.ExportWarning("Email này đã tồn tại");
+                    return;
                 }
-                else
-                    IO.ExportInfo("Dữ liệu của bạn không thay đổi");
+                Data.UpdateData("TAIKHOAN", "MATKHAU = '" + updatedAccount.password + "'" + $", EMAIL = '{tbEmail.Text}'",
+                " WHERE ID = '" + updatedAccount.id.ToString() + "'");
+                this.account.password = updatedAccount.password;
+                this.account.email = updatedAccount.email;
+                IO.ExportSuccess("Đổi thông tin thành công");
                 Event.CloseForm(this);
                 #endregion
             }
@@ -118,8 +120,8 @@ namespace CoffeeShopManagement
             }
             else
             {
-                this.tbPassword.Text = "12345678";
-                this.tbConfirm.Text = "12345678";
+                this.tbPassword.Text = this.account.password;
+                this.tbConfirm.Text = this.account.password;
                 this.tbPassword.Enabled = false;
                 this.tbConfirm.Enabled = false;
             }

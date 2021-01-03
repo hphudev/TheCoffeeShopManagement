@@ -128,7 +128,7 @@
             this.guna2ShadowPanel1.Radius = 5;
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(395, 134);
-            this.guna2ShadowPanel1.TabIndex = 117;
+            this.guna2ShadowPanel1.TabIndex = 13;
             // 
             // tbTimKiemSDT
             // 

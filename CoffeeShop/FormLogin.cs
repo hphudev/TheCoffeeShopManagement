@@ -32,7 +32,9 @@ namespace CoffeeShopManagement
                 new SHA256CryptoServiceProvider());
         string emailAdmin = "";
         string path = Application.LocalUserAppDataPath + "/admin.txt";
-        public Account account { get; private set; }
+        public Account account { get; set; }
+        string pathStaff = Application.LocalUserAppDataPath + "/ImageStaff/";
+        string pathItem = Application.LocalUserAppDataPath + "/ImageItem/";
         #endregion
 
         #region Operations
@@ -51,6 +53,10 @@ namespace CoffeeShopManagement
                 //this.bMinimize.Click += MinimizeClicked;
                 this.parent = parent;
                 LoadAdmin();
+                if (!System.IO.File.Exists(pathItem))
+                    System.IO.Directory.CreateDirectory(pathItem);
+                if (!System.IO.File.Exists(pathStaff))
+                    System.IO.Directory.CreateDirectory(pathStaff);
                 IO.ExportSuccess("Đã khởi động xong");
                 #endregion
 
@@ -92,6 +98,7 @@ namespace CoffeeShopManagement
         {
             try
             {
+                LoadAdmin();
                 tbTenDangNhap.Text = "Tên đăng nhập";
                 tbMatKhau.Text = "Mật khẩu";
                 tbMatKhau.PasswordChar = '\0';
@@ -316,7 +323,7 @@ namespace CoffeeShopManagement
             this.load.Visible = false;
             if (e.ProgressPercentage == 0)
             {
-                this.load.BackColor = Color.Red;
+                this.lb.BackColor = Color.Red;
                 sleep *= 2;
                 IO.ExportError($"Mất kết nối server");
                 bgWorker.CancelAsync();
@@ -330,12 +337,14 @@ namespace CoffeeShopManagement
                 Event.ShowForm((new FormSell(this)));
                 this.Hide();
                 this.tbTenDangNhap.Text = this.tbMatKhau.Text = "";
+                this.lb.BackColor = Color.Red;
                 bgWorker.CancelAsync();
 
             }
             else
                 if (e.ProgressPercentage == 2)
             {
+                this.lb.BackColor = Color.Red;
                 sleep = 1000;
                 IO.ExportError("Tên đăng nhập này không tồn tại");
                 this.load.BackColor = Color.Red;
@@ -345,6 +354,7 @@ namespace CoffeeShopManagement
             else
                 if (e.ProgressPercentage == 3)
             {
+                this.lb.BackColor = Color.Red;
                 sleep = 1000;
                 IO.ExportError("Mật khẩu không đúng");
                 this.load.BackColor = Color.Red;
@@ -353,6 +363,7 @@ namespace CoffeeShopManagement
             }
             else if (e.ProgressPercentage == 4)
             {
+                this.lb.BackColor = Color.Red;
                 IO.ExportSuccess("Server đã được kết nối");
             }
         }

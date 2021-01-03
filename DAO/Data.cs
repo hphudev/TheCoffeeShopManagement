@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAO
 {
-    public static class Data
+    public class Data
     {
         #region Operations
         public static SqlConnection OpenConnection()

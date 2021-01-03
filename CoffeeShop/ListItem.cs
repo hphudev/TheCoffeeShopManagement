@@ -56,7 +56,7 @@ namespace CoffeeShopManagement
             {
                 gia = value;
                 if (value >= 1000)
-                    lbCost.Text = (value / 1000).ToString() + "K";
+                    lbCost.Text = (value % 1000 == 0) ? (value / 1000).ToString() + "K" : value.ToString();
                 else
                     lbCost.Text = value.ToString();
             }
