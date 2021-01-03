@@ -19,43 +19,6 @@ namespace BUS
     public static class Event
     {
         #region Operations
-        public static void ReloadMenu(ref ComboBox cbFind, DataGridView dgvMenu, BackgroundWorker loader)
-        {
-            try
-            {
-                if (cbFind.Text != "")
-                {
-                    RunLoader(loader, dgvMenu, cbFind.Text);
-                }
-                else
-                {
-                    RunLoader(loader, dgvMenu, null);
-                }
-            }
-            catch (Exception)
-            {
-                IO.ExportError("Lỗi không xác định\n(Class Event)");
-            }
-        }
-
-        public static void RunLoader(BackgroundWorker loader, DataGridView menu, object arg)
-        {
-            try
-            {
-                if (loader.IsBusy)
-                {
-                    IO.ExportWarning("Vui lòng đợi quá trình tải dữ liệu hoàn tất");
-                }
-
-                menu.Rows.Clear();
-                loader.RunWorkerAsync(arg);
-            }
-            catch (Exception)
-            {
-                IO.ExportError("Lỗi không xác định\n(Class Event)");
-            }
-        }
-
         public static void Find(string table, string condition, string column, string type,
             ref DataGridView dgvMenu, ref ComboBox cbFind)
         {
@@ -93,34 +56,6 @@ namespace BUS
             try
             {
                 form.Close();
-            }
-            catch (Exception)
-            {
-                IO.ExportError("Lỗi không xác định\n(Class Event)");
-            }
-        }
-
-        public static void AddImage(ref PictureBox pbImageItem, string path, string name)
-        {
-            try
-            {
-                OpenFileDialog openFileImage = new OpenFileDialog();
-                DialogResult dialog = openFileImage.ShowDialog();
-
-                if (dialog != DialogResult.Cancel)
-                {
-                    FileInfo file = new FileInfo(openFileImage.FileName);
-
-                    if (file.Extension == ".jpg" || file.Extension == ".png")
-                    {
-                        pbImageItem.Image = Image.FromFile(openFileImage.FileName);
-                        File.Copy(openFileImage.FileName, path + name + ".jpg", true);
-                    }
-                    else
-                    {
-                        IO.ExportError("Chỉ hỗ trợ file .jpg và .png");
-                    }
-                }
             }
             catch (Exception)
             {
