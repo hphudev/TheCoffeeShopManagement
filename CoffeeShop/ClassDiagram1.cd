@@ -32,7 +32,7 @@
   <Class Name="CoffeeShopManagement.FormAddStaff" Collapsed="true">
     <Position X="20.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>90AACgUAACAEABAAIACAEAACEABFg0AAFEAIAQAEEAA=</HashCode>
+      <HashCode>90AACgUAACAEABAAIACEEAACEABFg0AAFEAIAQAEEAA=</HashCode>
       <FileName>FormAddStaff.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -40,14 +40,14 @@
   <Class Name="CoffeeShopManagement.FormCaiDatThongBao" Collapsed="true">
     <Position X="45.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AkBAgCEAQCAMgBRBAICgAAALQABCAEAABEBBAABCAAA=</HashCode>
+      <HashCode>AkBAgCEAQCAMgBRBAICgAAALQABCAEEABEBBAABCAAA=</HashCode>
       <FileName>FormCaiDatThongBao.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CoffeeShopManagement.FormChangeInfoCustomerFromManager" Collapsed="true">
     <Position X="52" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>8cAAAwAAAKCUABBRAACJAACGEAQCgEAIJEABAQADAAA=</HashCode>
+      <HashCode>8cAAAwAAAKCUABBRAACJAACGEAQCgEAIJEABEQADAAA=</HashCode>
       <FileName>FormChangeInfoCustomerFromManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -62,7 +62,7 @@
   <Class Name="CoffeeShopManagement.FormChangeInfoStaff" Collapsed="true">
     <Position X="18.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>90AACgUAACAEABAAIACAEAACEABFg8AAFEAIAQAEEAA=</HashCode>
+      <HashCode>90AACgUAACAEAFAAIACEEEACEABFg8AAFEAIAQAEEAA=</HashCode>
       <FileName>FormChangeInfoStaff.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -70,7 +70,7 @@
   <Class Name="CoffeeShopManagement.FormChinhSuaKhachHang" Collapsed="true">
     <Position X="60.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>8cAAAwEIAaiEABARAMCBAACWEAoAiEAIJUFBARgDAAA=</HashCode>
+      <HashCode>8cAAAwEIAaiEABBRAMCBAACWEAoAiEAIJUFBERgDAAA=</HashCode>
       <FileName>FormChinhSuaKhachHang.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -106,7 +106,7 @@
   <Class Name="CoffeeShopManagement.FormInfoStaff" Collapsed="true">
     <Position X="36.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>9wAACgUAACAEAFAAAACAEEACEAgEg8AAFEAAQQAEgAA=</HashCode>
+      <HashCode>9wAACgUAACAEAFAAAACEEEACEAgEg8AAFEAAQQAEgAA=</HashCode>
       <FileName>FormInfoStaff.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -135,7 +135,7 @@
   <Class Name="CoffeeShopManagement.FormLogin" Collapsed="true">
     <Position X="9.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAABAgJqAFFBVgACCAEAICYABAAACAgIAAQABwgAg=</HashCode>
+      <HashCode>EAAAAJAgJqAFFBVgACCCEAICYABAAACAgIAEQAB0gQg=</HashCode>
       <FileName>FormLogin.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -143,7 +143,7 @@
   <Class Name="CoffeeShopManagement.FormMain" Collapsed="true">
     <Position X="26" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAISAAAAAAAACAAAACAAAAAAAAAAAAAAACAAA=</HashCode>
+      <HashCode>AAAAAAAAISAAAAAAAACAAAACAAAAgAAAAAAAAAACAAA=</HashCode>
       <FileName>FormMain.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -157,7 +157,7 @@
   <Class Name="CoffeeShopManagement.FormMenuCustomer" Collapsed="true">
     <Position X="47.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BARAAIMQgCAWgBEAiIDAAAIDAAIDCDQCHUAhAAACQFI=</HashCode>
+      <HashCode>BARAAIMQgSCWgBEAiIDAAAIDAAIDCDQCHUAhAAACQFI=</HashCode>
       <FileName>FormMenuCustomer.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -172,7 +172,7 @@
   <Class Name="CoffeeShopManagement.FormMenuStaff" Collapsed="true">
     <Position X="29.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>FAAAAgEQgSE0ABAAwAjgUAACEAgAgAEAFECsKAACABA=</HashCode>
+      <HashCode>FAAAAgEQgSE0ABAAwAjgUAACEAgAgAEAFECsKAACABE=</HashCode>
       <FileName>FormMenuStaff.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -208,7 +208,7 @@
   <Class Name="CoffeeShopManagement.FormSell" Collapsed="true">
     <Position X="58.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>UXkQYTYGiDgFKhBAEICCTUgC4A7SuhmAHpgFOZ/TShY=</HashCode>
+      <HashCode>UXkQYTYGiDgFKhBgEICCTUgC4A7SuhmAHpgFOZ/TShY=</HashCode>
       <FileName>FormSell.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -230,7 +230,7 @@
   <Class Name="CoffeeShopManagement.FormTienKhachDua" Collapsed="true">
     <Position X="54.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIQAAAAACAkAABBAACJAAACAICAQkAAkIAAARJCEAA=</HashCode>
+      <HashCode>AAIQAAAAICAkAABBAACJAAACAICAQkAAkIAAATJCEAA=</HashCode>
       <FileName>FormTienKhachDua.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -293,7 +293,7 @@
   <Class Name="CoffeeShopManagement.Properties.Resources" Collapsed="true">
     <Position X="63.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAASpUAAIAAiAQAEAcQDUAAEAQAIAAICAAQQIkCEE4A=</HashCode>
+      <HashCode>EAASpUAAIAAiAQAkAcQDUAAEAQAIAAICAAQQIkCEE4A=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="CoffeeShopManagement.Properties.Settings" Collapsed="true">

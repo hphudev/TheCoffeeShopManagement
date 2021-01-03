@@ -16,12 +16,21 @@ namespace BUS
             AddImage(ref pbImageItem, "./ImageItem/", ((Item)item).id.ToString());
         }
 
-        public void ChangeInfoObj(object item, object arg = null)
+        public bool ChangeInfoObj(object item, object arg = null)
         {
             Item updatedItem = (Item)item;
+
+            if (Item.IsItem(ref updatedItem) != 1)
+            {
+                IO.ExportError("Tên món đã tồn tại");
+                return false;
+            }
+
             Data.UpdateData("MON", "DVT = '" + updatedItem.unit + "', GIA = '" + updatedItem.price +
-                "'", " WHERE MAMON = '" + updatedItem.id.ToString() + "'");
+                    "', TENMON = N'" + updatedItem.name + "'", " WHERE MAMON = '" +
+                    updatedItem.id.ToString() + "'");
             IO.ExportSuccess("Sửa món thành công");
+            return true;
         }
 
     }

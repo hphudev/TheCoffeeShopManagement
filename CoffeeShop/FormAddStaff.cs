@@ -79,7 +79,8 @@ namespace CoffeeShopManagement
             if (this.tbName.Text == "" || this.tbAddress.Text == "" || this.tbSDT.Text == "" ||
                         this.tbCMND.Text == "" || this.cbSex.Text == "" || this.tbSalary.Text == "" ||
                         this.cbPosition.Text == "" || this.tbUsername.Text == "" ||
-                        this.tbPassword.Text == "" || this.tbConfirm.Text == "" || tbEmail.Text == "")
+                        this.tbPassword.Text == "" || this.tbConfirm.Text == "" || 
+                        this.tbEmail.Text == "")
             {
                 IO.ExportError("Nhập không đầy đủ nội dung tất cả các trường");
                 return true;

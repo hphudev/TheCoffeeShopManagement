@@ -13,7 +13,6 @@ namespace DTO
 {
     public class Staff : Person, IInfo
     {
-        #region Attributes
         public ID id { get; }
 
         public string date { get; }
@@ -25,9 +24,7 @@ namespace DTO
         public int luong { get; }
 
         public Image image { get; set; }
-        #endregion
 
-        #region Operations
         public Staff(string id, string name, string address, string sdt, string sex, string date,
             string cmnd, string chucVu, int luong) : base(name, address, sdt, sex)
         {
@@ -78,8 +75,8 @@ namespace DTO
             try
             {
                 SqlConnection connection = Data.OpenConnection();
-                SqlDataReader reader = Data.ReadData("NHANVIEN NV, TAIKHOAN TK", connection, " WHERE " +
-                    "NV.MANV = TK.ID", "*");
+                SqlDataReader reader = Data.ReadData("NHANVIEN NV, TAIKHOAN TK", connection, " WHERE "
+                    + "NV.MANV = TK.ID", "*");
                 string lastID = "";
 
                 while (reader.HasRows)
@@ -98,9 +95,12 @@ namespace DTO
 
                     if (newStaff.cmnd == staff.cmnd && account.status)
                     {
-                        Data.CloseConnection(ref connection);
-                        IO.ExportError("Tồn tại nhân viên có số cmnd này trong danh sách");
-                        return 0;
+                        if (newStaff.id.ToString() != staff.id.ToString())
+                        {
+                            Data.CloseConnection(ref connection);
+                            IO.ExportError("Tồn tại nhân viên có số cmnd này trong danh sách");
+                            return 0;
+                        }
                     }
 
                     if (newStaff.cmnd == staff.cmnd && !account.status)
@@ -112,9 +112,12 @@ namespace DTO
 
                     if (newStaff.sdt == staff.sdt)
                     {
-                        Data.CloseConnection(ref connection);
-                        IO.ExportError("Tồn tại nhân viên có số điện thoại này trong danh sách");
-                        return 0;
+                        if (newStaff.id.ToString() != staff.id.ToString())
+                        {
+                            Data.CloseConnection(ref connection);
+                            IO.ExportError("Tồn tại nhân viên có số điện thoại này trong danh sách");
+                            return 0;
+                        }
                     }
 
                     lastID = staff.id.FindID("NV").ToString();
@@ -122,13 +125,16 @@ namespace DTO
 
                 reader.Close();
 
-                if (lastID == "")
+                if (newStaff.id.ToString() == "")
                 {
-                    newStaff.id.SetID(1, "NV", 2);
-                }
-                else
-                {
-                    newStaff.id.SetID(int.Parse(lastID) + 1, "NV", 2);
+                    if (lastID == "")
+                    {
+                        newStaff.id.SetID(1, "NV", 2);
+                    }
+                    else
+                    {
+                        newStaff.id.SetID(int.Parse(lastID) + 1, "NV", 2);
+                    }
                 }
 
                 Data.CloseConnection(ref connection);
@@ -150,7 +156,8 @@ namespace DTO
                     this.id.ToString() + "'", "*");
                 reader.Read();
                 Account account = new Account(reader.GetString(0), reader.GetString(1),
-                    reader.GetString(2), reader.GetBoolean(3), reader.GetString(4), reader.GetString(5));
+                    reader.GetString(2), reader.GetBoolean(3), reader.GetString(4),
+                    reader.GetString(5));
                 Data.CloseConnection(ref connection);
                 return account;
             }
@@ -161,6 +168,5 @@ namespace DTO
             }
         }
 
-        #endregion
     }
 }

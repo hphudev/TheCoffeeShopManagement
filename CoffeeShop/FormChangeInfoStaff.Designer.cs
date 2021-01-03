@@ -255,7 +255,6 @@ namespace CoffeeShopManagement
             this.cbSex.BorderRadius = 5;
             this.cbSex.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSex.Enabled = false;
             this.cbSex.FillColor = System.Drawing.Color.Ivory;
             this.cbSex.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.cbSex.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -412,7 +411,6 @@ namespace CoffeeShopManagement
             this.tbSDT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbSDT.DisabledState.Parent = this.tbSDT;
             this.tbSDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSDT.Enabled = false;
             this.tbSDT.FillColor = System.Drawing.Color.Ivory;
             this.tbSDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.tbSDT.FocusedState.Parent = this.tbSDT;
@@ -446,7 +444,6 @@ namespace CoffeeShopManagement
             this.tbCMND.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbCMND.DisabledState.Parent = this.tbCMND;
             this.tbCMND.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbCMND.Enabled = false;
             this.tbCMND.FillColor = System.Drawing.Color.Ivory;
             this.tbCMND.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.tbCMND.FocusedState.Parent = this.tbCMND;
@@ -480,7 +477,6 @@ namespace CoffeeShopManagement
             this.tbName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbName.DisabledState.Parent = this.tbName;
             this.tbName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbName.Enabled = false;
             this.tbName.FillColor = System.Drawing.Color.Ivory;
             this.tbName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.tbName.FocusedState.Parent = this.tbName;

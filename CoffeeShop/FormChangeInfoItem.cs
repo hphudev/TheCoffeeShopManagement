@@ -16,7 +16,6 @@ namespace CoffeeShopManagement
 {
     public partial class FormChangeInfoItem : FormItem, IImage, IAutofillForm
     {
-        #region Operations
         public FormChangeInfoItem(FormMenuItem parent) : base(parent)
         {
             try
@@ -63,7 +62,7 @@ namespace CoffeeShopManagement
 
         public override bool IsError()
         {
-            if (tbPrice.Text == "" || tbUnit.Text == "")
+            if (this.tbPrice.Text == "" || this.tbUnit.Text == "" || this.tbName.Text == "")
             {
                 IO.ExportError("Phải nhập đầy đủ thông tin tất cả các trường");
                 return true;
@@ -75,14 +74,16 @@ namespace CoffeeShopManagement
         public override void ModifyObj()
         {
             Item selectedItem = (Item)((FormMenuItem)this.parent).GetSelectedObj();
-            Item updatedItem = new Item(selectedItem.id.ToString(), selectedItem.name, 
+            Item updatedItem = new Item(selectedItem.id.ToString(), this.tbName.Text, 
                 this.tbUnit.Text, selectedItem.numberOfServings, int.Parse(this.tbPrice.Text),
                 true);
-            (new ChangeItem()).ChangeInfoObj(updatedItem);
-            this.parent.parent.LoadSomeThingPublic();
-            Event.CloseForm(this);
+
+            if ((new ChangeItem()).ChangeInfoObj(updatedItem))
+            {
+                this.parent.parent.LoadSomeThingPublic();
+                Event.CloseForm(this);
+            }
         }
 
-        #endregion
     }
 }

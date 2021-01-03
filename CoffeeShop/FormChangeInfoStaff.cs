@@ -16,7 +16,6 @@ namespace CoffeeShopManagement
 {
     public partial class FormChangeInfoStaff : FormStaff, IImage, IAutofillForm, IButtonReset
     {
-        #region Operations
         public FormChangeInfoStaff(FormMenuStaff parent) : base(parent)
         {
             try
@@ -58,7 +57,6 @@ namespace CoffeeShopManagement
                 this.lID.Text = selectedStaff.id.ToString();
                 this.tbUsername.Text = selectedAccount.username;
                 this.pbImage.Image = selectedStaff.image;
-                this.tbName.Enabled = false;
                 this.tbPassword.Text = this.tbConfirm.Text = selectedAccount.password;
                 this.tbPassword.Enabled = this.tbConfirm.Enabled = false;
                 this.tbEmail.Text = selectedAccount.email;
@@ -85,7 +83,9 @@ namespace CoffeeShopManagement
             try
             {
                 if (this.tbAddress.Text == "" || this.tbSDT.Text == "" || this.cbSex.Text == "" ||
-                    this.tbSalary.Text == "" || this.cbPosition.Text == "" || this.tbPassword.Text == "" || tbEmail.Text == "")
+                    this.tbSalary.Text == "" || this.cbPosition.Text == "" || 
+                    this.tbPassword.Text == "" || this.tbEmail.Text == "" || this.tbCMND.Text == "" ||
+                    this.tbConfirm.Text == "" || this.tbName.Text == "")
                 {
                     IO.ExportError("Nhập không đầy đủ nội dung tất cả các trường");
                     return true;
@@ -103,22 +103,24 @@ namespace CoffeeShopManagement
         public override void ModifyObj()
         {
             Staff selectedStaff = (Staff)((FormMenuStaff)this.parent).GetSelectedObj();
-            Staff updatedStaff = new Staff(selectedStaff.id.ToString(), selectedStaff.name,
-                this.tbAddress.Text, selectedStaff.sdt, selectedStaff.sex, selectedStaff.date,
-                selectedStaff.cmnd, this.cbPosition.Text, int.Parse(this.tbSalary.Text));
+            Staff updatedStaff = new Staff(selectedStaff.id.ToString(), this.tbName.Text,
+                this.tbAddress.Text, this.tbSDT.Text, this.cbSex.Text, selectedStaff.date,
+                this.tbCMND.Text, this.cbPosition.Text, int.Parse(this.tbSalary.Text));
             Account updatedAccount = new Account(selectedStaff.id.ToString(), this.tbUsername.Text,
-                Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()), true, this.tbEmail.Text, "");
-            (new ChangeStaff()).ChangeInfoObj(updatedStaff, updatedAccount);
-            Event.CloseForm(this);
+                Encrypt.ComputeHash(this.tbPassword.Text, new SHA256CryptoServiceProvider()), true, 
+                this.tbEmail.Text, "");
+            
+            if ((new ChangeStaff()).ChangeInfoObj(updatedStaff, updatedAccount))
+            {
+                Event.CloseForm(this);
+            }
         }
-
-        #endregion
 
         private void BtThayDoi_CheckedChanged(object sender, EventArgs e)
         {
             if (btThayDoi.Checked)
             {
-                this.tbName.Enabled = true;
+                //this.tbName.Enabled = true;
                 this.tbPassword.Text = "";
                 this.tbConfirm.Text = "";
                 this.tbPassword.Enabled = true;
@@ -128,12 +130,13 @@ namespace CoffeeShopManagement
             {
                 Staff selectedStaff = (Staff)((FormMenuStaff)this.parent).GetSelectedObj();
                 Account selectedAccount = selectedStaff.GetAccount();
-                this.tbName.Enabled = false;
+                //this.tbName.Enabled = false;
                 this.tbPassword.Text = selectedAccount.password;
                 this.tbConfirm.Text = selectedAccount.password;
                 this.tbPassword.Enabled = false;
                 this.tbConfirm.Enabled = false;
             }
         }
+
     }
 }
