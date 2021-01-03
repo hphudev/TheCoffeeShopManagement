@@ -12,6 +12,10 @@ namespace BUS
 {
     public abstract class ObjItem : Obj
     {
+        public ObjItem()
+        {
+            path = Application.LocalUserAppDataPath + "/ImageItem/";
+        }
 
     }
 }

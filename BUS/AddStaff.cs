@@ -11,8 +11,6 @@ namespace BUS
 {
     public class AddStaff : ObjStaff, IAddObj
     {
-        string path = Application.LocalUserAppDataPath + "/ImageStaff/";
-
         public override void AddImageClicked(ref PictureBox pbImageItem, object staff = null)
         {
             //MessageBox.Show(Application.LocalUserAppDataPath);
@@ -20,7 +18,7 @@ namespace BUS
                 "MANV", "NV", 2).ToString());
         }
 
-        public bool AddNewObj(object staff, object updatedAccount)
+        public bool AddNewObj(object staff, object updatedAccount = null)
         {
             Staff newStaff = (Staff)staff;
             Account account = (Account)updatedAccount;

@@ -11,7 +11,6 @@ namespace BUS
 {
     public class AddItem : ObjItem, IAddObj
     {
-        string path = Application.LocalUserAppDataPath + "/ImageItem/";
         public override void AddImageClicked(ref PictureBox pbImageItem, object item = null)
         {
             AddImage(ref pbImageItem, path, ID.FindNewID("MON", " ORDER BY MAMON DESC",

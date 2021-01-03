@@ -11,8 +11,6 @@ namespace BUS
 {
     public class ChangeItem : ObjItem, IChangeObj
     {
-        string path = Application.LocalUserAppDataPath + "/ImageItem/";
-
         public override void AddImageClicked(ref PictureBox pbImageItem, object item = null)
         {
             AddImage(ref pbImageItem, path, ((Item)item).id.ToString());

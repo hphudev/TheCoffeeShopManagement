@@ -13,6 +13,8 @@ namespace BUS
 {
     public abstract class Obj : Class
     {
+        protected string path;
+
         public void AddImage(ref PictureBox pbImageItem, string path, string name)
         {
             try
